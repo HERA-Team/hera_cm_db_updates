@@ -1,0 +1,12 @@
+fem_swap.py -a 84 -f 75001 --rev A --actually_do_it
+fem_swap.py -a 27 -f 75002 --rev A --actually_do_it
+fem_swap.py -a 26 -f 75003 --rev A --actually_do_it
+fem_swap.py -a 25 -f 75004 --rev A --actually_do_it
+fem_swap.py -a 24 -f 75005 --rev A --actually_do_it
+fem_swap.py -a 52 -f 75006 --rev A --actually_do_it
+fem_swap.py -a 53 -f 75007 --rev A --actually_do_it
+fem_swap.py -a 54 -f 75008 --rev A --actually_do_it
+fem_swap.py -a 85 -f 75009 --rev A --actually_do_it
+fem_swap.py -a 86 -f 75010 --rev A --actually_do_it
+fem_swap.py -a 87 -f 75011 --rev A --actually_do_it
+fem_swap.py -a 55 -f 75012 --rev A --actually_do_it
