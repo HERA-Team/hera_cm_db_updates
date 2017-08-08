@@ -232,7 +232,7 @@ data_arr = [
 ]
 
 use_date = '2017/08/01'
-do_it_this_time = False
+do_it_this_time = True
 
 for data in data_arr:
     s = 'add_connection.py --date {} -u {} -d {} '.format(use_date,data[0],data[3])
