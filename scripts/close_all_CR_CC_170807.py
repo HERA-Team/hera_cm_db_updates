@@ -6,7 +6,7 @@ script_file = open('close_all_CR_CC_170807','w')
 csv_file = open('../initialization_data_connections.csv','r')
 
 use_date = '2017/06/01'
-do_it_this_time = False
+do_it_this_time = True
 
 for line in csv_file:
     if line[:2] == 'CR':
