@@ -2,7 +2,13 @@
 
 from __future__ import print_function
 
-script_file = open('open_new_C7_RI_170808','w')
+from astropy.time import Time
+import sys
+
+now = Time.now()
+log_file = 'scripts.log'
+use_date = '2017/06/01'
+do_it_this_time = True
 
 data_arr = [
 ['C7F84','A','eb','RI8A1E','A','a'],
@@ -39,8 +45,21 @@ data_arr = [
 ['C7F70','A','nb','RI6A4N','A','a']
 ]
 
-use_date = '2017/08/01'
-do_it_this_time = True
+if len(sys.argv)>1:
+    script_file = sys.argv[1]
+else:
+    script_file = sys.argv[0]
+    if '/' in script_file:
+        script_file = script_file.split('/')[1]
+    script_file = script_file.split('.')[0]
+print("Writing ",script_file)
+
+script_fp = open(script_file,'w')
+script_fp.write('# Generated {}\n'.format(str(now)))
+
+if do_it_this_time:
+    log_comment = "echo '{} -->> {}' >> {}\n".format(script_file, now, log_file)
+    script_fp.write(log_comment)
 
 for data in data_arr:
     s = 'add_connection.py --date {} -u {} -d {} '.format(use_date,data[0],data[3])
@@ -50,4 +69,4 @@ for data in data_arr:
         s+= '--actually_do_it\n'
     else:
         s+='\n'
-    script_file.write(s)
+    script_fp.write(s)
