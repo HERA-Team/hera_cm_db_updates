@@ -7,7 +7,7 @@ import sys
 
 now = Time.now()
 log_file = 'scripts.log'
-use_date = '2017/06/01'
+use_date = '2017/08/01'
 do_it_this_time = True
 
 data_arr = [
