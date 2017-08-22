@@ -1,0 +1,103 @@
+Date                     HH24               HH25               HH26               HH27               HH28               HH36               HH37               HH38               HH39        
+2017-02-01 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1          ---                ---          e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-03 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1          ---                ---          e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-05 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-07 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-09 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-11 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-13 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-15 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-17 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-19 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-21 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-23 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-25 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-02-27 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-01 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-03 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-05 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-07 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-09 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-11 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-13 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-15 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-17 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-19 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-21 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-23 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-25 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-27 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-29 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-03-31 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-02 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-04 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-06 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-08 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-10 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-12 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-14 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-16 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-18 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-20 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-22 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-24 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-26 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-28 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-04-30 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-02 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-04 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-06 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-08 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-10 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-12 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-14 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-16 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-18 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-20 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-22 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-24 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-26 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-28 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-05-30 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-06-01 00:00    e:DF1E2 n:DF1E1    e:DF3H4 n:DF3H3    e:DF1A2 n:DF1A1    e:DF2F2 n:DF2F1    e:DF7F2 n:DF7F1    e:DF2F4 n:DF2F3    e:DF2D2 n:DF2D1    e:DF2G4 n:DF2G3    e:DF1F2 n:DF1F1  
+2017-06-03 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-05 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-07 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-09 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-11 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-13 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-15 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-17 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-19 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-21 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-23 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-25 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-27 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-06-29 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-01 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-03 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-05 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-07 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-09 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-11 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-13 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-15 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-17 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-19 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-21 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-23 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-25 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-27 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-29 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-07-31 00:00          ---                ---                ---                ---                ---                ---                ---                ---                ---        
+2017-08-02 00:00    e:DF7A2 n:DF7A1    e:DF7A4 n:DF7A3    e:DF7B2 n:DF7B1    e:DF7B4 n:DF7B3          ---                ---                ---                ---                ---        
+2017-08-04 00:00    e:DF7A2 n:DF7A1    e:DF7A4 n:DF7A3    e:DF7B2 n:DF7B1    e:DF7B4 n:DF7B3          ---                ---                ---                ---                ---        
+2017-08-06 00:00    e:DF7A2 n:DF7A1    e:DF7A4 n:DF7A3    e:DF7B2 n:DF7B1    e:DF7B4 n:DF7B3          ---                ---                ---                ---                ---        
+2017-08-08 00:00    e:DF7A2 n:DF7A1    e:DF7A4 n:DF7A3    e:DF7B2 n:DF7B1    e:DF7B4 n:DF7B3          ---                ---                ---                ---                ---        
+2017-08-10 00:00    e:DF7A2 n:DF7A1    e:DF7A4 n:DF7A3    e:DF7B2 n:DF7B1    e:DF7B4 n:DF7B3          ---                ---                ---                ---                ---        
+2017-08-12 00:00    e:DF7A2 n:DF7A1    e:DF7A4 n:DF7A3    e:DF7B2 n:DF7B1    e:DF7B4 n:DF7B3          ---                ---                ---                ---                ---        
+2017-08-14 00:00    e:DF7A2 n:DF7A1    e:DF7A4 n:DF7A3    e:DF7B2 n:DF7B1    e:DF7B4 n:DF7B3          ---                ---                ---                ---                ---        
+2017-08-16 00:00    e:DF7A2 n:DF7A1    e:DF7A4 n:DF7A3    e:DF7B2 n:DF7B1    e:DF7B4 n:DF7B3          ---                ---                ---                ---                ---        
+2017-08-18 00:00    e:DF7A2 n:DF7A1    e:DF7A4 n:DF7A3    e:DF7B2 n:DF7B1    e:DF7B4 n:DF7B3          ---          e:DF5G2 n:DF5G1    e:DF7D2 n:DF7D1    e:DF8G2 n:DF8G1    e:DF6E2 n:DF6E1  
+2017-08-20 00:00    e:DF7A2 n:DF7A1    e:DF7A4 n:DF7A3    e:DF7B2 n:DF7B1    e:DF7B4 n:DF7B3          ---          e:DF5G2 n:DF5G1    e:DF7D2 n:DF7D1    e:DF8G2 n:DF8G1    e:DF6E2 n:DF6E1  
+2017-08-22 00:00    e:DF7A2 n:DF7A1    e:DF7A4 n:DF7A3    e:DF7B2 n:DF7B1    e:DF7B4 n:DF7B3          ---          e:DF5G2 n:DF5G1    e:DF7D2 n:DF7D1    e:DF8G2 n:DF8G1    e:DF6E2 n:DF6E1  
