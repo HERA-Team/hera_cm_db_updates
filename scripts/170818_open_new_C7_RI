@@ -1,0 +1,28 @@
+# Generated 2017-08-19 04:54:32.400121
+echo 'open_new_C7_RI_170818 -->> 2017-08-19 04:54:32.400121' >> scripts.log
+add_connection.py --date 2017/08/17 -u C7F0 -d RI8B5E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F0 -d RI8B5N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F1 -d RI8B6E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F1 -d RI8B6N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F2 -d RI5B1E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F2 -d RI5B1N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F11 -d RI5A4E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F11 -d RI5A4N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F12 -d RI8B8E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F12 -d RI8B8N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F13 -d RI5A2E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F13 -d RI5A2N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F23 -d RI5A3E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F23 -d RI5A3N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F36 -d RI5A8E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F36 -d RI5A8N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F37 -d RI8B7E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F37 -d RI8B7N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F38 -d RI8A2E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F38 -d RI8A2N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F39 -d RI5A1E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F39 -d RI5A1N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F67 -d RI5A5E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F67 -d RI5A5N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F68 -d RI5A6E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/08/17 -u C7F68 -d RI5A6N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
