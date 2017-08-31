@@ -12,7 +12,7 @@ fem_swap.py -a  41 -f 75028 --rev A --date 2017/8/24 --actually_do_it
 add_connection.py  --date 2017/08/21 -u FDA6  -d FEA6  --uprev B --upport terminals --dnrev A --dnport input --actually_do_it
 add_connection.py  --date 2017/08/21 -u FDA19 -d FEA19 --uprev B --upport terminals --dnrev A --dnport input --actually_do_it
 add_connection.py  --date 2017/08/21 -u FDA75 -d FEA75 --uprev B --upport terminals --dnrev A --dnport input --actually_do_it
-# Hookup 51, 69, 79
+# Hookup 51, 69, 70
 add_connection.py  --date 2017/08/21 -u C7F51 -d RI4A1E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
 add_connection.py  --date 2017/08/21 -u C7F51 -d RI4A1N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
 add_connection.py  --date 2017/08/21 -u C7F69 -d RI4A3E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
