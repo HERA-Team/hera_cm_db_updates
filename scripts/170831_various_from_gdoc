@@ -1,7 +1,7 @@
-echo ‘170831_various_from_gdoc —> 2017-08-31’ >> scripts.log
+echo ‘170831_various_from_gdoc - 2017-08-31’ >> scripts.log
 # add fem to HH14
 fem_swap.py -a 14 -f 75017 --rev A --date 2017/8/19 --actually_do_it
-# fixed HH37 (change R8IB7 to RI5A7)
+# fixed HH37 (change RI8B7 to RI5A7)
 #   (hand edit csv)
 # add connection for HH40
 add_connection.py --date 2017/08/21 -u C7F40 -d RI8B7E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
