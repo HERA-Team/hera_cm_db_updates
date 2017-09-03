@@ -1,0 +1,4 @@
+echo “170903_various_from_gdoc - 2017-08-31” >> scripts.log
+# add connection for HH41
+add_connection.py --date 2017/09/03 -u C7F41 -d RI8A8E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/09/03 -u C7F41 -d RI8A8N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
