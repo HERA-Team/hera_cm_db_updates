@@ -1,0 +1,17 @@
+echo 170904_daily_commish - 2017-09-04 >> scripts.log
+# hand edit correction for HH38
+# ...done
+# add connection for HH13
+add_connection.py --date 2017/09/05 --time 17.0 -u C7F13 -d RI5B5E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/09/05 --time 17.0 -u C7F13 -d RI5B5N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+# add connection for HH71
+add_connection.py --date 2017/09/05 --time 17.0 -u C7F71 -d RI5B4E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/09/05 --time 17.0 -u C7F71 -d RI5B4N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+# stop connection for FEM75012 and add FEM75031
+stop_connection.py --date 2017/09/05 --time 17.0 -u FDA8 -d FEM75012 --uprev B --upport terminals --dnrev A --dnport input --actually_do_it
+stop_connection.py --date 2017/09/05 --time 17.0 -u FEM75012 -d C7F55 --uprev A --upport e --dnrev A --dnport ea  --actually_do_it
+stop_connection.py --date 2017/09/05 --time 17.0 -u FEM75012 -d C7F55 --uprev A --upport n --dnrev A --dnport na  --actually_do_it
+add_part.py --date 2017/09/05 --time 17.0 -p FEM75031 -r A -t front-end -m 75031 --actually_do_it
+add_connection.py --date 2017/09/05 --time 17.0 -u FDA8 -d FEM75031 --uprev B --upport terminals --dnrev A --dnport input --actually_do_it
+add_connection.py --date 2017/09/05 --time 17.0 -u FEM75031 -d C7F55 --uprev A --upport e --dnrev A --dnport ea  --actually_do_it
+add_connection.py --date 2017/09/05 --time 17.0 -u FEM75031 -d C7F55 --uprev A --upport n --dnrev A --dnport na  --actually_do_it
