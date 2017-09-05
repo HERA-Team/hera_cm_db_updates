@@ -7,6 +7,16 @@ add_connection.py --date 2017/09/05 --time 17.0 -u C7F13 -d RI5B5N --uprev A --u
 # add connection for HH71
 add_connection.py --date 2017/09/05 --time 17.0 -u C7F71 -d RI5B4E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
 add_connection.py --date 2017/09/05 --time 17.0 -u C7F71 -d RI5B4N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
+#
+# stop connection for FEM75029 and add FEM75030
+stop_connection.py --date 2017/09/05 --time 17.0 -u FDA91 -d FEM75029 --uprev B --upport terminals --dnrev A --dnport input --actually_do_it
+stop_connection.py --date 2017/09/05 --time 17.0 -u FEM75029 -d C7F71 --uprev A --upport e --dnrev A --dnport ea  --actually_do_it
+stop_connection.py --date 2017/09/05 --time 17.0 -u FEM75029 -d C7F71 --uprev A --upport n --dnrev A --dnport na  --actually_do_it
+add_part.py --date 2017/09/05 --time 17.0 -p FEM75030 -r A -t front-end -m 75030 --actually_do_it
+add_connection.py --date 2017/09/05 --time 17.0 -u FDA91 -d FEM75030 --uprev B --upport terminals --dnrev A --dnport input --actually_do_it
+add_connection.py --date 2017/09/05 --time 17.0 -u FEM75030 -d C7F71 --uprev A --upport e --dnrev A --dnport ea  --actually_do_it
+add_connection.py --date 2017/09/05 --time 17.0 -u FEM75030 -d C7F71 --uprev A --upport n --dnrev A --dnport na  --actually_do_it
+#
 # stop connection for FEM75012 and add FEM75031
 stop_connection.py --date 2017/09/05 --time 17.0 -u FDA8 -d FEM75012 --uprev B --upport terminals --dnrev A --dnport input --actually_do_it
 stop_connection.py --date 2017/09/05 --time 17.0 -u FEM75012 -d C7F55 --uprev A --upport e --dnrev A --dnport ea  --actually_do_it
