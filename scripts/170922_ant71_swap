@@ -1,0 +1,6 @@
+echo 170922_ant71_swap 2017/09/22  >> scripts.log
+# Stop previous receiverator connection
+stop_connection.py --date 2017/09/22 --time 16.3 -u C7F71 --uprev A --upport eb -d RI5B4E --dnrev A --dnport a --actually_do_it
+stop_connection.py --date 2017/09/22 --time 16.3 -u C7F71 --uprev A --upport nb -d RI5B4N --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/09/22 --time 16.3 -u C7F71 --uprev A --upport eb -d RI5B7E --dnrev A --dnport a --actually_do_it
+add_connection.py --date 2017/09/22 --time 16.3 -u C7F71 --uprev A --upport nb -d RI5B7N --dnrev A --dnport a --actually_do_it
