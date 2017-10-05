@@ -1,0 +1,54 @@
+echo 171005_add_new_ants >> scripts.log
+add_station.py HH121
+add_part.py -p A121 -r H -t antenna -m S/N48 --date 2017/10/05 --time 10:00 --actually_do_it
+add_part.py -p FDA26 -r B -t feed -m P26 --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u HH121 --uprev A --upport ground -d A121 --dnrev H --dnport ground --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u A121 --uprev H --upport focus -d FDA26 --dnrev B --dnport input --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FDA26 --uprev B --upport terminals -d FEA26 --dnrev A --dnport input --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FEA26 --uprev A --upport e -d C7F121 --dnrev A --dnport ea --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FEA26 --uprev A --upport n -d C7F121 --dnrev A --dnport na --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u C7F121 --uprev A --upport eb -d RI4B2E --dnrev A --dnport a --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u C7F121 --uprev A --upport nb -d RI4B2N --dnrev A --dnport a --date 2017/10/05 --time 10:00 --actually_do_it
+add_station.py HH124
+add_part.py -p A124 -r H -t antenna -m S/N49 --date 2017/10/05 --time 10:00 --actually_do_it
+add_part.py -p FDA27 -r B -t feed -m P27 --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u HH124 --uprev A --upport ground -d A124 --dnrev H --dnport ground --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u A124 --uprev H --upport focus -d FDA27 --dnrev B --dnport input --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FDA27 --uprev B --upport terminals -d FEA27 --dnrev A --dnport input --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FEA27 --uprev A --upport e -d C7F124 --dnrev A --dnport ea --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FEA27 --uprev A --upport n -d C7F124 --dnrev A --dnport na --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u C7F124 --uprev A --upport eb -d RI4B5E --dnrev A --dnport a --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u C7F124 --uprev A --upport nb -d RI4B5N --dnrev A --dnport a --date 2017/10/05 --time 10:00 --actually_do_it
+add_station.py HH141
+add_part.py -p A141 -r H -t antenna -m S/N50 --date 2017/10/05 --time 10:00 --actually_do_it
+add_part.py -p FDA28 -r B -t feed -m P28 --date 2017/10/05 --time 10:00 --actually_do_it
+add_part.py -p C7F141 -r A -t cable-feed75 -m C7F141 --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u HH141 --uprev A --upport ground -d A141 --dnrev H --dnport ground --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u A141 --uprev H --upport focus -d FDA28 --dnrev B --dnport input --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FDA28 --uprev B --upport terminals -d FEA28 --dnrev A --dnport input --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FEA28 --uprev A --upport e -d C7F141 --dnrev A --dnport ea --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FEA28 --uprev A --upport n -d C7F141 --dnrev A --dnport na --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u C7F141 --uprev A --upport eb -d RI4B6E --dnrev A --dnport a --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u C7F141 --uprev A --upport nb -d RI4B6N --dnrev A --dnport a --date 2017/10/05 --time 10:00 --actually_do_it
+add_station.py HH142
+add_part.py -p A142 -r H -t antenna -m S/N51 --date 2017/10/05 --time 10:00 --actually_do_it
+add_part.py -p FDA32 -r B -t feed -m P32 --date 2017/10/05 --time 10:00 --actually_do_it
+add_part.py -p C7F142 -r A -t cable-feed75 -m C7F142 --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u HH142 --uprev A --upport ground -d A142 --dnrev H --dnport ground --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u A142 --uprev H --upport focus -d FDA32 --dnrev B --dnport input --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FDA32 --uprev B --upport terminals -d FEA32 --dnrev A --dnport input --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FEA32 --uprev A --upport e -d C7F142 --dnrev A --dnport ea --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FEA32 --uprev A --upport n -d C7F142 --dnrev A --dnport na --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u C7F142 --uprev A --upport eb -d RI4B7E --dnrev A --dnport a --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u C7F142 --uprev A --upport nb -d RI4B7N --dnrev A --dnport a --date 2017/10/05 --time 10:00 --actually_do_it
+add_station.py HH88
+add_part.py -p A88 -r H -t antenna -m S/N52 --date 2017/10/05 --time 10:00 --actually_do_it
+add_part.py -p FDA34 -r B -t feed -m P34 --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u HH88 --uprev A --upport ground -d A88 --dnrev H --dnport ground --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u A88 --uprev H --upport focus -d FDA34 --dnrev B --dnport input --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FDA34 --uprev B --upport terminals -d FEA34 --dnrev A --dnport input --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FEA34 --uprev A --upport e -d C7F88 --dnrev A --dnport ea --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u FEA34 --uprev A --upport n -d C7F88 --dnrev A --dnport na --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u C7F88 --uprev A --upport eb -d RI5B8E --dnrev A --dnport a --date 2017/10/05 --time 10:00 --actually_do_it
+add_connection.py -u C7F88 --uprev A --upport nb -d RI5B8N --dnrev A --dnport a --date 2017/10/05 --time 10:00 --actually_do_it
+fem_swap.py -a 88 -f 75034 --rev A --date 2017/10/05 --time 10:00 --actually_do_it
