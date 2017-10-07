@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+#  Add info on the cambridge filter banks
+echo 171007_cam_filters  2017/10/07 >> scripts.log
+add_part.py --date 2017/10/07 --time 8.0 -p CFB75001 -r A -t filter_bank -m CFB75001 --actually_do_it
+part_info.py --date 2017/10/07 --time 8.0 -p CFB75001 -r A -c 'installed Receiverator 8 1-8->A1-A8, 9-16->B1-B8' -l none
+add_part.py --date 2017/10/07 --time 8.0 -p CFB75002 -r A -t filter_bank -m CFB75002 --actually_do_it
+part_info.py --date 2017/10/07 --time 8.0 -p CFB75002 -r A -c 'installed Receiverator 5 1-8->A1-A8, 9-16->B1-B8' -l none
