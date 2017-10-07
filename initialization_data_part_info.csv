@@ -3,3 +3,5 @@ PAM75134,B,Was on HH85 but failed.,,1188579822
 FEM75029,A,Was on HH71 but failed.,,1188579822
 FEM75012,A,Was on HH55 but failed.,,1188665302
 FEM75026,A,Was on HH67 but failed.,,1189411218
+CFB75001,A,"installed Receiverator 8 1-8->A1-A8, 9-16->B1-B8",,1191398418
+CFB75002,A,"installed Receiverator 5 1-8->A1-A8, 9-16->B1-B8",,1191398418
