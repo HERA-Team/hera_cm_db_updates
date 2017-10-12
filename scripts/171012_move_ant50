@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+echo 171012_move_ant50 >> scripts.log
+# Move over from NRAO receiverator (4) to Cambridge (5)
+stop_connection.py -u C7F50 --uprev A --upport eb -d RI4A3E --dnrev A --dnport a --date 2017/10/12 --time 15:00 --actually_do_it
+stop_connection.py -u C7F50 --uprev A --upport nb -d RI4A3N --dnrev A --dnport a --date 2017/10/12 --time 15:00 --actually_do_it
+add_connection.py -u C7F50 --uprev A --upport eb -d RI5B4E --dnrev A --dnport a --date 2017/10/12 --time 15:00 --actually_do_it
+add_connection.py -u C7F50 --uprev A --upport nb -d RI5B4N --dnrev A --dnport a --date 2017/10/12 --time 15:00 --actually_do_it
+# Change to Cambridge FEM
+fem_swap.py -a 50 -f 75035 --rev A --date 2017/10/12 --time 15.0 --actually_do_it
