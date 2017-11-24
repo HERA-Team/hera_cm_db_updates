@@ -1,0 +1,79 @@
+# ### ### ### ###
+# R3A1
+stop_connection.py -u RI3A1E --uprev A --upport b -d RCVR18 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3A1N --uprev A --upport b -d RCVR18 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR18 --uprev A --upport eb -d RO3A1E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR18 --uprev A --upport nb -d RO3A1N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3A2
+stop_connection.py -u RI3A2E --uprev A --upport b -d RCVR12 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3A2N --uprev A --upport b -d RCVR12 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR12 --uprev A --upport eb -d RO3A2E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR12 --uprev A --upport nb -d RO3A2N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3A3
+stop_connection.py -u RI3A3E --uprev A --upport b -d RCVR2 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3A3N --uprev A --upport b -d RCVR2 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR2 --uprev A --upport eb -d RO3A3E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR2 --uprev A --upport nb -d RO3A3N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3A4
+stop_connection.py -u RI3A4E --uprev A --upport b -d RCVR14 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3A4N --uprev A --upport b -d RCVR14 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR14 --uprev A --upport eb -d RO3A4E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR14 --uprev A --upport nb -d RO3A4N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3A5
+stop_connection.py -u RI3A5E --uprev A --upport b -d RCVR84 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3A5N --uprev A --upport b -d RCVR84 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR84 --uprev A --upport eb -d RO3A5E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR84 --uprev A --upport nb -d RO3A5N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3A6
+stop_connection.py -u RI3A6E --uprev A --upport b -d RCVR109 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3A6N --uprev A --upport b -d RCVR109 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR109 --uprev A --upport eb -d RO3A6E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR109 --uprev A --upport nb -d RO3A6N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3A7
+stop_connection.py -u RI3A7E --uprev A --upport b -d RCVR7 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3A7N --uprev A --upport b -d RCVR7 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR7 --uprev A --upport eb -d RO3A7E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR7 --uprev A --upport nb -d RO3A7N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3A8
+stop_connection.py -u RI3A8E --uprev A --upport b -d RCVR17 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3A8N --uprev A --upport b -d RCVR17 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR17 --uprev A --upport eb -d RO3A8E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR17 --uprev A --upport nb -d RO3A8N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# ### ### ### ###
+# R3B1
+stop_connection.py -u RI3B1E --uprev A --upport b -d RCVR96 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3B1N --uprev A --upport b -d RCVR96 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR96 --uprev A --upport eb -d RO3B1E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR96 --uprev A --upport nb -d RO3B1N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3B2
+stop_connection.py -u RI3B2E --uprev A --upport b -d RCVR16 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3B2N --uprev A --upport b -d RCVR16 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR16 --uprev A --upport eb -d RO3B2E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR16 --uprev A --upport nb -d RO3B2N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3B3
+stop_connection.py -u RI3B3E --uprev A --upport b -d RCVR124 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3B3N --uprev A --upport b -d RCVR124 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR124 --uprev A --upport eb -d RO3B3E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR124 --uprev A --upport nb -d RO3B3N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3B4
+stop_connection.py -u RI3B4E --uprev A --upport b -d RCVR0 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3B4N --uprev A --upport b -d RCVR0 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR0 --uprev A --upport eb -d RO3B4E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR0 --uprev A --upport nb -d RO3B4N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3B5
+stop_connection.py -u RI3B5E --uprev A --upport b -d RCVR85 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3B5N --uprev A --upport b -d RCVR85 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR85 --uprev A --upport eb -d RO3B5E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR85 --uprev A --upport nb -d RO3B5N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3B6
+stop_connection.py -u RI3B6E --uprev A --upport b -d RCVR10 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3B6N --uprev A --upport b -d RCVR10 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR10 --uprev A --upport eb -d RO3B6E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR10 --uprev A --upport nb -d RO3B6N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3B7
+stop_connection.py -u RI3B7E --uprev A --upport b -d RCVR1 --dnrev A --dnport ea --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RI3B7N --uprev A --upport b -d RCVR1 --dnrev A --dnport na --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR1 --uprev A --upport eb -d RO3B7E --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+stop_connection.py -u RCVR1 --uprev A --upport nb -d RO3B7N --dnrev A --dnport a --date 2017/11/01 --time 10:00 --actually_do_it
+# R3B8
+# Not there for some reason?
