@@ -5,15 +5,15 @@ import def_pc as pc
 log_file = 'scripts.log'
 do_it_this_time = True
 
-connections_to_stop = [
+connectA142_to_stop = [
                       [['C7F142', 'A', 'eb'], ['RI4B7E', 'A', 'a'], '2017/11/19'],
                       [['C7F142', 'A', 'nb'], ['RI4B7N', 'A', 'a'], '2017/11/19'],
                       [['FEA32', 'A', 'e'], ['C7F142', 'A', 'ea'], '2017/11/19'],
                       [['FEA32', 'A', 'n'], ['C7F142', 'A', 'na'], '2017/11/19'],
                       [['FDA32', 'B', 'terminals'], ['FEA32', 'A', 'input'], '2017/11/19']
 ]
-connections_to_strt = [
-                      [['FDA32', 'A', 'terminals'], ['FEM75041', 'A', 'input'], '2017/11/23'],
+connectA142_to_strt = [
+                      [['FDA32', 'B', 'terminals'], ['FEM75041', 'A', 'input'], '2017/11/23'],
                       [['FEM75041', 'A', 'e'], ['C7F142', 'A', 'ea'], '2017/11/23'],
                       [['FEM75041', 'A', 'n'], ['C7F142', 'A', 'na'], '2017/11/23'],
                       [['C7F142', 'A', 'eb'], ['RI3A6E', 'A', 'a'], '2017/11/23'],
@@ -61,7 +61,8 @@ for a in ants_to_add:
     new_cable = 'C7F' + hhno
     serno = a[2]
     new_fem = a[3]
-    new_rator = a[4]
+    new_rator_in = a[4]
+    new_rator_out = new_rator_in[0] + 'O' + new_rator_in[2:]
     new_pam = a[5]
     cdate = a[6]
     ctime = '10:00'
@@ -73,7 +74,13 @@ for a in ants_to_add:
     else:
         new_front_end = nrao_frend
     if new_pam[:3] == 'PAM':
-        print("Need to disconnect, and reconnect PAM")
+        for p in ['E', 'N']:
+            ri = new_rator_in + p
+            pin = p.lower() + 'a'
+            fp.write(connect('add', [ri, 'A', 'b'], [new_pam, 'B', pin], cdate, ctime, do_it_this_time))
+            ro = new_rator_out + p
+            pout = p.lower() + 'b'
+            fp.write(connect('add', [new_pam, 'B', pout], [ro, 'A', 'b'], cdate, ctime, do_it_this_time))
 
     s = 'add_station.py {}\n'.format(new_station)
     fp.write(s)
@@ -81,14 +88,13 @@ for a in ants_to_add:
     fp.write(part([new_feed, 'B', 'feed', feed_mfg], cdate, ctime, do_it_this_time))
     if val_na > 127:
         fp.write(part([new_cable, 'A', 'cable-feed75', new_cable], cdate, ctime, do_it_this_time))
-    fp.write(connect(['add', new_station, 'A', 'ground'], [new_ant, 'H', 'ground'], cdate, ctime, do_it_this_time))
-    fp.write(connect(['add', new_ant, 'H', 'focus'], [new_feed, 'B', 'input'], cdate, ctime, do_it_this_time))
-    fp.write(connect(['add', new_feed, 'B', 'terminals'], [new_front_end, 'A', 'input'], cdate, ctime, do_it_this_time))
-    fp.write(connect(['add', new_front_end, 'A', 'e'], [new_cable, 'A', 'ea'], cdate, ctime, do_it_this_time))
-    fp.write(connect(['add', new_front_end, 'A', 'n'], [new_cable, 'A', 'na'], cdate, ctime, do_it_this_time))
-    fp.write(connect(['add', new_cable, 'A', 'eb'], [new_rator + 'E', 'A', 'a'], cdate, ctime, do_it_this_time))
-    fp.write(connect(['add', new_cable, 'A', 'nb'], [new_rator + 'N', 'A', 'a'], cdate, ctime, do_it_this_time))
-
+    fp.write(connect('add', [new_station, 'A', 'ground'], [new_ant, 'H', 'ground'], cdate, ctime, do_it_this_time))
+    fp.write(connect('add', [new_ant, 'H', 'focus'], [new_feed, 'B', 'input'], cdate, ctime, do_it_this_time))
+    fp.write(connect('add', [new_feed, 'B', 'terminals'], [new_front_end, 'A', 'input'], cdate, ctime, do_it_this_time))
+    fp.write(connect('add', [new_front_end, 'A', 'e'], [new_cable, 'A', 'ea'], cdate, ctime, do_it_this_time))
+    fp.write(connect('add', [new_front_end, 'A', 'n'], [new_cable, 'A', 'na'], cdate, ctime, do_it_this_time))
+    fp.write(connect('add', [new_cable, 'A', 'eb'], [new_rator + 'E', 'A', 'a'], cdate, ctime, do_it_this_time))
+    fp.write(connect('add', [new_cable, 'A', 'nb'], [new_rator + 'N', 'A', 'a'], cdate, ctime, do_it_this_time))
 
 
 fp.close()
