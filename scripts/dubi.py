@@ -45,4 +45,5 @@ ant_list = ['HH4', 'HH5', 'HH6', 'HH7', 'HH8', 'HH9', 'HH10',
             'HH350'
             ]
 
-part_connect.update_dubitable(None, Time.now().gps, ant_list)
+transition_gpstime = int(Time.now().gps)
+part_connect.update_dubitable(None, transition_gpstime, ant_list)
