@@ -4,7 +4,7 @@
 # Licensed under the 2-clause BSD license.
 
 """
-Script to handle updated the dubitable antennas.
+Script to handle updating the dubitable antennas.
 """
 
 from __future__ import absolute_import, division, print_function

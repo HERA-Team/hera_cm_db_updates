@@ -12,9 +12,12 @@ def init_script(argv, log_file):
     return fp
 
 
-def part(p, cdate, ctime, do_it):
-    s = 'add_part.py -p {} -r {} -t {} -m {} --date {} --time {}'.format(
-        p[0], p[1], p[2], p[3], cdate, ctime)
+def part(add_or_stop, p, cdate, ctime, do_it):
+    s = '{}_part.py -p {} -r {} '.format(
+        add_or_stop, p[0], p[1])
+    if add_or_stop == 'add':
+        s += '-t {} -m {} '.format(p[2], p[3])
+    s += '--date {} --time {}'.format(cdate, ctime)
     if do_it:
         s += ' --actually_do_it'
     s += '\n'
