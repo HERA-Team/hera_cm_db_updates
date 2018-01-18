@@ -33,26 +33,26 @@ with open('schema.sql', 'r') as f:
             if ');' in line:
                 creating_table = False
 
-with open('schema.sql', 'w') as f:
-    f.write(schema)
-
 inserts = ''
 with open('inserts.sql', 'r') as f:
     for line in f:
         if 'INSERT' in line:
             inserts += line
 
-with open('inserts.sql', 'w') as f:
+with open('cm_hera.sql', 'w') as f:
+    f.write(schema)
     f.write(inserts)
+
+subprocess.call('rm -f schema.sql', shell=True)
+subprocess.call('rm -f inserts.sql', shell=True)
 
 print("""
 Now type the following:
 
 $ sqlite3
-sqlite> .read schema.sql
-sqlite> .read inserts.sql
+sqlite> .read cm_hera.sql
 sqlite> .save hera_mc.db
 
 then move hera_mc.db to hera_cm_db_updates
-and delete schema.sql and inserts.sql
+and delete cm_hera.sql
 """)
