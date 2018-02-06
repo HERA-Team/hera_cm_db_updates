@@ -1,4 +1,5 @@
 hpn,hpn_rev,hptype,manufacturer_number,start_gpstime,stop_gpstime
+System,general,system,SYS,1201860018,
 DF5A2,A,f-engine,PF5A2,1096509616,
 CFB75001,A,filter_bank,CFB75001,1191398418,
 DF5A3,A,f-engine,PF5A3,1096509616,
