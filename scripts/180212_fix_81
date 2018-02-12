@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+echo 180212_fix_81 >> scripts.log
+add_part.py -p CC2R5C8 -r A -t "cable-container" -m CBLC2R5C8 --date 2017/10/01 --time 10:00 --actually_do_it
+add_part.py -p CC2R6C8 -r A -t "cable-container" -m CBLC2R6C8 --date 2017/10/01 --time 10:00 --actually_do_it
+add_connection.py -u CR3B8E --uprev A --upport b -d CC2R5C8 --dnrev A --dnport a --date 2017/10/01 --time 10:00 --actually_do_it
+add_connection.py -u CR3B8N --uprev A --upport b -d CC2R6C8 --dnrev A --dnport a --date 2017/10/01 --time 10:00 --actually_do_it
+add_connection.py -u CC2R5C8 --uprev A --upport b -d DF1C4 --dnrev A --dnport input --date 2017/10/01 --time 10:00 --actually_do_it
+add_connection.py -u CC2R6C8 --uprev A --upport b -d DF1C3 --dnrev A --dnport input --date 2017/10/01 --time 10:00 --actually_do_it
