@@ -9,3 +9,6 @@ stationgrid,S,Station grid locations,ks
 cofa,COFA,Center of array,bs
 heraringa,HA,HERA inner ring,ro
 heraringb,HB,HERA outer ring,ro
+herahexw,HH,HERA hex locations W tridrant,ro
+herahexe,HH,HERA hex locations E tridrant,ro
+herahexn,HH,HERA hex locations N tridrant,ro
