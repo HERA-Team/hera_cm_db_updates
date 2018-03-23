@@ -1,0 +1,18 @@
+#! /usr/bin/env bash
+echo 180323_fix_123 >> scripts.log
+add_part.py -p FEM75067 -r A -t front-end -m 75067 --date 2018/03/21 --time 10:00 --actually_do_it
+add_part.py -p PAM75157 -r B -t post-amp -m 75157 --date 2018/03/21 --time 10:00 --actually_do_it
+stop_connection.py -u FDA24 --uprev B --upport terminals -d FEA24 --dnrev A --dnport input --date 2018/03/21 --time 11:00 --actually_do_it
+stop_connection.py -u FEA24 --uprev A --upport e -d C7F123 --dnrev A --dnport ea --date 2018/03/21 --time 11:00 --actually_do_it
+stop_connection.py -u FEA24 --uprev A --upport n -d C7F123 --dnrev A --dnport na --date 2018/03/21 --time 11:00 --actually_do_it
+stop_connection.py -u C7F123 --uprev A --upport eb -d RI4B4E --dnrev A --dnport a --date 2018/03/21 --time 11:00 --actually_do_it
+stop_connection.py -u C7F123 --uprev A --upport nb -d RI4B4N --dnrev A --dnport a --date 2018/03/21 --time 11:00 --actually_do_it
+add_connection.py -u FDA24 --uprev B --upport terminals -d FEM75067 --dnrev A --dnport input --date 2018/03/21 --time 12:00 --actually_do_it
+add_connection.py -u FEM75067 --uprev A --upport e -d C7F123 --dnrev A --dnport ea --date 2018/03/21 --time 12:00 --actually_do_it
+add_connection.py -u FEM75067 --uprev A --upport n -d C7F123 --dnrev A --dnport na --date 2018/03/21 --time 12:00 --actually_do_it
+add_connection.py -u C7F123 --uprev A --upport eb -d RI2A8E --dnrev A --dnport a --date 2018/03/21 --time 12:00 --actually_do_it
+add_connection.py -u C7F123 --uprev A --upport nb -d RI2A8N --dnrev A --dnport a --date 2018/03/21 --time 12:00 --actually_do_it
+add_connection.py -u RI2A8E --uprev A --upport b -d PAM75157 --dnrev B --dnport ea --date 2018/03/21 --time 12:00 --actually_do_it
+add_connection.py -u RI2A8N --uprev A --upport b -d PAM75157 --dnrev B --dnport na --date 2018/03/21 --time 12:00 --actually_do_it
+add_connection.py -u PAM75157 --uprev B --upport eb -d RO2A8E --dnrev A --dnport a --date 2018/03/21 --time 12:00 --actually_do_it
+add_connection.py -u PAM75157 --uprev B --upport nb -d RO2A8N --dnrev A --dnport a --date 2018/03/21 --time 12:00 --actually_do_it
