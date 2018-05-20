@@ -1,0 +1,43 @@
+#! /usr/bin/env bash
+echo 180520_node0_contents >> scripts.log
+add_station.py ND0 --date 2018/05/20 --time 10:00
+add_part.py -p PAM09 -r A -t pam -m PAM9 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PAM08 -r A -t pam -m PAM8 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PCH1 -r A -t pam-chassis -m PCH1 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PAM03 -r A -t pam -m PAM3 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PAM02 -r A -t pam -m PAM2 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PAM01 -r A -t pam -m PAM1 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PAM07 -r A -t pam -m PAM7 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PAM06 -r A -t pam -m PAM6 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PAM05 -r A -t pam -m PAM5 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PAM04 -r A -t pam -m PAM4 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p SNP3 -r A -t snap -m SNP3 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p FPS1 -r A -t fem-power-supply -m FPS1 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PAM10 -r A -t pam -m PAM10 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PAM11 -r A -t pam -m PAM11 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PAM12 -r A -t pam -m PAM12 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p SNP2 -r A -t snap -m SNP2 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p N0 -r A -t node -m N0 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p PCM1 -r A -t power-control-module -m PCM1 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p SNP4 -r A -t snap -m SNP4 --date 2018/05/20 --time 11:00 --actually_do_it
+add_part.py -p SNP1 -r A -t snap -m SNP1 --date 2018/05/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM09 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot09 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PAM08 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot08 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PCH1 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc0 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PAM03 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot03 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PAM02 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot02 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PAM01 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot01 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PAM07 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot07 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PAM06 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot06 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PAM05 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot05 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PAM04 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot04 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u SNP3 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc3 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u FPS1 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc6 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PAM10 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot10 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PAM11 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot11 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PAM12 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot12 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u SNP2 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc2 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u N0 --uprev A --upport @ground -d ND0 --dnrev A --dnport @ground --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PCM1 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc5 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u SNP4 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc4 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u SNP1 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc1 --date 2018/05/20 --time 12:00 --actually_do_it
