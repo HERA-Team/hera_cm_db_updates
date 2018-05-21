@@ -23,7 +23,7 @@ add_part.py -p SNP4 -r A -t snap -m SNP4 --date 2018/05/20 --time 11:00 --actual
 add_part.py -p SNP1 -r A -t snap -m SNP1 --date 2018/05/20 --time 11:00 --actually_do_it
 add_connection.py -u PAM09 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot09 --date 2018/05/20 --time 12:00 --actually_do_it
 add_connection.py -u PAM08 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot08 --date 2018/05/20 --time 12:00 --actually_do_it
-add_connection.py -u PCH1 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc0 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u PCH1 --uprev A --upport @rack -d N0 --dnrev A --dnport l@oc0 --date 2018/05/20 --time 12:00 --actually_do_it
 add_connection.py -u PAM03 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot03 --date 2018/05/20 --time 12:00 --actually_do_it
 add_connection.py -u PAM02 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot02 --date 2018/05/20 --time 12:00 --actually_do_it
 add_connection.py -u PAM01 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot01 --date 2018/05/20 --time 12:00 --actually_do_it
@@ -31,13 +31,13 @@ add_connection.py -u PAM07 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @
 add_connection.py -u PAM06 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot06 --date 2018/05/20 --time 12:00 --actually_do_it
 add_connection.py -u PAM05 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot05 --date 2018/05/20 --time 12:00 --actually_do_it
 add_connection.py -u PAM04 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot04 --date 2018/05/20 --time 12:00 --actually_do_it
-add_connection.py -u SNP3 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc3 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u SNP3 --uprev A --upport rack -d N0 --dnrev A --dnport loc3 --date 2018/05/20 --time 12:00 --actually_do_it
 add_connection.py -u FPS1 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc6 --date 2018/05/20 --time 12:00 --actually_do_it
 add_connection.py -u PAM10 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot10 --date 2018/05/20 --time 12:00 --actually_do_it
 add_connection.py -u PAM11 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot11 --date 2018/05/20 --time 12:00 --actually_do_it
 add_connection.py -u PAM12 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot12 --date 2018/05/20 --time 12:00 --actually_do_it
-add_connection.py -u SNP2 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc2 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u SNP2 --uprev A --upport rack -d N0 --dnrev A --dnport loc2 --date 2018/05/20 --time 12:00 --actually_do_it
 add_connection.py -u N0 --uprev A --upport @ground -d ND0 --dnrev A --dnport @ground --date 2018/05/20 --time 12:00 --actually_do_it
 add_connection.py -u PCM1 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc5 --date 2018/05/20 --time 12:00 --actually_do_it
-add_connection.py -u SNP4 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc4 --date 2018/05/20 --time 12:00 --actually_do_it
-add_connection.py -u SNP1 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc1 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u SNP4 --uprev A --upport rack -d N0 --dnrev A --dnport loc4 --date 2018/05/20 --time 12:00 --actually_do_it
+add_connection.py -u SNP1 --uprev A --upport rack -d N0 --dnrev A --dnport loc1 --date 2018/05/20 --time 12:00 --actually_do_it
