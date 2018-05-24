@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 echo 180521_add_sigpath_A12 >> scripts.log
 add_part.py -p FDV3 -r A -t feed -m MIT3 --date 2018/05/21 --time 11:00 --actually_do_it
-add_part.py -p FEM02 -r A -t fem -m FEMxxx02 --date 2018/05/21 --time 11:00 --actually_do_it
+add_part.py -p FEM02 -r A -t front-end -m FEMxxx02 --date 2018/05/21 --time 11:00 --actually_do_it
 add_part.py -p CRF012 -r A -t cable-rfof -m orangegray --date 2018/05/21 --time 11:00 --actually_do_it
 add_connection.py -u A12 --uprev H --upport focus -d FDV3 --dnrev A --dnport input --date 2018/05/21 --time 12:00 --actually_do_it
 add_connection.py -u FDV3 --uprev A --upport terminals -d FEM02 --dnrev A --dnport input --date 2018/05/21 --time 12:00 --actually_do_it

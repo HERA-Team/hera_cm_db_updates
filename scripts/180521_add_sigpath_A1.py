@@ -9,7 +9,7 @@ log_file = 'scripts.log'
 do_it_this_time = True
 
 parts_to_add = [['FDV2', 'A', 'feed', 'MIT2'],
-                ['FEM04', 'A', 'fem', 'FEMxxx04'],
+                ['FEM04', 'A', 'front-end', 'FEMxxx04'],
                 ['CRF001', 'A', 'cable-rfof', 'browngreen']]
 connections_to_add = [[['A1', 'H', 'focus'], ['FDV2', 'A', 'input']],
                       [['FDV2', 'A', 'terminals'], ['FEM04', 'A', 'input']],
