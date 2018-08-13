@@ -12,23 +12,16 @@ node = 'ND0'
 
 parts_to_add = {'N0': ['A', 'node', 'N0', '@ground>ND0:A:@ground'],
                 'PCH1': ['A', 'pam-chassis', 'PCH1', '@rack>N0:A:@loc0'],
-                'PAM01': ['A', 'post-amp', 'PAM1', '@slot>PCH1:A:@slot01'],
-                'PAM02': ['A', 'post-amp', 'PAM2', '@slot>PCH1:A:@slot02'],
-                'PAM03': ['A', 'post-amp', 'PAM3', '@slot>PCH1:A:@slot03'],
-                'PAM04': ['A', 'post-amp', 'PAM4', '@slot>PCH1:A:@slot04'],
-                'PAM05': ['A', 'post-amp', 'PAM5', '@slot>PCH1:A:@slot05'],
-                'PAM06': ['A', 'post-amp', 'PAM6', '@slot>PCH1:A:@slot06'],
-                'PAM07': ['A', 'post-amp', 'PAM7', '@slot>PCH1:A:@slot07'],
-                'PAM08': ['A', 'post-amp', 'PAM8', '@slot>PCH1:A:@slot08'],
-                'PAM09': ['A', 'post-amp', 'PAM9', '@slot>PCH1:A:@slot09'],
-                'PAM10': ['A', 'post-amp', 'PAM10', '@slot>PCH1:A:@slot10'],
-                'PAM11': ['A', 'post-amp', 'PAM11', '@slot>PCH1:A:@slot11'],
-                'PAM12': ['A', 'post-amp', 'PAM12', '@slot>PCH1:A:@slot12'],
-                'SNP1': ['A', 'snap', 'SNP1', 'rack>N0:A:loc1'],
-                'SNP2': ['A', 'snap', 'SNP2', 'rack>N0:A:loc2'],
-                'SNP3': ['A', 'snap', 'SNP3', 'rack>N0:A:loc3'],
-                'SNP4': ['A', 'snap', 'SNP4', 'rack>N0:A:loc4'],
-                'PCM1': ['A', 'power-control-module', 'PCM1', '@rack>N0:A:@loc5'],
+                'PAM75191': ['A', 'post-amp', 'PAM75191', '@slot>PCH1:A:@slot07'],
+                'PAM75192': ['A', 'post-amp', 'PAM75192', '@slot>PCH1:A:@slot01'],
+                'PAM75193': ['A', 'post-amp', 'PAM75193', '@slot>PCH1:A:@slot02'],
+                'PAM75194': ['A', 'post-amp', 'PAM75194', '@slot>PCH1:A:@slot03'],
+                'PAM75195': ['A', 'post-amp', 'PAM75195', '@slot>PCH1:A:@slot05'],
+                'PAM75196': ['A', 'post-amp', 'PAM75196', '@slot>PCH1:A:@slot06'],
+                'SNP008': ['A', 'snap', 'SNP008', 'rack>N0:A:loc1'],
+                'SNP024': ['A', 'snap', 'SNP024', 'rack>N0:A:loc2'],
+                'SNP023': ['A', 'snap', 'SNP023', 'rack>N0:A:loc3'],
+                'NCM1': ['A', 'node-control-module', 'NCM1', '@rack>N0:A:@loc5'],
                 'FPS1': ['A', 'fem-power-supply', 'FPS1', '@rack>N0:A:@loc6']}
 
 fp = pc.init_script(sys.argv, log_file)
@@ -45,7 +38,7 @@ def add_connection(upart, urev, uport, dpart, drev, dport, cdate, ctime, do_it_t
     fp.write(pc.connect('add', up, down, cdate, ctime, do_it_this_time))
 
 
-cdate = '2018/05/20'
+cdate = '2018/07/18'
 ctime = '10:00'
 fp.write('add_station.py {} --date {} --time {}\n'.format(node, cdate, ctime))
 
