@@ -8,8 +8,6 @@ print("Set up a node")
 log_file = 'scripts.log'
 do_it_this_time = True
 
-node = 'ND0'
-
 parts_to_add = {'N0': ['A', 'node', 'N0', '@ground>ND0:A:@ground'],
                 'PCH1': ['A', 'pam-chassis', 'PCH1', '@rack>N0:A:@loc0'],
                 'PAM75191': ['A', 'post-amp', 'PAM75191', '@slot>PCH1:A:@slot07'],
@@ -39,8 +37,6 @@ def add_connection(upart, urev, uport, dpart, drev, dport, cdate, ctime, do_it_t
 
 
 cdate = '2018/07/18'
-ctime = '10:00'
-fp.write('add_station.py {} --date {} --time {}\n'.format(node, cdate, ctime))
 
 ctime = '11:00'
 for p, d in parts_to_add.iteritems():
