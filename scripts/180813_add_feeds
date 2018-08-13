@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+echo 180813_add_feeds >> scripts.log
+add_part.py -p FDV1 -r A -t feed -m MIT1 --date 2018/05/21 --time 11:00 --actually_do_it
+add_part.py -p FDV2 -r A -t feed -m MIT2 --date 2018/05/21 --time 11:00 --actually_do_it
+add_part.py -p FDV3 -r A -t feed -m MIT3 --date 2018/05/21 --time 11:00 --actually_do_it
+add_part.py -p FDV4 -r A -t feed -m CCL --date 2018/08/10 --time 11:00 --actually_do_it
+add_part.py -p FDV5 -r A -t feed -m CCL --date 2018/08/10 --time 11:00 --actually_do_it
+add_part.py -p FDV6 -r A -t feed -m CCL --date 2018/08/10 --time 11:00 --actually_do_it
+add_part.py -p FDV7 -r A -t feed -m CCL --date 2018/08/10 --time 11:00 --actually_do_it
+add_connection.py -u A0 --uprev H --upport focus -d FDV1 --dnrev A --dnport input --date 2018/05/21 --time 12:00 --actually_do_it
+add_connection.py -u A1 --uprev H --upport focus -d FDV2 --dnrev A --dnport input --date 2018/05/21 --time 12:00 --actually_do_it
+add_connection.py -u A12 --uprev H --upport focus -d FDV3 --dnrev A --dnport input --date 2018/05/21 --time 12:00 --actually_do_it
+add_connection.py -u A13 --uprev H --upport focus -d FDV4 --dnrev A --dnport input --date 2018/08/10 --time 12:00 --actually_do_it
+add_connection.py -u A14 --uprev H --upport focus -d FDV5 --dnrev A --dnport input --date 2018/08/10 --time 12:00 --actually_do_it
+add_connection.py -u A25 --uprev H --upport focus -d FDV6 --dnrev A --dnport input --date 2018/08/10 --time 12:00 --actually_do_it
+add_connection.py -u A26 --uprev H --upport focus -d FDV7 --dnrev A --dnport input --date 2018/08/10 --time 12:00 --actually_do_it
