@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+echo 180924_more_fixing >> scripts.log
+add_connection.py -u PAM75199 --uprev A --upport @slot -d PCH1 --dnrev A --dnport @slot01 --date 2018/09/19 --time 10:30 --actually_do_it
