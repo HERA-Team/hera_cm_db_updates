@@ -1,0 +1,43 @@
+#! /usr/bin/env python
+from __future__ import absolute_import, division, print_function
+import def_pc as pc
+import sys
+import six
+
+print("Updates antennas per googlesheet email")
+
+log_file = 'scripts.log'
+do_it_this_time = True
+
+stations_to_add = {'144': ['2018/08/30', 136],
+                   '176': ['2018/09/05', 137],
+                   '177': ['2018/07/25', 134],
+                   '196': ['2018/09/07', 138],
+                   '197': ['2018/08/30', 137],
+                   '215': ['2018/08/20', 135],
+                   '219': ['2018/07/11', 132],
+                   '234': ['2018/07/12', 133],
+                   '251': ['2018/07/09', 129],
+                   '267': ['2018/07/10', 130],
+                   '282': ['2018/07/10', 131]
+                   }
+
+fp = pc.init_script(sys.argv, log_file)
+
+
+def add_part(hpn, rev, htype, serno, cdate, ctime, do_it_this_time):
+    part = [hpn, rev, htype, serno]
+    fp.write(pc.part('add', part, cdate, ctime, do_it_this_time))
+
+
+ctime = '10:00'
+for s, cdate in six.iteritems(stations_to_add):
+    fp.write('add_station.py {} --date {} --time {}\n'.format('HH' + s, cdate[0], ctime))
+for a, cdate in six.iteritems(stations_to_add):
+    add_part('A' + a, 'H', 'antenna', 'S/N' + str(cdate[1]), cdate[0], ctime, do_it_this_time)
+
+ctime = '12:00'
+for s, cdate in six.iteritems(stations_to_add):
+    c = [['HH' + s, 'A', 'ground'], ['A' + s, 'H', 'ground']]
+    fp.write(pc.connect('add', c[0], c[1], cdate[0], ctime, do_it_this_time))
+fp.close()
