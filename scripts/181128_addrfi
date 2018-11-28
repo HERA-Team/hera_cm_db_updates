@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+echo 181128_addrfi >> scripts.log
+add_part.py -p TMPCBL -r A -t temp-cable -m x --date 2018/10/30 --time 10:20 --actually_do_it
+add_connection.py -u FDV5 --uprev A --upport terminals -d TMPCBL --dnrev A --dnport ea --date 2018/10/30 --time 10:30 --actually_do_it
+add_connection.py -u TMPCBL --uprev A --upport eb -d SNPA000024 --dnrev A --dnport e6 --date 2018/10/30 --time 10:30 --actually_do_it
+add_connection.py -u FDV5 --uprev A --upport terminals -d TMPCBL --dnrev A --dnport na --date 2018/10/30 --time 10:30 --actually_do_it
+add_connection.py -u TMPCBL --uprev A --upport nb -d SNPA000024 --dnrev A --dnport n4 --date 2018/10/30 --time 10:30 --actually_do_it
