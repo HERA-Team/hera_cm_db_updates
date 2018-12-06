@@ -1,0 +1,86 @@
+#! /usr/bin/env bash
+echo 181204_add_stations >> scripts.log
+add_station.py HH4 --date 2018/11/21 --time 10:00
+add_station.py HH5 --date 2018/11/21 --time 10:00
+add_station.py HH6 --date 2018/11/23 --time 10:00
+add_station.py HH7 --date 2018/11/26 --time 10:00
+add_station.py HH16 --date 2018/11/21 --time 10:00
+add_station.py HH17 --date 2018/11/23 --time 10:00
+add_station.py HH18 --date 2018/11/23 --time 10:00
+add_station.py HH19 --date 2018/11/22 --time 10:00
+add_station.py HH29 --date 2018/11/21 --time 10:00
+add_station.py HH30 --date 2018/11/21 --time 10:00
+add_station.py HH43 --date 2018/11/22 --time 10:00
+add_station.py HH44 --date 2018/11/22 --time 10:00
+add_station.py HH75 --date 2018/11/20 --time 10:00
+add_station.py HH92 --date 2018/11/20 --time 10:00
+add_station.py HH107 --date 2018/11/20 --time 10:00
+add_station.py HH108 --date 2018/11/20 --time 10:00
+add_station.py HH126 --date 2018/11/19 --time 10:00
+add_station.py HH145 --date 2018/11/19 --time 10:00
+add_station.py HH157 --date 2018/11/12 --time 10:00
+add_station.py HH158 --date 2018/11/12 --time 10:00
+add_station.py HH159 --date 2018/11/13 --time 10:00
+add_station.py HH160 --date 2018/11/13 --time 10:00
+add_station.py HH161 --date 2018/11/13 --time 10:00
+add_station.py HH162 --date 2018/11/14 --time 10:00
+add_station.py HH163 --date 2018/11/14 --time 10:00
+add_station.py HH164 --date 2018/11/15 --time 10:00
+add_station.py HH165 --date 2018/11/19 --time 10:00
+add_station.py HH206 --date 2018/11/16 --time 10:00
+add_part.py -p A4 -r H -t antenna -m S/NS/N159 --date 2018/11/21 --time 10:00 --actually_do_it
+add_part.py -p A5 -r H -t antenna -m S/NS/N160 --date 2018/11/21 --time 10:00 --actually_do_it
+add_part.py -p A6 -r H -t antenna -m S/NS/N161 --date 2018/11/23 --time 10:00 --actually_do_it
+add_part.py -p A7 -r H -t antenna -m S/NS/N162 --date 2018/11/26 --time 10:00 --actually_do_it
+add_part.py -p A16 -r H -t antenna -m S/NS/N163 --date 2018/11/21 --time 10:00 --actually_do_it
+add_part.py -p A17 -r H -t antenna -m S/NS/N164 --date 2018/11/23 --time 10:00 --actually_do_it
+add_part.py -p A18 -r H -t antenna -m S/NS/N165 --date 2018/11/23 --time 10:00 --actually_do_it
+add_part.py -p A19 -r H -t antenna -m S/NS/N166 --date 2018/11/22 --time 10:00 --actually_do_it
+add_part.py -p A29 -r H -t antenna -m S/NS/N167 --date 2018/11/21 --time 10:00 --actually_do_it
+add_part.py -p A30 -r H -t antenna -m S/NS/N168 --date 2018/11/21 --time 10:00 --actually_do_it
+add_part.py -p A43 -r H -t antenna -m S/NS/N169 --date 2018/11/22 --time 10:00 --actually_do_it
+add_part.py -p A44 -r H -t antenna -m S/NS/N170 --date 2018/11/22 --time 10:00 --actually_do_it
+add_part.py -p A75 -r H -t antenna -m S/NS/N171 --date 2018/11/20 --time 10:00 --actually_do_it
+add_part.py -p A92 -r H -t antenna -m S/NS/N172 --date 2018/11/20 --time 10:00 --actually_do_it
+add_part.py -p A107 -r H -t antenna -m S/NS/N173 --date 2018/11/20 --time 10:00 --actually_do_it
+add_part.py -p A108 -r H -t antenna -m S/NS/N174 --date 2018/11/20 --time 10:00 --actually_do_it
+add_part.py -p A126 -r H -t antenna -m S/NS/N175 --date 2018/11/19 --time 10:00 --actually_do_it
+add_part.py -p A145 -r H -t antenna -m S/NS/N176 --date 2018/11/19 --time 10:00 --actually_do_it
+add_part.py -p A157 -r H -t antenna -m S/NS/N177 --date 2018/11/12 --time 10:00 --actually_do_it
+add_part.py -p A158 -r H -t antenna -m S/NS/N178 --date 2018/11/12 --time 10:00 --actually_do_it
+add_part.py -p A159 -r H -t antenna -m S/NS/N179 --date 2018/11/13 --time 10:00 --actually_do_it
+add_part.py -p A160 -r H -t antenna -m S/NS/N180 --date 2018/11/13 --time 10:00 --actually_do_it
+add_part.py -p A161 -r H -t antenna -m S/NS/N181 --date 2018/11/13 --time 10:00 --actually_do_it
+add_part.py -p A162 -r H -t antenna -m S/NS/N182 --date 2018/11/14 --time 10:00 --actually_do_it
+add_part.py -p A163 -r H -t antenna -m S/NS/N183 --date 2018/11/14 --time 10:00 --actually_do_it
+add_part.py -p A164 -r H -t antenna -m S/NS/N184 --date 2018/11/15 --time 10:00 --actually_do_it
+add_part.py -p A165 -r H -t antenna -m S/NS/N185 --date 2018/11/19 --time 10:00 --actually_do_it
+add_part.py -p A206 -r H -t antenna -m S/NS/N206 --date 2018/11/16 --time 10:00 --actually_do_it
+add_connection.py -u HH4 --uprev A --upport ground -d A4 --dnrev H --dnport ground --date 2018/11/21 --time 12:00 --actually_do_it
+add_connection.py -u HH5 --uprev A --upport ground -d A5 --dnrev H --dnport ground --date 2018/11/21 --time 12:00 --actually_do_it
+add_connection.py -u HH6 --uprev A --upport ground -d A6 --dnrev H --dnport ground --date 2018/11/23 --time 12:00 --actually_do_it
+add_connection.py -u HH7 --uprev A --upport ground -d A7 --dnrev H --dnport ground --date 2018/11/26 --time 12:00 --actually_do_it
+add_connection.py -u HH16 --uprev A --upport ground -d A16 --dnrev H --dnport ground --date 2018/11/21 --time 12:00 --actually_do_it
+add_connection.py -u HH17 --uprev A --upport ground -d A17 --dnrev H --dnport ground --date 2018/11/23 --time 12:00 --actually_do_it
+add_connection.py -u HH18 --uprev A --upport ground -d A18 --dnrev H --dnport ground --date 2018/11/23 --time 12:00 --actually_do_it
+add_connection.py -u HH19 --uprev A --upport ground -d A19 --dnrev H --dnport ground --date 2018/11/22 --time 12:00 --actually_do_it
+add_connection.py -u HH29 --uprev A --upport ground -d A29 --dnrev H --dnport ground --date 2018/11/21 --time 12:00 --actually_do_it
+add_connection.py -u HH30 --uprev A --upport ground -d A30 --dnrev H --dnport ground --date 2018/11/21 --time 12:00 --actually_do_it
+add_connection.py -u HH43 --uprev A --upport ground -d A43 --dnrev H --dnport ground --date 2018/11/22 --time 12:00 --actually_do_it
+add_connection.py -u HH44 --uprev A --upport ground -d A44 --dnrev H --dnport ground --date 2018/11/22 --time 12:00 --actually_do_it
+add_connection.py -u HH75 --uprev A --upport ground -d A75 --dnrev H --dnport ground --date 2018/11/20 --time 12:00 --actually_do_it
+add_connection.py -u HH92 --uprev A --upport ground -d A92 --dnrev H --dnport ground --date 2018/11/20 --time 12:00 --actually_do_it
+add_connection.py -u HH107 --uprev A --upport ground -d A107 --dnrev H --dnport ground --date 2018/11/20 --time 12:00 --actually_do_it
+add_connection.py -u HH108 --uprev A --upport ground -d A108 --dnrev H --dnport ground --date 2018/11/20 --time 12:00 --actually_do_it
+add_connection.py -u HH126 --uprev A --upport ground -d A126 --dnrev H --dnport ground --date 2018/11/19 --time 12:00 --actually_do_it
+add_connection.py -u HH145 --uprev A --upport ground -d A145 --dnrev H --dnport ground --date 2018/11/19 --time 12:00 --actually_do_it
+add_connection.py -u HH157 --uprev A --upport ground -d A157 --dnrev H --dnport ground --date 2018/11/12 --time 12:00 --actually_do_it
+add_connection.py -u HH158 --uprev A --upport ground -d A158 --dnrev H --dnport ground --date 2018/11/12 --time 12:00 --actually_do_it
+add_connection.py -u HH159 --uprev A --upport ground -d A159 --dnrev H --dnport ground --date 2018/11/13 --time 12:00 --actually_do_it
+add_connection.py -u HH160 --uprev A --upport ground -d A160 --dnrev H --dnport ground --date 2018/11/13 --time 12:00 --actually_do_it
+add_connection.py -u HH161 --uprev A --upport ground -d A161 --dnrev H --dnport ground --date 2018/11/13 --time 12:00 --actually_do_it
+add_connection.py -u HH162 --uprev A --upport ground -d A162 --dnrev H --dnport ground --date 2018/11/14 --time 12:00 --actually_do_it
+add_connection.py -u HH163 --uprev A --upport ground -d A163 --dnrev H --dnport ground --date 2018/11/14 --time 12:00 --actually_do_it
+add_connection.py -u HH164 --uprev A --upport ground -d A164 --dnrev H --dnport ground --date 2018/11/15 --time 12:00 --actually_do_it
+add_connection.py -u HH165 --uprev A --upport ground -d A165 --dnrev H --dnport ground --date 2018/11/19 --time 12:00 --actually_do_it
+add_connection.py -u HH206 --uprev A --upport ground -d A206 --dnrev H --dnport ground --date 2018/11/16 --time 12:00 --actually_do_it
