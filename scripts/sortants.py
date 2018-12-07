@@ -5,7 +5,7 @@ from __future__ import print_function
 import argparse
 
 ap = argparse.ArgumentParser()
-ap.add_argument('filename', help="Filename to sort [installed.txt]", default='installed.txt')
+ap.add_argument('filename', nargs='?', help="Filename to sort [installed.txt]", default='installed.txt')
 ap.add_argument('--listed', help="Filename for formatted listed output [listants.txt]", default='listants.txt')
 ap.add_argument('--num_per_row', help="Number to print per row in listed output [15]", default=15)
 args = ap.parse_args()
