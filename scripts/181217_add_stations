@@ -1,0 +1,23 @@
+#! /usr/bin/env bash
+echo 181217_add_stations >> scripts.log
+add_station.py HH283 --sernum 195 --date 2018/12/11 --time 10:00
+add_station.py HH284 --sernum 196 --date 2018/12/11 --time 10:00
+add_station.py HH285 --sernum 197 --date 2018/12/11 --time 10:00
+add_station.py HH308 --sernum 198 --date 2018/12/12 --time 10:00
+add_station.py HH295 --sernum 199 --date 2018/12/13 --time 10:00
+add_station.py HH296 --sernum 200 --date 2018/12/13 --time 10:00
+add_station.py HH310 --sernum 201 --date 2018/12/13 --time 10:00
+add_part.py -p A283 -r H -t antenna -m S/N195 --date 2018/12/11 --time 10:00 --actually_do_it
+add_part.py -p A284 -r H -t antenna -m S/N196 --date 2018/12/11 --time 10:00 --actually_do_it
+add_part.py -p A285 -r H -t antenna -m S/N197 --date 2018/12/11 --time 10:00 --actually_do_it
+add_part.py -p A308 -r H -t antenna -m S/N198 --date 2018/12/12 --time 10:00 --actually_do_it
+add_part.py -p A295 -r H -t antenna -m S/N199 --date 2018/12/13 --time 10:00 --actually_do_it
+add_part.py -p A296 -r H -t antenna -m S/N200 --date 2018/12/13 --time 10:00 --actually_do_it
+add_part.py -p A310 -r H -t antenna -m S/N201 --date 2018/12/13 --time 10:00 --actually_do_it
+add_connection.py -u HH283 --uprev A --upport ground -d A283 --dnrev H --dnport ground --date 2018/12/11 --time 12:00 --actually_do_it
+add_connection.py -u HH284 --uprev A --upport ground -d A284 --dnrev H --dnport ground --date 2018/12/11 --time 12:00 --actually_do_it
+add_connection.py -u HH285 --uprev A --upport ground -d A285 --dnrev H --dnport ground --date 2018/12/11 --time 12:00 --actually_do_it
+add_connection.py -u HH308 --uprev A --upport ground -d A308 --dnrev H --dnport ground --date 2018/12/12 --time 12:00 --actually_do_it
+add_connection.py -u HH295 --uprev A --upport ground -d A295 --dnrev H --dnport ground --date 2018/12/13 --time 12:00 --actually_do_it
+add_connection.py -u HH296 --uprev A --upport ground -d A296 --dnrev H --dnport ground --date 2018/12/13 --time 12:00 --actually_do_it
+add_connection.py -u HH310 --uprev A --upport ground -d A310 --dnrev H --dnport ground --date 2018/12/13 --time 12:00 --actually_do_it
