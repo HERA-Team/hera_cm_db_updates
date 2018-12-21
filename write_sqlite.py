@@ -20,24 +20,26 @@ schema = ''
 creating_table = False
 with open('schema.sql', 'r') as f:
     for line in f:
-        if 'CREATE TABLE' in line:
+        modline = line.replace('public.', '')
+        if 'CREATE TABLE' in modline:
             creating_table = True
-            schema += line
+            schema += modline
             continue
         if creating_table:
-            if 'DEFAULT' in line:
-                dat = line.split()
+            if 'DEFAULT' in modline:
+                dat = modline.split()
                 schema += (dat[0] + ' ' + dat[1] + '\n')
             else:
-                schema += line
-            if ');' in line:
+                schema += modline
+            if ');' in modline:
                 creating_table = False
 
 inserts = ''
 with open('inserts.sql', 'r') as f:
     for line in f:
-        if 'INSERT' in line:
-            inserts += line
+        modline = line.replace('public.', '')
+        if 'INSERT' in modline:
+            inserts += modline
 
 with open('cm_hera.sql', 'w') as f:
     f.write(schema)
