@@ -18,3 +18,6 @@ On qmaster -- hera_cm_updates:
 
 On local machine -- hera_cm_updates:
 6 - `git pull origin master`
+7 - `cm_init.py` to make sure things are synced
+8 - `write_sqlite.py` (followed by the instructions it prints) to make the sqlite version
+9 - `git push origin master` to push the sqlite version back up to repo
