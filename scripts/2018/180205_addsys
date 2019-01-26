@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+echo 180205_addsys >> scripts.log
+add_part.py -p System -r general -t system -m SYS --date 2018/02/05 --time 10:00 --actually_do_it

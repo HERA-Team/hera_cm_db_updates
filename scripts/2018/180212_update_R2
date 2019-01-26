@@ -1,0 +1,34 @@
+#! /usr/bin/env bash
+echo 180212_update_R2 >> scripts.log
+stop_connection.py -u RI2A1E --uprev A --upport b -d RCVR5 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A1N --uprev A --upport b -d RCVR5 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A2E --uprev A --upport b -d RCVR6 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A2N --uprev A --upport b -d RCVR6 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A3E --uprev A --upport b -d RCVR82 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A3N --uprev A --upport b -d RCVR82 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A4E --uprev A --upport b -d RCVR70 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A4N --uprev A --upport b -d RCVR70 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A5E --uprev A --upport b -d RCVR87 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A5N --uprev A --upport b -d RCVR87 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A6E --uprev A --upport b -d RCVR100 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A6N --uprev A --upport b -d RCVR100 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A7E --uprev A --upport b -d RCVR11 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A7N --uprev A --upport b -d RCVR11 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A8E --uprev A --upport b -d RCVR13 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2A8N --uprev A --upport b -d RCVR13 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B1E --uprev A --upport b -d RCVR15 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B1N --uprev A --upport b -d RCVR15 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B2E --uprev A --upport b -d RCVR71 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B2N --uprev A --upport b -d RCVR71 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B3E --uprev A --upport b -d RCVR8 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B3N --uprev A --upport b -d RCVR8 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B4E --uprev A --upport b -d RCVR108 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B4N --uprev A --upport b -d RCVR108 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B5E --uprev A --upport b -d RCVR53 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B5N --uprev A --upport b -d RCVR53 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B6E --uprev A --upport b -d RCVR49 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B6N --uprev A --upport b -d RCVR49 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B7E --uprev A --upport b -d RCVR37 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B7N --uprev A --upport b -d RCVR37 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B8E --uprev A --upport b -d RCVR3 --dnrev A --dnport ea --date 2018/01/20 --time 10:00 --actually_do_it
+stop_connection.py -u RI2B8N --uprev A --upport b -d RCVR3 --dnrev A --dnport na --date 2018/01/20 --time 10:00 --actually_do_it

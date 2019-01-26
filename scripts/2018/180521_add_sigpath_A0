@@ -1,0 +1,13 @@
+#! /usr/bin/env bash
+echo 180521_add_sigpath_A0 >> scripts.log
+add_part.py -p FDV1 -r A -t feed -m MIT1 --date 2018/05/21 --time 11:00 --actually_do_it
+add_part.py -p FEM06 -r A -t front-end -m FEMxxx06 --date 2018/05/21 --time 11:00 --actually_do_it
+add_part.py -p CRF000 -r A -t cable-rfof -m bluewhite --date 2018/05/21 --time 11:00 --actually_do_it
+add_connection.py -u A0 --uprev H --upport focus -d FDV1 --dnrev A --dnport input --date 2018/05/21 --time 12:00 --actually_do_it
+add_connection.py -u FDV1 --uprev A --upport terminals -d FEM06 --dnrev A --dnport input --date 2018/05/21 --time 12:00 --actually_do_it
+add_connection.py -u FEM06 --uprev A --upport e -d CRF000 --dnrev A --dnport ea --date 2018/05/21 --time 12:00 --actually_do_it
+add_connection.py -u FEM06 --uprev A --upport n -d CRF000 --dnrev A --dnport na --date 2018/05/21 --time 12:00 --actually_do_it
+add_connection.py -u CRF000 --uprev A --upport eb -d PAM06 --dnrev A --dnport ea --date 2018/05/21 --time 12:00 --actually_do_it
+add_connection.py -u CRF000 --uprev A --upport nb -d PAM06 --dnrev A --dnport na --date 2018/05/21 --time 12:00 --actually_do_it
+add_connection.py -u PAM06 --uprev A --upport eb -d SNP1 --dnrev A --dnport e1 --date 2018/05/21 --time 12:00 --actually_do_it
+add_connection.py -u PAM06 --uprev A --upport nb -d SNP1 --dnrev A --dnport n1 --date 2018/05/21 --time 12:00 --actually_do_it
