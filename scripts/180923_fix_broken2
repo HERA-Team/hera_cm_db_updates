@@ -1,4 +1,0 @@
-#! /usr/bin/env bash
-echo 180923_fix_broken2 >> scripts.log
-stop_connection.py -u PAM75196 --uprev A --upport eb -d SNPA000022 --dnrev A --dnport e6 --date 2018/09/23 --time 10:31 --actually_do_it
-stop_connection.py -u PAM75199 --uprev A --upport nb -d SNPA000022 --dnrev A --dnport n0 --date 2018/09/23 --time 10:31 --actually_do_it

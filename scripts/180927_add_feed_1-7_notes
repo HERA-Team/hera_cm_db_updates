@@ -1,7 +1,0 @@
-add_part_info.py -p FDV1 -r A -l "N/A" -c "No alodine or gold plating, no bracing, only lower flange" --date Now
-add_part_info.py -p FDV2 -r A -l "N/A" -c "No alodine or gold plating, no bracing, only lower flange" --date Now
-add_part_info.py -p FDV3 -r A -l "N/A" -c "No alodine or gold plating, no bracing, only lower flange" --date Now
-add_part_info.py -p FDV4 -r A -l "N/A" -c "Has lower bracing, not upper" --date Now
-add_part_info.py -p FDV5 -r A -l "N/A" -c "Has lower bracing, not upper" --date Now
-add_part_info.py -p FDV6 -r A -l "N/A" -c "Has lower bracing, not upper" --date Now
-add_part_info.py -p FDV7 -r A -l "N/A" -c "Has lower bracing, not upper" --date Now
