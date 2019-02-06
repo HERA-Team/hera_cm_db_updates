@@ -1,4 +1,78 @@
 hpn,hpn_rev,comment,library_file,posting_gpstime
+FDV1,A,MIT version 1,,1232532018
+FDV1,A,No PVC stiffeners,,1232532138
+FDV1,A,No coating flange tip at brass feed pin location,,1232532258
+FDV1,A,Blade lower cutouts hand cut,,1232532378
+FDV2,A,"1mm lower flange, no upper flange",,1232532078
+FDV2,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV2,A,No coating at blade top connection,,1232532318
+FDV3,A,MIT version 1,,1232532018
+FDV3,A,No PVC stiffeners,,1232532138
+FDV3,A,No coating flange tip at brass feed pin location,,1232532258
+FDV3,A,Blade lower cutouts hand cut,,1232532378
+FDV4,A,2mm lower and upper flange,,1232532078
+FDV4,A,PVC frame plate and braces 15mm thick,,1232532198
+FDV4,A,No coating at blade top connection,,1232532318
+FDV5,A,2mm lower and upper flange,,1232532078
+FDV5,A,PVC frame plate and braces 15mm thick,,1232532198
+FDV5,A,No coating at blade top connection,,1232532318
+FDV6,A,2mm lower and upper flange,,1232532078
+FDV6,A,PVC frame plate and braces 15mm thick,,1232532198
+FDV6,A,No coating at blade top connection,,1232532318
+FDV7,A,2mm lower and upper flange,,1232532078
+FDV7,A,PVC frame plate and braces 15mm thick,,1232532198
+FDV7,A,No coating at blade top connection,,1232532318
+FDV8,A,2mm lower and upper flange,,1232532078
+FDV8,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV8,A,Penetrix A at blade top connection,,1232532318
+FDV9,A,2mm lower and upper flange,,1232532078
+FDV9,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV9,A,Penetrix A at blade top connection,,1232532318
+FDV10,A,2mm lower and upper flange,,1232532078
+FDV10,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV10,A,Penetrix A at blade top connection,,1232532318
+FDV11,A,2mm lower and upper flange,,1232532078
+FDV11,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV11,A,Penetrix A at blade top connection,,1232532318
+FDV12,A,2mm lower and upper flange,,1232532078
+FDV12,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV12,A,Penetrix A at blade top connection,,1232532318
+FDV13,A,2mm lower and upper flange,,1232532078
+FDV13,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV13,A,Penetrix A at blade top connection,,1232532318
+FDV14,A,2mm lower and upper flange,,1232532078
+FDV14,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV14,A,Penetrix A at blade top connection,,1232532318
+FDV15,A,2mm lower and upper flange,,1232532078
+FDV15,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV15,A,Penetrix A at blade top connection,,1232532318
+FDV16,A,2mm lower and upper flange,,1232532078
+FDV16,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV16,A,Penetrix A at blade top connection,,1232532318
+FDV17,A,2mm lower and upper flange,,1232532078
+FDV17,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV17,A,Penetrix A at blade top connection,,1232532318
+FDV18,A,2mm lower and upper flange,,1232532078
+FDV18,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV18,A,Penetrix A at blade top connection,,1232532318
+FDV19,A,2mm lower and upper flange,,1232532078
+FDV19,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV19,A,Penetrix A at blade top connection,,1232532318
+FDV20,A,MIT/SA version,,1232532018
+FDV20,A,2mm lower and upper flange,,1232532078
+FDV20,A,PVC stiffeners upper and lower,,1232532138
+FDV20,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV20,A,Penetrox A at brass feed pin location,,1232532258
+FDV20,A,Penetrix A at blade top connection,,1232532318
+FDV21,A,MIT/SA version,,1232532018
+FDV21,A,2mm lower and upper flange,,1232532078
+FDV21,A,PVC stiffeners upper and lower,,1232532138
+FDV21,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV21,A,Penetrox A at brass feed pin location,,1232532258
+FDV21,A,Penetrix A at blade top connection,,1232532318
+FDV22,A,MIT/SA version,,1232532018
+FDV22,A,2mm lower and upper flange,,1232532078
+FDV22,A,PVC stiffeners upper and lower,,1232532138
 PAM75134,B,Was on HH85 but failed.,,1188579822
 FEM75029,A,Was on HH71 but failed.,,1188579822
 FEM75012,A,Was on HH55 but failed.,,1188665302
@@ -27,6 +101,7 @@ RO4B2E,A,Has 9 dB pad on rcvr output,,1191791638
 RO4B2N,A,Has 9 dB pad on rcvr output,,1191791639
 RO4B3E,A,Has 9 dB pad on rcvr output,,1191791641
 RO4B3N,A,Has 9 dB pad on rcvr output,,1191791643
+FDV22,A,PVC frame plate and braces 5/8in thick,,1232532198
 RO4B4E,A,Has 9 dB pad on rcvr output,,1191791644
 RO4B4N,A,Has 9 dB pad on rcvr output,,1191791646
 RO4B5E,A,Has 9 dB pad on rcvr output,,1191791647
@@ -73,3 +148,81 @@ FDV4,A,"Has lower bracing, not upper",N/A,1222126928
 FDV5,A,"Has lower bracing, not upper",N/A,1222126930
 FDV6,A,"Has lower bracing, not upper",N/A,1222126932
 FDV7,A,"Has lower bracing, not upper",N/A,1222126933
+FDV1,A,"1mm lower flange, no upper flange",,1232532078
+FDV1,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV1,A,No coating at blade top connection,,1232532318
+FDV2,A,MIT version 1,,1232532018
+FDV2,A,No PVC stiffeners,,1232532138
+FDV2,A,No coating flange tip at brass feed pin location,,1232532258
+FDV2,A,Blade lower cutouts hand cut,,1232532378
+FDV3,A,"1mm lower flange, no upper flange",,1232532078
+FDV3,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV3,A,No coating at blade top connection,,1232532318
+FDV4,A,UK version 1,,1232532018
+FDV4,A,No PVC stiffeners,,1232532138
+FDV4,A,Surtec 650 flange tip at brass field pin location,,1232532258
+FDV5,A,UK version 1,,1232532018
+FDV5,A,No PVC stiffeners,,1232532138
+FDV5,A,Surtec 650 flange tip at brass field pin location,,1232532258
+FDV6,A,UK version 1,,1232532018
+FDV6,A,No PVC stiffeners,,1232532138
+FDV6,A,Surtec 650 flange tip at brass field pin location,,1232532258
+FDV7,A,UK version 1,,1232532018
+FDV7,A,No PVC stiffeners,,1232532138
+FDV7,A,Surtec 650 flange tip at brass field pin location,,1232532258
+FDV8,A,MIT/SA version,,1232532018
+FDV8,A,PVC stiffeners upper and lower,,1232532138
+FDV8,A,Penetrox A at brass feed pin location,,1232532258
+FDV9,A,MIT/SA version,,1232532018
+FDV9,A,PVC stiffeners upper and lower,,1232532138
+FDV9,A,Penetrox A at brass feed pin location,,1232532258
+FDV10,A,MIT/SA version,,1232532018
+FDV10,A,PVC stiffeners upper and lower,,1232532138
+FDV10,A,Penetrox A at brass feed pin location,,1232532258
+FDV11,A,MIT/SA version,,1232532018
+FDV11,A,PVC stiffeners upper and lower,,1232532138
+FDV11,A,Penetrox A at brass feed pin location,,1232532258
+FDV12,A,MIT/SA version,,1232532018
+FDV12,A,PVC stiffeners upper and lower,,1232532138
+FDV12,A,Penetrox A at brass feed pin location,,1232532258
+FDV13,A,MIT/SA version,,1232532018
+FDV13,A,PVC stiffeners upper and lower,,1232532138
+FDV13,A,Penetrox A at brass feed pin location,,1232532258
+FDV14,A,MIT/SA version,,1232532018
+FDV14,A,PVC stiffeners upper and lower,,1232532138
+FDV14,A,Penetrox A at brass feed pin location,,1232532258
+FDV15,A,MIT/SA version,,1232532018
+FDV15,A,PVC stiffeners upper and lower,,1232532138
+FDV15,A,Penetrox A at brass feed pin location,,1232532258
+FDV16,A,MIT/SA version,,1232532018
+FDV16,A,PVC stiffeners upper and lower,,1232532138
+FDV16,A,Penetrox A at brass feed pin location,,1232532258
+FDV17,A,MIT/SA version,,1232532018
+FDV17,A,PVC stiffeners upper and lower,,1232532138
+FDV17,A,Penetrox A at brass feed pin location,,1232532258
+FDV18,A,MIT/SA version,,1232532018
+FDV18,A,PVC stiffeners upper and lower,,1232532138
+FDV18,A,Penetrox A at brass feed pin location,,1232532258
+FDV19,A,MIT/SA version,,1232532018
+FDV19,A,PVC stiffeners upper and lower,,1232532138
+FDV19,A,Penetrox A at brass feed pin location,,1232532258
+FDV22,A,Penetrox A at brass feed pin location,,1232532258
+FDV22,A,Penetrix A at blade top connection,,1232532318
+FDV23,A,MIT/SA version,,1232532018
+FDV23,A,2mm lower and upper flange,,1232532078
+FDV23,A,PVC stiffeners upper and lower,,1232532138
+FDV23,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV23,A,Penetrox A at brass feed pin location,,1232532258
+FDV23,A,Penetrix A at blade top connection,,1232532318
+FDV24,A,MIT/SA version,,1232532018
+FDV24,A,2mm lower and upper flange,,1232532078
+FDV24,A,PVC stiffeners upper and lower,,1232532138
+FDV24,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV24,A,Penetrox A at brass feed pin location,,1232532258
+FDV24,A,Penetrix A at blade top connection,,1232532318
+FDV25,A,MIT/SA version,,1232532018
+FDV25,A,2mm lower and upper flange,,1232532078
+FDV25,A,PVC stiffeners upper and lower,,1232532138
+FDV25,A,PVC frame plate and braces 5/8in thick,,1232532198
+FDV25,A,Penetrox A at brass feed pin location,,1232532258
+FDV25,A,Penetrix A at blade top connection,,1232532318
