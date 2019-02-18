@@ -1,0 +1,68 @@
+#! /usr/bin/env bash
+echo 190218_update >> scripts.log
+add_part.py -p FEM016 -r A -t front-end -m FEM016 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p FEM017 -r A -t front-end -m FEM017 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p FEM018 -r A -t front-end -m FEM018 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p FEM019 -r A -t front-end -m FEM019 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p FEM020 -r A -t front-end -m FEM020 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p FEM021 -r A -t front-end -m FEM021 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p FEM022 -r A -t front-end -m FEM022 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p FEM023 -r A -t front-end -m FEM023 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p FEM024 -r A -t front-end -m FEM024 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p FEM025 -r A -t front-end -m FEM025 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p FEM026 -r A -t front-end -m FEM026 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p FEM027 -r A -t front-end -m FEM027 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PAM022 -r A -t post-amp -m PAM022 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PAM023 -r A -t post-amp -m PAM023 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PAM024 -r A -t post-amp -m PAM024 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PAM025 -r A -t post-amp -m PAM025 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PAM026 -r A -t post-amp -m PAM026 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PAM027 -r A -t post-amp -m PAM027 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PAM028 -r A -t post-amp -m PAM028 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PAM029 -r A -t post-amp -m PAM029 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PAM030 -r A -t post-amp -m PAM030 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PAM031 -r A -t post-amp -m PAM031 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PAM032 -r A -t post-amp -m PAM032 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PAM033 -r A -t post-amp -m PAM033 --date 2019/02/16 --time 11:00 --actually_do_it
+add_part.py -p PCH010 -r A -t pam-chassis -m PCH010 --date 2019/02/16 --time 11:00 --actually_do_it
+add_connection.py -u PAM022 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot01 --date 2019/02/16 --time 11:10 --actually_do_it
+add_connection.py -u PAM023 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot02 --date 2019/02/16 --time 11:10 --actually_do_it
+add_connection.py -u PAM024 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot03 --date 2019/02/16 --time 11:10 --actually_do_it
+add_connection.py -u PAM025 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot04 --date 2019/02/16 --time 11:10 --actually_do_it
+add_connection.py -u PAM026 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot05 --date 2019/02/16 --time 11:10 --actually_do_it
+add_connection.py -u PAM027 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot06 --date 2019/02/16 --time 11:10 --actually_do_it
+add_connection.py -u PAM028 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot07 --date 2019/02/16 --time 11:10 --actually_do_it
+add_connection.py -u PAM029 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot08 --date 2019/02/16 --time 11:10 --actually_do_it
+add_connection.py -u PAM030 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot09 --date 2019/02/16 --time 11:10 --actually_do_it
+add_connection.py -u PAM031 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot10 --date 2019/02/16 --time 11:10 --actually_do_it
+add_connection.py -u PAM032 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot11 --date 2019/02/16 --time 11:10 --actually_do_it
+add_connection.py -u PAM033 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot12 --date 2019/02/16 --time 11:10 --actually_do_it
+add_connection.py -u PCH010 --uprev A --upport @rack -d N0 --dnrev A --dnport @loc0 --date 2019/02/16 --time 11:05 --actually_do_it
+add_connection.py -u FDV1 --uprev A --upport terminals -d FEM016 --dnrev A --dnport input --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u FDV2 --uprev A --upport terminals -d FEM018 --dnrev A --dnport input --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u FDV4 --uprev A --upport terminals -d FEM021 --dnrev A --dnport input --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u FDV6 --uprev A --upport terminals -d FEM025 --dnrev A --dnport input --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u FEM016 --uprev A --upport e -d CRF000 --dnrev A --dnport ea --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u FEM016 --uprev A --upport n -d CRF000 --dnrev A --dnport na --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u FEM018 --uprev A --upport e -d CRF001 --dnrev A --dnport ea --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u FEM018 --uprev A --upport n -d CRF001 --dnrev A --dnport na --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u FEM021 --uprev A --upport e -d CRF013 --dnrev A --dnport ea --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u FEM021 --uprev A --upport n -d CRF013 --dnrev A --dnport na --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u FEM025 --uprev A --upport e -d CRF025 --dnrev A --dnport ea --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u FEM025 --uprev A --upport n -d CRF025 --dnrev A --dnport na --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u CRF000 --uprev A --upport eb -d PAM022 --dnrev A --dnport ea --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u CRF000 --uprev A --upport nb -d PAM022 --dnrev A --dnport na --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u CRF001 --uprev A --upport eb -d PAM024 --dnrev A --dnport ea --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u CRF001 --uprev A --upport nb -d PAM024 --dnrev A --dnport na --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u CRF013 --uprev A --upport eb -d PAM027 --dnrev A --dnport ea --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u CRF013 --uprev A --upport nb -d PAM027 --dnrev A --dnport na --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u CRF025 --uprev A --upport eb -d PAM031 --dnrev A --dnport ea --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u CRF025 --uprev A --upport nb -d PAM031 --dnrev A --dnport na --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u PAM022 --uprev A --upport eb -d SNPC000057 --dnrev A --dnport e2 --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u PAM022 --uprev A --upport nb -d SNPC000057 --dnrev A --dnport n0 --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u PAM024 --uprev A --upport eb -d SNPC000057 --dnrev A --dnport e10 --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u PAM024 --uprev A --upport nb -d SNPC000057 --dnrev A --dnport n8 --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u PAM027 --uprev A --upport eb -d SNPA000008 --dnrev A --dnport e10 --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u PAM027 --uprev A --upport nb -d SNPA000008 --dnrev A --dnport n8 --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u PAM031 --uprev A --upport eb -d SNPA000020 --dnrev A --dnport e2 --date 2019/02/16 --time 11:30 --actually_do_it
+add_connection.py -u PAM031 --uprev A --upport nb -d SNPA000020 --dnrev A --dnport n0 --date 2019/02/16 --time 11:30 --actually_do_it
