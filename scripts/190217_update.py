@@ -91,16 +91,16 @@ connections_to_add = [[['SNPC000057', 'A', 'rack'], ['N0', 'A', 'loc0'], '2019/0
 fp = pc.init_script(sys.argv, log_file)
 
 for c in connections_to_stop:
-    fp.write(pc.connect('stop', c[0], c[1], c[2], c[3], True))
+    fp.write(pc.connect('stop', c[0], c[1], c[2], c[3], do_it_this_time))
 
 for p in parts_to_stop:
-    fp.write(pc.part('stop', p[0], p[1], p[2], True))
+    fp.write(pc.part('stop', p[0], p[1], p[2], do_it_this_time))
 
 for p in parts_to_add:
-    fp.write(pc.part('add', p[0], p[1], p[2], True))
+    fp.write(pc.part('add', p[0], p[1], p[2], do_it_this_time))
 
 for c in connections_to_add:
-    fp.write(pc.connect('add', c[0], c[1], c[2], c[3], True))
+    fp.write(pc.connect('add', c[0], c[1], c[2], c[3], do_it_this_time))
 
 
 fp.close()
