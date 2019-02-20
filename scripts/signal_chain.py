@@ -91,3 +91,6 @@ class Chain:
 
         print("\n\n{} written.".format(self.script_file))
         print("If OK, 'chmod u+x {}' and run that script.".format(self.script_file))
+
+    def add_node(self):
+        print("This will add the @ parts of PCH, PAM, SNP (and N)")
