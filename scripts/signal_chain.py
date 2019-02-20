@@ -60,21 +60,25 @@ class Chain:
         up = [part['ant'][0], part['ant'][1], 'focus']
         dn = [part['feed'][0], part['feed'][1], 'input']
         connections_to_add.append([up, dn, cdate, cotime])
+
         up = [part['feed'][0], part['feed'][1], 'terminals']
         dn = [part['fem'][0], part['fem'][1], 'input']
         connections_to_add.append([up, dn, cdate, cotime])
+
         up = [part['fem'][0], part['fem'][1], 'e']
         dn = [part['cable'][0], part['cable'][1], 'ea']
         connections_to_add.append([up, dn, cdate, cotime])
         up = [part['fem'][0], part['fem'][1], 'n']
         dn = [part['cable'][0], part['cable'][1], 'na']
         connections_to_add.append([up, dn, cdate, cotime])
+
         up = [part['cable'][0], part['cable'][1], 'eb']
         dn = [part['pam'][0], part['pam'][1], 'ea']
         connections_to_add.append([up, dn, cdate, cotime])
         up = [part['cable'][0], part['cable'][1], 'nb']
         dn = [part['pam'][0], part['pam'][1], 'na']
         connections_to_add.append([up, dn, cdate, cotime])
+
         up = [part['pam'][0], part['pam'][1], 'eb']
         dn = [part['snap'][0], part['snap'][1], snap_port['e']]
         connections_to_add.append([up, dn, cdate, cotime])
@@ -89,8 +93,9 @@ class Chain:
             if not exco:
                 self.fp.write(pc.connect('add', c[0], c[1], c[2], c[3], do_it_this_time))
 
-        print("\n\n{} written.".format(self.script_file))
+        print("===>{} written.".format(self.script_file))
         print("If OK, 'chmod u+x {}' and run that script.".format(self.script_file))
+        print("-------------")
 
     def add_node(self):
         print("This will add the @ parts of PCH, PAM, SNP (and N)")
