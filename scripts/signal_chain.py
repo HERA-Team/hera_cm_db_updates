@@ -1,15 +1,42 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function
-import def_pc as pc
 import sys
 from hera_mc import cm_handling, cm_health
 
 
+def part(add_or_stop, p, cdate, ctime, do_it):
+    s = '{}_part.py -p {} -r {} '.format(
+        add_or_stop, p[0], p[1])
+    if add_or_stop == 'add':
+        s += '-t {} -m {} '.format(p[2], p[3])
+    s += '--date {} --time {}'.format(cdate, ctime)
+    if do_it:
+        s += ' --actually_do_it'
+    s += '\n'
+    return s
+
+
+def connect(add_or_stop, up, dn, cdate, ctime, do_it):
+    s = '{}_connection.py -u {} --uprev {} --upport {} -d {} --dnrev {} --dnport {} --date {} --time {}'.format(
+        add_or_stop, up[0], up[1], up[2], dn[0], dn[1], dn[2], cdate, ctime)
+    if do_it:
+        s += ' --actually_do_it'
+    s += '\n'
+    return s
+
+
 class Chain:
-    def __init__(self, script_file, log_file='scripts.log'):
-        self.script_file = script_file
-        self.fp = pc.init_script([script_file], log_file)
-        print("Opening script file:  {}".format(script_file))
+    def __init__(self, exefile, log_file='scripts.log'):
+        self.init_script(exefile, log_file)
+        print('-----------------')
+
+    def init_script(self, exename, log_file):
+        self.output_script = exename.strip('.').strip('/').split('.')[0]
+        print("starting {}".format(self.output_script))
+        self.fp = open(self.output_script, 'w')
+        s = '#! /usr/bin/env bash\n'
+        s += 'echo {} >> {}\n'.format(self.output_script, log_file)
+        self.fp.write(s)
 
     def add(self, ant, feed, fem, pam, snap, snap_input, cdate, ctime=['10:00', '11:00'], do_it_this_time=True):
         """
@@ -50,7 +77,7 @@ class Chain:
         for p in part:
             x = handle.get_part_dossier(part[p][0], part[p][1], 'now')
             if not len(x):
-                self.fp.write(pc.part('add', [part[p][0], part[p][1], part[p][2], part[p][0]],
+                self.fp.write(part('add', [part[p][0], part[p][1], part[p][2], part[p][0]],
                               cdate, patime, do_it_this_time))
             else:
                 print("Part {} is already added".format(part[p]))
@@ -91,11 +118,12 @@ class Chain:
             v = [c[0][0], c[0][1], c[0][2], c[1][0], c[1][1], c[1][2]]
             exco = health.check_for_existing_connection(v, cdate, display_results=True)
             if not exco:
-                self.fp.write(pc.connect('add', c[0], c[1], c[2], c[3], do_it_this_time))
+                self.fp.write(connect('add', c[0], c[1], c[2], c[3], do_it_this_time))
 
-        print("===>{} written.".format(self.script_file))
-        print("If OK, 'chmod u+x {}' and run that script.".format(self.script_file))
-        print("-------------")
+        print('\n')
+
+    def done(self):
+        print("=======>If OK, 'chmod u+x {}' and run that script.\n".format(self.output_script))
 
     def add_node(self):
         print("This will add the @ parts of PCH, PAM, SNP (and N)")

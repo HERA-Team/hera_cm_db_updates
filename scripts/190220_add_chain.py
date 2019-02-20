@@ -13,3 +13,4 @@ hera.add(ant=23, feed=11, fem=23, pam=29, snap='A24', snap_input='e6,n4', cdate=
 hera.add(ant=24, feed=12, fem=24, pam=30, snap='A24', snap_input='e10,n8', cdate='2019/02/20')
 hera.add(ant=26, feed=7, fem=26, pam=32, snap='A20', snap_input='e6,n4', cdate='2019/02/20')
 hera.add(ant=39, feed=14, fem=27, pam=33, snap='A20', snap_input='e10,n8', cdate='2019/02/20')
+hera.done()
