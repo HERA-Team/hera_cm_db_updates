@@ -40,7 +40,7 @@ class Chain:
         self.fp.write(s)
         print('-----------------\n')
 
-    def add(self, ant, feed, fem, pam, snap, snap_input, cdate, ctime=['10:00', '11:00'], do_it_this_time=True):
+    def add(self, ant, feed, fem, pam, snap, snap_input, cdate, ctime=['10:00', '11:00'], do_it=True):
         """
         Parameters:
         -----------
@@ -54,16 +54,16 @@ class Chain:
         ctime:  time of mods <'10:00', '11:00'>
                 ['HH:MM', 'HH:MM'] for part at [0], connection at [1]
                 'HH:MM' for part/connection at 'HH:MM'
-        do_it_this_time:  flag to set the 'actually_do_it' flag <True>
+        do_it:  flag to set the 'actually_do_it' flag <True>
         """
         handle = cm_handling.Handling()
         health = cm_health.Connections()
         if isinstance(ctime, list):
-            patime = ctime[0]
-            cotime = ctime[1]
+            partadd_time = ctime[0]
+            connadd_time = ctime[1]
         else:
-            patime = ctime
-            cotime = ctime
+            partadd_time = ctime
+            connadd_time = ctime
 
         # Set up parts
         part = {}
@@ -80,7 +80,7 @@ class Chain:
             x = handle.get_part_dossier(part[p][0], part[p][1], 'now')
             if not len(x):
                 self.fp.write(part('add', [part[p][0], part[p][1], part[p][2], part[p][0]],
-                              cdate, patime, do_it_this_time))
+                              cdate, partadd_time, do_it))
             else:
                 print("Part {} is already added".format(part[p]))
 
@@ -88,39 +88,39 @@ class Chain:
         connections_to_add = []
         up = [part['ant'][0], part['ant'][1], 'focus']
         dn = [part['feed'][0], part['feed'][1], 'input']
-        connections_to_add.append([up, dn, cdate, cotime])
+        connections_to_add.append([up, dn, cdate, connadd_time])
 
         up = [part['feed'][0], part['feed'][1], 'terminals']
         dn = [part['fem'][0], part['fem'][1], 'input']
-        connections_to_add.append([up, dn, cdate, cotime])
+        connections_to_add.append([up, dn, cdate, connadd_time])
 
         up = [part['fem'][0], part['fem'][1], 'e']
         dn = [part['cable'][0], part['cable'][1], 'ea']
-        connections_to_add.append([up, dn, cdate, cotime])
+        connections_to_add.append([up, dn, cdate, connadd_time])
         up = [part['fem'][0], part['fem'][1], 'n']
         dn = [part['cable'][0], part['cable'][1], 'na']
-        connections_to_add.append([up, dn, cdate, cotime])
+        connections_to_add.append([up, dn, cdate, connadd_time])
 
         up = [part['cable'][0], part['cable'][1], 'eb']
         dn = [part['pam'][0], part['pam'][1], 'ea']
-        connections_to_add.append([up, dn, cdate, cotime])
+        connections_to_add.append([up, dn, cdate, connadd_time])
         up = [part['cable'][0], part['cable'][1], 'nb']
         dn = [part['pam'][0], part['pam'][1], 'na']
-        connections_to_add.append([up, dn, cdate, cotime])
+        connections_to_add.append([up, dn, cdate, connadd_time])
 
         up = [part['pam'][0], part['pam'][1], 'eb']
         dn = [part['snap'][0], part['snap'][1], snap_port['e']]
-        connections_to_add.append([up, dn, cdate, cotime])
+        connections_to_add.append([up, dn, cdate, connadd_time])
         up = [part['pam'][0], part['pam'][1], 'nb']
         dn = [part['snap'][0], part['snap'][1], snap_port['n']]
-        connections_to_add.append([up, dn, cdate, cotime])
+        connections_to_add.append([up, dn, cdate, connadd_time])
 
         # Check for connections to add
-        for c in connections_to_add:
-            v = [c[0][0], c[0][1], c[0][2], c[1][0], c[1][1], c[1][2]]
-            exco = health.check_for_existing_connection(v, cdate, display_results=True)
+        for up, down, codate, cotime in connections_to_add:
+            v = up + down
+            exco = health.check_for_existing_connection(v, codate, display_results=True)
             if not exco:
-                self.fp.write(connect('add', c[0], c[1], c[2], c[3], do_it_this_time))
+                self.fp.write(connect('add', up, down, codate, cotime, do_it))
 
         print('\n')
 
