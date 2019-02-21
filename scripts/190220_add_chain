@@ -1,2 +1,64 @@
 #! /usr/bin/env bash
 echo 190220_add_chain >> scripts.log
+add_part.py -p CRF002 -r A -t cable-rfof -m CRF002 --date 2019/02/20 --time 10:00 --actually_do_it
+add_connection.py -u FDV8 --uprev A --upport terminals -d FEM017 --dnrev A --dnport input --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM017 --uprev A --upport e -d CRF002 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM017 --uprev A --upport n -d CRF002 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF002 --uprev A --upport eb -d PAM023 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF002 --uprev A --upport nb -d PAM023 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM023 --uprev A --upport eb -d SNPC000057 --dnrev A --dnport e6 --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM023 --uprev A --upport nb -d SNPC000057 --dnrev A --dnport n4 --date 2019/02/20 --time 11:00 --actually_do_it
+add_part.py -p CRF011 -r A -t cable-rfof -m CRF011 --date 2019/02/20 --time 10:00 --actually_do_it
+add_connection.py -u FDV9 --uprev A --upport terminals -d FEM019 --dnrev A --dnport input --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM019 --uprev A --upport e -d CRF011 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM019 --uprev A --upport n -d CRF011 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF011 --uprev A --upport eb -d PAM025 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF011 --uprev A --upport nb -d PAM025 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM025 --uprev A --upport eb -d SNPA000008 --dnrev A --dnport e2 --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM025 --uprev A --upport nb -d SNPA000008 --dnrev A --dnport n0 --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FDV3 --uprev A --upport terminals -d FEM020 --dnrev A --dnport input --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM020 --uprev A --upport e -d CRF012 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM020 --uprev A --upport n -d CRF012 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF012 --uprev A --upport eb -d PAM026 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF012 --uprev A --upport nb -d PAM026 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM026 --uprev A --upport eb -d SNPA000008 --dnrev A --dnport e6 --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM026 --uprev A --upport nb -d SNPA000008 --dnrev A --dnport n4 --date 2019/02/20 --time 11:00 --actually_do_it
+add_part.py -p CRF014 -r A -t cable-rfof -m CRF014 --date 2019/02/20 --time 10:00 --actually_do_it
+add_connection.py -u FDV5 --uprev A --upport terminals -d FEM022 --dnrev A --dnport input --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM022 --uprev A --upport e -d CRF014 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM022 --uprev A --upport n -d CRF014 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF014 --uprev A --upport eb -d PAM028 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF014 --uprev A --upport nb -d PAM028 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM028 --uprev A --upport eb -d SNPA000024 --dnrev A --dnport e2 --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM028 --uprev A --upport nb -d SNPA000024 --dnrev A --dnport n0 --date 2019/02/20 --time 11:00 --actually_do_it
+add_part.py -p CRF023 -r A -t cable-rfof -m CRF023 --date 2019/02/20 --time 10:00 --actually_do_it
+add_connection.py -u FDV11 --uprev A --upport terminals -d FEM023 --dnrev A --dnport input --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM023 --uprev A --upport e -d CRF023 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM023 --uprev A --upport n -d CRF023 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF023 --uprev A --upport eb -d PAM029 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF023 --uprev A --upport nb -d PAM029 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM029 --uprev A --upport eb -d SNPA000024 --dnrev A --dnport e6 --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM029 --uprev A --upport nb -d SNPA000024 --dnrev A --dnport n4 --date 2019/02/20 --time 11:00 --actually_do_it
+add_part.py -p CRF024 -r A -t cable-rfof -m CRF024 --date 2019/02/20 --time 10:00 --actually_do_it
+add_connection.py -u FDV12 --uprev A --upport terminals -d FEM024 --dnrev A --dnport input --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM024 --uprev A --upport e -d CRF024 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM024 --uprev A --upport n -d CRF024 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF024 --uprev A --upport eb -d PAM030 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF024 --uprev A --upport nb -d PAM030 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM030 --uprev A --upport eb -d SNPA000024 --dnrev A --dnport e10 --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM030 --uprev A --upport nb -d SNPA000024 --dnrev A --dnport n8 --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FDV7 --uprev A --upport terminals -d FEM026 --dnrev A --dnport input --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM026 --uprev A --upport e -d CRF026 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM026 --uprev A --upport n -d CRF026 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF026 --uprev A --upport eb -d PAM032 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF026 --uprev A --upport nb -d PAM032 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM032 --uprev A --upport eb -d SNPA000020 --dnrev A --dnport e6 --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM032 --uprev A --upport nb -d SNPA000020 --dnrev A --dnport n4 --date 2019/02/20 --time 11:00 --actually_do_it
+add_part.py -p CRF039 -r A -t cable-rfof -m CRF039 --date 2019/02/20 --time 10:00 --actually_do_it
+add_connection.py -u FDV14 --uprev A --upport terminals -d FEM027 --dnrev A --dnport input --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM027 --uprev A --upport e -d CRF039 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u FEM027 --uprev A --upport n -d CRF039 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF039 --uprev A --upport eb -d PAM033 --dnrev A --dnport ea --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u CRF039 --uprev A --upport nb -d PAM033 --dnrev A --dnport na --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM033 --uprev A --upport eb -d SNPA000020 --dnrev A --dnport e10 --date 2019/02/20 --time 11:00 --actually_do_it
+add_connection.py -u PAM033 --uprev A --upport nb -d SNPA000020 --dnrev A --dnport n8 --date 2019/02/20 --time 11:00 --actually_do_it
