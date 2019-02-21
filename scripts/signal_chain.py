@@ -6,7 +6,7 @@ from hera_mc import cm_handling, cm_health
 import six
 
 
-def part(add_or_stop, p, cdate, ctime, do_it):
+def mpart(add_or_stop, p, cdate, ctime, do_it):
     s = '{}_part.py -p {} -r {} '.format(
         add_or_stop, p[0], p[1])
     if add_or_stop == 'add':
@@ -18,7 +18,7 @@ def part(add_or_stop, p, cdate, ctime, do_it):
     return s
 
 
-def connect(add_or_stop, up, dn, cdate, ctime, do_it):
+def mconnect(add_or_stop, up, dn, cdate, ctime, do_it):
     s = '{}_connection.py -u {} --uprev {} --upport {} -d {} --dnrev {} --dnport {} --date {} --time {}'.format(
         add_or_stop, up[0], up[1], up[2], dn[0], dn[1], dn[2], cdate, ctime)
     if do_it:
@@ -80,7 +80,7 @@ class Chain:
         for p in six.iterkeys(part):
             x = handle.get_part_dossier(part[p][0], part[p][1], 'now')
             if not len(x):
-                self.fp.write(part('add', [part[p][0], part[p][1], part[p][2], part[p][0]],
+                self.fp.write(mpart('add', [part[p][0], part[p][1], part[p][2], part[p][0]],
                               cdate, partadd_time, do_it))
             else:
                 print("Part {} is already added".format(part[p]))
@@ -121,7 +121,7 @@ class Chain:
             v = up + down
             exco = health.check_for_existing_connection(v, codate, display_results=True)
             if not exco:
-                self.fp.write(connect('add', up, down, codate, cotime, do_it))
+                self.fp.write(mconnect('add', up, down, codate, cotime, do_it))
 
         print('\n')
 
