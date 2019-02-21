@@ -2,11 +2,11 @@
 from __future__ import absolute_import, division, print_function
 import sys
 import os.path
-from hera_mc import cm_handling, cm_health
 import six
+from hera_mc import cm_health, cm_handling
 
 
-def mpart(add_or_stop, p, cdate, ctime, do_it):
+def pc_part(add_or_stop, p, cdate, ctime, do_it):
     s = '{}_part.py -p {} -r {} '.format(
         add_or_stop, p[0], p[1])
     if add_or_stop == 'add':
@@ -18,7 +18,7 @@ def mpart(add_or_stop, p, cdate, ctime, do_it):
     return s
 
 
-def mconnect(add_or_stop, up, dn, cdate, ctime, do_it):
+def pc_connect(add_or_stop, up, dn, cdate, ctime, do_it):
     s = '{}_connection.py -u {} --uprev {} --upport {} -d {} --dnrev {} --dnport {} --date {} --time {}'.format(
         add_or_stop, up[0], up[1], up[2], dn[0], dn[1], dn[2], cdate, ctime)
     if do_it:
@@ -32,7 +32,7 @@ class Chain:
         self.init_script(exefile, log_file)
 
     def init_script(self, exename, log_file):
-        input_script = os.path.split(exename)[1]
+        input_script = os.path.basename(exename)
         self.output_script = input_script.split('.')[0]
         print("starting {}".format(self.output_script))
         self.fp = open(self.output_script, 'w')
@@ -75,16 +75,15 @@ class Chain:
         part['pam'] = ('PAM{:03d}'.format(pam), 'A', 'post-amp')
         part['snap'] = ('SNP{}{:06d}'.format(snap[0], int(snap[1:])), 'A', 'snap')
         snap_port = {'e': snap_input.split(',')[0].strip(), 'n': snap_input.split(',')[1].strip()}
-        # Check for parts to add
-        parts_to_add = []
-        for p in six.iterkeys(part):
-            x = handle.get_part_dossier(part[p][0], part[p][1], 'now')
-            if not len(x):
-                self.fp.write(mpart('add', [part[p][0], part[p][1], part[p][2], part[p][0]],
-                              cdate, partadd_time, do_it))
-            else:
-                print("Part {} is already added".format(part[p]))
 
+        # Check for parts to add and add them
+        parts_to_add = []
+        for p in six.itervalues(part):
+            x = handle.get_part_dossier(p[0], p[1], 'now')
+            if not len(x):
+                self.fp.write(pc_part('add', [p[0], p[1], p[2], p[0]], cdate, partadd_time, do_it))
+            else:
+                print("Part {} is already added".format(p))
         # Set up connections
         connections_to_add = []
         up = [part['ant'][0], part['ant'][1], 'focus']
@@ -116,12 +115,12 @@ class Chain:
         dn = [part['snap'][0], part['snap'][1], snap_port['n']]
         connections_to_add.append([up, dn, cdate, connadd_time])
 
-        # Check for connections to add
+        # Check for connections to add and add them
         for up, down, codate, cotime in connections_to_add:
             v = up + down
             exco = health.check_for_existing_connection(v, codate, display_results=True)
             if not exco:
-                self.fp.write(mconnect('add', up, down, codate, cotime, do_it))
+                self.fp.write(pc_connect('add', up, down, codate, cotime, do_it))
 
         print('\n')
 
@@ -129,5 +128,7 @@ class Chain:
         print("=======>If OK, 'chmod u+x {}' and run that script.\n".format(self.output_script))
         self.fp.close()
 
-    def add_node(self):
+
+class Node:
+    def __init__(self):
         print("This will add the @ parts of PCH, PAM, SNP (and N)")
