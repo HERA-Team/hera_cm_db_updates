@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function
 import sys
+import os.path
 from hera_mc import cm_handling, cm_health
 
 
@@ -28,15 +29,16 @@ def connect(add_or_stop, up, dn, cdate, ctime, do_it):
 class Chain:
     def __init__(self, exefile, log_file='scripts.log'):
         self.init_script(exefile, log_file)
-        print('-----------------')
 
     def init_script(self, exename, log_file):
-        self.output_script = exename.strip('.').strip('/').split('.')[0]
+        input_script = os.path.split(exename)[1]
+        self.output_script = input_script.split('.')[0]
         print("starting {}".format(self.output_script))
         self.fp = open(self.output_script, 'w')
         s = '#! /usr/bin/env bash\n'
         s += 'echo {} >> {}\n'.format(self.output_script, log_file)
         self.fp.write(s)
+        print('-----------------\n')
 
     def add(self, ant, feed, fem, pam, snap, snap_input, cdate, ctime=['10:00', '11:00'], do_it_this_time=True):
         """
@@ -51,7 +53,7 @@ class Chain:
         cdate:  YYYY/MM/DD - date of mods (one for all)
         ctime:  time of mods <'10:00', '11:00'>
                 ['HH:MM', 'HH:MM'] for part at [0], connection at [1]
-                'x' for part/connection at 'x'
+                'HH:MM' for part/connection at 'HH:MM'
         do_it_this_time:  flag to set the 'actually_do_it' flag <True>
         """
         handle = cm_handling.Handling()
@@ -124,6 +126,7 @@ class Chain:
 
     def done(self):
         print("=======>If OK, 'chmod u+x {}' and run that script.\n".format(self.output_script))
+        self.fp.close()
 
     def add_node(self):
         print("This will add the @ parts of PCH, PAM, SNP (and N)")
