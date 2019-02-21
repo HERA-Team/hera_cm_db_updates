@@ -28,8 +28,8 @@ def pc_connect(add_or_stop, up, dn, cdate, ctime, do_it):
 
 
 class Chain:
-    def __init__(self, exefile, log_file='scripts.log'):
-        self.init_script(exefile, log_file)
+    def __init__(self, exename, log_file='scripts.log'):
+        self.init_script(exename, log_file)
 
     def init_script(self, exename, log_file):
         input_script = os.path.basename(exename)
@@ -128,7 +128,5 @@ class Chain:
         print("=======>If OK, 'chmod u+x {}' and run that script.\n".format(self.output_script))
         self.fp.close()
 
-
-class Node:
-    def __init__(self):
+    def add_node(self):
         print("This will add the @ parts of PCH, PAM, SNP (and N)")
