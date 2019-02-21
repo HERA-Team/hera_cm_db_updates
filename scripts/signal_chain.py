@@ -3,6 +3,7 @@ from __future__ import absolute_import, division, print_function
 import sys
 import os.path
 from hera_mc import cm_handling, cm_health
+import six
 
 
 def part(add_or_stop, p, cdate, ctime, do_it):
@@ -76,7 +77,7 @@ class Chain:
         snap_port = {'e': snap_input.split(',')[0].strip(), 'n': snap_input.split(',')[1].strip()}
         # Check for parts to add
         parts_to_add = []
-        for p in part:
+        for p in six.iterkeys(part):
             x = handle.get_part_dossier(part[p][0], part[p][1], 'now')
             if not len(x):
                 self.fp.write(part('add', [part[p][0], part[p][1], part[p][2], part[p][0]],
