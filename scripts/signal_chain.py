@@ -6,7 +6,7 @@ import six
 from hera_mc import cm_health, cm_handling
 
 
-def pc_part(add_or_stop, p, cdate, ctime, do_it):
+def as_part(add_or_stop, p, cdate, ctime, do_it):
     s = '{}_part.py -p {} -r {} '.format(
         add_or_stop, p[0], p[1])
     if add_or_stop == 'add':
@@ -18,7 +18,7 @@ def pc_part(add_or_stop, p, cdate, ctime, do_it):
     return s
 
 
-def pc_connect(add_or_stop, up, dn, cdate, ctime, do_it):
+def as_connect(add_or_stop, up, dn, cdate, ctime, do_it):
     s = '{}_connection.py -u {} --uprev {} --upport {} -d {} --dnrev {} --dnport {} --date {} --time {}'.format(
         add_or_stop, up[0], up[1], up[2], dn[0], dn[1], dn[2], cdate, ctime)
     if do_it:
@@ -81,7 +81,7 @@ class Chain:
         for p in six.itervalues(part):
             x = handle.get_part_dossier(p[0], p[1], 'now')
             if not len(x):
-                self.fp.write(pc_part('add', [p[0], p[1], p[2], p[0]], cdate, partadd_time, do_it))
+                self.fp.write(as_part('add', [p[0], p[1], p[2], p[0]], cdate, partadd_time, do_it))
             else:
                 print("Part {} is already added".format(p))
         # Set up connections
@@ -117,11 +117,9 @@ class Chain:
 
         # Check for connections to add and add them
         for up, down, codate, cotime in connections_to_add:
-            v = up + down
-            exco = health.check_for_existing_connection(v, codate, display_results=True)
+            exco = health.check_for_existing_connection(up + down, 'now', display_results=True)
             if not exco:
-                self.fp.write(pc_connect('add', up, down, codate, cotime, do_it))
-
+                self.fp.write(as_connect('add', up, down, codate, cotime, do_it))
         print('\n')
 
     def done(self):
