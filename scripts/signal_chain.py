@@ -1,6 +1,4 @@
-#! /usr/bin/env python
 from __future__ import absolute_import, division, print_function
-import sys
 import os.path
 import six
 from hera_mc import cm_health, cm_handling
@@ -27,21 +25,25 @@ def as_connect(add_or_stop, up, dn, cdate, ctime, do_it):
     return s
 
 
-class Chain:
-    def __init__(self, exename, log_file='scripts.log'):
-        self.init_script(exename, log_file)
-
-    def init_script(self, exename, log_file):
+class Update:
+    def __init__(self, exename, do_it, log_file='scripts.log'):
+        """
+        exename:  the name of the script executed (argv[0])
+        do_it:  flag to actually enable changes
+        log_file:  name of log_file
+        """
+        self.do_it = do_it
+        self.log_file = log_file
         input_script = os.path.basename(exename)
         self.output_script = input_script.split('.')[0]
-        print("starting {}".format(self.output_script))
+        print("Writing script {}".format(self.output_script))
         self.fp = open(self.output_script, 'w')
         s = '#! /usr/bin/env bash\n'
-        s += 'echo {} >> {}\n'.format(self.output_script, log_file)
+        s += 'echo {} (do_it = {}) >> {} \n'.format(self.output_script, self.do_it, self.log_file)
         self.fp.write(s)
         print('-----------------\n')
 
-    def add(self, ant, feed, fem, pam, snap, snap_input, cdate, ctime=['10:00', '11:00'], do_it=True):
+    def add_full(self, ant, feed, fem, pam, snap, snap_input, cdate, ctime=['10:00', '11:00'], ser_num={}):
         """
         Parameters:
         -----------
@@ -51,6 +53,7 @@ class Chain:
         pam: pam number (int)
         snap:  snap designation (string: e.g. 'A27')
         snap_input: inputs (string: e.g. 'e10,n8')
+        ser_no:  dictionary of serial numbers (keyed by part-type, uses hpn if not included
         cdate:  YYYY/MM/DD - date of mods (one for all)
         ctime:  time of mods <'10:00', '11:00'>
                 ['HH:MM', 'HH:MM'] for part at [0], connection at [1]
@@ -65,15 +68,34 @@ class Chain:
         else:
             partadd_time = ctime
             connadd_time = ctime
+        self.ser_num_dict = ser_num
 
         # Set up parts
         part = {}
-        part['ant'] = ('A{}'.format(ant), 'H', 'antenna')
-        part['feed'] = ('FDV{}'.format(feed), 'A', 'feed')
-        part['fem'] = ('FEM{:03d}'.format(fem), 'A', 'front-end')
-        part['cable'] = ('CRF{:03d}'.format(ant), 'A', 'cable-rfof')
-        part['pam'] = ('PAM{:03d}'.format(pam), 'A', 'post-amp')
-        part['snap'] = ('SNP{}{:06d}'.format(snap[0], int(snap[1:])), 'A', 'snap')
+
+        hpn = 'A{}'.format(ant)
+        sn = self.get_ser_num(hpn, 'antenna')
+        part['ant'] = (hpn, 'H', 'antenna', sn)
+
+        hpn = 'FDV{}'.format(feed)
+        sn = self.get_ser_num(hpn, 'feed')
+        part['feed'] = (hpn, 'A', 'feed', sn)
+
+        hpn = 'FEM{:03d}'.format(fem)
+        sn = self.get_ser_num(hpn, 'front-end')
+        part['fem'] = (hpn, 'A', 'front-end', sn)
+
+        hpn = 'CRF{:03d}'.format(ant)
+        sn = self.get_ser_num(hpn, 'cable-rfof')
+        part['cable'] = (hpn, 'A', 'cable-rfof', sn)
+
+        hpn = 'PAM{:03d}'.format(pam)
+        sn = self.get_ser_num(hpn, 'post-amp')
+        part['pam'] = (hpn, 'A', 'post-amp', sn)
+
+        hpn = 'SNP{}{:06d}'.format(snap[0], int(snap[1:]))
+        sn = self.get_ser_num(hpn, 'snap')
+        part['snap'] = (hpn, 'A', 'snap', sn)
         snap_port = {'e': snap_input.split(',')[0].strip(), 'n': snap_input.split(',')[1].strip()}
 
         # Check for parts to add and add them
@@ -81,7 +103,7 @@ class Chain:
         for p in six.itervalues(part):
             x = handle.get_part_dossier(p[0], p[1], 'now')
             if not len(x):
-                self.fp.write(as_part('add', [p[0], p[1], p[2], p[0]], cdate, partadd_time, do_it))
+                self.update_part('add', p, cdate, partadd_time)
             else:
                 print("Part {} is already added".format(p))
         # Set up connections
@@ -119,11 +141,24 @@ class Chain:
         for up, down, codate, cotime in connections_to_add:
             exco = health.check_for_existing_connection(up + down, 'now', display_results=True)
             if not exco:
-                self.fp.write(as_connect('add', up, down, codate, cotime, do_it))
+                self.update_connection('add', up, down, codate, cotime)
         print('\n')
 
+    def get_ser_num(self, hpn, part_type):
+        sn = hpn
+        if part_type in self.ser_num_dict.keys():
+            sn = self.ser_num_dict[part_type]
+        return sn
+
+    def update_part(self, add_or_stop, part, cdate, ctime):
+        self.fp.write(as_part(add_or_stop, part, cdate, ctime, self.do_it))
+
+    def update_connection(self, add_or_stop, up, down, cdate, ctime):
+        self.fp.write(as_connect(add_or_stop, up, down, cdate, ctime, self.do_it))
+
     def done(self):
-        print("=======>If OK, 'chmod u+x {}' and run that script.\n".format(self.output_script))
+        print("=======>If OK, 'chmod u+x {}' and run that script.".format(self.output_script))
+        print("\t do_it flag set to {}".format(self.do_it))
         self.fp.close()
 
     def add_node(self):
