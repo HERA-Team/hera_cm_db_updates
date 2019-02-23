@@ -3,8 +3,6 @@ import signal_chain
 import sys
 
 hera = signal_chain.Update(sys.argv[0], do_it=True)
-# Not doing it this time, but to add full signal path:
-# hera.add_full(ant=2, feed=8, fem=17, pam=23, snap='C57', snap_input='e6,n4', cdate='2019/02/20')
 
 connections_to_stop = [
                       [['CRF014', 'A', 'eb'], ['PAM028', 'A', 'ea'], '2019/02/23', '10:00'],
