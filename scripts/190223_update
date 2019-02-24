@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-echo 190223_update (do_it = True) >> scripts.log 
+echo "190223_update (do_it = True)" >> scripts.log 
 stop_connection.py -u CRF001 --uprev A --upport eb -d PAM024 --dnrev A --dnport ea --date 2019/02/23 --time 10:00 --actually_do_it
 stop_connection.py -u CRF001 --uprev A --upport nb -d PAM024 --dnrev A --dnport na --date 2019/02/23 --time 10:00 --actually_do_it
 stop_connection.py -u PAM024 --uprev A --upport eb -d SNPC000057 --dnrev A --dnport e10 --date 2019/02/23 --time 10:00 --actually_do_it
