@@ -5,11 +5,8 @@ import sys
 hera = signal_chain.Update(sys.argv[0], do_it=True)
 
 connections_to_stop = []
-
 parts_to_stop = []
-
 parts_to_add = []
-
 connections_to_add = [
                      [['CRF001', 'A', 'eb'], ['PAM024', 'A', 'ea'], '2019/02/23', '12:10'],
                      [['CRF001', 'A', 'nb'], ['PAM024', 'A', 'na'], '2019/02/23', '12:10'],

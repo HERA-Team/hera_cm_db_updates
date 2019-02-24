@@ -14,9 +14,7 @@ connections_to_stop = [
                       [['PAM028', 'A', 'eb'], ['SNPA000024', 'A', 'e2'], '2019/02/23', '10:00'],
                       [['PAM028', 'A', 'nb'], ['SNPA000024', 'A', 'n0'], '2019/02/23', '10:00']
 ]
-
 parts_to_stop = []
-
 parts_to_add = []
 connections_to_add = []
 
