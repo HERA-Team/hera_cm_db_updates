@@ -39,7 +39,7 @@ class Update:
         print("Writing script {}".format(self.output_script))
         self.fp = open(self.output_script, 'w')
         s = '#! /usr/bin/env bash\n'
-        s += 'echo {} (do_it = {}) >> {} \n'.format(self.output_script, self.do_it, self.log_file)
+        s += '"echo {} (do_it = {})" >> {} \n'.format(self.output_script, self.do_it, self.log_file)
         self.fp.write(s)
         print('-----------------\n')
 
