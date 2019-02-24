@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+echo "190224_update (do_it = True)" >> scripts.log 
+add_part.py -p PAM024 -r A -t post-amp -m PAM024 --date 2019/02/23 --time 12:00 --actually_do_it
+add_connection.py -u CRF001 --uprev A --upport eb -d PAM024 --dnrev A --dnport ea --date 2019/02/23 --time 12:10 --actually_do_it
+add_connection.py -u CRF001 --uprev A --upport nb -d PAM024 --dnrev A --dnport na --date 2019/02/23 --time 12:10 --actually_do_it
+add_connection.py -u PAM024 --uprev A --upport eb -d SNPC000057 --dnrev A --dnport e10 --date 2019/02/23 --time 12:10 --actually_do_it
+add_connection.py -u PAM024 --uprev A --upport nb -d SNPC000057 --dnrev A --dnport n8 --date 2019/02/23 --time 12:10 --actually_do_it
