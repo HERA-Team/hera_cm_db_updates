@@ -8,9 +8,7 @@ connections_to_stop = []
 
 parts_to_stop = []
 
-parts_to_add = [
-               [['PAM024', 'A', 'post-amp', 'PAM024'], '2019/02/23', '12:00']
-]
+parts_to_add = []
 
 connections_to_add = [
                      [['CRF001', 'A', 'eb'], ['PAM024', 'A', 'ea'], '2019/02/23', '12:10'],
