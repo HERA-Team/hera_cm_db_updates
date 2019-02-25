@@ -156,10 +156,21 @@ class Update:
     def update_connection(self, add_or_stop, up, down, cdate, ctime):
         self.fp.write(as_connect(add_or_stop, up, down, cdate, ctime, self.do_it))
 
+    def add_station(self, stn, ser_num, cdate, ctime='10:00'):
+        s = "HH{}".format(stn)
+        a = "A{}".format(stn)
+        n = "S/N{}".format(ser_num)
+        self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'.format(s, ser_num, cdate, ctime))
+        self.update_part('add', [a, 'H', 'antenna', n], cdate, ctime)
+        self.update_connection('add', [s, 'A', 'ground'], [a, 'H', 'ground'], cdate, ctime)
+
+    def add_part_info(self, hpn, rev, note, cdate, ctime):
+        self.fp.write("add_part_info.py -p {} -r {} -c {} --date {} --time {}".format(hpn, rev, note, cdate, ctime))
+
+    def add_node(self):
+        print("This will add the @ parts of PCH, PAM, SNP (and N)")
+
     def done(self):
         print("=======>If OK, 'chmod u+x {}' and run that script.".format(self.output_script))
         print("\t do_it flag set to {}".format(self.do_it))
         self.fp.close()
-
-    def add_node(self):
-        print("This will add the @ parts of PCH, PAM, SNP (and N)")
