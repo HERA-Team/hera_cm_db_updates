@@ -165,7 +165,7 @@ class Update:
         self.update_connection('add', [s, 'A', 'ground'], [a, 'H', 'ground'], cdate, ctime)
 
     def add_part_info(self, hpn, rev, note, cdate, ctime):
-        self.fp.write("add_part_info.py -p {} -r {} -c {} --date {} --time {}".format(hpn, rev, note, cdate, ctime))
+        self.fp.write('add_part_info.py -p {} -r {} -c "{}" --date {} --time {}\n'.format(hpn, rev, note, cdate, ctime))
 
     def add_node(self):
         print("This will add the @ parts of PCH, PAM, SNP (and N)")
