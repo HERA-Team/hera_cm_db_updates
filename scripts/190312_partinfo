@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+echo "190312_partinfo (do_it = True)" >> scripts.log 
+add_part_info.py -p HH11 -r A -c "Add braid on coax cable to feed" --date 2019/03/12 --time 10:00
+add_part_info.py -p HH23 -r A -c "Add braid on coax cable to feed" --date 2019/03/12 --time 10:00
+add_part_info.py -p HH24 -r A -c "Add braid on coax cable to feed" --date 2019/03/12 --time 10:00
+add_part_info.py -p HH39 -r A -c "Add braid on coax cable to feed" --date 2019/03/12 --time 10:00
