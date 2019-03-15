@@ -21,3 +21,7 @@ On local machine -- hera_cm_updates:
 7 - `cm_init.py` to make sure things are synced
 8 - `write_sqlite.py` (followed by the instructions it prints) to make the sqlite version
 9 - `git push origin master` to push the sqlite version back up to repo
+
+This has another option of (--base), so that you can set up a base copy to which you can revert if need be by including {\tt --base} on both commands (step 6).
+
+Note, if you want to update the site database (not recommended) you must set up a key when you pack and then init.
