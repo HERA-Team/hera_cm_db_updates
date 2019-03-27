@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+echo "190327_partinfo (do_it = True)" >> scripts.log 
+add_part_info.py -p HH1 -r A -c "Ground springs to feed with solution 2" --date 2019/03/18 --time 10:00
+add_part_info.py -p HH11 -r A -c "Ground springs to feed with solution 2" --date 2019/03/18 --time 10:00
+add_part_info.py -p HH13 -r A -c "Ground springs to feed with solution 2" --date 2019/03/18 --time 10:00
+add_part_info.py -p HH39 -r A -c "Ground springs to feed with solution 2" --date 2019/03/19 --time 10:00
