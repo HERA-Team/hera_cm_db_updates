@@ -13,13 +13,13 @@ import signal_chain
 import six
 
 # ###########VALUES HERE##############
-ant = 701
-feed = 708
-fem = 717
-pam = 723
-snap = 'Z38'
-snap_input = 'e10,n8'
-snap_loc = 701
+ant = 706
+feed = 714
+fem = 721
+pam = 727
+snap = 'Z64'
+snap_input = 'e2,n0'
+snap_loc = 2
 node = 700
 cdate = '2019/02/20'
 ctime = '10:00'
@@ -29,7 +29,7 @@ part_add_time = int(cm_utils.get_astropytime(cdate, ctime).gps)
 
 fake = signal_chain.Update(log_file=None)
 parts, connections = fake.add_full(ant=ant, feed=feed, fem=fem, pam=pam, snap=snap, snap_input=snap_input,
-                                   snap_loc=snap_loc, node=node, cdate=cdate)
+                                   snap_loc=snap_loc, node=node, cdate=cdate, include_HH=True, include_ND=True)
 print("Cut-and-paste into test 'initialization_data_parts.csv'")
 print("-------------------------------------------------------\n")
 for p, x in six.iteritems(parts):

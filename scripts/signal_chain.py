@@ -35,6 +35,8 @@ class Update:
         self.do_it = do_it
         self.log_file = log_file
         if log_file is not None:
+            self.handle = cm_handling.Handling()
+            self.health = cm_health.Connections()
             input_script = os.path.basename(exename)
             self.output_script = input_script.split('.')[0]
             print("Writing script {}".format(self.output_script))
@@ -44,7 +46,7 @@ class Update:
             self.fp.write(s)
             print('-----------------\n')
 
-    def add_full(self, ant, feed, fem, pam, snap, snap_input, snap_loc, node, cdate, ctime=['10:00', '11:00'], ser_num={}):
+    def add_full(self, ant, feed, fem, pam, snap, snap_input, snap_loc, node, cdate, ctime=['10:00', '11:00'], ser_num={}, **kwargs):
         """
         Parameters:
         -----------
@@ -61,10 +63,15 @@ class Update:
         ctime:  time of mods <'10:00', '11:00'>
                 ['HH:MM', 'HH:MM'] for part at [0], connection at [1]
                 'HH:MM' for part/connection at 'HH:MM'
-        do_it:  flag to set the 'actually_do_it' flag <True>
+        **kwargs:  include_HH, include_ND
         """
-        handle = cm_handling.Handling()
-        health = cm_health.Connections()
+        # Process kwargs
+        include_HH = False
+        if 'include_HH' in kwargs.keys() and kwargs['include_HH']:
+            include_HH = True
+        include_ND = False
+        if 'include_ND' in kwargs.keys() and kwargs['include_ND']:
+            include_ND = True
         if isinstance(ctime, list):
             partadd_time = ctime[0]
             connadd_time = ctime[1]
@@ -75,6 +82,11 @@ class Update:
 
         # Set up parts
         part_to_add = {}
+
+        if include_HH:
+            hpn = 'HH{}'.format(ant)
+            sn = self.get_ser_num(hpn, 'ant-station')
+            part_to_add['ant-station'] = (hpn, 'A', 'station', sn)
 
         hpn = 'A{}'.format(ant)
         sn = self.get_ser_num(hpn, 'antenna')
@@ -101,22 +113,31 @@ class Update:
         part_to_add['snap'] = (hpn, 'A', 'snap', sn)
         snap_port = {'e': snap_input.split(',')[0].strip(), 'n': snap_input.split(',')[1].strip()}
 
-        hpn = 'N{}'.format(snap_loc)
+        hpn = 'N{}'.format(node)
         sn = self.get_ser_num(hpn, 'node')
         part_to_add['node'] = (hpn, 'A', 'node', sn)
         snap_loc = "loc{}".format(snap_loc)
 
+        if include_ND:
+            hpn = 'ND{}'.format(node)
+            sn = self.get_ser_num(hpn, 'node-station')
+            part_to_add['node-station'] = (hpn, 'A', 'station', sn)
+
         # Check for parts to add and add them
         if self.log_file is not None:
             for p in six.itervalues(part_to_add):
-                x = handle.get_part_dossier(p[0], p[1], 'now')
-                if not len(x):
+                if not self.exists('part', p[0], p[1], 'now'):
                     self.update_part('add', p, cdate, partadd_time)
                 else:
                     print("Part {} is already added".format(p))
 
         # Set up connections
         connection_to_add = []
+        if include_HH:
+            up = [part_to_add['ant-station'][0], part_to_add['ant-station'][1], 'ground']
+            dn = [part_to_add['ant'][0], part_to_add['ant'][1], 'ground']
+            connection_to_add.append([up, dn, cdate, connadd_time])
+
         up = [part_to_add['ant'][0], part_to_add['ant'][1], 'focus']
         dn = [part_to_add['feed'][0], part_to_add['feed'][1], 'input']
         connection_to_add.append([up, dn, cdate, connadd_time])
@@ -150,11 +171,15 @@ class Update:
         dn = [part_to_add['node'][0], part_to_add['node'][1], snap_loc]
         connection_to_add.append([up, dn, cdate, connadd_time])
 
+        if include_ND:
+            up = [part_to_add['node'][0], part_to_add['node'][1], '@ground']
+            dn = [part_to_add['node-station'][0], part_to_add['node-station'][1], '@ground']
+            connection_to_add.append([up, dn, cdate, connadd_time])
+
         # Check for connections to add and add them
         if self.log_file is not None:
             for up, down, codate, cotime in connection_to_add:
-                exco = health.check_for_existing_connection(up + down, 'now', display_results=True)
-                if not exco:
+                if not self.exists('connection', up + down, at_date='now'):
                     self.update_connection('add', up, down, codate, cotime)
             print('\n')
         if self.log_file is None:
@@ -172,21 +197,59 @@ class Update:
     def update_connection(self, add_or_stop, up, down, cdate, ctime):
         self.fp.write(as_connect(add_or_stop, up, down, cdate, ctime, self.do_it))
 
+    def exists(atype, inp, rev='active', at_date='now'):
+        if atype == 'part':
+            x = self.handle.get_part_dossier(inp, rev, at_date)
+            if len(x) == 0:
+                return False
+            return True
+        if atype == 'connection':
+            return self.health.check_for_existing_connection(inp, at_date, display_results=True)
+
     def add_station(self, stn, ser_num, cdate, ctime='10:00'):
         s = "HH{}".format(stn)
         a = "A{}".format(stn)
         n = "S/N{}".format(ser_num)
         self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'.format(s, ser_num, cdate, ctime))
-        self.update_part('add', [a, 'H', 'antenna', n], cdate, ctime)
-        self.update_connection('add', [s, 'A', 'ground'], [a, 'H', 'ground'], cdate, ctime)
+
+        if not self.exists('part', a, 'H', 'now'):
+            self.update_part('add', [a, 'H', 'antenna', n], cdate, ctime)
+        else:
+            print("Part {} is already added".format(a))
+
+        up = [s, 'A', 'ground']
+        down = [a, 'H', 'ground']
+        if not self.exists('connection', up + down, at_date='now'):
+            self.update_connection('add', up, down, cdate, ctime)
 
     def add_part_info(self, hpn, rev, note, cdate, ctime):
         self.fp.write('add_part_info.py -p {} -r {} -c "{}" --date {} --time {}\n'.format(hpn, rev, note, cdate, ctime))
 
-    def add_node(self):
+    def add_node(self, node, pch, ncm, cdate, ctime=['10:00', '11:00'], ser_num={}):
         print("This will add the @ parts of PCH, PAM, SNP (and N)")
+        if isinstance(ctime, list):
+            partadd_time = ctime[0]
+            connadd_time = ctime[1]
+        else:
+            partadd_time = ctime
+            connadd_time = ctime
+        self.ser_num_dict = ser_num
+        hpn = 'N{}'.format(node)
+        sn = self.get_ser_num(hpn, 'node')
+        part_to_add['node'] = (hpn, 'A', 'node', sn)
+        hpn = 'ND{}'.format(node)
+        sn = self.get_ser_num(hpn, 'node-station')
+        part_to_add['node-station'] = (hpn, 'A', 'station', sn)
+
+        # Check for parts to add and add them
+        for p in six.itervalues(part_to_add):
+            if not self.exists('part', p[0], p[1], 'now'):
+                self.update_part('add', p, cdate, partadd_time)
+            else:
+                print("Part {} is already added".format(p))
+        print("NOW ADD CONNECTIONS")
 
     def done(self):
         print("=======>If OK, 'chmod u+x {}' and run that script.".format(self.output_script))
-        print("\t do_it flag set to {}".format(self.do_it))
+        print("\t 'do_it' flag set to {}".format(self.do_it))
         self.fp.close()
