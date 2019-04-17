@@ -1,4 +1,4 @@
-#~ /usr/bin/env python
+#! /usr/bin/env python
 
 from hera_mc import cm_partconnect, mc, cm_utils
 import os
