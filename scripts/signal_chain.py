@@ -197,7 +197,7 @@ class Update:
     def update_connection(self, add_or_stop, up, down, cdate, ctime):
         self.fp.write(as_connect(add_or_stop, up, down, cdate, ctime, self.do_it))
 
-    def exists(atype, inp, rev='active', at_date='now'):
+    def exists(self, atype, inp, rev='active', at_date='now'):
         if atype == 'part':
             x = self.handle.get_part_dossier(inp, rev, at_date)
             if len(x) == 0:
