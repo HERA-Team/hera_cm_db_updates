@@ -192,9 +192,22 @@ class Update:
         return sn
 
     def update_part(self, add_or_stop, part, cdate, ctime):
+        """
+        add_or_stop:  'add' or 'stop'
+        part:  [hpn, rev, <type>, <mfg num>] (last two only for 'add')
+        cdate:  date of update YYYY/MM/DD
+        ctime:  time of update HH:MM
+        """
         self.fp.write(as_part(add_or_stop, part, cdate, ctime, self.do_it))
 
     def update_connection(self, add_or_stop, up, down, cdate, ctime):
+        """
+        add_or_stop:  'add' or 'stop'
+        up:  upstream connection
+        down:  downstream connection
+        cdate:  date of update YYYY/MM/DD
+        ctime:  time of update HH:MM
+        """
         self.fp.write(as_connect(add_or_stop, up, down, cdate, ctime, self.do_it))
 
     def exists(self, atype, inp, rev='active', at_date='now'):
