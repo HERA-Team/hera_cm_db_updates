@@ -565,10 +565,7 @@ HH120,1214481618,,not_connected
 HH121,1214481618,,not_connected
 HH122,1214481618,,not_connected
 HH123,1214481618,,not_connected
-HH124,1214481618,,not_connected
 HH125,1000000000,1214481618.0,not_connected
-HH125,1214481618,,not_connected
-HH126,1214481618,,not_connected
 HH146,1214481618,,not_connected
 HH147,1214481618,,not_connected
 HH148,1214481618,,not_connected
@@ -589,11 +586,12 @@ HH103,1214481618,,not_connected
 HH104,1000000000,1214481618.0,not_connected
 HH104,1214481618,,not_connected
 HH105,1214481618,,not_connected
-HH106,1214481618,,not_connected
-HH107,1214481618,,not_connected
 HH108,1214481618,,not_connected
 HH127,1214481618,,not_connected
 HH128,1000000000,1214481618.0,not_connected
+HH107,1214481618,1242043218.0,not_connected
+HH125,1214481618,1242043218.0,not_connected
+HH126,1214481618,1242043218.0,not_connected
 HH128,1214481618,,not_connected
 HH129,1214481618,,not_connected
 HH130,1214481618,,not_connected
@@ -612,7 +610,6 @@ HH86,1214481618,,not_connected
 HH87,1188475218,1214481618.0,passed_checks
 HH87,1214481618,,not_connected
 HH88,1214481618,,not_connected
-HH89,1214481618,,not_connected
 HH90,1214481618,,not_connected
 HH91,1214481618,,not_connected
 HH109,1214481618,,not_connected
@@ -724,6 +721,7 @@ HH23,1214481618,1235476818.0,not_connected
 HH24,1214481618,1235476818.0,not_connected
 HH25,1214481618,1235476818.0,not_connected
 HH30,1214481618,1235476818.0,not_connected
+HH89,1214481618,1242043218.0,not_connected
 HB347,1214481618,,not_connected
 HB348,1214481618,,not_connected
 HB349,1214481618,,not_connected
@@ -772,3 +770,11 @@ HH25,1235476818,,needs_checking
 HH26,1214481618,1235476818.0,not_connected
 HH26,1235476818,,needs_checking
 HH30,1235476818,,needs_checking
+HH89,1242043218,,needs_checking
+HH106,1214481618,1242043218.0,not_connected
+HH106,1242043218,,needs_checking
+HH107,1242043218,,needs_checking
+HH124,1214481618,1242043218.0,not_connected
+HH124,1242043218,,needs_checking
+HH125,1242043218,,needs_checking
+HH126,1242043218,,needs_checking
