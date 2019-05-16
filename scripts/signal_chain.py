@@ -63,7 +63,7 @@ class Update:
         ctime:  time of mods <'10:00', '11:00'>
                 ['HH:MM', 'HH:MM'] for part at [0], connection at [1]
                 'HH:MM' for part/connection at 'HH:MM'
-        **kwargs:  include_HH, include_ND
+        **kwargs:  include_HH, include_ND, dont_add_part
         """
         # Process kwargs
         include_HH = False
@@ -72,6 +72,10 @@ class Update:
         include_ND = False
         if 'include_ND' in kwargs.keys() and kwargs['include_ND']:
             include_ND = True
+        dont_add_part = None
+        if 'dont_add_part' in kwargs.keys():
+            dont_add_part = kwargs['dont_add_part']
+
         if isinstance(ctime, list):
             partadd_time = ctime[0]
             connadd_time = ctime[1]
@@ -125,11 +129,13 @@ class Update:
 
         # Check for parts to add and add them
         if self.log_file is not None:
-            for p in six.itervalues(part_to_add):
-                if not self.exists('part', p[0], p[1], 'now'):
-                    self.update_part('add', p, cdate, partadd_time)
+            for k, p in six.iteritems(part_to_add):
+                if self.exists('part', p[0], p[1], 'now'):
+                    print("{} {} is already added".format(k, p[0]))
+                elif dont_add_part is not None and k in dont_add_part:
+                    print("Skip {} {}".format(k, p[0]))
                 else:
-                    print("Part {} is already added".format(p))
+                    self.update_part('add', p, cdate, partadd_time)
 
         # Set up connections
         connection_to_add = []
