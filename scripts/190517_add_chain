@@ -1,0 +1,13 @@
+#! /usr/bin/env bash
+echo "190517_add_chain (do_it = True)" >> scripts.log 
+add_part.py -p FEM033 -r A -t front-end -m FEM033 --date 2019/05/17 --time 10:00 --actually_do_it
+add_part.py -p CRF108 -r A -t cable-rfof -m CRF108 --date 2019/05/17 --time 10:00 --actually_do_it
+add_part.py -p SNPC000011 -r A -t snap -m SNPC000011 --date 2019/05/17 --time 10:00 --actually_do_it
+add_connection.py -u FDV22 --uprev A --upport terminals -d FEM033 --dnrev A --dnport input --date 2019/05/17 --time 11:00 --actually_do_it
+add_connection.py -u FEM033 --uprev A --upport e -d CRF108 --dnrev A --dnport ea --date 2019/05/17 --time 11:00 --actually_do_it
+add_connection.py -u FEM033 --uprev A --upport n -d CRF108 --dnrev A --dnport na --date 2019/05/17 --time 11:00 --actually_do_it
+add_connection.py -u CRF108 --uprev A --upport eb -d PAM039 --dnrev A --dnport ea --date 2019/05/17 --time 11:00 --actually_do_it
+add_connection.py -u CRF108 --uprev A --upport nb -d PAM039 --dnrev A --dnport na --date 2019/05/17 --time 11:00 --actually_do_it
+add_connection.py -u PAM039 --uprev A --upport eb -d SNPC000011 --dnrev A --dnport e6 --date 2019/05/17 --time 11:00 --actually_do_it
+add_connection.py -u PAM039 --uprev A --upport nb -d SNPC000011 --dnrev A --dnport n4 --date 2019/05/17 --time 11:00 --actually_do_it
+add_connection.py -u SNPC000011 --uprev A --upport rack -d N9 --dnrev A --dnport loc1 --date 2019/05/17 --time 11:00 --actually_do_it
