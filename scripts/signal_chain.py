@@ -46,13 +46,14 @@ class Update:
             self.fp.write(s)
             print('-----------------\n')
 
-    def add_full(self, ant, feed, fem, pam, snap, snap_input, snap_loc, node, cdate, ctime=['10:00', '11:00'], ser_num={}, **kwargs):
+    def add_full(self, ant, feed, fem, bulkhead, pam, snap, snap_input, snap_loc, node, cdate, ctime=['10:00', '11:00'], ser_num={}, **kwargs):
         """
         Parameters:
         -----------
         ant:  antenna number (int)
         feed: feed number (int)
         fem: fem number (int)
+        bulkhead:  node bulkhead plate input port number (int)
         pam: pam number (int)
         snap:  snap designation (string: e.g. 'A27')
         snap_input: inputs (string: e.g. 'e10,n8')
@@ -63,15 +64,9 @@ class Update:
         ctime:  time of mods <'10:00', '11:00'>
                 ['HH:MM', 'HH:MM'] for part at [0], connection at [1]
                 'HH:MM' for part/connection at 'HH:MM'
-        **kwargs:  include_HH, include_ND, dont_add_part
+        **kwargs:  dont_add_part is for parts that may be duplicated within a single script
         """
         # Process kwargs
-        include_HH = False
-        if 'include_HH' in kwargs.keys() and kwargs['include_HH']:
-            include_HH = True
-        include_ND = False
-        if 'include_ND' in kwargs.keys() and kwargs['include_ND']:
-            include_ND = True
         dont_add_part = None
         if 'dont_add_part' in kwargs.keys():
             dont_add_part = kwargs['dont_add_part']
@@ -87,10 +82,9 @@ class Update:
         # Set up parts
         part_to_add = {}
 
-        if include_HH:
-            hpn = 'HH{}'.format(ant)
-            sn = self.get_ser_num(hpn, 'ant-station')
-            part_to_add['ant-station'] = (hpn, 'A', 'station', sn)
+        hpn = 'HH{}'.format(ant)
+        sn = self.get_ser_num(hpn, 'ant-station')
+        part_to_add['ant-station'] = (hpn, 'A', 'station', sn)
 
         hpn = 'A{}'.format(ant)
         sn = self.get_ser_num(hpn, 'antenna')
@@ -103,6 +97,10 @@ class Update:
         hpn = 'FEM{:03d}'.format(fem)
         sn = self.get_ser_num(hpn, 'front-end')
         part_to_add['fem'] = (hpn, 'A', 'front-end', sn)
+
+        hpn = 'NBP{:02d}'.format(node)
+        sn = '{}'.format(node)
+        part_to_add['bulkhead'] = (hpn, 'A', 'node-bulkhead', sn)
 
         hpn = 'CRF{:03d}'.format(ant)
         sn = self.get_ser_num(hpn, 'cable-rfof')
@@ -117,15 +115,17 @@ class Update:
         part_to_add['snap'] = (hpn, 'A', 'snap', sn)
         snap_port = {'e': snap_input.split(',')[0].strip(), 'n': snap_input.split(',')[1].strip()}
 
-        hpn = 'N{}'.format(node)
+        hpn = 'N{:02d}'.format(node)
         sn = self.get_ser_num(hpn, 'node')
         part_to_add['node'] = (hpn, 'A', 'node', sn)
         snap_loc = "loc{}".format(snap_loc)
 
-        if include_ND:
-            hpn = 'ND{}'.format(node)
-            sn = self.get_ser_num(hpn, 'node-station')
-            part_to_add['node-station'] = (hpn, 'A', 'station', sn)
+        hpn = 'ND{:02d}'.format(node)
+        sn = self.get_ser_num(hpn, 'node-station')
+        part_to_add['node-station'] = (hpn, 'A', 'station', sn)
+
+        # Perform some checks
+        print("GET THE PAM SLOT NUMBER AND MAKE SURE IT MATCHES THE SUPPLIED BULKHEAD NUMBER")
 
         # Check for parts to add and add them
         if self.log_file is not None:
@@ -139,10 +139,9 @@ class Update:
 
         # Set up connections
         connection_to_add = []
-        if include_HH:
-            up = [part_to_add['ant-station'][0], part_to_add['ant-station'][1], 'ground']
-            dn = [part_to_add['ant'][0], part_to_add['ant'][1], 'ground']
-            connection_to_add.append([up, dn, cdate, connadd_time])
+        up = [part_to_add['ant-station'][0], part_to_add['ant-station'][1], 'ground']
+        dn = [part_to_add['ant'][0], part_to_add['ant'][1], 'ground']
+        connection_to_add.append([up, dn, cdate, connadd_time])
 
         up = [part_to_add['ant'][0], part_to_add['ant'][1], 'focus']
         dn = [part_to_add['feed'][0], part_to_add['feed'][1], 'input']
@@ -157,6 +156,11 @@ class Update:
         connection_to_add.append([up, dn, cdate, connadd_time])
         up = [part_to_add['fem'][0], part_to_add['fem'][1], 'n']
         dn = [part_to_add['cable'][0], part_to_add['cable'][1], 'na']
+        connection_to_add.append([up, dn, cdate, connadd_time])
+
+        up = [part_to_add['fem'][0], part_to_add['fem'][1], '@pwr']
+        port = '@pwr{:02d}'.format(bulkhead)
+        dn = [part_to_add['bulkhead'][0], part_to_add['bulkhead'][1], port]
         connection_to_add.append([up, dn, cdate, connadd_time])
 
         up = [part_to_add['cable'][0], part_to_add['cable'][1], 'eb']
@@ -177,10 +181,9 @@ class Update:
         dn = [part_to_add['node'][0], part_to_add['node'][1], snap_loc]
         connection_to_add.append([up, dn, cdate, connadd_time])
 
-        if include_ND:
-            up = [part_to_add['node'][0], part_to_add['node'][1], '@ground']
-            dn = [part_to_add['node-station'][0], part_to_add['node-station'][1], '@ground']
-            connection_to_add.append([up, dn, cdate, connadd_time])
+        up = [part_to_add['node'][0], part_to_add['node'][1], '@ground']
+        dn = [part_to_add['node-station'][0], part_to_add['node-station'][1], '@ground']
+        connection_to_add.append([up, dn, cdate, connadd_time])
 
         # Check for connections to add and add them
         if self.log_file is not None:
@@ -244,8 +247,11 @@ class Update:
     def add_part_info(self, hpn, rev, note, cdate, ctime):
         self.fp.write('add_part_info.py -p {} -r {} -c "{}" --date {} --time {}\n'.format(hpn, rev, note, cdate, ctime))
 
-    def add_node(self, node, pch, ncm, cdate, ctime=['10:00', '11:00'], ser_num={}):
-        print("This will add the @ parts of PCH, PAM, SNP (and N)")
+    def add_node(self, node, fps, pch, ncm, pams, cdate, ctime=['10:00', '11:00'], ser_num={}, override_pam_num=False):
+        if not override_pam_num and len(pams) != 12:
+            print("Need 12 pams - you've supplied {}".format(len(pams)))
+            print("If ok, rerun setting 'override_pam_num=True'")
+            return
         if isinstance(ctime, list):
             partadd_time = ctime[0]
             connadd_time = ctime[1]
@@ -253,12 +259,25 @@ class Update:
             partadd_time = ctime
             connadd_time = ctime
         self.ser_num_dict = ser_num
-        hpn = 'N{}'.format(node)
+        hpn = 'FPS{:02d}'.format(fps)
+        sn = self.get_ser_num(hpn, 'fps')
+        part_to_add['fps'] = (hpn, 'A', 'fem-power-supply', sn)
+        hpn = 'PCH{:02d}'.format(pch)
+        sn = self.get_ser_num(hpn, 'pch')
+        part_to_add['pch'] = (hpn, 'A', 'pam-chassis', sn)
+        hpn = 'NCM{}'.format(node)
+        sn = self.get_ser_num(hpn, 'ncm')
+        part_to_add['ncm'] = (hpn, 'A', 'node-control-module', sn)
+        hpn = 'N{:02d}'.format(node)
         sn = self.get_ser_num(hpn, 'node')
         part_to_add['node'] = (hpn, 'A', 'node', sn)
-        hpn = 'ND{}'.format(node)
+        hpn = 'ND{:02d}'.format(node)
         sn = self.get_ser_num(hpn, 'node-station')
         part_to_add['node-station'] = (hpn, 'A', 'station', sn)
+        for _pam in pams:
+            hpn = 'PAM{:03d}'.format(_pam)
+            sn = self.get_ser_num(hpn)
+            part_to_add[hpn] = (hpn, 'A', 'post-amp', sn)
 
         # Check for parts to add and add them
         for p in six.itervalues(part_to_add):
@@ -266,9 +285,28 @@ class Update:
                 self.update_part('add', p, cdate, partadd_time)
             else:
                 print("Part {} is already added".format(p))
-        print("NOW ADD CONNECTIONS")
+
+        # Add connections
+        up = [part_to_add['fps'][0], part_to_add['fps'][1], 'rack']
+        dn = [part_to_add['snap'][0], part_to_add['snap'][1], snap_port['e']]
+        connection_to_add.append([up, dn, cdate, connadd_time])
+
+    def swap(old, new, cdate, ctime):
+        print("GENERAL SWAP SCRIPT")
+
+    def swap_pam(old, new, cdate, ctime='13:00'):
+        print("DETERMINE OLD/NEW PARTS THEN CALL 'SWAP'")
+
+    def swap_fem(old, new, cdate, ctime='13:00'):
+        print("ETC")
+
+    def swap_snap(old, new, cdate, ctime='13:00'):
+        print("etc")
 
     def done(self):
-        print("=======>If OK, 'chmod u+x {}' and run that script.".format(self.output_script))
-        print("\t 'do_it' flag set to {}".format(self.do_it))
+        print("\n----------------------DONE-----------------------")
+        if self.do_it:
+            print("\tIf changes OK, 'chmod u+x {}' and run that script.".format(self.output_script))
+        else:
+            print("\t 'do_it' flag not set -- if you want to actually update, rerun with it 'True'")
         self.fp.close()

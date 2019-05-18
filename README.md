@@ -13,15 +13,18 @@ On local machine -- hera_cm_updates:
 On qmaster -- hera_cm_updates:
 3 = `git pull origin master`
 4 - run the bash script on qmaster
-4 - run `cm_pack.py --go` to write out new csv files
-5 - `git push origin master`
+5 - run `cm_pack.py --go` to write out new csv files
+6 - `git push origin master`
+7 - `mc_publish_summary.py`
 
 On local machine -- hera_cm_updates:
-6 - `git pull origin master`
-7 - `cm_init.py` to make sure things are synced
-8 - `write_sqlite.py` (followed by the instructions it prints) to make the sqlite version
-9 - `git push origin master` to push the sqlite version back up to repo
+8 - `git pull origin master`
+9 - `cm_init.py` to make sure things are synced
+10 - `write_sqlite.py` (followed by the instructions it prints) to make the sqlite version
+11 - `git push origin master` to push the sqlite version back up to repo
+12 - NOTE:  a csv/googlesheet update option will be added.
 
-This has another option of (--base), so that you can set up a base copy to which you can revert if need be by including {\tt --base} on both commands (step 6).
+This has another option of (`--base`), so that you can set up a base copy to which you can revert if need be by including `--base` under `cm_pack.py`
+This is largely deprecated, since Git has a history.
 
 Note, if you want to update the site database (not recommended) you must set up a key when you pack and then init.
