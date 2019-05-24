@@ -194,8 +194,8 @@ for up, down, cdate, ctime in connections_to_stop:
 print("Next steps: psql hera_mc")
 print("\tupdate connections set upstream_output_port='e' where upstream_output_port='eb' and upstream_part like 'PAM0%';")
 print("\tupdate connections set upstream_output_port='n' where upstream_output_port='nb' and upstream_part like 'PAM0%';")
-print("\tdelete from connections where upstream_part like 'CRF%'")
-print("\tdelete from connections where downstream_part like 'CRF%'")
-print("\tdelete from parts where hpn like 'CRF%'")
+print("\tdelete from connections where upstream_part like 'CRF%';")
+print("\tdelete from connections where downstream_part like 'CRF%';")
+print("\tdelete from parts where hpn like 'CRF%';")
 
 hera.done()
