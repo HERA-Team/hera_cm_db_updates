@@ -16,6 +16,7 @@ import six
 ant = 706
 feed = 714
 fem = 721
+bulkhead = 4
 pam = 727
 snap = 'Z64'
 snap_input = 'e2,n0'
@@ -28,7 +29,7 @@ ctime = '10:00'
 part_add_time = int(cm_utils.get_astropytime(cdate, ctime).gps)
 
 fake = signal_chain.Update(log_file=None)
-parts, connections = fake.add_full(ant=ant, feed=feed, fem=fem, pam=pam, snap=snap, snap_input=snap_input,
+parts, connections = fake.add_full(ant=ant, feed=feed, fem=fem, bulkhead=bulkhead, pam=pam, snap=snap, snap_input=snap_input,
                                    snap_loc=snap_loc, node=node, cdate=cdate, include_HH=True, include_ND=True)
 print("Cut-and-paste into test 'initialization_data_parts.csv'")
 print("-------------------------------------------------------\n")
