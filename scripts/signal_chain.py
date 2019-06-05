@@ -1,7 +1,7 @@
 from __future__ import absolute_import, division, print_function
 import os.path
 import six
-from hera_mc import cm_health, cm_handling
+from hera_mc import cm_health, cm_handling, cm_utils
 
 
 def as_part(add_or_stop, p, cdate, ctime, do_it):
@@ -34,9 +34,9 @@ class Update:
         """
         self.do_it = do_it
         self.log_file = log_file
+        self.handle = cm_handling.Handling()
+        self.health = cm_health.Connections()
         if log_file is not None:
-            self.handle = cm_handling.Handling()
-            self.health = cm_health.Connections()
             input_script = os.path.basename(exename)
             self.output_script = input_script.split('.')[0]
             print("Writing script {}".format(self.output_script))
@@ -188,7 +188,7 @@ class Update:
         # Check for connections to add and add them
         if self.log_file is not None:
             for up, down, codate, cotime in connection_to_add:
-                if not self.exists('connection', up + down, at_date='now'):
+                if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up', at_date=cdate):
                     self.update_connection('add', up, down, codate, cotime)
             print('\n')
         if self.log_file is None:
@@ -219,14 +219,14 @@ class Update:
         """
         self.fp.write(as_connect(add_or_stop, up, down, cdate, ctime, self.do_it))
 
-    def exists(self, atype, inp, rev='active', at_date='now'):
+    def exists(self, atype, hpn, rev='active', port=None, side='both', at_date='now'):
         if atype == 'part':
-            x = self.handle.get_part_dossier(inp, rev, at_date)
+            x = self.handle.get_part_dossier(hpn, rev, at_date)
             if len(x) == 0:
                 return False
             return True
         if atype == 'connection':
-            return self.health.check_for_existing_connection(inp, at_date, display_results=True)
+            return self.health.check_for_existing_connection(hpn=hpn, rev=rev, port=port, side=side, at_date=at_date)
 
     def add_station(self, stn, ser_num, cdate, ctime='10:00'):
         s = "HH{}".format(stn)
@@ -241,7 +241,7 @@ class Update:
 
         up = [s, 'A', 'ground']
         down = [a, 'H', 'ground']
-        if not self.exists('connection', up + down, at_date='now'):
+        if not self.exists('connection', hpn=s, rev='A', port='ground', side='up', at_date='now'):
             self.update_connection('add', up, down, cdate, ctime)
 
     def add_part_info(self, hpn, rev, note, cdate, ctime):
@@ -291,17 +291,45 @@ class Update:
         dn = [part_to_add['snap'][0], part_to_add['snap'][1], snap_port['e']]
         connection_to_add.append([up, dn, cdate, connadd_time])
 
-    def swap(old, new, cdate, ctime):
-        print("GENERAL SWAP SCRIPT")
-
-    def swap_pam(old, new, cdate, ctime='13:00'):
-        print("DETERMINE OLD/NEW PARTS THEN CALL 'SWAP'")
-
-    def swap_fem(old, new, cdate, ctime='13:00'):
-        print("ETC")
-
-    def swap_snap(old, new, cdate, ctime='13:00'):
-        print("etc")
+    def swap(self, old, new, cdate, ctime='13:00'):
+        ptype = {'PAM': 'post-amp', 'FEM': 'front-end', 'SNP': 'snap'}
+        cdt = cm_utils.get_astropytime(cdate, ctime)
+        if not self.exists('part', hpn=old[0], rev=old[1], at_date=cdt):
+            print("{} does not exist -- aborting swap".format(old[0]))
+            return
+        if not self.exists('part', hpn=new[0], rev=new[1], at_date=cdt):
+            for ptk in ptype.keys():
+                if new[0].upper().startswith(ptk):
+                    break
+            new = new + [ptype[ptk], new[0]]
+            print("Adding new part {}".format(new))
+            self.update_part('add', new, cdate, ctime)
+        else:
+            print("{} already added.".format(new[0]))
+        old_pd = self.handle.get_part_dossier(hpn=old[0], rev=old[1], at_date=cdt, exact_match=True, full_version=True)
+        old_pd_key = list(old_pd.keys())
+        if len(old_pd_key) > 1:
+            print("Too many connected parts")
+            return
+        opd = old_pd[old_pd_key[0]]
+        print("Stopping connections: ")
+        for key, val in six.iteritems(opd.connections.up):
+            uppart = [val.upstream_part, val.up_part_rev, val.upstream_output_port]
+            dnpart = [val.downstream_part, val.down_part_rev, val.downstream_input_port]
+            self.update_connection('stop', uppart, dnpart, cdate, ctime)
+        for key, val in six.iteritems(opd.connections.down):
+            uppart = [val.upstream_part, val.up_part_rev, val.upstream_output_port]
+            dnpart = [val.downstream_part, val.down_part_rev, val.downstream_input_port]
+            self.update_connection('stop', uppart, dnpart, cdate, ctime)
+        print("Adding connections: ")
+        for key, val in six.iteritems(opd.connections.up):
+            uppart = [val.upstream_part, val.up_part_rev, val.upstream_output_port]
+            dnpart = [new[0], new[1], val.downstream_input_port]
+            self.update_connection('add', uppart, dnpart, cdate, ctime)
+        for key, val in six.iteritems(opd.connections.down):
+            uppart = [new[0], new[1], val.upstream_output_port]
+            dnpart = [val.downstream_part, val.down_part_rev, val.downstream_input_port]
+            self.update_connection('add', uppart, dnpart, cdate, ctime)
 
     def done(self):
         print("\n----------------------DONE-----------------------")
