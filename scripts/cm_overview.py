@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- mode: python; coding: utf-8 -*-
-# Copyright 2017 the HERA Collaboration
+# Copyright 2019 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
 
 """Builds csv files for configuration_overview googlesheet
@@ -21,7 +21,7 @@ def get_num(val):
 
 hpn = cm_utils.default_station_prefixes
 hpn = 'cache'
-print("REMOVE ABOVE LINE WHEN DONE")
+print("REMOVE ABOVE LINE WHEN DONE DEVELOPING")
 revision = 'LAST'
 exact_match = False
 force_new_cache = True
@@ -147,7 +147,7 @@ print("Read 'part_data'")
 print("Need to still get RF power from db")
 
 
-# ###DO STUFF
+# ################### Check that cm and googlesheet match ##############
 mismatches = []
 for ant in connected:
     for pol in ['e', 'n']:
@@ -166,7 +166,7 @@ else:
     print("All entries match.")
 
 
-# ############################ Assemble data ###########################
+# ############################ Print data ###########################
 def print_data():
     print("Hookup header:  ", hookup_header)
     print("Sheet header:  ", sheet_header)
