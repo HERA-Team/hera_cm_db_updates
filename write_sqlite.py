@@ -54,6 +54,7 @@ Now type the following:
 $ sqlite3
 sqlite> .read cm_hera.sql
 sqlite> .save hera_mc.db
+sqlite> .quit
 
 then move hera_mc.db to hera_cm_db_updates
 and delete cm_hera.sql
