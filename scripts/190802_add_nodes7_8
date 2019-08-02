@@ -1,0 +1,45 @@
+#! /usr/bin/env bash
+echo "190802_add_nodes7_8 (do_it = True)" >> scripts.log 
+add_station.py ND07 --sernum ND07 --date 2019/08/02 --time 10:00
+add_part.py -p FPS05 -r A -t fem-power-supply -m FPS05 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PCH04 -r A -t pam-chassis -m PCH04 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p NCMPre2 -r A -t node-control-module -m NCMPre2 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p N07 -r A -t node -m 3 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p ND07 -r A -t station -m ND07 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p NBP07 -r A -t node-bulkhead -m NBP07 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM053 -r A -t post-amp -m 053 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM054 -r A -t post-amp -m 054 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM055 -r A -t post-amp -m 055 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM056 -r A -t post-amp -m 056 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM057 -r A -t post-amp -m 057 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM058 -r A -t post-amp -m 058 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM059 -r A -t post-amp -m 059 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM060 -r A -t post-amp -m 060 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM061 -r A -t post-amp -m 061 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM062 -r A -t post-amp -m 062 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM063 -r A -t post-amp -m 063 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM049 -r A -t post-amp -m 049 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p SNPC000019 -r A -t snap -m C000019 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p SNPC000021 -r A -t snap -m C000021 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p SNPC000030 -r A -t snap -m C000030 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p SNPC000031 -r A -t snap -m C000031 --date 2019/08/02 --time 10:00 --actually_do_it
+add_connection.py -u N07 --uprev A --upport @ground -d ND07 --dnrev A --dnport @ground --date 2019/08/02 --time 11:00 --actually_do_it
+add_station.py ND08 --sernum ND08 --date 2019/08/02 --time 10:00
+add_part.py -p FPS04 -r A -t fem-power-supply -m FPS04 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PCH03 -r A -t pam-chassis -m PCH03 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p NCMPro1 -r A -t node-control-module -m NCMPro1 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p N08 -r A -t node -m 2 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p ND08 -r A -t station -m ND08 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p NBP08 -r A -t node-bulkhead -m NBP08 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM016 -r A -t post-amp -m 016 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM017 -r A -t post-amp -m 017 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM018 -r A -t post-amp -m 018 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM019 -r A -t post-amp -m 019 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM020 -r A -t post-amp -m 020 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p PAM021 -r A -t post-amp -m 021 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p SNPC000023 -r A -t snap -m C000023 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p SNPC000044 -r A -t snap -m C000044 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p SNPC000055 -r A -t snap -m C000055 --date 2019/08/02 --time 10:00 --actually_do_it
+add_part.py -p SNPC000056 -r A -t snap -m C000056 --date 2019/08/02 --time 10:00 --actually_do_it
+add_connection.py -u N08 --uprev A --upport @ground -d ND08 --dnrev A --dnport @ground --date 2019/08/02 --time 11:00 --actually_do_it
+add_connection.py -u N09 --uprev A --upport @ground -d ND09 --dnrev A --dnport @ground --date 2019/05/22 --time 11:00 --actually_do_it

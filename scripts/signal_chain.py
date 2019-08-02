@@ -195,6 +195,9 @@ class Update:
             return part_to_add, connection_to_add
 
     def get_ser_num(self, hpn, part_type):
+        """
+        Pull the serial number out of the class dictionary.  If none, just use the hpn
+        """
         sn = hpn
         if part_type in self.ser_num_dict.keys():
             sn = self.ser_num_dict[part_type]
@@ -220,6 +223,29 @@ class Update:
         self.fp.write(as_connect(add_or_stop, up, down, cdate, ctime, self.do_it))
 
     def exists(self, atype, hpn, rev='active', port=None, side='both', at_date='now'):
+        """
+        Check if a part or connection exists for hpn
+
+        Parameters
+        ----------
+        atype :  string
+              'part' or connection
+        hpn : string or list of strings
+              HERA part number to check.  Can be a list of strings or a csv-list
+        rev : None or string or list of strings.
+              Revision(s) to check.  If None it checks all/any.  Default='active'
+        port : None or string or list of strings
+               name of port to check.  If None (default) it checks all/any (atype='connection' only)
+        side : string
+               "side" of part to check.  Options are:  up, down, or both (default)
+        at_date : string, float, int, Time, or datetime
+                  date for the connection to be active.  Default is 'now'
+
+        Return
+        ------
+        boolean
+                 True if existing corresponding hpn/rev
+        """
         if atype == 'part':
             x = self.handle.get_part_dossier(hpn, rev, at_date)
             if len(x) == 0:
@@ -229,6 +255,20 @@ class Update:
             return self.health.check_for_existing_connection(hpn=hpn, rev=rev, port=port, side=side, at_date=at_date)
 
     def add_station(self, stn, ser_num, cdate, ctime='10:00'):
+        """
+        Add an antenna station to the database.
+
+        Parameters
+        ----------
+        stn : string or int
+              antenna number (digits only)
+        ser_num : string or int
+                  installation order number of antenna
+        cdate : string
+                YYYY/MM/DD format
+        ctime : string
+                HH:MM format
+        """
         s = "HH{}".format(stn)
         a = "A{}".format(stn)
         n = "S/N{}".format(ser_num)
@@ -245,12 +285,63 @@ class Update:
             self.update_connection('add', up, down, cdate, ctime)
 
     def add_part_info(self, hpn, rev, note, cdate, ctime):
+        """
+        Add a note/comment for a part to the database
+
+        Parameters
+        ----------
+        hpn : string
+              HERA part number for comment
+        rev : string
+              Revision for comment.
+        note : string
+               The desired note.
+        cdate : string
+                YYYY/MM/DD format
+        ctime : string
+                HH:MM format
+        """
         self.fp.write('add_part_info.py -p {} -r {} -c "{}" --date {} --time {}\n'.format(hpn, rev, note, cdate, ctime))
 
-    def add_node(self, node, fps, pch, ncm, pams, cdate, ctime=['10:00', '11:00'], ser_num={}, override_pam_num=False):
-        if not override_pam_num and len(pams) != 12:
+    def add_node(self, node, fps, pch, ncm, pams, snaps, cdate, ctime=['10:00', '11:00'], ser_num={}, override=False):
+        """
+        Add a node and interior into database.
+
+        Parameters
+        ----------
+        node : int
+                node number
+        fps : int
+                fem power supply unit
+        pch : int
+                pam chassis
+        ncm : ???
+                node control module
+        pams : list of ints
+                list of the 12 pams (less allowed if override['pam'] is True)
+        snaps : list of strings
+                list of the 4 snaps (less allowed if override['snap'] is True)
+        cdate : string
+                YYYY/MM/DD format
+        ctime : [string, string]
+                part-add time, connection-add time in HH:MM format
+        ser_num = dictionary
+                dictionary of the serial numbers for the different part types
+        """
+        if isinstance(override, bool):
+            override = {'pam': override, 'snap': override}
+        else:
+            if 'pam' not in override.keys():
+                override['pam'] = False
+            if 'snap' not in override.keys():
+                override['snap'] = False
+        if not override['pam'] and len(pams) != 12:
             print("Need 12 pams - you've supplied {}".format(len(pams)))
-            print("If ok, rerun setting 'override_pam_num=True'")
+            print("If ok, rerun with override['pam']=True'")
+            return
+        if not override['snap'] and len(snaps) != 4:
+            print("Need 4 snaps - you've supplied {}".format(len(snaps)))
+            print("If ok, rerun with override['snap']=True'")
             return
         if isinstance(ctime, list):
             partadd_time = ctime[0]
@@ -259,13 +350,14 @@ class Update:
             partadd_time = ctime
             connadd_time = ctime
         self.ser_num_dict = ser_num
+        part_to_add = {}
         hpn = 'FPS{:02d}'.format(fps)
         sn = self.get_ser_num(hpn, 'fps')
         part_to_add['fps'] = (hpn, 'A', 'fem-power-supply', sn)
         hpn = 'PCH{:02d}'.format(pch)
         sn = self.get_ser_num(hpn, 'pch')
         part_to_add['pch'] = (hpn, 'A', 'pam-chassis', sn)
-        hpn = 'NCM{}'.format(node)
+        hpn = 'NCM{}'.format(ncm)
         sn = self.get_ser_num(hpn, 'ncm')
         part_to_add['ncm'] = (hpn, 'A', 'node-control-module', sn)
         hpn = 'N{:02d}'.format(node)
@@ -274,10 +366,20 @@ class Update:
         hpn = 'ND{:02d}'.format(node)
         sn = self.get_ser_num(hpn, 'node-station')
         part_to_add['node-station'] = (hpn, 'A', 'station', sn)
+        hpn = 'NBP{:02d}'.format(node)
+        sn = self.get_ser_num(hpn, 'node-bulkhead')
+        part_to_add['node-bulkhead'] = (hpn, 'A', 'node-bulkhead', sn)
         for _pam in pams:
             hpn = 'PAM{:03d}'.format(_pam)
-            sn = self.get_ser_num(hpn)
+            sn = '{:03d}'.format(_pam)
             part_to_add[hpn] = (hpn, 'A', 'post-amp', sn)
+        for _snap in snaps:
+            hpn = 'SNP{}'.format(_snap)
+            sn = '{}'.format(_snap)
+            part_to_add[hpn] = (hpn, 'A', 'snap', sn)
+        # Add node as station
+        p = part_to_add['node-station']
+        self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'.format(p[0], p[3], cdate, partadd_time))
 
         # Check for parts to add and add them
         for p in six.itervalues(part_to_add):
@@ -287,9 +389,16 @@ class Update:
                 print("Part {} is already added".format(p))
 
         # Add connections
-        up = [part_to_add['fps'][0], part_to_add['fps'][1], 'rack']
-        dn = [part_to_add['snap'][0], part_to_add['snap'][1], snap_port['e']]
+        connection_to_add = []
+        up = [part_to_add['node'][0], part_to_add['node'][1], '@ground']
+        dn = [part_to_add['node-station'][0], part_to_add['node-station'][1], '@ground']
         connection_to_add.append([up, dn, cdate, connadd_time])
+        #up = [part_to_add['fps'][0], part_to_add['fps'][1], 'rack']
+        #dn = [part_to_add['snap'][0], part_to_add['snap'][1], snap_port['e']]
+        #connection_to_add.append([up, dn, cdate, connadd_time])
+        for up, down, codate, cotime  in connection_to_add:
+            if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up', at_date=cdate):
+                    self.update_connection('add', up, down, codate, cotime)
 
     def swap(self, old, new, cdate, ctime='13:00'):
         ptype = {'PAM': 'post-amp', 'FEM': 'front-end', 'SNP': 'snap'}
