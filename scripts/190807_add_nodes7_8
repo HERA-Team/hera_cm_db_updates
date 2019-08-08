@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-echo "190802_add_nodes7_8" >> scripts.log 
+echo "190807_add_nodes7_8" >> scripts.log 
 add_station.py ND07 --sernum 3 --date 2019/08/02 --time 10:00
 add_connection.py -u N07 --uprev A --upport @ground -d ND07 --dnrev A --dnport @ground --date 2019/08/02 --time 11:00
 add_connection.py -u FPS05 --uprev A --upport @rack -d N07 --dnrev A --dnport @top --date 2019/08/02 --time 11:00
