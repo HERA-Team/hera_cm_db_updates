@@ -3,7 +3,7 @@ from __future__ import absolute_import, division, print_function
 import signal_chain
 import sys
 
-hera = signal_chain.Update(sys.argv[0], do_it=True)
+hera = signal_chain.Update(sys.argv[0])
 
 node = 7
 fps = 5
