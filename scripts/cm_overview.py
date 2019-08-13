@@ -104,61 +104,53 @@ class Overview:
         # ############################ Get RF power ############################
         print("Need to still get RF power from db")
 
-    def find_mismatches(self):
+    def compare(self, antkeys=None):
         # ################### Check that cm and googlesheet match ##############
+        if antkeys is None:
+            antkeys = self.connected
+        elif not isinstance(antkeys, list):
+            antkeys = [antkeys]
         self.mismatches = []
-        for antkey in self.connected:
+        for antkey in antkeys:
             for pol in ['e', 'n']:
+                print("------------------")
                 for i, col in enumerate(self.sheet_header):
-                    val = self.__get_val(antkey, pol, col)
+                    val = self.__get_val_from_cmdb(antkey, pol, col)
                     if val is not None:
                         sheet_key = "{}-{}".format(antkey, pol.upper())
                         sheet_val = self.sheet_data[sheet_key][i]
+                        print("{}:  {}   <--->   {}".format(self.sheet_header[i], sheet_val, val))
                         if val != sheet_val:
                             self.mismatches.append("\t<{} {} {}>    {}   |   {}".format(antkey, pol, col, val, sheet_val))
 
-    def dump_data(self):
-        print("Sheet header:  ", self.sheet_header)
-        for k in self.connected:
-            print("\n\n----{}----------------------------------------".format(k))
-            print(self.hookup_dict[k])
-            print('\n')
-            print(self.apriori_data[k])
-            print(self.part_data[k])
-            print('\n')
-            for pol in ['E', 'N']:
-                sdkey = '{}-{}'.format(k, pol)
-                print(self.sheet_data[sdkey])
-
-        if len(self.mismatches):
-            print("\nThese {} entries do not match:".format(len(self.mismatches)))
-            for mm in self.mismatches:
-                print(mm)
-        else:
-            print("All entries match.")
-
-    def __get_val(self, antkey, pol, sheet_col):
+    def __get_val_from_cmdb(self, antkey, pol, sheet_col):
         """
         Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column
+hu_col = {'Ant': 0, 'Feed': 1, 'FEM': 2, 'PAM': 4, 'PAM Slot': 3, 'I2C_bus': -1, 'SNAP': 5, 'Port': 5, 'SNAP Slot': 6, 'Node': 6, 'APriori': -1}
         """
         if sheet_col not in list(sd.hu_col.keys()):
             return None
         hu = self.hookup_dict[antkey]
         pol = pol.lower()
-        pos = get_num(hu.hookup[pol][sd.hu_col['Position']].downstream_input_port)
-        i2c = (int(pos) + 2) % 3 + 1
+        pam_slot = get_num(hu.hookup[pol][sd.hu_col['PAM Slot']].downstream_input_port)
+        snap_slot = str(int(get_num(hu.hookup[pol][sd.hu_col['Node']].downstream_input_port)))
+        i2c = (int(pam_slot) + 2) % 3 + 1
 
         if sheet_col == 'I2C_bus':
             return str(i2c)
-        if sheet_col == 'Position':
-            return pos
-        if sheet_col == 'Port':
-            return hu.hookup[pol][sd.hu_col[sheet_col]].downstream_input_port
+        if sheet_col == 'PAM Slot':
+            return pam_slot
+        if sheet_col == 'SNAP Slot':
+            return snap_slot
+        if sheet_col == 'Port' or sheet_col == 'Pol':
+            return hu.hookup[pol][sd.hu_col[sheet_col]].downstream_input_port.upper()
+        if sheet_col == 'APriori':
+            return self.apriori_data[antkey]
 
         part = hu.hookup[pol][sd.hu_col[sheet_col]].downstream_part
         num = str(int(get_num(part)))
 
         if sheet_col == 'SNAP':
-            loc = str(int(get_num(hu.hookup[pol][sd.hu_col['Node']].downstream_input_port)))
-            return "SNAP{} ({}{})".format(loc, part[3], num)
+            return "{}{}".format(part[3], num)
+
         return num

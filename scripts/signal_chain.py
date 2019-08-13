@@ -188,7 +188,7 @@ class Update:
                 connection_to_add.append([up, dn, cdate, connadd_time])
         for i, _snap in enumerate(snaps):
             snap_hpn = 'SNP{}'.format(_snap)
-            up = [part_to_add[snap_hpn][0], part_to_add[snap_hpn][1], '@rack']
+            up = [part_to_add[snap_hpn][0], part_to_add[snap_hpn][1], 'rack']
             dn = [part_to_add['node'][0], part_to_add['node'][1], 'loc{}'.format(i)]
             connection_to_add.append([up, dn, cdate, connadd_time])
             for pol in ['e', 'n']:
