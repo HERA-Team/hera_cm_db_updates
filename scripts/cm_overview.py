@@ -5,177 +5,160 @@
 
 """Builds csv files for configuration_overview googlesheet
 
+Simple commands within the "Actions" column:
+
+<S PAM/FEM/SNAP OLD:NEW YYYY/MM/DD HH:MM>
 """
 from __future__ import absolute_import, division, print_function
 
 from hera_mc import cm_hookup, cm_utils, cm_sysutils, cm_handling, mc
+import sheet_data as sd
 
 import os
 import csv
 import requests
+from argparse import Namespace
+
+hu_testing = cm_utils.default_station_prefixes
+hu_testing = 'cache'
+
+_rq = Namespace(hpn=hu_testing, revision='LAST',
+                exact_match=False, force_new_cache=True, force_db=False,
+                hookup_type=None, port='all', at_date='now')
 
 
 def get_num(val):
     return ''.join(c for c in val if c.isnumeric())
 
 
-hpn = cm_utils.default_station_prefixes
-hpn = 'cache'
-print("REMOVE ABOVE LINE WHEN DONE DEVELOPING")
-revision = 'LAST'
-exact_match = False
-force_new_cache = True
-force_db = False
-hookup_type = None
-port = 'all'
-at_date = 'now'
+class Overview:
+    def __init__(self):
+        # Start session
+        db = mc.connect_to_mc_db(None)
+        self.session = db.sessionmaker()
 
-# Start session
-db = mc.connect_to_mc_db(None)
-session = db.sessionmaker()
+    def get_hookup(self):
+        # ############################ Get hookup data ############################
+        self.hookup = cm_hookup.Hookup(self.session)
+        self.hookup_dict = self.hookup.get_hookup(hpn_list=_rq.hpn, rev=_rq.revision, port_query=_rq.port,
+                                                  at_date=_rq.at_date, exact_match=_rq.exact_match,
+                                                  force_new_cache=_rq.force_new_cache, force_db=_rq.force_db,
+                                                  hookup_type=_rq.hookup_type)
+        self.connected = []
+        for ant in self.hookup_dict.keys():
+            for pol in ['e', 'n']:
+                if self.hookup_dict[ant].fully_connected[pol]:
+                    self.connected.append(ant)
+                    break
+        self.connected = cm_utils.put_keys_in_numerical_order(self.connected)
 
-# ############################ Get hookup data ############################
-hookup = cm_hookup.Hookup(session)
-hookup_dict = hookup.get_hookup(hpn_list=hpn, rev=revision, port_query=port, at_date=at_date,
-                                exact_match=exact_match, force_new_cache=force_new_cache,
-                                force_db=force_db, hookup_type=hookup_type)
-connected = []
-for ant in hookup_dict.keys():
-    for pol in ['e', 'n']:
-        if hookup_dict[ant].fully_connected[pol]:
-            connected.append(ant)
-            break
-connected = cm_utils.put_keys_in_numerical_order(connected)
-connected = [x.split(':')[0] for x in connected]
+    def get_apriori(self):
+        # ############################ Get apriori data ############################
+        sys = cm_sysutils.Handling(self.session)
+        self.apriori_data = {}
+        for antkey in self.connected:
+            hh = antkey.split(':')[0]
+            self.apriori_data[antkey] = sys.get_apriori_status_for_antenna(hh, at_date=_rq.at_date)
 
-hu_col = {'Ant': 0, 'Feed': 1, 'FEM': 2, 'PAM': 4, 'Position': 3, 'I2C_bus': -1, 'SNAP': 5, 'Port': 5, 'Node': 6}
+    def get_sheets(self):
+        # ############################ Get previous sheet ############################
+        self.sheet_data = {}
+        self.sheet_header = []
+        self.sheet_date = {}
+        self.tabs = sorted(list(sd.gsheet.keys()))
+        for tab in self.tabs:
+            xxx = requests.get(sd.gsheet[tab])
+            csv_tab = b''
+            for line in xxx:
+                csv_tab += line
+            csv_tab = csv.reader(csv_tab.decode('utf-8').splitlines())
+            for data in csv_tab:
+                if data[0].startswith('Ant'):
+                    self.sheet_header = data
+                    continue
+                elif data[0].startswith('Date:'):
+                    self.sheet_date[tab] = data[1]
+                    break
+                try:
+                    antnum = int(data[0])
+                except ValueError:
+                    continue
+                key = 'HH{}:A-{}'.format(antnum, data[1].upper())
+                self.sheet_data[key] = data
 
+    def get_part_info(self):
+        # ############################ Get part info ###########################
+        part = cm_handling.Handling(self.session)
+        self.part_data = {}
+        for k in self.connected:
+            ant = k.split(':')[0]
+            part_dossier = part.get_part_dossier(hpn=ant, rev='ACTIVE', at_date=_rq.at_date, exact_match=True, full_version=True)
+            if len(part_dossier):
+                key = list(part_dossier.keys())[0]
+                info = part_dossier[key].table_entry_row(['part_info', 'post_date', 'lib_file'])
+                self.part_data[k] = []
+                for pi in info:
+                    self.part_data[k].append([pi[2], pi[3]])
 
-def get_val(ant, pol, sheet_col):
-    """
-    Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column
-    """
-    if sheet_col not in list(hu_col.keys()):
-        return None
+    def get_RF_power(self):
+        # ############################ Get RF power ############################
+        print("Need to still get RF power from db")
 
-    hu = get_hu(ant)
-    pol = pol.lower()
-    pos = get_num(hu.hookup[pol][hu_col['Position']].downstream_input_port)
-    i2c = (int(pos) + 2) % 3 + 1
+    def find_mismatches(self):
+        # ################### Check that cm and googlesheet match ##############
+        self.mismatches = []
+        for antkey in self.connected:
+            for pol in ['e', 'n']:
+                for i, col in enumerate(self.sheet_header):
+                    val = self.__get_val(antkey, pol, col)
+                    if val is not None:
+                        sheet_key = "{}-{}".format(antkey, pol.upper())
+                        sheet_val = self.sheet_data[sheet_key][i]
+                        if val != sheet_val:
+                            self.mismatches.append("\t<{} {} {}>    {}   |   {}".format(antkey, pol, col, val, sheet_val))
 
-    if sheet_col == 'I2C_bus':
-        return str(i2c)
-    if sheet_col == 'Position':
-        return pos
-    if sheet_col == 'Port':
-        return hu.hookup[pol][hu_col[sheet_col]].downstream_input_port
+    def dump_data(self):
+        print("Sheet header:  ", self.sheet_header)
+        for k in self.connected:
+            print("\n\n----{}----------------------------------------".format(k))
+            print(self.hookup_dict[k])
+            print('\n')
+            print(self.apriori_data[k])
+            print(self.part_data[k])
+            print('\n')
+            for pol in ['E', 'N']:
+                sdkey = '{}-{}'.format(k, pol)
+                print(self.sheet_data[sdkey])
 
-    part = hu.hookup[pol][hu_col[sheet_col]].downstream_part
-    num = str(int(get_num(part)))
+        if len(self.mismatches):
+            print("\nThese {} entries do not match:".format(len(self.mismatches)))
+            for mm in self.mismatches:
+                print(mm)
+        else:
+            print("All entries match.")
 
-    if sheet_col == 'SNAP':
-        loc = str(int(get_num(hu.hookup[pol][hu_col['Node']].downstream_input_port)))
-        return "SNAP{} ({}{})".format(loc, part[3], num)
-    return num
+    def __get_val(self, antkey, pol, sheet_col):
+        """
+        Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column
+        """
+        if sheet_col not in list(sd.hu_col.keys()):
+            return None
+        hu = self.hookup_dict[antkey]
+        pol = pol.lower()
+        pos = get_num(hu.hookup[pol][sd.hu_col['Position']].downstream_input_port)
+        i2c = (int(pos) + 2) % 3 + 1
 
+        if sheet_col == 'I2C_bus':
+            return str(i2c)
+        if sheet_col == 'Position':
+            return pos
+        if sheet_col == 'Port':
+            return hu.hookup[pol][sd.hu_col[sheet_col]].downstream_input_port
 
-def get_hu(ant):
-    """
-    Components of hookup_dossier entry are:
-            entry_key = entry_key
-            hookup = {}  # actual hookup connection information
-            fully_connected = {}  # flag if fully connected
-            hookup_type = {}  # name of hookup_type
-            columns = {}  # list with the actual column headers in hookup
-            timing = {}  # aggregate hookup start and stop
-    Dictionaries are keyed on 'e'/'n'
-    """
-    ant = ant + ':A'
-    return hookup_dict[ant]
+        part = hu.hookup[pol][sd.hu_col[sheet_col]].downstream_part
+        num = str(int(get_num(part)))
 
-
-# ############################ Get apriori data ############################
-sys = cm_sysutils.Handling(session)
-apriori_data = {}
-for hh in connected:
-    apriori_data[hh] = sys.get_apriori_status_for_antenna(hh, at_date=at_date)
-print("Read 'apriori_data'")
-
-# ############################ Get previous sheet ############################
-tabs = ['node0', 'node9']
-gsheet = {}
-gsheet['node0'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=0&single=true&output=csv"
-gsheet['node9'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=59309582&single=true&output=csv"
-sheet_data = {}
-sheet_header = []
-sheet_date = {}
-for tab in tabs:
-    xxx = requests.get(gsheet[tab])
-    csv_tab = b''
-    for line in xxx:
-        csv_tab += line
-    csv_tab = csv.reader(csv_tab.decode('utf-8').splitlines())
-    for data in csv_tab:
-        if data[0].startswith('Ant'):
-            sheet_header = data
-            continue
-        elif data[0].startswith('Date:'):
-            sheet_date[tab] = data[1]
-            break
-        try:
-            antnum = int(data[0])
-        except ValueError:
-            continue
-        key = 'HH{}:{}'.format(antnum, data[1].upper())
-        sheet_data[key] = data
-print("Read 'sheet_data', 'sheet_header', 'sheet_date'")
-
-# ############################ Get part info ###########################
-part = cm_handling.Handling(session)
-part_data = {}
-for k in connected:
-    part_dossier = part.get_part_dossier(hpn=k, rev='ACTIVE', at_date='now', exact_match=True, full_version=True)
-    if len(part_dossier):
-        key = list(part_dossier.keys())[0]
-        info = part_dossier[key].table_entry_row(['part_info', 'post_date', 'lib_file'])
-        part_data[k] = []
-        for pi in info:
-            part_data[k].append([pi[2], pi[3]])
-print("Read 'part_data'")
-
-# ############################ Get RF power ############################
-print("Need to still get RF power from db")
-
-
-# ################### Check that cm and googlesheet match ##############
-mismatches = []
-for ant in connected:
-    for pol in ['e', 'n']:
-        for i, col in enumerate(sheet_header):
-            val = get_val(ant, pol, col)
-            if val is not None:
-                sheet_key = "{}:{}".format(ant, pol.upper())
-                if val != sheet_data[sheet_key][i]:
-                    mismatches.append("\t<{} {} {}>    {}   |   {}".format(ant, pol, col, val, sheet_data[sheet_key][i]))
-
-if len(mismatches):
-    print("\nThese entries do not match:")
-    for mm in mismatches:
-        print(mm)
-else:
-    print("All entries match.")
-
-
-# ############################ Print data ###########################
-def print_data():
-    print("Hookup header:  ", hookup_header)
-    print("Sheet header:  ", sheet_header)
-    for k in connected:
-        print("\n\n----{}----------------------------------------".format(k))
-        print(hookup_header)
-        print(hookup_data[k])
-        print('\n')
-        print(apriori_data[k])
-        print('\n', sheet_header)
-        print(sheet_data[k])
-        print(part_data[k])
+        if sheet_col == 'SNAP':
+            loc = str(int(get_num(hu.hookup[pol][sd.hu_col['Node']].downstream_input_port)))
+            return "SNAP{} ({}{})".format(loc, part[3], num)
+        return num
