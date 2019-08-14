@@ -74,7 +74,7 @@ class Overview:
             csv_tab = csv.reader(csv_tab.decode('utf-8').splitlines())
             for data in csv_tab:
                 if data[0].startswith('Ant'):
-                    self.sheet_header = data
+                    self.sheet_header = ['Node'] + data
                     continue
                 elif data[0].startswith('Date:'):
                     self.sheet_date[tab] = data[1]
@@ -84,7 +84,7 @@ class Overview:
                 except ValueError:
                     continue
                 key = 'HH{}:A-{}'.format(antnum, data[1].upper())
-                self.sheet_data[key] = data
+                self.sheet_data[key] = [get_num(tab)] + data
 
     def get_part_info(self):
         # ############################ Get part info ###########################
@@ -104,24 +104,52 @@ class Overview:
         # ############################ Get RF power ############################
         print("Need to still get RF power from db")
 
-    def compare(self, antkeys=None):
+    def compare(self, antkeys=None, output='mismatch'):
+        """
+        Compares the hookup data with the spreadsheet.
+
+        Parameters
+        ----------
+        antkeys : csv-str, list or None
+            Antenna keys to display.  If None displays all.
+        output : str {'mismatch, all, none'}
+            Output type.
+
+        Returns
+        -------
+        list
+            List of mismatches
+        """
         # ################### Check that cm and googlesheet match ##############
         if antkeys is None:
             antkeys = self.connected
         elif not isinstance(antkeys, list):
-            antkeys = [antkeys]
+            antkeys = antkeys.split(',')
         self.mismatches = []
+        if output.startswith('all'):
+            show_hyphens = True
+        else:
+            show_hyphens = False
         for antkey in antkeys:
             for pol in ['e', 'n']:
-                print("------------------")
+                if show_hyphens:
+                    print("------------------")
+                if output.startswith('mis'):
+                    show_hyphens = False
                 for i, col in enumerate(self.sheet_header):
                     val = self.__get_val_from_cmdb(antkey, pol, col)
                     if val is not None:
                         sheet_key = "{}-{}".format(antkey, pol.upper())
                         sheet_val = self.sheet_data[sheet_key][i]
-                        print("{}:  {}   <--->   {}".format(self.sheet_header[i], sheet_val, val))
-                        if val != sheet_val:
-                            self.mismatches.append("\t<{} {} {}>    {}   |   {}".format(antkey, pol, col, val, sheet_val))
+                        if output.startswith('all'):
+                            print("{}:  {}   <--->   {}".format(self.sheet_header[i], sheet_val, val))
+                        if val.upper() != sheet_val.upper():
+                            self.mismatches.append([self.sheet_header[i], self.sheet_data[sheet_key], val])
+                            if output.startswith('mis'):
+                                show_hyphens = True
+                                print("{}:  {}   <--->   {}  {}".format(self.sheet_header[i], val, sheet_val,
+                                      self.sheet_data[sheet_key]))
+        return self.mismatches
 
     def __get_val_from_cmdb(self, antkey, pol, sheet_col):
         """
