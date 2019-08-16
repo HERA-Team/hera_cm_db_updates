@@ -6,8 +6,7 @@
 import cm_overview
 x = cm_overview.Overview()
 
-x.get_hookup()
-x.get_apriori()
-x.get_sheets()
-x.get_part_info()
-x.compare()
+x.compare(antkeys='all', output=None)
+x.get_sheet_commands()
+x.get_mismatch_commands()
+x.process_commands()

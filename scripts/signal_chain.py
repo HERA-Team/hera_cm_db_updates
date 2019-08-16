@@ -342,6 +342,24 @@ class Update:
         if atype == 'connection':
             return self.health.check_for_existing_connection(hpn=hpn, rev=rev, port=port, side=side, at_date=at_date)
 
+    def update_apriori(self, antenna, status, cdate, ctime='12:00'):
+        """
+        Update the antenna a priori status.
+
+        Parameters
+        ----------
+        antenna : str
+            Antenna part number, e.g. HH24
+        status : str
+            Antenna apriori enum string.
+        cdate : str
+            YYYY/MM/DD
+        ctime : str, optional
+            HH:MM, default is 12:00
+        """
+
+        self.fp.write('update_apriori.py -p {} -s {} --date {} --time {}\n'.format(antenna, status, cdate, ctime))
+
     def add_part_info(self, hpn, rev, note, cdate, ctime):
         """
         Add a note/comment for a part to the database
@@ -361,28 +379,47 @@ class Update:
         """
         self.fp.write('add_part_info.py -p {} -r {} -c "{}" --date {} --time {}\n'.format(hpn, rev, note, cdate, ctime))
 
-    def swap(self, old, new, cdate, ctime='13:00'):
+    def replace(self, old, new, cdate, ctime='13:00'):
+        """
+        Replaces an old PAM, FEM or SNAP part, with a new one.  If new is None, it just stops the old one.
+
+        Parameters
+        ----------
+        old : list
+            [old_hpn, old_rev]
+        new : list
+            [new_hpn, old_rev]
+        cdate : str
+            YYYY/MM/DD
+        ctime : str, optional
+            HH:MM, default is 13:00
+        """
         ptype = {'PAM': 'post-amp', 'FEM': 'front-end', 'SNP': 'snap'}
         cdt = cm_utils.get_astropytime(cdate, ctime)
         if not self.exists('part', hpn=old[0], rev=old[1], at_date=cdt):
             print("{} does not exist -- aborting swap".format(old[0]))
             return
-        if not self.exists('part', hpn=new[0], rev=new[1], at_date=cdt):
-            for ptk in ptype.keys():
-                if new[0].upper().startswith(ptk):
-                    break
-            new = new + [ptype[ptk], new[0]]
-            print("Adding new part {}".format(new))
-            self.update_part('add', new, cdate, ctime)
+        replace_with_none = False
+        if new is None:
+            replace_with_none = True
+            print("Only stopping old part.")
         else:
-            print("{} already added.".format(new[0]))
+            if not self.exists('part', hpn=new[0], rev=new[1], at_date=cdt):
+                for ptk in ptype.keys():
+                    if new[0].upper().startswith(ptk):
+                        break
+                new = new + [ptype[ptk], new[0]]
+                print("Adding new part {}".format(new))
+                self.update_part('add', new, cdate, ctime)
+            else:
+                print("{} already added.".format(new[0]))
         old_pd = self.handle.get_part_dossier(hpn=old[0], rev=old[1], at_date=cdt, exact_match=True, full_version=True)
         old_pd_key = list(old_pd.keys())
         if len(old_pd_key) > 1:
             print("Too many connected parts")
             return
         opd = old_pd[old_pd_key[0]]
-        print("Stopping connections: ")
+        print("Stopping old connections: ")
         for key, val in six.iteritems(opd.connections.up):
             uppart = [val.upstream_part, val.up_part_rev, val.upstream_output_port]
             dnpart = [val.downstream_part, val.down_part_rev, val.downstream_input_port]
@@ -391,6 +428,8 @@ class Update:
             uppart = [val.upstream_part, val.up_part_rev, val.upstream_output_port]
             dnpart = [val.downstream_part, val.down_part_rev, val.downstream_input_port]
             self.update_connection('stop', uppart, dnpart, cdate, ctime)
+        if replace_with_none:
+            return
         print("Adding connections: ")
         for key, val in six.iteritems(opd.connections.up):
             uppart = [val.upstream_part, val.up_part_rev, val.upstream_output_port]
