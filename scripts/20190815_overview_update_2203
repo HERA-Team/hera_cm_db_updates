@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+echo "20190815_overview_update_2203" >> scripts.log 
+add_part_info.py -p HH89 -r A -c "Danny Aug 2-5: Installed new pam, I2C connection works ok." --date 2019/08/05 --time 12:01
