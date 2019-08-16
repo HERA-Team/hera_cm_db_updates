@@ -248,3 +248,178 @@ HH1,A,Ground springs to feed with solution 2,,1236938418
 HH11,A,Ground springs to feed with solution 2,,1236938418
 HH13,A,Ground springs to feed with solution 2,,1236938418
 HH39,A,Ground springs to feed with solution 2,,1237024818
+HH0,A,FEM I2C: y,,1244462418
+HH0,A,PAM I2C: y,,1244462419
+HH0,A,RF PWR E: 1.7,,1244462420
+HH0,A,Goodness E: OK?,,1244462421
+HH0,A,Feed Height (m): 4.428,,1248696018
+HH0,A,Tension N:W:E (lbs): 330:355:330,,1248696019
+HH0,A,Eye-bolt N:W:E (m): 6.50:6.35:6.41,,1248696020
+HH0,A,RF PWR N: -4.9,,1244462422
+HH0,A,Goodness N: OK?,,1244462423
+HH1,A,FEM I2C: y,,1244462418
+HH1,A,PAM I2C: y,,1244462419
+HH1,A,RF PWR E: 0.6,,1244462420
+HH1,A,Goodness E: OK?,,1244462421
+HH1,A,Feed Height (m): 4.397,,1248696018
+HH1,A,Tension N:W:E (lbs): 460:315:400,,1248696019
+HH1,A,Eye-bolt N:W:E (m): 6.41:6.37:6.33,,1248696020
+HH1,A,RF PWR N: -3.7,,1244462422
+HH1,A,Goodness N: OK?,,1244462423
+HH2,A,FEM I2C: y,,1244462418
+HH2,A,PAM I2C: y,,1244462419
+HH2,A,RF PWR E: 0.1,,1244462420
+HH2,A,Goodness E: OK?,,1244462421
+HH2,A,"Broken fibres (spliced), antenna support broken",,1244462422
+HH2,A,Feed Height (m): 4.405,,1248696018
+HH2,A,Tension N:W:E (lbs): 490:290:445,,1248696019
+HH2,A,Eye-bolt N:W:E (m): 6.23:6.15:6.18,,1248696020
+HH2,A,RF PWR N: -10.5,,1244462423
+HH2,A,Goodness N: Bad,,1244462424
+HH2,A,"Broken fibres (spliced maybe not fixed?), antenna support broken. Bad PAM confirmed after swapping with other input. ",,1244462425
+HH11,A,FEM I2C: n,,1244462418
+HH11,A,PAM I2C: y,,1244462419
+HH11,A,RF PWR E: -0.5,,1244462420
+HH11,A,Goodness E: OK?,,1244462421
+HH11,A,"Internal CAT cable broken (fixed?), +5V RFoF FEM and PAM",,1244462422
+HH11,A,Feed Height (m): 4.408,,1248696018
+HH11,A,Tension N:W:E (lbs): 335:340:400,,1248696019
+HH11,A,Eye-bolt N:W:E (m): 6.48:6.41:6.33,,1248696020
+HH11,A,RF PWR N: -7.4,,1244462423
+HH11,A,Goodness N: OK?,,1244462424
+HH11,A,"Internal CAT cable broken (fixed?), +5V RFoF FEM and PAM",,1244462425
+HH12,A,FEM I2C: y,,1244462418
+HH12,A,PAM I2C: y,,1244462419
+HH12,A,RF PWR E: -3.2,,1244462420
+HH12,A,Goodness E: OK?,,1244462421
+HH12,A,Feed Height (m): 4.408,,1248696018
+HH12,A,Tension N:W:E (lbs): 310:370:315,,1248696019
+HH12,A,Eye-bolt N:W:E (m): 6.43:6.35:6.37,,1248696020
+HH12,A,RF PWR N: -5.9,,1244462422
+HH12,A,Goodness N: OK?,,1244462423
+HH12,A,broken fibre (spliced),,1249646418
+HH12,A,Testing,,1249646419
+HH13,A,FEM I2C: n,,1244462418
+HH13,A,PAM I2C: y,,1244462419
+HH13,A,RF PWR E: 0.4,,1244462420
+HH13,A,Goodness E: OK?,,1244462421
+HH13,A,Feed Height (m): 4.4,,1248696018
+HH13,A,Tension N:W:E (lbs): 475:420:405,,1248696019
+HH13,A,Eye-bolt N:W:E (m): 6.35:6.32:6.30,,1248696020
+HH13,A,RF PWR N: -6.2,,1244462422
+HH13,A,Goodness N: OK?,,1244462423
+HH14,A,FEM I2C: y,,1244462418
+HH14,A,PAM I2C: y,,1244462419
+HH14,A,RF PWR E: -0.8,,1244462420
+HH14,A,Goodness E: OK?,,1244462421
+HH14,A,Feed Height (m): 4.407,,1248696018
+HH14,A,Tension N:W:E (lbs): 425:365:395,,1248696019
+HH14,A,Eye-bolt N:W:E (m): 6.25:6.24:6.22,,1248696020
+HH14,A,RF PWR N: -14.2,,1244462422
+HH14,A,Goodness N: Check!,,1244462423
+HH14,A,Maybe damaged fibre?,,1244462424
+HH23,A,FEM I2C: y,,1244462418
+HH23,A,PAM I2C: y,,1244462419
+HH23,A,RF PWR E: -2.6,,1244462420
+HH23,A,Goodness E: OK?,,1244462421
+HH23,A,Tension N:W:E (lbs): 430:455:390,,1248696018
+HH23,A,Eye-bolt N:W:E (m): 6.52:6.39:6.37,,1248696019
+HH23,A,RF PWR N: -7.3,,1244462422
+HH23,A,Goodness N: OK?,,1244462423
+HH24,A,FEM I2C: y,,1244462418
+HH24,A,PAM I2C: y,,1244462419
+HH24,A,RF PWR E: -16.1,,1244462420
+HH24,A,Goodness E: NO?,,1244462421
+HH24,A,"Broken fibres (spliced but not fixed),was used for notch tests",,1244462422
+HH24,A,Feed Height (m): 4.409,,1248696018
+HH24,A,Tension N:W:E (lbs): 210:240:220,,1248696019
+HH24,A,Eye-bolt N:W:E (m): 6.46:6.29:6.19,,1248696020
+HH24,A,RF PWR N: -5.9,,1244462423
+HH24,A,Goodness N: OK?,,1244462424
+HH24,A,"Broken fibres (spliced), was used for notch tests",,1244462425
+HH25,A,FEM I2C: y,,1244462418
+HH25,A,PAM I2C: y,,1244462419
+HH25,A,RF PWR E: -5.1,,1244462420
+HH25,A,Goodness E: OK?,,1244462421
+HH25,A,"Long CAT cable broken (intermittent), wrong FEM screws, +5V RFoF FEM and PAM",,1244462422
+HH25,A,Feed Height (m): 4.406,,1248696018
+HH25,A,Tension N:W:E (lbs): 370:345:375,,1248696019
+HH25,A,Eye-bolt N:W:E (m): 6.50:6.28:6.23,,1248696020
+HH25,A,RF PWR N: -4.5,,1244462423
+HH25,A,Goodness N: OK?,,1244462424
+HH25,A,"Long CAT cable broken (intermittent), wrong FEM screws, +5V RFoF FEM and PAM",,1244462425
+HH26,A,FEM I2C: n,,1244462418
+HH26,A,PAM I2C: y,,1244462419
+HH26,A,RF PWR E: -0.3,,1244462420
+HH26,A,Goodness E: OK?,,1244462421
+HH26,A,"Long CAT cable broken, wrong FEM screws",,1244462422
+HH26,A,Feed Height (m): 4.405,,1248696018
+HH26,A,Tension N:W:E (lbs): 305:455:300,,1248696019
+HH26,A,Eye-bolt N:W:E (m): 6.43:6.17:6.40,,1248696020
+HH26,A,RF PWR N: -4.7,,1244462423
+HH26,A,Goodness N: OK?,,1244462424
+HH26,A,"Long CAT cable broken, wrong FEM screws",,1244462425
+HH39,A,FEM I2C: y,,1244462418
+HH39,A,PAM I2C: y,,1244462419
+HH39,A,RF PWR E: -1.7,,1244462420
+HH39,A,Goodness E: OK?,,1244462421
+HH39,A,Feed Height (m): 4.406,,1248696018
+HH39,A,Tension N:W:E (lbs): 220:340:290,,1248696019
+HH39,A,Eye-bolt N:W:E (m): 6.58:6.46:6.47,,1248696020
+HH39,A,RF PWR N: -7.1,,1244462422
+HH39,A,Goodness N: OK?,,1244462423
+HH88,A,Goodness E: ?,,1249041618
+HH88,A,Not checked (node 9 off the network),,1249041619
+HH88,A,Danny Aug 2-5: No fibre,,1249041620
+HH88,A,Goodness N: ?,,1249041621
+HH88,A,Not checked (node 9 off the network),,1249041622
+HH88,A,Danny Aug 2-5: No fibre,,1249041623
+HH89,A,Goodness E: OK,,1249041618
+HH89,A,"Danny Aug 2-5: no PAM I2C data, VERY high ADC power... 2k vs 200",,1249041619
+HH89,A,Goodness N: OK,,1249041620
+HH89,A,"Danny Aug 2-5: no PAM I2C data, VERY high ADC power... 2k vs 200",,1249041621
+HH90,A,Goodness E: ?,,1249041618
+HH90,A,Not checked (node 9 off the network),,1249041619
+HH90,A,"Danny Aug 2-5: power ok, check spectra, add to mc",,1249041620
+HH90,A,Goodness N: ?,,1249041621
+HH90,A,Not checked (node 9 off the network),,1249041622
+HH90,A,"Danny Aug 2-5: power ok, check spectra, add to mc",,1249041623
+HH91,A,Goodness E: NA,,1249041618
+HH91,A,Awaiting cabling and lifting,,1249041619
+HH91,A,Danny Aug 2-5: no fiber,,1249041620
+HH91,A,Goodness N: NA,,1249041621
+HH91,A,Awaiting cabling and lifting,,1249041622
+HH91,A,Danny Aug 2-5: no fiber,,1249041623
+HH105,A,Goodness E: ?,,1249041618
+HH105,A,Not checked (node 9 off the network),,1249041619
+HH105,A,Danny Aug 2-5: ok,,1249041620
+HH105,A,Goodness N: ?,,1249041621
+HH105,A,Not checked (node 9 off the network),,1249041622
+HH105,A,Danny Aug 2-5: ok,,1249041623
+HH106,A,Goodness E: Bad,,1249041618
+HH106,A,Dead FEM/PAM channel?,,1249041619
+HH106,A,Danny Aug 2-5: ok,,1249041620
+HH106,A,Goodness N: OK,,1249041621
+HH106,A,Danny Aug 2-5: ok,,1249041622
+HH107,A,Goodness E: ?,,1249041618
+HH107,A,Not checked (node 9 off the network). Was re-done since E passband was still wonky.,,1249041619
+HH107,A,Danny Aug 2-5: ok,,1249041620
+HH107,A,Goodness N: ?,,1249041621
+HH107,A,Not checked (node 9 off the network). It was fine before.,,1249041622
+HH107,A,Danny Aug 2-5: ok,,1249041623
+HH108,A,Goodness E: ?,,1249041618
+HH108,A,It was fine before. Not checked (node 9 off the network). Had to be re-lifted due to a broken eye bolt in one of the poles (related to removal of the springs? -> it broke twice!),,1249041619
+HH108,A,Danny Aug 2-5: ok,,1249041620
+HH108,A,Goodness N: ?,,1249041621
+HH108,A,It was fine before. Not checked (node 9 off the network). Had to be re-lifted due to a broken eye bolt in one of the poles (related to removal of the springs? -> it broke twice!),,1249041622
+HH108,A,Danny Aug 2-5: ok,,1249041623
+HH124,A,Goodness E: Bad,,1249041618
+HH124,A,Dead FEM/PAM channel?,,1249041619
+HH124,A,Danny Aug 2-5: swapped PAM 42 with 41 which was slot in pam slot #3 (just to the right of this pam),,1249041620
+HH124,A,Goodness N: OK,,1249041621
+HH124,A,Danny Aug 2-5: swapped PAM 42 with 41 which was slot in pam slot #3 (just to the right of this pam),,1249041622
+HH125,A,Goodness E: OK,,1249041618
+HH125,A,Goodness N: OK,,1249041619
+HH126,A,Goodness E: OK,,1249041618
+HH126,A,Goodness N: OK,,1249041619
+HH126,A,"Danny Aug 2-5: spectrum looks flat, bad fiber?",,1249041620
