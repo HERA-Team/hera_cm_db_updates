@@ -93,7 +93,8 @@ class Overview:
         import signal_chain
         import datetime
         today = datetime.datetime.now()
-        script_filename = '{}{:02d}{:02d}_overview_update_{:02d}{:02d}'.format(today.year, today.month, today.day, today.hour, today.minute)
+        syr = str(today.year)[2:]
+        script_filename = '{}{:02d}{:02d}_overview_update_{:02d}{:02d}'.format(syr, today.month, today.day, today.hour, today.minute)
         hera = signal_chain.Update(script_filename)
         primary_keys = {'INFO': []}
         for antkey, commands in self.commands.items():
