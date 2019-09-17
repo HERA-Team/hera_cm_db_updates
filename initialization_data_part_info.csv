@@ -435,3 +435,43 @@ HH88,A,"Feed heights (m):  NE, NW, SE, SW: 3.894, 3.887, 3.894, 3.896",,12505104
 HH89,A,"Feed heights (m):  NE, NW, SE, SW: 4.201,4.199,4.201,4.200",,1250510418
 HH125,A,"Feed heights (m):  NE, NW, SE, SW: 4.101, 4.105, 4.115, 4.118",,1250510418
 HH126,A,"Feed heights (m):  NE, NW, SE, SW: 4.256, 4.260, 4.263, 4.260",,1250510418
+HH0,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
+HH1,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
+HH2,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
+HH11,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
+HH12,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
+HH13,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
+HH14,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
+HH23,A,Actions: Check cable connections,,1252756818
+HH23,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756819
+HH23,A,Actions: Check cable connections,,1252756820
+HH24,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
+HH25,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
+HH26,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
+HH39,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
+HH83,A,Saved Bulkhead 3 for Ant 83,,1252756818
+HH116,A,SMA cable is missing,,1252756818
+HH84,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1249300818
+HH85,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1249300818
+HH86,A,"Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n Inspected cable connections to FEM; Cat7 cable connection is questionable. \n Wire-taped Cat7 cable connection.",,1249300818
+HH87,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n One tension rope is frayed.",,1249300818
+HH101,A,"Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n Inspected cable connections to FEM; Cat7 cable connection is questionable. \n Wire-taped Cat7 cable connection. \n Swapped FEM46 for FEM58.",,1249300818
+HH102,A,"Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM.",,1249300818
+HH103,A,"Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM. \n Found Ant 103 fibers not connected to node; connected Ant 103 fibers to Bulkhead 6 of Node 8. \n Checked PAM output spectra for both pols and saw possible indication of FEM failure. \n Replaced FEM60 with FEM34. \n PAM output spectra indicated successful debugging.",,1249300818
+HH104,A,"Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM. \n Removed springs from feed.",,1249300818
+HH120,A,"Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM.",,1249300818
+HH121,A,"Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM.",,1249300818
+HH122,A,"Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM. \n Bad spectra for 122n; cleaned cable connections which resolved problem.",,1249300818
+HH123,A,"Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM. \n Removed springs from feed.",,1249300818
+HH88,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n Found Ant 88 fibers not connected to node; connected Ant 88 fiber to Bulkhead 3 of Node 9.",,1249905618
+HH89,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1249905618
+HH90,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1249905618
+HH91,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n Found Ant 91 fibers not connected to node; connected Ant 91 fiber to Bulkhead 6 of Node 9.",,1249905618
+HH105,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1249905618
+HH106,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n Pols swapped at FEM. \n Bad spectra for 106e; cleaned fiber connections which resolved issue. \n Feed raised.",,1249905618
+HH107,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1249905618
+HH108,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n Bad spectra on 108e; replaced long fiber which resolved issue.",,1249905618
+HH124,A,Actions: Swap to other channel and check,,1249905618
+HH124,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1249905619
+HH125,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1249905618
+HH126,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1249905618

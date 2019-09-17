@@ -562,8 +562,6 @@ HH119,1201509417,1214481618.0,passed_checks
 HH119,1214481618,,not_connected
 HH120,1188475218,1214481618.0,passed_checks
 HH120,1214481618,,not_connected
-HH121,1214481618,,not_connected
-HH122,1214481618,,not_connected
 HH123,1214481618,,not_connected
 HH125,1000000000,1214481618.0,not_connected
 HH146,1214481618,,not_connected
@@ -580,7 +578,6 @@ HH98,1188475218,1214481618.0,passed_checks
 HH98,1214481618,,not_connected
 HH99,1214481618,,not_connected
 HH100,1214481618,,not_connected
-HH101,1214481618,,not_connected
 HH102,1214481618,,not_connected
 HH103,1214481618,,not_connected
 HH104,1000000000,1214481618.0,not_connected
@@ -592,6 +589,8 @@ HH107,1214481618,1242043218.0,not_connected
 HH125,1214481618,1242043218.0,not_connected
 HH126,1214481618,1242043218.0,not_connected
 HH108,1214481618,1242129618.0,not_connected
+HH101,1214481618,1249300818.0,not_connected
+HH121,1214481618,1249300818.0,not_connected
 HH128,1214481618,,not_connected
 HH129,1214481618,,not_connected
 HH130,1214481618,,not_connected
@@ -604,11 +603,9 @@ HH81,1204416793,1214481618.0,passed_checks
 HH81,1214481618,,not_connected
 HH82,1214481618,,not_connected
 HH83,1214481618,,not_connected
-HH84,1214481618,,not_connected
 HH85,1214481618,,not_connected
 HH86,1214481618,,not_connected
 HH87,1188475218,1214481618.0,passed_checks
-HH87,1214481618,,not_connected
 HH88,1214481618,,not_connected
 HH90,1214481618,,not_connected
 HH91,1214481618,,not_connected
@@ -722,6 +719,8 @@ HH24,1214481618,1235476818.0,not_connected
 HH25,1214481618,1235476818.0,not_connected
 HH30,1214481618,1235476818.0,not_connected
 HH89,1214481618,1242043218.0,not_connected
+HH84,1214481618,1249300818.0,not_connected
+HH87,1214481618,1249300818.0,not_connected
 HB347,1214481618,,not_connected
 HB348,1214481618,,not_connected
 HB349,1214481618,,not_connected
@@ -779,3 +778,9 @@ HH124,1242043218,,needs_checking
 HH125,1242043218,,needs_checking
 HH126,1242043218,,needs_checking
 HH108,1242129618,,needs_checking
+HH84,1249300818,,needs_checking
+HH87,1249300818,,needs_checking
+HH101,1249300818,,needs_checking
+HH121,1249300818,,needs_checking
+HH122,1214481618,1249300818.0,not_connected
+HH122,1249300818,,needs_checking
