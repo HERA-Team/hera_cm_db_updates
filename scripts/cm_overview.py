@@ -8,7 +8,7 @@
 from __future__ import absolute_import, division, print_function
 
 from hera_mc import cm_hookup, cm_utils, cm_sysutils, cm_handling, mc
-import sheet_data as sd
+import sheet_data as gsheet
 
 import os
 import csv
@@ -16,11 +16,9 @@ import requests
 from argparse import Namespace
 
 hu_testing = cm_utils.default_station_prefixes
-hu_testing = 'cache'
 
-_rq = Namespace(hpn=hu_testing, revision='LAST',
-                exact_match=False, force_new_cache=True, force_db=False,
-                hookup_type=None, port='all', at_date='now')
+_rq = Namespace(hpn=hu_testing, pol='all', at_date='now', exact_match=False,
+                force_new_cache=True, force_db=False, hookup_type=None)
 
 
 def get_num(val):
@@ -28,13 +26,29 @@ def get_num(val):
 
 
 def get_bracket(input_string, bracket_type='{}'):
+    """
+    Breaks out stuff as <before, in, after>.
+    If no starting bracket, it returns <None, input_string, None>
+    """
     start_ind = input_string.find(bracket_type[0])
     if start_ind == -1:
-        return '', ''
+        return None, input_string, None
     end_ind = input_string.find(bracket_type[1])
-    statement = input_string[start_ind + 1: end_ind]
-    output_string = input_string[end_ind + 1:]
-    return statement, output_string
+    prefix = input_string[:start_ind].strip()
+    statement = input_string[start_ind + 1: end_ind].strip()
+    postfix = input_string[end_ind + 1:].strip()
+    return prefix, statement, postfix
+
+
+def parse_stmt(col):
+    prefix, stmt, postfix = get_bracket(col, '{}')
+    isstmt = prefix is not None
+    edate = False
+    prefix, entry, postfix = get_bracket(stmt, '[]')
+    if prefix is not None:
+        edate = entry
+        entry = prefix
+    return Namespace(isstmt=isstmt, entry=entry, date=edate)
 
 
 def increment_time(pkey, old_timers):
@@ -56,6 +70,8 @@ def increment_time(pkey, old_timers):
 
 
 class Overview:
+    pols = ['E', 'N']
+
     def __init__(self):
         # Start session
         db = mc.connect_to_mc_db(None)
@@ -67,27 +83,74 @@ class Overview:
         self.get_part_info()
 
     def get_hookup(self):
-        # ############################ Get hookup data ############################
+        """
+        Gets the hookup data from the hera_mc database.
+        """
         self.hookup = cm_hookup.Hookup(self.session)
-        self.hookup_dict = self.hookup.get_hookup(hpn_list=_rq.hpn, rev=_rq.revision, port_query=_rq.port,
-                                                  at_date=_rq.at_date, exact_match=_rq.exact_match,
-                                                  force_new_cache=_rq.force_new_cache, force_db=_rq.force_db,
-                                                  hookup_type=_rq.hookup_type)
+        self.hookup_dict = self.hookup.get_hookup(hpn=_rq.hpn, pol=_rq.pol, at_date=_rq.at_date,
+                                                  exact_match=_rq.exact_match, force_new_cache=_rq.force_new_cache,
+                                                  force_db=_rq.force_db, hookup_type=_rq.hookup_type)
         self.connected = []
         for ant in self.hookup_dict.keys():
-            for pol in ['e', 'n']:
+            for pol in self.pols:
                 if self.hookup_dict[ant].fully_connected[pol]:
                     self.connected.append(ant)
                     break
         self.connected = cm_utils.put_keys_in_numerical_order(self.connected)
 
     def get_apriori(self):
-        # ############################ Get apriori data ############################
+        """
+        Gets the apriori status information from the hera_mc database
+        """
         sys = cm_sysutils.Handling(self.session)
         self.apriori_data = {}
         for antkey in self.connected:
             hh = antkey.split(':')[0]
             self.apriori_data[antkey] = sys.get_apriori_status_for_antenna(hh, at_date=_rq.at_date)
+
+    def get_sheets(self):
+        """
+        Gets the googlesheet information from the internet
+        """
+        self.sheet_data = {}
+        self.sheet_header = {}
+        self.sheet_date = {}
+        self.tabs = sorted(list(gsheet.gsheet.keys()))
+        for tab in self.tabs:
+            xxx = requests.get(gsheet.gsheet[tab])
+            csv_tab = b''
+            for line in xxx:
+                csv_tab += line
+            csv_tab = csv.reader(csv_tab.decode('utf-8').splitlines())
+            for data in csv_tab:
+                if data[0].startswith('Ant'):
+                    self.sheet_header[tab] = ['Node'] + data
+                    continue
+                elif data[0].startswith('Date:'):
+                    self.sheet_date[tab] = data[1]
+                    break
+                try:
+                    antnum = int(data[0])
+                except ValueError:
+                    continue
+                key = 'HH{}:A-{}'.format(antnum, data[1].upper())
+                self.sheet_data[key] = [get_num(tab)] + data
+
+    def get_part_info(self):
+        """
+        Gets the part_info information from the hera_mc database
+        """
+        part = cm_handling.Handling(self.session)
+        self.part_data = {}
+        for k in self.connected:
+            ant = k.split(':')[0]
+            part_dossier = part.get_part_dossier(hpn=ant, rev='ACTIVE', at_date=_rq.at_date, exact_match=True, full_version=True)
+            if len(part_dossier):
+                key = list(part_dossier.keys())[0]
+                info = part_dossier[key].table_entry_row(['part_info', 'post_date', 'lib_file'])
+                self.part_data[k] = []
+                for pi in info:
+                    self.part_data[k].append([pi[2], pi[3]])
 
     def process_commands(self):
         import signal_chain
@@ -158,107 +221,49 @@ class Overview:
                 self.commands[antrev_key] = self.commands[antrev_key] + [stmt]
 
     def get_sheet_commands(self):
-        hu_keys = list(sd.hu_col.keys())
         for sheet_key in self.sheet_data.keys():
             tab = 'node{}'.format(self.sheet_data[sheet_key][0])
             antrev_key, pol = sheet_key.split('-')
+            header = {}
+            # Sort out header entries (if any)
+            for col in self.sheet_header[tab]:
+                header[col] = parse_stmt(col)
+            # Process sheet data
             for i, col in enumerate(self.sheet_header[tab]):
-                if col in hu_keys or col.startswith('History') or len(col) == 0:
+                if header[col].entry in gsheet.com_ignore or len(col) == 0:
                     continue
                 try:
                     col_data = self.sheet_data[sheet_key][i]
                 except IndexError:
                     continue
-                header_flag = '{' in col and '}' in col
-                entry_flag = '{' in col_data and '}' in col_data
-                if not (header_flag or entry_flag):
-                    continue
-                entry_date = self.sheet_date[tab]
-                if '{' in col:
-                    col = col.strip('{').strip('}')
-                    if '[' in col:
-                        entry_date, x = get_bracket(col, bracket_type='[]')
-                        col = col.split('[')[0].strip()
-                if col.startswith('Comment') or col.startswith('Action'):
+                entry = parse_stmt(col_data)
+                if not (header[col].isstmt or entry.isstmt):
+                    continue  # Nothing to process.
+                # ##Get date for entry
+                entry_date = self.sheet_date[tab]  # Defaults to page date
+                if header[col].date:
+                    entry_date = header[col].date
+                if entry.date:
+                    entry_date = entry.date
+                if '-' not in entry_date:
+                    entry_date = entry_date + '-12:00'
+                # ##Get prefix for entry
+                if header[col].entry in gsheet.no_prefix:
                     prefix = ''
-                elif col in sd.pol_comments:
+                elif col in gsheet.pol_comments:
                     prefix = '{} {}: '.format(col, pol)
                 else:
                     prefix = '{}: '.format(col)
-
-                col_data_list = []
-                stmt = '--'
-                while len(stmt):
-                    if entry_flag:
-                        stmt, col_data = get_bracket(col_data)
-                    else:
-                        stmt = col_data
-                    if len(stmt):
-                        if '[' in stmt:
-                            entry_date, x = get_bracket(stmt, bracket_type='[]')
-                            stmt = stmt.split('[')[0].strip()
-                        if col.startswith('Action'):
-                            command_code = stmt.split('|')[0]
-                            try:
-                                entry_date = stmt.split('|')[2]
-                            except IndexError:
-                                pass
-                            stmt = stmt.split('|')[1]
-                        else:
-                            command_code = 'INFO'
-                        if '-' not in entry_date:
-                            entry_date = entry_date + '-12:00'
-                        stmt = '{}|{}{}|{}'.format(command_code, prefix, stmt, entry_date)
-                        col_data_list.append(stmt)
-                    if not entry_flag:
-                        break
-
-                self.commands.setdefault(antrev_key, [])
-                self.commands[antrev_key] = self.commands[antrev_key] + col_data_list
-
-    def get_sheets(self):
-        # ############################ Get previous sheet ############################
-        self.sheet_data = {}
-        self.sheet_header = {}
-        self.sheet_date = {}
-        self.tabs = sorted(list(sd.gsheet.keys()))
-        for tab in self.tabs:
-            xxx = requests.get(sd.gsheet[tab])
-            csv_tab = b''
-            for line in xxx:
-                csv_tab += line
-            csv_tab = csv.reader(csv_tab.decode('utf-8').splitlines())
-            for data in csv_tab:
-                if data[0].startswith('Ant'):
-                    self.sheet_header[tab] = ['Node'] + data
-                    continue
-                elif data[0].startswith('Date:'):
-                    self.sheet_date[tab] = data[1]
-                    break
-                try:
-                    antnum = int(data[0])
-                except ValueError:
-                    continue
-                key = 'HH{}:A-{}'.format(antnum, data[1].upper())
-                self.sheet_data[key] = [get_num(tab)] + data
-
-    def get_part_info(self):
-        # ############################ Get part info ###########################
-        part = cm_handling.Handling(self.session)
-        self.part_data = {}
-        for k in self.connected:
-            ant = k.split(':')[0]
-            part_dossier = part.get_part_dossier(hpn=ant, rev='ACTIVE', at_date=_rq.at_date, exact_match=True, full_version=True)
-            if len(part_dossier):
-                key = list(part_dossier.keys())[0]
-                info = part_dossier[key].table_entry_row(['part_info', 'post_date', 'lib_file'])
-                self.part_data[k] = []
-                for pi in info:
-                    self.part_data[k].append([pi[2], pi[3]])
-
-    def get_RF_power(self):
-        # ############################ Get RF power ############################
-        print("Need to still get RF power from db")
+                # ##Process Action
+                if header[col].entry == 'Action':
+                    _x = [a.strip() for a in entry.entry.split('|')]
+                    command_code, stmt = _x if len(_x) == 2 else ['INFO', _x[0]]
+                else:
+                    command_code = 'INFO'
+                    stmt = entry.entry
+                if len(stmt):
+                    self.commands.setdefault(antrev_key, [])
+                    self.commands[antrev_key].append('{}|{}{}|{}'.format(command_code, prefix, stmt, entry_date))
 
     def compare(self, antkeys=None, output='mismatch'):
         """
@@ -289,7 +294,7 @@ class Overview:
         else:
             show_hyphens = False
         for antkey in antkeys:
-            for pol in ['E', 'N']:
+            for pol in self.pols:
                 if show_hyphens:
                     print("------------------")
                 if output.startswith('mis'):
@@ -315,26 +320,26 @@ class Overview:
         """
         Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column
         """
-        if sheet_col not in list(sd.hu_col.keys()):
+        if sheet_col not in gsheet.hu_col.keys():
             return None
         hu = self.hookup_dict[antkey]
-        pol = pol.lower()
-        pam_slot = get_num(hu.hookup[pol][sd.hu_col['PAM Slot']].downstream_input_port)
-        snap_slot = str(int(get_num(hu.hookup[pol][sd.hu_col['Node']].downstream_input_port)))
+        pol = pol.upper()
+        pam_slot = get_num(hu.hookup[pol][gsheet.hu_col['Bulkhead-PAM_Slot']].downstream_input_port)
+        snap_slot = str(int(get_num(hu.hookup[pol][gsheet.hu_col['Node']].downstream_input_port)))
         i2c = (int(pam_slot) + 2) % 3 + 1
 
         if sheet_col == 'I2C_bus':
             return str(i2c)
-        if sheet_col == 'PAM Slot':
+        if sheet_col == 'Bulkhead-PAM_Slot':
             return pam_slot
-        if sheet_col == 'SNAP Slot':
+        if sheet_col == 'SNAP_Slot':
             return snap_slot
         if sheet_col == 'Port' or sheet_col == 'Pol':
-            return hu.hookup[pol][sd.hu_col[sheet_col]].downstream_input_port.upper()
+            return hu.hookup[pol][gsheet.hu_col[sheet_col]].downstream_input_port.upper()
         if sheet_col == 'APriori':
             return self.apriori_data[antkey]
 
-        part = hu.hookup[pol][sd.hu_col[sheet_col]].downstream_part
+        part = hu.hookup[pol][gsheet.hu_col[sheet_col]].downstream_part
         num = str(int(get_num(part)))
 
         if sheet_col == 'SNAP':
