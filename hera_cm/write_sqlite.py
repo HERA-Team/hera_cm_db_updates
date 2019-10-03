@@ -6,10 +6,9 @@
 """
 Script to handle updating the sqlite db from files.  This is __very__ specific and brittle
 """
-
-from __future__ import absolute_import, division, print_function
 from hera_mc import mc
 import subprocess
+import os.path
 
 cm_csv_path = mc.get_cm_csv_path(None)
 
@@ -41,7 +40,8 @@ with open('inserts.sql', 'r') as f:
         if 'INSERT' in modline:
             inserts += modline
 
-with open('cm_hera.sql', 'w') as f:
+dbfile = os.path.join(cm_csv_path, 'cm_hera.sql')
+with open(dbfile, 'w') as f:
     f.write(schema)
     f.write(inserts)
 
@@ -49,13 +49,10 @@ subprocess.call('rm -f schema.sql', shell=True)
 subprocess.call('rm -f inserts.sql', shell=True)
 
 print("""
-Now type the following:
+In base directory type the following:
 
 $ sqlite3
 sqlite> .read cm_hera.sql
 sqlite> .save hera_mc.db
 sqlite> .quit
-
-then move hera_mc.db to hera_cm_db_updates
-and delete cm_hera.sql
 """)
