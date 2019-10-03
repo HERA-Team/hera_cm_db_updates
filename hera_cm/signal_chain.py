@@ -357,7 +357,7 @@ class Update:
             return False
         if atype == 'part':
             return True
-        self.active.get_connections(at_date=at_date)
+        self.active.get_connections(at_date=None)
         sides = side.split(',')
         for side in sides:
             if port.upper() in self.active.connections[side][part_key].keys():

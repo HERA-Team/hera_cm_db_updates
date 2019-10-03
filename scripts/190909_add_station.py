@@ -1,6 +1,7 @@
 #! /usr/bin/env python
-import signal_chain
 import sys
+sys.path.insert(1, '../hera_cm')
+import signal_chain
 
 hera = signal_chain.Update(sys.argv[0])
 
