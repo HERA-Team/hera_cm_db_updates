@@ -88,15 +88,17 @@ class Overview:
         """
         self.hookup = cm_hookup.Hookup(self.session)
         self.hookup_dict = self.hookup.get_hookup(hpn=_rq.hpn, pol=_rq.pol, at_date=_rq.at_date,
-                                                  exact_match=_rq.exact_match, force_new_cache=_rq.force_new_cache,
-                                                  force_db=_rq.force_db, hookup_type=_rq.hookup_type)
+                                                  exact_match=_rq.exact_match, hookup_type=_rq.hookup_type)
         self.connected = []
         for ant in self.hookup_dict.keys():
             for pol in self.pols:
-                if self.hookup_dict[ant].fully_connected[pol]:
+                for ppkey in self.hookup_dict[ant].fully_connected.keys():
+                    if ppkey.upper().startswith(pol.upper()):
+                        break
+                if self.hookup_dict[ant].fully_connected[ppkey]:
                     self.connected.append(ant)
                     break
-        self.connected = cm_utils.put_keys_in_numerical_order(self.connected)
+        self.connected = cm_utils.put_keys_in_order(self.connected)
 
     def get_apriori(self):
         """
@@ -324,8 +326,11 @@ class Overview:
             return None
         hu = self.hookup_dict[antkey]
         pol = pol.upper()
-        pam_slot = get_num(hu.hookup[pol][gsheet.hu_col['Bulkhead-PAM_Slot']].downstream_input_port)
-        snap_slot = str(int(get_num(hu.hookup[pol][gsheet.hu_col['Node']].downstream_input_port)))
+        for ppkey in hu.hookup.keys():
+            if ppkey.upper().startswith(pol.upper()):
+                break
+        pam_slot = get_num(hu.hookup[ppkey][gsheet.hu_col['Bulkhead-PAM_Slot']].downstream_input_port)
+        snap_slot = str(int(get_num(hu.hookup[ppkey][gsheet.hu_col['Node']].downstream_input_port)))
         i2c = (int(pam_slot) + 2) % 3 + 1
 
         if sheet_col == 'I2C_bus':
@@ -335,11 +340,11 @@ class Overview:
         if sheet_col == 'SNAP_Slot':
             return snap_slot
         if sheet_col == 'Port' or sheet_col == 'Pol':
-            return hu.hookup[pol][gsheet.hu_col[sheet_col]].downstream_input_port.upper()
+            return hu.hookup[ppkey][gsheet.hu_col[sheet_col]].downstream_input_port.upper()
         if sheet_col == 'APriori':
             return self.apriori_data[antkey]
 
-        part = hu.hookup[pol][gsheet.hu_col[sheet_col]].downstream_part
+        part = hu.hookup[ppkey][gsheet.hu_col[sheet_col]].downstream_part
         num = str(int(get_num(part)))
 
         if sheet_col == 'SNAP':

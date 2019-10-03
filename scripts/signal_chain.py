@@ -2,7 +2,7 @@ from __future__ import absolute_import, division, print_function
 import os.path
 import six
 import copy
-from hera_mc import cm_health, cm_handling, cm_utils
+from hera_mc import cm_utils, cm_dossier
 
 
 def as_part(add_or_stop, p, cdate, ctime):
@@ -28,17 +28,15 @@ class Update:
         log_file:  name of log_file
         """
         self.log_file = log_file
-        self.handle = cm_handling.Handling()
-        self.health = cm_health.Connections()
-        if log_file is not None:
-            input_script = os.path.basename(exename)
-            self.output_script = input_script.split('.')[0]
-            print("Writing script {}".format(self.output_script))
-            self.fp = open(self.output_script, 'w')
-            s = '#! /usr/bin/env bash\n'
-            s += 'echo "{}" >> {} \n'.format(self.output_script, self.log_file)
-            self.fp.write(s)
-            print('-----------------\n')
+        self.active = cm_dossier.ActiveData()
+        input_script = os.path.basename(exename)
+        self.output_script = input_script.split('.')[0]
+        print("Writing script {}".format(self.output_script))
+        self.fp = open(self.output_script, 'w')
+        s = '#! /usr/bin/env bash\n'
+        s += 'echo "{}" >> {} \n'.format(self.output_script, self.log_file)
+        self.fp.write(s)
+        print('-----------------\n')
         self.snap_ports = [{'e': 'e2', 'n': 'n0'}, {'e': 'e6', 'n': 'n4'}, {'e': 'e10', 'n': 'n8'}]
 
     # THESE ARE NEW COMPONENTS - eventually break out with a parent class
@@ -62,13 +60,20 @@ class Update:
         ctime : string
                 HH:MM format
         """
+        added = {'station': [], 'part': [], 'connection': []}
+        added['time'] = str(int(cm_utils.get_astropytime(cdate, ctime).gps))
         s = "HH{}".format(stn)
         a = "A{}".format(stn)
         n = "S/N{}".format(ser_num)
         self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'.format(s, ser_num, cdate, ctime))
+        added['station'].append([s, added['time']])
+        added['part'].append([s, 'A', 'station', n, added['time']])
 
         if not self.exists('part', a, 'H', 'now'):
-            self.update_part('add', [a, 'H', 'antenna', n], cdate, ctime)
+            ant = [a, 'H', 'antenna', n]
+            self.update_part('add', ant, cdate, ctime)
+            ant.append(added['time'])
+            added['part'].append(ant)
         else:
             print("Part {} is already added".format(a))
 
@@ -76,6 +81,9 @@ class Update:
         down = [a, 'H', 'ground']
         if not self.exists('connection', hpn=s, rev='A', port='ground', side='up', at_date='now'):
             self.update_connection('add', up, down, cdate, ctime)
+            conn = [up[0], up[1], down[0], down[1], up[2], down[2], added['time']]
+            added['connection'].append(conn)
+        return added
 
     def add_node(self, node, fps, pch, ncm, pams, snaps, cdate, ctime=['10:00', '11:00'], ser_num={}, override=False):
         """
@@ -122,6 +130,8 @@ class Update:
         else:
             partadd_time = ctime
             connadd_time = ctime
+        added = {'part': [], 'connection': []}
+        added['time'] = str(int(cm_utils.get_astropytime(cdate, partadd_time).gps))
         self.ser_num_dict = ser_num
         part_to_add = {}
         hpn = 'FPS{:02d}'.format(fps)
@@ -159,10 +169,12 @@ class Update:
             if not p[0].startswith('ND'):  # Because add_station already added it
                 if not self.exists('part', p[0], p[1], 'now'):
                     self.update_part('add', p, cdate, partadd_time)
+                    added['part'].append(list(p) + [added['time']])
                 else:
                     print("Part {} is already added".format(p))
 
         # Add connections
+        added['time'] = str(int(cm_utils.get_astropytime(cdate, connadd_time).gps))
         connection_to_add = []
         up = [part_to_add['node'][0], part_to_add['node'][1], '@ground']
         dn = [part_to_add['node-station'][0], part_to_add['node-station'][1], '@ground']
@@ -200,8 +212,10 @@ class Update:
         for up, down, codate, cotime in connection_to_add:
             if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up', at_date=cdate):
                 self.update_connection('add', up, down, codate, cotime)
+                added['connection'].append([up[0], up[1], down[0], down[1], up[2], down[2], added['time']])
             else:
                 print("{} - {} are already connected".format(up, dn))
+        return added
 
     def add_antenna_to_node(self, ant, feed, fem, node, nbp_port, cdate, ctime=['10:00', '11:00'], ser_num={}):
         """
@@ -226,6 +240,7 @@ class Update:
             partadd_time = ctime
             connadd_time = ctime
         self.ser_num_dict = ser_num
+        added = {'part': [], 'connection': []}
 
         # Set up parts
         part_to_add = {}
@@ -239,12 +254,13 @@ class Update:
         part_to_add['fem'] = (hpn, 'A', 'front-end', sn)
 
         # Check for parts to add and add them
-        if self.log_file is not None:
-            for k, p in six.iteritems(part_to_add):
-                if self.exists('part', p[0], p[1], 'now'):
-                    print("{} {} is already added".format(k, p[0]))
-                else:
-                    self.update_part('add', p, cdate, partadd_time)
+        added['time'] = str(int(cm_utils.get_astropytime(cdate, partadd_time).gps))
+        for k, p in six.iteritems(part_to_add):
+            if self.exists('part', p[0], p[1], 'now'):
+                print("{} {} is already added".format(k, p[0]))
+            else:
+                self.update_part('add', p, cdate, partadd_time)
+                added['part'].append(list(p) + [added['time']])
 
         # These added after, since already included in add_station/add_node
         hpn = 'A{}'.format(ant)
@@ -272,13 +288,14 @@ class Update:
         connection_to_add.append([up, dn, cdate, connadd_time])
 
         # Check for connections to add and add them
-        if self.log_file is not None:
-            for up, down, codate, cotime in connection_to_add:
-                if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up', at_date=cdate):
-                    self.update_connection('add', up, down, codate, cotime)
-            print('\n')
-        if self.log_file is None:
-            return part_to_add, connection_to_add
+        added['time'] = str(int(cm_utils.get_astropytime(cdate, connadd_time).gps))
+        for up, down, codate, cotime in connection_to_add:
+            if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up', at_date=cdate):
+                self.update_connection('add', up, down, codate, cotime)
+                added['connection'].append([up[0], up[1], down[0], down[1], up[2], down[2], added['time']])
+        print('\n')
+
+        return added
 
     # ##########################################################################################
 
@@ -310,14 +327,14 @@ class Update:
         """
         self.fp.write(as_connect(add_or_stop, up, down, cdate, ctime))
 
-    def exists(self, atype, hpn, rev='active', port=None, side='both', at_date='now'):
+    def exists(self, atype, hpn, rev='active', port=None, side='up,down', at_date='now'):
         """
         Check if a part or connection exists for hpn
 
         Parameters
         ----------
         atype :  string
-              'part' or connection
+              'part' or 'connection'
         hpn : string or list of strings
               HERA part number to check.  Can be a list of strings or a csv-list
         rev : None or string or list of strings.
@@ -325,7 +342,7 @@ class Update:
         port : None or string or list of strings
                name of port to check.  If None (default) it checks all/any (atype='connection' only)
         side : string
-               "side" of part to check.  Options are:  up, down, or both (default)
+               "side" of part to check.  Options are:  up, down, or up,down (default)
         at_date : string, float, int, Time, or datetime
                   date for the connection to be active.  Default is 'now'
 
@@ -334,13 +351,18 @@ class Update:
         boolean
                  True if existing corresponding hpn/rev
         """
+        self.active.get_parts(at_date=at_date)
+        part_key = cm_utils.make_part_key(hpn, rev)
+        if part_key not in self.active.parts.keys():
+            return False
         if atype == 'part':
-            x = self.handle.get_part_dossier(hpn, rev, at_date)
-            if len(x) == 0:
-                return False
             return True
-        if atype == 'connection':
-            return self.health.check_for_existing_connection(hpn=hpn, rev=rev, port=port, side=side, at_date=at_date)
+        self.active.get_connections(at_date=at_date)
+        sides = side.split(',')
+        for side in sides:
+            if port.upper() in self.active.connections[side][part_key].keys():
+                return True
+        return False
 
     def update_apriori(self, antenna, status, cdate, ctime='12:00'):
         """

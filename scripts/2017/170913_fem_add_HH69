@@ -1,8 +1,0 @@
-# Swap HH69 to FEM/PAM
-echo 170913_fem_add_HH69 2017/9/13 >> scripts.log
-fem_swap.py -a 69 -f 75033 --rev A --date 2017/09/13 --time 17.0 --actually_do_it
-# Swap the receiverator cables between
-stop_connection.py --date 2017/09/13 --time 17.0 -u C7F69 -d RI4A3E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
-stop_connection.py --date 2017/09/13 --time 17.0 -u C7F69 -d RI4A3N --uprev A --upport nb --dnrev A --dnport a --actually_do_it
-add_connection.py  --date 2017/09/13 --time 17.0 -u C7F69 -d RI5B6E --uprev A --upport eb --dnrev A --dnport a --actually_do_it
-add_connection.py  --date 2017/09/13 --time 17.0 -u C7F69 -d RI5B6N --uprev A --upport nb --dnrev A --dnport a --actually_do_it

@@ -1,9 +1,0 @@
-#! /usr/bin/env bash
-echo 171206_A139_fem >> scripts.log
-stop_connection.py -u FDA4 --uprev B --upport terminals -d FEM75043 --dnrev A --dnport input --date 2017/12/5 --time 10:00 --actually_do_it
-stop_connection.py -u FEM75043 --uprev A --upport e -d C7F139 --dnrev A --dnport ea --date 2017/12/5 --time 10:00 --actually_do_it
-stop_connection.py -u FEM75043 --uprev A --upport n -d C7F139 --dnrev A --dnport na --date 2017/12/5 --time 10:00 --actually_do_it
-add_part.py -p FEM75036 -r A -t front-end -m 75036 --date 2017/12/5 --time 10:00 --actually_do_it
-add_connection.py -u FDA4 --uprev B --upport terminals -d FEM75036 --dnrev A --dnport input --date 2017/12/5 --time 10:00 --actually_do_it
-add_connection.py -u FEM75036 --uprev A --upport e -d C7F139 --dnrev A --dnport ea --date 2017/12/5 --time 10:01 --actually_do_it
-add_connection.py -u FEM75036 --uprev A --upport n -d C7F139 --dnrev A --dnport na --date 2017/12/5 --time 10:01 --actually_do_it
