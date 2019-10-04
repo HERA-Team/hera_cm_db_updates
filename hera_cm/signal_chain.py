@@ -1,5 +1,5 @@
 from __future__ import absolute_import, division, print_function
-import os.path
+import os
 import six
 import copy
 from hera_mc import cm_utils, cm_dossier
@@ -22,22 +22,27 @@ def as_connect(add_or_stop, up, dn, cdate, ctime):
 
 
 class Update:
-    def __init__(self, exename=None, log_file='scripts.log'):
+    snap_ports = [{'e': 'e2', 'n': 'n0'}, {'e': 'e6', 'n': 'n4'}, {'e': 'e10', 'n': 'n8'}]
+
+    def __init__(self, exename, output_script_path=None, chmod=False, log_file='scripts.log'):
         """
         exename:  the name of the script executed (argv[0])
         log_file:  name of log_file
         """
+        self.chmod = chmod
         self.log_file = log_file
         self.active = cm_dossier.ActiveData()
         input_script = os.path.basename(exename)
-        self.output_script = input_script.split('.')[0]
+        if output_script_path is None:
+            self.output_script = input_script.split('.')[0]
+        else:
+            self.output_script = os.path.join(output_script_path, input_script.split('.')[0])
         print("Writing script {}".format(self.output_script))
         self.fp = open(self.output_script, 'w')
         s = '#! /usr/bin/env bash\n'
         s += 'echo "{}" >> {} \n'.format(self.output_script, self.log_file)
         self.fp.write(s)
         print('-----------------\n')
-        self.snap_ports = [{'e': 'e2', 'n': 'n0'}, {'e': 'e6', 'n': 'n4'}, {'e': 'e10', 'n': 'n8'}]
 
     # THESE ARE NEW COMPONENTS - eventually break out with a parent class
     # General order:
@@ -463,6 +468,10 @@ class Update:
             self.update_connection('add', uppart, dnpart, cdate, ctime)
 
     def done(self):
-        print("\n----------------------DONE-----------------------")
-        print("\tIf changes OK, 'chmod u+x {}' and run that script.".format(self.output_script))
         self.fp.close()
+        print("\n----------------------DONE-----------------------")
+        if not self.chmod:
+            print("\tIf changes OK, 'chmod u+x {}' and run that script.".format(self.output_script))
+        else:
+            os.chmod(self.output_script, 0o774)
+            print("Run {}".format(self.output_script))

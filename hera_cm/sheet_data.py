@@ -24,4 +24,5 @@ gsheet['node9'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXD
 
 pol_comments = ['Goodness']  # Polarization information is added to comment
 no_prefix = ['Comments']  # Comment gets no prefix (the header)
-com_ignore = ['History']  # We don't actually check/use this one in parsing commands/comments
+com_ignore = ['Ant', 'Pol', 'Feed', 'FEM', 'PAM', 'Bulkhead-PAM_Slot', 'I2C_bus', 'SNAP_Slot', 'SNAP',
+              'Port', 'APriori', 'History']  # Don't check/use these in parsing commands/comments

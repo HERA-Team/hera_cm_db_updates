@@ -5,20 +5,18 @@
 
 """
 """
-from __future__ import absolute_import, division, print_function
-
-from hera_mc import cm_hookup, cm_utils, cm_sysutils, cm_handling, mc
+from hera_mc import cm_hookup, cm_utils, cm_sysutils, mc
 import sheet_data as gsheet
+import signal_chain
 
 import os
 import csv
 import requests
+import datetime
 from argparse import Namespace
 
-hu_testing = cm_utils.default_station_prefixes
-
-_rq = Namespace(hpn=hu_testing, pol='all', at_date='now', exact_match=False,
-                force_new_cache=True, force_db=False, hookup_type=None)
+cm_req = Namespace(hpn=cm_utils.default_station_prefixes, pol='all',
+                   at_date='now', exact_match=False, hookup_type=None)
 
 
 def get_num(val):
@@ -41,6 +39,9 @@ def get_bracket(input_string, bracket_type='{}'):
 
 
 def parse_stmt(col):
+    """
+    Parses the full command payload.
+    """
     prefix, stmt, postfix = get_bracket(col, '{}')
     isstmt = prefix is not None
     edate = False
@@ -51,26 +52,32 @@ def parse_stmt(col):
     return Namespace(isstmt=isstmt, entry=entry, date=edate)
 
 
-def increment_time(pkey, old_timers):
+def get_info_pkey(ant, rev, pdate, ptime, old_timers):
+    """
+    Generate unique info_pkey.
+    """
+    if ptime.count(':') == 1:
+        ptime = ptime + ':00'
+    pkey = '|'.join([ant, rev, pdate, ptime])
     while pkey in old_timers:
-        _time = pkey.split('|')[-1]
-        hr = int(_time.split(':')[0])
-        mn = int(_time.split(':')[1])
-        try:
-            sc = int(_time.split(':')[2])
-        except IndexError:
-            sc = 0
-        sc = sc + 1
-        if sc == 60:
-            sc = 0
-            mn += 1
-        _time = '{:02d}:{:02d}:{:02d}'.format(hr, mn, sc)
-        pkey = '{}|{}'.format('|'.join(pkey.split('|')[0:3]), _time)
-    return _time
+        newdt = datetime.datetime.strptime('-'.join([pdate, ptime]), '%Y/%m/%d-%H:%M:%S') + datetime.timedelta(seconds=1)
+        pdate = newdt.strftime('%Y/%m/%d')
+        ptime = newdt.strftime('%H:%M:%S')
+        pkey = '|'.join([ant, rev, pdate, ptime])
+    return pkey, pdate, ptime
+
+
+def get_row_dict(hdr, data):
+    row = {}
+    for i, h in enumerate(hdr):
+        row[h] = data[i]
+        row[i] = data[i]
+    return row
 
 
 class Overview:
     pols = ['E', 'N']
+    com_fn = 'overview_update'
 
     def __init__(self):
         # Start session
@@ -80,15 +87,15 @@ class Overview:
         self.get_hookup()
         self.get_apriori()
         self.get_sheets()
-        self.get_part_info()
 
     def get_hookup(self):
         """
         Gets the hookup data from the hera_mc database.
         """
         self.hookup = cm_hookup.Hookup(self.session)
-        self.hookup_dict = self.hookup.get_hookup(hpn=_rq.hpn, pol=_rq.pol, at_date=_rq.at_date,
-                                                  exact_match=_rq.exact_match, hookup_type=_rq.hookup_type)
+        self.hookup_dict = self.hookup.get_hookup(hpn=cm_req.hpn, pol=cm_req.pol, at_date=cm_req.at_date,
+                                                  exact_match=cm_req.exact_match, hookup_type=cm_req.hookup_type)
+        self.all = cm_utils.put_keys_in_order(list(self.hookup_dict.keys()), sort_order='NPR')
         self.connected = []
         for ant in self.hookup_dict.keys():
             for pol in self.pols:
@@ -98,7 +105,7 @@ class Overview:
                 if self.hookup_dict[ant].fully_connected[ppkey]:
                     self.connected.append(ant)
                     break
-        self.connected = cm_utils.put_keys_in_order(self.connected)
+        self.connected = cm_utils.put_keys_in_order(self.connected, sort_order='NPR')
 
     def get_apriori(self):
         """
@@ -108,7 +115,7 @@ class Overview:
         self.apriori_data = {}
         for antkey in self.connected:
             hh = antkey.split(':')[0]
-            self.apriori_data[antkey] = sys.get_apriori_status_for_antenna(hh, at_date=_rq.at_date)
+            self.apriori_data[antkey] = sys.get_apriori_status_for_antenna(hh, at_date=cm_req.at_date)
 
     def get_sheets(self):
         """
@@ -117,6 +124,7 @@ class Overview:
         self.sheet_data = {}
         self.sheet_header = {}
         self.sheet_date = {}
+        self.sheet_ants = set()
         self.tabs = sorted(list(gsheet.gsheet.keys()))
         for tab in self.tabs:
             xxx = requests.get(gsheet.gsheet[tab])
@@ -135,44 +143,25 @@ class Overview:
                     antnum = int(data[0])
                 except ValueError:
                     continue
+                self.sheet_ants.add('HH{}:A'.format(antnum))
                 key = 'HH{}:A-{}'.format(antnum, data[1].upper())
                 self.sheet_data[key] = [get_num(tab)] + data
+        self.sheet_ants = cm_utils.put_keys_in_order(list(self.sheet_ants), sort_order='NPR')
 
-    def get_part_info(self):
-        """
-        Gets the part_info information from the hera_mc database
-        """
-        part = cm_handling.Handling(self.session)
-        self.part_data = {}
-        for k in self.connected:
-            ant = k.split(':')[0]
-            part_dossier = part.get_part_dossier(hpn=ant, rev='ACTIVE', at_date=_rq.at_date, exact_match=True, full_version=True)
-            if len(part_dossier):
-                key = list(part_dossier.keys())[0]
-                info = part_dossier[key].table_entry_row(['part_info', 'post_date', 'lib_file'])
-                self.part_data[k] = []
-                for pi in info:
-                    self.part_data[k].append([pi[2], pi[3]])
-
-    def process_commands(self):
-        import signal_chain
-        import datetime
+    def process_commands(self, keep_dated=False, output_script_path='../cm_updates/'):
         today = datetime.datetime.now()
         syr = str(today.year)[2:]
-        script_filename = '{}{:02d}{:02d}_overview_update_{:02d}{:02d}'.format(syr, today.month, today.day, today.hour, today.minute)
-        hera = signal_chain.Update(script_filename)
+        script_filename = '{}{:02d}{:02d}_{}_{:02d}{:02d}'.format(syr, today.month, today.day, self.com_fn, today.hour, today.minute)
+        hera = signal_chain.Update(script_filename, output_script_path=output_script_path, chmod=True)
         primary_keys = {'INFO': []}
         for antkey, commands in self.commands.items():
             ant, rev = antkey.split(':')
             for payload in commands:
                 command, statement, dtmp = payload.split('|')
-                _date, _time = dtmp.split('-')
+                pdate, ptime = dtmp.split('-')
                 if command == 'INFO':
-                    pkey = '{}|{}|{}|{}'.format(ant, rev, _date, _time)
-                    if pkey in primary_keys['INFO']:
-                        _time = increment_time(pkey, primary_keys['INFO'])
-                    hera.add_part_info(ant, rev, statement, _date, _time)
-                    pkey = '{}|{}|{}|{}'.format(ant, rev, _date, _time)
+                    pkey, pdate, ptime = get_info_pkey(ant, rev, pdate, ptime, primary_keys['INFO'])
+                    hera.add_part_info(ant, rev, statement, pdate, ptime)
                     primary_keys['INFO'].append(pkey)
                 elif command == 'SWAP' or command == 'REPLACE':
                     ptype, old_num, new_num = statement.split(':')
@@ -183,46 +172,55 @@ class Overview:
                         old_one = ['{}{:03d}'.format(ptype, int(old_num)), 'A']
                         new_one = ['{}{:03d}'.format(ptype, int(new_num)), 'A']
                     if command == 'SWAP':
-                        hera.replace(new_one, None, _date, _time)
-                    hera.replace(old_one, new_one, _date, _time)
+                        hera.replace(new_one, None, pdate, ptime)
+                    hera.replace(old_one, new_one, pdate, ptime)
                 elif command == 'APRIORI':
-                    hera.update_apriori(ant, statement, _date, _time)
+                    hera.update_apriori(ant, statement, pdate, ptime)
                 elif command == 'ADD':
-                    print('NOADD ', command, ant, rev, statement, _date, _time)
+                    print('NOADD ', command, ant, rev, statement, pdate, ptime)
                 else:
                     print("UNKOWN COMMAND------>", payload)
         hera.done()
+        script_filename = os.path.join(output_script_path, script_filename)
+        mvcp = 'cp' if keep_dated else 'mv'
+        print("Writing ./{}   ({})".format(self.com_fn, mvcp))
+        os.system('{} {} {}'.format(mvcp, script_filename, self.com_fn))
 
-    def get_mismatch_commands(self):
+    def add_mismatch_commands(self, apriori_only=False):
         for key, data in self.mismatches.items():
             antrev_key, pol = key.split('-')
             ant, rev = antrev_key.split(':')
             self.commands.setdefault(antrev_key, [])
             entry_date = data['date']
             if '-' not in entry_date:
-                entry_date = entry_date + '-12:00'
+                entry_date = entry_date + '-12:00:00'
             for payload in data['diff']:
+                command_code = None
                 if payload[0] in ['PAM', 'FEM', 'SNAP']:
-                    command_code = 'SWAP'
                     if payload[0] == 'SNAP':
                         payload[0] = 'SNP'
                     prefix = '{}:'.format(payload[0])
-                    stmt = '{}:{}'.format(payload[1], payload[2])
+                    if payload[1] == 'Not Found':
+                        command_code = 'ADD'
+                        stmt = '{}'.format(payload[2])
+                    else:
+                        command_code = 'SWAP'
+                        stmt = '{}:{}'.format(payload[1], payload[2])
                 elif payload[0] == 'APriori':
                     command_code = 'APRIORI'
                     prefix = ''
                     stmt = payload[2]
-                else:
-                    command_code = 'TEST'
-                    prefix = 'Test'
-                    stmt = '---'
+                if apriori_only and command_code != 'APRIORI':
+                    command_code = None
+                if command_code is not None:
+                    stmt = '{}|{}{}|{}'.format(command_code, prefix, stmt, entry_date)
+                    if stmt in self.commands[antrev_key]:
+                        continue
+                    self.commands[antrev_key] = self.commands[antrev_key] + [stmt]
+            if not len(self.commands[antrev_key]):
+                del self.commands[antrev_key]
 
-                stmt = '{}|{}{}|{}'.format(command_code, prefix, stmt, entry_date)
-                if stmt in self.commands[antrev_key]:
-                    continue
-                self.commands[antrev_key] = self.commands[antrev_key] + [stmt]
-
-    def get_sheet_commands(self):
+    def add_sheet_commands(self):
         for sheet_key in self.sheet_data.keys():
             tab = 'node{}'.format(self.sheet_data[sheet_key][0])
             antrev_key, pol = sheet_key.split('-')
@@ -257,7 +255,7 @@ class Overview:
                 else:
                     prefix = '{}: '.format(col)
                 # ##Process Action
-                if header[col].entry == 'Action':
+                if header[col].entry == 'Actions':
                     _x = [a.strip() for a in entry.entry.split('|')]
                     command_code, stmt = _x if len(_x) == 2 else ['INFO', _x[0]]
                 else:
@@ -267,58 +265,60 @@ class Overview:
                     self.commands.setdefault(antrev_key, [])
                     self.commands[antrev_key].append('{}|{}{}|{}'.format(command_code, prefix, stmt, entry_date))
 
-    def compare(self, antkeys=None, output='mismatch'):
+    def view_compare(self):
         """
-        Compares the hookup data with the spreadsheet.
-
-        Parameters
-        ----------
-        antkeys : csv-str, list or None (or 'all')
-            Antenna keys to display.  If None displays all, as it does if 'all'
-        output : str {'mismatch', 'all', 'none', None, False}
-            What to print out as it processes.
+        Views the comparison with hookup data and spreadsheet.
 
         Returns
         -------
-        list
-            List of mismatches
+        str
+            output string
         """
-        # ################### Check that cm and googlesheet match ##############
-        if antkeys is None or (isinstance(antkeys, str) and antkeys.lower() == 'all'):
-            antkeys = self.connected
-        elif not isinstance(antkeys, list):
-            antkeys = antkeys.split(',')
+        antkeys = cm_utils.put_keys_in_order(list(self.mismatches.keys()), sort_order='NPR')
+        output_string = ''
+        for antkey in antkeys:
+            key, pol = antkey.split('-')
+            output_string += "\n{:10s}----------    cm       <--->  sheet\n".format(antkey)
+            for diff in self.mismatches[antkey]['diff']:
+                output_string += "{:18s}  {:10s}   <--->   {}\n".format(diff[0], diff[1], diff[2])
+        return output_string
+
+    def compare(self, antkeys='sheet'):
+        """
+        Compares the hookup data with the spreadsheet.  Writes self.mismatches
+
+        Parameters
+        ----------
+        antkeys : csv-str or list or ('all', 'connected', 'sheet')
+            Antenna keys to display.  If None displays 'sheet'
+        """
+        if isinstance(antkeys, str):
+            if antkeys.lower() == 'all':
+                antkeys = self.all
+            elif antkeys.lower() == 'connected':
+                antkeys = self.connected
+            elif antkeys.lower() == 'sheet':
+                antkeys = self.sheet_ants
+            else:
+                antkeys = antkeys.split(',')
         self.mismatches = {}
-        if not output:
-            output = 'none'
-        if output.startswith('all'):
-            show_hyphens = True
-        else:
-            show_hyphens = False
         for antkey in antkeys:
             for pol in self.pols:
-                if show_hyphens:
-                    print("------------------")
-                if output.startswith('mis'):
-                    show_hyphens = False
                 sheet_key = "{}-{}".format(antkey, pol)
                 tab = 'node{}'.format(self.sheet_data[sheet_key][0])
-                for i, col in enumerate(self.sheet_header[tab]):
-                    val = self.__get_val_from_cmdb(antkey, pol, col)
+                header = self.sheet_header[tab]
+                sheet_row = get_row_dict(header, self.sheet_data[sheet_key])
+                for i, col in enumerate(header):
+                    val = self._get_val_from_cmdb(antkey, pol, col)
                     if val is not None:
-                        indicator = ''
                         sheet_val = self.sheet_data[sheet_key][i]
                         if val.upper() != sheet_val.upper():
-                            self.mismatches.setdefault(sheet_key, {'sheet': self.sheet_data[sheet_key], 'diff': [], 'date': self.sheet_date[tab]})
-                            self.mismatches[sheet_key]['diff'].append([col, val, sheet_val])
-                            indicator = '****'
-                            if output.startswith('mis'):
-                                show_hyphens = True
-                                print("{}:  {}   <--->   {}  {}".format(col, val, sheet_val, self.sheet_data[sheet_key]))
-                        if output.startswith('all'):
-                            print("{}{}:  {}   <--->   {}{}".format(indicator, col, sheet_val, val, indicator))
+                            if val != 'Not Found' or len(sheet_val.strip()):
+                                self.mismatches.setdefault(sheet_key, {'sheet': sheet_row,
+                                                                       'diff': [], 'date': self.sheet_date[tab]})
+                                self.mismatches[sheet_key]['diff'].append([col, val, sheet_val])
 
-    def __get_val_from_cmdb(self, antkey, pol, sheet_col):
+    def _get_val_from_cmdb(self, antkey, pol, sheet_col):
         """
         Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column
         """
@@ -329,8 +329,14 @@ class Overview:
         for ppkey in hu.hookup.keys():
             if ppkey.upper().startswith(pol.upper()):
                 break
-        pam_slot = get_num(hu.hookup[ppkey][gsheet.hu_col['Bulkhead-PAM_Slot']].downstream_input_port)
-        snap_slot = str(int(get_num(hu.hookup[ppkey][gsheet.hu_col['Node']].downstream_input_port)))
+        try:
+            pam_slot = get_num(hu.hookup[ppkey][gsheet.hu_col['Bulkhead-PAM_Slot']].downstream_input_port)
+        except IndexError:
+            return 'Not Found'
+        try:
+            snap_slot = str(int(get_num(hu.hookup[ppkey][gsheet.hu_col['Node']].downstream_input_port)))
+        except IndexError:
+            return 'Not Found'
         i2c = (int(pam_slot) + 2) % 3 + 1
 
         if sheet_col == 'I2C_bus':
@@ -340,11 +346,17 @@ class Overview:
         if sheet_col == 'SNAP_Slot':
             return snap_slot
         if sheet_col == 'Port' or sheet_col == 'Pol':
-            return hu.hookup[ppkey][gsheet.hu_col[sheet_col]].downstream_input_port.upper()
+            try:
+                return hu.hookup[ppkey][gsheet.hu_col[sheet_col]].downstream_input_port.upper()
+            except IndexError:
+                return 'Not Found'
         if sheet_col == 'APriori':
             return self.apriori_data[antkey]
 
-        part = hu.hookup[ppkey][gsheet.hu_col[sheet_col]].downstream_part
+        try:
+            part = hu.hookup[ppkey][gsheet.hu_col[sheet_col]].downstream_part
+        except IndexError:
+            return 'Not Found'
         num = str(int(get_num(part)))
 
         if sheet_col == 'SNAP':
