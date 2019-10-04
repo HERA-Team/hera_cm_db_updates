@@ -1,0 +1,45 @@
+#! /usr/bin/env bash
+echo "../cm_updates/191004_overview_update_1303" >> scripts.log 
+update_apriori.py -p HH81 -s needs_checking --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH81 -r A -c "Springs installed; pulldown ropes pending" --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH81 -r A -c "Needs eyebolts" --date 2019/10/04 --time 12:00:01
+update_apriori.py -p HH82 -s needs_checking --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH82 -r A -c "Springs installed; pulldown ropes pending" --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH82 -r A -c "Needs eyebolts" --date 2019/10/04 --time 12:00:01
+update_apriori.py -p HH83 -s needs_checking --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH83 -r A -c "Saved bulkhead 3 for Ant 83" --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH83 -r A -c "Needs feed; eyebolts" --date 2019/10/04 --time 12:00:01
+update_apriori.py -p HH98 -s needs_checking --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH98 -r A -c "Springs installed; pulldown ropes pending" --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH98 -r A -c "Needs eyebolts" --date 2019/10/04 --time 12:00:01
+update_apriori.py -p HH99 -s needs_checking --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH99 -r A -c "Springs installed; pulldown ropes pending" --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH99 -r A -c "Needs eyebolts" --date 2019/10/04 --time 12:00:01
+update_apriori.py -p HH100 -s needs_checking --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH100 -r A -c "Springs installed; pulldown ropes pending" --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH100 -r A -c "Needs eyebolts; mesh repair" --date 2019/10/04 --time 12:00:01
+update_apriori.py -p HH116 -s needs_checking --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH116 -r A -c "SMA cable is missing; needs eyebolts" --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH116 -r A -c "Springs installed; pulldown ropes pending" --date 2019/10/04 --time 12:00:01
+update_apriori.py -p HH117 -s needs_checking --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH117 -r A -c "Springs installed; pulldown ropes pending" --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH117 -r A -c "Needs eyebolts" --date 2019/10/04 --time 12:00:01
+update_apriori.py -p HH118 -s needs_checking --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH118 -r A -c "Springs installed; pulldown ropes pending" --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH118 -r A -c "Needs eyebolts" --date 2019/10/04 --time 12:00:01
+update_apriori.py -p HH119 -s needs_checking --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH119 -r A -c "Springs installed; pulldown ropes pending" --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH119 -r A -c "Needs eyebolts" --date 2019/10/04 --time 12:00:01
+update_apriori.py -p HH137 -s needs_checking --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH137 -r A -c "Springs installed; pulldown ropes pending" --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH137 -r A -c "Needs eyebolts" --date 2019/10/04 --time 12:00:01
+update_apriori.py -p HH138 -s needs_checking --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH138 -r A -c "Springs installed; pulldown ropes pending" --date 2019/10/04 --time 12:00:00
+add_part_info.py -p HH138 -r A -c "Needs eyebolts" --date 2019/10/04 --time 12:00:01
+add_part_info.py -p HH84 -r A -c "Not raised - waiting on pulldown rope" --date 2019/10/02 --time 12:00:00
+add_part_info.py -p HH86 -r A -c "Cat7 cable connection is questionable" --date 2019/10/02 --time 12:00:00
+add_part_info.py -p HH87 -r A -c "One tension is frayed" --date 2019/10/02 --time 12:00:00
+add_part_info.py -p HH101 -r A -c "Cat7 cable connection is questionable" --date 2019/10/02 --time 12:00:00
+add_part_info.py -p HH101 -r A -c "Not raised - waiting on pulldown rope" --date 2019/10/02 --time 12:00:01
+add_part_info.py -p HH102 -r A -c "Not raised - waiting on pulldown rope" --date 2019/10/02 --time 12:00:00
+add_part_info.py -p HH120 -r A -c "Not raised - waiting on pulldown rope" --date 2019/10/02 --time 12:00:00
