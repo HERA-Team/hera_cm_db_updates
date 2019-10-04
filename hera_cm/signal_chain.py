@@ -365,8 +365,11 @@ class Update:
         self.active.get_connections(at_date=None)
         sides = side.split(',')
         for side in sides:
-            if port.upper() in self.active.connections[side][part_key].keys():
-                return True
+            try:
+                if port.upper() in self.active.connections[side][part_key].keys():
+                    return True
+            except KeyError:
+                return False
         return False
 
     def update_apriori(self, antenna, status, cdate, ctime='12:00'):
