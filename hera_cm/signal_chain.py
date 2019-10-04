@@ -2,7 +2,7 @@ from __future__ import absolute_import, division, print_function
 import os
 import six
 import copy
-from hera_mc import cm_utils, cm_dossier
+from hera_mc import cm_utils, cm_active
 
 
 def as_part(add_or_stop, p, cdate, ctime):
@@ -31,7 +31,7 @@ class Update:
         """
         self.chmod = chmod
         self.log_file = log_file
-        self.active = cm_dossier.ActiveData()
+        self.active = cm_active.ActiveData()
         input_script = os.path.basename(exename)
         if output_script_path is None:
             self.output_script = input_script.split('.')[0]
