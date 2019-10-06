@@ -20,13 +20,17 @@ cm_req = Namespace(hpn=cm_utils.default_station_prefixes, pol='all',
 
 
 def get_num(val):
+    """
+    Makes digits in alphanumeric string into a number as string
+    """
     return ''.join(c for c in val if c.isnumeric())
 
 
-def get_bracket(input_string, bracket_type='{}'):
+def _get_bracket(input_string, bracket_type='{}'):
     """
     Breaks out stuff as <before, in, after>.
     If no starting bracket, it returns <None, input_string, None>
+    Used in parse_stmt below.
     """
     start_ind = input_string.find(bracket_type[0])
     if start_ind == -1:
@@ -42,10 +46,10 @@ def parse_stmt(col):
     """
     Parses the full command payload.
     """
-    prefix, stmt, postfix = get_bracket(col, '{}')
+    prefix, stmt, postfix = _get_bracket(col, '{}')
     isstmt = prefix is not None
     edate = False
-    prefix, entry, postfix = get_bracket(stmt, '[]')
+    prefix, entry, postfix = _get_bracket(stmt, '[]')
     if prefix is not None:
         edate = entry
         entry = prefix
@@ -54,7 +58,7 @@ def parse_stmt(col):
 
 def get_info_pkey(ant, rev, pdate, ptime, old_timers):
     """
-    Generate unique info_pkey.
+    Generate unique info_pkey by advancing the time tag a second at a time if needed.
     """
     if ptime.count(':') == 1:
         ptime = ptime + ':00'
@@ -68,6 +72,9 @@ def get_info_pkey(ant, rev, pdate, ptime, old_timers):
 
 
 def get_row_dict(hdr, data):
+    """
+    Makes a dictionary providing mapping of column headers and column numbers to data.
+    """
     row = {}
     for i, h in enumerate(hdr):
         row[h] = data[i]
@@ -77,16 +84,22 @@ def get_row_dict(hdr, data):
 
 class Overview:
     pols = ['E', 'N']
-    com_fn = 'overview_update'
+    com_script = 'overview_update'  # name of processing script file
+    NotFound = "Not Found"
+    allowed_getlist = ['hookup', 'apriori', 'sheets']
 
     def __init__(self):
         # Start session
         db = mc.connect_to_mc_db(None)
         self.session = db.sessionmaker()
         self.commands = {}
-        self.get_hookup()
-        self.get_apriori()
-        self.get_sheets()
+
+    def get(self, getlist=['hookup', 'apriori', 'sheets']):
+        for gl in getlist:
+            if in self.allowed_getlist:
+                getattr(self, 'get_' + gl)()
+            else:
+                print("{} get method not found.".format(gl))
 
     def get_hookup(self):
         """
@@ -148,45 +161,15 @@ class Overview:
                 self.sheet_data[key] = [get_num(tab)] + data
         self.sheet_ants = cm_utils.put_keys_in_order(list(self.sheet_ants), sort_order='NPR')
 
-    def process_commands(self, keep_dated=False, output_script_path='../cm_updates/'):
-        today = datetime.datetime.now()
-        syr = str(today.year)[2:]
-        script_filename = '{}{:02d}{:02d}_{}_{:02d}{:02d}'.format(syr, today.month, today.day, self.com_fn, today.hour, today.minute)
-        hera = signal_chain.Update(script_filename, output_script_path=output_script_path, chmod=True)
-        primary_keys = {'INFO': []}
-        for antkey, commands in self.commands.items():
-            ant, rev = antkey.split(':')
-            for payload in commands:
-                command, statement, dtmp = payload.split('|')
-                pdate, ptime = dtmp.split('-')
-                if command == 'INFO':
-                    pkey, pdate, ptime = get_info_pkey(ant, rev, pdate, ptime, primary_keys['INFO'])
-                    hera.add_part_info(ant, rev, statement, pdate, ptime)
-                    primary_keys['INFO'].append(pkey)
-                elif command == 'SWAP' or command == 'REPLACE':
-                    ptype, old_num, new_num = statement.split(':')
-                    if ptype == 'SNP':
-                        old_one = ['SNP{}{:06d}'.format(old_num[0], int(old_num[1:])), 'A']
-                        new_one = ['SNP{}{:06d}'.format(new_num[0], int(new_num[1:])), 'A']
-                    else:
-                        old_one = ['{}{:03d}'.format(ptype, int(old_num)), 'A']
-                        new_one = ['{}{:03d}'.format(ptype, int(new_num)), 'A']
-                    if command == 'SWAP':
-                        hera.replace(new_one, None, pdate, ptime)
-                    hera.replace(old_one, new_one, pdate, ptime)
-                elif command == 'APRIORI':
-                    hera.update_apriori(ant, statement, pdate, ptime)
-                elif command == 'ADD':
-                    print('NOADD ', command, ant, rev, statement, pdate, ptime)
-                else:
-                    print("UNKOWN COMMAND------>", payload)
-        hera.done()
-        script_filename = os.path.join(output_script_path, script_filename)
-        mvcp = 'cp' if keep_dated else 'mv'
-        print("Writing ./{}   ({})".format(self.com_fn, mvcp))
-        os.system('{} {} {}'.format(mvcp, script_filename, self.com_fn))
-
     def add_mismatch_commands(self, apriori_only=False):
+        """
+        Add commands to self.commands to handle the mismatch data found between the googlesheet and the database.
+
+        Parameters
+        ----------
+        apriori_only : bool
+            Flag to only include the apriori_antenna mismatch, not hookup
+        """
         for key, data in self.mismatches.items():
             antrev_key, pol = key.split('-')
             ant, rev = antrev_key.split(':')
@@ -200,7 +183,7 @@ class Overview:
                     if payload[0] == 'SNAP':
                         payload[0] = 'SNP'
                     prefix = '{}:'.format(payload[0])
-                    if payload[1] == 'Not Found':
+                    if payload[1] == self.NotFound:
                         command_code = 'ADD'
                         stmt = '{}'.format(payload[2])
                     else:
@@ -221,6 +204,10 @@ class Overview:
                 del self.commands[antrev_key]
 
     def add_sheet_commands(self):
+        """
+        Searches the relevant fields in the googlesheets and generates the
+        appropriate script commands.
+        """
         for sheet_key in self.sheet_data.keys():
             tab = 'node{}'.format(self.sheet_data[sheet_key][0])
             antrev_key, pol = sheet_key.split('-')
@@ -313,14 +300,14 @@ class Overview:
                     if val is not None:
                         sheet_val = self.sheet_data[sheet_key][i]
                         if val.upper() != sheet_val.upper():
-                            if val != 'Not Found' or len(sheet_val.strip()):
+                            if val != self.NotFound or len(sheet_val.strip()):
                                 self.mismatches.setdefault(sheet_key, {'sheet': sheet_row,
                                                                        'diff': [], 'date': self.sheet_date[tab]})
                                 self.mismatches[sheet_key]['diff'].append([col, val, sheet_val])
 
     def _get_val_from_cmdb(self, antkey, pol, sheet_col):
         """
-        Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column
+        Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column for comparison.
         """
         if sheet_col not in gsheet.hu_col.keys():
             return None
@@ -332,11 +319,11 @@ class Overview:
         try:
             pam_slot = get_num(hu.hookup[ppkey][gsheet.hu_col['Bulkhead-PAM_Slot']].downstream_input_port)
         except IndexError:
-            return 'Not Found'
+            return self.NotFound
         try:
             snap_slot = str(int(get_num(hu.hookup[ppkey][gsheet.hu_col['Node']].downstream_input_port)))
         except IndexError:
-            return 'Not Found'
+            return self.NotFound
         i2c = (int(pam_slot) + 2) % 3 + 1
 
         if sheet_col == 'I2C_bus':
@@ -349,17 +336,67 @@ class Overview:
             try:
                 return hu.hookup[ppkey][gsheet.hu_col[sheet_col]].downstream_input_port.upper()
             except IndexError:
-                return 'Not Found'
+                return self.NotFound
         if sheet_col == 'APriori':
             return self.apriori_data[antkey]
 
         try:
             part = hu.hookup[ppkey][gsheet.hu_col[sheet_col]].downstream_part
         except IndexError:
-            return 'Not Found'
+            return self.NotFound
         num = str(int(get_num(part)))
 
         if sheet_col == 'SNAP':
             return "{}{}".format(part[3], num)
 
         return num
+
+    def process_commands(self, keep_dated=False, output_script_path='../cm_updates/'):
+        """
+        Process the command queue from the "add" functions above and write out the script.
+        It writes a local script cm_script and if keep_dated writes a dated version to the
+        output_script_path
+
+        Parameters
+        ----------
+        keep_dated : bool
+            If True, it will keep the dated version of the script in output_script_path
+        output_script_path : str
+            The relative path for the script files.
+        """
+        today = datetime.datetime.now()
+        sdate = '{:02d}{:02d}{:02d}'.format(str(today.year)[2:], today.month, today.day)
+        script_filename = '{}_{}_{:02d}{:02d}'.format(sdate, self.com_script, today.hour, today.minute)
+        hera = signal_chain.Update(script_filename, output_script_path=output_script_path, chmod=True)
+        primary_keys = {'INFO': []}
+        for antkey, commands in self.commands.items():
+            ant, rev = antkey.split(':')
+            for payload in commands:
+                command, statement, dtmp = payload.split('|')
+                pdate, ptime = dtmp.split('-')
+                if command == 'INFO':
+                    pkey, pdate, ptime = get_info_pkey(ant, rev, pdate, ptime, primary_keys['INFO'])
+                    hera.add_part_info(ant, rev, statement, pdate, ptime)
+                    primary_keys['INFO'].append(pkey)
+                elif command == 'SWAP' or command == 'REPLACE':
+                    ptype, old_num, new_num = statement.split(':')
+                    if ptype == 'SNP':
+                        old_one = ['SNP{}{:06d}'.format(old_num[0], int(old_num[1:])), 'A']
+                        new_one = ['SNP{}{:06d}'.format(new_num[0], int(new_num[1:])), 'A']
+                    else:
+                        old_one = ['{}{:03d}'.format(ptype, int(old_num)), 'A']
+                        new_one = ['{}{:03d}'.format(ptype, int(new_num)), 'A']
+                    if command == 'SWAP':
+                        hera.replace(new_one, None, pdate, ptime)
+                    hera.replace(old_one, new_one, pdate, ptime)
+                elif command == 'APRIORI':
+                    hera.update_apriori(ant, statement, pdate, ptime)
+                elif command == 'ADD':
+                    print('NOADD ', command, ant, rev, statement, pdate, ptime)
+                else:
+                    print("UNKOWN COMMAND------>", payload)
+        hera.done()
+        script_filename = os.path.join(output_script_path, script_filename)
+        mvcp = 'cp' if keep_dated else 'mv'
+        print("Writing ./{}   ({})".format(self.com_script, mvcp))
+        os.system('{} {} {}'.format(mvcp, script_filename, self.com_script))
