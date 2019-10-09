@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+echo "191009_add_83" >> scripts.log 
+add_part.py -p FDV48 -r A -t feed -m FDV48 --date 2019/10/09 --time 10:00
+add_part.py -p FEM037 -r A -t front-end -m FEM037 --date 2019/10/09 --time 10:00
+add_connection.py -u A83 --uprev H --upport focus -d FDV48 --dnrev A --dnport input --date 2019/10/09 --time 11:00
+add_connection.py -u FDV48 --uprev A --upport terminals -d FEM037 --dnrev A --dnport input --date 2019/10/09 --time 11:00
+add_connection.py -u FEM037 --uprev A --upport e -d NBP07 --dnrev A --dnport e3 --date 2019/10/09 --time 11:00
+add_connection.py -u FEM037 --uprev A --upport n -d NBP07 --dnrev A --dnport n3 --date 2019/10/09 --time 11:00

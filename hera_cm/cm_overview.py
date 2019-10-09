@@ -96,7 +96,7 @@ class Overview:
 
     def get(self, getlist=['hookup', 'apriori', 'sheets']):
         for gl in getlist:
-            if in self.allowed_getlist:
+            if gl in self.allowed_getlist:
                 getattr(self, 'get_' + gl)()
             else:
                 print("{} get method not found.".format(gl))
