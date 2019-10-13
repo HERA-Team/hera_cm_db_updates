@@ -356,13 +356,13 @@ class Update:
         boolean
                  True if existing corresponding hpn/rev
         """
-        self.active.get_parts(at_date=at_date)
+        self.active.load_parts(at_date=at_date)
         part_key = cm_utils.make_part_key(hpn, rev)
         if part_key not in self.active.parts.keys():
             return False
         if atype == 'part':
             return True
-        self.active.get_connections(at_date=None)
+        self.active.load_connections(at_date=None)
         sides = side.split(',')
         for side in sides:
             try:

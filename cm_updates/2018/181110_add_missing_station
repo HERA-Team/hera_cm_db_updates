@@ -1,5 +1,0 @@
-#! /usr/bin/env bash
-echo 181110_add_missing_station >> scripts.log
-add_station.py HH205 --date 2018/09/05 --time 10:00
-add_part.py -p A205 -r H -t antenna -m S/N139 --date 2018/09/05 --time 10:00 --actually_do_it
-add_connection.py -u HH205 --uprev A --upport ground -d A205 --dnrev H --dnport ground --date 2018/09/05 --time 12:00 --actually_do_it
