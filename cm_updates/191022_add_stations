@@ -1,0 +1,32 @@
+#! /usr/bin/env bash
+echo "191022_add_stations" >> scripts.log 
+add_station.py HH115 --sernum 269 --date 2019/10/14 --time 10:00
+add_part.py -p A115 -r H -t antenna -m S/N269 --date 2019/10/14 --time 10:00
+add_connection.py -u HH115 --uprev A --upport ground -d A115 --dnrev H --dnport ground --date 2019/10/14 --time 10:00
+add_station.py HH131 --sernum 270 --date 2019/10/14 --time 10:00
+add_part.py -p A131 -r H -t antenna -m S/N270 --date 2019/10/14 --time 10:00
+add_connection.py -u HH131 --uprev A --upport ground -d A131 --dnrev H --dnport ground --date 2019/10/14 --time 10:00
+add_station.py HH132 --sernum 271 --date 2019/10/15 --time 10:00
+add_part.py -p A132 -r H -t antenna -m S/N271 --date 2019/10/15 --time 10:00
+add_connection.py -u HH132 --uprev A --upport ground -d A132 --dnrev H --dnport ground --date 2019/10/15 --time 10:00
+add_station.py HH133 --sernum 272 --date 2019/10/15 --time 10:00
+add_part.py -p A133 -r H -t antenna -m S/N272 --date 2019/10/15 --time 10:00
+add_connection.py -u HH133 --uprev A --upport ground -d A133 --dnrev H --dnport ground --date 2019/10/15 --time 10:00
+add_station.py HH151 --sernum 273 --date 2019/10/15 --time 10:00
+add_part.py -p A151 -r H -t antenna -m S/N273 --date 2019/10/15 --time 10:00
+add_connection.py -u HH151 --uprev A --upport ground -d A151 --dnrev H --dnport ground --date 2019/10/15 --time 10:00
+add_station.py HH134 --sernum 274 --date 2019/10/16 --time 10:00
+add_part.py -p A134 -r H -t antenna -m S/N274 --date 2019/10/16 --time 10:00
+add_connection.py -u HH134 --uprev A --upport ground -d A134 --dnrev H --dnport ground --date 2019/10/16 --time 10:00
+add_station.py HH152 --sernum 275 --date 2019/10/17 --time 10:00
+add_part.py -p A152 -r H -t antenna -m S/N275 --date 2019/10/17 --time 10:00
+add_connection.py -u HH152 --uprev A --upport ground -d A152 --dnrev H --dnport ground --date 2019/10/17 --time 10:00
+add_station.py HH153 --sernum 276 --date 2019/10/17 --time 10:00
+add_part.py -p A153 -r H -t antenna -m S/N276 --date 2019/10/17 --time 10:00
+add_connection.py -u HH153 --uprev A --upport ground -d A153 --dnrev H --dnport ground --date 2019/10/17 --time 10:00
+add_station.py HH171 --sernum 277 --date 2019/10/18 --time 10:00
+add_part.py -p A171 -r H -t antenna -m S/N277 --date 2019/10/18 --time 10:00
+add_connection.py -u HH171 --uprev A --upport ground -d A171 --dnrev H --dnport ground --date 2019/10/18 --time 10:00
+add_station.py HH172 --sernum 278 --date 2019/10/18 --time 10:00
+add_part.py -p A172 -r H -t antenna -m S/N278 --date 2019/10/18 --time 10:00
+add_connection.py -u HH172 --uprev A --upport ground -d A172 --dnrev H --dnport ground --date 2019/10/18 --time 10:00
