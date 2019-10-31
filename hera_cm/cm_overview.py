@@ -5,7 +5,7 @@
 
 """
 """
-from hera_mc import cm_hookup, cm_utils, cm_sysutils, mc
+from hera_mc import cm_hookup, cm_utils, cm_sysutils, cm_sysdef, mc
 import sheet_data as gsheet
 import signal_chain
 
@@ -15,7 +15,7 @@ import requests
 import datetime
 from argparse import Namespace
 
-cm_req = Namespace(hpn=cm_utils.default_station_prefixes, pol='all',
+cm_req = Namespace(hpn=cm_sysdef.hera_zone_prefixes, pol='all',
                    at_date='now', exact_match=False, hookup_type=None)
 
 
@@ -365,7 +365,7 @@ class Overview:
             The relative path for the script files.
         """
         today = datetime.datetime.now()
-        sdate = '{:02d}{:02d}{:02d}'.format(str(today.year)[2:], today.month, today.day)
+        sdate = '{}{:02d}{:02d}'.format(str(today.year)[2:], today.month, today.day)
         script_filename = '{}_{}_{:02d}{:02d}'.format(sdate, self.com_script, today.hour, today.minute)
         hera = signal_chain.Update(script_filename, output_script_path=output_script_path, chmod=True)
         primary_keys = {'INFO': []}
