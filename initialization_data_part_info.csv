@@ -509,3 +509,5 @@ HH120,A,Not raised - waiting on pulldown rope,,1254052818
 FEM014,A,Restarting part.  Previous data <heraPartNumber id=FEM014:A type=front-end :: 1224930018 - 1234347018>,,1254045618
 FEM015,A,Restarting part.  Previous data <heraPartNumber id=FEM015:A type=front-end :: 1224930018 - 1234347018>,,1254045618
 FEM013,A,Restarting part.  Previous data <heraPartNumber id=FEM013:A type=front-end :: 1224930018 - 1234347018>,,1254045618
+SNPC000057,A,SNAP was constantly DHCPing. Replaced 10G transceiver and cleaned fiber. Working again,,1256542021
+HH83,A,broken input,,1256558418
