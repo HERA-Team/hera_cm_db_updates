@@ -511,3 +511,32 @@ FEM015,A,Restarting part.  Previous data <heraPartNumber id=FEM015:A type=front-
 FEM013,A,Restarting part.  Previous data <heraPartNumber id=FEM013:A type=front-end :: 1224930018 - 1234347018>,,1254045618
 SNPC000057,A,SNAP was constantly DHCPing. Replaced 10G transceiver and cleaned fiber. Working again,,1256542021
 HH83,A,broken input,,1256558418
+HH82,A,lowered,,1256644818
+HH82,A,lowered,,1256644819
+HH83,A,broken PAM input,,1256644818
+HH99,A,"lowered, broken RF fiber",,1256644818
+HH99,A,lowered,,1256644819
+HH100,A,lowered,,1256644818
+HH100,A,lowered,,1256644819
+HH118,A,lowered,,1256644818
+HH118,A,lowered,,1256644819
+HH119,A,lowered,,1256644818
+HH119,A,lowered,,1256644819
+HH137,A,lowered,,1256644818
+HH137,A,lowered,,1256644819
+HH138,A,lowered,,1256644818
+HH138,A,lowered,,1256644819
+HH84,A,height raised from 4.117m to 4.492m 10/31/19,,1256644818
+HH84,A,height raised from 4.117m to 4.492m 10/31/19,,1256644819
+HH86,A,Cat7 cable connection is questionable,,1256644818
+HH87,A,One tension is frayed,,1256644818
+HH101,A,Cat7 cable connection is questionable,,1256644818
+HH101,A,Not raised - waiting on pulldown rope,,1256644819
+HH102,A,Not raised - waiting on pulldown rope,,1256644818
+HH120,A,Not raised - waiting on pulldown rope,,1256644818
+HH123,A,height raised from 4.041m to 4.406m 10/31/19,,1256644818
+HH123,A,height raised from 4.041m to 4.406m 10/31/19,,1256644819
+HH88,A,height raised from 4.205m to 4.418m 10/31/19,,1256644818
+HH88,A,height raised from 4.205m to 4.418m 10/31/19,,1256644819
+HH126,A,height raised from 4.15m to 4.446m 10/31/19,,1256644818
+HH126,A,height raised from 4.15m to 4.446m 10/31/19,,1256644819
