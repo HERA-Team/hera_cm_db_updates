@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+echo "../cm_updates/191031_overview_update_1606" >> scripts.log 
+add_part_info.py -p HH83 -r A -c "broken input" --date 2019/10/31 --time 12:00:00
