@@ -2,7 +2,7 @@ from __future__ import absolute_import, division, print_function
 import os
 import six
 import copy
-from hera_mc import cm_utils, cm_active
+from hera_mc import cm_utils, cm_active, cm_handling
 
 
 def as_part(add_or_stop, p, cdate, ctime):
@@ -32,6 +32,7 @@ class Update:
         self.chmod = chmod
         self.log_file = log_file
         self.active = cm_active.ActiveData()
+        self.handle = cm_handling.Handling()
         input_script = os.path.basename(exename)
         if output_script_path is None:
             self.output_script = input_script.split('.')[0]
@@ -313,6 +314,9 @@ class Update:
             sn = self.ser_num_dict[part_type]
         return sn
 
+    def to_implement(self, msg, command, ant, rev, statement, pdate, ptime):
+        self.fp.write('{} {} {} {} {} {} {}\n'.format(msg, command, ant, rev, statement, pdate, ptime))
+
     def update_part(self, add_or_stop, part, cdate, ctime):
         """
         add_or_stop:  'add' or 'stop'
@@ -443,7 +447,7 @@ class Update:
                 self.update_part('add', new, cdate, ctime)
             else:
                 print("{} already added.".format(new[0]))
-        old_pd = self.handle.get_part_dossier(hpn=old[0], rev=old[1], at_date=cdt, exact_match=True, full_version=True)
+        old_pd = self.handle.get_dossier(hpn=old[0], rev=old[1], at_date=cdt, exact_match=True)
         old_pd_key = list(old_pd.keys())
         if len(old_pd_key) > 1:
             print("Too many connected parts")

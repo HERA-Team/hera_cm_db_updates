@@ -161,14 +161,16 @@ class Overview:
                 self.sheet_data[key] = [get_num(tab)] + data
         self.sheet_ants = cm_utils.put_keys_in_order(list(self.sheet_ants), sort_order='NPR')
 
-    def add_mismatch_commands(self, apriori_only=False):
+    def add_mismatch_commands(self, add_hookup=True, add_apriori=True):
         """
         Add commands to self.commands to handle the mismatch data found between the googlesheet and the database.
 
         Parameters
         ----------
-        apriori_only : bool
-            Flag to only include the apriori_antenna mismatch, not hookup
+        add_hookup : bool
+            Flag to include hookup mismatches
+        add_apriori : bool
+            Flag to includes apriori mismatches
         """
         for key, data in self.mismatches.items():
             antrev_key, pol = key.split('-')
@@ -193,13 +195,16 @@ class Overview:
                     command_code = 'APRIORI'
                     prefix = ''
                     stmt = payload[2]
-                if apriori_only and command_code != 'APRIORI':
-                    command_code = None
+                add_it = False
                 if command_code is not None:
+                    if add_apriori and command_code == 'APRIORI':
+                        add_it = True
+                    if add_hookup and command_code != 'APRIORI':
+                        add_it = True
+                if add_it:
                     stmt = '{}|{}{}|{}'.format(command_code, prefix, stmt, entry_date)
-                    if stmt in self.commands[antrev_key]:
-                        continue
-                    self.commands[antrev_key] = self.commands[antrev_key] + [stmt]
+                    if stmt not in self.commands[antrev_key]:
+                        self.commands[antrev_key] = self.commands[antrev_key] + [stmt]
             if not len(self.commands[antrev_key]):
                 del self.commands[antrev_key]
 
@@ -392,7 +397,7 @@ class Overview:
                 elif command == 'APRIORI':
                     hera.update_apriori(ant, statement, pdate, ptime)
                 elif command == 'ADD':
-                    print('NOADD ', command, ant, rev, statement, pdate, ptime)
+                    hera.to_implement('ADD not implemented!!! ', command, ant, rev, statement, pdate, ptime)
                 else:
                     print("UNKOWN COMMAND------>", payload)
         hera.done()
