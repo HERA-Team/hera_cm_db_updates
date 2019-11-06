@@ -86,7 +86,7 @@ class Overview:
     pols = ['E', 'N']
     com_script = 'overview_update'  # name of processing script file
     NotFound = "Not Found"
-    allowed_getlist = ['hookup', 'apriori', 'sheets']
+    allowed_getlist = ['hookup', 'sheets', 'apriori']
 
     def __init__(self):
         # Start session
@@ -94,7 +94,7 @@ class Overview:
         self.session = db.sessionmaker()
         self.commands = {}
 
-    def get(self, getlist=['hookup', 'apriori', 'sheets']):
+    def get(self, getlist=['hookup', 'sheets', 'apriori']):
         for gl in getlist:
             if gl in self.allowed_getlist:
                 getattr(self, 'get_' + gl)()
@@ -119,16 +119,6 @@ class Overview:
                     self.connected.append(ant)
                     break
         self.connected = cm_utils.put_keys_in_order(self.connected, sort_order='NPR')
-
-    def get_apriori(self):
-        """
-        Gets the apriori status information from the hera_mc database
-        """
-        sys = cm_sysutils.Handling(self.session)
-        self.apriori_data = {}
-        for antkey in self.connected:
-            hh = antkey.split(':')[0]
-            self.apriori_data[antkey] = sys.get_apriori_status_for_antenna(hh, at_date=cm_req.at_date)
 
     def get_sheets(self):
         """
@@ -160,6 +150,17 @@ class Overview:
                 key = 'HH{}:A-{}'.format(antnum, data[1].upper())
                 self.sheet_data[key] = [get_num(tab)] + data
         self.sheet_ants = cm_utils.put_keys_in_order(list(self.sheet_ants), sort_order='NPR')
+
+    def get_apriori(self):
+        """
+        Gets the apriori status information from the hera_mc database.  Must be after
+        get_sheet
+        """
+        sys = cm_sysutils.Handling(self.session)
+        self.apriori_data = {}
+        for antkey in self.sheet_ants:
+            hh = antkey.split(':')[0]
+            self.apriori_data[antkey] = sys.get_apriori_status_for_antenna(hh, at_date=cm_req.at_date)
 
     def add_mismatch_commands(self, add_hookup=True, add_apriori=True):
         """
@@ -316,6 +317,11 @@ class Overview:
         """
         if sheet_col not in gsheet.hu_col.keys():
             return None
+        if sheet_col == 'APriori':
+            if antky in self.apriori_data.keys():
+                return self.apriori_data[antkey]
+            else:
+                return None
         hu = self.hookup_dict[antkey]
         pol = pol.upper()
         for ppkey in hu.hookup.keys():

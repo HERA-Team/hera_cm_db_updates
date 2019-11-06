@@ -17,11 +17,11 @@ if __name__ == '__main__':
     ap.add_argument('--no-copy', dest='keep_dated_copy', help="Don't keep a dated copy of script in cm_updates", action='store_false')
     ap.add_argument('--hide-view', dest='view', help="Don't print out mismatch results", action='store_false')
     ap.add_argument('--compare_keys', help="Keys to search in compare.  See cm_overview.compare", default='sheet')
-    ap.add_argument('--getlist', help="List of info material to get. See cm_overview.allowed_getlist", default='hookup,apriori,sheets')
+    ap.add_argument('--getlist', help="List of info material to get. See cm_overview.allowed_getlist", default='hookup,sheets,apriori')
     args = ap.parse_args()
 else:
     args = argparse.Namespace(sheet_commands=True, hookup_mismatch=True, apriori_mismatch=True, keep_dated_copy=True,
-                              view=True, compare_keys='sheet', getlist='hookup,apriori,sheets')
+                              view=True, compare_keys='sheet', getlist='hookup,sheets,apriori')
 
 args.getlist = args.getlist.split(',')
 
