@@ -82,6 +82,20 @@ def get_row_dict(hdr, data):
     return row
 
 
+def gen_hpn(ptype, pnum):
+    """
+    From the sheet data (via ptype, pnum) it will generate a HERA Part Number
+    """
+    ptype = ptype.upper()
+    if isinstance(pnum, str):
+        pnum = pnum.upper()
+    if ptype == 'SNP':
+        return 'SNP{}{:06d}'.format(pnum[0], int(pnum[1:]))
+    if ptype in ['PAM', 'FEM']:
+        return '{}{:03d}'.format(ptype, int(pnum))
+    return '{}{}'.format(ptype, pnum)
+
+
 class Overview:
     pols = ['E', 'N']
     com_script = 'overview_update'  # name of processing script file
@@ -93,6 +107,8 @@ class Overview:
         db = mc.connect_to_mc_db(None)
         self.session = db.sessionmaker()
         self.commands = {}
+        self.connected = []
+        self.sheet_ants = []
 
     def get(self, getlist=['hookup', 'sheets', 'apriori']):
         for gl in getlist:
@@ -146,9 +162,11 @@ class Overview:
                     antnum = int(data[0])
                 except ValueError:
                     continue
-                self.sheet_ants.add('HH{}:A'.format(antnum))
-                key = 'HH{}:A-{}'.format(antnum, data[1].upper())
-                self.sheet_data[key] = [get_num(tab)] + data
+                hpn = gen_hpn('HH', antnum)
+                hkey = cm_utils.make_part_key(hpn, 'A')
+                self.sheet_ants.add(hkey)
+                dkey = '{}-{}'.format(hkey, data[1].upper())
+                self.sheet_data[dkey] = [get_num(tab)] + data
         self.sheet_ants = cm_utils.put_keys_in_order(list(self.sheet_ants), sort_order='NPR')
 
     def get_apriori(self):
@@ -158,7 +176,8 @@ class Overview:
         """
         sys = cm_sysutils.Handling(self.session)
         self.apriori_data = {}
-        for antkey in self.sheet_ants:
+        use_keys = set(self.connected + self.sheet_ants)
+        for antkey in use_keys:
             hh = antkey.split(':')[0]
             self.apriori_data[antkey] = sys.get_apriori_status_for_antenna(hh, at_date=cm_req.at_date)
 
@@ -185,7 +204,7 @@ class Overview:
                 if payload[0] in ['PAM', 'FEM', 'SNAP']:
                     if payload[0] == 'SNAP':
                         payload[0] = 'SNP'
-                    prefix = '{}:'.format(payload[0])
+                    prefix = '{}'.format(payload[0])
                     if payload[1] == self.NotFound:
                         command_code = 'ADD'
                         stmt = '{}'.format(payload[2])
@@ -196,12 +215,9 @@ class Overview:
                     command_code = 'APRIORI'
                     prefix = ''
                     stmt = payload[2]
-                add_it = False
-                if command_code is not None:
-                    if add_apriori and command_code == 'APRIORI':
-                        add_it = True
-                    if add_hookup and command_code != 'APRIORI':
-                        add_it = True
+                add_it = (command_code is not None) and\
+                         (add_apriori and command_code == 'APRIORI') or\
+                         (add_hookup and command_code != 'APRIORI')
                 if add_it:
                     stmt = '{}|{}{}|{}'.format(command_code, prefix, stmt, entry_date)
                     if stmt not in self.commands[antrev_key]:
@@ -318,7 +334,7 @@ class Overview:
         if sheet_col not in gsheet.hu_col.keys():
             return None
         if sheet_col == 'APriori':
-            if antky in self.apriori_data.keys():
+            if antkey in self.apriori_data.keys():
                 return self.apriori_data[antkey]
             else:
                 return None
@@ -391,19 +407,15 @@ class Overview:
                     primary_keys['INFO'].append(pkey)
                 elif command == 'SWAP' or command == 'REPLACE':
                     ptype, old_num, new_num = statement.split(':')
-                    if ptype == 'SNP':
-                        old_one = ['SNP{}{:06d}'.format(old_num[0], int(old_num[1:])), 'A']
-                        new_one = ['SNP{}{:06d}'.format(new_num[0], int(new_num[1:])), 'A']
-                    else:
-                        old_one = ['{}{:03d}'.format(ptype, int(old_num)), 'A']
-                        new_one = ['{}{:03d}'.format(ptype, int(new_num)), 'A']
-                    if command == 'SWAP':
+                    old_one = [gen_hpn(ptype, old_num), 'A']
+                    new_one = [gen_hpn(ptype, new_num), 'A']
+                    if command == 'REPLACE':
                         hera.replace(new_one, None, pdate, ptime)
                     hera.replace(old_one, new_one, pdate, ptime)
                 elif command == 'APRIORI':
                     hera.update_apriori(ant, statement, pdate, ptime)
                 elif command == 'ADD':
-                    hera.to_implement('ADD not implemented!!! ', command, ant, rev, statement, pdate, ptime)
+                    hera.to_implement(command, ant, rev, statement, pdate, ptime)
                 else:
                     print("UNKOWN COMMAND------>", payload)
         hera.done()

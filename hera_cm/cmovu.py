@@ -23,6 +23,8 @@ else:
     args = argparse.Namespace(sheet_commands=True, hookup_mismatch=True, apriori_mismatch=True, keep_dated_copy=True,
                               view=True, compare_keys='sheet', getlist='hookup,sheets,apriori')
 
+print("To get the full set run as 'cmovu.py -sma'.\nFor the 'getlist' apriori must be last (and not solo)")
+
 args.getlist = args.getlist.split(',')
 
 cmovu = cm_overview.Overview()

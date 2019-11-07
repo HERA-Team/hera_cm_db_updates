@@ -314,8 +314,10 @@ class Update:
             sn = self.ser_num_dict[part_type]
         return sn
 
-    def to_implement(self, msg, command, ant, rev, statement, pdate, ptime):
-        self.fp.write('{} {} {} {} {} {} {}\n'.format(msg, command, ant, rev, statement, pdate, ptime))
+    def to_implement(self, command, ant, rev, statement, pdate, ptime):
+        stmt = '{} not implemented! {} {} {} {} {} {}\n'.format(command, ant, rev, statement, pdate, ptime)
+        self.fp.write(stmt)
+        print("{}".format(stmt.strip()))
 
     def update_part(self, add_or_stop, part, cdate, ctime):
         """
