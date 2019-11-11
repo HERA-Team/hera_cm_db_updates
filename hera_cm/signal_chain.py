@@ -338,21 +338,21 @@ class Update:
         """
         self.fp.write(as_connect(add_or_stop, up, down, cdate, ctime))
 
-    def exists(self, atype, hpn, rev='active', port=None, side='up,down', at_date='now'):
+    def exists(self, atype, hpn, rev, port, side='up,down', at_date='now'):
         """
         Check if a part or connection exists for hpn
 
         Parameters
         ----------
-        atype :  string
+        atype :  str
               'part' or 'connection'
-        hpn : string or list of strings
+        hpn : str
               HERA part number to check.  Can be a list of strings or a csv-list
-        rev : None or string or list of strings.
-              Revision(s) to check.  If None it checks all/any.  Default='active'
-        port : None or string or list of strings
-               name of port to check.  If None (default) it checks all/any (atype='connection' only)
-        side : string
+        rev : str, list or None
+              Revisions to check.  If None checks if any rev present.
+        port : str, list or None
+               Ports to check.  If None checks if any port is present.
+        side : str
                "side" of part to check.  Options are:  up, down, or up,down (default)
         at_date : string, float, int, Time, or datetime
                   date for the connection to be active.  Default is 'now'
@@ -360,22 +360,35 @@ class Update:
         Return
         ------
         boolean
-                 True if existing corresponding hpn/rev
+                 True if existing corresponding hpn/rev/port
         """
         self.active.load_parts(at_date=at_date)
-        part_key = cm_utils.make_part_key(hpn, rev)
-        if part_key not in self.active.parts.keys():
-            return False
-        if atype == 'part':
-            return True
+        if rev is None:
+            rev = cm_active.revs(hpn)
+        elif isinstance(rev, str):
+            rev = [rev]
+        active_part = False
+        for r in rev:
+            part_key = cm_utils.make_part_key(hpn, r)
+            if part_key in self.active.parts.keys():
+                active_part = True
+                break
+        if atype.startswith('part') or not active_part:
+            return active_part
+
         self.active.load_connections(at_date=None)
         sides = side.split(',')
-        for side in sides:
-            try:
-                if port.upper() in self.active.connections[side][part_key].keys():
-                    return True
-            except KeyError:
-                return False
+        if isinstance(port, str):
+            port = [port]
+        for r in rev:
+            part_key = cm_utils.make_part_key(hpn, r)
+            for side in sides:
+                if part_key in self.active.connections[side].keys():
+                    if port is None:
+                        return True
+                    for p in port:
+                        if p.upper() in self.active.connections[side][part_key].keys():
+                            return True
         return False
 
     def update_apriori(self, antenna, status, cdate, ctime='12:00'):

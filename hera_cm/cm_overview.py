@@ -5,7 +5,7 @@
 
 """
 """
-from hera_mc import cm_hookup, cm_utils, cm_sysutils, cm_sysdef, mc
+from hera_mc import cm_hookup, cm_utils, cm_sysutils, cm_sysdef, mc, cm_partconnect
 import sheet_data as gsheet
 import signal_chain
 
@@ -89,10 +89,16 @@ def gen_hpn(ptype, pnum):
     ptype = ptype.upper()
     if isinstance(pnum, str):
         pnum = pnum.upper()
-    if ptype == 'SNP':
+    if ptype in ['SNP', 'SNAP']:
         return 'SNP{}{:06d}'.format(pnum[0], int(pnum[1:]))
     if ptype in ['PAM', 'FEM']:
         return '{}{:03d}'.format(ptype, int(pnum))
+    if ptype in ['NODE', 'ND']:
+        return 'N{:02d}'.format(int(pnum))
+    if ptype in ['NBP']:
+        return 'NBP{:02d}'.format(int(pnum))
+    if ptype in ['FEED', 'FDV']:
+        return 'FDV{}'.format(int(pnum))
     return '{}{}'.format(ptype, pnum)
 
 
@@ -168,6 +174,14 @@ class Overview:
                 dkey = '{}-{}'.format(hkey, data[1].upper())
                 self.sheet_data[dkey] = [get_num(tab)] + data
         self.sheet_ants = cm_utils.put_keys_in_order(list(self.sheet_ants), sort_order='NPR')
+
+    def make_sheet_connections(self):
+        self.sheet_connections = {}
+        for sant in self.sheet_ants:
+            self.sheet_connections[sant] = []
+            for part in self.sheet_data[sant]:
+                print(part)
+
 
     def get_apriori(self):
         """
@@ -333,7 +347,7 @@ class Overview:
         """
         if sheet_col not in gsheet.hu_col.keys():
             return None
-        if sheet_col == 'APriori':
+        if sheet_col.lower() == 'apriori':
             if antkey in self.apriori_data.keys():
                 return self.apriori_data[antkey]
             else:
@@ -353,19 +367,17 @@ class Overview:
             return self.NotFound
         i2c = (int(pam_slot) + 2) % 3 + 1
 
-        if sheet_col == 'I2C_bus':
+        if sheet_col.lower() == 'i2c_bus':
             return str(i2c)
-        if sheet_col == 'Bulkhead-PAM_Slot':
+        if sheet_col.lower() == 'bulkhead-pam_slot':
             return pam_slot
-        if sheet_col == 'SNAP_Slot':
+        if sheet_col.lower() == 'snap_slot':
             return snap_slot
-        if sheet_col == 'Port' or sheet_col == 'Pol':
+        if sheet_col.lower() == 'port' or sheet_col.lower() == 'pol':
             try:
                 return hu.hookup[ppkey][gsheet.hu_col[sheet_col]].downstream_input_port.upper()
             except IndexError:
                 return self.NotFound
-        if sheet_col == 'APriori':
-            return self.apriori_data[antkey]
 
         try:
             part = hu.hookup[ppkey][gsheet.hu_col[sheet_col]].downstream_part
@@ -373,7 +385,7 @@ class Overview:
             return self.NotFound
         num = str(int(get_num(part)))
 
-        if sheet_col == 'SNAP':
+        if sheet_col.lower() == 'snap':
             return "{}{}".format(part[3], num)
 
         return num
