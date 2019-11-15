@@ -331,8 +331,8 @@ class Update:
     def update_connection(self, add_or_stop, up, down, cdate, ctime):
         """
         add_or_stop:  'add' or 'stop'
-        up:  upstream connection
-        down:  downstream connection
+        up:  upstream connection [part, rev, port]
+        down:  downstream connection [part, rev, port]
         cdate:  date of update YYYY/MM/DD
         ctime:  time of update HH:MM
         """
