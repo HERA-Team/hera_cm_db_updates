@@ -1,5 +1,9 @@
 #! /usr/bin/env bash
 echo "191115_misc_fixes" >> scripts.log 
+add_connection.py -u PAM042 --uprev A --upport @slot -d PCH02 --dnrev A --dnport @slot7 --date 2019/08/15 --time 10:00
+add_part_info.py -p PAM042 -r A -c "Seems to be broken, so swapped slots with PAM041" --date 2019/08/15 --time 10:00
+add_part.py -p NCMPre1 -r A -t node-control-module -m NCMPre1 --date 2018/7/18 --time 11:00
+add_part.py -p NCMPro2 -r A -t node-control-module -m NCMPro2 --date 2019/5/14 --time 12:00
 add_part_info.py -p N03 -r A -c "Has full set of air curtains.  Fan pipe has extra bends into ground." --date 2019/11/13 --time 11:00
 add_part_info.py -p N04 -r A -c "Has full set of air curtains." --date 2019/11/13 --time 11:00
 add_part_info.py -p N05 -r A -c "Has full set of air curtains." --date 2019/11/13 --time 11:00
