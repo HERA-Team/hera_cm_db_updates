@@ -547,3 +547,29 @@ N05,A,Has full set of air curtains.,,1257678018
 N07,A,No air curtains and fan pipe has extra bends into ground.,,1257678018
 N08,A,No air curtains.,,1257678018
 N09,A,No air curtains.,,1257678018
+HH42,A,PAM 103 replaced with 112,,1258113618
+HH43,A,E channel shows ~6dB lower gain due to fibre.  We tested the fibre for both channels and the E channel had 3dB more loss (6dB in RF),,1258113618
+HH43,A,almost aligned,,1258113619
+HH45,A,Aligned 4.401 (from jig same as 58),,1258113618
+HH46,A,xy aligned but no heights yet,,1258113618
+HH58,A,Aligned 4.401 (from jig),,1258113618
+HH59,A,Aligned 4.413 (from jig),,1258113618
+HH60,A,xy aligned but no heights yet,,1258113618
+HH73,A,Aligned 4.399 (from jig),,1258113618
+HH74,A,Aligned 4.404 (from jig),,1258113618
+HH75,A,xy aligned but no heights yet,,1258113618
+HH81,A,"FEM checked, xyz positioned, height 4.407",,1257854418
+HH82,A,"FEM checked, xyz positioned, height 4.403",,1257854418
+HH83,A,"FEM checked, xyz positioned, height 4.409",,1257854418
+HH83,A,PAM input seems fixed maybe after reseating PAM in swap and removing dirt,,1257854419
+HH98,A,"FEM checked, xyz positioned, height 4.414",,1257854418
+HH99,A,"lowered, broken RF fiber",,1257508818
+HH100,A,raised. North lifting line is failing - needs to be replaced,,1258200018
+HH116,A,"FEM checked, xyz positioned, height 4.398",,1258200018
+HH118,A,raised,,1256904018
+HH119,A,raised,,1256904018
+HH137,A,raised,,1256904018
+HH138,A,raised,,1256904018
+HH88,A,height raised from 4.205m to 4.418m 10/31/19,,1258113618
+HH107,A,Low amplitude after equalized to noise,,1258113618
+HH126,A,height raised from 4.15m to 4.446m 10/31/19,,1258113618
