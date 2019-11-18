@@ -215,6 +215,7 @@ class Overview:
                 entry_date = entry_date + '-12:00:00'
             for payload in data['diff']:
                 command_code = None
+                print("218  ",payload)
                 if payload[0] in ['PAM', 'FEM', 'SNAP']:
                     if payload[0] == 'SNAP':
                         payload[0] = 'SNP'
@@ -232,11 +233,12 @@ class Overview:
                 add_it = (command_code is not None) and\
                          (add_apriori and command_code == 'APRIORI') or\
                          (add_hookup and command_code != 'APRIORI')
-                if add_it:
+                if add_it and self.commands[antrev_key] is not None:
                     stmt = '{}|{}{}|{}'.format(command_code, prefix, stmt, entry_date)
                     if stmt not in self.commands[antrev_key]:
-                        self.commands[antrev_key] = self.commands[antrev_key] + [stmt]
-            if not len(self.commands[antrev_key]):
+                        self.commands[antrev_key] = self.commands[antrev_key].append(stmt)
+                        print("240  ",antrev_key,self.commands[antrev_key])
+            if self.commands[antrev_key] is None or not len(self.commands[antrev_key]):
                 del self.commands[antrev_key]
 
     def add_sheet_commands(self):
@@ -287,6 +289,7 @@ class Overview:
                 if len(stmt):
                     self.commands.setdefault(antrev_key, [])
                     self.commands[antrev_key].append('{}|{}{}|{}'.format(command_code, prefix, stmt, entry_date))
+                    print("292  ",antrev_key,self.commands[antrev_key])
 
     def view_compare(self):
         """
@@ -411,6 +414,7 @@ class Overview:
         for antkey, commands in self.commands.items():
             ant, rev = antkey.split(':')
             for payload in commands:
+                print("416  ",payload)
                 command, statement, dtmp = payload.split('|')
                 pdate, ptime = dtmp.split('-')
                 if command == 'INFO':
