@@ -287,7 +287,6 @@ HH11,A,Tension N:W:E (lbs): 335:340:400,,1248696019
 HH11,A,Eye-bolt N:W:E (m): 6.48:6.41:6.33,,1248696020
 HH11,A,RF PWR N: -7.4,,1244462423
 HH11,A,Goodness N: OK?,,1244462424
-HH11,A,"Internal CAT cable broken (fixed?), +5V RFoF FEM and PAM",,1244462425
 HH12,A,FEM I2C: y,,1244462418
 HH12,A,PAM I2C: y,,1244462419
 HH12,A,RF PWR E: -3.2,,1244462420
@@ -347,7 +346,6 @@ HH25,A,Tension N:W:E (lbs): 370:345:375,,1248696019
 HH25,A,Eye-bolt N:W:E (m): 6.50:6.28:6.23,,1248696020
 HH25,A,RF PWR N: -4.5,,1244462423
 HH25,A,Goodness N: OK?,,1244462424
-HH25,A,"Long CAT cable broken (intermittent), wrong FEM screws, +5V RFoF FEM and PAM",,1244462425
 HH26,A,FEM I2C: n,,1244462418
 HH26,A,PAM I2C: y,,1244462419
 HH26,A,RF PWR E: -0.3,,1244462420
@@ -358,7 +356,6 @@ HH26,A,Tension N:W:E (lbs): 305:455:300,,1248696019
 HH26,A,Eye-bolt N:W:E (m): 6.43:6.17:6.40,,1248696020
 HH26,A,RF PWR N: -4.7,,1244462423
 HH26,A,Goodness N: OK?,,1244462424
-HH26,A,"Long CAT cable broken, wrong FEM screws",,1244462425
 HH39,A,FEM I2C: y,,1244462418
 HH39,A,PAM I2C: y,,1244462419
 HH39,A,RF PWR E: -1.7,,1244462420
@@ -372,52 +369,38 @@ HH88,A,Goodness E: ?,,1249041618
 HH88,A,Not checked (node 9 off the network),,1249041619
 HH88,A,Danny Aug 2-5: No fibre,,1249041620
 HH88,A,Goodness N: ?,,1249041621
-HH88,A,Not checked (node 9 off the network),,1249041622
-HH88,A,Danny Aug 2-5: No fibre,,1249041623
 HH89,A,Goodness E: OK,,1249041618
 HH89,A,"Danny Aug 2-5: no PAM I2C data, VERY high ADC power... 2k vs 200",,1249041619
 HH89,A,Goodness N: OK,,1249041620
-HH89,A,"Danny Aug 2-5: no PAM I2C data, VERY high ADC power... 2k vs 200",,1249041621
 HH90,A,Goodness E: ?,,1249041618
 HH90,A,Not checked (node 9 off the network),,1249041619
 HH90,A,"Danny Aug 2-5: power ok, check spectra, add to mc",,1249041620
 HH90,A,Goodness N: ?,,1249041621
-HH90,A,Not checked (node 9 off the network),,1249041622
-HH90,A,"Danny Aug 2-5: power ok, check spectra, add to mc",,1249041623
 HH91,A,Goodness E: NA,,1249041618
 HH91,A,Awaiting cabling and lifting,,1249041619
 HH91,A,Danny Aug 2-5: no fiber,,1249041620
 HH91,A,Goodness N: NA,,1249041621
-HH91,A,Awaiting cabling and lifting,,1249041622
-HH91,A,Danny Aug 2-5: no fiber,,1249041623
 HH105,A,Goodness E: ?,,1249041618
 HH105,A,Not checked (node 9 off the network),,1249041619
 HH105,A,Danny Aug 2-5: ok,,1249041620
 HH105,A,Goodness N: ?,,1249041621
-HH105,A,Not checked (node 9 off the network),,1249041622
-HH105,A,Danny Aug 2-5: ok,,1249041623
 HH106,A,Goodness E: Bad,,1249041618
 HH106,A,Dead FEM/PAM channel?,,1249041619
 HH106,A,Danny Aug 2-5: ok,,1249041620
 HH106,A,Goodness N: OK,,1249041621
-HH106,A,Danny Aug 2-5: ok,,1249041622
 HH107,A,Goodness E: ?,,1249041618
 HH107,A,Not checked (node 9 off the network). Was re-done since E passband was still wonky.,,1249041619
 HH107,A,Danny Aug 2-5: ok,,1249041620
 HH107,A,Goodness N: ?,,1249041621
 HH107,A,Not checked (node 9 off the network). It was fine before.,,1249041622
-HH107,A,Danny Aug 2-5: ok,,1249041623
 HH108,A,Goodness E: ?,,1249041618
 HH108,A,It was fine before. Not checked (node 9 off the network). Had to be re-lifted due to a broken eye bolt in one of the poles (related to removal of the springs? -> it broke twice!),,1249041619
 HH108,A,Danny Aug 2-5: ok,,1249041620
 HH108,A,Goodness N: ?,,1249041621
-HH108,A,It was fine before. Not checked (node 9 off the network). Had to be re-lifted due to a broken eye bolt in one of the poles (related to removal of the springs? -> it broke twice!),,1249041622
-HH108,A,Danny Aug 2-5: ok,,1249041623
 HH124,A,Goodness E: Bad,,1249041618
 HH124,A,Dead FEM/PAM channel?,,1249041619
 HH124,A,Danny Aug 2-5: swapped PAM 42 with 41 which was slot in pam slot #3 (just to the right of this pam),,1249041620
 HH124,A,Goodness N: OK,,1249041621
-HH124,A,Danny Aug 2-5: swapped PAM 42 with 41 which was slot in pam slot #3 (just to the right of this pam),,1249041622
 HH125,A,Goodness E: OK,,1249041618
 HH125,A,Goodness N: OK,,1249041619
 HH126,A,Goodness E: OK,,1249041618
@@ -444,7 +427,6 @@ HH13,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,125275681
 HH14,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
 HH23,A,Actions: Check cable connections,,1252756818
 HH23,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756819
-HH23,A,Actions: Check cable connections,,1252756820
 HH24,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
 HH25,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
 HH26,A,"Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port.",,1252756818
@@ -512,34 +494,18 @@ FEM013,A,Restarting part.  Previous data <heraPartNumber id=FEM013:A type=front-
 SNPC000057,A,SNAP was constantly DHCPing. Replaced 10G transceiver and cleaned fiber. Working again,,1256542021
 HH83,A,broken input,,1256558418
 HH82,A,lowered,,1256644818
-HH82,A,lowered,,1256644819
 HH83,A,broken PAM input,,1256644818
 HH99,A,"lowered, broken RF fiber",,1256644818
 HH99,A,lowered,,1256644819
 HH100,A,lowered,,1256644818
-HH100,A,lowered,,1256644819
 HH118,A,lowered,,1256644818
-HH118,A,lowered,,1256644819
 HH119,A,lowered,,1256644818
-HH119,A,lowered,,1256644819
 HH137,A,lowered,,1256644818
-HH137,A,lowered,,1256644819
 HH138,A,lowered,,1256644818
-HH138,A,lowered,,1256644819
 HH84,A,height raised from 4.117m to 4.492m 10/31/19,,1256644818
-HH84,A,height raised from 4.117m to 4.492m 10/31/19,,1256644819
-HH86,A,Cat7 cable connection is questionable,,1256644818
-HH87,A,One tension is frayed,,1256644818
-HH101,A,Cat7 cable connection is questionable,,1256644818
-HH101,A,Not raised - waiting on pulldown rope,,1256644819
-HH102,A,Not raised - waiting on pulldown rope,,1256644818
-HH120,A,Not raised - waiting on pulldown rope,,1256644818
 HH123,A,height raised from 4.041m to 4.406m 10/31/19,,1256644818
-HH123,A,height raised from 4.041m to 4.406m 10/31/19,,1256644819
 HH88,A,height raised from 4.205m to 4.418m 10/31/19,,1256644818
-HH88,A,height raised from 4.205m to 4.418m 10/31/19,,1256644819
 HH126,A,height raised from 4.15m to 4.446m 10/31/19,,1256644818
-HH126,A,height raised from 4.15m to 4.446m 10/31/19,,1256644819
 PAM042,A,"Seems to be broken, so swapped slots with PAM041",,1249898418
 N03,A,Has full set of air curtains.  Fan pipe has extra bends into ground.,,1257678018
 N04,A,Has full set of air curtains.,,1257678018
@@ -563,13 +529,10 @@ HH82,A,"FEM checked, xyz positioned, height 4.403",,1257854418
 HH83,A,"FEM checked, xyz positioned, height 4.409",,1257854418
 HH83,A,PAM input seems fixed maybe after reseating PAM in swap and removing dirt,,1257854419
 HH98,A,"FEM checked, xyz positioned, height 4.414",,1257854418
-HH99,A,"lowered, broken RF fiber",,1257508818
 HH100,A,raised. North lifting line is failing - needs to be replaced,,1258200018
 HH116,A,"FEM checked, xyz positioned, height 4.398",,1258200018
 HH118,A,raised,,1256904018
 HH119,A,raised,,1256904018
 HH137,A,raised,,1256904018
 HH138,A,raised,,1256904018
-HH88,A,height raised from 4.205m to 4.418m 10/31/19,,1258113618
 HH107,A,Low amplitude after equalized to noise,,1258113618
-HH126,A,height raised from 4.15m to 4.446m 10/31/19,,1258113618
