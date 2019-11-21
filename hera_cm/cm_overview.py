@@ -149,6 +149,7 @@ class Overview:
         self.sheet_data = {}
         self.sheet_header = {}
         self.sheet_date = {}
+        self.sheet_node_notes = {}
         self.sheet_ants = set()
         self.tabs = sorted(list(gsheet.gsheet.keys()))
         for tab in self.tabs:
@@ -173,6 +174,10 @@ class Overview:
                 self.sheet_ants.add(hkey)
                 dkey = '{}-{}'.format(hkey, data[1].upper())
                 self.sheet_data[dkey] = [get_num(tab)] + data
+            self.sheet_node_notes[tab] = []
+            for data in csv_tab:
+                if data[0].startswith("Note"):
+                    self.sheet_node_notes[tab].append(data)
         self.sheet_ants = cm_utils.put_keys_in_order(list(self.sheet_ants), sort_order='NPR')
 
     def make_sheet_connections(self):
@@ -215,7 +220,6 @@ class Overview:
                 entry_date = entry_date + '-12:00:00'
             for payload in data['diff']:
                 command_code = None
-                print("218  ",payload)
                 if payload[0] in ['PAM', 'FEM', 'SNAP']:
                     if payload[0] == 'SNAP':
                         payload[0] = 'SNP'
@@ -237,7 +241,6 @@ class Overview:
                     stmt = '{}|{}{}|{}'.format(command_code, prefix, stmt, entry_date)
                     if stmt not in self.commands[antrev_key]:
                         self.commands[antrev_key] = self.commands[antrev_key].append(stmt)
-                        print("240  ",antrev_key,self.commands[antrev_key])
             if self.commands[antrev_key] is None or not len(self.commands[antrev_key]):
                 del self.commands[antrev_key]
 
@@ -289,7 +292,6 @@ class Overview:
                 if len(stmt):
                     self.commands.setdefault(antrev_key, [])
                     self.commands[antrev_key].append('{}|{}{}|{}'.format(command_code, prefix, stmt, entry_date))
-                    print("292  ",antrev_key,self.commands[antrev_key])
 
     def view_compare(self):
         """
@@ -414,7 +416,6 @@ class Overview:
         for antkey, commands in self.commands.items():
             ant, rev = antkey.split(':')
             for payload in commands:
-                print("416  ",payload)
                 command, statement, dtmp = payload.split('|')
                 pdate, ptime = dtmp.split('-')
                 if command == 'INFO':
