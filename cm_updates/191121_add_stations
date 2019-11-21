@@ -1,14 +1,14 @@
 #! /usr/bin/env bash
 echo "191121_add_stations" >> scripts.log 
-add_station.py HH249 --sernum 279 --date 2019/9/6 --time 10:00
-add_part.py -p A249 -r H -t antenna -m S/N279 --date 2019/9/6 --time 10:00
-add_connection.py -u HH249 --uprev A --upport ground -d A249 --dnrev H --dnport ground --date 2019/9/6 --time 10:00
-add_station.py HH232 --sernum 280 --date 2019/9/6 --time 10:00
-add_part.py -p A232 -r H -t antenna -m S/N280 --date 2019/9/6 --time 10:00
-add_connection.py -u HH232 --uprev A --upport ground -d A232 --dnrev H --dnport ground --date 2019/9/6 --time 10:00
-add_station.py HH214 --sernum 281 --date 2019/11/6 --time 10:00
-add_part.py -p A214 -r H -t antenna -m S/N281 --date 2019/11/6 --time 10:00
-add_connection.py -u HH214 --uprev A --upport ground -d A214 --dnrev H --dnport ground --date 2019/11/6 --time 10:00
-add_station.py HH174 --sernum 282 --date 2019/11/7 --time 10:00
-add_part.py -p A174 -r H -t antenna -m S/N282 --date 2019/11/7 --time 10:00
-add_connection.py -u HH174 --uprev A --upport ground -d A174 --dnrev H --dnport ground --date 2019/11/7 --time 10:00
+add_station.py HH213 --sernum 281 --date 2019/10/22 --time 10:00
+add_part.py -p A213 -r H -t antenna -m S/N281 --date 2019/10/22 --time 10:00
+add_connection.py -u HH213 --uprev A --upport ground -d A213 --dnrev H --dnport ground --date 2019/10/22 --time 10:00
+add_station.py HH154 --sernum 282 --date 2019/11/4 --time 10:00
+add_part.py -p A154 -r H -t antenna -m S/N282 --date 2019/11/4 --time 10:00
+add_connection.py -u HH154 --uprev A --upport ground -d A154 --dnrev H --dnport ground --date 2019/11/4 --time 10:00
+add_station.py HH175 --sernum 283 --date 2019/11/5 --time 10:00
+add_part.py -p A175 -r H -t antenna -m S/N283 --date 2019/11/5 --time 10:00
+add_connection.py -u HH175 --uprev A --upport ground -d A175 --dnrev H --dnport ground --date 2019/11/5 --time 10:00
+add_station.py HH194 --sernum 286 --date 2019/11/7 --time 10:00
+add_part.py -p A194 -r H -t antenna -m S/N286 --date 2019/11/7 --time 10:00
+add_connection.py -u HH194 --uprev A --upport ground -d A194 --dnrev H --dnport ground --date 2019/11/7 --time 10:00
