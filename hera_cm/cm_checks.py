@@ -7,6 +7,7 @@
 """
 from hera_mc import cm_active, cm_utils
 from astropy.time import Time
+import argparse
 
 
 class Checks:
@@ -15,6 +16,30 @@ class Checks:
         self.start = cm_utils.get_astropytime(start_time)
         self.stop = cm_utils.get_astropytime(stop_time)
         self.step = day_step
+
+    def duplicate_comments(self):
+        cmdpre = 'delete from part_info where hpn='
+        filename = 'dupcomm.sql'
+        self.cmad.load_info()
+        duplicates_found = 0
+        with open(filename, 'w') as fp:
+            for part, comments in self.cmad.info.items():
+                ncomm = len(comments)
+                for i in range(ncomm - 1):
+                    for j in range(i + 1, ncomm):
+                        if comments[i].comment == comments[j].comment:
+                            duplicates_found += 1
+                            hpn, rev = cm_utils.split_part_key(part)
+                            if comments[i].posting_gpstime > comments[j].posting_gpstime:
+                                posting_gpstime = comments[i].posting_gpstime
+                            else:
+                                posting_gpstime = comments[j].posting_gpstime
+                            print("{}'{}' and hpn_rev='{}' and posting_gpstime='{}';".format(cmdpre, hpn, rev, posting_gpstime), file=fp)
+        if duplicates_found:
+            print("{} duplicates found".format(duplicates_found))
+            print("run 'psql hera_mc -f {}'".format(filename))
+        else:
+            print("No duplicates found.")
 
     def apriori(self):
         """
@@ -55,3 +80,14 @@ class Checks:
                     print("{} is not listed as an active part even though listed in an active connection.".format(key))
             next += self.step
         return missing_parts
+
+
+if __name__ == '__main__':
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--duplicate-comments', dest='duplicate_comments', help="Check for duplicate comments", action='store_true')
+    args = ap.parse_args()
+
+    cc = Checks()
+
+    if args.duplicate_comments:
+        cc.duplicate_comments()

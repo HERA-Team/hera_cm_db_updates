@@ -109,12 +109,14 @@ class Overview:
     allowed_getlist = ['hookup', 'sheets', 'apriori']
 
     def __init__(self):
+        print("###---Working on make_sheet_connections---###")
         # Start session
         db = mc.connect_to_mc_db(None)
         self.session = db.sessionmaker()
         self.commands = {}
         self.connected = []
         self.sheet_ants = []
+        self.apriori_data = {}
 
     def get(self, getlist=['hookup', 'sheets', 'apriori']):
         for gl in getlist:

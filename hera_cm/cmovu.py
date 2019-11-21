@@ -32,7 +32,6 @@ cmovu.get(getlist=args.getlist)
 cmovu.compare(antkeys=args.compare_keys)
 if args.view:
     print(cmovu.view_compare())
-
 include_mismatches = args.hookup_mismatch or args.apriori_mismatch
 if args.sheet_commands:
     cmovu.add_sheet_commands()
