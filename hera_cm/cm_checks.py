@@ -67,31 +67,20 @@ class Checks:
         """
         missing_parts = {}
         next = self.start
+        print("Starting check at {}".format(next.isot))
         while next < self.stop:
-            self.cmad.parts = None
-            self.cmad.connections = None
             self.cmad.load_parts(next)
             self.cmad.load_connections(next)
-            #print(self.cmad.at_date.isot)
             full_part_set = list(self.cmad.parts.keys())
             full_conn_set = set(list(self.cmad.connections['up'].keys()) + list(self.cmad.connections['down'].keys()))
             for key in full_conn_set:
-                if key == 'xxPCH1:A':
-                    print(self.cmad.at_date.isot)
-                    try:
-                        print(self.cmad.connections['up']['PCH1:A'])
-                    except KeyError:
-                        print("No up")
-                    try:
-                        print(self.cmad.connections['down']['PCH1:A'])
-                    except KeyError:
-                        print("No down")
                 if key not in full_part_set:
                     missing_parts.setdefault(key, [])
                     missing_parts[key].append(next)
                     print(self.cmad.at_date.isot)
                     print("\t{} is not listed as an active part even though listed in an active connection.".format(key))
             next += self.step
+        print("Stopping check at {}".format(next.isot))
         if len(missing_parts.keys()):
             print('Found the following parts:')
             print(missing_parts.keys())
