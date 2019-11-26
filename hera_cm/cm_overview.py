@@ -56,18 +56,18 @@ def parse_stmt(col):
     return Namespace(isstmt=isstmt, entry=entry, date=edate)
 
 
-def get_info_pkey(ant, rev, pdate, ptime, old_timers):
+def get_unique_pkey(hpn, rev, pdate, ptime, old_timers):
     """
     Generate unique info_pkey by advancing the time tag a second at a time if needed.
     """
     if ptime.count(':') == 1:
         ptime = ptime + ':00'
-    pkey = '|'.join([ant, rev, pdate, ptime])
+    pkey = '|'.join([hpn, rev, pdate, ptime])
     while pkey in old_timers:
         newdt = datetime.datetime.strptime('-'.join([pdate, ptime]), '%Y/%m/%d-%H:%M:%S') + datetime.timedelta(seconds=1)
         pdate = newdt.strftime('%Y/%m/%d')
         ptime = newdt.strftime('%H:%M:%S')
-        pkey = '|'.join([ant, rev, pdate, ptime])
+        pkey = '|'.join([hpn, rev, pdate, ptime])
     return pkey, pdate, ptime
 
 
@@ -151,7 +151,7 @@ class Overview:
         self.sheet_data = {}
         self.sheet_header = {}
         self.sheet_date = {}
-        self.sheet_node_notes = {}
+        self.sheet_notes = {}
         self.sheet_ants = set()
         self.tabs = sorted(list(gsheet.gsheet.keys()))
         for tab in self.tabs:
@@ -176,10 +176,17 @@ class Overview:
                 self.sheet_ants.add(hkey)
                 dkey = '{}-{}'.format(hkey, data[1].upper())
                 self.sheet_data[dkey] = [get_num(tab)] + data
-            self.sheet_node_notes[tab] = []
+            # Get the notes below the hookup table.
+            node_pn = 'N{:02d}'.format(int(get_num(tab)))
             for data in csv_tab:
                 if data[0].startswith("Note"):
-                    self.sheet_node_notes[tab].append(data)
+                    note_part = data[0].split()
+                    if len(note_part) > 1:
+                        npkey = note_part[1]
+                    else:
+                        npkey = node_pn
+                    self.sheet_notes.setdefault(npkey, [])
+                    self.sheet_notes[npkey].append('-'.join([y for y in data[1:] if len(y) > 0]))
         self.sheet_ants = cm_utils.put_keys_in_order(list(self.sheet_ants), sort_order='NPR')
 
     def make_sheet_connections(self):
@@ -421,7 +428,7 @@ class Overview:
                 command, statement, dtmp = payload.split('|')
                 pdate, ptime = dtmp.split('-')
                 if command == 'INFO':
-                    pkey, pdate, ptime = get_info_pkey(ant, rev, pdate, ptime, primary_keys['INFO'])
+                    pkey, pdate, ptime = get_unique_pkey(ant, rev, pdate, ptime, primary_keys['INFO'])
                     hera.add_part_info(ant, rev, statement, pdate, ptime)
                     primary_keys['INFO'].append(pkey)
                 elif command == 'SWAP' or command == 'REPLACE':

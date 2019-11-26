@@ -1,8 +1,9 @@
 from __future__ import absolute_import, division, print_function
 import os
-import six
 import copy
 from hera_mc import cm_utils, cm_active, cm_handling
+
+current_revs = {'HH': 'A', 'A': 'H', 'FDV': 'V'}
 
 
 def as_part(add_or_stop, p, cdate, ctime):
