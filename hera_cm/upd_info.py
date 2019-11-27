@@ -112,21 +112,28 @@ class UpdateInfo:
                     return True
         return False
 
-    def finish(self, arc_path=None):
+    def finish(self, arc_path=None, cron_script='sheet_update.sh'):
         """
         Close out process.
         """
         self.hera.done()
-        exe_location = os.path.join(self.exe_path, self.script)
-        exe_rename = os.path.join(self.exe_path, 'sheet_update.sh')
+        init_script_file = os.path.join(self.exe_path, self.script)
+        cron_script_file = os.path.join(self.exe_path, cron_script)
+        if os.path.exists(cron_script_file):
+            os.remove(cron_script_file)
+        write_blank_cron_file = True
         if self.update_counter:
             if arc_path is not None:
                 if self.verbose:
-                    print("Copying {}  -->  {}".format(exe_location, arc_path))
-                    print("Renaming {}  -->  {}".format(exe_location, exe_rename))
-                os.system('cp {} {}'.format(exe_location, arc_path))
-                os.rename(exe_location, exe_rename)
+                    print("Copying {}  -->  {}".format(init_script_file, arc_path))
+                    print("Renaming {}  -->  {}".format(init_script_file, cron_script_file))
+                os.system('cp {} {}'.format(init_script_file, arc_path))
+                os.rename(init_script_file, cron_script_file)
+                write_blank_cron_file = False
         else:
             if self.verbose:
-                print("Removing {}".format(exe_location))
-            os.remove(exe_location)
+                print("Removing {}".format(init_script_file))
+            os.remove(init_script_file)
+        if write_blank_cron_file:
+            with open(cron_script_file, 'w') as fp:
+                fp.write('\n')
