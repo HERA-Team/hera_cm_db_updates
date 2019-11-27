@@ -57,7 +57,7 @@ class UpdateInfo:
                 self.hera.update_apriori(ant, E, self.cdate, self.ctime)
                 self.update_counter += 1
 
-    def add_sheet_notes(self, duplication_window=30.0):
+    def add_sheet_notes(self, duplication_window=90.0):
         """
         Searches the relevant fields in the googlesheets and generates the
         appropriate script commands.

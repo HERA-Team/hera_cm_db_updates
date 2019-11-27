@@ -12,10 +12,10 @@ if __name__ == '__main__':
     ap.add_argument('--exe-path', dest='exe_path', help="Path for cron script", default='./')
     ap.add_argument('--verbose', help="Turn verbosity on.", action='store_true')
     ap.add_argument('-d', '--duplication_window', help="Number of days to use for duplicate comments.",
-                    default=30.0)
+                    default=60.0)
     args = ap.parse_args()
 else:
-    args = argparse.Namespace(arc_path=None, exe_path='./', verbose=True, duplication_window=30.0)
+    args = argparse.Namespace(arc_path=None, exe_path='./', verbose=True, duplication_window=60.0)
 
 args.duplication_window = float(args.duplication_window)
 update = upd_info.UpdateInfo(exe_path=args.exe_path, verbose=args.verbose)
