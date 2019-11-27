@@ -9,6 +9,8 @@ from hera_mc import cm_hookup, cm_utils, cm_sysutils, cm_sysdef, mc, cm_partconn
 import sheet_data as gsheet
 import signal_chain
 
+import upd_util
+
 import os
 import csv
 import requests
@@ -17,89 +19,6 @@ from argparse import Namespace
 
 cm_req = Namespace(hpn=cm_sysdef.hera_zone_prefixes, pol='all',
                    at_date='now', exact_match=False, hookup_type=None)
-
-
-def get_num(val):
-    """
-    Makes digits in alphanumeric string into a number as string
-    """
-    return ''.join(c for c in val if c.isnumeric())
-
-
-def _get_bracket(input_string, bracket_type='{}'):
-    """
-    Breaks out stuff as <before, in, after>.
-    If no starting bracket, it returns <None, input_string, None>
-    Used in parse_stmt below.
-    """
-    start_ind = input_string.find(bracket_type[0])
-    if start_ind == -1:
-        return None, input_string, None
-    end_ind = input_string.find(bracket_type[1])
-    prefix = input_string[:start_ind].strip()
-    statement = input_string[start_ind + 1: end_ind].strip()
-    postfix = input_string[end_ind + 1:].strip()
-    return prefix, statement, postfix
-
-
-def parse_stmt(col):
-    """
-    Parses the full command payload.
-    """
-    prefix, stmt, postfix = _get_bracket(col, '{}')
-    isstmt = prefix is not None
-    edate = False
-    prefix, entry, postfix = _get_bracket(stmt, '[]')
-    if prefix is not None:
-        edate = entry
-        entry = prefix
-    return Namespace(isstmt=isstmt, entry=entry, date=edate)
-
-
-def get_unique_pkey(hpn, rev, pdate, ptime, old_timers):
-    """
-    Generate unique info_pkey by advancing the time tag a second at a time if needed.
-    """
-    if ptime.count(':') == 1:
-        ptime = ptime + ':00'
-    pkey = '|'.join([hpn, rev, pdate, ptime])
-    while pkey in old_timers:
-        newdt = datetime.datetime.strptime('-'.join([pdate, ptime]), '%Y/%m/%d-%H:%M:%S') + datetime.timedelta(seconds=1)
-        pdate = newdt.strftime('%Y/%m/%d')
-        ptime = newdt.strftime('%H:%M:%S')
-        pkey = '|'.join([hpn, rev, pdate, ptime])
-    return pkey, pdate, ptime
-
-
-def get_row_dict(hdr, data):
-    """
-    Makes a dictionary providing mapping of column headers and column numbers to data.
-    """
-    row = {}
-    for i, h in enumerate(hdr):
-        row[h] = data[i]
-        row[i] = data[i]
-    return row
-
-
-def gen_hpn(ptype, pnum):
-    """
-    From the sheet data (via ptype, pnum) it will generate a HERA Part Number
-    """
-    ptype = ptype.upper()
-    if isinstance(pnum, str):
-        pnum = pnum.upper()
-    if ptype in ['SNP', 'SNAP']:
-        return 'SNP{}{:06d}'.format(pnum[0], int(pnum[1:]))
-    if ptype in ['PAM', 'FEM']:
-        return '{}{:03d}'.format(ptype, int(pnum))
-    if ptype in ['NODE', 'ND']:
-        return 'N{:02d}'.format(int(pnum))
-    if ptype in ['NBP']:
-        return 'NBP{:02d}'.format(int(pnum))
-    if ptype in ['FEED', 'FDV']:
-        return 'FDV{}'.format(int(pnum))
-    return '{}{}'.format(ptype, pnum)
 
 
 class Overview:
@@ -264,7 +183,7 @@ class Overview:
             header = {}
             # Sort out header entries (if any)
             for col in self.sheet_header[tab]:
-                header[col] = parse_stmt(col)
+                header[col] = parse_command_payload(col)
             # Process sheet data
             for i, col in enumerate(self.sheet_header[tab]):
                 if header[col].entry in gsheet.com_ignore or len(col) == 0:
@@ -273,7 +192,7 @@ class Overview:
                     col_data = self.sheet_data[sheet_key][i]
                 except IndexError:
                     continue
-                entry = parse_stmt(col_data)
+                entry = parse_command_payload(col_data)
                 if not (header[col].isstmt or entry.isstmt):
                     continue  # Nothing to process.
                 # ##Get date for entry
