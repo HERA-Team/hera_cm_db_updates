@@ -501,6 +501,6 @@ class Update:
             if self.verbose:
                 print("If changes OK, 'chmod u+x {}' and run that script.".format(self.output_script))
         else:
-            os.chmod(self.output_script, 0o774)
+            os.chmod(self.output_script, 0o755)
             if self.verbose:
                 print("Run {}".format(self.output_script))

@@ -137,3 +137,4 @@ class UpdateInfo:
         if write_blank_cron_file:
             with open(cron_script_file, 'w') as fp:
                 fp.write('\n')
+        os.chmod(cron_script_file, 0o755)
