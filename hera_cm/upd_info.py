@@ -118,7 +118,7 @@ class UpdateInfo:
         """
         self.hera.done()
         exe_location = os.path.join(self.exe_path, self.script)
-        exe_rename = os.path.join(self.exe_path, 'sheet_update')
+        exe_rename = os.path.join(self.exe_path, 'sheet_update.sh')
         if self.update_counter:
             if arc_path is not None:
                 if self.verbose:
