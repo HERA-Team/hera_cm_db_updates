@@ -19,11 +19,14 @@ from argparse import Namespace
 
 
 class UpdateInfo:
-    def __init__(self, com_script='input_update', output_script_path='./'):
-        self.today = datetime.datetime.now()
-        self.cdate = '{}/{:02d}/{:02d}'.format(self.today.year, self.today.month, self.today.day)
-        self.ctime = '{:02d}:{:02d}'.format(self.today.hour, self.today.minute)
-        self.hera = signal_chain.Update(com_script, output_script_path=output_script_path, chmod=True)
+    def __init__(self, exe_path='./', verbose=True):
+        self.exe_path = exe_path
+        self.verbose = verbose
+        self.now = datetime.datetime.now()
+        self.cdate = '{}/{:02d}/{:02d}'.format(self.now.year, self.now.month, self.now.day)
+        self.ctime = '{:02d}:{:02d}'.format(self.now.hour, self.now.minute)
+        self.script = '{}_sheetupdate_{}'.format(self.cdate.replace('/', '')[2:], self.ctime.replace(':', ''))
+        self.hera = signal_chain.Update(self.script, output_script_path=exe_path, chmod=True, verbose=verbose)
         self.update_counter = 0
 
     def load_gsheet(self):
@@ -49,14 +52,20 @@ class UpdateInfo:
             if len(E) == 0:
                 continue
             if E != self.active.apriori[key].status:
-                print("Updating {}   {}".format(E, self.active.apriori[key].status))
+                if self.verbose:
+                    print("Updating {}   {}".format(E, self.active.apriori[key].status))
                 self.hera.update_apriori(ant, E, self.cdate, self.ctime)
                 self.update_counter += 1
 
-    def add_sheet_commands(self):
+    def add_sheet_notes(self, duplication_window=30.0):
         """
         Searches the relevant fields in the googlesheets and generates the
         appropriate script commands.
+
+        Parameters
+        ----------
+        duplication_window : float
+            time-frame in days over which to check for duplicate comments.
         """
         primary_keys = []
         for sheet_key in self.gsheet.data.keys():
@@ -84,29 +93,40 @@ class UpdateInfo:
                 else:
                     prefix = '{}: '.format(col)
                 statement = '{}{}'.format(prefix, col_data)
-                if not self.is_duplicate(ant, rev, statement):
+                if not self.is_duplicate(antrev_key, statement, duplication_window):
+                    if self.verbose:
+                        print("Adding comment: {}:{} - {}".format(ant, rev, statement))
                     self.hera.add_part_info(ant, rev, statement, pdate, ptime)
                     self.update_counter += 1
                     primary_keys.append(pkey)
 
-    def is_duplicate(self, ant, rev, statement):
+    def is_duplicate(self, key, statement, duplication_window):
+        if key in self.active.info.keys():
+            for note in self.active.info[key]:
+                note_time = cm_utils.get_astropytime(note.posting_gpstime).datetime
+                dt = self.now - note_time
+                ddays = dt.days + dt.seconds / (3600.0 * 24)
+                if ddays < duplication_window and statement == note.comment:
+                    if self.verbose:
+                        print("Duplicate for {} - {}  ({:.1f} days)".format(key, statement, ddays))
+                    return True
         return False
 
-    def finish(self, keep_dated=False):
+    def finish(self, arc_path=None):
         """
-        Process the command queue from the "add" functions above and write out the script.
-        It writes a local script cm_script and if keep_dated writes a dated version to the
-        output_script_path
-
-        Parameters
-        ----------
-        keep_dated : bool
-            If True, it will keep the dated version of the script in output_script_path
-        output_script_path : str
-            The relative path for the script files.
+        Close out process.
         """
-        hera.done()
-        script_filename = os.path.join(output_script_path, script_filename)
-        mvcp = 'cp' if keep_dated else 'mv'
-        print("Writing ./{}   ({})".format(self.com_script, mvcp))
-        os.system('{} {} {}'.format(mvcp, script_filename, self.com_script))
+        self.hera.done()
+        exe_location = os.path.join(self.exe_path, self.script)
+        exe_rename = os.path.join(self.exe_path, 'sheet_update')
+        if self.update_counter:
+            if arc_path is not None:
+                if self.verbose:
+                    print("Copying {}  -->  {}".format(exe_location, arc_path))
+                    print("Renaming {}  -->  {}".format(exe_location, exe_rename))
+                os.system('cp {} {}'.format(exe_location, arc_path))
+                os.rename(exe_location, exe_rename)
+        else:
+            if self.verbose:
+                print("Removing {}".format(exe_location))
+            os.remove(exe_location)

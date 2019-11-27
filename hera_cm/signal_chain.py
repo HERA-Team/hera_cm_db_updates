@@ -25,11 +25,12 @@ def as_connect(add_or_stop, up, dn, cdate, ctime):
 class Update:
     snap_ports = [{'e': 'e2', 'n': 'n0'}, {'e': 'e6', 'n': 'n4'}, {'e': 'e10', 'n': 'n8'}]
 
-    def __init__(self, exename, output_script_path=None, chmod=False, log_file='scripts.log'):
+    def __init__(self, exename, output_script_path=None, chmod=False, log_file='scripts.log', verbose=True):
         """
         exename:  the name of the script executed (argv[0])
         log_file:  name of log_file
         """
+        self.verbose = verbose
         self.chmod = chmod
         self.log_file = log_file
         self.active = cm_active.ActiveData()
@@ -39,12 +40,14 @@ class Update:
             self.output_script = input_script.split('.')[0]
         else:
             self.output_script = os.path.join(output_script_path, input_script.split('.')[0])
-        print("Writing script {}".format(self.output_script))
+        if self.verbose:
+            print("Writing script {}".format(self.output_script))
         self.fp = open(self.output_script, 'w')
         s = '#! /usr/bin/env bash\n'
-        s += 'echo "{}" >> {} \n'.format(self.output_script, self.log_file)
+        s += 'echo "{}" >> {} \n'.format(exename, self.log_file)
         self.fp.write(s)
-        print('-----------------\n')
+        if self.verbose:
+            print('-----------------')
 
     # THESE ARE NEW COMPONENTS - eventually break out with a parent class
     # General order:
@@ -492,9 +495,12 @@ class Update:
 
     def done(self):
         self.fp.close()
-        print("\n----------------------DONE-----------------------")
+        if self.verbose:
+            print("----------------------DONE-----------------------")
         if not self.chmod:
-            print("\tIf changes OK, 'chmod u+x {}' and run that script.".format(self.output_script))
+            if self.verbose:
+                print("If changes OK, 'chmod u+x {}' and run that script.".format(self.output_script))
         else:
             os.chmod(self.output_script, 0o774)
-            print("Run {}".format(self.output_script))
+            if self.verbose:
+                print("Run {}".format(self.output_script))
