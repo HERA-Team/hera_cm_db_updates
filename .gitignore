@@ -1,4 +1,5 @@
 .DS_Store
+cm_hera.sql
 sheet_update.sh
 *.pyc
 cm_updates/scripts.log
