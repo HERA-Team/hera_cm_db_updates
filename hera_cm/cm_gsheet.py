@@ -12,7 +12,7 @@ x.hookup_dict['HH104:A'].hookup['e']
 import csv
 import requests
 import datetime
-import upd_util
+from . import upd_util
 from hera_mc import cm_utils
 
 hu_col = {'Ant': 0, 'Pol': 4, 'Feed': 1, 'FEM': 2, 'PAM': 4, 'Bulkhead-PAM_Slot': 3, 'I2C_bus': -1, 'SNAP': 5, 'Port': 5, 'SNAP_Slot': 6, 'Node': 6, 'APriori': -1}
