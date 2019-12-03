@@ -47,7 +47,7 @@ class Update:
         self.fp = open(self.output_script, 'w')
         s = '#! /bin/bash\n'
         if os.getenv('USER') == self.site_user:
-            s = 'source ~/.bashrc\n'
+            s += 'source ~/.bashrc\n'
         s += 'echo "{}" >> {} \n'.format(exename, self.log_file)
         self.fp.write(s)
         if self.verbose:
