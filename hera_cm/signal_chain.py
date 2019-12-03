@@ -43,7 +43,7 @@ class Update:
         if self.verbose:
             print("Writing script {}".format(self.output_script))
         self.fp = open(self.output_script, 'w')
-        s = '#! /usr/bin/env bash\n'
+        s = '#! /bin/bash\nsource ~/.bashrc\n'
         s += 'echo "{}" >> {} \n'.format(exename, self.log_file)
         self.fp.write(s)
         if self.verbose:
