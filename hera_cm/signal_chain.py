@@ -25,7 +25,8 @@ def as_connect(add_or_stop, up, dn, cdate, ctime):
 class Update:
     snap_ports = [{'e': 'e2', 'n': 'n0'}, {'e': 'e6', 'n': 'n4'}, {'e': 'e10', 'n': 'n8'}]
 
-    def __init__(self, exename, output_script_path=None, chmod=False, log_file='scripts.log', verbose=True):
+    def __init__(self, exename, output_script_path=None, chmod=False,
+                 log_file='scripts.log', verbose=True, site_user='obs'):
         """
         exename:  the name of the script executed (argv[0])
         log_file:  name of log_file
@@ -33,6 +34,7 @@ class Update:
         self.verbose = verbose
         self.chmod = chmod
         self.log_file = log_file
+        self.site_user = site_user
         self.active = cm_active.ActiveData()
         self.handle = cm_handling.Handling()
         input_script = os.path.basename(exename)
@@ -43,7 +45,9 @@ class Update:
         if self.verbose:
             print("Writing script {}".format(self.output_script))
         self.fp = open(self.output_script, 'w')
-        s = '#! /bin/bash\nsource ~/.bashrc\n'
+        s = '#! /bin/bash\n'
+        if os.getenv('USER') == self.site_user:
+            s = 'source ~/.bashrc\n'
         s += 'echo "{}" >> {} \n'.format(exename, self.log_file)
         self.fp.write(s)
         if self.verbose:
