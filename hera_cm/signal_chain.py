@@ -34,7 +34,6 @@ class Update:
         self.verbose = verbose
         self.chmod = chmod
         self.log_file = log_file
-        self.site_user = site_user
         self.active = cm_active.ActiveData()
         self.handle = cm_handling.Handling()
         input_script = os.path.basename(exename)
@@ -46,9 +45,9 @@ class Update:
             print("Writing script {}".format(self.output_script))
         self.fp = open(self.output_script, 'w')
         s = '#! /bin/bash\n'
-        #unameInfo = os.uname()
-        #if unameInfo.sysname == 'Linux':
-        s += 'source ~/.bashrc\n'
+        unameInfo = os.uname()
+        if unameInfo.sysname == 'Linux':
+            s += 'source ~/.bashrc\n'
         s += 'echo "{}" >> {} \n'.format(exename, self.log_file)
         self.fp.write(s)
         if self.verbose:
