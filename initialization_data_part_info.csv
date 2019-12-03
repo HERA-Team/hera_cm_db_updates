@@ -536,3 +536,96 @@ HH119,A,raised,,1256904018
 HH137,A,raised,,1256904018
 HH138,A,raised,,1256904018
 HH107,A,Low amplitude after equalized to noise,,1258113618
+HH0,A,Goodness E: OK?,,1258930938
+HH0,A,Goodness N: OK?,,1258930940
+HH1,A,Goodness E: OK?,,1258930938
+HH1,A,Goodness N: OK?,,1258930940
+HH2,A,Goodness E: OK?,,1258930938
+HH2,A,Goodness N: Bad,,1258930940
+HH11,A,Goodness E: OK?,,1258930938
+HH11,A,Goodness N: OK?,,1258930940
+HH12,A,Goodness E: OK?,,1258930938
+HH12,A,Goodness N: OK?,,1258930940
+HH13,A,Goodness E: OK?,,1258930938
+HH13,A,Goodness N: OK?,,1258930940
+HH14,A,Goodness E: OK?,,1258930938
+HH14,A,Goodness N: Check!,,1258930940
+HH23,A,Goodness E: OK?,,1258930938
+HH23,A,Goodness N: OK?,,1258930940
+HH24,A,Goodness E: NO?,,1258930938
+HH24,A,height raised from 4.33m to 4.465 on 11/1/19,,1258930940
+HH24,A,Goodness N: OK?,,1258930942
+HH24,A,height raised from 4.33m to 4.465 on 11/1/19,,1258930944
+HH25,A,Goodness E: OK?,,1258930938
+HH25,A,Goodness N: OK?,,1258930940
+HH26,A,Goodness E: OK?,,1258930938
+HH26,A,Goodness N: OK?,,1258930940
+HH39,A,Goodness E: OK?,,1258930938
+HH39,A,height rasied from 4.37m to 4.465m on 11/1/19,,1258930940
+HH39,A,Goodness N: OK?,,1258930942
+HH39,A,height rasied from 4.37m to 4.465m on 11/1/19,,1258930944
+HH67,A,"Antenna wire but could not be checked, NCM does not switch on FEM/PAM power",,1258930938
+HH68,A,"Antenna wire but could not be checked, NCM does not switch on FEM/PAM power",,1258930938
+HH38,A,"Antenna wire but could not be checked, NCM does not switch on FEM/PAM power",,1258930938
+HH83,A,"FEM checked, xyz positioned, height 4.409 [2019/11/15]",,1258930938
+HH83,A,PAM input seems fixed maybe after reseating PAM in swap and removing dirt [2019/11/15],,1258930940
+HH54,A,Feed heights: Aligned Z=4.396 (from jig),,1258930938
+HH55,A,Feed heights: Aligned Z= 4.405 (from Jig),,1258930938
+HH69,A,Feed heights: Aligned Z= 4.396 (from jig),,1258930938
+HH70,A,Feed heights: Aligned Z=4.411 (from jig),,1258930938
+HH71,A,Feed heights: Aligned Z=4.396 (from jig),,1258930938
+HH72,A,Feed heights: Aligned Z= 4.399 (from jig),,1258930938
+HH43,A,"Aligned, Z=4.399 from jig",,1258930938
+HH44,A,Aligned Z=4.408 from jig,,1258930938
+HH45,A,Aligned Z=4.401 (from jig same as 58),,1258930938
+HH46,A,aligned Z=4.403(from Jig),,1258930938
+HH58,A,Aligned Z=4.401 (from jig),,1258930938
+HH59,A,Aligned Z=4.413 (from jig),,1258930938
+HH60,A,Aligned Z= 4.404 (from Jig),,1258930938
+HH73,A,Aligned Z=4.399 (from jig),,1258930938
+HH74,A,Aligned Z=4.404 (from jig),,1258930938
+HH75,A,Aligned Z= 4.410 (from Jig),,1258930938
+HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",,1258930938
+HH81,A,"FEM checked, xyz positioned, height 4.407 [2019/11/15]",,1258930938
+HH82,A,"FEM checked, xyz positioned, height 4.403 [2019/11/15]",,1258930938
+HH98,A,"FEM checked, xyz positioned, height 4.414 [2019/11/15]",,1258930938
+HH99,A,Fiber fixed ,,1258930938
+HH99,A,Aligned Z=4.396 (from jig),,1258930940
+HH100,A,"Aligned, Z=4.404 from jig. North lifting line is failing - needs to be replaced [2019/11/19]",,1258930938
+HH116,A,"FEM checked, xyz positioned, height 4.398 [2019/11/19]",,1258930938
+HH117,A,"FEM checked. Aligned, Z=4.408 from jig.",,1258930938
+HH118,A,FEM checked ,,1258930938
+HH118,A,Aligned Z=4.413(from jig),,1258930940
+HH119,A,lowered for FEM check and xyz positioning [2019/11/17],,1258930938
+HH137,A,raised [2019/11/4] waiting for heat shrink,,1258930938
+HH138,A,raised [2019/11/4] waiting for heat shrink ,,1258930938
+HH84,A,Comments (added 11/1/19): height raised from 4.117m to 4.492m 10/31/19,,1258930938
+HH86,A,Comments (added 11/1/19): Cat7 cable connection is questionable,,1258930938
+HH87,A,Comments (added 11/1/19): One tension is frayed,,1258930938
+HH101,A,Comments (added 11/1/19): Cat7 cable connection is questionable,,1258930938
+HH101,A,Comments (added 11/1/19): Not raised - waiting on pulldown rope,,1258930940
+HH102,A,Comments (added 11/1/19): Not raised - waiting on pulldown rope,,1258930938
+HH120,A,Comments (added 11/1/19): Not raised - waiting on pulldown rope,,1258930938
+HH123,A,Comments (added 11/1/19): height raised from 4.041m to 4.406m 10/31/19,,1258930938
+HH88,A,Goodness E: ?,,1258930938
+HH88,A,Goodness N: ?,,1258930940
+HH89,A,Goodness E: OK,,1258930938
+HH89,A,Goodness N: OK,,1258930940
+HH90,A,Goodness E: ?,,1258930938
+HH90,A,Goodness N: ?,,1258930940
+HH91,A,Goodness E: NA,,1258930938
+HH91,A,Goodness N: NA,,1258930940
+HH105,A,Goodness E: ?,,1258930938
+HH105,A,Goodness N: ?,,1258930940
+HH106,A,Goodness E: Bad,,1258930938
+HH106,A,Goodness N: OK,,1258930940
+HH107,A,Goodness E: Bad,,1258930938
+HH107,A,Goodness N: ?,,1258930940
+HH108,A,Goodness E: ?,,1258930938
+HH108,A,Goodness N: ?,,1258930940
+HH124,A,Goodness E: Bad,,1258930938
+HH124,A,Goodness N: OK,,1258930940
+HH125,A,Goodness E: OK,,1258930938
+HH125,A,Goodness N: OK,,1258930940
+HH126,A,Goodness E: OK,,1258930938
+HH126,A,Goodness N: OK,,1258930940
