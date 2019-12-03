@@ -26,7 +26,7 @@ class Update:
     snap_ports = [{'e': 'e2', 'n': 'n0'}, {'e': 'e6', 'n': 'n4'}, {'e': 'e10', 'n': 'n8'}]
 
     def __init__(self, exename, output_script_path=None, chmod=False,
-                 log_file='scripts.log', verbose=True, site_user='obs'):
+                 log_file='scripts.log', verbose=True):
         """
         exename:  the name of the script executed (argv[0])
         log_file:  name of log_file
@@ -46,7 +46,8 @@ class Update:
             print("Writing script {}".format(self.output_script))
         self.fp = open(self.output_script, 'w')
         s = '#! /bin/bash\n'
-        if os.getenv('USER') == self.site_user:
+        unameInfo = os.uname()
+        if unameInfo.sysname == 'Linux':
             s += 'source ~/.bashrc\n'
         s += 'echo "{}" >> {} \n'.format(exename, self.log_file)
         self.fp.write(s)
