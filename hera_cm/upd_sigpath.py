@@ -6,10 +6,8 @@
 """
 """
 from hera_mc import cm_hookup, cm_utils, cm_sysutils, cm_sysdef, mc, cm_partconnect
-import sheet_data as gsheet
-import signal_chain
-
-import upd_util
+from . import sheet_data as gsheet
+from . import signal_chain, upd_util
 
 import os
 import csv
@@ -109,12 +107,12 @@ class Overview:
         self.sheet_ants = cm_utils.put_keys_in_order(list(self.sheet_ants), sort_order='NPR')
 
     def make_sheet_connections(self):
+        print("NOT DOING THIS YET.")
         self.sheet_connections = {}
         for sant in self.sheet_ants:
             self.sheet_connections[sant] = []
             for part in self.sheet_data[sant]:
                 print(part)
-
 
     def get_apriori(self):
         """

@@ -85,21 +85,3 @@ class Checks:
             print('Found the following parts:')
             print(missing_parts.keys())
         return missing_parts
-
-
-if __name__ == '__main__':
-    import argparse
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--comments', help="Check for duplicate comments", action='store_true')
-    ap.add_argument('--connections', help="Check connections for ...", action='store_true')
-    ap.add_argument('--apriori', help="Check for overlapping apriori states", action='store_true')
-    args = ap.parse_args()
-
-    cc = Checks()
-
-    if args.comments:
-        cc.check_for_duplicate_comments()
-    if args.connections:
-        cc.part_conn_assoc()
-    if args.apriori:
-        cc.apriori()

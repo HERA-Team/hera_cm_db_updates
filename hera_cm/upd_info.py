@@ -9,9 +9,7 @@ googlesheet
 """
 from hera_mc import cm_utils, cm_active, mc
 
-import cm_gsheet
-import signal_chain
-import upd_util
+from . import cm_gsheet, signal_chain, upd_util
 
 import os
 import datetime
