@@ -6,8 +6,7 @@
 """
 """
 from hera_mc import cm_hookup, cm_utils, cm_sysutils, cm_sysdef, mc, cm_partconnect
-from . import sheet_data as gsheet
-from . import signal_chain, upd_util
+from . import signal_chain, upd_util, cm_gsheet
 
 import os
 import csv
@@ -70,9 +69,9 @@ class Overview:
         self.sheet_date = {}
         self.sheet_notes = {}
         self.sheet_ants = set()
-        self.tabs = sorted(list(gsheet.gsheet.keys()))
+        self.tabs = sorted(list(cm_gsheet.gsheet.keys()))
         for tab in self.tabs:
-            xxx = requests.get(gsheet.gsheet[tab])
+            xxx = requests.get(cm_gsheet.gsheet[tab])
             csv_tab = b''
             for line in xxx:
                 csv_tab += line
@@ -184,7 +183,7 @@ class Overview:
                 header[col] = parse_command_payload(col)
             # Process sheet data
             for i, col in enumerate(self.sheet_header[tab]):
-                if header[col].entry in gsheet.com_ignore or len(col) == 0:
+                if header[col].entry in cm_gsheet.com_ignore or len(col) == 0:
                     continue
                 try:
                     col_data = self.sheet_data[sheet_key][i]
@@ -202,9 +201,9 @@ class Overview:
                 if '-' not in entry_date:
                     entry_date = entry_date + '-12:00'
                 # ##Get prefix for entry
-                if header[col].entry in gsheet.no_prefix:
+                if header[col].entry in cm_gsheet.no_prefix:
                     prefix = ''
-                elif col in gsheet.pol_comments:
+                elif col in cm_gsheet.pol_comments:
                     prefix = '{} {}: '.format(col, pol)
                 else:
                     prefix = '{}: '.format(col)
@@ -276,7 +275,7 @@ class Overview:
         """
         Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column for comparison.
         """
-        if sheet_col not in gsheet.hu_col.keys():
+        if sheet_col not in cm_gsheet.hu_col.keys():
             return None
         if sheet_col.lower() == 'apriori':
             if antkey in self.apriori_data.keys():
@@ -289,11 +288,11 @@ class Overview:
             if ppkey.upper().startswith(pol.upper()):
                 break
         try:
-            pam_slot = get_num(hu.hookup[ppkey][gsheet.hu_col['Bulkhead-PAM_Slot']].downstream_input_port)
+            pam_slot = get_num(hu.hookup[ppkey][cm_gsheet.hu_col['Bulkhead-PAM_Slot']].downstream_input_port)
         except IndexError:
             return self.NotFound
         try:
-            snap_slot = str(int(get_num(hu.hookup[ppkey][gsheet.hu_col['Node']].downstream_input_port)))
+            snap_slot = str(int(get_num(hu.hookup[ppkey][cm_gsheet.hu_col['Node']].downstream_input_port)))
         except IndexError:
             return self.NotFound
         i2c = (int(pam_slot) + 2) % 3 + 1
@@ -306,12 +305,12 @@ class Overview:
             return snap_slot
         if sheet_col.lower() == 'port' or sheet_col.lower() == 'pol':
             try:
-                return hu.hookup[ppkey][gsheet.hu_col[sheet_col]].downstream_input_port.upper()
+                return hu.hookup[ppkey][cm_gsheet.hu_col[sheet_col]].downstream_input_port.upper()
             except IndexError:
                 return self.NotFound
 
         try:
-            part = hu.hookup[ppkey][gsheet.hu_col[sheet_col]].downstream_part
+            part = hu.hookup[ppkey][cm_gsheet.hu_col[sheet_col]].downstream_part
         except IndexError:
             return self.NotFound
         num = str(int(get_num(part)))
