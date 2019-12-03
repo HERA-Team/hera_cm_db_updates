@@ -46,9 +46,9 @@ class Update:
             print("Writing script {}".format(self.output_script))
         self.fp = open(self.output_script, 'w')
         s = '#! /bin/bash\n'
-        unameInfo = os.uname()
-        if unameInfo.sysname == 'Linux':
-            s += 'source ~/.bashrc\n'
+        #unameInfo = os.uname()
+        #if unameInfo.sysname == 'Linux':
+        s += 'source ~/.bashrc\n'
         s += 'echo "{}" >> {} \n'.format(exename, self.log_file)
         self.fp.write(s)
         if self.verbose:
