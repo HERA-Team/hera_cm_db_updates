@@ -1,4 +1,4 @@
 .DS_Store
-levels.tmp
+sheet_update.sh
 *.pyc
 cm_updates/scripts.log
