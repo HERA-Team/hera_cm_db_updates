@@ -116,4 +116,6 @@ def gen_hpn(ptype, pnum):
         return 'NBP{:02d}'.format(int(pnum))
     if ptype in ['FEED', 'FDV']:
         return 'FDV{}'.format(int(pnum))
+    if ptype in ['ANT', 'ANTENNA']:
+        return 'A{}'.format(int(pnum))
     return '{}{}'.format(ptype, pnum)

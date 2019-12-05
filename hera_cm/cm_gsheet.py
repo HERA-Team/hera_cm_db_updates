@@ -15,7 +15,7 @@ import datetime
 from . import util
 from hera_mc import cm_utils
 
-hu_col = {'Ant': 0, 'Pol': 4, 'Feed': 1, 'FEM': 2, 'PAM': 4, 'Bulkhead-PAM_Slot': 3, 'I2C_bus': -1, 'SNAP': 5, 'Port': 5, 'SNAP_Slot': 6, 'Node': 6, 'APriori': -1}
+hu_col = {'Ant': 0, 'Pol': 4, 'Feed': 1, 'FEM': 2, 'PAM': 4, 'Bulkhead-PAM_Slot': 3, 'I2C_bus': -1, 'SNAP': 5, 'Port': 5, 'SNAP_Slot': 6, 'Node': 6}
 sheet_headers = ['Ant', 'Pol', 'Feed', 'FEM', 'PAM', 'Bulkhead-PAM_Slot', 'I2C_bus', 'SNAP_Slot', 'SNAP',
                  'Port', 'APriori', 'History', 'Actions', 'FEM_I2C', 'PAM_I2C', 'Goodness', 'Comments']
 
@@ -38,6 +38,7 @@ com_ignore = ['Node', 'Ant', 'Pol', 'Feed', 'FEM', 'PAM', 'Bulkhead-PAM_Slot', '
 class SheetData:
     def __init__(self):
         self.data = {}
+        self.parts = {}
         self.header = {}
         self.date = {}
         self.notes = {}
