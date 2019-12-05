@@ -1,4 +1,3 @@
-from __future__ import absolute_import, division, print_function
 import os
 import copy
 from hera_mc import cm_utils, cm_active, cm_handling

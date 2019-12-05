@@ -6,11 +6,8 @@
 """
 Script to make a fake hookup for test purposes.
 """
-
-from __future__ import absolute_import, division, print_function
 from hera_mc import cm_utils
-import signal_chain
-import six
+from hera_cm import signal_chain
 from argparse import Namespace
 
 # ###########VALUES HERE##############

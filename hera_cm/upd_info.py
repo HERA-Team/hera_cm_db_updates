@@ -9,7 +9,7 @@ googlesheet
 """
 from hera_mc import cm_utils, cm_active, mc
 
-from . import cm_gsheet, signal_chain, upd_util
+from . import cm_gsheet, signal_chain, util
 
 import os
 import datetime
@@ -82,7 +82,7 @@ class UpdateInfo:
                     continue
                 if len(col_data) == 0:
                     continue
-                pkey, pdate, ptime = upd_util.get_unique_pkey(ant, rev, pdate, ptime, primary_keys)
+                pkey, pdate, ptime = util.get_unique_pkey(ant, rev, pdate, ptime, primary_keys)
                 # ##Get prefix for entry
                 if col in cm_gsheet.no_prefix:
                     prefix = ''
@@ -98,6 +98,9 @@ class UpdateInfo:
                     self.update_counter += 1
                     primary_keys.append(pkey)
 
+    def add_below_notes(self):
+        print("ADD THE NOTES FROM BELOW THE TABLE")
+
     def is_duplicate(self, key, statement, duplication_window):
         if key in self.active.info.keys():
             for note in self.active.info[key]:
@@ -110,29 +113,10 @@ class UpdateInfo:
                     return True
         return False
 
-    def finish(self, arc_path=None, cron_script='sheet_update.sh'):
+    def finish(self, arc_path, cron_script='sheet_update.sh'):
         """
         Close out process.
         """
         self.hera.done()
-        init_script_file = os.path.join(self.exe_path, self.script)
-        cron_script_file = os.path.join(self.exe_path, cron_script)
-        if os.path.exists(cron_script_file):
-            os.remove(cron_script_file)
-        write_blank_cron_file = True
-        if self.update_counter:
-            if arc_path is not None:
-                if self.verbose:
-                    print("Copying {}  -->  {}".format(init_script_file, arc_path))
-                    print("Renaming {}  -->  {}".format(init_script_file, cron_script_file))
-                os.system('cp {} {}'.format(init_script_file, arc_path))
-                os.rename(init_script_file, cron_script_file)
-                write_blank_cron_file = False
-        else:
-            if self.verbose:
-                print("Removing {}".format(init_script_file))
-            os.remove(init_script_file)
-        if write_blank_cron_file:
-            with open(cron_script_file, 'w') as fp:
-                fp.write('\n')
-        os.chmod(cron_script_file, 0o755)
+        util.finish(arc_path=arc_path, arc_script=self.script,
+                    cron_path=self.exe_path, cron_script=cron_script)

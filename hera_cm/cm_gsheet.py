@@ -12,7 +12,7 @@ x.hookup_dict['HH104:A'].hookup['e']
 import csv
 import requests
 import datetime
-from . import upd_util
+from . import util
 from hera_mc import cm_utils
 
 hu_col = {'Ant': 0, 'Pol': 4, 'Feed': 1, 'FEM': 2, 'PAM': 4, 'Bulkhead-PAM_Slot': 3, 'I2C_bus': -1, 'SNAP': 5, 'Port': 5, 'SNAP_Slot': 6, 'Node': 6, 'APriori': -1}
@@ -66,13 +66,13 @@ class SheetData:
                     antnum = int(data[0])
                 except ValueError:
                     continue
-                hpn = upd_util.gen_hpn('HH', antnum)
+                hpn = util.gen_hpn('HH', antnum)
                 hkey = cm_utils.make_part_key(hpn, 'A')
                 self.ants.add(hkey)
                 dkey = '{}-{}'.format(hkey, data[1].upper())
-                self.data[dkey] = [upd_util.get_num(tab)] + data
+                self.data[dkey] = [util.get_num(tab)] + data
             # Get the notes below the hookup table.
-            node_pn = 'N{:02d}'.format(int(upd_util.get_num(tab)))
+            node_pn = 'N{:02d}'.format(int(util.get_num(tab)))
             for data in csv_tab:
                 if data[0].startswith("Note"):
                     note_part = data[0].split()

@@ -4,7 +4,7 @@
 # Licensed under the 2-clause BSD license.
 
 import argparse
-import cm_overview
+from hera_cm import upd_connect
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
@@ -27,15 +27,15 @@ print("To get the full set run as 'cmovu.py -sma'.\nFor the 'getlist' apriori mu
 
 args.getlist = args.getlist.split(',')
 
-cmovu = cm_overview.Overview()
-cmovu.get(getlist=args.getlist)
-cmovu.compare(antkeys=args.compare_keys)
+updc = upd_connect.Update()
+updc.get(getlist=args.getlist)
+updc.compare(antkeys=args.compare_keys)
 if args.view:
-    print(cmovu.view_compare())
+    print(updc.view_compare())
 include_mismatches = args.hookup_mismatch or args.apriori_mismatch
 if args.sheet_commands:
-    cmovu.add_sheet_commands()
+    updc.add_sheet_commands()
 if include_mismatches:
-    cmovu.add_mismatch_commands(add_hookup=args.hookup_mismatch, add_apriori=args.apriori_mismatch)
+    updc.add_mismatch_commands(add_hookup=args.hookup_mismatch, add_apriori=args.apriori_mismatch)
 
-cmovu.process_commands(keep_dated=args.keep_dated_copy)
+updc.process_commands(keep_dated=args.keep_dated_copy)

@@ -6,7 +6,7 @@
 """
 """
 from hera_mc import cm_hookup, cm_utils, cm_sysutils, cm_sysdef, mc, cm_partconnect
-from . import signal_chain, upd_util, cm_gsheet
+from . import signal_chain, util, cm_gsheet
 
 import os
 import csv
@@ -18,11 +18,10 @@ cm_req = Namespace(hpn=cm_sysdef.hera_zone_prefixes, pol='all',
                    at_date='now', exact_match=False, hookup_type=None)
 
 
-class Overview:
+class Update:
     pols = ['E', 'N']
-    com_script = 'overview_update'  # name of processing script file
+    com_script = 'connupdate'  # name of processing script file
     NotFound = "Not Found"
-    allowed_getlist = ['hookup', 'sheets', 'apriori']
 
     def __init__(self):
         print("###---Working on make_sheet_connections---###")
@@ -32,14 +31,6 @@ class Overview:
         self.commands = {}
         self.connected = []
         self.sheet_ants = []
-        self.apriori_data = {}
-
-    def get(self, getlist=['hookup', 'sheets', 'apriori']):
-        for gl in getlist:
-            if gl in self.allowed_getlist:
-                getattr(self, 'get_' + gl)()
-            else:
-                print("{} get method not found.".format(gl))
 
     def get_hookup(self):
         """

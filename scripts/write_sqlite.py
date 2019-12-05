@@ -49,7 +49,7 @@ subprocess.call('rm -f schema.sql', shell=True)
 subprocess.call('rm -f inserts.sql', shell=True)
 
 print("""
-In base directory type the following:
+In 'hera_cm_db_updates' type the following:
 
 $ sqlite3
 sqlite> .read cm_hera.sql
