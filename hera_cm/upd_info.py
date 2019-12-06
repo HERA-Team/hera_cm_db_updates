@@ -117,5 +117,7 @@ class UpdateInfo:
         Close out process.
         """
         self.hera.done()
-        util.finish(arc_path=arc_path, arc_script=self.script,
+        apply_updates = self.update_counter > 0
+        util.finish(apply_updates=apply_updates,
+                    arc_path=arc_path, arc_script=self.script,
                     cron_path=self.exe_path, cron_script=cron_script)
