@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "191205_sheetupdate_2240" >> scripts.log 
+update_apriori.py -p HH83 -s not_connected --date 2019/12/05 --time 22:40
