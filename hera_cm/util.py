@@ -9,7 +9,7 @@ import os
 from argparse import Namespace
 
 
-def finish(arc_path, arc_script, cron_path, cron_script):
+def finish(apply_updates, arc_path, arc_script, cron_path, cron_script):
     """
     Close out process.
     """
@@ -17,20 +17,17 @@ def finish(arc_path, arc_script, cron_path, cron_script):
     cron_script_file = os.path.join(cron_path, cron_script)
     if os.path.exists(cron_script_file):
         os.remove(cron_script_file)
-    write_blank_cron_file = True
-    if self.update_counter:
+    if apply_updates:
         if arc_path is not None:
             if self.verbose:
                 print("Copying {}  -->  {}".format(init_script_file, arc_path))
                 print("Renaming {}  -->  {}".format(init_script_file, cron_script_file))
             os.system('cp {} {}'.format(init_script_file, arc_path))
             os.rename(init_script_file, cron_script_file)
-            write_blank_cron_file = False
     else:
         if self.verbose:
             print("Removing {}".format(init_script_file))
         os.remove(init_script_file)
-    if write_blank_cron_file:
         with open(cron_script_file, 'w') as fp:
             fp.write('\n')
     os.chmod(cron_script_file, 0o755)
@@ -99,21 +96,32 @@ def get_row_dict(hdr, data):
     return row
 
 
-def gen_hpn(ptype, pnum):
+def gen_hpn(ptype, pnum, verbose=False):
     """
     From the sheet data (via ptype, pnum) it will generate a HERA Part Number
     """
     ptype = ptype.upper()
     if isinstance(pnum, str):
         pnum = pnum.upper()
-    if ptype in ['SNP', 'SNAP']:
-        return 'SNP{}{:06d}'.format(pnum[0], int(pnum[1:]))
-    if ptype in ['PAM', 'FEM']:
-        return '{}{:03d}'.format(ptype, int(pnum))
-    if ptype in ['NODE', 'ND']:
-        return 'N{:02d}'.format(int(pnum))
-    if ptype in ['NBP']:
-        return 'NBP{:02d}'.format(int(pnum))
-    if ptype in ['FEED', 'FDV']:
-        return 'FDV{}'.format(int(pnum))
+    try:
+        if ptype in ['SNP', 'SNAP']:
+            return 'SNP{}{:06d}'.format(pnum[0], int(pnum[1:]))
+        if ptype in ['PAM', 'FEM']:
+            return '{}{:03d}'.format(ptype, int(pnum))
+        if ptype in ['NODE', 'ND']:
+            return 'N{:02d}'.format(int(pnum))
+        if ptype in ['NBP']:
+            return 'NBP{:02d}'.format(int(pnum))
+        if ptype in ['FEED', 'FDV']:
+            return 'FDV{}'.format(int(pnum))
+        if ptype in ['ANT', 'ANTENNA']:
+            return 'A{}'.format(int(pnum))
+    except ValueError:
+        if verbose:
+            print("ValueError:  util.gen_hpn:  Invalid pnum '{}'".format(pnum))
+        return None
+    except IndexError:
+        if verbose:
+            print("IndexError:  util.gen_hpn:  Invalid pnum '{}'".format(pnum))
+        return None
     return '{}{}'.format(ptype, pnum)

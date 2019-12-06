@@ -4,7 +4,7 @@
 
 """
 """
-from hera_mc import cm_hookup, cm_utils, cm_sysdef, mc
+from hera_mc import cm_hookup, cm_utils, cm_sysdef, mc, cm_partconnect
 from . import util, cm_gsheet
 
 import os
@@ -42,6 +42,9 @@ class Update:
         self.sheets = cm_gsheet.SheetData()
         self.sheets.load_sheet()
 
+    def get_hpn_from_col(self, col, key, header):
+        return util.gen_hpn(col, self.sheets.data[key][header.index(col)])
+
     def compare(self):
         """
         Compares the hookup data with the spreadsheet.  Writes self.mismatches keyed on
@@ -49,7 +52,6 @@ class Update:
         e.g. self.mismatches['HH30:A-E']['diff']
              self.mismatches['HH30:A-N']['sheet']
              self.mismatches['HH29:A-E']['date']
-
         """
         self.mismatches = {}
         for antkey in self.sheets.ants:
@@ -69,12 +71,78 @@ class Update:
                                 self.mismatches[sheet_key]['diff'].append([col, val, sheet_val])
 
     def make_sheet_connections(self):
-        print("NOT DOING THIS YET.")
-        self.sheet_connections = {}
-        for sant in self.sheet_ants:
-            self.sheet_connections[sant] = []
-            for part in self.sheet_data[sant]:
-                print(part)
+        self.sheets.connections = {}
+        for sant in self.sheets.ants:
+            for pol in self.pols:
+                key = '{}-{}'.format(sant, pol)
+                node_num = self.sheets.data[key][0]
+                tab = 'node{}'.format(node_num)
+                header = self.sheets.header[tab]
+                self.sheets.connections[key] = []
+                for i, col in enumerate(header):
+                    if self.sheets.data[key][i] is not None:
+                        tc_ = cm_partconnect.Connections()
+                        if col == 'Ant':
+                            ant = self.get_hpn_from_col('Ant', key, header)
+                            feed = self.get_hpn_from_col('Feed', key, header)
+                            tc_.connection(upstream_part=ant, up_part_rev='H', upstream_output_port='focus',
+                                           downstream_part=feed, down_part_rev='A', downstream_input_port='input')
+                        elif col == 'Feed':
+                            feed = self.get_hpn_from_col('Feed', key, header)
+                            fem = self.get_hpn_from_col('FEM', key, header)
+                            tc_.connection(upstream_part=feed, up_part_rev='A', upstream_output_port='terminals',
+                                           downstream_part=fem, down_part_rev='A', downstream_input_port='input')
+                        elif col == 'FEM':
+                            fem = self.get_hpn_from_col('FEM', key, header)
+                            nbp = util.gen_hpn('NBP', node_num)
+                            port = '{}{}'.format(pol, self.sheets.data[key][header.index('Bulkhead-PAM_Slot')])
+                            if port is not None:
+                                port = port.lower()
+                            tc_.connection(upstream_part=fem, up_part_rev='A', upstream_output_port=pol.lower(),
+                                           downstream_part=nbp, down_part_rev='A', downstream_input_port=port)
+                        elif col == 'Bulkhead-PAM_Slot':
+                            nbp = util.gen_hpn('NBP', node_num)
+                            port = '{}{}'.format(pol, self.sheets.data[key][header.index('Bulkhead-PAM_Slot')])
+                            if port is not None:
+                                port = port.lower()
+                            pam = self.get_hpn_from_col('PAM', key, header)
+                            tc_.connection(upstream_part=nbp, up_part_rev='A', upstream_output_port=port,
+                                           downstream_part=pam, down_part_rev='A', downstream_input_port=pol.lower())
+                        elif col == 'PAM':
+                            pam = self.get_hpn_from_col('PAM', key, header)
+                            snap = self.get_hpn_from_col('SNAP', key, header)
+                            port = self.sheets.data[key][header.index('Port')]
+                            if len(port) == 0:
+                                port = None
+                            if port is not None:
+                                port = port.lower()
+                                if port[0] != pol[0].lower():
+                                    msg = "{} port ({}) and pol ({}) don't match".format(snap, port, pol)
+                                    print(msg)
+                            tc_.connection(upstream_part=pam, up_part_rev='A', upstream_output_port=pol.lower(),
+                                           downstream_part=snap, down_part_rev='A', downstream_input_port=port)
+                        elif col == 'I2C_bus':  # extra to get @slot
+                            pam = self.get_hpn_from_col('PAM', key, header)
+                            try:
+                                pch = self.hookup.active.connections['up'][pam]['@slot'].downstream_part
+                            except KeyError:
+                                print("{} is not an active connection!  No pam from {}".format(pam, key))
+                                pch = None
+                            slot = '{}{}'.format(pol, self.sheets.data[key][header.index('Bulkhead-PAM_Slot')])
+                            if slot is not None:
+                                slot = slot.lower()
+                            tc_.connection(upstream_part=pam, up_part_rev='A', upstream_output_port=pol.lower(),
+                                           downstream_part=pch, down_part_rev='A', downstream_input_port=slot)
+                        elif col == 'SNAP':
+                            snap = self.get_hpn_from_col('SNAP', key, header)
+                            node = util.gen_hpn("Node", node_num)
+                            loc = "loc{}".format(self.sheets.data[key][header.index('SNAP_Slot')])
+                            tc_.connection(upstream_part=snap, up_part_rev='A', upstream_output_port='rack',
+                                           downstream_part=node, down_part_rev='A', downstream_input_port=loc)
+                        if tc_.upstream_part is None or tc_.up_part_rev is None or tc_.upstream_output_port is None or\
+                           tc_.downstream_part is None or tc_.down_part_rev is None or tc_.downstream_input_port is None:
+                            continue
+                        self.sheets.connections[key].append(tc_)
 
     def view_compare(self):
         """
@@ -99,8 +167,6 @@ class Update:
         Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column for comparison.
         """
         if sheet_col not in cm_gsheet.hu_col.keys():
-            return None
-        if sheet_col.lower() == 'apriori':
             return None
         hu = self.hookup_dict[antkey]
         pol = pol.upper()
