@@ -9,7 +9,7 @@ import os
 from argparse import Namespace
 
 
-def finish(apply_updates, arc_path, arc_script, cron_path, cron_script):
+def finish(apply_updates, arc_path, arc_script, cron_path, cron_script, verbose=False):
     """
     Close out process.
     """
@@ -19,13 +19,13 @@ def finish(apply_updates, arc_path, arc_script, cron_path, cron_script):
         os.remove(cron_script_file)
     if apply_updates:
         if arc_path is not None:
-            if self.verbose:
+            if verbose:
                 print("Copying {}  -->  {}".format(init_script_file, arc_path))
                 print("Renaming {}  -->  {}".format(init_script_file, cron_script_file))
             os.system('cp {} {}'.format(init_script_file, arc_path))
             os.rename(init_script_file, cron_script_file)
     else:
-        if self.verbose:
+        if verbose:
             print("Removing {}".format(init_script_file))
         os.remove(init_script_file)
         with open(cron_script_file, 'w') as fp:
