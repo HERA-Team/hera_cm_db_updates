@@ -19,8 +19,8 @@ script_nom = 'connupd'
 cron_nom = 'conn_update.sh'
 
 update = upd_connect.UpdateConnect(script_nom=script_nom, script_path=args.script_path, verbose=args.verbose)
-update.get_sheets()
-update.get_hookup()
+update.load_gsheet()
+update.load_hookup()
 update.make_sheet_connections()
 update.compare_connection()
 update.gen_compare_script()

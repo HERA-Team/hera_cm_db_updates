@@ -7,7 +7,7 @@ This is the base class for the script generators
 """
 import datetime
 import os
-from . import signal_chain
+from . import signal_chain, cm_gsheet
 
 
 class Update(object):
@@ -20,6 +20,13 @@ class Update(object):
         self.script = '{}_{}_{}'.format(self.cdate.replace('/', '')[2:], script_nom, self.ctime.replace(':', ''))
         self.hera = signal_chain.Update(self.script, output_script_path=script_path, chmod=True, verbose=verbose)
         self.update_counter = 0
+
+    def load_gsheet(self, test_state='none'):
+        """
+        Gets the googlesheet information from the internet
+        """
+        self.gsheet = cm_gsheet.SheetData()
+        self.gsheet.load_sheet(test_state=test_state)
 
     def finish(self, arc_path, cron_script):
         """

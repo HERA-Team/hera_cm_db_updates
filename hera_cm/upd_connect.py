@@ -28,7 +28,7 @@ class UpdateConnect(upd_base.Update):
     def get_hpn_from_col(self, col, key, header):
         return util.gen_hpn(col, self.sheets.data[key][header.index(col)])
 
-    def get_hookup(self):
+    def load_hookup(self):
         """
         Gets the hookup data from the hera_mc database.
         """
@@ -36,27 +36,20 @@ class UpdateConnect(upd_base.Update):
         self.hookup_dict = self.hookup.get_hookup(hpn=cm_req.hpn, pol=cm_req.pol, at_date=cm_req.at_date,
                                                   exact_match=cm_req.exact_match, hookup_type=cm_req.hookup_type)
 
-    def get_sheets(self, test_state='read'):
-        """
-        Gets the googlesheet information from the internet
-        """
-        self.sheets = cm_gsheet.SheetData()
-        self.sheets.load_sheet(test_state=test_state)
-
     def make_sheet_connections(self):
         """
         Go through all of the sheet and make cm_partconnect.Connections for comparison
         """
-        self.sheets.connection = {}
-        for sant in self.sheets.ants:
+        self.gsheet.connection = {}
+        for sant in self.gsheet.ants:
             for pol in self.pols:
                 key = '{}-{}'.format(sant, pol)
-                node_num = self.sheets.data[key][0]
+                node_num = self.gsheet.data[key][0]
                 tab = 'node{}'.format(node_num)
-                header = self.sheets.header[tab]
-                self.sheets.connection[key] = []
+                header = self.gsheet.header[tab]
+                self.gsheet.connection[key] = []
                 for i, col in enumerate(header):
-                    if self.sheets.data[key][i] is not None:
+                    if self.gsheet.data[key][i] is not None:
                         tc_ = cm_partconnect.Connections()
                         if col == 'Ant':
                             ant = self.get_hpn_from_col('Ant', key, header)
@@ -71,14 +64,14 @@ class UpdateConnect(upd_base.Update):
                         elif col == 'FEM':
                             fem = self.get_hpn_from_col('FEM', key, header)
                             nbp = util.gen_hpn('NBP', node_num)
-                            port = '{}{}'.format(pol, self.sheets.data[key][header.index('Bulkhead-PAM_Slot')])
+                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Bulkhead-PAM_Slot')])
                             if port is not None:
                                 port = port.lower()
                             tc_.connection(upstream_part=fem, up_part_rev='A', upstream_output_port=pol.lower(),
                                            downstream_part=nbp, down_part_rev='A', downstream_input_port=port)
                         elif col == 'Bulkhead-PAM_Slot':
                             nbp = util.gen_hpn('NBP', node_num)
-                            port = '{}{}'.format(pol, self.sheets.data[key][header.index('Bulkhead-PAM_Slot')])
+                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Bulkhead-PAM_Slot')])
                             if port is not None:
                                 port = port.lower()
                             pam = self.get_hpn_from_col('PAM', key, header)
@@ -87,7 +80,7 @@ class UpdateConnect(upd_base.Update):
                         elif col == 'PAM':
                             pam = self.get_hpn_from_col('PAM', key, header)
                             snap = self.get_hpn_from_col('SNAP', key, header)
-                            port = self.sheets.data[key][header.index('Port')]
+                            port = self.gsheet.data[key][header.index('Port')]
                             if len(port) == 0:
                                 port = None
                             if port is not None:
@@ -105,7 +98,7 @@ class UpdateConnect(upd_base.Update):
                             except KeyError:
                                 print("{} is not an active connection!  No pam from {}".format(pam, key))
                                 pch = None
-                            slot = '{}{}'.format('@SLOT', self.sheets.data[key][header.index('Bulkhead-PAM_Slot')])
+                            slot = '{}{}'.format('@SLOT', self.gsheet.data[key][header.index('Bulkhead-PAM_Slot')])
                             if slot is not None:
                                 slot = slot.lower()
                             tc_.connection(upstream_part=pam, up_part_rev='A', upstream_output_port='@slot',
@@ -113,19 +106,19 @@ class UpdateConnect(upd_base.Update):
                         elif col == 'SNAP':
                             snap = self.get_hpn_from_col('SNAP', key, header)
                             node = util.gen_hpn("Node", node_num)
-                            loc = "loc{}".format(self.sheets.data[key][header.index('SNAP_Slot')])
+                            loc = "loc{}".format(self.gsheet.data[key][header.index('SNAP_Slot')])
                             tc_.connection(upstream_part=snap, up_part_rev='A', upstream_output_port='rack',
                                            downstream_part=node, down_part_rev='A', downstream_input_port=loc)
                         if tc_.upstream_part is None or tc_.up_part_rev is None or tc_.upstream_output_port is None or\
                            tc_.downstream_part is None or tc_.down_part_rev is None or tc_.downstream_input_port is None:
                             continue
-                        self.sheets.connection[key].append(tc_)
+                        self.gsheet.connection[key].append(tc_)
 
     def compare_connection(self):
         """
         Step through all of the sheet Connections and make sure they are all there and the same.
         """
-        for sckey, scvals in self.sheets.connection.items():
+        for sckey, scvals in self.gsheet.connection.items():
             for scval in scvals:
                 ackey = cm_utils.make_part_key(scval.downstream_part, scval.down_part_rev)
                 acport = scval.downstream_input_port.upper()
@@ -145,16 +138,16 @@ class UpdateConnect(upd_base.Update):
         e.g. self.mismatches.hookup['HH30:A-E']['diff']
              self.mismatches.hookup['HH30:A-N']['sheet']
         """
-        for antkey in self.sheets.ants:
+        for antkey in self.gsheets.ants:
             for pol in self.pols:
                 sheet_key = "{}-{}".format(antkey, pol)
-                tab = 'node{}'.format(self.sheets.data[sheet_key][0])
-                header = self.sheets.header[tab]
-                sheet_row = util.get_row_dict(header, self.sheets.data[sheet_key])
+                tab = 'node{}'.format(self.gsheet.data[sheet_key][0])
+                header = self.gsheet.header[tab]
+                sheet_row = util.get_row_dict(header, self.sheet.data[sheet_key])
                 for i, col in enumerate(header):
                     val = self._get_val_from_cmdb(antkey, pol, col)
                     if val is not None:
-                        sheet_val = self.sheets.data[sheet_key][i]
+                        sheet_val = self.gsheets.data[sheet_key][i]
                         if val.upper() != sheet_val.upper():
                             if val != self.NotFound or len(sheet_val.strip()):
                                 self.mismatches.hookup.setdefault(sheet_key, {'sheet': sheet_row, 'diff': []})

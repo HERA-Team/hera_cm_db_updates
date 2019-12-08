@@ -2,7 +2,7 @@
 # Copyright 2019 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
 
-from hera_mc import cm_utils, cm_active, mc
+from hera_mc import cm_utils, cm_active
 
 from . import cm_gsheet, util, upd_base
 
@@ -14,10 +14,6 @@ class UpdateInfo(upd_base.Update):
     """
     def __init__(self, script_nom='infoupd', script_path='./', verbose=True):
         super(UpdateInfo, self).__init__(script_nom=script_nom, script_path=script_path, verbose=verbose)
-
-    def load_gsheet(self):
-        self.gsheet = cm_gsheet.SheetData()
-        self.gsheet.load_sheet()
 
     def load_active(self):
         self.active = cm_active.ActiveData()
