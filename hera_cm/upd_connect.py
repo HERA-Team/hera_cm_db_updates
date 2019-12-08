@@ -198,9 +198,15 @@ class UpdateConnect(upd_base.Update):
             for diff in self.mismatches.connection[antkey]['diff']:
                 self.update_counter += 1
                 if diff[0] is None:
-                    self.hera.update_connection('add',
-                                                [diff[1].upstream_part, diff[1].up_part_rev, diff[1].upstream_output_port],
-                                                [diff[1].downstream_part, diff[1].down_part_rev, diff[1].downstream_input_port],
+                    up, urev, uprt = diff[1].upstream_part, diff[1].up_part_rev, diff[1].upstream_output_port
+                    add_part = self.hera.get_general_part(up, urev)
+                    if add_part is not None:
+                        self.hera.update_part('add', add_part, cdate=self.cdate, ctime=self.ctime)
+                    dn, drev, dprt = diff[1].downstream_part, diff[1].down_part_rev, diff[1].downstream_input_port
+                    add_part = self.hera.get_general_part(dn, drev)
+                    if add_part is not None:
+                        self.hera.update_part('add', add_part, cdate=self.cdate, ctime=self.ctime)
+                    self.hera.update_connection('add', [up, urev, uprt], [dn, drev, dprt],
                                                 cdate=self.cdate, ctime=self.ctime)
                 else:
                     self.hera.no_op_comment("{:30s}   <--->   {}".format(str(diff[0]), diff[1]))

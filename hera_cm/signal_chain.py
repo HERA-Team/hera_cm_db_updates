@@ -1,8 +1,10 @@
 import os
 import copy
 from hera_mc import cm_utils, cm_active, cm_handling
+from . import util
 
 current_revs = {'HH': 'A', 'A': 'H', 'FDV': 'V'}
+part_types = {'FDV': 'feed', 'FEM': 'front-end', 'NBP': 'node-bulkhead', 'PAM': 'post-amp', 'SNP': 'snap'}
 
 
 def as_part(add_or_stop, p, cdate, ctime):
@@ -24,7 +26,7 @@ def as_connect(add_or_stop, up, dn, cdate, ctime):
 class Update:
     snap_ports = [{'e': 'e2', 'n': 'n0'}, {'e': 'e6', 'n': 'n4'}, {'e': 'e10', 'n': 'n8'}]
 
-    def __init__(self, exename, output_script_path=None, chmod=False,
+    def __init__(self, exename, output_script_path=None, chmod=False, cdate='now', ctime='10:00',
                  log_file='scripts.log', verbose=True):
         """
         exename:  the name of the script executed (argv[0])
@@ -33,6 +35,7 @@ class Update:
         self.verbose = verbose
         self.chmod = chmod
         self.log_file = log_file
+        self.at_date = cm_utils.get_astropytime(cdate, ctime)
         self.active = cm_active.ActiveData()
         self.handle = cm_handling.Handling()
         input_script = os.path.basename(exename)
@@ -58,8 +61,16 @@ class Update:
     #   add_node            : when all equipment installed in node
     #   add_antenna_to_node : when a feed/fem etc is installed and hooked into node
 
+    def update_adate(self, cdate='now', ctime='10:00'):
+        self.at_date = cm_utils.get_astropytime(cdate=cdate, ctime=ctime)
+
     def no_op_comment(self, comment):
         self.fp.write('# {}\n'.format(comment))
+
+    def load_active(self, cdate='now', ctime='10:00'):
+        at_date = cm_utils.get_astropytime(cdate, ctime)
+        self.active.load_parts(at_date=at_date)
+        self.active.load_connections(at_date=at_date)
 
     def add_antenna_station(self, stn, ser_num, cdate, ctime='10:00'):
         """
@@ -315,6 +326,26 @@ class Update:
 
     # ##########################################################################################
 
+    def get_general_part(self, hpn, rev=None):
+        """
+        This will return a list to add if the part does not exist.
+        """
+        if rev is None:
+            for key, val in current_revs.items():
+                if hpn.startswith(key):
+                    rev = val
+                    break
+        ptype = None
+        for key, val in part_types.items():
+            if hpn.startswith(key):
+                ptype = val
+                break
+        if rev is None or ptype is None:
+            return None
+        if self.exists('part', hpn=hpn, rev=rev, port=None, side='up,down', at_date=self.at_date):
+            return None
+        return (hpn, rev, hpn, ptype)
+
     def get_ser_num(self, hpn, part_type):
         """
         Pull the serial number out of the class dictionary.  If none, just use the hpn
@@ -372,7 +403,6 @@ class Update:
         boolean
                  True if existing corresponding hpn/rev/port
         """
-        self.active.load_parts(at_date=at_date)
         if rev is None:
             rev = cm_active.revs(hpn)
         elif isinstance(rev, str):
@@ -386,7 +416,6 @@ class Update:
         if atype.startswith('part') or not active_part:
             return active_part
 
-        self.active.load_connections(at_date=None)
         sides = side.split(',')
         if isinstance(port, str):
             port = [port]
