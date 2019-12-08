@@ -181,7 +181,7 @@ class Update:
         self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'.format(p[0], p[3], cdate, partadd_time))
 
         # Check for parts to add and add them
-        for p in six.itervalues(part_to_add):
+        for p in part_to_add.values():
             if not p[0].startswith('ND'):  # Because add_station already added it
                 if not self.exists('part', p[0], p[1], 'now'):
                     self.update_part('add', p, cdate, partadd_time)
@@ -271,7 +271,7 @@ class Update:
 
         # Check for parts to add and add them
         added['time'] = str(int(cm_utils.get_astropytime(cdate, partadd_time).gps))
-        for k, p in six.iteritems(part_to_add):
+        for k, p in part_to_add.items():
             if self.exists('part', p[0], p[1], 'now'):
                 print("{} {} is already added".format(k, p[0]))
             else:
@@ -479,22 +479,22 @@ class Update:
             return
         opd = old_pd[old_pd_key[0]]
         print("Stopping old connections: ")
-        for key, val in six.iteritems(opd.connections.up):
+        for key, val in opd.connections.up.items():
             uppart = [val.upstream_part, val.up_part_rev, val.upstream_output_port]
             dnpart = [val.downstream_part, val.down_part_rev, val.downstream_input_port]
             self.update_connection('stop', uppart, dnpart, cdate, ctime)
-        for key, val in six.iteritems(opd.connections.down):
+        for key, val in opd.connections.down.items():
             uppart = [val.upstream_part, val.up_part_rev, val.upstream_output_port]
             dnpart = [val.downstream_part, val.down_part_rev, val.downstream_input_port]
             self.update_connection('stop', uppart, dnpart, cdate, ctime)
         if replace_with_none:
             return
         print("Adding connections: ")
-        for key, val in six.iteritems(opd.connections.up):
+        for key, val in opd.connections.up.items():
             uppart = [val.upstream_part, val.up_part_rev, val.upstream_output_port]
             dnpart = [new[0], new[1], val.downstream_input_port]
             self.update_connection('add', uppart, dnpart, cdate, ctime)
-        for key, val in six.iteritems(opd.connections.down):
+        for key, val in opd.connections.down.items():
             uppart = [new[0], new[1], val.upstream_output_port]
             dnpart = [val.downstream_part, val.down_part_rev, val.downstream_input_port]
             self.update_connection('add', uppart, dnpart, cdate, ctime)

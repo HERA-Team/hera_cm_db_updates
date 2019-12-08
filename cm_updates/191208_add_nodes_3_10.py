@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 import sys
-sys.path.insert(1, '../hera_cm')
-import signal_chain
+from hera_cm import signal_chain
 hera = signal_chain.Update(sys.argv[0], chmod=True)
 
 node = 3
