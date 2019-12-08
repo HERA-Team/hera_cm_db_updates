@@ -26,7 +26,7 @@ class UpdateConnect(upd_base.Update):
         self.mismatches = Namespace(hookup={}, connection={})
 
     def get_hpn_from_col(self, col, key, header):
-        return util.gen_hpn(col, self.sheets.data[key][header.index(col)])
+        return util.gen_hpn(col, self.gsheet.data[key][header.index(col)])
 
     def load_hookup(self):
         """
