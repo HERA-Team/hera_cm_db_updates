@@ -45,17 +45,32 @@ class SheetData:
         self.ants = set()
         self.tabs = sorted(list(gsheet.keys()))
 
-    def load_sheet(self):
+    def load_sheet(self, test_state='none'):
         """
-        Gets the googlesheet information from the internet
-        """
+        Gets the googlesheet information from the internet (or locally for testing etc)
 
+        Parameters
+        ----------
+        test_state : str
+            Test file status:  one of 'read', 'write', 'none' (only need first letter)
+        """
+        test_state = test_state[0].lower()
         for tab in self.tabs:
-            xxx = requests.get(gsheet[tab])
-            csv_tab = b''
-            for line in xxx:
-                csv_tab += line
-            csv_tab = csv.reader(csv_tab.decode('utf-8').splitlines())
+            if test_state == 'r':
+                csv_data = []
+                with open(tab + '.csv', 'r') as fp:
+                    for line in fp:
+                        csv_data.append(line)
+            else:
+                xxx = requests.get(gsheet[tab])
+                csv_tab = b''
+                for line in xxx:
+                    csv_tab += line
+                csv_data = csv_tab.decode('utf-8').splitlines()
+            csv_tab = csv.reader(csv_data)
+            if test_state == 'w':
+                with open(tab + '.csv', 'w') as fp:
+                    fp.write('\n'.join(csv_data))
             for data in csv_tab:
                 if data[0].startswith('Ant'):
                     self.header[tab] = ['Node'] + data

@@ -9,30 +9,6 @@ import os
 from argparse import Namespace
 
 
-def finish(apply_updates, arc_path, arc_script, cron_path, cron_script, verbose=False):
-    """
-    Close out process.
-    """
-    init_script_file = os.path.join(cron_path, arc_script)
-    cron_script_file = os.path.join(cron_path, cron_script)
-    if os.path.exists(cron_script_file):
-        os.remove(cron_script_file)
-    if apply_updates:
-        if arc_path is not None:
-            if verbose:
-                print("Copying {}  -->  {}".format(init_script_file, arc_path))
-                print("Renaming {}  -->  {}".format(init_script_file, cron_script_file))
-            os.system('cp {} {}'.format(init_script_file, arc_path))
-            os.rename(init_script_file, cron_script_file)
-    else:
-        if verbose:
-            print("Removing {}".format(init_script_file))
-        os.remove(init_script_file)
-        with open(cron_script_file, 'w') as fp:
-            fp.write('\n')
-    os.chmod(cron_script_file, 0o755)
-
-
 def get_num(val):
     """
     Makes digits in alphanumeric string into a number as string

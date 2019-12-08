@@ -4,7 +4,7 @@
 
 """
 """
-from hera_mc import cm_hookup, cm_utils, cm_sysdef, mc, cm_partconnect
+from hera_mc import cm_hookup, cm_utils, cm_sysdef, cm_partconnect
 from . import util, cm_gsheet
 
 import os
@@ -19,66 +19,43 @@ cm_req = Namespace(hpn=cm_sysdef.hera_zone_prefixes, pol='all',
 
 class Update:
     pols = ['E', 'N']
-    com_script = 'connupdate'  # name of processing script file
+    proc_script = 'connupdate'  # name of processing script file
     NotFound = "Not Found"
 
     def __init__(self):
-        db = mc.connect_to_mc_db(None)
-        self.session = db.sessionmaker()
         self.commands = {}
+        self.mismatches = Namespace(hookup={}, connection={})
+
+    def get_hpn_from_col(self, col, key, header):
+        return util.gen_hpn(col, self.sheets.data[key][header.index(col)])
 
     def get_hookup(self):
         """
         Gets the hookup data from the hera_mc database.
         """
-        self.hookup = cm_hookup.Hookup(self.session)
+        self.hookup = cm_hookup.Hookup()
         self.hookup_dict = self.hookup.get_hookup(hpn=cm_req.hpn, pol=cm_req.pol, at_date=cm_req.at_date,
                                                   exact_match=cm_req.exact_match, hookup_type=cm_req.hookup_type)
 
-    def get_sheets(self):
+    def get_sheets(self, test_state='read'):
         """
         Gets the googlesheet information from the internet
         """
         self.sheets = cm_gsheet.SheetData()
-        self.sheets.load_sheet()
-
-    def get_hpn_from_col(self, col, key, header):
-        return util.gen_hpn(col, self.sheets.data[key][header.index(col)])
-
-    def compare(self):
-        """
-        Compares the hookup data with the spreadsheet.  Writes self.mismatches keyed on
-        'ant:rev-pol' then 'sheet', 'diff', 'date', ''
-        e.g. self.mismatches['HH30:A-E']['diff']
-             self.mismatches['HH30:A-N']['sheet']
-             self.mismatches['HH29:A-E']['date']
-        """
-        self.mismatches = {}
-        for antkey in self.sheets.ants:
-            for pol in self.pols:
-                sheet_key = "{}-{}".format(antkey, pol)
-                tab = 'node{}'.format(self.sheets.data[sheet_key][0])
-                header = self.sheets.header[tab]
-                sheet_row = util.get_row_dict(header, self.sheets.data[sheet_key])
-                for i, col in enumerate(header):
-                    val = self._get_val_from_cmdb(antkey, pol, col)
-                    if val is not None:
-                        sheet_val = self.sheets.data[sheet_key][i]
-                        if val.upper() != sheet_val.upper():
-                            if val != self.NotFound or len(sheet_val.strip()):
-                                self.mismatches.setdefault(sheet_key, {'sheet': sheet_row,
-                                                                       'diff': [], 'date': self.sheets.date[tab]})
-                                self.mismatches[sheet_key]['diff'].append([col, val, sheet_val])
+        self.sheets.load_sheet(test_state=test_state)
 
     def make_sheet_connections(self):
-        self.sheets.connections = {}
+        """
+        Go through all of the sheet and make cm_partconnect.Connections for comparison
+        """
+        self.sheets.connection = {}
         for sant in self.sheets.ants:
             for pol in self.pols:
                 key = '{}-{}'.format(sant, pol)
                 node_num = self.sheets.data[key][0]
                 tab = 'node{}'.format(node_num)
                 header = self.sheets.header[tab]
-                self.sheets.connections[key] = []
+                self.sheets.connection[key] = []
                 for i, col in enumerate(header):
                     if self.sheets.data[key][i] is not None:
                         tc_ = cm_partconnect.Connections()
@@ -124,14 +101,15 @@ class Update:
                         elif col == 'I2C_bus':  # extra to get @slot
                             pam = self.get_hpn_from_col('PAM', key, header)
                             try:
-                                pch = self.hookup.active.connections['up'][pam]['@slot'].downstream_part
+                                pamkey = cm_utils.make_part_key(pam, 'A')
+                                pch = self.hookup.active.connections['up'][pamkey]['@SLOT'].downstream_part
                             except KeyError:
                                 print("{} is not an active connection!  No pam from {}".format(pam, key))
                                 pch = None
-                            slot = '{}{}'.format(pol, self.sheets.data[key][header.index('Bulkhead-PAM_Slot')])
+                            slot = '{}{}'.format('@SLOT', self.sheets.data[key][header.index('Bulkhead-PAM_Slot')])
                             if slot is not None:
                                 slot = slot.lower()
-                            tc_.connection(upstream_part=pam, up_part_rev='A', upstream_output_port=pol.lower(),
+                            tc_.connection(upstream_part=pam, up_part_rev='A', upstream_output_port='@slot',
                                            downstream_part=pch, down_part_rev='A', downstream_input_port=slot)
                         elif col == 'SNAP':
                             snap = self.get_hpn_from_col('SNAP', key, header)
@@ -142,26 +120,85 @@ class Update:
                         if tc_.upstream_part is None or tc_.up_part_rev is None or tc_.upstream_output_port is None or\
                            tc_.downstream_part is None or tc_.down_part_rev is None or tc_.downstream_input_port is None:
                             continue
-                        self.sheets.connections[key].append(tc_)
+                        self.sheets.connection[key].append(tc_)
 
-    def view_compare(self):
+    def compare_connection(self):
         """
-        Views the comparison with hookup data and spreadsheet.
+        Step through all of the sheet Connections and make sure they are all there and the same.
+        """
+        for sckey, scvals in self.sheets.connection.items():
+            for scval in scvals:
+                ackey = cm_utils.make_part_key(scval.downstream_part, scval.down_part_rev)
+                acport = scval.downstream_input_port.upper()
+                try:
+                    acval = self.hookup.active.connections['down'][ackey][acport]
+                except KeyError:
+                    acval = None
+                if acval is None or acval != scval:
+                    self.mismatches.connection.setdefault(sckey, {'sheet': scvals, 'diff': []})
+                    self.mismatches.connection[sckey]['diff'].append([acval, scval])
+
+    def compare_hookup(self):
+        """
+        ## Note that this is left in for sanity/double-checking purposes.
+        Compares the hookup data with the spreadsheet.  Writes self.mismatches.hookup
+        keyed on 'ant:rev-pol' then 'sheet' and 'diff
+        e.g. self.mismatches.hookup['HH30:A-E']['diff']
+             self.mismatches.hookup['HH30:A-N']['sheet']
+        """
+        for antkey in self.sheets.ants:
+            for pol in self.pols:
+                sheet_key = "{}-{}".format(antkey, pol)
+                tab = 'node{}'.format(self.sheets.data[sheet_key][0])
+                header = self.sheets.header[tab]
+                sheet_row = util.get_row_dict(header, self.sheets.data[sheet_key])
+                for i, col in enumerate(header):
+                    val = self._get_val_from_cmdb(antkey, pol, col)
+                    if val is not None:
+                        sheet_val = self.sheets.data[sheet_key][i]
+                        if val.upper() != sheet_val.upper():
+                            if val != self.NotFound or len(sheet_val.strip()):
+                                self.mismatches.hookup.setdefault(sheet_key, {'sheet': sheet_row, 'diff': []})
+                                self.mismatches.hookup[sheet_key]['diff'].append([col, val, sheet_val])
+
+    def view_compare(self, ctypes=['hookup', 'connection']):
+        """
+        Views the comparison with cm database and spreadsheet.
+
+        Parameters
+        ----------
+        ctypes : list, str
+            List of strings for compare type:  connection/hookup
 
         Returns
         -------
         str
             output string
         """
-        antkeys = cm_utils.put_keys_in_order(list(self.mismatches.keys()), sort_order='NPR')
+        if isinstance(ctypes, str):
+            ctypes = [ctypes]
+        antkeys = []
+        for ctype in ctypes:
+            comp_type = getattr(self.mismatches, ctype)
+            antkeys += list(comp_type.keys())
+        antkeys = cm_utils.put_keys_in_order(list(set(antkeys)), sort_order='NPR')
         output_string = ''
         for antkey in antkeys:
             key, pol = antkey.split('-')
             output_string += "\n{:10s}----------    cm       <--->  sheet\n".format(antkey)
-            for diff in self.mismatches[antkey]['diff']:
-                output_string += "{:18s}  {:10s}   <--->   {}\n".format(diff[0], diff[1], diff[2])
+            for ctype in ctypes:
+                comp_type = getattr(self.mismatches, ctype)
+                if antkey in comp_type.keys():
+                    for diff in comp_type[antkey]['diff']:
+                        if len(diff) == 3:  # hookup
+                            output_string += "{:18s}  {:10s}   <--->   {}\n".format(diff[0], diff[1], diff[2])
+                        else:
+                            output_string += "{:30s}   <--->   {}\n".format(str(diff[0]), diff[1])
         return output_string
 
+    # ###########################################################################
+    #                               other stuff                                 #
+    # ###########################################################################
     def _get_val_from_cmdb(self, antkey, pol, sheet_col):
         """
         Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column for comparison.

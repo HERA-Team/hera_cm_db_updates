@@ -8,23 +8,18 @@ googlesheet
 """
 from hera_mc import cm_utils, cm_active, mc
 
-from . import cm_gsheet, signal_chain, util
+from . import cm_gsheet, signal_chain, util, upd_base
 
 import os
 import datetime
 from argparse import Namespace
 
 
-class UpdateInfo:
-    def __init__(self, exe_path='./', verbose=True):
-        self.exe_path = exe_path
-        self.verbose = verbose
-        self.now = datetime.datetime.now()
-        self.cdate = '{}/{:02d}/{:02d}'.format(self.now.year, self.now.month, self.now.day)
-        self.ctime = '{:02d}:{:02d}'.format(self.now.hour, self.now.minute)
-        self.script = '{}_sheetupdate_{}'.format(self.cdate.replace('/', '')[2:], self.ctime.replace(':', ''))
-        self.hera = signal_chain.Update(self.script, output_script_path=exe_path, chmod=True, verbose=verbose)
-        self.update_counter = 0
+class UpdateInfo(upd_base.Update):
+    proc_script = 'sheetupdate'
+
+    def __init__(self, script_nom='sheetupdate', exe_path='./', verbose=True):
+        super(UpdateInfo, self).__init__(script_nom=script_nom, exe_path=exe_path, verbose=verbose)
 
     def load_gsheet(self):
         self.gsheet = cm_gsheet.SheetData()
