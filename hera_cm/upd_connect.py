@@ -5,7 +5,7 @@
 """
 """
 from hera_mc import cm_hookup, cm_utils, cm_sysdef, cm_partconnect
-from . import util, cm_gsheet
+from . import util, cm_gsheet, upd_base
 
 import os
 import csv
@@ -17,13 +17,12 @@ cm_req = Namespace(hpn=cm_sysdef.hera_zone_prefixes, pol='all',
                    at_date='now', exact_match=False, hookup_type=None)
 
 
-class Update:
+class UpdateConnect(upd_base.Update):
     pols = ['E', 'N']
-    proc_script = 'connupdate'  # name of processing script file
     NotFound = "Not Found"
 
-    def __init__(self):
-        self.commands = {}
+    def __init__(self, script_nom='connupd', script_path='./', verbose=True):
+        super(UpdateConnections, self).__init__(script_nom=script_nom, script_path=script_path, verbose=verbose)
         self.mismatches = Namespace(hookup={}, connection={})
 
     def get_hpn_from_col(self, col, key, header):

@@ -2,24 +2,18 @@
 # Copyright 2019 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
 
-"""
-This class generates the script to update comments and "apriori" info from the configuration
-googlesheet
-"""
 from hera_mc import cm_utils, cm_active, mc
 
-from . import cm_gsheet, signal_chain, util, upd_base
-
-import os
-import datetime
-from argparse import Namespace
+from . import cm_gsheet, util, upd_base
 
 
 class UpdateInfo(upd_base.Update):
-    proc_script = 'sheetupdate'
-
-    def __init__(self, script_nom='sheetupdate', exe_path='./', verbose=True):
-        super(UpdateInfo, self).__init__(script_nom=script_nom, exe_path=exe_path, verbose=verbose)
+    """
+    This class generates the script to update comments and "apriori" info from the configuration
+    googlesheet
+    """
+    def __init__(self, script_nom='infoupd', script_path='./', verbose=True):
+        super(UpdateInfo, self).__init__(script_nom=script_nom, script_path=script_path, verbose=verbose)
 
     def load_gsheet(self):
         self.gsheet = cm_gsheet.SheetData()
@@ -106,14 +100,3 @@ class UpdateInfo(upd_base.Update):
                         print("Duplicate for {} - {}  ({:.1f} days)".format(key, statement, ddays))
                     return True
         return False
-
-    def finish(self, arc_path, cron_script='sheet_update.sh'):
-        """
-        Close out process.
-        """
-        self.hera.done()
-        apply_updates = self.update_counter > 0
-        util.finish(apply_updates=apply_updates,
-                    arc_path=arc_path, arc_script=self.script,
-                    cron_path=self.exe_path, cron_script=cron_script,
-                    verbose=self.verbose)

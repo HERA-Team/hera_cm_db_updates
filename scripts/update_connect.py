@@ -27,7 +27,7 @@ print("To get the full set run as 'cmovu.py -sma'.\nFor the 'getlist' apriori mu
 
 args.getlist = args.getlist.split(',')
 
-updc = upd_connect.Update()
+updc = upd_connect.UpdateConnect()
 updc.get(getlist=args.getlist)
 updc.compare(antkeys=args.compare_keys)
 if args.view:

@@ -7,6 +7,7 @@ This is the base class for the script generators
 """
 import datetime
 import os
+from . import signal_chain
 
 
 class Update(object):
@@ -32,13 +33,13 @@ class Update(object):
             os.remove(cron_script_file)
         if apply_updates:
             if arc_path is not None:
-                if verbose:
+                if self.verbose:
                     print("Copying {}  -->  {}".format(init_script_file, arc_path))
                     print("Renaming {}  -->  {}".format(init_script_file, cron_script_file))
                 os.system('cp {} {}'.format(init_script_file, arc_path))
                 os.rename(init_script_file, cron_script_file)
         else:
-            if verbose:
+            if self.verbose:
                 print("Removing {}".format(init_script_file))
             os.remove(init_script_file)
             with open(cron_script_file, 'w') as fp:
