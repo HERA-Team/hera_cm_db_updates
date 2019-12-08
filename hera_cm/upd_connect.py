@@ -193,6 +193,7 @@ class UpdateConnect(upd_base.Update):
         Generate the compare script.
         """
         antkeys = cm_utils.put_keys_in_order(list(self.mismatches.connection.keys()), sort_order='NPR')
+        added_parts = []
         for antkey in antkeys:
             key, pol = antkey.split('-')
             for diff in self.mismatches.connection[antkey]['diff']:
@@ -200,11 +201,13 @@ class UpdateConnect(upd_base.Update):
                 if diff[0] is None:
                     up, urev, uprt = diff[1].upstream_part, diff[1].up_part_rev, diff[1].upstream_output_port
                     add_part = self.hera.get_general_part(up, urev)
-                    if add_part is not None:
+                    if add_part is not None and up not in added_parts:
+                        added_parts.append(up)
                         self.hera.update_part('add', add_part, cdate=self.cdate, ctime=self.ctime)
                     dn, drev, dprt = diff[1].downstream_part, diff[1].down_part_rev, diff[1].downstream_input_port
                     add_part = self.hera.get_general_part(dn, drev)
-                    if add_part is not None:
+                    if add_part is not None and dn not in added_parts:
+                        added_parts.append(dn)
                         self.hera.update_part('add', add_part, cdate=self.cdate, ctime=self.ctime)
                     self.hera.update_connection('add', [up, urev, uprt], [dn, drev, dprt],
                                                 cdate=self.cdate, ctime=self.ctime)

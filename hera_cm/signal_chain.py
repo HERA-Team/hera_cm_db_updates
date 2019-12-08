@@ -37,6 +37,7 @@ class Update:
         self.log_file = log_file
         self.at_date = cm_utils.get_astropytime(cdate, ctime)
         self.active = cm_active.ActiveData()
+        self.load_active(cdate=cdate, ctime=ctime)
         self.handle = cm_handling.Handling()
         input_script = os.path.basename(exename)
         if output_script_path is None:
@@ -344,7 +345,7 @@ class Update:
             return None
         if self.exists('part', hpn=hpn, rev=rev, port=None, side='up,down', at_date=self.at_date):
             return None
-        return (hpn, rev, hpn, ptype)
+        return (hpn, rev, ptype, hpn)
 
     def get_ser_num(self, hpn, part_type):
         """
