@@ -58,6 +58,9 @@ class Update:
     #   add_node            : when all equipment installed in node
     #   add_antenna_to_node : when a feed/fem etc is installed and hooked into node
 
+    def no_op_comment(self, comment):
+        self.fp.write('# {}\n'.format(comment))
+
     def add_antenna_station(self, stn, ser_num, cdate, ctime='10:00'):
         """
         Add an antenna station to the database.

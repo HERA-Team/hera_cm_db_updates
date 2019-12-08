@@ -14,7 +14,7 @@ setup_args = {
     'author_email': "hera-sw@lists.berkeley.edu",
     'version': '1.0',
     'packages': ['hera_cm'],
-    'scripts': ['scripts/update_info.py'],
+    'scripts': ['scripts/update_info.py', 'scripts/update_connect.py'],
     'include_package_data': True,
     'install_requires': []
 }

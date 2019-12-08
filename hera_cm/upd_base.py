@@ -44,4 +44,5 @@ class Update(object):
             os.remove(init_script_file)
             with open(cron_script_file, 'w') as fp:
                 fp.write('\n')
-        os.chmod(cron_script_file, 0o755)
+        if os.path.exists(cron_script_file):
+            os.chmod(cron_script_file, 0o755)

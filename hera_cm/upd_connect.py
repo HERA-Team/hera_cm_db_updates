@@ -22,7 +22,7 @@ class UpdateConnect(upd_base.Update):
     NotFound = "Not Found"
 
     def __init__(self, script_nom='connupd', script_path='./', verbose=True):
-        super(UpdateConnections, self).__init__(script_nom=script_nom, script_path=script_path, verbose=verbose)
+        super(UpdateConnect, self).__init__(script_nom=script_nom, script_path=script_path, verbose=verbose)
         self.mismatches = Namespace(hookup={}, connection={})
 
     def get_hpn_from_col(self, col, key, header):
@@ -194,6 +194,23 @@ class UpdateConnect(upd_base.Update):
                         else:
                             output_string += "{:30s}   <--->   {}\n".format(str(diff[0]), diff[1])
         return output_string
+
+    def gen_compare_script(self):
+        """
+        Generate the compare script.
+        """
+        antkeys = cm_utils.put_keys_in_order(list(self.mismatches.connection.keys()), sort_order='NPR')
+        for antkey in antkeys:
+            key, pol = antkey.split('-')
+            for diff in self.mismatches.connection[antkey]['diff']:
+                self.update_counter += 1
+                if diff[0] is None:
+                    self.hera.update_connection('add',
+                                                [diff[1].upstream_part, diff[1].up_part_rev, diff[1].upstream_output_port],
+                                                [diff[1].downstream_part, diff[1].down_part_rev, diff[1].downstream_input_port],
+                                                cdate=self.cdate, ctime=self.ctime)
+                else:
+                    self.hera.no_op_comment("{:30s}   <--->   {}".format(str(diff[0]), diff[1]))
 
     # ###########################################################################
     #                               other stuff                                 #
