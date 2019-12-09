@@ -138,16 +138,16 @@ class UpdateConnect(upd_base.Update):
         e.g. self.mismatches.hookup['HH30:A-E']['diff']
              self.mismatches.hookup['HH30:A-N']['sheet']
         """
-        for antkey in self.gsheets.ants:
+        for antkey in self.gsheet.ants:
             for pol in self.pols:
                 sheet_key = "{}-{}".format(antkey, pol)
                 tab = 'node{}'.format(self.gsheet.data[sheet_key][0])
                 header = self.gsheet.header[tab]
-                sheet_row = util.get_row_dict(header, self.sheet.data[sheet_key])
+                sheet_row = util.get_row_dict(header, self.gsheet.data[sheet_key])
                 for i, col in enumerate(header):
                     val = self._get_val_from_cmdb(antkey, pol, col)
                     if val is not None:
-                        sheet_val = self.gsheets.data[sheet_key][i]
+                        sheet_val = self.gsheet.data[sheet_key][i]
                         if val.upper() != sheet_val.upper():
                             if val != self.NotFound or len(sheet_val.strip()):
                                 self.mismatches.hookup.setdefault(sheet_key, {'sheet': sheet_row, 'diff': []})
@@ -182,11 +182,11 @@ class UpdateConnect(upd_base.Update):
                 comp_type = getattr(self.mismatches, ctype)
                 if antkey in comp_type.keys():
                     for diff in comp_type[antkey]['diff']:
-                        if len(diff) == 3:  # hookup
+                        if ctype == 'hookup':
                             output_string += "{:18s}  {:10s}   <--->   {}\n".format(diff[0], diff[1], diff[2])
                         else:
                             output_string += "{:30s}   <--->   {}\n".format(str(diff[0]), diff[1])
-        return output_string
+        print(output_string)
 
     def gen_compare_script(self):
         """
@@ -214,9 +214,6 @@ class UpdateConnect(upd_base.Update):
                 else:
                     self.hera.no_op_comment("{:30s}   <--->   {}".format(str(diff[0]), diff[1]))
 
-    # ###########################################################################
-    #                               other stuff                                 #
-    # ###########################################################################
     def _get_val_from_cmdb(self, antkey, pol, sheet_col):
         """
         Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column for comparison.

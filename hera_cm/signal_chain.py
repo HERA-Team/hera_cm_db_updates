@@ -37,7 +37,7 @@ class Update:
         self.log_file = log_file
         self.at_date = cm_utils.get_astropytime(cdate, ctime)
         self.active = cm_active.ActiveData()
-        self.load_active(cdate=cdate, ctime=ctime)
+        self.load_active(cdate=None)
         self.handle = cm_handling.Handling()
         input_script = os.path.basename(exename)
         if output_script_path is None:
@@ -62,14 +62,17 @@ class Update:
     #   add_node            : when all equipment installed in node
     #   add_antenna_to_node : when a feed/fem etc is installed and hooked into node
 
-    def update_adate(self, cdate='now', ctime='10:00'):
+    def update__at_date(self, cdate='now', ctime='10:00'):
         self.at_date = cm_utils.get_astropytime(cdate=cdate, ctime=ctime)
 
     def no_op_comment(self, comment):
-        self.fp.write('# {}\n'.format(comment))
+        self.fp.write('# {}\n'.format(comment.strip()))
 
     def load_active(self, cdate='now', ctime='10:00'):
-        at_date = cm_utils.get_astropytime(cdate, ctime)
+        if c_date is None:
+            at_date = self.at_date
+        else:
+            at_date = cm_utils.get_astropytime(cdate, ctime)
         self.active.load_parts(at_date=at_date)
         self.active.load_connections(at_date=at_date)
 
@@ -96,8 +99,9 @@ class Update:
         self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'.format(s, ser_num, cdate, ctime))
         added['station'].append([s, added['time']])
         added['part'].append([s, 'A', 'station', n, added['time']])
+        check_date = cm_utils.get_astropytime(cdate=cdate, ctime=ctime)
 
-        if not self.exists('part', a, 'H', 'now'):
+        if not self.exists('part', a, 'H', check_date=check_date):
             ant = [a, 'H', 'antenna', n]
             self.update_part('add', ant, cdate, ctime)
             ant.append(added['time'])
@@ -107,7 +111,7 @@ class Update:
 
         up = [s, 'A', 'ground']
         down = [a, 'H', 'ground']
-        if not self.exists('connection', hpn=s, rev='A', port='ground', side='up', at_date='now'):
+        if not self.exists('connection', hpn=s, rev='A', port='ground', side='up', check_date=check_date):
             self.update_connection('add', up, down, cdate, ctime)
             conn = [up[0], up[1], down[0], down[1], up[2], down[2], added['time']]
             added['connection'].append(conn)
@@ -193,9 +197,10 @@ class Update:
         self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'.format(p[0], p[3], cdate, partadd_time))
 
         # Check for parts to add and add them
+        check_date = cm_utils.get_astropytime(cdate=cdate, ctime=partadd_time)
         for p in part_to_add.values():
             if not p[0].startswith('ND'):  # Because add_station already added it
-                if not self.exists('part', p[0], p[1], 'now'):
+                if not self.exists('part', p[0], p[1], check_date=check_date):
                     self.update_part('add', p, cdate, partadd_time)
                     added['part'].append(list(p) + [added['time']])
                 else:
@@ -238,7 +243,8 @@ class Update:
                     dn = [part_to_add[snap_hpn][0], part_to_add[snap_hpn][1], self.snap_ports[j][pol]]
                     connection_to_add.append([up, dn, cdate, connadd_time])
         for up, down, codate, cotime in connection_to_add:
-            if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up', at_date=cdate):
+            check_date = cm_utils.get_astropytime(cdate=codate, ctime=cotime)
+            if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up', check_date=check_date):
                 self.update_connection('add', up, down, codate, cotime)
                 added['connection'].append([up[0], up[1], down[0], down[1], up[2], down[2], added['time']])
             else:
@@ -283,8 +289,9 @@ class Update:
 
         # Check for parts to add and add them
         added['time'] = str(int(cm_utils.get_astropytime(cdate, partadd_time).gps))
+        check_date = cm_utils.get_astropytime(cdate=cdate, ctime=partadd_time)
         for k, p in part_to_add.items():
-            if self.exists('part', p[0], p[1], 'now'):
+            if self.exists('part', p[0], p[1], check_date=check_date):
                 print("{} {} is already added".format(k, p[0]))
             else:
                 self.update_part('add', p, cdate, partadd_time)
@@ -318,7 +325,8 @@ class Update:
         # Check for connections to add and add them
         added['time'] = str(int(cm_utils.get_astropytime(cdate, connadd_time).gps))
         for up, down, codate, cotime in connection_to_add:
-            if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up', at_date=cdate):
+            check_date = cm_utils.get_astropytime(cdate=codate, ctime=cotime)
+            if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up', check_date=check_date):
                 self.update_connection('add', up, down, codate, cotime)
                 added['connection'].append([up[0], up[1], down[0], down[1], up[2], down[2], added['time']])
         print('\n')
@@ -327,7 +335,7 @@ class Update:
 
     # ##########################################################################################
 
-    def get_general_part(self, hpn, rev=None):
+    def get_general_part(self, hpn, rev=None, at_date=None):
         """
         This will return a list to add if the part does not exist.
         """
@@ -343,7 +351,7 @@ class Update:
                 break
         if rev is None or ptype is None:
             return None
-        if self.exists('part', hpn=hpn, rev=rev, port=None, side='up,down', at_date=self.at_date):
+        if self.exists('part', hpn=hpn, rev=rev, port=None, side='up,down', check_date=at_date):
             return None
         return (hpn, rev, ptype, hpn)
 
@@ -380,7 +388,7 @@ class Update:
         """
         self.fp.write(as_connect(add_or_stop, up, down, cdate, ctime))
 
-    def exists(self, atype, hpn, rev, port, side='up,down', at_date='now'):
+    def exists(self, atype, hpn, rev, port, side='up,down', check_date=None):
         """
         Check if a part or connection exists for hpn
 
@@ -396,19 +404,26 @@ class Update:
                Ports to check.  If None checks if any port is present.
         side : str
                "side" of part to check.  Options are:  up, down, or up,down (default)
-        at_date : string, float, int, Time, or datetime
-                  date for the connection to be active.  Default is 'now'
-
+        check_date : anything for cm_utils.get_astropytime
+                     if None, it will warn if class and active don't agree (arb 1sec)
+                     if not None, it will raise error if method and active don't agree (arb 1sec)
         Return
         ------
         boolean
                  True if existing corresponding hpn/rev/port
         """
+        if check_date is None:
+            if abs(self.at_date - self.active.at_date) > 1.0:
+                print("Warning:  class and active dates do not agree.")
+        else:
+            if abs(cm_utils.get_astropytime(check_date) - self.active.at_date) > 1.0:
+                raise ValueError("Supplied date and active date don't agree.")
         if rev is None:
             rev = cm_active.revs(hpn)
         elif isinstance(rev, str):
             rev = [rev]
         active_part = False
+        if abs()
         for r in rev:
             part_key = cm_utils.make_part_key(hpn, r)
             if part_key in self.active.parts.keys():
@@ -485,7 +500,7 @@ class Update:
         """
         ptype = {'PAM': 'post-amp', 'FEM': 'front-end', 'SNP': 'snap'}
         cdt = cm_utils.get_astropytime(cdate, ctime)
-        if not self.exists('part', hpn=old[0], rev=old[1], at_date=cdt):
+        if not self.exists('part', hpn=old[0], rev=old[1], check_date=cdt):
             print("{} does not exist -- aborting swap".format(old[0]))
             return
         replace_with_none = False
@@ -493,7 +508,7 @@ class Update:
             replace_with_none = True
             print("Only stopping old part.")
         else:
-            if not self.exists('part', hpn=new[0], rev=new[1], at_date=cdt):
+            if not self.exists('part', hpn=new[0], rev=new[1], check_date=cdt):
                 for ptk in ptype.keys():
                     if new[0].upper().startswith(ptk):
                         break

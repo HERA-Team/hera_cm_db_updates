@@ -17,9 +17,12 @@ class Update(object):
         self.now = datetime.datetime.now()
         self.cdate = '{}/{:02d}/{:02d}'.format(self.now.year, self.now.month, self.now.day)
         self.ctime = '{:02d}:{:02d}'.format(self.now.hour, self.now.minute)
-        self.script = '{}_{}_{}'.format(self.cdate.replace('/', '')[2:], script_nom, self.ctime.replace(':', ''))
-        self.hera = signal_chain.Update(self.script, output_script_path=script_path, chmod=True, verbose=verbose,
-                                        cdate=self.cdate, ctime=self.ctime)
+        if script_nom is None:
+            self.script = None
+        else:
+            self.script = '{}_{}_{}'.format(self.cdate.replace('/', '')[2:], script_nom, self.ctime.replace(':', ''))
+            self.hera = signal_chain.Update(self.script, output_script_path=script_path, chmod=True, verbose=verbose,
+                                            cdate=self.cdate, ctime=self.ctime)
         self.update_counter = 0
 
     def load_gsheet(self, test_state='none'):
@@ -33,6 +36,8 @@ class Update(object):
         """
         Close out process.
         """
+        if self.script is None:
+            return
         self.hera.done()
         apply_updates = self.update_counter > 0
         init_script_file = os.path.join(self.script_path, self.script)
