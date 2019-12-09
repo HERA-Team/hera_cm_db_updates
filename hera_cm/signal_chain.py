@@ -74,7 +74,9 @@ class Update:
         else:
             at_date = cm_utils.get_astropytime(cdate, ctime)
         self.active.load_parts(at_date=at_date)
-        self.active.load_connections(at_date=at_date)
+        self.active.load_connections(at_date=None)
+        self.active.info = []
+        self.active.geo = []
 
     def add_antenna_station(self, stn, ser_num, cdate, ctime='10:00'):
         """
@@ -337,7 +339,7 @@ class Update:
 
     def get_general_part(self, hpn, rev=None, at_date=None):
         """
-        This will return a list to add if the part does not exist.
+        This will return a list to add if the part does not exist or None if it does (or rev/type can't be found)
         """
         if rev is None:
             for key, val in current_revs.items():
@@ -517,7 +519,7 @@ class Update:
                 self.update_part('add', new, cdate, ctime)
             else:
                 print("{} already added.".format(new[0]))
-        old_pd = self.handle.get_dossier(hpn=old[0], rev=old[1], at_date=cdt, exact_match=True)
+        old_pd = self.handle.get_dossier(hpn=old[0], rev=old[1], at_date=cdt, active=self.active, exact_match=True)
         old_pd_key = list(old_pd.keys())
         if len(old_pd_key) > 1:
             print("Too many connected parts")
