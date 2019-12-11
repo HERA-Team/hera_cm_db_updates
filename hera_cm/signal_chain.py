@@ -69,7 +69,7 @@ class Update:
         self.fp.write('# {}\n'.format(comment.strip()))
 
     def load_active(self, cdate='now', ctime='10:00'):
-        if c_date is None:
+        if cdate is None:
             at_date = self.at_date
         else:
             at_date = cm_utils.get_astropytime(cdate, ctime)
