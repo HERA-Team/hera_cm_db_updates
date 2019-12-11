@@ -45,7 +45,7 @@ class SheetData:
         self.ants = set()
         self.tabs = sorted(list(gsheet.keys()))
 
-    def load_sheet(self, test_state='none'):
+    def load_sheet(self, node_csv='none'):
         """
         Gets the googlesheet information from the internet (or locally for testing etc)
 
