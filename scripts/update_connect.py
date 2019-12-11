@@ -10,7 +10,7 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--arc-path', dest='arc_path', help="Path for update archive.", default=None)
     ap.add_argument('--script-path', dest='script_path', help="Path for cron script", default='./')
-    ap.add_argument('-t', '--test_state', help="Flag for gsheet testing (r/w/n)", default='n')
+    ap.add_argument('-n', '--node_csv', help="Flag for read/write of gsheet (r/w/n)", default='n')
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
     ap.add_argument('-c', '--compare', help="Flag to compare and not write script (hookup/connection)", default=None)
     args = ap.parse_args()
@@ -26,7 +26,7 @@ else:
     cron_nom = 'conn_update.sh'
 
 update = upd_connect.UpdateConnect(script_nom=script_nom, script_path=args.script_path, verbose=args.verbose)
-update.load_gsheet(test_state=args.test_state)
+update.load_gsheet(node_csv=args.node_csv)
 update.load_hookup()
 update.make_sheet_connections()
 update.compare_connection()

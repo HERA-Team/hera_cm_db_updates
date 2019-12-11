@@ -10,7 +10,7 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--arc-path', dest='arc_path', help="Path for update archive.", default=None)
     ap.add_argument('--script-path', dest='script_path', help="Path for cron script", default='./')
-    ap.add_argument('-t', '--test_state', help="Flag for gsheet testing (r/w/n)", default='n')
+    ap.add_argument('-n', '--node_csv', help="Flag for read/write of gsheet (r/w/n)", default='n')
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
     ap.add_argument('-d', '--duplication_window', help="Number of days to use for duplicate comments.", default=60.0)
     args = ap.parse_args()
@@ -22,7 +22,7 @@ cron_nom = 'info_update.sh'
 
 args.duplication_window = float(args.duplication_window)
 update = upd_info.UpdateInfo(script_nom=script_nom, script_path=args.script_path, verbose=args.verbose)
-update.load_gsheet(test_state=args.test_state)
+update.load_gsheet(node_csv=args.node_csv)
 update.load_active()
 update.add_apriori()
 update.add_sheet_notes(duplication_window=args.duplication_window)
