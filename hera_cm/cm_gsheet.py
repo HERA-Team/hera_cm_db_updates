@@ -51,12 +51,12 @@ class SheetData:
 
         Parameters
         ----------
-        test_state : str
+        node_csv : str
             Test file status:  one of 'read', 'write', 'none' (only need first letter)
         """
-        test_state = test_state[0].lower()
+        node_csv = node_csv[0].lower()
         for tab in self.tabs:
-            if test_state == 'r':
+            if node_csv == 'r':
                 csv_data = []
                 with open(tab + '.csv', 'r') as fp:
                     for line in fp:
@@ -68,7 +68,7 @@ class SheetData:
                     csv_tab += line
                 csv_data = csv_tab.decode('utf-8').splitlines()
             csv_tab = csv.reader(csv_data)
-            if test_state == 'w':
+            if node_csv == 'w':
                 with open(tab + '.csv', 'w') as fp:
                     fp.write('\n'.join(csv_data))
             for data in csv_tab:
