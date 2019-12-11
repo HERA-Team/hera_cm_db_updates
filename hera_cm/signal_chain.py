@@ -425,7 +425,6 @@ class Update:
         elif isinstance(rev, str):
             rev = [rev]
         active_part = False
-        if abs()
         for r in rev:
             part_key = cm_utils.make_part_key(hpn, r)
             if part_key in self.active.parts.keys():
