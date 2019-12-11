@@ -52,7 +52,7 @@ class SheetData:
         Parameters
         ----------
         node_csv : str
-            Test file status:  one of 'read', 'write', 'none' (only need first letter)
+            node csv file status:  one of 'read', 'write', 'none' (only need first letter)
         """
         node_csv = node_csv[0].lower()
         for tab in self.tabs:
