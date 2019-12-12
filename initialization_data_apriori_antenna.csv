@@ -607,9 +607,6 @@ HH112,1214481618,,not_connected
 HH113,1214481618,,not_connected
 HH114,1214481618,,not_connected
 HH115,1214481618,,not_connected
-HH65,1214481618,,not_connected
-HH66,1214481618,,not_connected
-HH67,1214481618,,not_connected
 HH68,1214481618,,not_connected
 HH70,1188475218,1214481618.0,passed_checks
 HH72,1000000000,1214481618.0,not_connected
@@ -624,9 +621,7 @@ HH95,1214481618,,not_connected
 HH96,1214481618,,not_connected
 HH97,1214481618,,not_connected
 HH50,1214481618,,not_connected
-HH51,1214481618,,not_connected
 HH52,1214481618,,not_connected
-HH53,1214481618,,not_connected
 HH54,1188475218,1214481618.0,passed_checks
 HH56,1000000000,1214481618.0,not_connected
 HH58,1214481618,,not_connected
@@ -638,8 +633,6 @@ HH77,1214481618,,not_connected
 HH78,1214481618,,not_connected
 HH79,1214481618,,not_connected
 HH80,1214481618,,not_connected
-HH36,1214481618,,not_connected
-HH37,1214481618,,not_connected
 HH38,1214481618,,not_connected
 HH39,1214481618,,not_connected
 HH40,1188475218,1214481618.0,passed_checks
@@ -715,6 +708,10 @@ HH57,1214481618,1254139218.0,not_connected
 HH69,1214481618,1254139218.0,not_connected
 HH70,1214481618,1254139218.0,not_connected
 HH72,1214481618,1254139218.0,not_connected
+HH36,1214481618,1260196938.0,not_connected
+HH37,1214481618,1260196938.0,not_connected
+HH51,1214481618,1260196938.0,not_connected
+HH65,1214481618,1260196938.0,not_connected
 HB347,1214481618,,not_connected
 HB348,1214481618,,not_connected
 HB349,1214481618,,not_connected
@@ -820,3 +817,13 @@ HH72,1254139218,,not_connected
 HH83,1254225618,1259620818.0,needs_checking
 HH83,1259620818,1259694738.0,not_connected
 HH83,1259694738,,needs_checking
+HH36,1260196938,,passed_checks
+HH37,1260196938,,passed_checks
+HH51,1260196938,,passed_checks
+HH53,1214481618,1260196938.0,not_connected
+HH53,1260196938,,needs_checking
+HH65,1260196938,,passed_checks
+HH66,1214481618,1260196938.0,not_connected
+HH66,1260196938,,passed_checks
+HH67,1214481618,1260196938.0,not_connected
+HH67,1260196938,,passed_checks
