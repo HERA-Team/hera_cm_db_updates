@@ -1,0 +1,13 @@
+#! /bin/bash
+source ~/.bashrc
+echo "191212_connupd_1435" >> scripts.log 
+add_part.py -p FEM107 -r A -t front-end -m FEM107 --date 2019/12/12 --time 14:35
+add_connection.py -u FDV85 --uprev A --upport terminals -d FEM107 --dnrev A --dnport input --date 2019/12/12 --time 14:35
+# <FEM129:A<e|e10>NBP03:A>         <--->   <FEM107:A<e|e10>NBP03:A>
+add_connection.py -u FDV85 --uprev A --upport terminals -d FEM107 --dnrev A --dnport input --date 2019/12/12 --time 14:35
+# <FEM129:A<n|n10>NBP03:A>         <--->   <FEM107:A<n|n10>NBP03:A>
+add_part.py -p FEM128 -r A -t front-end -m FEM128 --date 2019/12/12 --time 14:35
+add_connection.py -u FDV77 --uprev A --upport terminals -d FEM128 --dnrev A --dnport input --date 2019/12/12 --time 14:35
+# <FEM130:A<e|e4>NBP03:A>          <--->   <FEM128:A<e|e4>NBP03:A>
+add_connection.py -u FDV77 --uprev A --upport terminals -d FEM128 --dnrev A --dnport input --date 2019/12/12 --time 14:35
+# <FEM130:A<n|n4>NBP03:A>          <--->   <FEM128:A<n|n4>NBP03:A>
