@@ -633,7 +633,6 @@ HH77,1214481618,,not_connected
 HH78,1214481618,,not_connected
 HH79,1214481618,,not_connected
 HH80,1214481618,,not_connected
-HH38,1214481618,,not_connected
 HH39,1214481618,,not_connected
 HH40,1188475218,1214481618.0,passed_checks
 HH43,1214481618,,not_connected
@@ -712,6 +711,7 @@ HH36,1214481618,1260196938.0,not_connected
 HH37,1214481618,1260196938.0,not_connected
 HH51,1214481618,1260196938.0,not_connected
 HH65,1214481618,1260196938.0,not_connected
+HH38,1214481618,1260200538.0,not_connected
 HB347,1214481618,,not_connected
 HB348,1214481618,,not_connected
 HB349,1214481618,,not_connected
@@ -827,3 +827,4 @@ HH66,1214481618,1260196938.0,not_connected
 HH66,1260196938,,passed_checks
 HH67,1214481618,1260196938.0,not_connected
 HH67,1260196938,,passed_checks
+HH38,1260200538,,passed_checks

@@ -672,3 +672,10 @@ HH51,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260
 HH51,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196940
 HH36,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196938
 HH36,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196940
+HH38,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260200538
+HH38,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260200540
+HH52,A,Feed heights (NE/SE/SW/NW): Z distance from jig =4.405,,1260261738
+HH68,A,"FEM 130 replaced with FEM 128. PAM 124 taken from node 5, installed in Node 3",,1260265338
+HH52,A,Moved from PAM port 8 to 10. PAM changed from 132 to 134,,1260265338
+HH50,A,"Moved from port PAM 10 to 12, PAM changed from 134 to 136.FEM  129 replaced with 107",,1260265338
+HH68,A,Feed heights (NE/SE/SW/NW): Z distance from jig = 4.,,1260268938
