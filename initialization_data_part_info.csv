@@ -679,3 +679,18 @@ HH68,A,"FEM 130 replaced with FEM 128. PAM 124 taken from node 5, installed in N
 HH52,A,Moved from PAM port 8 to 10. PAM changed from 132 to 134,,1260265338
 HH50,A,"Moved from port PAM 10 to 12, PAM changed from 134 to 136.FEM  129 replaced with 107",,1260265338
 HH68,A,Feed heights (NE/SE/SW/NW): Z distance from jig = 4.,,1260268938
+HH92,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH92,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
+HH93,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH93,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
+HH94,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH94,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
+HH109,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH109,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
+HH111,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH111,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
+HH112,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH112,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
+HH128,A,Final spectra for 128E look sterrible,,1260294138
+HH130,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH130,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
