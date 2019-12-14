@@ -29,10 +29,13 @@ for f in sorted(files):
     if 'connupd' in f:
         connupd_files.append(f)
 
+fprm = open('rm_connupd', 'w')
+
 connupd_data = []
 connupd_track = []
 for ifile in connupd_files:
     path_ifile = os.path.join(args.directory, ifile)
+    fprm.write("rm -f {}\n".format(path_ifile))
     dstr = ifile.split('_')[0]
     yr = int(dstr[:2])
     mn = int(dstr[2:4])
