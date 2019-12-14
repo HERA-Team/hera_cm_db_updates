@@ -465,24 +465,30 @@ class Update:
 
         self.fp.write('update_apriori.py -p {} -s {} --date {} --time {}\n'.format(antenna, status, cdate, ctime))
 
-    def add_part_info(self, hpn, rev, note, cdate, ctime):
+    def add_part_info(self, hpn, rev, note, cdate, ctime, ref=None):
         """
         Add a note/comment for a part to the database
 
         Parameters
         ----------
-        hpn : string
+        hpn : str
               HERA part number for comment
-        rev : string
+        rev : str
               Revision for comment.
-        note : string
+        note : str
                The desired note.
-        cdate : string
+        cdate : str
                 YYYY/MM/DD format
-        ctime : string
+        ctime : str
                 HH:MM format
+        ref : str
+              Reference note.
         """
-        self.fp.write('add_part_info.py -p {} -r {} -c "{}" --date {} --time {}\n'.format(hpn, rev, note, cdate, ctime))
+        if ref is None:
+            ref = ''
+        else:
+            ref = '-l "{}" '.format(ref)
+        self.fp.write('add_part_info.py -p {} -r {} -c "{}" {}--date {} --time {}\n'.format(hpn, rev, note, ref, cdate, ctime))
 
     def replace(self, old, new, cdate, ctime='13:00'):
         """

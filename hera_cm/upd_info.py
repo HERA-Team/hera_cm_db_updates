@@ -78,7 +78,7 @@ class UpdateInfo(upd_base.Update):
                 if not self.is_duplicate(antrev_key, statement, duplication_window):
                     if self.verbose:
                         print("Adding comment: {}:{} - {}".format(ant, rev, statement))
-                    self.hera.add_part_info(ant, rev, statement, pdate, ptime)
+                    self.hera.add_part_info(ant, rev, statement, pdate, ptime, ref='infoupd')
                     self.update_counter += 1
                     primary_keys.append(pkey)
 
