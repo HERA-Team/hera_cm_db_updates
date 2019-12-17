@@ -185,7 +185,8 @@ class UpdateConnect(upd_base.Update):
                         if ctype == 'hookup':
                             output_string += "{:18s}  {:10s}   <--->   {}\n".format(diff[0], diff[1], diff[2])
                         else:
-                            output_string += "{:30s}   <--->   {}\n".format(str(diff[0]), diff[1])
+                            output_string += "{:30s}   <--->   {}  ({}  {})\n".format(str(diff[0]), diff[1],
+                                                                                      self.cdate, self.ctime)
         print(output_string)
 
     def gen_compare_script(self):
@@ -212,7 +213,8 @@ class UpdateConnect(upd_base.Update):
                     self.hera.update_connection('add', [up, urev, uprt], [dn, drev, dprt],
                                                 cdate=self.cdate, ctime=self.ctime)
                 else:
-                    self.hera.no_op_comment("{:30s}   <--->   {}".format(str(diff[0]), diff[1]))
+                    self.hera.no_op_comment("{:30s}   <--->   {}  ({}  {})".format(str(diff[0]), diff[1],
+                                                                                   self.cdate, self.ctime))
 
     def _get_val_from_cmdb(self, antkey, pol, sheet_col):
         """

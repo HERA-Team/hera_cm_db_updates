@@ -7,6 +7,7 @@ Writes the file 'cat_infoupd.txt'
 import os
 import datetime
 import argparse
+from hera_mc import cm_utils
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
@@ -20,7 +21,6 @@ yr = int(args.search_after[:2])
 mn = int(args.search_after[2:4])
 dy = int(args.search_after[4:6])
 args.search_after = datetime.datetime(year=yr, month=mn, day=dy)
-args.keywords = args.keywords.split(',')
 
 infoupd_files = []
 files = os.listdir(args.directory)
@@ -44,9 +44,11 @@ for ifile in infoupd_files:
         for line in fp:
             if line.startswith('add'):
                 pre = line.split('"')[0]
-                antenna = pre.split()[2]
+                antenna = cm_utils.peel_key(pre.split()[2], 'PNR')
                 comment = line.split('"')[1]
                 post = line.split('"')[2]
-                date = post.split()[1]
-                time = post.split()[3]
-                fpout.write("{:6s} {} {}     {}\n".format(antenna, date, time, comment))
+                date = post.split()[1][5:]
+                time = post.split()[3][:5]
+                s = "{} {:3d}    {}  {}  {}".format(antenna[0], antenna[1], date, time, comment)
+                print(s)
+                print(s, file=fpout)
