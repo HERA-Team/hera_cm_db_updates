@@ -12,7 +12,8 @@ from hera_mc import cm_utils
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('-d', '--directory', help="Search directory", default='2019')
-    ap.add_argument('-s', '--search-after', dest='search_after', help="Search after YYMMDD", default='191210')
+    ap.add_argument('-s', '--search-after', dest='search_after', help="Search after YYMMDD",
+                    default='191210')
     args = ap.parse_args()
 else:
     args = argparse.Namespace(directory='2019', search_after='191201')
@@ -46,9 +47,10 @@ for ifile in infoupd_files:
                 pre = line.split('"')[0]
                 antenna = cm_utils.peel_key(pre.split()[2], 'PNR')
                 comment = line.split('"')[1]
-                post = line.split('"')[2]
-                date = post.split()[1][5:]
-                time = post.split()[3][:5]
+                dind = line.index('--date')
+                date = line[dind + 12: dind + 17]
+                tind = line.index('--time')
+                time = line[tind + 7: tind + 12]
                 s = "{} {:3d}    {}  {}  {}".format(antenna[0], antenna[1], date, time, comment)
                 print(s)
                 print(s, file=fpout)

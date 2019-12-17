@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 """
-Pulls the connupd connrmation out of the add_part_conn script files.
+Pulls the connupd information out of the add_part_conn script files.
 
 Writes the file 'cat_connupd.txt'
 """
