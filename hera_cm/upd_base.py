@@ -20,9 +20,10 @@ class Update(object):
         if script_nom is None:
             self.script = None
         else:
-            self.script = '{}_{}_{}'.format(self.cdate.replace('/', '')[2:], script_nom, self.ctime.replace(':', ''))
-            self.hera = signal_chain.Update(self.script, output_script_path=script_path, chmod=True, verbose=verbose,
-                                            cdate=self.cdate, ctime=self.ctime)
+            self.script = '{}_{}_{}'.format(self.cdate.replace('/', '')[2:], script_nom,
+                                            self.ctime.replace(':', ''))
+            self.hera = signal_chain.Update(self.script, output_script_path=script_path, chmod=True,
+                                            verbose=verbose, cdate=self.cdate, ctime=self.ctime)
         self.update_counter = 0
 
     def load_gsheet(self, node_csv='none'):

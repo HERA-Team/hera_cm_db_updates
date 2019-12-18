@@ -7,10 +7,6 @@
 from hera_mc import cm_hookup, cm_utils, cm_sysdef, cm_partconnect
 from . import util, cm_gsheet, upd_base
 
-import os
-import csv
-import requests
-import datetime
 from argparse import Namespace
 
 cm_req = Namespace(hpn=cm_sysdef.hera_zone_prefixes, pol='all',
@@ -22,7 +18,8 @@ class UpdateConnect(upd_base.Update):
     NotFound = "Not Found"
 
     def __init__(self, script_nom='connupd', script_path='./', verbose=True):
-        super(UpdateConnect, self).__init__(script_nom=script_nom, script_path=script_path, verbose=verbose)
+        super(UpdateConnect, self).__init__(script_nom=script_nom, script_path=script_path,
+                                            verbose=verbose)
         self.mismatches = Namespace(hookup={}, connection={})
 
     def get_hpn_from_col(self, col, key, header):
@@ -33,8 +30,10 @@ class UpdateConnect(upd_base.Update):
         Gets the hookup data from the hera_mc database.
         """
         self.hookup = cm_hookup.Hookup()
-        self.hookup_dict = self.hookup.get_hookup(hpn=cm_req.hpn, pol=cm_req.pol, at_date=cm_req.at_date,
-                                                  exact_match=cm_req.exact_match, hookup_type=cm_req.hookup_type)
+        self.hookup_dict = self.hookup.get_hookup(hpn=cm_req.hpn, pol=cm_req.pol,
+                                                  at_date=cm_req.at_date,
+                                                  exact_match=cm_req.exact_match,
+                                                  hookup_type=cm_req.hookup_type)
 
     def make_sheet_connections(self):
         """
@@ -54,29 +53,37 @@ class UpdateConnect(upd_base.Update):
                         if col == 'Ant':
                             ant = self.get_hpn_from_col('Ant', key, header)
                             feed = self.get_hpn_from_col('Feed', key, header)
-                            tc_.connection(upstream_part=ant, up_part_rev='H', upstream_output_port='focus',
-                                           downstream_part=feed, down_part_rev='A', downstream_input_port='input')
+                            tc_.connection(upstream_part=ant, up_part_rev='H',
+                                           upstream_output_port='focus',
+                                           downstream_part=feed, down_part_rev='A',
+                                           downstream_input_port='input')
                         elif col == 'Feed':
                             feed = self.get_hpn_from_col('Feed', key, header)
                             fem = self.get_hpn_from_col('FEM', key, header)
-                            tc_.connection(upstream_part=feed, up_part_rev='A', upstream_output_port='terminals',
-                                           downstream_part=fem, down_part_rev='A', downstream_input_port='input')
+                            tc_.connection(upstream_part=feed, up_part_rev='A',
+                                           upstream_output_port='terminals',
+                                           downstream_part=fem, down_part_rev='A',
+                                           downstream_input_port='input')
                         elif col == 'FEM':
                             fem = self.get_hpn_from_col('FEM', key, header)
                             nbp = util.gen_hpn('NBP', node_num)
-                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Bulkhead-PAM_Slot')])
+                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Bulkhead-PAM_Slot')])  # noqa
                             if port is not None:
                                 port = port.lower()
-                            tc_.connection(upstream_part=fem, up_part_rev='A', upstream_output_port=pol.lower(),
-                                           downstream_part=nbp, down_part_rev='A', downstream_input_port=port)
+                            tc_.connection(upstream_part=fem, up_part_rev='A',
+                                           upstream_output_port=pol.lower(),
+                                           downstream_part=nbp, down_part_rev='A',
+                                           downstream_input_port=port)
                         elif col == 'Bulkhead-PAM_Slot':
                             nbp = util.gen_hpn('NBP', node_num)
-                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Bulkhead-PAM_Slot')])
+                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Bulkhead-PAM_Slot')])  # noqa
                             if port is not None:
                                 port = port.lower()
                             pam = self.get_hpn_from_col('PAM', key, header)
-                            tc_.connection(upstream_part=nbp, up_part_rev='A', upstream_output_port=port,
-                                           downstream_part=pam, down_part_rev='A', downstream_input_port=pol.lower())
+                            tc_.connection(upstream_part=nbp, up_part_rev='A',
+                                           upstream_output_port=port,
+                                           downstream_part=pam, down_part_rev='A',
+                                           downstream_input_port=pol.lower())
                         elif col == 'PAM':
                             pam = self.get_hpn_from_col('PAM', key, header)
                             snap = self.get_hpn_from_col('SNAP', key, header)
@@ -86,31 +93,40 @@ class UpdateConnect(upd_base.Update):
                             if port is not None:
                                 port = port.lower()
                                 if port[0] != pol[0].lower():
-                                    msg = "{} port ({}) and pol ({}) don't match".format(snap, port, pol)
+                                    msg = "{} port ({}) and pol ({}) don't match".format(snap,
+                                                                                         port, pol)
                                     print(msg)
-                            tc_.connection(upstream_part=pam, up_part_rev='A', upstream_output_port=pol.lower(),
-                                           downstream_part=snap, down_part_rev='A', downstream_input_port=port)
+                            tc_.connection(upstream_part=pam, up_part_rev='A',
+                                           upstream_output_port=pol.lower(),
+                                           downstream_part=snap, down_part_rev='A',
+                                           downstream_input_port=port)
                         elif col == 'I2C_bus':  # extra to get @slot
                             pam = self.get_hpn_from_col('PAM', key, header)
                             try:
                                 pamkey = cm_utils.make_part_key(pam, 'A')
-                                pch = self.hookup.active.connections['up'][pamkey]['@SLOT'].downstream_part
+                                pch = self.hookup.active.connections['up'][pamkey]['@SLOT'].downstream_part  # noqa
                             except KeyError:
-                                print("{} is not an active connection!  No pam from {}".format(pam, key))
+                                print("{} is not an active connection!  No pam from {}"
+                                      .format(pam, key))
                                 pch = None
-                            slot = '{}{}'.format('@SLOT', self.gsheet.data[key][header.index('Bulkhead-PAM_Slot')])
+                            slot = '{}{}'.format('@SLOT', self.gsheet.data[key][header.index('Bulkhead-PAM_Slot')])  # noqa
                             if slot is not None:
                                 slot = slot.lower()
-                            tc_.connection(upstream_part=pam, up_part_rev='A', upstream_output_port='@slot',
-                                           downstream_part=pch, down_part_rev='A', downstream_input_port=slot)
+                            tc_.connection(upstream_part=pam, up_part_rev='A',
+                                           upstream_output_port='@slot',
+                                           downstream_part=pch, down_part_rev='A',
+                                           downstream_input_port=slot)
                         elif col == 'SNAP':
                             snap = self.get_hpn_from_col('SNAP', key, header)
                             node = util.gen_hpn("Node", node_num)
                             loc = "loc{}".format(self.gsheet.data[key][header.index('SNAP_Slot')])
-                            tc_.connection(upstream_part=snap, up_part_rev='A', upstream_output_port='rack',
-                                           downstream_part=node, down_part_rev='A', downstream_input_port=loc)
-                        if tc_.upstream_part is None or tc_.up_part_rev is None or tc_.upstream_output_port is None or\
-                           tc_.downstream_part is None or tc_.down_part_rev is None or tc_.downstream_input_port is None:
+                            tc_.connection(upstream_part=snap, up_part_rev='A',
+                                           upstream_output_port='rack',
+                                           downstream_part=node, down_part_rev='A',
+                                           downstream_input_port=loc)
+                        if tc_.upstream_part is None or tc_.up_part_rev is None or\
+                           tc_.upstream_output_port is None or tc_.downstream_part is None or\
+                           tc_.down_part_rev is None or tc_.downstream_input_port is None:
                             continue
                         self.gsheet.connection[key].append(tc_)
 
@@ -150,8 +166,8 @@ class UpdateConnect(upd_base.Update):
                         sheet_val = self.gsheet.data[sheet_key][i]
                         if val.upper() != sheet_val.upper():
                             if val != self.NotFound or len(sheet_val.strip()):
-                                self.mismatches.hookup.setdefault(sheet_key, {'sheet': sheet_row, 'diff': []})
-                                self.mismatches.hookup[sheet_key]['diff'].append([col, val, sheet_val])
+                                self.mismatches.hookup.setdefault(sheet_key, {'sheet': sheet_row, 'diff': []})  # noqa
+                                self.mismatches.hookup[sheet_key]['diff'].append([col, val, sheet_val])  # noqa
 
     def view_compare(self, ctypes=['hookup', 'connection']):
         """
@@ -183,29 +199,33 @@ class UpdateConnect(upd_base.Update):
                 if antkey in comp_type.keys():
                     for diff in comp_type[antkey]['diff']:
                         if ctype == 'hookup':
-                            output_string += "{:18s}  {:10s}   <--->   {}\n".format(diff[0], diff[1], diff[2])
+                            output_string += "{:18s}  {:10s}   <--->"
+                            "   {}\n".format(diff[0], diff[1], diff[2])
                         else:
-                            output_string += "{:30s}   <--->   {}  ({}  {})\n".format(str(diff[0]), diff[1],
-                                                                                      self.cdate, self.ctime)
+                            output_string += "{:30s}   <--->   {}  "
+                            "({}  {})\n".format(str(diff[0]), diff[1], self.cdate, self.ctime)
         print(output_string)
 
     def gen_compare_script(self):
         """
         Generate the compare script.
         """
-        antkeys = cm_utils.put_keys_in_order(list(self.mismatches.connection.keys()), sort_order='NPR')
+        antkeys = cm_utils.put_keys_in_order(list(self.mismatches.connection.keys()),
+                                             sort_order='NPR')
         added_parts = []
         for antkey in antkeys:
             key, pol = antkey.split('-')
             for diff in self.mismatches.connection[antkey]['diff']:
                 self.update_counter += 1
                 if diff[0] is None:
-                    up, urev, uprt = diff[1].upstream_part, diff[1].up_part_rev, diff[1].upstream_output_port
+                    up, urev, uprt = diff[1].upstream_part, diff[1].up_part_rev,\
+                                     diff[1].upstream_output_port
                     add_part = self.hera.get_general_part(up, urev)
                     if add_part is not None and up not in added_parts:
                         added_parts.append(up)
                         self.hera.update_part('add', add_part, cdate=self.cdate, ctime=self.ctime)
-                    dn, drev, dprt = diff[1].downstream_part, diff[1].down_part_rev, diff[1].downstream_input_port
+                    dn, drev, dprt = diff[1].downstream_part, diff[1].down_part_rev,\
+                                     diff[1].downstream_input_port
                     add_part = self.hera.get_general_part(dn, drev)
                     if add_part is not None and dn not in added_parts:
                         added_parts.append(dn)
@@ -213,8 +233,9 @@ class UpdateConnect(upd_base.Update):
                     self.hera.update_connection('add', [up, urev, uprt], [dn, drev, dprt],
                                                 cdate=self.cdate, ctime=self.ctime)
                 else:
-                    self.hera.no_op_comment("{:30s}   <--->   {}  ({}  {})".format(str(diff[0]), diff[1],
-                                                                                   self.cdate, self.ctime))
+                    s = "{:30s}   <--->   {}  ({}  {})".format(str(diff[0]), diff[1],
+                                                               self.cdate, self.ctime)
+                    self.hera.no_op_comment(s)
 
     def _get_val_from_cmdb(self, antkey, pol, sheet_col):
         """
@@ -228,11 +249,11 @@ class UpdateConnect(upd_base.Update):
             if ppkey.upper().startswith(pol.upper()):
                 break
         try:
-            pam_slot = util.get_num(hu.hookup[ppkey][cm_gsheet.hu_col['Bulkhead-PAM_Slot']].downstream_input_port)
+            pam_slot = util.get_num(hu.hookup[ppkey][cm_gsheet.hu_col['Bulkhead-PAM_Slot']].downstream_input_port)  # noqa
         except IndexError:
             return self.NotFound
         try:
-            snap_slot = str(int(util.get_num(hu.hookup[ppkey][cm_gsheet.hu_col['Node']].downstream_input_port)))
+            snap_slot = str(int(util.get_num(hu.hookup[ppkey][cm_gsheet.hu_col['Node']].downstream_input_port)))  # noqa
         except IndexError:
             return self.NotFound
         i2c = (int(pam_slot) + 2) % 3 + 1

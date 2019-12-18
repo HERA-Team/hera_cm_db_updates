@@ -13,7 +13,8 @@ class UpdateInfo(upd_base.Update):
     googlesheet
     """
     def __init__(self, script_nom='infoupd', script_path='./', verbose=True):
-        super(UpdateInfo, self).__init__(script_nom=script_nom, script_path=script_path, verbose=verbose)
+        super(UpdateInfo, self).__init__(script_nom=script_nom, script_path=script_path,
+                                         verbose=verbose)
 
     def load_active(self):
         self.active = cm_active.ActiveData()

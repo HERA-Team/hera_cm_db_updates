@@ -1,10 +1,9 @@
 import os
-import copy
 from hera_mc import cm_utils, cm_active, cm_handling
-from . import util
 
 current_revs = {'HH': 'A', 'A': 'H', 'FDV': 'V'}
-part_types = {'FDV': 'feed', 'FEM': 'front-end', 'NBP': 'node-bulkhead', 'PAM': 'post-amp', 'SNP': 'snap'}
+part_types = {'FDV': 'feed', 'FEM': 'front-end', 'NBP': 'node-bulkhead',
+              'PAM': 'post-amp', 'SNP': 'snap'}
 
 
 def as_part(add_or_stop, p, cdate, ctime):
@@ -18,8 +17,9 @@ def as_part(add_or_stop, p, cdate, ctime):
 
 
 def as_connect(add_or_stop, up, dn, cdate, ctime):
-    s = '{}_connection.py -u {} --uprev {} --upport {} -d {} --dnrev {} --dnport {} --date {} --time {}\n'.format(
-        add_or_stop, up[0], up[1], up[2], dn[0], dn[1], dn[2], cdate, ctime)
+    s = '{}_connection.py -u {} --uprev {} --upport {} -d {} --dnrev {} --dnport {}'\
+        ' --date {} --time {}\n'.format(add_or_stop, up[0], up[1], up[2],
+                                        dn[0], dn[1], dn[2], cdate, ctime)
     return s
 
 
@@ -98,7 +98,8 @@ class Update:
         s = "HH{}".format(stn)
         a = "A{}".format(stn)
         n = "S/N{}".format(ser_num)
-        self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'.format(s, ser_num, cdate, ctime))
+        self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'
+                      .format(s, ser_num, cdate, ctime))
         added['station'].append([s, added['time']])
         added['part'].append([s, 'A', 'station', n, added['time']])
         check_date = cm_utils.get_astropytime(cdate=cdate, ctime=ctime)
@@ -113,13 +114,15 @@ class Update:
 
         up = [s, 'A', 'ground']
         down = [a, 'H', 'ground']
-        if not self.exists('connection', hpn=s, rev='A', port='ground', side='up', check_date=check_date):
+        if not self.exists('connection', hpn=s, rev='A', port='ground', side='up',
+                           check_date=check_date):
             self.update_connection('add', up, down, cdate, ctime)
             conn = [up[0], up[1], down[0], down[1], up[2], down[2], added['time']]
             added['connection'].append(conn)
         return added
 
-    def add_node(self, node, fps, pch, ncm, pams, snaps, cdate, ctime=['10:00', '11:00'], ser_num={}, override=False):
+    def add_node(self, node, fps, pch, ncm, pams, snaps, cdate, ctime=['10:00', '11:00'],
+                 ser_num={}, override=False):
         """
         Add a node and interior into database.
 
@@ -154,7 +157,8 @@ class Update:
             else:
                 ovrd = False if ox not in override.keys() else override[ox]
             if not ovrd and overridable_parts[ox][0] != overridable_parts[ox][1]:
-                print("Need {} {}s - you've supplied {}".format(overridable_parts[ox][0], ox, overridable_parts[ox][1]))
+                print("Need {} {}s - you've supplied {}"
+                      .format(overridable_parts[ox][0], ox, overridable_parts[ox][1]))
                 print("If ok, rerun with <override['{}']=True>".format(ox))
                 return
 
@@ -196,7 +200,8 @@ class Update:
             part_to_add[hpn] = (hpn, 'A', 'snap', sn)
         # Add node as station
         p = part_to_add['node-station']
-        self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'.format(p[0], p[3], cdate, partadd_time))
+        self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'
+                      .format(p[0], p[3], cdate, partadd_time))
 
         # Check for parts to add and add them
         check_date = cm_utils.get_astropytime(cdate=cdate, ctime=partadd_time)
@@ -226,7 +231,8 @@ class Update:
         for i, _pam in enumerate(pams):
             hpn = 'PAM{:03d}'.format(_pam)
             up = [part_to_add[hpn][0], part_to_add[hpn][1], '@slot']
-            dn = [part_to_add['pam-chassis'][0], part_to_add['pam-chassis'][1], '@slot{}'.format(i + 1)]
+            dn = [part_to_add['pam-chassis'][0], part_to_add['pam-chassis'][1],
+                  '@slot{}'.format(i + 1)]
             connection_to_add.append([up, dn, cdate, connadd_time])
             for pol in ['e', 'n']:
                 nbport = '{}{}'.format(pol, i + 1)
@@ -242,18 +248,22 @@ class Update:
                 for j in range(3):
                     pam_hpn = 'PAM{:03d}'.format(pams[i * 3 + j])
                     up = [part_to_add[pam_hpn][0], part_to_add[pam_hpn][1], pol]
-                    dn = [part_to_add[snap_hpn][0], part_to_add[snap_hpn][1], self.snap_ports[j][pol]]
+                    dn = [part_to_add[snap_hpn][0], part_to_add[snap_hpn][1],
+                          self.snap_ports[j][pol]]
                     connection_to_add.append([up, dn, cdate, connadd_time])
         for up, down, codate, cotime in connection_to_add:
             check_date = cm_utils.get_astropytime(cdate=codate, ctime=cotime)
-            if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up', check_date=check_date):
+            if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up',
+                               check_date=check_date):
                 self.update_connection('add', up, down, codate, cotime)
-                added['connection'].append([up[0], up[1], down[0], down[1], up[2], down[2], added['time']])
+                added['connection'].append([up[0], up[1], down[0], down[1],
+                                            up[2], down[2], added['time']])
             else:
                 print("{} - {} are already connected".format(up, dn))
         return added
 
-    def add_antenna_to_node(self, ant, feed, fem, node, nbp_port, cdate, ctime=['10:00', '11:00'], ser_num={}):
+    def add_antenna_to_node(self, ant, feed, fem, node, nbp_port,
+                            cdate, ctime=['10:00', '11:00'], ser_num={}):
         """
         Parameters:
         -----------
@@ -328,9 +338,11 @@ class Update:
         added['time'] = str(int(cm_utils.get_astropytime(cdate, connadd_time).gps))
         for up, down, codate, cotime in connection_to_add:
             check_date = cm_utils.get_astropytime(cdate=codate, ctime=cotime)
-            if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up', check_date=check_date):
+            if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2],
+                               side='up', check_date=check_date):
                 self.update_connection('add', up, down, codate, cotime)
-                added['connection'].append([up[0], up[1], down[0], down[1], up[2], down[2], added['time']])
+                added['connection'].append([up[0], up[1], down[0], down[1],
+                                            up[2], down[2], added['time']])
         print('\n')
 
         return added
@@ -339,7 +351,8 @@ class Update:
 
     def get_general_part(self, hpn, rev=None, at_date=None):
         """
-        This will return a list to add if the part does not exist or None if it does (or rev/type can't be found)
+        This will return a list to add if the part does not exist or
+        None if it does (or rev/type can't be found)
         """
         if rev is None:
             for key, val in current_revs.items():
@@ -367,7 +380,8 @@ class Update:
         return sn
 
     def to_implement(self, command, ant, rev, statement, pdate, ptime):
-        stmt = '{} not implemented! {} {} {} {} {} {}\n'.format(command, ant, rev, statement, pdate, ptime)
+        stmt = "{} not implemented! {} {} {} {} {} {}\n".format(command, ant, rev,
+                                                                statement, pdate, ptime)
         self.fp.write(stmt)
         print("{}".format(stmt.strip()))
 
@@ -463,7 +477,8 @@ class Update:
             HH:MM, default is 12:00
         """
 
-        self.fp.write('update_apriori.py -p {} -s {} --date {} --time {}\n'.format(antenna, status, cdate, ctime))
+        self.fp.write('update_apriori.py -p {} -s {} --date {} --time {}\n'
+                      .format(antenna, status, cdate, ctime))
 
     def add_part_info(self, hpn, rev, note, cdate, ctime, ref=None):
         """
@@ -488,11 +503,13 @@ class Update:
             ref = ''
         else:
             ref = '-l "{}" '.format(ref)
-        self.fp.write('add_part_info.py -p {} -r {} -c "{}" {}--date {} --time {}\n'.format(hpn, rev, note, ref, cdate, ctime))
+        self.fp.write('add_part_info.py -p {} -r {} -c "{}" {}--date {} --time {}\n'
+                      .format(hpn, rev, note, ref, cdate, ctime))
 
     def replace(self, old, new, cdate, ctime='13:00'):
         """
-        Replaces an old PAM, FEM or SNAP part, with a new one.  If new is None, it just stops the old one.
+        Replaces an old PAM, FEM or SNAP part, with a new one.
+        If new is None, it just stops the old one.
 
         Parameters
         ----------
@@ -524,7 +541,8 @@ class Update:
                 self.update_part('add', new, cdate, ctime)
             else:
                 print("{} already added.".format(new[0]))
-        old_pd = self.handle.get_dossier(hpn=old[0], rev=old[1], at_date=cdt, active=self.active, exact_match=True)
+        old_pd = self.handle.get_dossier(hpn=old[0], rev=old[1], at_date=cdt,
+                                         active=self.active, exact_match=True)
         old_pd_key = list(old_pd.keys())
         if len(old_pd_key) > 1:
             print("Too many connected parts")
@@ -557,7 +575,8 @@ class Update:
             print("----------------------DONE-----------------------")
         if not self.chmod:
             if self.verbose:
-                print("If changes OK, 'chmod u+x {}' and run that script.".format(self.output_script))
+                print("If changes OK, 'chmod u+x {}' and run that script."
+                      .format(self.output_script))
         else:
             os.chmod(self.output_script, 0o755)
             if self.verbose:
