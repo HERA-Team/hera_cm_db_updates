@@ -225,7 +225,7 @@ class UpdateConnect(upd_base.Update):
                         added_parts.append(up)
                         self.hera.update_part('add', add_part, cdate=self.cdate, ctime=self.ctime)
                     dn, drev, dprt = diff[1].downstream_part, diff[1].down_part_rev,\
-                                     diff[1].downstream_input_port
+                                     diff[1].downstream_input_port  # noqa
                     add_part = self.hera.get_general_part(dn, drev)
                     if add_part is not None and dn not in added_parts:
                         added_parts.append(dn)

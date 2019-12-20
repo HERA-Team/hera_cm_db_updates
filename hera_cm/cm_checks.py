@@ -5,7 +5,6 @@
 """
 """
 from hera_mc import cm_active, cm_utils
-from astropy.time import Time
 
 
 class Checks:
@@ -32,7 +31,8 @@ class Checks:
                                 posting_gpstime = comments[i].posting_gpstime
                             else:
                                 posting_gpstime = comments[j].posting_gpstime
-                            print("{}'{}' and hpn_rev='{}' and posting_gpstime='{}';".format(cmdpre, hpn, rev, posting_gpstime), file=fp)
+                            print("{}'{}' and hpn_rev='{}' and posting_gpstime='{}';"
+                                  .format(cmdpre, hpn, rev, posting_gpstime), file=fp)
         if duplicates_found:
             print("{} duplicates found".format(duplicates_found))
             print("run 'psql hera_mc -f {}'".format(filename))
@@ -71,13 +71,15 @@ class Checks:
             self.cmad.load_parts(next)
             self.cmad.load_connections(next)
             full_part_set = list(self.cmad.parts.keys())
-            full_conn_set = set(list(self.cmad.connections['up'].keys()) + list(self.cmad.connections['down'].keys()))
+            full_conn_set = set(list(self.cmad.connections['up'].keys()) +
+                                list(self.cmad.connections['down'].keys()))
             for key in full_conn_set:
                 if key not in full_part_set:
                     missing_parts.setdefault(key, [])
                     missing_parts[key].append(next)
                     print(self.cmad.at_date.isot)
-                    print("\t{} is not listed as an active part even though listed in an active connection.".format(key))
+                    print("\t{} is not listed as an active part "
+                          "even though listed in an active connection.".format(key))
             next += self.step
         print("Stopping check at {}".format(next.isot))
         if len(missing_parts.keys()):
