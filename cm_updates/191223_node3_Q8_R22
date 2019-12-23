@@ -1,0 +1,33 @@
+#! /bin/bash
+source ~/.bashrc
+echo "./191223_node3_Q8_R22.py" >> scripts.log 
+stop_connection.py -u FEM130 --uprev A --upport e -d NBP03 --dnrev A --dnport e4 --date 2019/12/12 --time 10:00
+stop_connection.py -u FEM130 --uprev A --upport n -d NBP03 --dnrev A --dnport n4 --date 2019/12/12 --time 10:00
+stop_connection.py -u FDV77 --uprev A --upport terminals -d FEM130 --dnrev A --dnport input --date 2019/12/12 --time 10:00
+stop_connection.py -u PAM124 --uprev A --upport e -d SNPC000018 --dnrev A --dnport e10 --date 2019/12/12 --time 10:00
+stop_connection.py -u PAM124 --uprev A --upport n -d SNPC000018 --dnrev A --dnport n8 --date 2019/12/12 --time 10:00
+stop_connection.py -u NBP05 --uprev A --upport e12 -d PAM124 --dnrev A --dnport e --date 2019/12/12 --time 10:00
+stop_connection.py -u NBP05 --uprev A --upport n12 -d PAM124 --dnrev A --dnport n --date 2019/12/12 --time 10:00
+stop_connection.py -u PAM128 --uprev A --upport e -d SNPC000002 --dnrev A --dnport e2 --date 2019/12/12 --time 10:00
+stop_connection.py -u PAM128 --uprev A --upport n -d SNPC000002 --dnrev A --dnport n0 --date 2019/12/12 --time 10:00
+stop_connection.py -u NBP03 --uprev A --upport e4 -d PAM128 --dnrev A --dnport e --date 2019/12/12 --time 10:00
+stop_connection.py -u NBP03 --uprev A --upport n4 -d PAM128 --dnrev A --dnport n --date 2019/12/12 --time 10:00
+stop_connection.py -u FEM129 --uprev A --upport e -d NBP03 --dnrev A --dnport e10 --date 2019/12/12 --time 10:00
+stop_connection.py -u FEM129 --uprev A --upport n -d NBP03 --dnrev A --dnport n10 --date 2019/12/12 --time 10:00
+stop_connection.py -u FDV85 --uprev A --upport terminals -d FEM129 --dnrev A --dnport input --date 2019/12/12 --time 10:00
+add_part.py -p FEM107 -r A -t front-end -m FEM107 --date 2019/12/12 --time 10:01
+add_part.py -p FEM128 -r A -t front-end -m FEM107 --date 2019/12/12 --time 10:01
+add_connection.py -u FEM128 --uprev A --upport e -d NBP03 --dnrev A --dnport e4 --date 2019/12/12 --time 10:02
+add_connection.py -u FEM128 --uprev A --upport n -d NBP03 --dnrev A --dnport n4 --date 2019/12/12 --time 10:02
+add_connection.py -u FDV77 --uprev A --upport terminals -d FEM128 --dnrev A --dnport input --date 2019/12/12 --time 10:02
+add_connection.py -u PAM128 --uprev A --upport e -d SNPC000018 --dnrev A --dnport e10 --date 2019/12/12 --time 10:02
+add_connection.py -u PAM128 --uprev A --upport n -d SNPC000018 --dnrev A --dnport n8 --date 2019/12/12 --time 10:02
+add_connection.py -u NBP05 --uprev A --upport e12 -d PAM128 --dnrev A --dnport e --date 2019/12/12 --time 10:02
+add_connection.py -u NBP05 --uprev A --upport n12 -d PAM128 --dnrev A --dnport n --date 2019/12/12 --time 10:02
+add_connection.py -u PAM124 --uprev A --upport e -d SNPC000002 --dnrev A --dnport e2 --date 2019/12/12 --time 10:02
+add_connection.py -u PAM124 --uprev A --upport n -d SNPC000002 --dnrev A --dnport n0 --date 2019/12/12 --time 10:02
+add_connection.py -u NBP03 --uprev A --upport e4 -d PAM124 --dnrev A --dnport e --date 2019/12/12 --time 10:02
+add_connection.py -u NBP03 --uprev A --upport n4 -d PAM124 --dnrev A --dnport n --date 2019/12/12 --time 10:02
+add_connection.py -u FDV85 --uprev A --upport terminals -d FEM107 --dnrev A --dnport input --date 2019/12/12 --time 10:02
+add_connection.py -u FEM107 --uprev A --upport e -d NBP03 --dnrev A --dnport e12 --date 2019/12/12 --time 10:02
+add_connection.py -u FEM107 --uprev A --upport n -d NBP03 --dnrev A --dnport n12 --date 2019/12/12 --time 10:02
