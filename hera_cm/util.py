@@ -5,7 +5,6 @@
 """
 """
 import datetime
-import os
 from argparse import Namespace
 
 
@@ -54,7 +53,8 @@ def get_unique_pkey(hpn, rev, pdate, ptime, old_timers):
         ptime = ptime + ':00'
     pkey = '|'.join([hpn, rev, pdate, ptime])
     while pkey in old_timers:
-        newdt = datetime.datetime.strptime('-'.join([pdate, ptime]), '%Y/%m/%d-%H:%M:%S') + datetime.timedelta(seconds=2)
+        newdt = datetime.datetime.strptime('-'.join([pdate, ptime]),
+                                           '%Y/%m/%d-%H:%M:%S') + datetime.timedelta(seconds=2)
         pdate = newdt.strftime('%Y/%m/%d')
         ptime = newdt.strftime('%H:%M:%S')
         pkey = '|'.join([hpn, rev, pdate, ptime])
