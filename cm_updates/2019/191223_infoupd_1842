@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "191223_infoupd_1842" >> scripts.log 
+add_part_info.py -p HH50 -r A -c "Moved from port PAM 10 to 12, PAM changed from 134 to 136." -l "infoupd" --date 2019/12/23 --time 18:42:00
