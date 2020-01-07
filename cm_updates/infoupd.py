@@ -11,12 +11,12 @@ from hera_mc import cm_utils
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
-    ap.add_argument('-d', '--directory', help="Search directory", default='2019')
+    ap.add_argument('-d', '--directory', help="Search directory", default='2020')
     ap.add_argument('-s', '--search-after', dest='search_after', help="Search after YYMMDD",
-                    default='191210')
+                    default='200101')
     args = ap.parse_args()
 else:
-    args = argparse.Namespace(directory='2019', search_after='191201')
+    args = argparse.Namespace(directory='2020', search_after='200101')
 
 yr = int(args.search_after[:2])
 mn = int(args.search_after[2:4])
