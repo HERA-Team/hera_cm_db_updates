@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+echo "190810_fix84" >> scripts.log 
+add_part.py -p FDV35 -r A -t feed -m FDV35 --date 2019/08/07 --time 10:00
+add_part.py -p FEM054 -r A -t front-end -m FEM054 --date 2019/08/07 --time 10:00
+add_connection.py -u A84 --uprev H --upport focus -d FDV35 --dnrev A --dnport input --date 2019/08/07 --time 11:00
+add_connection.py -u FDV35 --uprev A --upport terminals -d FEM054 --dnrev A --dnport input --date 2019/08/07 --time 11:00
+add_connection.py -u FEM054 --uprev A --upport e -d NBP08 --dnrev A --dnport e10 --date 2019/08/07 --time 11:00
+add_connection.py -u FEM054 --uprev A --upport n -d NBP08 --dnrev A --dnport n10 --date 2019/08/07 --time 11:00

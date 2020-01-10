@@ -1,0 +1,41 @@
+#! /usr/bin/env bash
+echo "190827_overview_update_0706" >> scripts.log 
+stop_connection.py -u NBP00 --uprev A --upport n2 -d PAM023 --dnrev A --dnport n --date 2019/08/15 --time 12:00
+stop_connection.py -u NBP00 --uprev A --upport e2 -d PAM023 --dnrev A --dnport e --date 2019/08/15 --time 12:00
+stop_connection.py -u PAM023 --uprev A --upport @slot -d PCH01 --dnrev A --dnport @slot02 --date 2019/08/15 --time 12:00
+stop_connection.py -u PAM023 --uprev A --upport e -d SNPC000057 --dnrev A --dnport e6 --date 2019/08/15 --time 12:00
+stop_connection.py -u PAM023 --uprev A --upport n -d SNPC000057 --dnrev A --dnport n4 --date 2019/08/15 --time 12:00
+stop_connection.py -u NBP09 --uprev A --upport n9 -d PAM043 --dnrev A --dnport n --date 2019/08/15 --time 12:00
+stop_connection.py -u NBP09 --uprev A --upport e9 -d PAM043 --dnrev A --dnport e --date 2019/08/15 --time 12:00
+stop_connection.py -u PAM043 --uprev A --upport @slot -d PCH02 --dnrev A --dnport @slot09 --date 2019/08/15 --time 12:00
+stop_connection.py -u PAM043 --uprev A --upport e -d SNPC000013 --dnrev A --dnport e10 --date 2019/08/15 --time 12:00
+stop_connection.py -u PAM043 --uprev A --upport n -d SNPC000013 --dnrev A --dnport n8 --date 2019/08/15 --time 12:00
+add_connection.py -u NBP09 --uprev A --upport n9 -d PAM023 --dnrev A --dnport n --date 2019/08/15 --time 12:00
+add_connection.py -u NBP09 --uprev A --upport e9 -d PAM023 --dnrev A --dnport e --date 2019/08/15 --time 12:00
+add_connection.py -u PAM023 --uprev A --upport @slot -d PCH02 --dnrev A --dnport @slot09 --date 2019/08/15 --time 12:00
+add_connection.py -u PAM023 --uprev A --upport e -d SNPC000013 --dnrev A --dnport e10 --date 2019/08/15 --time 12:00
+add_connection.py -u PAM023 --uprev A --upport n -d SNPC000013 --dnrev A --dnport n8 --date 2019/08/15 --time 12:00
+stop_connection.py -u NBP09 --uprev A --upport e7 -d PAM041 --dnrev A --dnport e --date 2019/08/15 --time 12:00
+stop_connection.py -u NBP09 --uprev A --upport n7 -d PAM041 --dnrev A --dnport n --date 2019/08/15 --time 12:00
+stop_connection.py -u PAM041 --uprev A --upport @slot -d PCH02 --dnrev A --dnport @slot07 --date 2019/08/15 --time 12:00
+stop_connection.py -u NBP09 --uprev A --upport e8 -d PAM042 --dnrev A --dnport e --date 2019/08/15 --time 12:00
+stop_connection.py -u NBP09 --uprev A --upport n8 -d PAM042 --dnrev A --dnport n --date 2019/08/15 --time 12:00
+stop_connection.py -u PAM042 --uprev A --upport @slot -d PCH02 --dnrev A --dnport @slot08 --date 2019/08/15 --time 12:00
+stop_connection.py -u PAM042 --uprev A --upport e -d SNPC000013 --dnrev A --dnport e6 --date 2019/08/15 --time 12:00
+stop_connection.py -u PAM042 --uprev A --upport n -d SNPC000013 --dnrev A --dnport n4 --date 2019/08/15 --time 12:00
+add_connection.py -u NBP09 --uprev A --upport e8 -d PAM041 --dnrev A --dnport e --date 2019/08/15 --time 12:00
+add_connection.py -u NBP09 --uprev A --upport n8 -d PAM041 --dnrev A --dnport n --date 2019/08/15 --time 12:00
+add_connection.py -u PAM041 --uprev A --upport @slot -d PCH02 --dnrev A --dnport @slot08 --date 2019/08/15 --time 12:00
+add_connection.py -u PAM041 --uprev A --upport e -d SNPC000013 --dnrev A --dnport e6 --date 2019/08/15 --time 12:00
+add_connection.py -u PAM041 --uprev A --upport n -d SNPC000013 --dnrev A --dnport n4 --date 2019/08/15 --time 12:00
+add_part_info.py -p HH90 -r A -c "Feed heights (m):  NE, NW, SE, SW: 3.941, 3.942, 3.939, 3.942" --date 2019/08/22 --time 12:00
+add_part_info.py -p HH91 -r A -c "Feed heights (m):  NE, NW, SE, SW: 3.925, 3.915, 3.921, 3.918" --date 2019/08/22 --time 12:00
+add_part_info.py -p HH105 -r A -c "Feed heights (m):  NE, NW, SE, SW: 4.298, 4.285, 4.289, 4.289" --date 2019/08/22 --time 12:00
+add_part_info.py -p HH106 -r A -c "Feed heights (m):  NE, NW, SE, SW: 4.317, 4.314, 4.316, 4.316" --date 2019/08/22 --time 12:00
+add_part_info.py -p HH107 -r A -c "Feed heights (m):  NE, NW, SE, SW: 4.064, 4.070, 4.076, 4.073" --date 2019/08/22 --time 12:00
+add_part_info.py -p HH108 -r A -c "Feed heights (m):  NE, NW, SE, SW: 4.366, 4.368, 4.365, 4.368" --date 2019/08/22 --time 12:00
+add_part_info.py -p HH124 -r A -c "Feed heights (m):  NE, NW, SE, SW: 4.115, 4.112, 4.111, 4.112" --date 2019/08/22 --time 12:00
+add_part_info.py -p HH88 -r A -c "Feed heights (m):  NE, NW, SE, SW: 3.894, 3.887, 3.894, 3.896" --date 2019/08/22 --time 12:00
+add_part_info.py -p HH89 -r A -c "Feed heights (m):  NE, NW, SE, SW: 4.201,4.199,4.201,4.200" --date 2019/08/22 --time 12:00
+add_part_info.py -p HH125 -r A -c "Feed heights (m):  NE, NW, SE, SW: 4.101, 4.105, 4.115, 4.118" --date 2019/08/22 --time 12:00
+add_part_info.py -p HH126 -r A -c "Feed heights (m):  NE, NW, SE, SW: 4.256, 4.260, 4.263, 4.260" --date 2019/08/22 --time 12:00

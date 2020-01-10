@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+echo "190917_fix123" >> scripts.log 
+add_connection.py -u A123 --uprev H --upport focus -d FDV45 --dnrev A --dnport input --date 2019/08/07 --time 12:30

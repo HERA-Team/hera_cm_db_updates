@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+echo "190512_pam47 (do_it = True)" >> scripts.log 
+stop_connection.py -u PAM028 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot07 --date 2019/03/01 --time 11:00 --actually_do_it
+add_part.py -p PAM047 -r A -t post-amp -m 047 --date 2019/05/12 --time 10:00 --actually_do_it
+add_connection.py -u PAM047 --uprev A --upport @slot -d PCH010 --dnrev A --dnport @slot07 --date 2019/05/12 --time 10:30 --actually_do_it
+add_connection.py -u CRF014 --uprev A --upport eb -d PAM047 --dnrev A --dnport ea --date 2019/05/12 --time 11:00 --actually_do_it
+add_connection.py -u CRF014 --uprev A --upport nb -d PAM047 --dnrev A --dnport na --date 2019/05/12 --time 11:00 --actually_do_it
+add_connection.py -u PAM047 --uprev A --upport eb -d SNPA000024 --dnrev A --dnport e2 --date 2019/05/12 --time 11:30 --actually_do_it
+add_connection.py -u PAM047 --uprev A --upport nb -d SNPA000024 --dnrev A --dnport n4 --date 2019/05/12 --time 11:30 --actually_do_it

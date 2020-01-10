@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "191216_infoupd_1542" >> scripts.log 
+add_part_info.py -p HH128 -r A -c "Final spectra for 128E looks terrible" -l "infoupd" --date 2019/12/16 --time 15:42:00

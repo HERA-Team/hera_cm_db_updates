@@ -1,0 +1,54 @@
+#! /usr/bin/env bash
+echo "190917_overview_update_1437" >> scripts.log 
+add_part_info.py -p HH0 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/09/17 --time 12:00
+add_part_info.py -p HH1 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/09/17 --time 12:00
+add_part_info.py -p HH2 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/09/17 --time 12:00
+add_part_info.py -p HH11 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/09/17 --time 12:00
+add_part_info.py -p HH12 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/09/17 --time 12:00
+add_part_info.py -p HH13 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/09/17 --time 12:00
+add_part_info.py -p HH14 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/09/17 --time 12:00
+add_part_info.py -p HH23 -r A -c "Actions: Check cable connections" --date 2019/09/17 --time 12:00
+add_part_info.py -p HH23 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/09/17 --time 12:00:01
+add_part_info.py -p HH23 -r A -c "Actions: Check cable connections" --date 2019/09/17 --time 12:00:02
+add_part_info.py -p HH24 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/09/17 --time 12:00
+add_part_info.py -p HH25 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/09/17 --time 12:00
+add_part_info.py -p HH26 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/09/17 --time 12:00
+add_part_info.py -p HH39 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/09/17 --time 12:00
+add_part_info.py -p HH83 -r A -c "Saved Bulkhead 3 for Ant 83" --date 2019/09/17 --time 12:00
+add_part_info.py -p HH116 -r A -c "SMA cable is missing" --date 2019/09/17 --time 12:00
+add_part_info.py -p HH84 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/08/08 --time 12:00
+update_apriori.py -p HH84 -s needs_checking --date 2019/08/08 --time 12:00
+add_part_info.py -p HH85 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/08/08 --time 12:00
+add_part_info.py -p HH86 -r A -c "Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n Inspected cable connections to FEM; Cat7 cable connection is questionable. \n Wire-taped Cat7 cable connection." --date 2019/08/08 --time 12:00
+add_part_info.py -p HH87 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n One tension rope is frayed." --date 2019/08/08 --time 12:00
+update_apriori.py -p HH87 -s needs_checking --date 2019/08/08 --time 12:00
+add_part_info.py -p HH101 -r A -c "Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n Inspected cable connections to FEM; Cat7 cable connection is questionable. \n Wire-taped Cat7 cable connection. \n Swapped FEM46 for FEM58." --date 2019/08/08 --time 12:00
+add_part.py -p FEM046 -r A -t front-end -m FEM046 --date 2019/08/08 --time 12:00
+stop_connection.py -u FDV39 --uprev A --upport terminals -d FEM058 --dnrev A --dnport input --date 2019/08/08 --time 12:00
+stop_connection.py -u FEM058 --uprev A --upport e -d NBP08 --dnrev A --dnport e8 --date 2019/08/08 --time 12:00
+stop_connection.py -u FEM058 --uprev A --upport n -d NBP08 --dnrev A --dnport n8 --date 2019/08/08 --time 12:00
+add_connection.py -u FDV39 --uprev A --upport terminals -d FEM046 --dnrev A --dnport input --date 2019/08/08 --time 12:00
+add_connection.py -u FEM046 --uprev A --upport e -d NBP08 --dnrev A --dnport e8 --date 2019/08/08 --time 12:00
+add_connection.py -u FEM046 --uprev A --upport n -d NBP08 --dnrev A --dnport n8 --date 2019/08/08 --time 12:00
+update_apriori.py -p HH101 -s needs_checking --date 2019/08/08 --time 12:00
+add_part_info.py -p HH102 -r A -c "Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM." --date 2019/08/08 --time 12:00
+add_part_info.py -p HH103 -r A -c "Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM. \n Found Ant 103 fibers not connected to node; connected Ant 103 fibers to Bulkhead 6 of Node 8. \n Checked PAM output spectra for both pols and saw possible indication of FEM failure. \n Replaced FEM60 with FEM34. \n PAM output spectra indicated successful debugging." --date 2019/08/08 --time 12:00
+add_part_info.py -p HH104 -r A -c "Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM. \n Removed springs from feed." --date 2019/08/08 --time 12:00
+add_part_info.py -p HH120 -r A -c "Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM." --date 2019/08/08 --time 12:00
+add_part_info.py -p HH121 -r A -c "Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM." --date 2019/08/08 --time 12:00
+update_apriori.py -p HH121 -s needs_checking --date 2019/08/08 --time 12:00
+add_part_info.py -p HH122 -r A -c "Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM. \n Bad spectra for 122n; cleaned cable connections which resolved problem." --date 2019/08/08 --time 12:00
+update_apriori.py -p HH122 -s needs_checking --date 2019/08/08 --time 12:00
+add_part_info.py -p HH123 -r A -c "Confirmed Ant, Feed, FEM, PAM, PAM Slot, SNAP Slot, SNAP, & Port. Inspected cable connections to FEM. \n Removed springs from feed." --date 2019/08/08 --time 12:00
+add_part_info.py -p HH88 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n Found Ant 88 fibers not connected to node; connected Ant 88 fiber to Bulkhead 3 of Node 9." --date 2019/08/15 --time 12:00
+add_part_info.py -p HH89 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/08/15 --time 12:00
+add_part_info.py -p HH90 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/08/15 --time 12:00
+add_part_info.py -p HH91 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n Found Ant 91 fibers not connected to node; connected Ant 91 fiber to Bulkhead 6 of Node 9." --date 2019/08/15 --time 12:00
+add_part_info.py -p HH105 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/08/15 --time 12:00
+add_part_info.py -p HH106 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n Pols swapped at FEM. \n Bad spectra for 106e; cleaned fiber connections which resolved issue. \n Feed raised." --date 2019/08/15 --time 12:00
+add_part_info.py -p HH107 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/08/15 --time 12:00
+add_part_info.py -p HH108 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port. \n Bad spectra on 108e; replaced long fiber which resolved issue." --date 2019/08/15 --time 12:00
+add_part_info.py -p HH124 -r A -c "Actions: Swap to other channel and check" --date 2019/08/15 --time 12:00
+add_part_info.py -p HH124 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/08/15 --time 12:00:01
+add_part_info.py -p HH125 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/08/15 --time 12:00
+add_part_info.py -p HH126 -r A -c "Confirmed Ant, Feed, PAM, PAM Slot, SNAP Slot, SNAP, & Port." --date 2019/08/15 --time 12:00

@@ -1,0 +1,26 @@
+#! /usr/bin/env bash
+echo "190701_add_stations (do_it = True)" >> scripts.log 
+add_station.py HH246 --sernum 245 --date 2019/06/26 --time 10:00
+add_part.py -p A246 -r H -t antenna -m S/N245 --date 2019/06/26 --time 10:00 --actually_do_it
+add_connection.py -u HH246 --uprev A --upport ground -d A246 --dnrev H --dnport ground --date 2019/06/26 --time 10:00 --actually_do_it
+add_station.py HH247 --sernum 246 --date 2019/06/26 --time 10:00
+add_part.py -p A247 -r H -t antenna -m S/N246 --date 2019/06/26 --time 10:00 --actually_do_it
+add_connection.py -u HH247 --uprev A --upport ground -d A247 --dnrev H --dnport ground --date 2019/06/26 --time 10:00 --actually_do_it
+add_station.py HH271 --sernum 247 --date 2019/06/26 --time 10:00
+add_part.py -p A271 -r H -t antenna -m S/N247 --date 2019/06/26 --time 10:00 --actually_do_it
+add_connection.py -u HH271 --uprev A --upport ground -d A271 --dnrev H --dnport ground --date 2019/06/26 --time 10:00 --actually_do_it
+add_station.py HH272 --sernum 248 --date 2019/06/26 --time 10:00
+add_part.py -p A272 -r H -t antenna -m S/N248 --date 2019/06/26 --time 10:00 --actually_do_it
+add_connection.py -u HH272 --uprev A --upport ground -d A272 --dnrev H --dnport ground --date 2019/06/26 --time 10:00 --actually_do_it
+add_station.py HH273 --sernum 249 --date 2019/06/26 --time 10:00
+add_part.py -p A273 -r H -t antenna -m S/N249 --date 2019/06/26 --time 10:00 --actually_do_it
+add_connection.py -u HH273 --uprev A --upport ground -d A273 --dnrev H --dnport ground --date 2019/06/26 --time 10:00 --actually_do_it
+add_station.py HH287 --sernum 250 --date 2019/06/26 --time 10:00
+add_part.py -p A287 -r H -t antenna -m S/N250 --date 2019/06/26 --time 10:00 --actually_do_it
+add_connection.py -u HH287 --uprev A --upport ground -d A287 --dnrev H --dnport ground --date 2019/06/26 --time 10:00 --actually_do_it
+add_station.py HH300 --sernum 251 --date 2019/06/26 --time 10:00
+add_part.py -p A300 -r H -t antenna -m S/N251 --date 2019/06/26 --time 10:00 --actually_do_it
+add_connection.py -u HH300 --uprev A --upport ground -d A300 --dnrev H --dnport ground --date 2019/06/26 --time 10:00 --actually_do_it
+add_station.py HH245 --sernum 252 --date 2019/06/28 --time 10:00
+add_part.py -p A245 -r H -t antenna -m S/N252 --date 2019/06/28 --time 10:00 --actually_do_it
+add_connection.py -u HH245 --uprev A --upport ground -d A245 --dnrev H --dnport ground --date 2019/06/28 --time 10:00 --actually_do_it

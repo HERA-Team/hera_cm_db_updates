@@ -1,0 +1,95 @@
+#! /usr/bin/env bash
+echo "191127_sheetupdate_2302" >> scripts.log 
+add_part_info.py -p HH0 -r A -c "Goodness E: OK?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH0 -r A -c "Goodness N: OK?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH1 -r A -c "Goodness E: OK?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH1 -r A -c "Goodness N: OK?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH2 -r A -c "Goodness E: OK?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH2 -r A -c "Goodness N: Bad" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH11 -r A -c "Goodness E: OK?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH11 -r A -c "Goodness N: OK?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH12 -r A -c "Goodness E: OK?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH12 -r A -c "Goodness N: OK?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH13 -r A -c "Goodness E: OK?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH13 -r A -c "Goodness N: OK?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH14 -r A -c "Goodness E: OK?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH14 -r A -c "Goodness N: Check!" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH23 -r A -c "Goodness E: OK?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH23 -r A -c "Goodness N: OK?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH24 -r A -c "Goodness E: NO?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH24 -r A -c "height raised from 4.33m to 4.465 on 11/1/19" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH24 -r A -c "Goodness N: OK?" --date 2019/11/27 --time 23:02:04
+add_part_info.py -p HH24 -r A -c "height raised from 4.33m to 4.465 on 11/1/19" --date 2019/11/27 --time 23:02:06
+add_part_info.py -p HH25 -r A -c "Goodness E: OK?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH25 -r A -c "Goodness N: OK?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH26 -r A -c "Goodness E: OK?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH26 -r A -c "Goodness N: OK?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH39 -r A -c "Goodness E: OK?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH39 -r A -c "height rasied from 4.37m to 4.465m on 11/1/19" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH39 -r A -c "Goodness N: OK?" --date 2019/11/27 --time 23:02:04
+add_part_info.py -p HH39 -r A -c "height rasied from 4.37m to 4.465m on 11/1/19" --date 2019/11/27 --time 23:02:06
+add_part_info.py -p HH67 -r A -c "Antenna wire but could not be checked, NCM does not switch on FEM/PAM power" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH68 -r A -c "Antenna wire but could not be checked, NCM does not switch on FEM/PAM power" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH38 -r A -c "Antenna wire but could not be checked, NCM does not switch on FEM/PAM power" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH83 -r A -c "FEM checked, xyz positioned, height 4.409 [2019/11/15]" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH83 -r A -c "PAM input seems fixed maybe after reseating PAM in swap and removing dirt [2019/11/15]" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH54 -r A -c "Feed heights: Aligned Z=4.396 (from jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH55 -r A -c "Feed heights: Aligned Z= 4.405 (from Jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH69 -r A -c "Feed heights: Aligned Z= 4.396 (from jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH70 -r A -c "Feed heights: Aligned Z=4.411 (from jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH71 -r A -c "Feed heights: Aligned Z=4.396 (from jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH72 -r A -c "Feed heights: Aligned Z= 4.399 (from jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH43 -r A -c "Aligned, Z=4.399 from jig" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH44 -r A -c "Aligned Z=4.408 from jig" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH45 -r A -c "Aligned Z=4.401 (from jig same as 58)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH46 -r A -c "aligned Z=4.403(from Jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH58 -r A -c "Aligned Z=4.401 (from jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH59 -r A -c "Aligned Z=4.413 (from jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH60 -r A -c "Aligned Z= 4.404 (from Jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH73 -r A -c "Aligned Z=4.399 (from jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH74 -r A -c "Aligned Z=4.404 (from jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH75 -r A -c "Aligned Z= 4.410 (from Jig)" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH76 -r A -c "Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH81 -r A -c "FEM checked, xyz positioned, height 4.407 [2019/11/15]" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH82 -r A -c "FEM checked, xyz positioned, height 4.403 [2019/11/15]" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH98 -r A -c "FEM checked, xyz positioned, height 4.414 [2019/11/15]" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH99 -r A -c "Fiber fixed " --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH99 -r A -c "Aligned Z=4.396 (from jig)" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH100 -r A -c "Aligned, Z=4.404 from jig. North lifting line is failing - needs to be replaced [2019/11/19]" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH116 -r A -c "FEM checked, xyz positioned, height 4.398 [2019/11/19]" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH117 -r A -c "FEM checked. Aligned, Z=4.408 from jig." --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH118 -r A -c "FEM checked " --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH118 -r A -c "Aligned Z=4.413(from jig)" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH119 -r A -c "lowered for FEM check and xyz positioning [2019/11/17]" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH137 -r A -c "raised [2019/11/4] waiting for heat shrink" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH138 -r A -c "raised [2019/11/4] waiting for heat shrink " --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH84 -r A -c "Comments (added 11/1/19): height raised from 4.117m to 4.492m 10/31/19" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH86 -r A -c "Comments (added 11/1/19): Cat7 cable connection is questionable" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH87 -r A -c "Comments (added 11/1/19): One tension is frayed" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH101 -r A -c "Comments (added 11/1/19): Cat7 cable connection is questionable" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH101 -r A -c "Comments (added 11/1/19): Not raised - waiting on pulldown rope" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH102 -r A -c "Comments (added 11/1/19): Not raised - waiting on pulldown rope" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH120 -r A -c "Comments (added 11/1/19): Not raised - waiting on pulldown rope" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH123 -r A -c "Comments (added 11/1/19): height raised from 4.041m to 4.406m 10/31/19" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH88 -r A -c "Goodness E: ?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH88 -r A -c "Goodness N: ?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH89 -r A -c "Goodness E: OK" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH89 -r A -c "Goodness N: OK" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH90 -r A -c "Goodness E: ?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH90 -r A -c "Goodness N: ?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH91 -r A -c "Goodness E: NA" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH91 -r A -c "Goodness N: NA" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH105 -r A -c "Goodness E: ?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH105 -r A -c "Goodness N: ?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH106 -r A -c "Goodness E: Bad" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH106 -r A -c "Goodness N: OK" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH107 -r A -c "Goodness E: Bad" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH107 -r A -c "Goodness N: ?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH108 -r A -c "Goodness E: ?" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH108 -r A -c "Goodness N: ?" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH124 -r A -c "Goodness E: Bad" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH124 -r A -c "Goodness N: OK" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH125 -r A -c "Goodness E: OK" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH125 -r A -c "Goodness N: OK" --date 2019/11/27 --time 23:02:02
+add_part_info.py -p HH126 -r A -c "Goodness E: OK" --date 2019/11/27 --time 23:02:00
+add_part_info.py -p HH126 -r A -c "Goodness N: OK" --date 2019/11/27 --time 23:02:02
