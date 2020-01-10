@@ -1,0 +1,18 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200107_connupd_2135" >> scripts.log
+# <PAM134:A<e|e2>SNPC000054:A>     <--->   <PAM136:A<e|e2>SNPC000054:A>
+# <PAM134:A<n|n0>SNPC000054:A>     <--->   <PAM136:A<n|n0>SNPC000054:A>
+add_connection.py -u FEM134 --uprev A --upport e -d NBP03 --dnrev A --dnport e10 --date 2020/01/07 --time 21:35
+# <PAM132:A<e|e6>SNPC000037:A>     <--->   <PAM134:A<e|e6>SNPC000037:A>
+add_connection.py -u FEM134 --uprev A --upport n -d NBP03 --dnrev A --dnport n10 --date 2020/01/07 --time 21:35
+# <PAM132:A<n|n4>SNPC000037:A>     <--->   <PAM134:A<n|n4>SNPC000037:A>
+# <PAM116:A<@slot|@slot4>PCH06:A>   <--->   <PAM124:A<@slot|@slot4>PCH06:A>
+# <PAM145:A<e|e10>SNPC000042:A>    <--->   <PAM144:A<e|e10>SNPC000042:A>
+# <PAM145:A<n|n8>SNPC000042:A>     <--->   <PAM144:A<n|n8>SNPC000042:A>
+# <PAM144:A<e|e6>SNPC000042:A>     <--->   <PAM145:A<e|e6>SNPC000042:A>
+# <PAM144:A<n|n4>SNPC000042:A>     <--->   <PAM145:A<n|n4>SNPC000042:A>
+# <PAM147:A<e|e6>SNPC000045:A>     <--->   <PAM146:A<e|e6>SNPC000045:A>
+# <PAM147:A<n|n4>SNPC000045:A>     <--->   <PAM146:A<n|n4>SNPC000045:A>
+# <PAM146:A<e|e2>SNPC000045:A>     <--->   <PAM147:A<e|e2>SNPC000045:A>
+# <PAM146:A<n|n0>SNPC000045:A>     <--->   <PAM147:A<n|n0>SNPC000045:A>

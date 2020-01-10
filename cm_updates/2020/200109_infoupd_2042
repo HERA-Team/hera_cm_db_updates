@@ -1,0 +1,33 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200109_infoupd_2042" >> scripts.log 
+update_apriori.py -p HH44 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH45 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH46 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH54 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH55 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH58 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH59 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH60 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH69 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH70 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH71 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH72 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH73 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH74 -s passed_checks --date 2020/01/09 --time 20:42
+update_apriori.py -p HH75 -s passed_checks --date 2020/01/09 --time 20:42
+add_part_info.py -p HH54 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH55 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH69 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH70 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH71 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH72 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH44 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH45 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH46 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH58 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH59 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH60 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH73 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH74 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
+add_part_info.py -p HH75 -r A -c "No final spectra as of 8Jan2020" -l "infoupd" --date 2020/01/09 --time 20:42:00
