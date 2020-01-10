@@ -1,4 +1,0 @@
-#! /usr/bin/env bash
-echo "190315_partinfo (do_it = True)" >> scripts.log 
-add_part_info.py -p HH25 -r A -c "Add ground strap on feed." --date 2019/03/14 --time 10:00
-

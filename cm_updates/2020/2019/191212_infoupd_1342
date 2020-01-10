@@ -1,6 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "191212_infoupd_1342" >> scripts.log 
-add_part_info.py -p HH68 -r A -c "FEM 130 replaced with 128. PAM replaced with 124" --date 2019/12/12 --time 13:42:00
-add_part_info.py -p HH52 -r A -c "moved from port 8 to 10. Pam changed to 134" --date 2019/12/12 --time 13:42:00
-add_part_info.py -p HH50 -r A -c "moved from port 10 to 12.FEM  129 replaced with 107" --date 2019/12/12 --time 13:42:00

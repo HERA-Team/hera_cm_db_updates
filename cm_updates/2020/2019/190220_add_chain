@@ -1,2 +1,0 @@
-#! /usr/bin/env bash
-echo 190220_add_chain (do_it = True) >> scripts.log 

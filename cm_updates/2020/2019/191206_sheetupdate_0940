@@ -1,7 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "191206_sheetupdate_0940" >> scripts.log 
-add_part_info.py -p HH65 -r A -c "Feed heights (NE/SE/SW/NW): Z distance from jig = 4.397" --date 2019/12/06 --time 09:40:00
-add_part_info.py -p HH66 -r A -c "Feed heights (NE/SE/SW/NW): Z distance from jig = 4.403" --date 2019/12/06 --time 09:40:00
-add_part_info.py -p HH67 -r A -c "Feed heights (NE/SE/SW/NW): Z distance from jig = 4.408" --date 2019/12/06 --time 09:40:00
-add_part_info.py -p HH53 -r A -c "Feed heights (NE/SE/SW/NW): Z distance from jig = 4.406" --date 2019/12/06 --time 09:40:00
