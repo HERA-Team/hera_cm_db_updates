@@ -1,4 +1,4 @@
-hpn,hpn_rev,comment,library_file,posting_gpstime
+hpn,hpn_rev,comment,reference,posting_gpstime
 FDV1,A,MIT version 1,,1232532018
 FDV1,A,No PVC stiffeners,,1232532138
 FDV1,A,No coating flange tip at brass feed pin location,,1232532258
@@ -695,3 +695,19 @@ HH128,A,Final spectra for 128E look sterrible,,1260294138
 HH130,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
 HH130,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
 HH128,A,Final spectra for 128E looks terrible,infoupd,1260546138
+HH50,A,"Moved from port PAM 10 to 12, PAM changed from 134 to 136.",infoupd,1261161738
+HH54,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH55,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH69,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH70,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH71,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH72,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH44,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH45,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH46,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH58,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH59,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH60,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH73,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH74,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH75,A,No final spectra as of 8Jan2020,infoupd,1262637738
