@@ -13,7 +13,7 @@ if __name__ == '__main__':
     ap.add_argument('-n', '--node_csv', help="Flag for read/write of gsheet (r/w/n)", default='n')
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
     ap.add_argument('-d', '--duplication_window',
-                    help="Number of days to use for duplicate comments.", default=60.0)
+                    help="Number of days to use for duplicate comments.", default=90.0)
     args = ap.parse_args()
 else:
     args = argparse.Namespace(arc_path=None, script_path='./', verbose=True, duplication_window=60.0)  # noqa
