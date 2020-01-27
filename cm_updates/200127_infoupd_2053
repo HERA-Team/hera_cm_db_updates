@@ -1,0 +1,105 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200127_infoupd_2053" >> scripts.log 
+update_apriori.py -p HH0 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH1 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH2 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH11 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH12 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH13 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH14 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH23 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH24 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH25 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH26 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH36 -s RF_ok --date 2020/01/27 --time 20:53
+update_apriori.py -p HH37 -s RF_ok --date 2020/01/27 --time 20:53
+update_apriori.py -p HH38 -s RF_ok --date 2020/01/27 --time 20:53
+update_apriori.py -p HH39 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH40 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH41 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH42 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH50 -s dish_ok --date 2020/01/27 --time 20:53
+update_apriori.py -p HH51 -s RF_ok --date 2020/01/27 --time 20:53
+update_apriori.py -p HH52 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH53 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH54 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH55 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH56 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH57 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH65 -s RF_ok --date 2020/01/27 --time 20:53
+update_apriori.py -p HH66 -s RF_ok --date 2020/01/27 --time 20:53
+update_apriori.py -p HH67 -s RF_ok --date 2020/01/27 --time 20:53
+update_apriori.py -p HH68 -s dish_ok --date 2020/01/27 --time 20:53
+update_apriori.py -p HH69 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH70 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH71 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH72 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH81 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH82 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH83 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH84 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH85 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH86 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH87 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH88 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH89 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH90 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH91 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH92 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH93 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH94 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH98 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH99 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH100 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH101 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH102 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH103 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH104 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH105 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH106 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH107 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH108 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH109 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH110 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH111 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH112 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH116 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH117 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH118 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH119 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH120 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH121 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH122 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH123 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH124 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH125 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH126 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH127 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH128 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH129 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH130 -s RF_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH137 -s digital_maintenance --date 2020/01/27 --time 20:53
+update_apriori.py -p HH138 -s digital_maintenance --date 2020/01/27 --time 20:53
+add_part_info.py -p HH2 -r A -c "History: FEM: 17 | PAM: 23" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH11 -r A -c "History: FEM: 19 | PAM: 25" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH12 -r A -c "History: FEM: 20 | PAM: 26" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH14 -r A -c "History: FEM: 28" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH24 -r A -c "History: PAM: 24" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH25 -r A -c "History: FEM: 31" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH26 -r A -c "History: PAM: 26" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH39 -r A -c "History: PAM: 27" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH99 -r A -c "History: FEM: 14" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH99 -r A -c "History: FEM: 14" -l "infoupd" --date 2020/01/27 --time 20:53:02
+add_part_info.py -p HH86 -r A -c "Cat7 cable connection is questionable" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH87 -r A -c "One tension is frayed" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH101 -r A -c "History: FEM: 58" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH101 -r A -c "Cat7 cable connection is questionable" -l "infoupd" --date 2020/01/27 --time 20:53:02
+add_part_info.py -p HH101 -r A -c "History: FEM: 58" -l "infoupd" --date 2020/01/27 --time 20:53:04
+add_part_info.py -p HH101 -r A -c "Not raised - waiting on pulldown rope" -l "infoupd" --date 2020/01/27 --time 20:53:06
+add_part_info.py -p HH102 -r A -c "Not raised - waiting on pulldown rope" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH103 -r A -c "History: FEM: 60" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH103 -r A -c "History: FEM: 60" -l "infoupd" --date 2020/01/27 --time 20:53:02
+add_part_info.py -p HH120 -r A -c "Not raised - waiting on pulldown rope" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH89 -r A -c "History: PAM: 43" -l "infoupd" --date 2020/01/27 --time 20:53:00
+add_part_info.py -p HH124 -r A -c "History: PAM: 42" -l "infoupd" --date 2020/01/27 --time 20:53:00
