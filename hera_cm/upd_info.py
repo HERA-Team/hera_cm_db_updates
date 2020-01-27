@@ -26,8 +26,9 @@ class UpdateInfo(upd_base.Update):
         Write out for apriori differences.
         """
         for key in self.gsheet.ants:
-            E = self.gsheet.data[key + '-E'][11]
-            N = self.gsheet.data[key + '-N'][11]
+            ap_col = self.gsheet.header[self.gsheet.ant_to_tab[key]].index('APriori')
+            E = self.gsheet.data[key + '-E'][ap_col]
+            N = self.gsheet.data[key + '-N'][ap_col]
             ant, rev = cm_utils.split_part_key(key)
             if E != N:
                 print("{} and {} should be the same.".format(E, N))
@@ -52,14 +53,14 @@ class UpdateInfo(upd_base.Update):
         """
         primary_keys = []
         for sheet_key in self.gsheet.data.keys():
-            tab = 'node{}'.format(self.gsheet.data[sheet_key][0])
             antrev_key, pol = sheet_key.split('-')
             ant, rev = cm_utils.split_part_key(antrev_key)
+            tab = self.gsheet.ant_to_tab[antrev_key]
             # Process sheet data
             pdate = self.cdate + ''
             ptime = self.ctime + ''
             for i, col in enumerate(self.gsheet.header[tab]):
-                if col in cm_gsheet.com_ignore or len(col) == 0:
+                if col in cm_gsheet.hu_col.keys() or not len(col) or col == 'APriori':
                     continue
                 try:
                     col_data = self.gsheet.data[sheet_key][i]
@@ -71,8 +72,6 @@ class UpdateInfo(upd_base.Update):
                 # ##Get prefix for entry
                 if col in cm_gsheet.no_prefix:
                     prefix = ''
-                elif col in cm_gsheet.pol_comments:
-                    prefix = '{} {}: '.format(col, pol)
                 else:
                     prefix = '{}: '.format(col)
                 statement = '{}{}'.format(prefix, col_data)
