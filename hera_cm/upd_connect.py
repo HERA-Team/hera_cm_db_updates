@@ -44,10 +44,12 @@ class UpdateConnect(upd_base.Update):
             for pol in self.pols:
                 key = '{}-{}'.format(sant, pol)
                 node_num = self.gsheet.data[key][0]
-                tab = 'node{}'.format(node_num)
+                tab = self.gsheet.ant_to_tab[sant]
                 header = self.gsheet.header[tab]
                 self.gsheet.connection[key] = []
                 for i, col in enumerate(header):
+                    if col not in self.gsheet.hu_col.keys():
+                        continue
                     if self.gsheet.data[key][i] is not None:
                         tc_ = cm_partconnect.Connections()
                         if col == 'Ant':
@@ -74,7 +76,7 @@ class UpdateConnect(upd_base.Update):
                                            upstream_output_port=pol.lower(),
                                            downstream_part=nbp, down_part_rev='A',
                                            downstream_input_port=port)
-                        elif col == 'Bulkhead-PAM_Slot':
+                        elif col == 'Node-PAM_Slot':
                             nbp = util.gen_hpn('NBP', node_num)
                             port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Bulkhead-PAM_Slot')])  # noqa
                             if port is not None:
@@ -100,7 +102,7 @@ class UpdateConnect(upd_base.Update):
                                            upstream_output_port=pol.lower(),
                                            downstream_part=snap, down_part_rev='A',
                                            downstream_input_port=port)
-                        elif col == 'I2C_bus':  # extra to get @slot
+                        elif col == 'SNAP_Slot':  # extra to get @slot
                             pam = self.get_hpn_from_col('PAM', key, header)
                             try:
                                 pamkey = cm_utils.make_part_key(pam, 'A')
