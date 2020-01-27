@@ -711,3 +711,117 @@ HH60,A,No final spectra as of 8Jan2020,infoupd,1262637738
 HH73,A,No final spectra as of 8Jan2020,infoupd,1262637738
 HH74,A,No final spectra as of 8Jan2020,infoupd,1262637738
 HH75,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH42,A,PAM 103 replaced with 112,infoupd,1263300138
+HH43,A,E channel shows ~6dB lower gain due to fibre.  We tested the fibre for both channels and the E channel had 3dB more loss (6dB in RF),infoupd,1263300138
+HH0,A,Goodness E: OK?,infoupd,1264117338
+HH0,A,Goodness N: OK?,infoupd,1264117340
+HH1,A,Goodness E: OK?,infoupd,1264117338
+HH1,A,Goodness N: OK?,infoupd,1264117340
+HH2,A,Goodness E: OK?,infoupd,1264117338
+HH2,A,Goodness N: Bad,infoupd,1264117340
+HH11,A,Goodness E: OK?,infoupd,1264117338
+HH11,A,Goodness N: OK?,infoupd,1264117340
+HH12,A,Goodness E: OK?,infoupd,1264117338
+HH12,A,Goodness N: OK?,infoupd,1264117340
+HH13,A,Goodness E: OK?,infoupd,1264117338
+HH13,A,Goodness N: OK?,infoupd,1264117340
+HH14,A,Goodness E: OK?,infoupd,1264117338
+HH14,A,Goodness N: Check!,infoupd,1264117340
+HH23,A,Goodness E: OK?,infoupd,1264117338
+HH23,A,Goodness N: OK?,infoupd,1264117340
+HH24,A,Goodness E: NO?,infoupd,1264117338
+HH24,A,height raised from 4.33m to 4.465 on 11/1/19,infoupd,1264117340
+HH24,A,Goodness N: OK?,infoupd,1264117342
+HH24,A,height raised from 4.33m to 4.465 on 11/1/19,infoupd,1264117344
+HH25,A,Goodness E: OK?,infoupd,1264117338
+HH25,A,Goodness N: OK?,infoupd,1264117340
+HH26,A,Goodness E: OK?,infoupd,1264117338
+HH26,A,Goodness N: OK?,infoupd,1264117340
+HH39,A,Goodness E: OK?,infoupd,1264117338
+HH39,A,height rasied from 4.37m to 4.465m on 11/1/19,infoupd,1264117340
+HH39,A,Goodness N: OK?,infoupd,1264117342
+HH39,A,height rasied from 4.37m to 4.465m on 11/1/19,infoupd,1264117344
+HH54,A,Feed heights: Aligned Z=4.396 (from jig),infoupd,1264117338
+HH55,A,Feed heights: Aligned Z= 4.405 (from Jig),infoupd,1264117338
+HH69,A,Feed heights: Aligned Z= 4.396 (from jig),infoupd,1264117338
+HH70,A,Feed heights: Aligned Z=4.411 (from jig),infoupd,1264117338
+HH71,A,Feed heights: Aligned Z=4.396 (from jig),infoupd,1264117338
+HH72,A,Feed heights: Aligned Z= 4.399 (from jig),infoupd,1264117338
+HH45,A,Aligned Z=4.401 (from jig same as 58),infoupd,1264117338
+HH46,A,aligned Z=4.403(from Jig),infoupd,1264117338
+HH73,A,Aligned Z=4.399 (from jig),infoupd,1264117338
+HH59,A,Aligned Z=4.413 (from jig),infoupd,1264117338
+HH58,A,Aligned Z=4.401 (from jig),infoupd,1264117338
+HH44,A,Aligned Z=4.408 from jig,infoupd,1264117338
+HH60,A,Aligned Z= 4.404 (from Jig),infoupd,1264117338
+HH43,A,"Aligned, Z=4.399 from jig",infoupd,1264117338
+HH74,A,Aligned Z=4.404 (from jig),infoupd,1264117338
+HH75,A,Aligned Z= 4.410 (from Jig),infoupd,1264117338
+HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1264117338
+HH81,A,"FEM checked, xyz positioned, height 4.407 [2019/11/15]",infoupd,1264117338
+HH82,A,"FEM checked, xyz positioned, height 4.403 [2019/11/15]",infoupd,1264117338
+HH83,A,"FEM checked, xyz positioned, height 4.409 [2019/11/15]",infoupd,1264117338
+HH83,A,PAM input seems fixed maybe after reseating PAM in swap and removing dirt [2019/11/15],infoupd,1264117340
+HH100,A,"Aligned, Z=4.404 from jig. North lifting line is failing - needs to be replaced [2019/11/19]",infoupd,1264117338
+HH119,A,lowered for FEM check and xyz positioning [2019/11/17],infoupd,1264117338
+HH138,A,raised [2019/11/4] waiting for heat shrink ,infoupd,1264117338
+HH98,A,"FEM checked, xyz positioned, height 4.414 [2019/11/15]",infoupd,1264117338
+HH99,A,Fiber fixed ,infoupd,1264117338
+HH99,A,Aligned Z=4.396 (from jig),infoupd,1264117340
+HH116,A,"FEM checked, xyz positioned, height 4.398 [2019/11/19]",infoupd,1264117338
+HH117,A,"FEM checked. Aligned, Z=4.408 from jig.",infoupd,1264117338
+HH118,A,FEM checked ,infoupd,1264117338
+HH118,A,Aligned Z=4.413(from jig),infoupd,1264117340
+HH137,A,raised [2019/11/4] waiting for heat shrink,infoupd,1264117338
+HH84,A,Comments (added 11/1/19): height raised from 4.117m to 4.492m 10/31/19,infoupd,1264117338
+HH86,A,Comments (added 11/1/19): Cat7 cable connection is questionable,infoupd,1264117338
+HH87,A,Comments (added 11/1/19): One tension is frayed,infoupd,1264117338
+HH101,A,Comments (added 11/1/19): Cat7 cable connection is questionable,infoupd,1264117338
+HH101,A,Comments (added 11/1/19): Not raised - waiting on pulldown rope,infoupd,1264117340
+HH102,A,Comments (added 11/1/19): Not raised - waiting on pulldown rope,infoupd,1264117338
+HH120,A,Comments (added 11/1/19): Not raised - waiting on pulldown rope,infoupd,1264117338
+HH123,A,Comments (added 11/1/19): height raised from 4.041m to 4.406m 10/31/19,infoupd,1264117338
+HH88,A,Goodness E: ?,infoupd,1264117338
+HH88,A,Goodness N: ?,infoupd,1264117340
+HH89,A,Goodness E: OK,infoupd,1264117338
+HH89,A,Goodness N: OK,infoupd,1264117340
+HH90,A,Goodness E: ?,infoupd,1264117338
+HH90,A,Goodness N: ?,infoupd,1264117340
+HH91,A,Goodness E: NA,infoupd,1264117338
+HH91,A,Goodness N: NA,infoupd,1264117340
+HH105,A,Goodness E: ?,infoupd,1264117338
+HH105,A,Goodness N: ?,infoupd,1264117340
+HH106,A,Goodness E: Bad,infoupd,1264117338
+HH106,A,Goodness N: OK,infoupd,1264117340
+HH107,A,Goodness E: Bad,infoupd,1264117338
+HH107,A,Goodness N: ?,infoupd,1264117340
+HH108,A,Goodness E: ?,infoupd,1264117338
+HH108,A,Goodness N: ?,infoupd,1264117340
+HH124,A,Goodness E: Bad,infoupd,1264117338
+HH124,A,Goodness N: OK,infoupd,1264117340
+HH125,A,Goodness E: OK,infoupd,1264117338
+HH125,A,Goodness N: OK,infoupd,1264117340
+HH126,A,Goodness E: OK,infoupd,1264117338
+HH126,A,Goodness N: OK,infoupd,1264117340
+HH2,A,History: FEM: 17 | PAM: 23,infoupd,1264193598
+HH11,A,History: FEM: 19 | PAM: 25,infoupd,1264193598
+HH12,A,History: FEM: 20 | PAM: 26,infoupd,1264193598
+HH14,A,History: FEM: 28,infoupd,1264193598
+HH24,A,History: PAM: 24,infoupd,1264193598
+HH25,A,History: FEM: 31,infoupd,1264193598
+HH26,A,History: PAM: 26,infoupd,1264193598
+HH39,A,History: PAM: 27,infoupd,1264193598
+HH99,A,History: FEM: 14,infoupd,1264193598
+HH99,A,History: FEM: 14,infoupd,1264193600
+HH86,A,Cat7 cable connection is questionable,infoupd,1264193598
+HH87,A,One tension is frayed,infoupd,1264193598
+HH101,A,History: FEM: 58,infoupd,1264193598
+HH101,A,Cat7 cable connection is questionable,infoupd,1264193600
+HH101,A,History: FEM: 58,infoupd,1264193602
+HH101,A,Not raised - waiting on pulldown rope,infoupd,1264193604
+HH102,A,Not raised - waiting on pulldown rope,infoupd,1264193598
+HH103,A,History: FEM: 60,infoupd,1264193598
+HH103,A,History: FEM: 60,infoupd,1264193600
+HH120,A,Not raised - waiting on pulldown rope,infoupd,1264193598
+HH89,A,History: PAM: 43,infoupd,1264193598
+HH124,A,History: PAM: 42,infoupd,1264193598
