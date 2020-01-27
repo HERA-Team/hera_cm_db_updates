@@ -14,11 +14,10 @@ import requests
 from . import util
 from hera_mc import cm_utils
 
-hu_col = {'Ant': 0, 'Pol': 4, 'Feed': 1, 'FEM': 2, 'PAM': 4, 'Bulkhead-PAM_Slot': 3,
-          'I2C_bus': -1, 'SNAP': 5, 'Port': 5, 'SNAP_Slot': 6, 'Node': 6}
-sheet_headers = ['Ant', 'Pol', 'Feed', 'FEM', 'PAM', 'Bulkhead-PAM_Slot', 'I2C_bus',
-                 'SNAP_Slot', 'SNAP', 'Port', 'APriori', 'History', 'Actions',
-                 'FEM_I2C', 'PAM_I2C', 'Goodness', 'Comments']
+hu_col = {'Ant': 0, 'Pol': 4, 'Feed': 1, 'FEM': 2, 'PAM': 4, 'Node-PAM_Slot': 3,
+          'SNAP': 5, 'Port': 5, 'SNAP_Slot': 6, 'Node': 6}
+sheet_headers = ['Ant', 'Pol', 'Feed', 'FEM', 'Node-PAM_Slot', 'PAM', 'SNAP', 'Port', 'SNAP_Slot',
+                 'APriori', 'History', 'Comments']
 
 gsheet = {}
 gsheet['node0'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=0&single=true&output=csv"  # noqa
@@ -29,22 +28,24 @@ gsheet['node7'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXD
 gsheet['node8'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1174361876&single=true&output=csv"  # noqa
 gsheet['node9'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=59309582&single=true&output=csv"  # noqa
 gsheet['node10'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=298497018&single=true&output=csv"  # noqa
-
-pol_comments = ['Goodness']
+gsheet['node12'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1465370847&single=true&output=csv"  # noqa
+gsheet['node13'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=954070149&single=true&output=csv"  # noqa
+gsheet['node14'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1888985402&single=true&output=csv"  # noqa
+gsheet['node15'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1947163734&single=true&output=csv"  # noqa
 no_prefix = ['Comments']
 
 
 class SheetData:
     def __init__(self):
         self.data = {}
-        self.parts = {}
+        self.ant_to_tab = {}
         self.header = {}
         self.date = {}
         self.notes = {}
         self.ants = set()
-        self.tabs = sorted(list(gsheet.keys()))
+        self.tabs = list(gsheet.keys())
 
-    def load_sheet(self, node_csv='none'):
+    def load_sheet(self, node_csv='none', check_headers=False):
         """
         Gets the googlesheet information from the internet (or locally for testing etc)
 
@@ -52,6 +53,9 @@ class SheetData:
         ----------
         node_csv : str
             node csv file status:  one of 'read', 'write', 'none' (only need first letter)
+            'read' uses a local version as opposed to internet version
+            'write' writes a local version
+            'none' does neither of the above
         """
         node_csv = node_csv[0].lower()
         for tab in self.tabs:
@@ -71,10 +75,12 @@ class SheetData:
                 with open(tab + '.csv', 'w') as fp:
                     fp.write('\n'.join(csv_data))
             for data in csv_tab:
-                if data[0].startswith('Ant'):
+                if data[0].startswith('Ant'):  # This is the header line
                     self.header[tab] = ['Node'] + data
+                    if check_headers:
+                        util.compare_lists(sheet_headers, data, info=tab)
                     continue
-                elif data[0].startswith('Date:'):
+                elif data[0].startswith('Date:'):  # This is the overall date line
                     self.date[tab] = data[1]
                     break
                 try:
@@ -84,6 +90,7 @@ class SheetData:
                 hpn = util.gen_hpn('HH', antnum)
                 hkey = cm_utils.make_part_key(hpn, 'A')
                 self.ants.add(hkey)
+                self.ant_to_tab[hkey] = tab
                 dkey = '{}-{}'.format(hkey, data[1].upper())
                 self.data[dkey] = [util.get_num(tab)] + data
             # Get the notes below the hookup table.
