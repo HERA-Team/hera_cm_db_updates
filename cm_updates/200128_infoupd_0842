@@ -1,0 +1,101 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200128_infoupd_0842" >> scripts.log 
+update_apriori.py -p HH84 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH85 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH86 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH87 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH101 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH102 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH103 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH104 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH120 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH121 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH122 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH123 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH135 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH136 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH139 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH140 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH141 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH142 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH143 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH144 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH145 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH146 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH147 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH148 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH149 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH150 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH155 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH156 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH157 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH158 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH159 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH160 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH161 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH162 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH163 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH164 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH165 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH166 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH167 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH168 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH169 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH170 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH176 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH177 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH178 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH179 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH180 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH181 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH182 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH183 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH184 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH185 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH186 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH187 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH188 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH189 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH190 -s RF_maintenance --date 2020/01/28 --time 08:42
+update_apriori.py -p HH191 -s RF_maintenance --date 2020/01/28 --time 08:42
+add_part_info.py -p HH135 -r A -c "SNAPloc: 2" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH135 -r A -c "SNAPloc: 2" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH136 -r A -c "SNAPloc: 3" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH136 -r A -c "SNAPloc: 3" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH155 -r A -c "SNAPloc: 2" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH155 -r A -c "SNAPloc: 2" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH156 -r A -c "SNAPloc: 3" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH156 -r A -c "SNAPloc: 3" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH157 -r A -c "SNAPloc: 2" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH157 -r A -c "SNAPloc: 2" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH158 -r A -c "SNAPloc: 3" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH158 -r A -c "SNAPloc: 3" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH176 -r A -c "SNAPloc: 0" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH176 -r A -c "SNAPloc: 0" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH177 -r A -c "SNAPloc: 1" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH177 -r A -c "SNAPloc: 1" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH178 -r A -c "SNAPloc: 0" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH178 -r A -c "SNAPloc: 0" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH179 -r A -c "SNAPloc: 1" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH179 -r A -c "SNAPloc: 1" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH140 -r A -c "SNAPloc: 2" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH140 -r A -c "SNAPloc: 2" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH141 -r A -c "SNAPloc: 2" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH141 -r A -c "SNAPloc: 2" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH142 -r A -c "SNAPloc: 2" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH142 -r A -c "SNAPloc: 2" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH160 -r A -c "SNAPloc: 3" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH160 -r A -c "SNAPloc: 3" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH161 -r A -c "SNAPloc: 0" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH161 -r A -c "SNAPloc: 0" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH162 -r A -c "SNAPloc: 0" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH162 -r A -c "SNAPloc: 0" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH180 -r A -c "SNAPloc: 3" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH180 -r A -c "SNAPloc: 3" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH181 -r A -c "SNAPloc: 3" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH181 -r A -c "SNAPloc: 3" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH182 -r A -c "SNAPloc: 0" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH182 -r A -c "SNAPloc: 0" -l "infoupd" --date 2020/01/28 --time 08:42:02
+add_part_info.py -p HH183 -r A -c "SNAPloc: 1" -l "infoupd" --date 2020/01/28 --time 08:42:00
+add_part_info.py -p HH183 -r A -c "SNAPloc: 1" -l "infoupd" --date 2020/01/28 --time 08:42:02

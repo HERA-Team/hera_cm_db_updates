@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200128_infoupd_1642" >> scripts.log 
+add_part_info.py -p HH2 -r A -c "ADC is broken!" -l "infoupd" --date 2020/01/28 --time 16:42:00

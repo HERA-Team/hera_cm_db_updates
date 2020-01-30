@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200130_infoupd_1242" >> scripts.log 
+add_part_info.py -p HH84 -r A -c "height raised from 4.117m to 4.492m 10/31/19" -l "infoupd" --date 2020/01/30 --time 12:42:00
+add_part_info.py -p HH123 -r A -c "height raised from 4.041m to 4.406m 10/31/19" -l "infoupd" --date 2020/01/30 --time 12:42:00
