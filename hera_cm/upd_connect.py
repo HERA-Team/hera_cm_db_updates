@@ -45,7 +45,7 @@ class UpdateConnect(upd_base.Update):
                 key = '{}-{}'.format(sant, pol)
                 node_num = self.gsheet.data[key][0]
                 tab = self.gsheet.ant_to_tab[sant]
-                header = self.gsheet.header[tab] + ['get_PAM_slot']
+                header = self.gsheet.header[tab] + ['get_PAM_loc']
                 self.gsheet.connection[key] = []
                 for i, col in enumerate(header):
                     if col not in self.gsheet.hu_col.keys():
@@ -69,16 +69,16 @@ class UpdateConnect(upd_base.Update):
                         elif col == 'FEM':
                             fem = self.get_hpn_from_col('FEM', key, header)
                             nbp = util.gen_hpn('NBP', node_num)
-                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Node-PAM_Slot')])  # noqa
+                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Node/PAMloc')])  # noqa
                             if port is not None:
                                 port = port.lower()
                             tc_.connection(upstream_part=fem, up_part_rev='A',
                                            upstream_output_port=pol.lower(),
                                            downstream_part=nbp, down_part_rev='A',
                                            downstream_input_port=port)
-                        elif col == 'Node-PAM_Slot':
+                        elif col == 'Node/PAMloc':
                             nbp = util.gen_hpn('NBP', node_num)
-                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Node-PAM_Slot')])  # noqa
+                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Node/PAMloc')])  # noqa
                             if port is not None:
                                 port = port.lower()
                             pam = self.get_hpn_from_col('PAM', key, header)
@@ -126,7 +126,7 @@ class UpdateConnect(upd_base.Update):
                                            upstream_output_port='rack',
                                            downstream_part=node, down_part_rev='A',
                                            downstream_input_port=loc)
-                        elif col == 'SNAP_Slot':  # extra to get @slot
+                        elif col == 'SNAPloc':  # extra to get @slot
                             pam = self.get_hpn_from_col('PAM', key, header)
                             try:
                                 pamkey = cm_utils.make_part_key(pam, 'A')

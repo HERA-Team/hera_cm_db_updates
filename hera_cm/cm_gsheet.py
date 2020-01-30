@@ -15,7 +15,7 @@ from . import util
 from hera_mc import cm_utils
 
 hu_col = {'Ant': 0, 'Pol': 4, 'Feed': 1, 'FEM': 2, 'PAM': 4, 'NBP/PAMloc': 3,
-          'SNAP': 5, 'Port': 5, 'SNAP-loc': 6, 'Node': 6}
+          'SNAP': 5, 'Port': 5, 'SNAPloc': 6, 'Node': 6}
 sheet_headers = ['Ant', 'Pol', 'Feed', 'FEM', 'NBP/PAMloc', 'PAM', 'SNAP', 'Port', 'SNAPloc',
                  'APriori', 'History', 'Comments']
 
