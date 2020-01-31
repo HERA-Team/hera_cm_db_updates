@@ -1,0 +1,122 @@
+#! /bin/bash
+echo "./200131_add_ants_nodes_12_13.py" >> scripts.log 
+add_part.py -p FDV101 -r A -t feed -m FDV101 --date 2020/01/31 --time 10:00
+add_part.py -p FEM160 -r A -t front-end -m FEM160 --date 2020/01/31 --time 10:00
+add_connection.py -u A176 --uprev H --upport focus -d FDV101 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV101 --uprev A --upport terminals -d FEM160 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM160 --uprev A --upport e -d NBP12 --dnrev A --dnport e1 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM160 --uprev A --upport n -d NBP12 --dnrev A --dnport n1 --date 2020/01/31 --time 11:00
+add_part.py -p FDV102 -r A -t feed -m FDV102 --date 2020/01/31 --time 10:00
+add_part.py -p FEM159 -r A -t front-end -m FEM159 --date 2020/01/31 --time 10:00
+add_connection.py -u A177 --uprev H --upport focus -d FDV102 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV102 --uprev A --upport terminals -d FEM159 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM159 --uprev A --upport e -d NBP12 --dnrev A --dnport e2 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM159 --uprev A --upport n -d NBP12 --dnrev A --dnport n2 --date 2020/01/31 --time 11:00
+add_part.py -p FDV103 -r A -t feed -m FDV103 --date 2020/01/31 --time 10:00
+add_part.py -p FEM149 -r A -t front-end -m FEM149 --date 2020/01/31 --time 10:00
+add_connection.py -u A178 --uprev H --upport focus -d FDV103 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV103 --uprev A --upport terminals -d FEM149 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM149 --uprev A --upport e -d NBP12 --dnrev A --dnport e3 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM149 --uprev A --upport n -d NBP12 --dnrev A --dnport n3 --date 2020/01/31 --time 11:00
+add_part.py -p FDV104 -r A -t feed -m FDV104 --date 2020/01/31 --time 10:00
+add_part.py -p FEM155 -r A -t front-end -m FEM155 --date 2020/01/31 --time 10:00
+add_connection.py -u A179 --uprev H --upport focus -d FDV104 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV104 --uprev A --upport terminals -d FEM155 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM155 --uprev A --upport e -d NBP12 --dnrev A --dnport e4 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM155 --uprev A --upport n -d NBP12 --dnrev A --dnport n4 --date 2020/01/31 --time 11:00
+add_part.py -p FDV96 -r A -t feed -m FDV96 --date 2020/01/31 --time 10:00
+add_part.py -p FEM150 -r A -t front-end -m FEM150 --date 2020/01/31 --time 10:00
+add_connection.py -u A135 --uprev H --upport focus -d FDV96 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV96 --uprev A --upport terminals -d FEM150 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM150 --uprev A --upport e -d NBP12 --dnrev A --dnport e7 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM150 --uprev A --upport n -d NBP12 --dnrev A --dnport n7 --date 2020/01/31 --time 11:00
+add_part.py -p FDV82 -r A -t feed -m FDV82 --date 2020/01/31 --time 10:00
+add_part.py -p FEM151 -r A -t front-end -m FEM151 --date 2020/01/31 --time 10:00
+add_connection.py -u A136 --uprev H --upport focus -d FDV82 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV82 --uprev A --upport terminals -d FEM151 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM151 --uprev A --upport e -d NBP12 --dnrev A --dnport e8 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM151 --uprev A --upport n -d NBP12 --dnrev A --dnport n8 --date 2020/01/31 --time 11:00
+add_part.py -p FDV97 -r A -t feed -m FDV97 --date 2020/01/31 --time 10:00
+add_part.py -p FEM152 -r A -t front-end -m FEM152 --date 2020/01/31 --time 10:00
+add_connection.py -u A155 --uprev H --upport focus -d FDV97 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV97 --uprev A --upport terminals -d FEM152 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM152 --uprev A --upport e -d NBP12 --dnrev A --dnport e9 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM152 --uprev A --upport n -d NBP12 --dnrev A --dnport n9 --date 2020/01/31 --time 11:00
+add_part.py -p FDV98 -r A -t feed -m FDV98 --date 2020/01/31 --time 10:00
+add_part.py -p FEM163 -r A -t front-end -m FEM163 --date 2020/01/31 --time 10:00
+add_connection.py -u A156 --uprev H --upport focus -d FDV98 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV98 --uprev A --upport terminals -d FEM163 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM163 --uprev A --upport e -d NBP12 --dnrev A --dnport e10 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM163 --uprev A --upport n -d NBP12 --dnrev A --dnport n10 --date 2020/01/31 --time 11:00
+add_part.py -p FDV99 -r A -t feed -m FDV99 --date 2020/01/31 --time 10:00
+add_part.py -p FEM161 -r A -t front-end -m FEM161 --date 2020/01/31 --time 10:00
+add_connection.py -u A157 --uprev H --upport focus -d FDV99 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV99 --uprev A --upport terminals -d FEM161 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM161 --uprev A --upport e -d NBP12 --dnrev A --dnport e11 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM161 --uprev A --upport n -d NBP12 --dnrev A --dnport n11 --date 2020/01/31 --time 11:00
+add_part.py -p FDV100 -r A -t feed -m FDV100 --date 2020/01/31 --time 10:00
+add_part.py -p FEM162 -r A -t front-end -m FEM162 --date 2020/01/31 --time 10:00
+add_connection.py -u A158 --uprev H --upport focus -d FDV100 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV100 --uprev A --upport terminals -d FEM162 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM162 --uprev A --upport e -d NBP12 --dnrev A --dnport e12 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM162 --uprev A --upport n -d NBP12 --dnrev A --dnport n12 --date 2020/01/31 --time 11:00
+add_part.py -p FDV114 -r A -t feed -m FDV114 --date 2020/01/31 --time 10:00
+add_part.py -p FEM166 -r A -t front-end -m FEM166 --date 2020/01/31 --time 10:00
+add_connection.py -u A140 --uprev H --upport focus -d FDV114 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV114 --uprev A --upport terminals -d FEM166 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM166 --uprev A --upport e -d NBP13 --dnrev A --dnport e7 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM166 --uprev A --upport n -d NBP13 --dnrev A --dnport n7 --date 2020/01/31 --time 11:00
+add_part.py -p FDV117 -r A -t feed -m FDV117 --date 2020/01/31 --time 10:00
+add_part.py -p FEM164 -r A -t front-end -m FEM164 --date 2020/01/31 --time 10:00
+add_connection.py -u A141 --uprev H --upport focus -d FDV117 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV117 --uprev A --upport terminals -d FEM164 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM164 --uprev A --upport e -d NBP13 --dnrev A --dnport e8 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM164 --uprev A --upport n -d NBP13 --dnrev A --dnport n8 --date 2020/01/31 --time 11:00
+add_part.py -p FDV121 -r A -t feed -m FDV121 --date 2020/01/31 --time 10:00
+add_part.py -p FEM170 -r A -t front-end -m FEM170 --date 2020/01/31 --time 10:00
+add_connection.py -u A142 --uprev H --upport focus -d FDV121 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV121 --uprev A --upport terminals -d FEM170 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM170 --uprev A --upport e -d NBP13 --dnrev A --dnport e9 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM170 --uprev A --upport n -d NBP13 --dnrev A --dnport n9 --date 2020/01/31 --time 11:00
+add_part.py -p FDV118 -r A -t feed -m FDV118 --date 2020/01/31 --time 10:00
+add_part.py -p FEM172 -r A -t front-end -m FEM172 --date 2020/01/31 --time 10:00
+add_connection.py -u A160 --uprev H --upport focus -d FDV118 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV118 --uprev A --upport terminals -d FEM172 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM172 --uprev A --upport e -d NBP13 --dnrev A --dnport e10 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM172 --uprev A --upport n -d NBP13 --dnrev A --dnport n10 --date 2020/01/31 --time 11:00
+add_part.py -p FDV113 -r A -t feed -m FDV113 --date 2020/01/31 --time 10:00
+add_part.py -p FEM168 -r A -t front-end -m FEM168 --date 2020/01/31 --time 10:00
+add_connection.py -u A161 --uprev H --upport focus -d FDV113 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV113 --uprev A --upport terminals -d FEM168 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM168 --uprev A --upport e -d NBP13 --dnrev A --dnport e1 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM168 --uprev A --upport n -d NBP13 --dnrev A --dnport n1 --date 2020/01/31 --time 11:00
+add_part.py -p FDV122 -r A -t feed -m FDV122 --date 2020/01/31 --time 10:00
+add_part.py -p FEM165 -r A -t front-end -m FEM165 --date 2020/01/31 --time 10:00
+add_connection.py -u A162 --uprev H --upport focus -d FDV122 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV122 --uprev A --upport terminals -d FEM165 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM165 --uprev A --upport e -d NBP13 --dnrev A --dnport e2 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM165 --uprev A --upport n -d NBP13 --dnrev A --dnport n2 --date 2020/01/31 --time 11:00
+add_part.py -p FDV119 -r A -t feed -m FDV119 --date 2020/01/31 --time 10:00
+add_part.py -p FEM167 -r A -t front-end -m FEM167 --date 2020/01/31 --time 10:00
+add_connection.py -u A180 --uprev H --upport focus -d FDV119 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV119 --uprev A --upport terminals -d FEM167 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM167 --uprev A --upport e -d NBP13 --dnrev A --dnport e11 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM167 --uprev A --upport n -d NBP13 --dnrev A --dnport n11 --date 2020/01/31 --time 11:00
+add_part.py -p FDV120 -r A -t feed -m FDV120 --date 2020/01/31 --time 10:00
+add_part.py -p FEM169 -r A -t front-end -m FEM169 --date 2020/01/31 --time 10:00
+add_connection.py -u A181 --uprev H --upport focus -d FDV120 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV120 --uprev A --upport terminals -d FEM169 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM169 --uprev A --upport e -d NBP13 --dnrev A --dnport e12 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM169 --uprev A --upport n -d NBP13 --dnrev A --dnport n12 --date 2020/01/31 --time 11:00
+add_part.py -p FDV123 -r A -t feed -m FDV123 --date 2020/01/31 --time 10:00
+add_part.py -p FEM171 -r A -t front-end -m FEM171 --date 2020/01/31 --time 10:00
+add_connection.py -u A182 --uprev H --upport focus -d FDV123 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV123 --uprev A --upport terminals -d FEM171 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM171 --uprev A --upport e -d NBP13 --dnrev A --dnport e3 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM171 --uprev A --upport n -d NBP13 --dnrev A --dnport n3 --date 2020/01/31 --time 11:00
+add_part.py -p FDV109 -r A -t feed -m FDV109 --date 2020/01/31 --time 10:00
+add_part.py -p FEM182 -r A -t front-end -m FEM182 --date 2020/01/31 --time 10:00
+add_connection.py -u A183 --uprev H --upport focus -d FDV109 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FDV109 --uprev A --upport terminals -d FEM182 --dnrev A --dnport input --date 2020/01/31 --time 11:00
+add_connection.py -u FEM182 --uprev A --upport e -d NBP13 --dnrev A --dnport e4 --date 2020/01/31 --time 11:00
+add_connection.py -u FEM182 --uprev A --upport n -d NBP13 --dnrev A --dnport n4 --date 2020/01/31 --time 11:00

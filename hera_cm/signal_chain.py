@@ -269,7 +269,7 @@ class Update:
         return added
 
     def add_antenna_to_node(self, ant, feed, fem, node, nbp_port,
-                            cdate, ctime=['10:00', '11:00'], ser_num={}):
+                            cdate, ctime=['10:00', '11:00'], ser_num={}, override=False):
         """
         Parameters:
         -----------
@@ -283,6 +283,7 @@ class Update:
         ctime:  time of mods <'10:00', '11:00'>
                 ['HH:MM', 'HH:MM'] for part at [0], connection at [1]
                 'HH:MM' for part/connection at 'HH:MM'
+        override : bool, dict
         """
 
         if isinstance(ctime, list):
@@ -307,9 +308,12 @@ class Update:
 
         # Check for parts to add and add them
         added['time'] = str(int(cm_utils.get_astropytime(cdate, partadd_time).gps))
-        check_date = cm_utils.get_astropytime(cdate=cdate, ctime=partadd_time)
+        if isinstance(override, dict) and 'date' in override.keys():
+            check_date = override['date']
+        else:
+            check_date = cm_utils.get_astropytime(adate=cdate, atime=partadd_time)
         for k, p in part_to_add.items():
-            if self.exists('part', p[0], p[1], check_date=check_date):
+            if self.exists('part', p[0], p[1], None, check_date=check_date):
                 print("{} {} is already added".format(k, p[0]))
             else:
                 self.update_part('add', p, cdate, partadd_time)
@@ -343,7 +347,10 @@ class Update:
         # Check for connections to add and add them
         added['time'] = str(int(cm_utils.get_astropytime(cdate, connadd_time).gps))
         for up, down, codate, cotime in connection_to_add:
-            check_date = cm_utils.get_astropytime(cdate=codate, ctime=cotime)
+            if isinstance(override, dict) and 'date' in override.keys():
+                check_date = override['date']
+            else:
+                check_date = cm_utils.get_astropytime(cdate=codate, ctime=cotime)
             if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2],
                                side='up', check_date=check_date):
                 self.update_connection('add', up, down, codate, cotime)
