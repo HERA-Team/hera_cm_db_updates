@@ -63,7 +63,7 @@ class Update:
     #   add_antenna_to_node : when a feed/fem etc is installed and hooked into node
 
     def update__at_date(self, cdate='now', ctime='10:00'):
-        self.at_date = cm_utils.get_astropytime(cdate=cdate, ctime=ctime)
+        self.at_date = cm_utils.get_astropytime(adate=cdate, atime=ctime)
 
     def no_op_comment(self, comment):
         self.fp.write('# {}\n'.format(comment.strip()))
@@ -147,7 +147,7 @@ class Update:
         ser_num : dict
                 dictionary of the serial numbers for the different part types
         override : bool or dict
-                allow for non-standard number of pams and/or snaps
+                allow for non-standard number of pams and/or snaps and ignore date
         """
         #  Setup/check overrides
         overridable_parts = {'pam': [12, len(pams)], 'snap': [4, len(snaps)]}
@@ -204,10 +204,13 @@ class Update:
                       .format(p[0], p[3], cdate, partadd_time))
 
         # Check for parts to add and add them
-        check_date = cm_utils.get_astropytime(cdate=cdate, ctime=partadd_time)
+        if isinstance(override, dict) and 'date' in override.keys():
+            check_date = override['date']
+        else:
+            check_date = cm_utils.get_astropytime(adate=cdate, atime=partadd_time)
         for p in part_to_add.values():
             if not p[0].startswith('ND'):  # Because add_station already added it
-                if not self.exists('part', p[0], p[1], check_date=check_date):
+                if not self.exists('part', p[0], p[1], None, check_date=check_date):
                     self.update_part('add', p, cdate, partadd_time)
                     added['part'].append(list(p) + [added['time']])
                 else:
@@ -252,7 +255,10 @@ class Update:
                           self.snap_ports[j][pol]]
                     connection_to_add.append([up, dn, cdate, connadd_time])
         for up, down, codate, cotime in connection_to_add:
-            check_date = cm_utils.get_astropytime(cdate=codate, ctime=cotime)
+            if isinstance(override, dict) and 'date' in override.keys():
+                check_date = override['date']
+            else:
+                check_date = cm_utils.get_astropytime(adate=codate, atime=cotime)
             if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2], side='up',
                                check_date=check_date):
                 self.update_connection('add', up, down, codate, cotime)
@@ -432,8 +438,8 @@ class Update:
             if abs(self.at_date - self.active.at_date) > 1.0:
                 print("Warning:  class and active dates do not agree.")
         else:
-            if abs(cm_utils.get_astropytime(check_date) - self.active.at_date) > 1.0:
-                raise ValueError("Supplied date and active date don't agree.")
+            if cm_utils.get_astropytime(check_date) - self.active.at_date < 0.0:
+                raise ValueError("Supplied date before active.at_date.")
         if rev is None:
             rev = cm_active.revs(hpn)
         elif isinstance(rev, str):
@@ -447,19 +453,20 @@ class Update:
         if atype.startswith('part') or not active_part:
             return active_part
 
-        sides = side.split(',')
-        if isinstance(port, str):
-            port = [port]
-        for r in rev:
-            part_key = cm_utils.make_part_key(hpn, r)
-            for side in sides:
-                if part_key in self.active.connections[side].keys():
-                    if port is None:
-                        return True
-                    for p in port:
-                        if p.upper() in self.active.connections[side][part_key].keys():
+        if port is not None:
+            sides = side.split(',')
+            if isinstance(port, str):
+                port = [port]
+            for r in rev:
+                part_key = cm_utils.make_part_key(hpn, r)
+                for side in sides:
+                    if part_key in self.active.connections[side].keys():
+                        if port is None:
                             return True
-        return False
+                        for p in port:
+                            if p.upper() in self.active.connections[side][part_key].keys():
+                                return True
+            return False
 
     def update_apriori(self, antenna, status, cdate, ctime='12:00'):
         """
