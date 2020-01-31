@@ -1050,3 +1050,8 @@ HH183,A,SNAPloc: 1,infoupd,1264236140
 HH2,A,ADC is broken!,infoupd,1264264938
 HH84,A,height raised from 4.117m to 4.492m 10/31/19,infoupd,1264423338
 HH123,A,height raised from 4.041m to 4.406m 10/31/19,infoupd,1264423338
+HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495338
+HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495340
+HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495338
+HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495340
+HH146,A,"SMA and CAT7 cables too short, won't connect feed to node.",infoupd,1264495338
