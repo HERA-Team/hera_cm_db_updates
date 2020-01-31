@@ -1,0 +1,8 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200131_infoupd_0842" >> scripts.log 
+add_part_info.py -p HH139 -r A -c "SMA and CAT7 cables too short to connect feed to node" -l "infoupd" --date 2020/01/31 --time 08:42:00
+add_part_info.py -p HH139 -r A -c "SMA and CAT7 cables too short to connect feed to node" -l "infoupd" --date 2020/01/31 --time 08:42:02
+add_part_info.py -p HH159 -r A -c "SMA and CAT7 cables too short to connect feed to node" -l "infoupd" --date 2020/01/31 --time 08:42:00
+add_part_info.py -p HH159 -r A -c "SMA and CAT7 cables too short to connect feed to node" -l "infoupd" --date 2020/01/31 --time 08:42:02
+add_part_info.py -p HH146 -r A -c "SMA and CAT7 cables too short, won't connect feed to node." -l "infoupd" --date 2020/01/31 --time 08:42:00
