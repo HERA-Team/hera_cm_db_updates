@@ -26,12 +26,12 @@ class Update(object):
                                             verbose=verbose, cdate=self.cdate, ctime=self.ctime)
         self.update_counter = 0
 
-    def load_gsheet(self, node_csv='none'):
+    def load_gsheet(self, node_csv='none', tabs=None):
         """
         Gets the googlesheet information from the internet
         """
         self.gsheet = cm_gsheet.SheetData()
-        self.gsheet.load_sheet(node_csv=node_csv)
+        self.gsheet.load_sheet(node_csv=node_csv, tabs=None)
 
     def finish(self, arc_path, cron_script):
         """

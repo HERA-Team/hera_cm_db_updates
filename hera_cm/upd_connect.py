@@ -44,11 +44,11 @@ class UpdateConnect(upd_base.Update):
             for pol in self.pols:
                 key = '{}-{}'.format(sant, pol)
                 node_num = self.gsheet.data[key][0]
-                tab = self.gsheet.ant_to_tab[sant]
-                header = self.gsheet.header[tab] + ['get_PAM_loc']
+                tab = self.gsheet.ant_to_node[sant]
+                header = self.gsheet.header[tab]
                 self.gsheet.connection[key] = []
                 for i, col in enumerate(header):
-                    if col not in self.gsheet.hu_col.keys():
+                    if col not in cm_gsheet.hu_col.keys():
                         continue
                     if self.gsheet.data[key][i] is not None:
                         tc_ = cm_partconnect.Connections()
@@ -69,16 +69,16 @@ class UpdateConnect(upd_base.Update):
                         elif col == 'FEM':
                             fem = self.get_hpn_from_col('FEM', key, header)
                             nbp = util.gen_hpn('NBP', node_num)
-                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Node/PAMloc')])  # noqa
+                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('NBP/PAMloc')])  # noqa
                             if port is not None:
                                 port = port.lower()
                             tc_.connection(upstream_part=fem, up_part_rev='A',
                                            upstream_output_port=pol.lower(),
                                            downstream_part=nbp, down_part_rev='A',
                                            downstream_input_port=port)
-                        elif col == 'Node/PAMloc':
+                        elif col == 'NBP/PAMloc':
                             nbp = util.gen_hpn('NBP', node_num)
-                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('Node/PAMloc')])  # noqa
+                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('NBP/PAMloc')])  # noqa
                             if port is not None:
                                 port = port.lower()
                             pam = self.get_hpn_from_col('PAM', key, header)
@@ -102,40 +102,23 @@ class UpdateConnect(upd_base.Update):
                                            upstream_output_port=pol.lower(),
                                            downstream_part=snap, down_part_rev='A',
                                            downstream_input_port=port)
-                        elif col == 'get_PAM_slot':  # extra to get @slot
-                            pam = self.get_hpn_from_col('PAM', key, header)
-                            try:
-                                pamkey = cm_utils.make_part_key(pam, 'A')
-                                pch = self.hookup.active.connections['up'][pamkey]['@SLOT'].downstream_part  # noqa
-                            except KeyError:
-                                print("{} is not an active connection!  No pam from {}"
-                                      .format(pam, key))
-                                pch = None
-                            slot = '{}{}'.format('@SLOT', self.gsheet.data[key][header.index('Bulkhead-PAM_Slot')])  # noqa
-                            if slot is not None:
-                                slot = slot.lower()
-                            tc_.connection(upstream_part=pam, up_part_rev='A',
-                                           upstream_output_port='@slot',
-                                           downstream_part=pch, down_part_rev='A',
-                                           downstream_input_port=slot)
                         elif col == 'SNAP':
                             snap = self.get_hpn_from_col('SNAP', key, header)
                             node = util.gen_hpn("Node", node_num)
-                            loc = "loc{}".format(self.gsheet.data[key][header.index('SNAP_Slot')])
+                            loc = "loc{}".format(self.gsheet.data[key][header.index('SNAPloc')])
                             tc_.connection(upstream_part=snap, up_part_rev='A',
                                            upstream_output_port='rack',
                                            downstream_part=node, down_part_rev='A',
                                            downstream_input_port=loc)
-                        elif col == 'SNAPloc':  # extra to get @slot
+                        elif col == 'SNAPloc':  # extra to get pam @slot
                             pam = self.get_hpn_from_col('PAM', key, header)
                             try:
                                 pamkey = cm_utils.make_part_key(pam, 'A')
                                 pch = self.hookup.active.connections['up'][pamkey]['@SLOT'].downstream_part  # noqa
                             except KeyError:
-                                print("{} is not an active connection!  No pam from {}"
-                                      .format(pam, key))
+                                print("{} {} is not an active connection!".format(ant, pol))
                                 pch = None
-                            slot = '{}{}'.format('@SLOT', self.gsheet.data[key][header.index('Bulkhead-PAM_Slot')])  # noqa
+                            slot = '{}{}'.format('@SLOT', self.gsheet.data[key][header.index('NBP/PAMloc')])  # noqa
                             if slot is not None:
                                 slot = slot.lower()
                             tc_.connection(upstream_part=pam, up_part_rev='A',

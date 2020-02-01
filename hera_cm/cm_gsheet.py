@@ -40,7 +40,8 @@ class SheetData:
         self.tabs = list(gsheet.keys())
         # It reads into the variables below
         self.data = {}
-        self.ant_to_tab = {}
+        self.ant_to_node = {}
+        self.node_to_ant = {}
         self.header = {}
         self.date = {}
         self.notes = {}
@@ -65,7 +66,7 @@ class SheetData:
         """
         node_csv = node_csv[0].lower()
         if tabs is None or str(tabs) == 'all':
-            tabs = self.tabs
+            tabs = sorted(list(gsheet.keys()))
         elif isinstance(tabs, str):
             tabs = tabs.split(',')
         for tab in tabs:
@@ -84,6 +85,7 @@ class SheetData:
             if node_csv == 'w':
                 with open(tab + '.csv', 'w') as fp:
                     fp.write('\n'.join(csv_data))
+            self.node_to_ant[tab] = []
             for data in csv_tab:
                 if data[0].startswith('Ant'):  # This is the header line
                     self.header[tab] = ['Node'] + data
@@ -100,7 +102,8 @@ class SheetData:
                 hpn = util.gen_hpn('HH', antnum)
                 hkey = cm_utils.make_part_key(hpn, 'A')
                 self.ant_set.add(hkey)
-                self.ant_to_tab[hkey] = tab
+                self.ant_to_node[hkey] = tab
+                self.node_to_ant[tab].append(hpn)
                 dkey = '{}-{}'.format(hkey, data[1].upper())
                 self.data[dkey] = [util.get_num(tab)] + data
             # Get the notes below the hookup table.
