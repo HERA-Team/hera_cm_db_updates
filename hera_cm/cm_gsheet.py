@@ -37,15 +37,17 @@ no_prefix = ['Comments']
 
 class SheetData:
     def __init__(self):
+        self.tabs = list(gsheet.keys())
+        # It reads into the variables below
         self.data = {}
         self.ant_to_tab = {}
         self.header = {}
         self.date = {}
         self.notes = {}
-        self.ants = set()
-        self.tabs = list(gsheet.keys())
+        self.ant_set = set()
+        self.ants = []
 
-    def load_sheet(self, node_csv='none', check_headers=False):
+    def load_sheet(self, node_csv='none', tabs=None, check_headers=False):
         """
         Gets the googlesheet information from the internet (or locally for testing etc)
 
@@ -56,9 +58,17 @@ class SheetData:
             'read' uses a local version as opposed to internet version
             'write' writes a local version
             'none' does neither of the above
+        tabs : none, str, list
+            List of tabs to use.  None == all of them.
+        check_headers : bool
+            If True, it will make sure all of the headers agree with sheet_headers
         """
         node_csv = node_csv[0].lower()
-        for tab in self.tabs:
+        if tabs is None or str(tabs) == 'all':
+            tabs = self.tabs
+        elif isinstance(tabs, str):
+            tabs = tabs.split(',')
+        for tab in tabs:
             if node_csv == 'r':
                 csv_data = []
                 with open(tab + '.csv', 'r') as fp:
@@ -89,7 +99,7 @@ class SheetData:
                     continue
                 hpn = util.gen_hpn('HH', antnum)
                 hkey = cm_utils.make_part_key(hpn, 'A')
-                self.ants.add(hkey)
+                self.ant_set.add(hkey)
                 self.ant_to_tab[hkey] = tab
                 dkey = '{}-{}'.format(hkey, data[1].upper())
                 self.data[dkey] = [util.get_num(tab)] + data
@@ -104,4 +114,4 @@ class SheetData:
                         npkey = node_pn
                     self.notes.setdefault(npkey, [])
                     self.notes[npkey].append('-'.join([y for y in data[1:] if len(y) > 0]))
-        self.ants = cm_utils.put_keys_in_order(list(self.ants), sort_order='NPR')
+        self.ants = cm_utils.put_keys_in_order(list(self.ant_set), sort_order='NPR')
