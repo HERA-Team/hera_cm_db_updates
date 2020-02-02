@@ -32,12 +32,7 @@ update.load_hookup()
 update.make_sheet_connections()
 update.compare_connection()
 if args.look_only:
-    for node, ants in update.gsheet.node_to_ant.items():
-        print('---------Node:  {}'.format(node))
-        for a in ants:
-            ukey = a + ':A-E'
-            if len(update.gsheet.connection[ukey]):
-                print(update.gsheet.connection[ukey])
+    update.view_conn()
 else:
     update.gen_compare_script()
     update.finish(arc_path=args.arc_path, cron_script=cron_nom)

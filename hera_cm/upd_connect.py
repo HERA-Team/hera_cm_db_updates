@@ -171,7 +171,7 @@ class UpdateConnect(upd_base.Update):
                                 self.mismatches.hookup.setdefault(sheet_key, {'sheet': sheet_row, 'diff': []})  # noqa
                                 self.mismatches.hookup[sheet_key]['diff'].append([col, val, sheet_val])  # noqa
 
-    def NEED_TO_FIX_view_compare(self, ctypes=['hookup', 'connection']):
+    def view_conn(self):
         """
         Views the comparison with cm database and spreadsheet.
 
@@ -185,30 +185,18 @@ class UpdateConnect(upd_base.Update):
         str
             output string
         """
-        if isinstance(ctypes, str):
-            ctypes = [ctypes]
-        antkeys = []
-        for ctype in ctypes:
-            comp_type = getattr(self.mismatches, ctype)
-            antkeys += list(comp_type.keys())
-        antkeys = cm_utils.put_keys_in_order(list(set(antkeys)), sort_order='NPR')
-        output_string = ''
-        for antkey in antkeys:
-            key, pol = antkey.split('-')
-            output_string += "\n{:10s}----------    cm       <--->  sheet\n".format(antkey)
-            for ctype in ctypes:
-                comp_type = getattr(self.mismatches, ctype)
-                if antkey in comp_type.keys():
-                    for diff in comp_type[antkey]['diff']:
-                        if ctype == 'hookup':
-                            output_string += "{:18s}  {:10s}   <--->"
-                            "   {}\n".format(diff[0], diff[1], diff[2])
-                        else:
-                            output_string += "{:30s}   <--->   {}  "
-                            "({}  {})\n".format(str(diff[0]), diff[1], self.cdate, self.ctime)
-        print(output_string)
+        for node, ants in self.gsheet.node_to_ant.items():
+            print('---------Node:  {}'.format(node))
+            for a in ants:
+                ukey = a + ':A-E'
+                if len(self.gsheet.connection[ukey]):
+                    print(self.gsheet.connection[ukey])
+        print("---------Diffs")
+        for antkey, diff in self.mismatches.connection.items():
+            if len(diff):
+                print('{}:  {}'.format(antkey, diff))
 
-    def NEED_TO_FIX_gen_compare_script(self):
+    def gen_compare_script(self):
         """
         Generate the compare script.
         """
@@ -217,7 +205,7 @@ class UpdateConnect(upd_base.Update):
         added_parts = []
         for antkey in antkeys:
             key, pol = antkey.split('-')
-            for diff in self.mismatches.connection[antkey]['diff']:
+            for diff in self.mismatches.connection[antkey]:
                 self.update_counter += 1
                 if diff[0] is None:
                     up, urev, uprt = diff[1].upstream_part, diff[1].up_part_rev,\
