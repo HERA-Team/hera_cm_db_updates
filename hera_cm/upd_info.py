@@ -103,3 +103,17 @@ class UpdateInfo(upd_base.Update):
                               .format(key, node, statement, ddays))
                     return True
         return False
+
+    def view_info(self):
+        if len(self.new_apriori.keys()):
+            print("New Apriori")
+            for x, info in sorted(self.new_apriori.items()):
+                print("{}:  {}".format(x, info))
+        else:
+            print("No new apriori")
+        if len(self.new_notes.keys()):
+            print("New Notes")
+            for x, info in sorted(self.new_notes.items()):
+                print("{}:  {}".format(x, info))
+        else:
+            print("No new notes")

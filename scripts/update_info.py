@@ -38,7 +38,6 @@ update.load_active()
 update.add_apriori()
 update.add_sheet_notes(duplication_window=args.duplication_window, view_duplicate=args.view_duplicate)  # noqa
 if args.look_only:
-    print(update.new_apriori)
-    print(update.new_notes)
+    update.view_info()
 else:
     update.finish(arc_path=args.arc_path, cron_script=cron_nom)
