@@ -145,10 +145,10 @@ class UpdateConnect(upd_base.Update):
                 except KeyError:
                     acval = None
                 if acval is None or acval != scval:
-                    self.mismatches.connection.setdefault(sckey, {'sheet': scvals, 'diff': []})
-                    self.mismatches.connection[sckey]['diff'].append([acval, scval])
+                    self.mismatches.connection.setdefault(sckey, [])
+                    self.mismatches.connection[sckey].append([acval, scval])
 
-    def compare_hookup(self):
+    def OUT_OF_DATE_compare_hookup(self):
         """
         ## Note that this is left in for sanity/double-checking purposes.
         Compares the hookup data with the spreadsheet.  Writes self.mismatches.hookup
@@ -171,7 +171,7 @@ class UpdateConnect(upd_base.Update):
                                 self.mismatches.hookup.setdefault(sheet_key, {'sheet': sheet_row, 'diff': []})  # noqa
                                 self.mismatches.hookup[sheet_key]['diff'].append([col, val, sheet_val])  # noqa
 
-    def view_compare(self, ctypes=['hookup', 'connection']):
+    def NEED_TO_FIX_view_compare(self, ctypes=['hookup', 'connection']):
         """
         Views the comparison with cm database and spreadsheet.
 
@@ -208,7 +208,7 @@ class UpdateConnect(upd_base.Update):
                             "({}  {})\n".format(str(diff[0]), diff[1], self.cdate, self.ctime)
         print(output_string)
 
-    def gen_compare_script(self):
+    def NEED_TO_FIX_gen_compare_script(self):
         """
         Generate the compare script.
         """
@@ -239,7 +239,7 @@ class UpdateConnect(upd_base.Update):
                                                                self.cdate, self.ctime)
                     self.hera.no_op_comment(s)
 
-    def _get_val_from_cmdb(self, antkey, pol, sheet_col):
+    def OUT_OF_DATE__get_val_from_cmdb(self, antkey, pol, sheet_col):
         """
         Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column for comparison.
         """

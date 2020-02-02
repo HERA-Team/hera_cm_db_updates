@@ -101,7 +101,13 @@ def gen_hpn(ptype, pnum, verbose=False):
         pnum = pnum.upper()
     try:
         if ptype in ['SNP', 'SNAP']:
-            return 'SNP{}{:06d}'.format(pnum[0], int(pnum[1:]))
+            snpletter = 'C'
+            try:
+                snpnum = int(pnum)
+            except ValueError:
+                snpletter = pnum[0]
+                snpnum = int(pnum[1:])
+            return 'SNP{}{:06d}'.format(snpletter, snpnum)
         if ptype in ['PAM', 'FEM']:
             return '{}{:03d}'.format(ptype, int(pnum))
         if ptype in ['NODE', 'ND']:

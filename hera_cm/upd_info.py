@@ -25,8 +25,9 @@ class UpdateInfo(upd_base.Update):
         """
         Write out for apriori differences.
         """
+        self.new_apriori = {}
         for key in self.gsheet.ants:
-            ap_col = self.gsheet.header[self.gsheet.ant_to_tab[key]].index('APriori')
+            ap_col = self.gsheet.header[self.gsheet.ant_to_node[key]].index('APriori')
             E = self.gsheet.data[key + '-E'][ap_col]
             N = self.gsheet.data[key + '-N'][ap_col]
             ant, rev = cm_utils.split_part_key(key)
@@ -36,12 +37,13 @@ class UpdateInfo(upd_base.Update):
             if len(E) == 0:
                 continue
             if E != self.active.apriori[key].status:
+                self.new_apriori[key] = "{} -> {}".format(E, self.active.apriori[key].status)
                 if self.verbose:
                     print("Updating {}   {}".format(E, self.active.apriori[key].status))
                 self.hera.update_apriori(ant, E, self.cdate, self.ctime)
                 self.update_counter += 1
 
-    def add_sheet_notes(self, duplication_window=90.0):
+    def add_sheet_notes(self, duplication_window=90.0, view_duplicate=0.0):
         """
         Searches the relevant fields in the googlesheets and generates the
         appropriate script commands.
@@ -52,10 +54,11 @@ class UpdateInfo(upd_base.Update):
             time-frame in days over which to check for duplicate comments.
         """
         primary_keys = []
+        self.new_notes = {}
         for sheet_key in self.gsheet.data.keys():
             antrev_key, pol = sheet_key.split('-')
             ant, rev = cm_utils.split_part_key(antrev_key)
-            tab = self.gsheet.ant_to_tab[antrev_key]
+            tab = self.gsheet.ant_to_node[antrev_key]
             # Process sheet data
             pdate = self.cdate + ''
             ptime = self.ctime + ''
@@ -75,7 +78,9 @@ class UpdateInfo(upd_base.Update):
                 else:
                     prefix = '{}: '.format(col)
                 statement = '{}{}'.format(prefix, col_data)
-                if not self.is_duplicate(antrev_key, statement, duplication_window):
+                if not self.is_duplicate(antrev_key, statement, duplication_window, view_duplicate):
+                    self.new_notes.setdefault(antrev_key, [])
+                    self.new_notes[antrev_key].append(statement)
                     if self.verbose:
                         print("Adding comment: {}:{} - {}".format(ant, rev, statement))
                     self.hera.add_part_info(ant, rev, statement, pdate, ptime, ref='infoupd')
@@ -85,14 +90,16 @@ class UpdateInfo(upd_base.Update):
     def add_below_notes(self):
         print("ADD THE NOTES FROM BELOW THE TABLE")
 
-    def is_duplicate(self, key, statement, duplication_window):
+    def is_duplicate(self, key, statement, duplication_window, view_duplicate=0.0):
         if key in self.active.info.keys():
             for note in self.active.info[key]:
                 note_time = cm_utils.get_astropytime(note.posting_gpstime).datetime
                 dt = self.now - note_time
                 ddays = dt.days + dt.seconds / (3600.0 * 24)
                 if ddays < duplication_window and statement == note.comment:
-                    if self.verbose:
-                        print("Duplicate for {} - {}  ({:.1f} days)".format(key, statement, ddays))
+                    node = self.gsheet.ant_to_node[key]
+                    if self.verbose and ddays > view_duplicate:
+                        print("Duplicate for {:8s}  ({}) - {}  ({:.1f} days)"
+                              .format(key, node, statement, ddays))
                     return True
         return False

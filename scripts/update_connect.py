@@ -12,16 +12,15 @@ if __name__ == '__main__':
     ap.add_argument('--script-path', dest='script_path', help="Path for cron script", default='./')
     ap.add_argument('-n', '--node_csv', help="Flag for read/write of gsheet (r/w/n)", default='n')
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
-    ap.add_argument('-c', '--compare', help="Flag to compare and not write script", default=None)
+    ap.add_argument('-l', '--look_only', help="Look at the results only", action='store_true')
     args = ap.parse_args()
 else:
-    args = argparse.Namespace(arc_path=None, script_path='./', verbose=True,
-                              compare='hookup,connection', test_state='w')
+    args = argparse.Namespace(arc_path=None, script_path='./', node_csv='n',
+                              verbose=True, look_only=True)
 
-if args.compare is not None:
+if args.look_only:
     script_nom = None
     cron_nom = None
-    args.compare = args.compare.split(',')
 else:
     script_nom = 'connupd'
     cron_nom = 'conn_update.sh'
@@ -32,9 +31,13 @@ update.load_gsheet(node_csv=args.node_csv)
 update.load_hookup()
 update.make_sheet_connections()
 update.compare_connection()
-if args.compare is not None:
-    update.compare_hookup()
-    update.view_compare(args.compare)
+if args.look_only:
+    for node, ants in update.gsheet.node_to_ant.items():
+        print('---------Node:  {}'.format(node))
+        for a in ants:
+            ukey = a + ':A-E'
+            if len(update.gsheet.connection[ukey]):
+                print(update.gsheet.connection[ukey])
 else:
     update.gen_compare_script()
-update.finish(arc_path=args.arc_path, cron_script=cron_nom)
+    update.finish(arc_path=args.arc_path, cron_script=cron_nom)
