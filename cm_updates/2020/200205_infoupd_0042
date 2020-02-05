@@ -1,0 +1,14 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200205_infoupd_0042" >> scripts.log 
+update_apriori.py -p HH43 -s dish_maintenance --date 2020/02/05 --time 00:42
+update_apriori.py -p HH44 -s RF_maintenance --date 2020/02/05 --time 00:42
+update_apriori.py -p HH45 -s RF_maintenance --date 2020/02/05 --time 00:42
+update_apriori.py -p HH46 -s RF_maintenance --date 2020/02/05 --time 00:42
+update_apriori.py -p HH58 -s RF_maintenance --date 2020/02/05 --time 00:42
+update_apriori.py -p HH59 -s RF_maintenance --date 2020/02/05 --time 00:42
+update_apriori.py -p HH60 -s RF_maintenance --date 2020/02/05 --time 00:42
+update_apriori.py -p HH73 -s RF_maintenance --date 2020/02/05 --time 00:42
+update_apriori.py -p HH74 -s RF_maintenance --date 2020/02/05 --time 00:42
+update_apriori.py -p HH75 -s RF_maintenance --date 2020/02/05 --time 00:42
+update_apriori.py -p HH76 -s dish_maintenance --date 2020/02/05 --time 00:42
