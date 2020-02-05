@@ -191,10 +191,13 @@ class UpdateConnect(upd_base.Update):
                 ukey = a + ':A-E'
                 if len(self.gsheet.connection[ukey]):
                     print(self.gsheet.connection[ukey])
+
+    def view_diff(self):
         print("---------Diffs")
         for antkey, diff in self.mismatches.connection.items():
+            node = self.gsheet.ant_to_node[antkey.split('-')[0]]
             if len(diff):
-                print('{}:  {}'.format(antkey, diff))
+                print('{} ({}):  {}'.format(antkey, node, diff))
 
     def gen_compare_script(self):
         """

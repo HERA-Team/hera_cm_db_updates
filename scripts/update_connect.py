@@ -33,6 +33,7 @@ update.make_sheet_connections()
 update.compare_connection()
 if args.look_only:
     update.view_conn()
+    update.view_diff()
 else:
     update.gen_compare_script()
     update.finish(arc_path=args.arc_path, cron_script=cron_nom)
