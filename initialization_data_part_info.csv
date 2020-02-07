@@ -1055,3 +1055,76 @@ HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495340
 HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495338
 HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495340
 HH146,A,"SMA and CAT7 cables too short, won't connect feed to node.",infoupd,1264495338
+HH110,A,Was seen as not raised 29 Jan 2020,infoupd,1264948938
+HH110,A,Was seen as not raised 29 Jan 2021,infoupd,1264948940
+HH127,A,Was seen as not raised 29 Jan 2021,infoupd,1264948938
+HH127,A,Was seen as not raised 29 Jan 2022,infoupd,1264948940
+HH24,A,No central line for this feed,infoupd,1265056938
+HH24,A,No central line for this feed,infoupd,1265056940
+HH65,A,65E looks dead,infoupd,1265056938
+HH42,A,43E looks dead,infoupd,1265056938
+HH55,A,55N looks dead,infoupd,1265056938
+HH57,A,central line is detached,infoupd,1265056938
+HH57,A,central line is detached,infoupd,1265056940
+HH71,A,71E looks very atypical,infoupd,1265056938
+HH74,A,74E and N look dead,infoupd,1265056938
+HH74,A,74E and N look dead,infoupd,1265056940
+HH127,A,Was seen as not raised 29 Jan 2020,infoupd,1265132538
+HH127,A,Was seen as not raised 29 Jan 2020,infoupd,1265132540
+HH128,A,"Central line too loose to be RF OK, door mesh in dish; 'nicest dish' candidate; spectra look great",infoupd,1265132538
+HH128,A,"Central line too loose to be RF OK, door mesh in dish; 'nicest dish' candidate; spectra look great",infoupd,1265132540
+HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1265132538
+HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1265132540
+HH130,A,"Central line too loose to be RF OK, door mesh in dish",infoupd,1265132538
+HH130,A,"Central line too loose to be RF OK, door mesh in dish",infoupd,1265132540
+HH177,A,Preliminary specrta looks fine,infoupd,1265132538
+HH177,A,Preliminary specrta looks fine,infoupd,1265132540
+HH178,A,Preliminary specrta looks fine,infoupd,1265132538
+HH178,A,Preliminary specrta looks fine,infoupd,1265132540
+HH179,A,Preliminary specrta looks fine,infoupd,1265132538
+HH179,A,Preliminary specrta looks fine,infoupd,1265132540
+HH135,A,Preliminary specrta looks fine,infoupd,1265132538
+HH135,A,Preliminary specrta looks fine,infoupd,1265132540
+HH136,A,Preliminary specrta looks fine,infoupd,1265132538
+HH136,A,Preliminary specrta looks fine,infoupd,1265132540
+HH155,A,Preliminary specrta looks fine,infoupd,1265132538
+HH155,A,Preliminary specrta looks fine,infoupd,1265132540
+HH156,A,Preliminary specrta looks fine,infoupd,1265132538
+HH156,A,Preliminary specrta looks fine,infoupd,1265132540
+HH157,A,Preliminary specrta looks fine,infoupd,1265132538
+HH157,A,Preliminary specrta looks fine,infoupd,1265132540
+HH158,A,Preliminary specrta looks fine,infoupd,1265132538
+HH158,A,Preliminary specrta looks fine,infoupd,1265132540
+HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
+HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
+HH141,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
+HH141,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
+HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
+HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
+HH160,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
+HH160,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
+HH161,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
+HH161,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
+HH162,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
+HH162,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
+HH180,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
+HH180,A,Preliminary post-PAM spectra is very low amplitude but not dead,infoupd,1265132540
+HH181,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
+HH181,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
+HH182,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
+HH182,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
+HH183,A,"Preliminary post-PAM spectra shows 183 N, E dead",infoupd,1265132538
+HH183,A,"Preliminary post-PAM spectra shows 183 N, E dead",infoupd,1265132540
+HH116,A,Post-PAM spectra of 116E has a strange look.,infoupd,1265132538
+HH85,A,Feed down as of 31 Jan 2020,infoupd,1265132538
+HH85,A,Feed down as of 31 Jan 2020,infoupd,1265132540
+HH101,A,101E and N look dead from post-PAM spectra taken the last week of Jan 2020,infoupd,1265132538
+HH101,A,101E and N look dead from post-PAM spectra taken the last week of Jan 2020,infoupd,1265132540
+HH102,A, ,infoupd,1265132538
+HH104,A,Feed down as of 31 Jan 2020,infoupd,1265132538
+HH104,A,Feed down as of 31 Jan 2020,infoupd,1265132540
+HH120,A, ,infoupd,1265132538
+HH122,A,Feed down as of 31 Jan 2020,infoupd,1265132538
+HH122,A,Feed down as of 31 Jan 2020,infoupd,1265132540
+HH106,A,Late Jan 2020 post-PAM spectra show N pol about half the amplitude of E pol. 31Jan2020 Measured center of feed as differing from center of hub by 2-3 cm. Z= [ 4.424 4.423] from hub (spec is 4.428-4.448),infoupd,1265132538
+HH106,A,Late Jan 2020 post-PAM spectra show N pol about half the amplitude of E pol. 31Jan2020 Measured center of feed as differing from center of hub by 2-3 cm. Z= [ 4.424 4.423] from hub (spec is 4.428-4.448),infoupd,1265132540
