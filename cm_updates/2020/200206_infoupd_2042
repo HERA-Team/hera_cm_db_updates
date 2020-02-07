@@ -1,0 +1,31 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200206_infoupd_2042" >> scripts.log 
+update_apriori.py -p HH24 -s RF_maintenance --date 2020/02/06 --time 20:42
+update_apriori.py -p HH40 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH41 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH43 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH44 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH45 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH46 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH54 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH56 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH58 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH59 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH60 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH69 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH70 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH72 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH73 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH75 -s RF_ok --date 2020/02/06 --time 20:42
+update_apriori.py -p HH76 -s RF_maintenance --date 2020/02/06 --time 20:42
+add_part_info.py -p HH24 -r A -c "No central line for this feed" -l "infoupd" --date 2020/02/06 --time 20:42:00
+add_part_info.py -p HH24 -r A -c "No central line for this feed" -l "infoupd" --date 2020/02/06 --time 20:42:02
+add_part_info.py -p HH65 -r A -c "65E looks dead" -l "infoupd" --date 2020/02/06 --time 20:42:00
+add_part_info.py -p HH42 -r A -c "43E looks dead" -l "infoupd" --date 2020/02/06 --time 20:42:00
+add_part_info.py -p HH55 -r A -c "55N looks dead" -l "infoupd" --date 2020/02/06 --time 20:42:00
+add_part_info.py -p HH57 -r A -c "central line is detached" -l "infoupd" --date 2020/02/06 --time 20:42:00
+add_part_info.py -p HH57 -r A -c "central line is detached" -l "infoupd" --date 2020/02/06 --time 20:42:02
+add_part_info.py -p HH71 -r A -c "71E looks very atypical" -l "infoupd" --date 2020/02/06 --time 20:42:00
+add_part_info.py -p HH74 -r A -c "74E and N look dead" -l "infoupd" --date 2020/02/06 --time 20:42:00
+add_part_info.py -p HH74 -r A -c "74E and N look dead" -l "infoupd" --date 2020/02/06 --time 20:42:02

@@ -1,0 +1,8 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200205_infoupd_1442" >> scripts.log 
+update_apriori.py -p HH68 -s RF_ok --date 2020/02/05 --time 14:42
+add_part_info.py -p HH110 -r A -c "Was seen as not raised 29 Jan 2020" -l "infoupd" --date 2020/02/05 --time 14:42:00
+add_part_info.py -p HH110 -r A -c "Was seen as not raised 29 Jan 2021" -l "infoupd" --date 2020/02/05 --time 14:42:02
+add_part_info.py -p HH127 -r A -c "Was seen as not raised 29 Jan 2021" -l "infoupd" --date 2020/02/05 --time 14:42:00
+add_part_info.py -p HH127 -r A -c "Was seen as not raised 29 Jan 2022" -l "infoupd" --date 2020/02/05 --time 14:42:02
