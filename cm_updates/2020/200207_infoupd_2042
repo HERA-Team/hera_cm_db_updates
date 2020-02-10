@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200207_infoupd_2042" >> scripts.log 
+add_part_info.py -p HH183 -r A -c "Preliminary post-PAM spectra looks fine" -l "infoupd" --date 2020/02/07 --time 20:42:00
+add_part_info.py -p HH183 -r A -c "Preliminary post-PAM spectra looks fine" -l "infoupd" --date 2020/02/07 --time 20:42:02
