@@ -3,6 +3,8 @@
 # Copyright 2019 David DeBoer
 # Licensed under the 2-clause BSD license.
 
+"""Setup tools for hera_cm_db_updates."""
+
 from setuptools import setup
 
 setup_args = {
@@ -14,7 +16,7 @@ setup_args = {
     'author_email': "hera-sw@lists.berkeley.edu",
     'version': '1.0',
     'packages': ['hera_cm'],
-    'scripts': ['scripts/update_info.py', 'scripts/update_connect.py'],
+    'scripts': ['scripts/write_sqlite.py', 'scripts/update_info.py', 'scripts/update_connect.py'],
     'include_package_data': True,
     'install_requires': []
 }

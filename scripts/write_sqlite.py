@@ -3,9 +3,8 @@
 # Copyright 2018 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
 
-"""
-Script to handle updating the sqlite db from files.  This is __very__ specific and brittle
-"""
+"""Script to handle updating the sqlite db from files."""
+
 from hera_mc import mc
 import subprocess
 import os.path
@@ -44,15 +43,8 @@ dbfile = os.path.join(cm_csv_path, 'cm_hera.sql')
 with open(dbfile, 'w') as f:
     f.write(schema)
     f.write(inserts)
+    f.write(".save hera_mc.db")
 
 subprocess.call('rm -f schema.sql', shell=True)
 subprocess.call('rm -f inserts.sql', shell=True)
-
-print("""
-In 'hera_cm_db_updates' type the following:
-
-$ sqlite3
-sqlite> .read cm_hera.sql
-sqlite> .save hera_mc.db
-sqlite> .quit
-""")
+subprocess.call('sqlite3 < {}'.format(dbfile), shell=True)
