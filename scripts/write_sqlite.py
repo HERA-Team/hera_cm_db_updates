@@ -9,10 +9,15 @@ from hera_mc import mc
 import subprocess
 import os.path
 
+table_dump_list = ['apriori_antenna', 'cm_version', 'connections',
+                   'geo_location', 'part_info', 'parts', 'station_type']
+
 cm_csv_path = mc.get_cm_csv_path(None)
 
 subprocess.call('pg_dump -s hera_mc > schema.sql', shell=True)
-subprocess.call('pg_dump --inserts --data-only hera_mc > inserts.sql', shell=True)
+dump = ('pg_dump --inserts --data-only hera_mc -t {} > inserts.sql'
+        .format(' -t '.join(table_dump_list)))
+subprocess.call(dump, shell=True)
 
 schema = ''
 creating_table = False
