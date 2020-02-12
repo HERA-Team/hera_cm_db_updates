@@ -823,7 +823,6 @@ HH0,1264193598,,digital_maintenance
 HH1,1235476818,1264193598.0,needs_checking
 HH1,1264193598,,digital_maintenance
 HH2,1264193598,,digital_maintenance
-HH11,1264193598,,digital_maintenance
 HH12,1264193598,,digital_maintenance
 HH13,1264193598,,digital_maintenance
 HH14,1264193598,,digital_maintenance
@@ -871,7 +870,6 @@ HH106,1264193598,,digital_maintenance
 HH107,1264193598,,digital_maintenance
 HH108,1264193598,,digital_maintenance
 HH110,1264193598,,RF_maintenance
-HH116,1264193598,,digital_maintenance
 HH117,1264193598,,digital_maintenance
 HH118,1264193598,,digital_maintenance
 HH119,1254225618,1264193598.0,needs_checking
@@ -884,8 +882,6 @@ HH127,1264193598,,RF_maintenance
 HH128,1264193598,,RF_maintenance
 HH130,1264193598,,RF_maintenance
 HH137,1254225618,1264193598.0,needs_checking
-HH137,1264193598,,digital_maintenance
-HH138,1264193598,,digital_maintenance
 HH84,1264193598,1264236138.0,digital_maintenance
 HH85,1264193598,1264236138.0,digital_maintenance
 HH85,1264236138,,RF_maintenance
@@ -931,6 +927,10 @@ HH136,1264236138,1265467338.0,RF_maintenance
 HH53,1264193598,1265575338.0,RF_maintenance
 HH65,1264193598,1265575338.0,RF_ok
 HH66,1264193598,1265575338.0,RF_ok
+HH11,1264193598,1265582538.0,digital_maintenance
+HH116,1264193598,1265582538.0,digital_maintenance
+HH137,1264193598,1265582538.0,digital_maintenance
+HH138,1264193598,1265582538.0,digital_maintenance
 HH139,1264236138,,RF_maintenance
 HH140,1214481618,1264236138.0,not_connected
 HH140,1264236138,,RF_maintenance
@@ -1053,3 +1053,7 @@ HH121,1265132538,1265575338.0,RF_ok
 HH121,1265575338,,RF_maintenance
 HH123,1265132538,1265575338.0,RF_ok
 HH123,1265575338,,RF_maintenance
+HH11,1265582538,,RF_maintenance
+HH116,1265582538,,RF_maintenance
+HH137,1265582538,,RF_maintenance
+HH138,1265582538,,RF_maintenance
