@@ -3,7 +3,7 @@
 # Copyright 2018 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
 
-"""Script to handle updating the sqlite db from files."""
+"""Update the sqlite db from the database."""
 
 from hera_mc import mc
 import subprocess
@@ -39,13 +39,14 @@ with open('inserts.sql', 'r') as f:
         if 'INSERT' in modline:
             inserts += modline
 
-dbfile = os.path.join(cm_csv_path, 'cm_hera.sql')
-with open(dbfile, 'w') as f:
+sqlfile = os.path.join(cm_csv_path, 'cm_hera.sql')
+dbfile = os.path.join(cm_csv_path, 'hera_mc.db')
+with open(sqlfile, 'w') as f:
     f.write(schema)
     f.write(inserts)
-    f.write(".save hera_mc.db")
+    f.write(".save {}\n".format(dbfile))
+subprocess.call('sqlite3 < {}'.format(sqlfile), shell=True)
 
 subprocess.call('rm -f schema.sql', shell=True)
 subprocess.call('rm -f inserts.sql', shell=True)
-subprocess.call('sqlite3 < {}'.format(dbfile), shell=True)
-subprocess.call('rm -f {}'.format(dbfile), shell=True)
+subprocess.call('rm -f {}'.format(sqlfile), shell=True)
