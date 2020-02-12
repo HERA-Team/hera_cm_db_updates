@@ -48,3 +48,4 @@ with open(dbfile, 'w') as f:
 subprocess.call('rm -f schema.sql', shell=True)
 subprocess.call('rm -f inserts.sql', shell=True)
 subprocess.call('sqlite3 < {}'.format(dbfile), shell=True)
+subprocess.call('rm -f {}'.format(dbfile), shell=True)
