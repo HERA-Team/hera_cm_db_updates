@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200213_infoupd_0342" >> scripts.log 
+update_apriori.py -p HH106 -s RF_maintenance --date 2020/02/13 --time 03:42
+update_apriori.py -p HH126 -s RF_maintenance --date 2020/02/13 --time 03:42
