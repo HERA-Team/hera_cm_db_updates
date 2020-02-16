@@ -1,0 +1,8 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200214_infoupd_0942" >> scripts.log 
+add_part_info.py -p HH160 -r A -c "Feed heights (NE/SE/SW/NW): Z diztance = 4.413" -l "infoupd" --date 2020/02/14 --time 09:42:00
+add_part_info.py -p HH161 -r A -c "Feed heights (NE/SE/SW/NW): Z dstance = 4.412" -l "infoupd" --date 2020/02/14 --time 09:42:00
+add_part_info.py -p HH162 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.411" -l "infoupd" --date 2020/02/14 --time 09:42:00
+add_part_info.py -p HH181 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.410" -l "infoupd" --date 2020/02/14 --time 09:42:00
+add_part_info.py -p HH182 -r A -c "Feed heights (NE/SE/SW/NW): Z distance =4.415" -l "infoupd" --date 2020/02/14 --time 09:42:00

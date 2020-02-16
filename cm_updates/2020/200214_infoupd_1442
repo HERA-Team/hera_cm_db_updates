@@ -1,0 +1,17 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200214_infoupd_1442" >> scripts.log 
+update_apriori.py -p HH160 -s RF_ok --date 2020/02/14 --time 14:42
+update_apriori.py -p HH162 -s RF_ok --date 2020/02/14 --time 14:42
+update_apriori.py -p HH181 -s RF_ok --date 2020/02/14 --time 14:42
+update_apriori.py -p HH182 -s RF_ok --date 2020/02/14 --time 14:42
+add_part_info.py -p HH160 -r A -c "Final post-PAM spectra looks fine" -l "infoupd" --date 2020/02/14 --time 14:42:00
+add_part_info.py -p HH160 -r A -c "Final post-PAM spectra looks fine" -l "infoupd" --date 2020/02/14 --time 14:42:02
+add_part_info.py -p HH161 -r A -c "Final check for 161N has an unexpected dip @ ~70 MHz" -l "infoupd" --date 2020/02/14 --time 14:42:00
+add_part_info.py -p HH161 -r A -c "Final post-PAM spectra looks fine" -l "infoupd" --date 2020/02/14 --time 14:42:02
+add_part_info.py -p HH162 -r A -c "Final post-PAM spectra looks fine" -l "infoupd" --date 2020/02/14 --time 14:42:00
+add_part_info.py -p HH162 -r A -c "Final post-PAM spectra looks fine" -l "infoupd" --date 2020/02/14 --time 14:42:02
+add_part_info.py -p HH181 -r A -c "Final post-PAM spectra looks fine" -l "infoupd" --date 2020/02/14 --time 14:42:00
+add_part_info.py -p HH181 -r A -c "Final post-PAM spectra looks fine" -l "infoupd" --date 2020/02/14 --time 14:42:02
+add_part_info.py -p HH182 -r A -c "Final post-PAM spectra looks fine" -l "infoupd" --date 2020/02/14 --time 14:42:00
+add_part_info.py -p HH182 -r A -c "Final post-PAM spectra looks fine" -l "infoupd" --date 2020/02/14 --time 14:42:02

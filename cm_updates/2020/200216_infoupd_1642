@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200216_infoupd_1642" >> scripts.log 
+update_apriori.py -p HH156 -s RF_ok --date 2020/02/16 --time 16:42
+add_part_info.py -p HH156 -r A -c "re-take of final spectra for 156E looks fine. Ticket #463" -l "infoupd" --date 2020/02/16 --time 16:42:00
