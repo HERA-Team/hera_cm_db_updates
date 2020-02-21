@@ -1,0 +1,23 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200218_infoupd_1042" >> scripts.log 
+add_part_info.py -p HH112 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.404" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH128 -r A -c "Feed heights (NE/SE/SW/NW): Z distance =4.400" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH129 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.402" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH130 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.400" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH176 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.413" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH178 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.407" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH140 -r A -c "Feed heights (NE/SE/SW/NW): Z distance =4.411" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH141 -r A -c "History: FEM 164 replaced with 156" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH141 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.411" -l "infoupd" --date 2020/02/18 --time 10:42:02
+add_part_info.py -p HH142 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.408" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH65 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.397" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH66 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.403" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH67 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.408" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH68 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.397" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH37 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.404" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH38 -r A -c "Feed heights (NE/SE/SW/NW): Z distance =4.398" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH53 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.406" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH51 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.398" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH52 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.408" -l "infoupd" --date 2020/02/18 --time 10:42:00
+add_part_info.py -p HH36 -r A -c "Feed heights (NE/SE/SW/NW): Z distance = 4.404" -l "infoupd" --date 2020/02/18 --time 10:42:00
