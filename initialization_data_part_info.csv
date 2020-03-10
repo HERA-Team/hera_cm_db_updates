@@ -1237,3 +1237,23 @@ HH125,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH125,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
 HH126,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH126,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
+HH101,A,"History: FEM: 58 until 10Mar2020, thence 153",infoupd,1267897338
+HH101,A,10Mar2020 z = 4.406 ,infoupd,1267897340
+HH101,A,"History: FEM: 58 until 10Mar2020, thence 154",infoupd,1267897342
+HH101,A,10Mar2020 z = 4.406; despite changed FEM amplitude of spectre looks small,infoupd,1267897344
+HH102,A,"History: FEM: 59 until 10Mar2020, thence 153",infoupd,1267897338
+HH102,A,10Mar2020 z = 4.409 ,infoupd,1267897340
+HH102,A,"History: FEM: 59 until 10Mar2020, thence 154",infoupd,1267897342
+HH102,A,10Mar2020 z = 4.409 ,infoupd,1267897344
+HH89,A,10Mar2020 z = 4.409,infoupd,1267897338
+HH89,A,10Mar2020 z = 4.409,infoupd,1267897340
+HH90,A,10Mar 2020 Z = 4.400,infoupd,1267897338
+HH90,A,10Mar 2020 Z = 4.400,infoupd,1267897340
+HH106,A,10Mar2020 z = 4.414,infoupd,1267897338
+HH106,A,10Mar2020 z = 4.414,infoupd,1267897340
+HH107,A,10Mar2020 z = 4.407,infoupd,1267897338
+HH107,A,10Mar2020 z = 4.407,infoupd,1267897340
+HH108,A,10Mar2020 z = 4.403,infoupd,1267897338
+HH108,A,10Mar2020 z = 4.403,infoupd,1267897340
+HH125,A,10Mar2020 z = 4.405,infoupd,1267897338
+HH125,A,10Mar2020 z = 4.405,infoupd,1267897340
