@@ -1,0 +1,6 @@
+#! /bin/bash
+echo "200315_move_HH52" >> scripts.log
+stop_connection.py -u FEM134 --uprev A --upport e -d NBP03 --dnrev A --dnport e8 --date 2020/01/26 --time 10:00
+stop_connection.py -u FEM134 --uprev A --upport n -d NBP03 --dnrev A --dnport n8 --date 2020/01/26 --time 10:00
+add_connection.py -u FEM134 --uprev A --upport e -d NBP03 --dnrev A --dnport e10 --date 2020/01/26 --time 10:10
+add_connection.py -u FEM134 --uprev A --upport n -d NBP03 --dnrev A --dnport n10 --date 2020/01/26 --time 10:10

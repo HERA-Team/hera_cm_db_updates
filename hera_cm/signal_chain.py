@@ -445,7 +445,9 @@ class Update:
 
     def get_ser_num(self, hpn, part_type):
         """
-        Pull the serial number out of the class dictionary.  If none, just use the hpn
+        Pull the serial number out of the class dictionary.
+
+        If none, just use the hpn
         """
         sn = hpn
         if part_type in self.ser_num_dict.keys():
@@ -488,7 +490,7 @@ class Update:
 
     def exists(self, atype, hpn, rev, port, side='up,down', check_date=None):
         """
-        Check if a part or connection exists for hpn
+        Check if a part or connection exists for hpn.
 
         Parameters
         ----------
@@ -559,13 +561,12 @@ class Update:
         ctime : str, optional
             HH:MM, default is 12:00
         """
-
         self.fp.write('update_apriori.py -p {} -s {} --date {} --time {}\n'
                       .format(antenna, status, cdate, ctime))
 
     def add_part_info(self, hpn, rev, note, cdate, ctime, ref=None):
         """
-        Add a note/comment for a part to the database
+        Add a note/comment for a part to the database.
 
         Parameters
         ----------
@@ -591,7 +592,8 @@ class Update:
 
     def replace(self, old, new, cdate, ctime='13:00'):
         """
-        Replaces an old PAM, FEM or SNAP part, with a new one.
+        Replace an old PAM, FEM or SNAP part, with a new one.
+
         If new is None, it just stops the old one.
 
         Parameters
@@ -653,6 +655,7 @@ class Update:
             self.update_connection('add', uppart, dnpart, cdate, ctime)
 
     def done(self):
+        """Finish."""
         self.fp.close()
         if self.verbose:
             print("----------------------DONE-----------------------")
