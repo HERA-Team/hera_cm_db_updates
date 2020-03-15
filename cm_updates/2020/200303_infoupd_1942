@@ -1,0 +1,34 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200303_infoupd_1942" >> scripts.log 
+update_apriori.py -p HH88 -s RF_maintenance --date 2020/03/03 --time 19:42
+update_apriori.py -p HH89 -s RF_maintenance --date 2020/03/03 --time 19:42
+update_apriori.py -p HH90 -s RF_maintenance --date 2020/03/03 --time 19:42
+update_apriori.py -p HH91 -s RF_maintenance --date 2020/03/03 --time 19:42
+update_apriori.py -p HH105 -s RF_maintenance --date 2020/03/03 --time 19:42
+update_apriori.py -p HH107 -s RF_maintenance --date 2020/03/03 --time 19:42
+update_apriori.py -p HH108 -s RF_maintenance --date 2020/03/03 --time 19:42
+update_apriori.py -p HH124 -s RF_maintenance --date 2020/03/03 --time 19:42
+update_apriori.py -p HH125 -s RF_maintenance --date 2020/03/03 --time 19:42
+add_part_info.py -p HH88 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:00
+add_part_info.py -p HH88 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:02
+add_part_info.py -p HH89 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:00
+add_part_info.py -p HH89 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:02
+add_part_info.py -p HH90 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:00
+add_part_info.py -p HH90 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:02
+add_part_info.py -p HH91 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:00
+add_part_info.py -p HH91 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:02
+add_part_info.py -p HH105 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:00
+add_part_info.py -p HH105 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:02
+add_part_info.py -p HH106 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:00
+add_part_info.py -p HH106 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:02
+add_part_info.py -p HH107 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:00
+add_part_info.py -p HH107 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:02
+add_part_info.py -p HH108 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:00
+add_part_info.py -p HH108 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:02
+add_part_info.py -p HH124 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:00
+add_part_info.py -p HH124 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:02
+add_part_info.py -p HH125 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:00
+add_part_info.py -p HH125 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:02
+add_part_info.py -p HH126 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:00
+add_part_info.py -p HH126 -r A -c "Boom reports feed as lowered 03Mar2020" -l "infoupd" --date 2020/03/03 --time 19:42:02

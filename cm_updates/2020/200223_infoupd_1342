@@ -1,0 +1,6 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200223_infoupd_1342" >> scripts.log 
+update_apriori.py -p HH85 -s RF_ok --date 2020/02/23 --time 13:42
+add_part_info.py -p HH84 -r A -c "Z= 4.406" -l "infoupd" --date 2020/02/23 --time 13:42:00
+add_part_info.py -p HH85 -r A -c "Z = 4.407" -l "infoupd" --date 2020/02/23 --time 13:42:00

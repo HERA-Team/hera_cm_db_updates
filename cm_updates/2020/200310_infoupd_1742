@@ -1,0 +1,30 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200310_infoupd_1742" >> scripts.log 
+update_apriori.py -p HH89 -s RF_ok --date 2020/03/10 --time 17:42
+update_apriori.py -p HH90 -s RF_ok --date 2020/03/10 --time 17:42
+update_apriori.py -p HH101 -s RF_ok --date 2020/03/10 --time 17:42
+update_apriori.py -p HH106 -s RF_ok --date 2020/03/10 --time 17:42
+update_apriori.py -p HH107 -s RF_ok --date 2020/03/10 --time 17:42
+update_apriori.py -p HH108 -s RF_ok --date 2020/03/10 --time 17:42
+update_apriori.py -p HH125 -s RF_ok --date 2020/03/10 --time 17:42
+add_part_info.py -p HH101 -r A -c "History: FEM: 58 until 10Mar2020, thence 153" -l "infoupd" --date 2020/03/10 --time 17:42:00
+add_part_info.py -p HH101 -r A -c "10Mar2020 z = 4.406 " -l "infoupd" --date 2020/03/10 --time 17:42:02
+add_part_info.py -p HH101 -r A -c "History: FEM: 58 until 10Mar2020, thence 154" -l "infoupd" --date 2020/03/10 --time 17:42:04
+add_part_info.py -p HH101 -r A -c "10Mar2020 z = 4.406; despite changed FEM amplitude of spectre looks small" -l "infoupd" --date 2020/03/10 --time 17:42:06
+add_part_info.py -p HH102 -r A -c "History: FEM: 59 until 10Mar2020, thence 153" -l "infoupd" --date 2020/03/10 --time 17:42:00
+add_part_info.py -p HH102 -r A -c "10Mar2020 z = 4.409 " -l "infoupd" --date 2020/03/10 --time 17:42:02
+add_part_info.py -p HH102 -r A -c "History: FEM: 59 until 10Mar2020, thence 154" -l "infoupd" --date 2020/03/10 --time 17:42:04
+add_part_info.py -p HH102 -r A -c "10Mar2020 z = 4.409 " -l "infoupd" --date 2020/03/10 --time 17:42:06
+add_part_info.py -p HH89 -r A -c "10Mar2020 z = 4.409" -l "infoupd" --date 2020/03/10 --time 17:42:00
+add_part_info.py -p HH89 -r A -c "10Mar2020 z = 4.409" -l "infoupd" --date 2020/03/10 --time 17:42:02
+add_part_info.py -p HH90 -r A -c "10Mar 2020 Z = 4.400" -l "infoupd" --date 2020/03/10 --time 17:42:00
+add_part_info.py -p HH90 -r A -c "10Mar 2020 Z = 4.400" -l "infoupd" --date 2020/03/10 --time 17:42:02
+add_part_info.py -p HH106 -r A -c "10Mar2020 z = 4.414" -l "infoupd" --date 2020/03/10 --time 17:42:00
+add_part_info.py -p HH106 -r A -c "10Mar2020 z = 4.414" -l "infoupd" --date 2020/03/10 --time 17:42:02
+add_part_info.py -p HH107 -r A -c "10Mar2020 z = 4.407" -l "infoupd" --date 2020/03/10 --time 17:42:00
+add_part_info.py -p HH107 -r A -c "10Mar2020 z = 4.407" -l "infoupd" --date 2020/03/10 --time 17:42:02
+add_part_info.py -p HH108 -r A -c "10Mar2020 z = 4.403" -l "infoupd" --date 2020/03/10 --time 17:42:00
+add_part_info.py -p HH108 -r A -c "10Mar2020 z = 4.403" -l "infoupd" --date 2020/03/10 --time 17:42:02
+add_part_info.py -p HH125 -r A -c "10Mar2020 z = 4.405" -l "infoupd" --date 2020/03/10 --time 17:42:00
+add_part_info.py -p HH125 -r A -c "10Mar2020 z = 4.405" -l "infoupd" --date 2020/03/10 --time 17:42:02

@@ -1,0 +1,13 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200311_infoupd_1242" >> scripts.log 
+add_part_info.py -p HH88 -r A -c "11 March 2020 Z= 4.400" -l "infoupd" --date 2020/03/11 --time 12:42:00
+add_part_info.py -p HH88 -r A -c "11 March 2020 Z= 4.400" -l "infoupd" --date 2020/03/11 --time 12:42:02
+add_part_info.py -p HH91 -r A -c "11 March 2020 Z=4.411" -l "infoupd" --date 2020/03/11 --time 12:42:00
+add_part_info.py -p HH91 -r A -c "11 March 2020 Z=4.411" -l "infoupd" --date 2020/03/11 --time 12:42:02
+add_part_info.py -p HH105 -r A -c "11 March 2020 Z=4.407" -l "infoupd" --date 2020/03/11 --time 12:42:00
+add_part_info.py -p HH105 -r A -c "11 March 2020 Z=4.407" -l "infoupd" --date 2020/03/11 --time 12:42:02
+add_part_info.py -p HH124 -r A -c "11 March 2020 Z= 4.412" -l "infoupd" --date 2020/03/11 --time 12:42:00
+add_part_info.py -p HH124 -r A -c "11 March 2020 Z= 4.412" -l "infoupd" --date 2020/03/11 --time 12:42:02
+add_part_info.py -p HH126 -r A -c "11 March 2020 Z= 4.405" -l "infoupd" --date 2020/03/11 --time 12:42:00
+add_part_info.py -p HH126 -r A -c "11 March 2020 Z= 4.405" -l "infoupd" --date 2020/03/11 --time 12:42:02

@@ -1,0 +1,10 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200314_infoupd_0642" >> scripts.log 
+add_part_info.py -p HH143 -r A -c "Feed Heights: Z = 4.404" -l "infoupd" --date 2020/03/14 --time 06:42:00
+add_part_info.py -p HH144 -r A -c "Feed Heights: Z = 4.410" -l "infoupd" --date 2020/03/14 --time 06:42:00
+add_part_info.py -p HH145 -r A -c "Feed Heights: Z = 4.405" -l "infoupd" --date 2020/03/14 --time 06:42:00
+add_part_info.py -p HH163 -r A -c "Feed Heights: Z = 4.410" -l "infoupd" --date 2020/03/14 --time 06:42:00
+add_part_info.py -p HH164 -r A -c "Feed Heights: Z = 4.400" -l "infoupd" --date 2020/03/14 --time 06:42:00
+add_part_info.py -p HH165 -r A -c "Feed Heights: Z = 4.401" -l "infoupd" --date 2020/03/14 --time 06:42:00
+add_part_info.py -p HH185 -r A -c "Feed Heights: Z = 4.410" -l "infoupd" --date 2020/03/14 --time 06:42:00

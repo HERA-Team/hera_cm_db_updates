@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200224_infoupd_1642" >> scripts.log 
+update_apriori.py -p HH84 -s RF_maintenance --date 2020/02/24 --time 16:42

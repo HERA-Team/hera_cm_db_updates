@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200229_infoupd_0742" >> scripts.log 
+add_part_info.py -p HH2 -r A -c "Replaced SNAP (C57->C72). ADC is likely working now." -l "infoupd" --date 2020/02/29 --time 07:42:00
