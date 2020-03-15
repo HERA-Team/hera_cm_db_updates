@@ -1,3 +1,5 @@
+"""Various signal chain modification methods."""
+
 import os
 from hera_mc import cm_utils, cm_active, cm_handling
 
@@ -7,6 +9,7 @@ part_types = {'FDV': 'feed', 'FEM': 'front-end', 'NBP': 'node-bulkhead',
 
 
 def as_part(add_or_stop, p, cdate, ctime):
+    """Return a string to use hera_mc script to add or stop a part."""
     s = '{}_part.py -p {} -r {} '.format(
         add_or_stop, p[0], p[1])
     if add_or_stop == 'add':
@@ -17,6 +20,7 @@ def as_part(add_or_stop, p, cdate, ctime):
 
 
 def as_connect(add_or_stop, up, dn, cdate, ctime):
+    """Return a string to use hera_mc script to add or stop a connection."""
     s = '{}_connection.py -u {} --uprev {} --upport {} -d {} --dnrev {} --dnport {}'\
         ' --date {} --time {}\n'.format(add_or_stop, up[0], up[1], up[2],
                                         dn[0], dn[1], dn[2], cdate, ctime)
@@ -24,13 +28,21 @@ def as_connect(add_or_stop, up, dn, cdate, ctime):
 
 
 class Update:
+    """Holds the various update methods."""
+
     snap_ports = [{'e': 'e2', 'n': 'n0'}, {'e': 'e6', 'n': 'n4'}, {'e': 'e10', 'n': 'n8'}]
 
     def __init__(self, exename, output_script_path=None, chmod=False, cdate='now', ctime='10:00',
                  log_file='scripts.log', verbose=True):
         """
-        exename:  the name of the script executed (argv[0])
-        log_file:  name of log_file
+        Initialize.
+
+        Parameters
+        ----------
+        exename : str
+            the name of the script executed (argv[0])
+        log_file : str
+            name of log_file
         """
         self.verbose = verbose
         self.chmod = chmod
@@ -63,12 +75,15 @@ class Update:
     #   add_antenna_to_node : when a feed/fem etc is installed and hooked into node
 
     def update__at_date(self, cdate='now', ctime='10:00'):
+        """Set class date variable."""
         self.at_date = cm_utils.get_astropytime(adate=cdate, atime=ctime)
 
     def no_op_comment(self, comment):
+        """Write as comment only."""
         self.fp.write('# {}\n'.format(comment.strip()))
 
     def load_active(self, cdate='now', ctime='10:00'):
+        """Load all active information."""
         if cdate is None:
             at_date = self.at_date
         else:
@@ -271,6 +286,8 @@ class Update:
     def add_antenna_to_node(self, ant, feed, fem, node, nbp_port,
                             cdate, ctime=['10:00', '11:00'], ser_num={}, override=False):
         """
+        Add a full antenna path to a node.
+
         Parameters:
         -----------
         ant:  antenna number (int)
@@ -285,7 +302,6 @@ class Update:
                 'HH:MM' for part/connection at 'HH:MM'
         override : bool, dict
         """
-
         if isinstance(ctime, list):
             partadd_time = ctime[0]
             connadd_time = ctime[1]
@@ -361,11 +377,55 @@ class Update:
         return added
 
     # ##########################################################################################
+    def stop_active_connections(self, hpn, rev='A', cdate='now', ctime='10:00', add_template=True):
+        """
+        Write script to stop all active connections of a part.
+
+        Parameters
+        ----------
+        hpn : str
+            HERA Part Number
+        rev : str
+            Revision
+        cdate : *
+            Date to use for stop.  Anything readable by cm_getastropytime.
+        ctime : *
+            Time to use for stop.  Depends on cdate
+        add_template : bool
+            Boolean to include same info but as "add" to help in starting new
+        """
+        stop_time = cm_utils.get_astropytime(adate=cdate, atime=ctime)
+        cdate = stop_time.datetime.strftime('%Y/%m/%d')
+        ctime = stop_time.datetime.strftime('%H:%M')
+        hpnr = cm_utils.make_part_key(hpn, rev)
+        print("Stopping connections")
+        for key, conn in self.active.connections['up'][hpnr].items():
+            print(conn)
+            up = [conn.upstream_part, conn.up_part_rev, conn.upstream_output_port]
+            dn = [conn.downstream_part, conn.down_part_rev, conn.downstream_input_port]
+            self.update_connection('stop', up, dn, cdate, ctime)
+        for key, conn in self.active.connections['down'][hpnr].items():
+            print(conn)
+            up = [conn.upstream_part, conn.up_part_rev, conn.upstream_output_port]
+            dn = [conn.downstream_part, conn.down_part_rev, conn.downstream_input_port]
+            self.update_connection('stop', up, dn, cdate, ctime)
+        if add_template:
+            print("Including add connection template -- EDIT!")
+            self.fp.write("\n\nNeed to edit below!!!\n")
+            for key, conn in self.active.connections['up'][hpnr].items():
+                up = [conn.upstream_part, conn.up_part_rev, conn.upstream_output_port]
+                dn = [conn.downstream_part, conn.down_part_rev, conn.downstream_input_port]
+                self.update_connection('add', up, dn, cdate, ctime)
+            for key, conn in self.active.connections['down'][hpnr].items():
+                up = [conn.upstream_part, conn.up_part_rev, conn.upstream_output_port]
+                dn = [conn.downstream_part, conn.down_part_rev, conn.downstream_input_port]
+                self.update_connection('add', up, dn, cdate, ctime)
 
     def get_general_part(self, hpn, rev=None, at_date=None):
         """
-        This will return a list to add if the part does not exist or
-        None if it does (or rev/type can't be found)
+        Return a list to add to script if part does not exist.
+
+        Will return None if it does (or rev/type can't be found)
         """
         if rev is None:
             for key, val in current_revs.items():
@@ -393,6 +453,7 @@ class Update:
         return sn
 
     def to_implement(self, command, ant, rev, statement, pdate, ptime):
+        """Write generic 'to_implement' line."""
         stmt = "{} not implemented! {} {} {} {} {} {}\n".format(command, ant, rev,
                                                                 statement, pdate, ptime)
         self.fp.write(stmt)
@@ -400,6 +461,10 @@ class Update:
 
     def update_part(self, add_or_stop, part, cdate, ctime):
         """
+        Write appropriate entry for hera_mc script.
+
+        Parameters
+        ----------
         add_or_stop:  'add' or 'stop'
         part:  [hpn, rev, <type>, <mfg num>] (last two only for 'add')
         cdate:  date of update YYYY/MM/DD
@@ -409,6 +474,10 @@ class Update:
 
     def update_connection(self, add_or_stop, up, down, cdate, ctime):
         """
+        Write appropriate entry for hera_mc script.
+
+        Parameters
+        ----------
         add_or_stop:  'add' or 'stop'
         up:  upstream connection [part, rev, port]
         down:  downstream connection [part, rev, port]

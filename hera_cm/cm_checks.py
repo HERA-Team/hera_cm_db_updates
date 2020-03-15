@@ -2,19 +2,22 @@
 # Copyright 2019 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
 
-"""
-"""
+"""Series of database checks."""
 from hera_mc import cm_active, cm_utils
 
 
 class Checks:
+    """Check class."""
+
     def __init__(self, start_time=2458500, stop_time='now', day_step=1.0):
+        """Initialize."""
         self.cmad = cm_active.ActiveData()
         self.start = cm_utils.get_astropytime(start_time)
         self.stop = cm_utils.get_astropytime(stop_time)
         self.step = day_step
 
     def check_for_duplicate_comments(self):
+        """Check the database for duplicate comments."""
         cmdpre = 'delete from part_info where hpn='
         filename = 'dupcomm.sql'
         self.cmad.load_info()
@@ -40,9 +43,7 @@ class Checks:
             print("No duplicates found.")
 
     def apriori(self):
-        """
-        Check for multiple apriori active states between start and stop times.
-        """
+        """Check for multiple apriori active states between start and stop times."""
         next = self.start
         while next < self.stop:
             print(next.isot)
@@ -52,8 +53,7 @@ class Checks:
 
     def part_conn_assoc(self):
         """
-        Checks to make sure that all connections have an associated active part
-        between start and stop times.
+        Check to make sure that all connections have an associated active part.
 
         The database will allow non-active parts to have a connection, which is not
         desired.  This will check and list connections without an associated active

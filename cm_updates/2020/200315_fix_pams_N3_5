@@ -1,0 +1,32 @@
+#! /bin/bash
+echo "200315_fix_pams_N3_5" >> scripts.log
+stop_connection.py -u PAM124 --uprev A --upport @slot -d PCH06 --dnrev A --dnport @slot12 --date 2019/12/15 --time 10:00
+
+stop_connection.py -u PAM128 --uprev A --upport @slot -d PCH07 --dnrev A --dnport @slot4 --date 2019/12/15 --time 10:00
+stop_connection.py -u PAM128 --uprev A --upport e -d SNPC000018 --dnrev A --dnport e10 --date 2019/12/15 --time 10:00
+stop_connection.py -u PAM128 --uprev A --upport n -d SNPC000018 --dnrev A --dnport n8 --date 2019/12/15 --time 10:00
+stop_connection.py -u NBP05 --uprev A --upport e12 -d PAM128 --dnrev A --dnport e --date 2019/12/15 --time 10:00
+stop_connection.py -u NBP05 --uprev A --upport n12 -d PAM128 --dnrev A --dnport n --date 2019/12/15 --time 10:00
+
+stop_connection.py -u PAM132 --uprev A --upport @slot -d PCH07 --dnrev A --dnport @slot8 --date 2019/12/15 --time 10:00
+stop_connection.py -u PAM132 --uprev A --upport e -d SNPC000037 --dnrev A --dnport e6 --date 2019/12/15 --time 10:00
+stop_connection.py -u PAM132 --uprev A --upport n -d SNPC000037 --dnrev A --dnport n4 --date 2019/12/15 --time 10:00
+stop_connection.py -u NBP03 --uprev A --upport e8 -d PAM132 --dnrev A --dnport e --date 2019/12/15 --time 10:00
+stop_connection.py -u NBP03 --uprev A --upport n8 -d PAM132 --dnrev A --dnport n --date 2019/12/15 --time 10:00
+
+
+add_connection.py -u PAM124 --uprev A --upport @slot -d PCH07 --dnrev A --dnport @slot4 --date 2019/12/15 --time 10:00
+
+add_connection.py -u PAM128 --uprev A --upport @slot -d PCH07 --dnrev A --dnport @slot8 --date 2019/12/15 --time 10:00
+add_connection.py -u PAM128 --uprev A --upport e -d SNPC000037 --dnrev A --dnport e6 --date 2019/12/15 --time 10:00
+add_connection.py -u PAM128 --uprev A --upport n -d SNPC000037 --dnrev A --dnport n4 --date 2019/12/15 --time 10:00
+add_connection.py -u NBP03 --uprev A --upport e8 -d PAM128 --dnrev A --dnport e --date 2019/12/15 --time 10:00
+add_connection.py -u NBP03 --uprev A --upport n8 -d PAM128 --dnrev A --dnport n --date 2019/12/15 --time 10:00
+
+add_connection.py -u PAM132 --uprev A --upport @slot -d PCH06 --dnrev A --dnport @slot12 --date 2019/12/15 --time 10:00
+add_connection.py -u PAM132 --uprev A --upport e -d SNPC000018 --dnrev A --dnport e10 --date 2019/12/15 --time 10:00
+add_connection.py -u PAM132 --uprev A --upport n -d SNPC000018 --dnrev A --dnport n8 --date 2019/12/15 --time 10:00
+add_connection.py -u NBP05 --uprev A --upport e12 -d PAM132 --dnrev A --dnport e --date 2019/12/15 --time 10:00
+add_connection.py -u NBP05 --uprev A --upport n12 -d PAM132 --dnrev A --dnport n --date 2019/12/15 --time 10:00
+
+
