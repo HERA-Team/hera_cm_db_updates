@@ -1,14 +1,4 @@
-"""
-x.hookup_dict['HH104:A'].hookup['e']
-
-0 <HH104:A<ground|ground>A104:H>
-1 <A104:H<focus|input>FDV10:A>
-2 <FDV10:A<terminals|input>FEM061:A>
-3 <FEM061:A<e|e5>NBP08:A>
-4 <NBP08:A<e5|e>PAM014:A>
-5 <PAM014:A<e|e6>SNPC000044:A>
-6 <SNPC000044:A<rack|loc1>N08:A>
-"""
+"""Class for config gsheet."""
 import csv
 import requests
 from . import util
@@ -36,7 +26,10 @@ no_prefix = ['Comments']
 
 
 class SheetData:
+    """Class for googlesheet."""
+
     def __init__(self):
+        """Initialize dictionaries/lists."""
         self.tabs = list(gsheet.keys())
         # It reads into the variables below
         self.data = {}
@@ -50,7 +43,7 @@ class SheetData:
 
     def load_sheet(self, node_csv='none', tabs=None, check_headers=False):
         """
-        Gets the googlesheet information from the internet (or locally for testing etc)
+        Get the googlesheet information from the internet (or locally for testing etc).
 
         Parameters
         ----------
