@@ -1,0 +1,19 @@
+#! /bin/bash
+echo "200316_add_c72" >> scripts.log 
+stop_connection.py -u SNPC000057 --uprev A --upport rack -d N00 --dnrev A --dnport loc0 --date 2020/02/28 --time 10:00
+stop_connection.py -u PAM048 --uprev A --upport e -d SNPC000057 --dnrev A --dnport e6 --date 2020/02/28 --time 10:00
+stop_connection.py -u PAM048 --uprev A --upport n -d SNPC000057 --dnrev A --dnport n4 --date 2020/02/28 --time 10:00
+stop_connection.py -u PAM022 --uprev A --upport e -d SNPC000057 --dnrev A --dnport e2 --date 2020/02/28 --time 10:00
+stop_connection.py -u PAM022 --uprev A --upport n -d SNPC000057 --dnrev A --dnport n0 --date 2020/02/28 --time 10:00
+stop_connection.py -u PAM024 --uprev A --upport e -d SNPC000057 --dnrev A --dnport e10 --date 2020/02/28 --time 10:00
+stop_connection.py -u PAM024 --uprev A --upport n -d SNPC000057 --dnrev A --dnport n8 --date 2020/02/28 --time 10:00
+
+
+add_part.py -p SNPC000072 -r A -t snap -m C000072 --date 2020/02/28 --time 09:00
+add_connection.py -u SNPC000072 --uprev A --upport rack -d N00 --dnrev A --dnport loc0 --date 2020/02/28 --time 10:00
+add_connection.py -u PAM048 --uprev A --upport e -d SNPC000072 --dnrev A --dnport e6 --date 2020/02/28 --time 10:00
+add_connection.py -u PAM048 --uprev A --upport n -d SNPC000072 --dnrev A --dnport n4 --date 2020/02/28 --time 10:00
+add_connection.py -u PAM022 --uprev A --upport e -d SNPC000072 --dnrev A --dnport e2 --date 2020/02/28 --time 10:00
+add_connection.py -u PAM022 --uprev A --upport n -d SNPC000072 --dnrev A --dnport n0 --date 2020/02/28 --time 10:00
+add_connection.py -u PAM024 --uprev A --upport e -d SNPC000072 --dnrev A --dnport e10 --date 2020/02/28 --time 10:00
+add_connection.py -u PAM024 --uprev A --upport n -d SNPC000072 --dnrev A --dnport n8 --date 2020/02/28 --time 10:00
