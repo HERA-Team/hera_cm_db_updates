@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200316_infoupd_2042" >> scripts.log 
+add_part_info.py -p HH58 -r A -c "`" -l "infoupd" --date 2020/03/16 --time 20:42:00
