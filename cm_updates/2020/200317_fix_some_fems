@@ -1,0 +1,34 @@
+#! /bin/bash
+echo "./200317_fix_some_fems.py" >> scripts.log 
+
+# First one
+stop_connection.py -u FEM059 --uprev A --upport e -d NBP08 --dnrev A --dnport e1 --date 2020/03/10 --time 10:00
+stop_connection.py -u FEM059 --uprev A --upport n -d NBP08 --dnrev A --dnport n1 --date 2020/03/10 --time 10:00
+stop_connection.py -u FDV40 --uprev A --upport terminals -d FEM059 --dnrev A --dnport input --date 2020/03/10 --time 10:00
+
+add_part.py -p FEM153 -r A -t front-end -m FEM153 --date 2020/03/10 --time 09:00
+add_connection.py -u FEM153 --uprev A --upport e -d NBP08 --dnrev A --dnport e1 --date 2020/03/10 --time 10:00
+add_connection.py -u FEM153 --uprev A --upport n -d NBP08 --dnrev A --dnport n1 --date 2020/03/10 --time 10:00
+add_connection.py -u FDV40 --uprev A --upport terminals -d FEM153 --dnrev A --dnport input --date 2020/03/10 --time 10:00
+
+
+# Second one
+stop_connection.py -u FEM046 --uprev A --upport e -d NBP08 --dnrev A --dnport e8 --date 2020/03/10 --time 10:00
+stop_connection.py -u FEM046 --uprev A --upport n -d NBP08 --dnrev A --dnport n8 --date 2020/03/10 --time 10:00
+stop_connection.py -u FDV39 --uprev A --upport terminals -d FEM046 --dnrev A --dnport input --date 2020/03/10 --time 10:00
+
+add_part.py -p FEM154 -r A -t front-end -m FEM154 --date 2020/03/10 --time 09:00
+add_connection.py -u FEM154 --uprev A --upport e -d NBP08 --dnrev A --dnport e8 --date 2020/03/10 --time 10:00
+add_connection.py -u FEM154 --uprev A --upport n -d NBP08 --dnrev A --dnport n8 --date 2020/03/10 --time 10:00
+add_connection.py -u FDV39 --uprev A --upport terminals -d FEM154 --dnrev A --dnport input --date 2020/03/10 --time 10:00
+
+
+# Third one
+stop_connection.py -u FEM164 --uprev A --upport e -d NBP13 --dnrev A --dnport e8 --date 2020/02/18 --time 10:00
+stop_connection.py -u FEM164 --uprev A --upport n -d NBP13 --dnrev A --dnport n8 --date 2020/02/18 --time 10:00
+stop_connection.py -u FDV117 --uprev A --upport terminals -d FEM164 --dnrev A --dnport input --date 2020/02/18 --time 10:00
+
+add_part.py -p FEM156 -r A -t front-end -m FEM156 --date 2020/02/18 --time 09:00
+add_connection.py -u FEM156 --uprev A --upport e -d NBP13 --dnrev A --dnport e8 --date 2020/02/18 --time 10:00
+add_connection.py -u FEM156 --uprev A --upport n -d NBP13 --dnrev A --dnport n8 --date 2020/02/18 --time 10:00
+add_connection.py -u FDV117 --uprev A --upport terminals -d FEM156 --dnrev A --dnport input --date 2020/02/18 --time 10:00
