@@ -1,4 +1,5 @@
 # -*- mode: python; coding: utf-8 -*-
+"""Info update class."""
 # Copyright 2019 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
 
@@ -8,23 +9,21 @@ from . import cm_gsheet, util, upd_base
 
 
 class UpdateInfo(upd_base.Update):
-    """
-    This class generates the script to update comments and "apriori" info from the configuration
-    googlesheet
-    """
+    """Generates the script to update comments and "apriori" info from the configuration gsheet."""
+
     def __init__(self, script_nom='infoupd', script_path='./', verbose=True):
+        """Init of base."""
         super(UpdateInfo, self).__init__(script_nom=script_nom, script_path=script_path,
                                          verbose=verbose)
 
     def load_active(self):
+        """Load active data."""
         self.active = cm_active.ActiveData()
         self.active.load_info()
         self.active.load_apriori()
 
     def add_apriori(self):
-        """
-        Write out for apriori differences.
-        """
+        """Write out for apriori differences."""
         self.new_apriori = {}
         for key in self.gsheet.ants:
             ap_col = self.gsheet.header[self.gsheet.ant_to_node[key]].index('APriori')
@@ -45,8 +44,7 @@ class UpdateInfo(upd_base.Update):
 
     def add_sheet_notes(self, duplication_window=90.0, view_duplicate=0.0):
         """
-        Searches the relevant fields in the googlesheets and generates the
-        appropriate script commands.
+        Search the relevant fields in the googlesheets and generate appropriate script commands.
 
         Parameters
         ----------
@@ -88,9 +86,11 @@ class UpdateInfo(upd_base.Update):
                     primary_keys.append(pkey)
 
     def add_below_notes(self):
+        """Need to do this."""
         print("ADD THE NOTES FROM BELOW THE TABLE")
 
     def is_duplicate(self, key, statement, duplication_window, view_duplicate=0.0):
+        """Check if duplicate."""
         if key in self.active.info.keys():
             for note in self.active.info[key]:
                 note_time = cm_utils.get_astropytime(note.posting_gpstime).datetime
@@ -105,6 +105,7 @@ class UpdateInfo(upd_base.Update):
         return False
 
     def view_info(self):
+        """View it."""
         if len(self.new_apriori.keys()):
             print("New Apriori")
             for x, info in sorted(self.new_apriori.items()):

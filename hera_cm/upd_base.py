@@ -2,16 +2,28 @@
 # Copyright 2019 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
 
-"""
-This is the base class for the script generators
-"""
+"""This is the base class for the script generators."""
 import datetime
 import os
 from . import signal_chain, cm_gsheet
 
 
 class Update(object):
+    """Base update class."""
+
     def __init__(self, script_nom, script_path, verbose):
+        """
+        Initialize.
+
+        Parameters
+        ----------
+        script_nom : str
+            Name of the script to generate.
+        script_path : str
+            Path to the script.
+        verbose : bool
+            Verbose or not.
+        """
         self.script_path = script_path
         self.verbose = verbose
         self.now = datetime.datetime.now()
@@ -27,16 +39,12 @@ class Update(object):
         self.update_counter = 0
 
     def load_gsheet(self, node_csv='none', tabs=None):
-        """
-        Gets the googlesheet information from the internet
-        """
+        """Get the googlesheet information from the internet."""
         self.gsheet = cm_gsheet.SheetData()
         self.gsheet.load_sheet(node_csv=node_csv, tabs=None)
 
     def finish(self, arc_path, cron_script):
-        """
-        Close out process.
-        """
+        """Close out process."""
         if self.script is None:
             return
         self.hera.done()

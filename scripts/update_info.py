@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+"""Script to fun the info update between the googlesheet and database."""
 # -*- mode: python; coding: utf-8 -*-
 # Copyright 2019 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
