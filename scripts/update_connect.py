@@ -3,6 +3,8 @@
 # Copyright 2019 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
 
+"""Script to run the hookup check between gsheet and database."""
+
 import argparse
 from hera_cm import upd_connect
 
@@ -10,7 +12,8 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--arc-path', dest='arc_path', help="Path for update archive.", default=None)
     ap.add_argument('--script-path', dest='script_path', help="Path for cron script", default='./')
-    ap.add_argument('-n', '--node_csv', help="Flag for read/write of gsheet (r/w/n)", default='n')
+    ap.add_argument('-n', '--node_csv', help="For testing: flag for read/write of gsheet (r/w/n)",
+                    default='n')
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
     ap.add_argument('-l', '--look_only', help="Look at the results only", action='store_true')
     args = ap.parse_args()

@@ -1,0 +1,15 @@
+#! /bin/bash
+echo "./200319_rename_NCM" >> scripts.log 
+
+add_part.py -p  NCMP2   -r A       -t node-control-module -m NCM-Pre2   --date    1248775218
+add_part.py -p  NCM03   -r A       -t node-control-module -m NCM-Pro3   --date    1256551218
+add_part.py -p  NCM04   -r A       -t node-control-module -m NCM-Pro4   --date    1256551218
+add_part.py -p  NCM01   -r A       -t node-control-module -m NCM-Pro1   --date    1248775218
+add_part.py -p  NCMP1   -r A       -t node-control-module -m NCM-Pre1   --date    1215946818
+add_part.py -p  NCM02   -r A       -t node-control-module -m NCM-Pro2   --date    1241870418
+add_part.py -p  NCM07   -r A       -t node-control-module -m NCM-Pro7   --date    1264500018
+add_part.py -p  NCM08   -r A       -t node-control-module -m NCM-Pro8   --date    1264500018
+add_part.py -p  NCM05   -r A       -t node-control-module -m NCM-Pro5   --date    1257674418
+add_part.py -p  NCM09   -r A       -t node-control-module -m NCM-Pro9   --date    1264240818
+add_part.py -p  NCM06   -r A       -t node-control-module -m NCM-Pro6   --date    1257674418
+add_part.py -p  NCM10   -r A       -t node-control-module -m NCM-Pro10  --date    1264500018
