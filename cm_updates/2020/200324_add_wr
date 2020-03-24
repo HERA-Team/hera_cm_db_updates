@@ -1,0 +1,108 @@
+#! /bin/bash
+echo "./200324_add_wr.py" >> scripts.log 
+add_part.py -p WRA000028 -r A -t white-rabbit -m S8.312 --date 2019/08/02 --time 10:00
+add_part.py -p RD31 -r A -t arduino -m RD31 --date 2019/08/02 --time 10:00
+add_connection.py -u WRA000028 --uprev A --upport mnt -d NCMP2 --dnrev A --dnport mnt --date 2019/08/02 --time 11:00
+add_connection.py -u RD31 --uprev A --upport mnt -d NCMP2 --dnrev A --dnport mnt --date 2019/08/02 --time 11:00
+add_part.py -p WRA000086 -r A -t white-rabbit -m S9.402 --date 2019/08/02 --time 10:00
+add_part.py -p RD45 -r A -t arduino -m RD45 --date 2019/08/02 --time 10:00
+add_connection.py -u WRA000086 --uprev A --upport mnt -d NCM01 --dnrev A --dnport mnt --date 2019/08/02 --time 11:00
+add_connection.py -u RD45 --uprev A --upport mnt -d NCM01 --dnrev A --dnport mnt --date 2019/08/02 --time 11:00
+add_part.py -p WRA000083 -r A -t white-rabbit -m S9.396 --date 2019/05/14 --time 10:00
+add_part.py -p RD46 -r A -t arduino -m RD46 --date 2019/05/14 --time 10:00
+add_connection.py -u WRA000083 --uprev A --upport mnt -d NCM02 --dnrev A --dnport mnt --date 2019/05/14 --time 11:00
+add_connection.py -u RD46 --uprev A --upport mnt -d NCM02 --dnrev A --dnport mnt --date 2019/05/14 --time 11:00
+add_part.py -p WRA000084 -r A -t white-rabbit -m S9.398 --date 2019/10/31 --time 10:00
+add_part.py -p RD41 -r A -t arduino -m RD41 --date 2019/10/31 --time 10:00
+add_connection.py -u WRA000084 --uprev A --upport mnt -d NCM03 --dnrev A --dnport mnt --date 2019/10/31 --time 11:00
+add_connection.py -u RD41 --uprev A --upport mnt -d NCM03 --dnrev A --dnport mnt --date 2019/10/31 --time 11:00
+add_part.py -p WRA000087 -r A -t white-rabbit -m S9.403 --date 2019/10/31 --time 10:00
+add_part.py -p RD42 -r A -t arduino -m RD42 --date 2019/10/31 --time 10:00
+add_connection.py -u WRA000087 --uprev A --upport mnt -d NCM04 --dnrev A --dnport mnt --date 2019/10/31 --time 11:00
+add_connection.py -u RD42 --uprev A --upport mnt -d NCM04 --dnrev A --dnport mnt --date 2019/10/31 --time 11:00
+add_part.py -p WRA000089 -r A -t white-rabbit -m S9.394 --date 2019/11/13 --time 10:00
+add_part.py -p RD06 -r A -t arduino -m RD06 --date 2019/11/13 --time 10:00
+add_connection.py -u WRA000089 --uprev A --upport mnt -d NCM05 --dnrev A --dnport mnt --date 2019/11/13 --time 11:00
+add_connection.py -u RD06 --uprev A --upport mnt -d NCM05 --dnrev A --dnport mnt --date 2019/11/13 --time 11:00
+add_part.py -p WRA000093 -r A -t white-rabbit -m S10.497 --date 2019/11/13 --time 10:00
+add_part.py -p RD20 -r A -t arduino -m RD20 --date 2019/11/13 --time 10:00
+add_connection.py -u WRA000093 --uprev A --upport mnt -d NCM06 --dnrev A --dnport mnt --date 2019/11/13 --time 11:00
+add_connection.py -u RD20 --uprev A --upport mnt -d NCM06 --dnrev A --dnport mnt --date 2019/11/13 --time 11:00
+add_part.py -p WRA000091 -r A -t white-rabbit -m S8.314 --date 2020/01/31 --time 10:00
+add_part.py -p RD15 -r A -t arduino -m RD15 --date 2020/01/31 --time 10:00
+add_connection.py -u WRA000091 --uprev A --upport mnt -d NCM07 --dnrev A --dnport mnt --date 2020/01/31 --time 11:00
+add_connection.py -u RD15 --uprev A --upport mnt -d NCM07 --dnrev A --dnport mnt --date 2020/01/31 --time 11:00
+add_part.py -p WRA000094 -r A -t white-rabbit -m S10.491 --date 2020/01/31 --time 10:00
+add_part.py -p RD19 -r A -t arduino -m RD19 --date 2020/01/31 --time 10:00
+add_connection.py -u WRA000094 --uprev A --upport mnt -d NCM08 --dnrev A --dnport mnt --date 2020/01/31 --time 11:00
+add_connection.py -u RD19 --uprev A --upport mnt -d NCM08 --dnrev A --dnport mnt --date 2020/01/31 --time 11:00
+add_part.py -p WRA000006 -r A -t white-rabbit -m S_.UNK --date 2020/01/28 --time 10:00
+add_part.py -p RD40 -r A -t arduino -m RD40 --date 2020/01/28 --time 10:00
+add_connection.py -u WRA000006 --uprev A --upport mnt -d NCM09 --dnrev A --dnport mnt --date 2020/01/28 --time 11:00
+add_connection.py -u RD40 --uprev A --upport mnt -d NCM09 --dnrev A --dnport mnt --date 2020/01/28 --time 11:00
+add_part.py -p WRA000097 -r A -t white-rabbit -m S10.494 --date 2020/01/31 --time 10:00
+add_part.py -p RD43 -r A -t arduino -m RD43 --date 2020/01/31 --time 10:00
+add_connection.py -u WRA000097 --uprev A --upport mnt -d NCM10 --dnrev A --dnport mnt --date 2020/01/31 --time 11:00
+add_connection.py -u RD43 --uprev A --upport mnt -d NCM10 --dnrev A --dnport mnt --date 2020/01/31 --time 11:00
+add_part.py -p WRA000079 -r A -t white-rabbit -m S9.399 --date 2020/03/01 --time 10:00
+add_part.py -p RD11 -r A -t arduino -m RD11 --date 2020/03/01 --time 10:00
+add_connection.py -u WRA000079 --uprev A --upport mnt -d NCM11 --dnrev A --dnport mnt --date 2020/03/01 --time 11:00
+add_connection.py -u RD11 --uprev A --upport mnt -d NCM11 --dnrev A --dnport mnt --date 2020/03/01 --time 11:00
+add_part.py -p WRA000080 -r A -t white-rabbit -m S9.397 --date 2020/03/01 --time 10:00
+add_part.py -p RD17 -r A -t arduino -m RD17 --date 2020/03/01 --time 10:00
+add_connection.py -u WRA000080 --uprev A --upport mnt -d NCM12 --dnrev A --dnport mnt --date 2020/03/01 --time 11:00
+add_connection.py -u RD17 --uprev A --upport mnt -d NCM12 --dnrev A --dnport mnt --date 2020/03/01 --time 11:00
+add_part.py -p WRA000096 -r A -t white-rabbit -m S10.496 --date 2020/02/15 --time 10:00
+add_part.py -p RD18 -r A -t arduino -m RD18 --date 2020/02/15 --time 10:00
+add_connection.py -u WRA000096 --uprev A --upport mnt -d NCM13 --dnrev A --dnport mnt --date 2020/02/15 --time 11:00
+add_connection.py -u RD18 --uprev A --upport mnt -d NCM13 --dnrev A --dnport mnt --date 2020/02/15 --time 11:00
+add_part.py -p WRA000085 -r A -t white-rabbit -m S9.395 --date 2020/03/20 --time 10:00
+add_part.py -p RD04 -r A -t arduino -m RD04 --date 2020/03/20 --time 10:00
+add_connection.py -u WRA000085 --uprev A --upport mnt -d NCM15 --dnrev A --dnport mnt --date 2020/03/20 --time 11:00
+add_connection.py -u RD04 --uprev A --upport mnt -d NCM15 --dnrev A --dnport mnt --date 2020/03/20 --time 11:00
+add_part.py -p WRA000090 -r A -t white-rabbit -m S9.392 --date 2020/03/20 --time 10:00
+add_part.py -p RD07 -r A -t arduino -m RD07 --date 2020/03/20 --time 10:00
+add_connection.py -u WRA000090 --uprev A --upport mnt -d NCM16 --dnrev A --dnport mnt --date 2020/03/20 --time 11:00
+add_connection.py -u RD07 --uprev A --upport mnt -d NCM16 --dnrev A --dnport mnt --date 2020/03/20 --time 11:00
+add_part_info.py -p RD06 -r A -c "MAC - 02:02:0a:01:01:ce" --date 2019/11/13 --time 10:00
+add_part_info.py -p RD06 -r A -c "IP - 10.80.2.206" --date 2019/11/13 --time 10:01
+add_part_info.py -p RD15 -r A -c "MAC - 02:02:0a:01:01:d7" --date 2020/01/31 --time 10:00
+add_part_info.py -p RD15 -r A -c "IP - 10.80.2.215" --date 2020/01/31 --time 10:01
+add_part_info.py -p RD18 -r A -c "MAC - 02:02:0a:01:01:da" --date 2020/02/15 --time 10:00
+add_part_info.py -p RD18 -r A -c "IP - 10.80.2.218" --date 2020/02/15 --time 10:01
+add_part_info.py -p RD19 -r A -c "MAC - 02:02:0a:01:01:db" --date 2020/01/31 --time 10:00
+add_part_info.py -p RD19 -r A -c "IP - 10.80.2.219" --date 2020/01/31 --time 10:01
+add_part_info.py -p RD20 -r A -c "MAC - 02:02:0a:01:01:dc" --date 2019/11/13 --time 10:00
+add_part_info.py -p RD20 -r A -c "IP - 10.80.2.220" --date 2019/11/13 --time 10:01
+add_part_info.py -p RD31 -r A -c "MAC - 02:02:0a:01:01:e7" --date 2019/08/02 --time 10:00
+add_part_info.py -p RD31 -r A -c "IP - 10.80.2.231" --date 2019/08/02 --time 10:01
+add_part_info.py -p RD40 -r A -c "MAC - 02:02:0a:01:01:f0" --date 2020/01/28 --time 10:00
+add_part_info.py -p RD40 -r A -c "IP - 10.80.2.240" --date 2020/01/28 --time 10:01
+add_part_info.py -p RD41 -r A -c "MAC - 02:02:0a:01:01:f1" --date 2019/10/31 --time 10:00
+add_part_info.py -p RD41 -r A -c "IP - 10.80.2.241" --date 2019/10/31 --time 10:01
+add_part_info.py -p RD42 -r A -c "MAC - 02:02:0a:01:01:f2" --date 2019/10/31 --time 10:00
+add_part_info.py -p RD42 -r A -c "IP - 10.80.2.242" --date 2019/10/31 --time 10:01
+add_part_info.py -p RD43 -r A -c "MAC - 02:02:0a:01:01:f3" --date 2020/01/31 --time 10:00
+add_part_info.py -p RD43 -r A -c "IP - 10.80.2.243" --date 2020/01/31 --time 10:01
+add_part_info.py -p RD45 -r A -c "MAC - 02:02:0a:01:01:f5" --date 2019/08/02 --time 10:00
+add_part_info.py -p RD45 -r A -c "IP - 10.80.2.245" --date 2019/08/02 --time 10:01
+add_part_info.py -p RD46 -r A -c "MAC - 02:02:0a:01:01:f6" --date 2019/05/14 --time 10:00
+add_part_info.py -p RD46 -r A -c "IP - 10.80.2.246" --date 2019/05/14 --time 10:01
+add_part_info.py -p WRA000083 -r A -c "MAC - 08:00:30:b1:81:75" --date 2019/05/14 --time 10:00
+add_part_info.py -p WRA000083 -r A -c "IP - 10.80.2.162" --date 2019/05/14 --time 10:01
+add_part_info.py -p WRA000084 -r A -c "MAC - 08:00:30:b2:17:8a" --date 2019/10/31 --time 10:00
+add_part_info.py -p WRA000084 -r A -c "IP - 10.80.2.163" --date 2019/10/31 --time 10:01
+add_part_info.py -p WRA000086 -r A -c "MAC - 08:00:30:b2:18:d1" --date 2019/08/02 --time 10:00
+add_part_info.py -p WRA000086 -r A -c "IP - 10.80.2.165" --date 2019/08/02 --time 10:01
+add_part_info.py -p WRA000089 -r A -c "MAC - 08:00:30:b2:55:3b" --date 2019/11/13 --time 10:00
+add_part_info.py -p WRA000089 -r A -c "IP - 10.80.2.168" --date 2019/11/13 --time 10:01
+add_part_info.py -p WRA000091 -r A -c "MAC - 08:00:30:50:8b:44" --date 2020/01/31 --time 10:00
+add_part_info.py -p WRA000091 -r A -c "IP - 10.80.2.170" --date 2020/01/31 --time 10:01
+add_part_info.py -p WRA000093 -r A -c "MAC - 08:00:30:6e:cd:b1" --date 2019/11/13 --time 10:00
+add_part_info.py -p WRA000093 -r A -c "IP - 10.80.2.172" --date 2019/11/13 --time 10:01
+add_part_info.py -p WRA000094 -r A -c "MAC - 08:00:30:6e:b9:a5" --date 2020/01/31 --time 10:00
+add_part_info.py -p WRA000094 -r A -c "IP - 10.80.2.173" --date 2020/01/31 --time 10:01
+add_part_info.py -p WRA000096 -r A -c "MAC - 08:00:30:6e:6c:b1" --date 2020/02/15 --time 10:00
+add_part_info.py -p WRA000096 -r A -c "IP - 10.80.2.175" --date 2020/02/15 --time 10:01
+add_part_info.py -p WRA000097 -r A -c "MAC - 08:00:30:6f:18:98" --date 2020/01/31 --time 10:00
+add_part_info.py -p WRA000097 -r A -c "IP - 10.80.2.176" --date 2020/01/31 --time 10:01

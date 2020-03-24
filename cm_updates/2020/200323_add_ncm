@@ -1,0 +1,6 @@
+#! /bin/bash
+echo "./200323_add_ncm.py" >> scripts.log 
+add_part.py -p NCM11 -r A -t node-control-module -m NCM-Pro11 --date 2020/03/01 --time 10:00
+add_part.py -p NCM12 -r A -t node-control-module -m NCM-Pro12 --date 2020/03/01 --time 10:00
+add_part.py -p NCM15 -r A -t node-control-module -m NCM-Pro15 --date 2020/03/20 --time 10:00
+add_part.py -p NCM16 -r A -t node-control-module -m NCM-Pro16 --date 2020/03/20 --time 10:00
