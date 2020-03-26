@@ -1,5 +1,0 @@
-#! /usr/bin/env bash
-echo "190516_add_station (do_it = True)" >> scripts.log 
-add_station.py HH270 --sernum 243 --date 2019/05/16 --time 10:00
-add_part.py -p A270 -r H -t antenna -m S/N243 --date 2019/05/16 --time 10:00 --actually_do_it
-add_connection.py -u HH270 --uprev A --upport ground -d A270 --dnrev H --dnport ground --date 2019/05/16 --time 10:00 --actually_do_it

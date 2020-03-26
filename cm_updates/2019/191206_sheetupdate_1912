@@ -1,4 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "191206_sheetupdate_1912" >> scripts.log 
-update_apriori.py -p HH83 -s needs_checking --date 2019/12/06 --time 19:12

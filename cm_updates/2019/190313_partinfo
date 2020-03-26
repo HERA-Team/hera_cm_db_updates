@@ -1,8 +1,0 @@
-#! /usr/bin/env bash
-echo "190313_partinfo (do_it = True)" >> scripts.log 
-add_part_info.py -p HH0 -r A -c "Add ground strap on feed." --date 2019/03/13 --time 10:00
-add_part_info.py -p HH2 -r A -c "Add braid on coax cable to feed. \nAdd ground strap on feed." --date 2019/03/13 --time 10:00
-add_part_info.py -p HH11 -r A -c "Add ground strap on feed." --date 2019/03/13 --time 10:00
-add_part_info.py -p HH14 -r A -c "Add braid on coax cable to feed. \nAdd ground strap on feed." --date 2019/03/13 --time 10:00
-add_part_info.py -p HH23 -r A -c "Add ground strap on feed." --date 2019/03/13 --time 10:00
-add_part_info.py -p HH24 -r A -c "Add ground strap on feed." --date 2019/03/13 --time 10:00

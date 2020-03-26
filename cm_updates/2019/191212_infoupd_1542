@@ -1,6 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "191212_infoupd_1542" >> scripts.log 
-update_apriori.py -p HH38 -s passed_checks --date 2019/12/12 --time 15:42
-add_part_info.py -p HH38 -r A -c "Sbcd thinks final spectra look good; ready to pass to commissioning" --date 2019/12/12 --time 15:42:00
-add_part_info.py -p HH38 -r A -c "Sbcd thinks final spectra look good; ready to pass to commissioning" --date 2019/12/12 --time 15:42:02

@@ -1,5 +1,0 @@
-#! /usr/bin/env bash
-echo "190909_add_station" >> scripts.log 
-add_station.py HH114 --sernum 268 --date 2019/09/09 --time 10:00
-add_part.py -p A114 -r H -t antenna -m S/N268 --date 2019/09/09 --time 10:00
-add_connection.py -u HH114 --uprev A --upport ground -d A114 --dnrev H --dnport ground --date 2019/09/09 --time 10:00

@@ -1,6 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "191213_infoupd_0942" >> scripts.log 
-add_part_info.py -p HH68 -r A -c "FEM 130 replaced with FEM 128. PAM 124 taken from node 5, installed in Node 3" --date 2019/12/13 --time 09:42:00
-add_part_info.py -p HH52 -r A -c "Moved from PAM port 8 to 10. PAM changed from 132 to 134" --date 2019/12/13 --time 09:42:00
-add_part_info.py -p HH50 -r A -c "Moved from port PAM 10 to 12, PAM changed from 134 to 136.FEM  129 replaced with 107" --date 2019/12/13 --time 09:42:00

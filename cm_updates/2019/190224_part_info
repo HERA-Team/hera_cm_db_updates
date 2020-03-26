@@ -1,4 +1,0 @@
-#! /usr/bin/env bash
-echo 190224_part_info >> scripts.log
-
-add_part_info.py -p PAM028 -r A -c "Not working.  Removed." --date 2019/02/24 --time 10:00

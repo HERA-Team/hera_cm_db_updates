@@ -1,8 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "191210_infoupd_1340" >> scripts.log 
-add_part_info.py -p HH110 -r A -c "This pol has low power" --date 2019/12/10 --time 13:40:00
-add_part_info.py -p HH127 -r A -c "This pol has low power" --date 2019/12/10 --time 13:40:00
-add_part_info.py -p HH68 -r A -c "Low power " --date 2019/12/10 --time 13:40:00
-add_part_info.py -p HH52 -r A -c "Low power" --date 2019/12/10 --time 13:40:00
-add_part_info.py -p HH50 -r A -c "Low power" --date 2019/12/10 --time 13:40:00
