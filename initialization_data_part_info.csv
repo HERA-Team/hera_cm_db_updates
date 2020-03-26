@@ -1319,3 +1319,14 @@ WRA000096,A,MAC - 08:00:30:6e:6c:b1,,1265796018
 WRA000096,A,IP - 10.80.2.175,,1265796078
 WRA000097,A,MAC - 08:00:30:6f:18:98,,1264500018
 WRA000097,A,IP - 10.80.2.176,,1264500078
+HH136,A,Feed heights (NE/SE/SW/NW): charge pump,infoupd,1269200538
+HH179,A,Reflections,infoupd,1269200538
+HH179,A,Reflections,infoupd,1269200540
+HH86,A,Some reflections,infoupd,1269200538
+HH86,A,Some reflections,infoupd,1269200540
+HH120,A,pretty bad reflections,infoupd,1269200538
+HH120,A,pretty bad reflections,infoupd,1269200540
+HH90,A,different reflections on each pol,infoupd,1269200538
+HH90,A,different reflections on each pol,infoupd,1269200540
+HH107,A,different reflections on each pol,infoupd,1269200538
+HH107,A,different reflections on each pol,infoupd,1269200540
