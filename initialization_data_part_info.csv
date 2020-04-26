@@ -1441,3 +1441,5 @@ HH59,A,No final spectra as of 8Jan2020,infoupd,1270417338
 HH60,A,No final spectra as of 8Jan2020,infoupd,1270417338
 HH73,A,No final spectra as of 8Jan2020,infoupd,1270417338
 HH75,A,No final spectra as of 8Jan2020,infoupd,1270417338
+HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1271896938
+HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1271896940
