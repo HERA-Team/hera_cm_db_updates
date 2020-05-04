@@ -2,9 +2,15 @@
 # -*- mode: python; coding: utf-8 -*-
 import argparse
 
+"""
+Sort the generated list from geo.py (e.g. 'geo.py -f installed.txt')
+"""
+
 ap = argparse.ArgumentParser()
-ap.add_argument('filename', nargs='?', help="Filename to sort [installed.txt].  Use this with geo.py -f installed.txt", default='installed.txt')
-ap.add_argument('--listed', help="Filename for formatted listed output [listants.txt]", default='listants.txt')
+ap.add_argument('filename', nargs='?', help="Filename to sort [installed.txt]. "
+                "Use this with geo.py -f installed.txt", default='installed.txt')
+ap.add_argument('--listed', help="Filename for formatted listed output [listants.txt]",
+                default='listants.txt')
 ap.add_argument('--num_per_row', help="Number to print per row in listed output [15]", default=15)
 args = ap.parse_args()
 

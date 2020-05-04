@@ -3,6 +3,10 @@
 # Copyright 2019 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
 
+"""
+Makes the pytest database the active database to check pytest issues.
+"""
+
 from hera_mc import cm_transfer
 cm_csv_path = '/Users/ddeboer/Documents/ubase/Projects/HERA/ops/hera_mc/hera_mc/data/test_data'
 cm_transfer.initialize_db_from_csv(session=None, tables='all', maindb=False,

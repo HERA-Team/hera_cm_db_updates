@@ -4,6 +4,10 @@
 # Licensed under the 2-clause BSD license.
 
 """
+Checks the database for:
+    associativity of connections to active parts
+    duplicated comments
+    concurrent apriori states
 """
 from hera_cm import cm_checks
 import argparse
