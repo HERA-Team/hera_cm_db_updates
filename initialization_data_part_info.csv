@@ -1463,3 +1463,13 @@ HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1272274940
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 HH110,A,Was seen as not raised 29 Jan 2020,infoupd,1272728538
 HH110,A,Was seen as not raised 29 Jan 2020,infoupd,1272728540
+HH24,A,No central line for this feed,infoupd,1272836538
+HH24,A,No central line for this feed,infoupd,1272836540
+HH65,A,65E looks dead,infoupd,1272836538
+HH42,A,43E looks dead,infoupd,1272836538
+HH55,A,55N looks dead,infoupd,1272836538
+HH57,A,central line is detached,infoupd,1272836538
+HH57,A,central line is detached,infoupd,1272836540
+HH71,A,71E looks very atypical,infoupd,1272836538
+HH74,A,74E and N look dead,infoupd,1272836538
+HH74,A,74E and N look dead,infoupd,1272836540
