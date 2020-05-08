@@ -1,10 +1,10 @@
 # -*- mode: python; coding: utf-8 -*-
-"""Info update class."""
 # Copyright 2019 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
-
+"""
+This class sets up to update the part information database.
+"""
 from hera_mc import cm_utils, cm_active
-
 from . import cm_gsheet, util, upd_base
 
 
@@ -76,6 +76,8 @@ class UpdateInfo(upd_base.Update):
                 else:
                     prefix = '{}: '.format(col)
                 statement = '{}{}'.format(prefix, col_data)
+                if "'" in statement:
+                    statement = statement.replace("'", "")
                 if not self.is_duplicate(antrev_key, statement, duplication_window, view_duplicate):
                     self.new_notes.setdefault(antrev_key, [])
                     self.new_notes[antrev_key].append(statement)

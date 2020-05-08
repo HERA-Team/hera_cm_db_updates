@@ -2,14 +2,14 @@ This repository contains the csv files and sqlite database that transfer configu
 
 
 ### Directories
-0.  <root> - csv and db files, along with setup.py etc
-1.  <cm_updates> - scripts used to update the postgres database.
-2.  <hera_cm> - some base methods/classes to help update the postgres database.
-3.  <scripts> - general scripts to support the cm_updates.
+* **root** - csv and db files, along with setup.py etc
+* **cm_updates** - scripts used to update the postgres database and two helper scripts to concatenate automated updates (`connupd.py` and `infoupd.py`)
+* **hera_cm** - some base methods/classes to help update the postgres database.
+* **scripts** - general scripts to support the cm_updates.
 
 ### Cronjobs on `qmaster`
 ##### Update hera_mc config management from googlesheet
-* `\#35 * * * * /home/obs/anaconda/envs/HERA/bin/update_connect.py -n w --arc-path /home/obs/src/hera_cm_db_updates/cm_updates --script-path /home/obs/src/hera_cm_db_updates`
+* `#35 * * * * /home/obs/anaconda/envs/HERA/bin/update_connect.py -n w --arc-path /home/obs/src/hera_cm_db_updates/cm_updates --script-path /home/obs/src/hera_cm_db_updates`
 * `42 * * * * /home/obs/anaconda/envs/HERA/bin/update_info.py -n n --arc-path /home/obs/src/hera_cm_db_updates/cm_updates --script-path /home/obs/src/hera_cm_db_updates`
 * `45 * * * * ~/src/hera_cm_db_updates/info_update.sh`
 * `47 * * * * ~/src/hera_cm_db_updates/scripts/update_hera_mc_db_repo.sh > /dev/null 2>&1`

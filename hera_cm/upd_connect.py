@@ -3,10 +3,10 @@
 # Licensed under the 2-clause BSD license.
 
 """
+This class sets up to update the connections database.
 """
 from hera_mc import cm_hookup, cm_utils, cm_sysdef, cm_partconnect
 from . import util, cm_gsheet, upd_base
-
 from argparse import Namespace
 
 cm_req = Namespace(hpn=cm_sysdef.hera_zone_prefixes, pol='all',
