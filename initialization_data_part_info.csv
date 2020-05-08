@@ -1461,3 +1461,33 @@ HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1272274940
 HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1272274938
 HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1272274940
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
+HH110,A,Was seen as not raised 29 Jan 2020,infoupd,1272728538
+HH110,A,Was seen as not raised 29 Jan 2020,infoupd,1272728540
+HH24,A,No central line for this feed,infoupd,1272836538
+HH24,A,No central line for this feed,infoupd,1272836540
+HH65,A,65E looks dead,infoupd,1272836538
+HH42,A,43E looks dead,infoupd,1272836538
+HH55,A,55N looks dead,infoupd,1272836538
+HH57,A,central line is detached,infoupd,1272836538
+HH57,A,central line is detached,infoupd,1272836540
+HH71,A,71E looks very atypical,infoupd,1272836538
+HH74,A,74E and N look dead,infoupd,1272836538
+HH74,A,74E and N look dead,infoupd,1272836540
+HH127,A,Was seen as not raised 29 Jan 2020,infoupd,1272912138
+HH127,A,Was seen as not raised 29 Jan 2020,infoupd,1272912140
+HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1272912138
+HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1272912140
+HH130,A,"Central line too loose to be RF OK, door mesh in dish",infoupd,1272912138
+HH130,A,"Central line too loose to be RF OK, door mesh in dish",infoupd,1272912140
+HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1272912138
+HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1272912140
+HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1272912138
+HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1272912140
+HH180,A,Preliminary post-PAM spectra looks fine,infoupd,1272912138
+HH180,A,Preliminary post-PAM spectra is very low amplitude but not dead,infoupd,1272912140
+HH116,A,Post-PAM spectra of 116E has a strange look.,infoupd,1272912138
+HH85,A,Feed down as of 31 Jan 2020,infoupd,1272912138
+HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1272922938
+HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1272922940
+HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1272926538
+HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1272926540
