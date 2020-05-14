@@ -1523,3 +1523,13 @@ HH162,A,Feed heights (NE/SE/SW/NW): Z distance = 4.411,infoupd,1273488138
 HH182,A,Feed heights (NE/SE/SW/NW): Z distance =4.415,infoupd,1273488138
 HH160,A,Feed heights (NE/SE/SW/NW): Z diztance = 4.413,infoupd,1273488138
 HH181,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1273488138
+HH161,A,Final check for 161N has an unexpected dip @ ~70 MHz,infoupd,1273506138
+HH161,A,Final post-PAM spectra looks fine,infoupd,1273506140
+HH162,A,Final post-PAM spectra looks fine,infoupd,1273506138
+HH162,A,Final post-PAM spectra looks fine,infoupd,1273506140
+HH182,A,Final post-PAM spectra looks fine,infoupd,1273506138
+HH182,A,Final post-PAM spectra looks fine,infoupd,1273506140
+HH160,A,Final post-PAM spectra looks fine,infoupd,1273506138
+HH160,A,Final post-PAM spectra looks fine,infoupd,1273506140
+HH181,A,Final post-PAM spectra looks fine,infoupd,1273506138
+HH181,A,Final post-PAM spectra looks fine,infoupd,1273506140
