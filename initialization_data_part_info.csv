@@ -1567,3 +1567,4 @@ HH104,A,Z = 4.409,infoupd,1274283738
 HH104,A, ,infoupd,1274283740
 HH122,A,Z = 4.414,infoupd,1274283738
 HH122,A, ,infoupd,1274283740
+HH2,A,Replaced SNAP (C57->C72). ADC is likely working now.,infoupd,1274776938
