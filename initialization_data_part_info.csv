@@ -1568,3 +1568,19 @@ HH104,A, ,infoupd,1274283740
 HH122,A,Z = 4.414,infoupd,1274283738
 HH122,A, ,infoupd,1274283740
 HH2,A,Replaced SNAP (C57->C72). ADC is likely working now.,infoupd,1274776938
+HH101,A,"History: FEM: 58 until 10Mar2020, thence 153",infoupd,1275676938
+HH101,A,10Mar2020 z = 4.406 ,infoupd,1275676940
+HH101,A,"History: FEM: 58 until 10Mar2020, thence 154",infoupd,1275676942
+HH101,A,10Mar2020 z = 4.406; despite changed FEM amplitude of spectre looks small,infoupd,1275676944
+HH102,A,"History: FEM: 59 until 10Mar2020, thence 153",infoupd,1275676938
+HH102,A,10Mar2020 z = 4.409 ,infoupd,1275676940
+HH102,A,"History: FEM: 59 until 10Mar2020, thence 154",infoupd,1275676942
+HH102,A,10Mar2020 z = 4.409 ,infoupd,1275676944
+HH89,A,10Mar2020 z = 4.409,infoupd,1275676938
+HH89,A,10Mar2020 z = 4.409,infoupd,1275676940
+HH106,A,10Mar2020 z = 4.414,infoupd,1275676938
+HH106,A,10Mar2020 z = 4.414,infoupd,1275676940
+HH108,A,10Mar2020 z = 4.403,infoupd,1275676938
+HH108,A,10Mar2020 z = 4.403,infoupd,1275676940
+HH125,A,10Mar2020 z = 4.405,infoupd,1275676938
+HH125,A,10Mar2020 z = 4.405,infoupd,1275676940
