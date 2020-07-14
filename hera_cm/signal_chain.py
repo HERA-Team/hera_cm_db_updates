@@ -117,9 +117,9 @@ class Update:
                       .format(s, ser_num, cdate, ctime))
         added['station'].append([s, added['time']])
         added['part'].append([s, 'A', 'station', n, added['time']])
-        check_date = cm_utils.get_astropytime(cdate=cdate, ctime=ctime)
+        check_date = cm_utils.get_astropytime(adate=cdate, atime=ctime)
 
-        if not self.exists('part', a, 'H', check_date=check_date):
+        if not self.exists('part', a, 'H'):
             ant = [a, 'H', 'antenna', n]
             self.update_part('add', ant, cdate, ctime)
             ant.append(added['time'])
@@ -366,7 +366,7 @@ class Update:
             if isinstance(override, dict) and 'date' in override.keys():
                 check_date = override['date']
             else:
-                check_date = cm_utils.get_astropytime(cdate=codate, ctime=cotime)
+                check_date = cm_utils.get_astropytime(adate=codate, atime=cotime)
             if not self.exists('connection', hpn=up[0], rev=up[1], port=up[2],
                                side='up', check_date=check_date):
                 self.update_connection('add', up, down, codate, cotime)
@@ -488,7 +488,7 @@ class Update:
         """
         self.fp.write(as_connect(add_or_stop, up, down, cdate, ctime))
 
-    def exists(self, atype, hpn, rev, port, side='up,down', check_date=None):
+    def exists(self, atype, hpn, rev, port=None, side='up,down', check_date=None):
         """
         Check if a part or connection exists for hpn.
 
@@ -512,12 +512,12 @@ class Update:
         boolean
                  True if existing corresponding hpn/rev/port
         """
-        if check_date is None:
-            if abs(self.at_date - self.active.at_date) > 1.0:
-                print("Warning:  class and active dates do not agree.")
-        else:
-            if cm_utils.get_astropytime(check_date) - self.active.at_date < 0.0:
-                raise ValueError("Supplied date before active.at_date.")
+        # if check_date is None:
+        #     if abs(self.at_date - self.active.at_date) > 1.0:
+        #         print("Warning:  class and active dates do not agree.")
+        # else:
+        #     if cm_utils.get_astropytime(check_date) - self.active.at_date < 0.0:
+        #         raise ValueError("Supplied date before active.at_date.")
         if rev is None:
             rev = cm_active.revs(hpn)
         elif isinstance(rev, str):
