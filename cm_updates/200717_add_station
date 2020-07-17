@@ -1,0 +1,5 @@
+#! /bin/bash
+echo "./200717_add_station.py" >> scripts.log 
+add_station.py HH312 --sernum 319 --date 2020/07/17 --time 10:00
+add_part.py -p A312 -r H -t antenna -m S/N319 --date 2020/07/17 --time 10:00
+add_connection.py -u HH312 --uprev A --upport ground -d A312 --dnrev H --dnport ground --date 2020/07/17 --time 10:00
