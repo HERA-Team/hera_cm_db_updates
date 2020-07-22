@@ -1632,3 +1632,10 @@ HH170,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
 HH189,A,Feed heights (NE/SE/SW/NW): Z = 4.409,infoupd,1278931338
 HH190,A,Feed heights (NE/SE/SW/NW): Z = 4.410,infoupd,1278931338
 HH191,A,Feed heights (NE/SE/SW/NW): Z = 4.410,infoupd,1278931338
+HH109,A,Door closed ,infoupd,1279446138
+HH110,A,Feed raised,infoupd,1279446138
+HH110,A,Feed raised,infoupd,1279446140
+HH127,A,Feed raised,infoupd,1279446138
+HH127,A,Feed raised,infoupd,1279446140
+HH130,A,"Central line too loose to be RF OK, door mesh closed",infoupd,1279446138
+HH130,A,"Central line too loose to be RF OK, door mesh closed",infoupd,1279446140
