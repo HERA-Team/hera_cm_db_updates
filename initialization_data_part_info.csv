@@ -1639,3 +1639,5 @@ HH127,A,Feed raised,infoupd,1279446138
 HH127,A,Feed raised,infoupd,1279446140
 HH130,A,"Central line too loose to be RF OK, door mesh closed",infoupd,1279446138
 HH130,A,"Central line too loose to be RF OK, door mesh closed",infoupd,1279446140
+HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1279676538
+HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1279676540
