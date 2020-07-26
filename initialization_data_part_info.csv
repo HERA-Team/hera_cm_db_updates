@@ -1641,3 +1641,16 @@ HH130,A,"Central line too loose to be RF OK, door mesh closed",infoupd,127944613
 HH130,A,"Central line too loose to be RF OK, door mesh closed",infoupd,1279446140
 HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1279676538
 HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1279676540
+HH2,A,History: FEM: 17 | PAM: 23,infoupd,1279791738
+HH11,A,History: FEM: 19 | PAM: 25,infoupd,1279791738
+HH12,A,History: FEM: 20 | PAM: 26,infoupd,1279791738
+HH14,A,History: FEM: 28,infoupd,1279791738
+HH24,A,History: PAM: 24,infoupd,1279791738
+HH25,A,History: FEM: 31,infoupd,1279791738
+HH26,A,History: PAM: 26,infoupd,1279791738
+HH39,A,History: PAM: 27,infoupd,1279791738
+HH87,A,One tension is frayed,infoupd,1279791738
+HH103,A,History: FEM: 60,infoupd,1279791738
+HH103,A,History: FEM: 60,infoupd,1279791740
+HH89,A,History: PAM: 43,infoupd,1279791738
+HH124,A,History: PAM: 42,infoupd,1279791738
