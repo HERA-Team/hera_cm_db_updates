@@ -1669,3 +1669,12 @@ HH57,A,central line is detached,infoupd,1280616140
 HH71,A,71E looks very atypical,infoupd,1280616138
 HH74,A,74E and N look dead,infoupd,1280616138
 HH74,A,74E and N look dead,infoupd,1280616140
+HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1280691738
+HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1280691740
+HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1280691738
+HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1280691740
+HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1280691738
+HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1280691740
+HH180,A,Preliminary post-PAM spectra looks fine,infoupd,1280691738
+HH180,A,Preliminary post-PAM spectra is very low amplitude but not dead,infoupd,1280691740
+HH116,A,Post-PAM spectra of 116E has a strange look.,infoupd,1280691738
