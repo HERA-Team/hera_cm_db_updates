@@ -1632,3 +1632,196 @@ HH170,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
 HH189,A,Feed heights (NE/SE/SW/NW): Z = 4.409,infoupd,1278931338
 HH190,A,Feed heights (NE/SE/SW/NW): Z = 4.410,infoupd,1278931338
 HH191,A,Feed heights (NE/SE/SW/NW): Z = 4.410,infoupd,1278931338
+HH109,A,Door closed ,infoupd,1279446138
+HH110,A,Feed raised,infoupd,1279446138
+HH110,A,Feed raised,infoupd,1279446140
+HH127,A,Feed raised,infoupd,1279446138
+HH127,A,Feed raised,infoupd,1279446140
+HH130,A,"Central line too loose to be RF OK, door mesh closed",infoupd,1279446138
+HH130,A,"Central line too loose to be RF OK, door mesh closed",infoupd,1279446140
+HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1279676538
+HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1279676540
+HH2,A,History: FEM: 17 | PAM: 23,infoupd,1279791738
+HH11,A,History: FEM: 19 | PAM: 25,infoupd,1279791738
+HH12,A,History: FEM: 20 | PAM: 26,infoupd,1279791738
+HH14,A,History: FEM: 28,infoupd,1279791738
+HH24,A,History: PAM: 24,infoupd,1279791738
+HH25,A,History: FEM: 31,infoupd,1279791738
+HH26,A,History: PAM: 26,infoupd,1279791738
+HH39,A,History: PAM: 27,infoupd,1279791738
+HH87,A,One tension is frayed,infoupd,1279791738
+HH103,A,History: FEM: 60,infoupd,1279791738
+HH103,A,History: FEM: 60,infoupd,1279791740
+HH89,A,History: PAM: 43,infoupd,1279791738
+HH124,A,History: PAM: 42,infoupd,1279791738
+HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1280054538
+HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1280054540
+HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1280054538
+HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1280054540
+HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1280083338
+HH24,A,No central line for this feed,infoupd,1280616138
+HH24,A,No central line for this feed,infoupd,1280616140
+HH65,A,65E looks dead,infoupd,1280616138
+HH42,A,43E looks dead,infoupd,1280616138
+HH55,A,55N looks dead,infoupd,1280616138
+HH57,A,central line is detached,infoupd,1280616138
+HH57,A,central line is detached,infoupd,1280616140
+HH71,A,71E looks very atypical,infoupd,1280616138
+HH74,A,74E and N look dead,infoupd,1280616138
+HH74,A,74E and N look dead,infoupd,1280616140
+HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1280691738
+HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1280691740
+HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1280691738
+HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1280691740
+HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1280691738
+HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1280691740
+HH180,A,Preliminary post-PAM spectra looks fine,infoupd,1280691738
+HH180,A,Preliminary post-PAM spectra is very low amplitude but not dead,infoupd,1280691740
+HH116,A,Post-PAM spectra of 116E has a strange look.,infoupd,1280691738
+HH85,A,Feed down as of 31 Jan 2020,infoupd,1280695338
+HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1280702538
+HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1280702540
+HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1280706138
+HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1280706140
+HH135,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1281008538
+HH155,A,Feed heights (NE/SE/SW/NW): Z distance =4.407,infoupd,1281008538
+HH156,A,Feed heights (NE/SE/SW/NW): Z distance = 4.407,infoupd,1281008538
+HH157,A,Feed heights (NE/SE/SW/NW): z distance = 4.415,infoupd,1281008538
+HH177,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1281008538
+HH179,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1281008538
+HH135,A,Final specrta looks fine,infoupd,1281026538
+HH135,A,Final specrta looks fine,infoupd,1281026540
+HH136,A,Final specrta looks fine,infoupd,1281026538
+HH136,A,Final specrta looks fine,infoupd,1281026540
+HH155,A,Final specrta looks fine,infoupd,1281026538
+HH155,A,Final specrta looks fine,infoupd,1281026540
+HH156,A,Final spectre looks fine,infoupd,1281026538
+HH157,A,Final spectre looks fine,infoupd,1281026538
+HH157,A,Final spectre looks fine,infoupd,1281026540
+HH158,A,Final spectre looks fine,infoupd,1281026538
+HH158,A,Feed heights (NE/SE/SW/NW): z distance = 4.411,infoupd,1281026540
+HH158,A,Final spectre looks fine,infoupd,1281026542
+HH177,A,Final spectra looks fine,infoupd,1281026538
+HH177,A,Final spectra looks fine,infoupd,1281026540
+HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH12,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH12,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH13,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH13,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH14,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH14,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH23,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH23,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH25,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH25,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH26,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH26,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH39,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH39,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH67,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH67,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH68,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH68,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH37,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH37,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH38,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH38,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH53,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH53,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH51,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH51,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH36,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH36,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH40,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH41,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH41,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH56,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH56,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH69,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH69,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH70,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH70,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH43,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH43,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH44,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH44,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH45,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH45,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH46,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH46,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH58,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH58,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH59,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH59,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH60,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH60,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH73,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH73,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH75,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH75,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH81,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH81,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH82,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH82,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH83,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH83,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH100,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH100,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH119,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH119,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH98,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH98,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH99,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH99,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH117,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH117,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH118,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH118,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH85,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH85,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH101,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH101,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH102,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH102,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH103,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH103,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH104,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH104,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH122,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH122,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
+HH92,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH92,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
+HH93,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH93,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
+HH94,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH94,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
+HH110,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH110,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
+HH111,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH111,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
+HH112,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH112,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
+HH135,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH135,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
+HH136,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH136,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
+HH155,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH155,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
+HH156,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH157,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH157,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
+HH158,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH158,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
+HH177,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH177,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
+HH178,A,No final check spectra - Preliminary specrta looks fine,infoupd,1281134538
+HH178,A,No final check spectra - Preliminary specrta looks fine,infoupd,1281134540
+HH66,A,loose central line,infoupd,1281134538
+HH87,A,loose central line,infoupd,1281134538
+HH121,A,loose central line,infoupd,1281134538
+HH123,A,loose central line,infoupd,1281134538
