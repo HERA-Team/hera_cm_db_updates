@@ -44,7 +44,7 @@ class UpdateInfo(upd_base.Update):
 
     def add_sheet_notes(self, duplication_window=90.0, view_duplicate=0.0):
         """
-        Search the relevant fields in the googlesheets and generate appropriate script commands.
+        Search the relevant fields in the googlesheets and generate add note commands.
 
         Parameters
         ----------

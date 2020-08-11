@@ -38,7 +38,6 @@ class SheetData:
         self.header = {}
         self.date = {}
         self.notes = {}
-        self.ant_set = set()
         self.ants = []
 
     def load_sheet(self, node_csv='none', tabs=None, check_headers=False):
@@ -57,6 +56,7 @@ class SheetData:
         check_headers : bool
             If True, it will make sure all of the headers agree with sheet_headers
         """
+        ant_set = set()
         node_csv = node_csv[0].lower()
         if tabs is None or str(tabs) == 'all':
             tabs = sorted(list(gsheet.keys()))
@@ -94,7 +94,7 @@ class SheetData:
                     continue
                 hpn = util.gen_hpn('HH', antnum)
                 hkey = cm_utils.make_part_key(hpn, 'A')
-                self.ant_set.add(hkey)
+                ant_set.add(hkey)
                 self.ant_to_node[hkey] = tab
                 self.node_to_ant[tab].append(hpn)
                 dkey = '{}-{}'.format(hkey, data[1].upper())
@@ -110,4 +110,4 @@ class SheetData:
                         npkey = node_pn
                     self.notes.setdefault(npkey, [])
                     self.notes[npkey].append('-'.join([y for y in data[1:] if len(y) > 0]))
-        self.ants = cm_utils.put_keys_in_order(list(self.ant_set), sort_order='NPR')
+        self.ants = cm_utils.put_keys_in_order(list(ant_set), sort_order='NPR')
