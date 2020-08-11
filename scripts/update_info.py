@@ -13,10 +13,10 @@ if __name__ == '__main__':
     ap.add_argument('--arc-path', dest='arc_path', help="Path for update archive.", default=None)
     ap.add_argument('--script-path', dest='script_path', help="Path for cron script", default='./')
     ap.add_argument('-n', '--node_csv', help="For testing: flag for read/write of gsheet (r/w/n)",
-                    default='n')
+                    choices=['read', 'write', 'none', 'r', 'w', 'n'], default='n')
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
     ap.add_argument('-d', '--duplication_window',
-                    help="Number of days to use for duplicate comments.", default=90.0)
+                    help="Number of days to use for duplicate comments.", default=180.0)
     ap.add_argument('--view_duplicate',
                     help='In verbose, only show duplicates after this many days', default=0.0)
     ap.add_argument('--look_only', help='Flag to only look at data.', action='store_true')
