@@ -118,6 +118,8 @@ def gen_hpn(ptype, pnum, verbose=False):
             return 'FDV{}'.format(int(pnum))
         if ptype in ['ANT', 'ANTENNA']:
             return 'A{}'.format(int(pnum))
+        if ptype in ['STATION']:
+            return 'HH{}'.format(int(pnum))
     except ValueError:
         if verbose:
             print("ValueError:  util.gen_hpn:  Invalid pnum '{}'".format(pnum))

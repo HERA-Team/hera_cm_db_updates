@@ -5,7 +5,8 @@
 """
 This class sets up to update the connections database.
 """
-from hera_mc import cm_hookup, cm_utils, cm_sysdef, cm_partconnect
+from hera_mc import cm_active, cm_utils, cm_sysdef
+from hera_mc import cm_partconnect as CMPC
 from . import util, cm_gsheet, upd_base
 from argparse import Namespace
 
@@ -25,112 +26,163 @@ class UpdateConnect(upd_base.Update):
     def get_hpn_from_col(self, col, key, header):
         return util.gen_hpn(col, self.gsheet.data[key][header.index(col)])
 
-    def load_hookup(self):
+    def load_active(self):
         """
         Gets the hookup data from the hera_mc database.
         """
-        self.hookup = cm_hookup.Hookup()
-        self.hookup_dict = self.hookup.get_hookup(hpn=cm_req.hpn, pol=cm_req.pol,
-                                                  at_date=cm_req.at_date,
-                                                  exact_match=cm_req.exact_match,
-                                                  hookup_type=cm_req.hookup_type)
+        self.active = cm_active.ActiveData()
+        self.active.load_connections()
 
     def make_sheet_connections(self):
         """
-        Go through all of the sheet and make cm_partconnect.Connections for comparison
+        Go through all of the sheet and make cm_partconnect.Connections for comparison.
+
+        It does not do so in the most efficient of ways...
         """
-        self.gsheet.connection = {}
+        self.gsheet.connections = {'up': {}, 'down': {}}  # To mirror cm_active
         for sant in self.gsheet.ants:
             for pol in self.pols:
-                key = '{}-{}'.format(sant, pol)
-                node_num = self.gsheet.data[key][0]
+                gkey = '{}-{}'.format(sant, pol)
+                node_num = self.gsheet.data[gkey][0]
                 tab = self.gsheet.ant_to_node[sant]
                 header = self.gsheet.header[tab]
-                self.gsheet.connection[key] = []
                 for i, col in enumerate(header):
                     if col not in cm_gsheet.hu_col.keys():
                         continue
-                    if self.gsheet.data[key][i] is not None:
-                        tc_ = cm_partconnect.Connections()
-                        if col == 'Ant':
-                            ant = self.get_hpn_from_col('Ant', key, header)
-                            feed = self.get_hpn_from_col('Feed', key, header)
-                            tc_.connection(upstream_part=ant, up_part_rev='H',
-                                           upstream_output_port='focus',
-                                           downstream_part=feed, down_part_rev='A',
-                                           downstream_input_port='input')
-                        elif col == 'Feed':
-                            feed = self.get_hpn_from_col('Feed', key, header)
-                            fem = self.get_hpn_from_col('FEM', key, header)
-                            tc_.connection(upstream_part=feed, up_part_rev='A',
-                                           upstream_output_port='terminals',
-                                           downstream_part=fem, down_part_rev='A',
-                                           downstream_input_port='input')
-                        elif col == 'FEM':
-                            fem = self.get_hpn_from_col('FEM', key, header)
-                            nbp = util.gen_hpn('NBP', node_num)
-                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('NBP/PAMloc')])  # noqa
-                            if port is not None:
-                                port = port.lower()
-                            tc_.connection(upstream_part=fem, up_part_rev='A',
-                                           upstream_output_port=pol.lower(),
-                                           downstream_part=nbp, down_part_rev='A',
-                                           downstream_input_port=port)
-                        elif col == 'NBP/PAMloc':
-                            nbp = util.gen_hpn('NBP', node_num)
-                            port = '{}{}'.format(pol, self.gsheet.data[key][header.index('NBP/PAMloc')])  # noqa
-                            if port is not None:
-                                port = port.lower()
-                            pam = self.get_hpn_from_col('PAM', key, header)
-                            tc_.connection(upstream_part=nbp, up_part_rev='A',
-                                           upstream_output_port=port,
-                                           downstream_part=pam, down_part_rev='A',
-                                           downstream_input_port=pol.lower())
-                        elif col == 'PAM':
-                            pam = self.get_hpn_from_col('PAM', key, header)
-                            snap = self.get_hpn_from_col('SNAP', key, header)
-                            port = self.gsheet.data[key][header.index('Port')]
-                            if len(port) == 0:
-                                port = None
-                            if port is not None:
-                                port = port.lower()
-                                if port[0] != pol[0].lower():
-                                    msg = "{} port ({}) and pol ({}) don't match".format(snap,
-                                                                                         port, pol)
-                                    print(msg)
-                            tc_.connection(upstream_part=pam, up_part_rev='A',
-                                           upstream_output_port=pol.lower(),
-                                           downstream_part=snap, down_part_rev='A',
-                                           downstream_input_port=port)
-                        elif col == 'SNAP':
-                            snap = self.get_hpn_from_col('SNAP', key, header)
-                            node = util.gen_hpn("Node", node_num)
-                            loc = "loc{}".format(self.gsheet.data[key][header.index('SNAPloc')])
-                            tc_.connection(upstream_part=snap, up_part_rev='A',
-                                           upstream_output_port='rack',
-                                           downstream_part=node, down_part_rev='A',
-                                           downstream_input_port=loc)
-                        elif col == 'SNAPloc':  # extra to get pam @slot
-                            pam = self.get_hpn_from_col('PAM', key, header)
-                            try:
-                                pamkey = cm_utils.make_part_key(pam, 'A')
-                                pch = self.hookup.active.connections['up'][pamkey]['@SLOT'].downstream_part  # noqa
-                            except KeyError:
-                                print("{} {} is not an active connection!".format(ant, pol))
-                                pch = None
-                            slot = '{}{}'.format('@SLOT', self.gsheet.data[key][header.index('NBP/PAMloc')])  # noqa
-                            if slot is not None:
-                                slot = slot.lower()
-                            tc_.connection(upstream_part=pam, up_part_rev='A',
-                                           upstream_output_port='@slot',
-                                           downstream_part=pch, down_part_rev='A',
-                                           downstream_input_port=slot)
-
-                        if tc_.upstream_part is None or tc_.up_part_rev is None or\
-                           tc_.upstream_output_port is None or tc_.downstream_part is None or\
-                           tc_.down_part_rev is None or tc_.downstream_input_port is None:
+                    if self.gsheet.data[gkey][i] is None:
+                        continue
+                    if col == 'Ant':  # Make station-antenna and antenna-feed
+                        ant = self.get_hpn_from_col('Ant', gkey, header)
+                        antnum = int(ant[1:])
+                        if antnum < 320:
+                            sta = 'HH{}'.format(antnum)
+                        else:
+                            print("NEED TO ADD OUTRIGGERS")
                             continue
-                        self.gsheet.connection[key].append(tc_)
+                        feed = self.get_hpn_from_col('Feed', gkey, header)
+                        K = ['{}:A'.format(sta), '{}:H'.format(ant)]  # Because doing 2
+                        ldat = {K[0]: {'upa': sta, 'urv': 'A', 'upo': 'ground',
+                                       'dpa': ant, 'drv': 'H', 'dpo': 'ground'},
+                                K[1]: {'upa': ant, 'urv': 'H', 'upo': 'focus',
+                                       'dpa': feed, 'drv': 'A', 'dpo': 'input'}}
+                        for keyup in K:
+                            self._keyup_status(keyup, pol)
+                            if pol == self.pols[1]:  # only one
+                                continue
+                            pku = ldat[keyup]['upo'].upper()
+                            self.gsheet.connections['up'][keyup] = {pku: CMPC.Connections()}
+                            self.gsheet.connections['up'][keyup][pku].connection(
+                                    upstream_part=ldat[keyup]['upa'],
+                                    up_part_rev=ldat[keyup]['urv'],
+                                    upstream_output_port=ldat[keyup]['upo'],
+                                    downstream_part=ldat[keyup]['dpa'],
+                                    down_part_rev=ldat[keyup]['drv'],
+                                    downstream_input_port=ldat[keyup]['dpo'])
+                    elif col == 'Feed':  # Make feed-fem
+                        feed = self.get_hpn_from_col('Feed', gkey, header)
+                        fem = self.get_hpn_from_col('FEM', gkey, header)
+                        keyup = '{}:A'.format(feed)
+                        pku = 'TERMINALS'
+                        self._keyup_status(keyup, pol)
+                        if pol == self.pols[1]:  # only one
+                            continue
+                        self.gsheet.connections['up'][keyup] = {pku: CMPC.Connections()}
+                        self.gsheet.connections['up'][keyup][pku].connection(
+                                upstream_part=feed, up_part_rev='A',
+                                upstream_output_port='terminals',
+                                downstream_part=fem, down_part_rev='A',
+                                downstream_input_port='input')
+                    elif col == 'FEM':  # Make fem-nbp
+                        fem = self.get_hpn_from_col('FEM', gkey, header)
+                        nbp = util.gen_hpn('NBP', node_num)
+                        port = '{}{}'.format(pol,
+                                             self.gsheet.data[gkey][header.index('NBP/PAMloc')])
+                        if port is not None:
+                            port = port.lower()
+                        keyup = '{}:A'.format(fem)
+                        self._keyup_status(keyup, pol)
+                        self.gsheet.connections['up'][keyup] = {pol: CMPC.Connections()}
+                        self.gsheet.connections['up'][keyup][pol].connection(
+                                    upstream_part=fem, up_part_rev='A',
+                                    upstream_output_port=pol.lower(),
+                                    downstream_part=nbp, down_part_rev='A',
+                                    downstream_input_port=port)
+                    elif col == 'NBP/PAMloc':  # nbp-pam
+                        nbp = util.gen_hpn('NBP', node_num)
+                        port = '{}{}'.format(pol,
+                                             self.gsheet.data[gkey][header.index('NBP/PAMloc')])
+                        if port is not None:
+                            port = port.lower()
+                        pam = self.get_hpn_from_col('PAM', gkey, header)
+                        keyup = '{}:A'.format(nbp)
+                        self._keyup_status(keyup, pol)
+                        self.gsheet.connections['up'][keyup] = {pol: CMPC.Connections()}
+                        self.gsheet.connections['up'][keyup][pol].connection(
+                                    upstream_part=nbp, up_part_rev='A',
+                                    upstream_output_port=port,
+                                    downstream_part=pam, down_part_rev='A',
+                                    downstream_input_port=pol.lower())
+                    elif col == 'PAM':  # pam-snap
+                        pam = self.get_hpn_from_col('PAM', gkey, header)
+                        snap = self.get_hpn_from_col('SNAP', gkey, header)
+                        port = self.gsheet.data[gkey][header.index('Port')]
+                        if len(port) == 0:
+                            port = None
+                        if port is not None:
+                            port = port.lower()
+                            if port[0] != pol[0].lower():
+                                msg = "{} port ({}) and pol ({}) don't match".format(snap,
+                                                                                     port, pol)
+                                raise ValueError(msg)
+                        keyup = '{}:A'.format(pam)
+                        self._keyup_status(keyup, pol)
+                        self.gsheet.connections['up'][keyup] = {pol: CMPC.Connections()}
+                        self.gsheet.connections['up'][keyup][pol].connection(
+                                upstream_part=pam, up_part_rev='A',
+                                upstream_output_port=pol.lower(),
+                                downstream_part=snap, down_part_rev='A',
+                                downstream_input_port=port)
+                    elif col == 'SNAP':  # snap-node
+                        snap = self.get_hpn_from_col('SNAP', gkey, header)
+                        node = util.gen_hpn("Node", node_num)
+                        loc = "loc{}".format(self.gsheet.data[gkey][header.index('SNAPloc')])
+                        keyup = '{}:A'.format(snap)
+                        self._keyup_status(keyup, pol)
+                        self.gsheet.connections['up'][keyup] = {pol: CMPC.Connections()}
+                        self.gsheet.connections['up'][keyup][pol].connection(
+                                upstream_part=snap, up_part_rev='A',
+                                upstream_output_port='rack',
+                                downstream_part=node, down_part_rev='A',
+                                downstream_input_port=loc)
+                    # elif col == 'SNAPloc':  # extra to get pam @slot
+                    #     pam = self.get_hpn_from_col('PAM', key, header)
+                    #     try:
+                    #         pamkey = cm_utils.make_part_key(pam, 'A')
+                    #         pch = self.hookup.active.connections['up'][pamkey]['@SLOT'].downstream_part  # noqa
+                    #     except KeyError:
+                    #         print("{} {} is not an active connection!".format(ant, pol))
+                    #         pch = None
+                    #     slot = '{}{}'.format('@SLOT', self.gsheet.data[key][header.index('NBP/PAMloc')])  # noqa
+                    #     if slot is not None:
+                    #         slot = slot.lower()
+                    #     tc_.connection(upstream_part=pam, up_part_rev='A',
+                    #                    upstream_output_port='@slot',
+                    #                    downstream_part=pch, down_part_rev='A',
+                    #                    downstream_input_port=slot)
+                    #
+                    # if tc_.upstream_part is None or tc_.up_part_rev is None or\
+                    #    tc_.upstream_output_port is None or tc_.downstream_part is None or\
+                    #    tc_.down_part_rev is None or tc_.downstream_input_port is None:
+                    #     continue
+                    # self.gsheet.connection[key].append(tc_)
+
+    def _keyup_status(self, keyup, pol):
+        if pol == self.pols[1]:  # Make sure key already there
+            if keyup not in self.gsheet.connections['up']:
+                raise ValueError("{} not present ({}).".format(keyup, pol))
+        else:  # Make sure it is not there, then process
+            if keyup in self.gsheet.connections['up']:
+                raise ValueError("{} already present ({}).".format(keyup, pol))
 
     def compare_connection(self):
         """

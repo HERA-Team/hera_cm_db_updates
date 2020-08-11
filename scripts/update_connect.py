@@ -31,7 +31,7 @@ else:
 update = upd_connect.UpdateConnect(script_nom=script_nom, script_path=args.script_path,
                                    verbose=args.verbose)
 update.load_gsheet(node_csv=args.node_csv)
-update.load_hookup()
+update.load_active()
 update.make_sheet_connections()
 update.compare_connection()
 if args.look_only:
