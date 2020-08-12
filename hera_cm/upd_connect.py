@@ -21,7 +21,7 @@ class UpdateConnect(upd_base.Update):
     def __init__(self, script_nom='connupd', script_path='./', verbose=True):
         super(UpdateConnect, self).__init__(script_nom=script_nom, script_path=script_path,
                                             verbose=verbose)
-        self.mismatches = Namespace(hookup={}, connection={})
+        self.active = None
 
     def get_hpn_from_col(self, col, key, header):
         return util.gen_hpn(col, self.gsheet.data[key][header.index(col)])
@@ -37,10 +37,11 @@ class UpdateConnect(upd_base.Update):
         """
         Go through all of the sheet and make cm_partconnect.Connections for comparison.
 
-        It does not do so in the most efficient of ways...
+        self.gsheet.connections is set up identically to self.active.connections
         """
         self.gsheet.connections = {'up': {}, 'down': {}}  # To mirror cm_active
         for sant in self.gsheet.ants:
+            previous = {}
             for pol in self.pols:
                 gkey = '{}-{}'.format(sant, pol)
                 node_num = self.gsheet.data[gkey][0]
@@ -51,47 +52,34 @@ class UpdateConnect(upd_base.Update):
                         continue
                     if self.gsheet.data[gkey][i] is None:
                         continue
-                    if col == 'Ant':  # Make station-antenna and antenna-feed
+                    if col in ['Ant', 'Feed', 'SNAP'] and pol == self.pols[1]:
+                        this = self.get_hpn_from_col(col, gkey, header)
+                        if this != previous[col]:
+                            raise ValueError("{} != {}".format(this, previous[col]))
+                        continue
+                    if col == 'Ant':  # Make station-antenna, antenna-feed
                         ant = self.get_hpn_from_col('Ant', gkey, header)
-                        antnum = int(ant[1:])
-                        if antnum < 320:
-                            sta = 'HH{}'.format(antnum)
-                        else:
-                            print("NEED TO ADD OUTRIGGERS")
-                            continue
+                        previous['Ant'] = ant
+                        sta = self._sta_from_ant(ant)
                         feed = self.get_hpn_from_col('Feed', gkey, header)
-                        K = ['{}:A'.format(sta), '{}:H'.format(ant)]  # Because doing 2
-                        ldat = {K[0]: {'upa': sta, 'urv': 'A', 'upo': 'ground',
-                                       'dpa': ant, 'drv': 'H', 'dpo': 'ground'},
-                                K[1]: {'upa': ant, 'urv': 'H', 'upo': 'focus',
-                                       'dpa': feed, 'drv': 'A', 'dpo': 'input'}}
-                        for keyup in K:
-                            self._keyup_status(keyup, pol)
-                            if pol == self.pols[1]:  # only one
-                                continue
-                            pku = ldat[keyup]['upo'].upper()
-                            self.gsheet.connections['up'][keyup] = {pku: CMPC.Connections()}
-                            self.gsheet.connections['up'][keyup][pku].connection(
-                                    upstream_part=ldat[keyup]['upa'],
-                                    up_part_rev=ldat[keyup]['urv'],
-                                    upstream_output_port=ldat[keyup]['upo'],
-                                    downstream_part=ldat[keyup]['dpa'],
-                                    down_part_rev=ldat[keyup]['drv'],
-                                    downstream_input_port=ldat[keyup]['dpo'])
+                        previous['Feed'] = feed
+                        # ... station-antenna
+                        keyup = cm_utils.make_part_key(sta, 'A')
+                        pku = 'GROUND'
+                        if self._status_OK(keyup, pol, [ant]):
+                            self._ugconn(keyup, pku, [sta, 'A', 'ground'], [ant, 'H', 'ground'])
+                        # ... antenna-feed
+                        keyup = cm_utils.make_part_key(ant, 'H')
+                        pku = 'FOCUS'
+                        if self._status_OK(keyup, pol, [ant, feed]):
+                            self._ugconn(keyup, pku, [ant, 'H', 'focus'], [feed, 'A', 'input'])
                     elif col == 'Feed':  # Make feed-fem
                         feed = self.get_hpn_from_col('Feed', gkey, header)
                         fem = self.get_hpn_from_col('FEM', gkey, header)
-                        keyup = '{}:A'.format(feed)
+                        keyup = cm_utils.make_part_key(feed, 'A')
                         pku = 'TERMINALS'
-                        self._keyup_status(keyup, pol)
-                        if pol == self.pols[1]:  # only one
-                            continue
-                        self.gsheet.connections['up'][keyup] = {pku: CMPC.Connections()}
-                        self.gsheet.connections['up'][keyup][pku].connection(
-                                upstream_part=feed, up_part_rev='A',
-                                upstream_output_port='terminals',
-                                downstream_part=fem, down_part_rev='A',
-                                downstream_input_port='input')
+                        if self._status_OK(keyup, pol, [feed, fem]):
+                            self._ugconn(keyup, pku, [feed, 'A', 'terminals'], [fem, 'A', 'input'])
                     elif col == 'FEM':  # Make fem-nbp
                         fem = self.get_hpn_from_col('FEM', gkey, header)
                         nbp = util.gen_hpn('NBP', node_num)
@@ -99,32 +87,24 @@ class UpdateConnect(upd_base.Update):
                                              self.gsheet.data[gkey][header.index('NBP/PAMloc')])
                         if port is not None:
                             port = port.lower()
-                        keyup = '{}:A'.format(fem)
-                        self._keyup_status(keyup, pol)
-                        self.gsheet.connections['up'][keyup] = {pol: CMPC.Connections()}
-                        self.gsheet.connections['up'][keyup][pol].connection(
-                                    upstream_part=fem, up_part_rev='A',
-                                    upstream_output_port=pol.lower(),
-                                    downstream_part=nbp, down_part_rev='A',
-                                    downstream_input_port=port)
+                        keyup = cm_utils.make_part_key(fem, 'A')
+                        if self._status_OK(keyup, pol, [fem, port]):
+                            self._ugconn(keyup, pol, [fem, 'A', pol.lower()], [nbp, 'A', port])
                     elif col == 'NBP/PAMloc':  # nbp-pam
                         nbp = util.gen_hpn('NBP', node_num)
                         port = '{}{}'.format(pol,
                                              self.gsheet.data[gkey][header.index('NBP/PAMloc')])
                         if port is not None:
                             port = port.lower()
+                            pku = port.upper()
                         pam = self.get_hpn_from_col('PAM', gkey, header)
-                        keyup = '{}:A'.format(nbp)
-                        self._keyup_status(keyup, pol)
-                        self.gsheet.connections['up'][keyup] = {pol: CMPC.Connections()}
-                        self.gsheet.connections['up'][keyup][pol].connection(
-                                    upstream_part=nbp, up_part_rev='A',
-                                    upstream_output_port=port,
-                                    downstream_part=pam, down_part_rev='A',
-                                    downstream_input_port=pol.lower())
+                        if self._status_OK('-', pol, [port, pam]):
+                            keyup = cm_utils.make_part_key(nbp, 'A')
+                            self._ugconn(keyup, pku, [nbp, 'A', port], [pam, 'A', pol.lower()])
                     elif col == 'PAM':  # pam-snap
                         pam = self.get_hpn_from_col('PAM', gkey, header)
                         snap = self.get_hpn_from_col('SNAP', gkey, header)
+                        previous['SNAP'] = snap
                         port = self.gsheet.data[gkey][header.index('Port')]
                         if len(port) == 0:
                             port = None
@@ -134,122 +114,93 @@ class UpdateConnect(upd_base.Update):
                                 msg = "{} port ({}) and pol ({}) don't match".format(snap,
                                                                                      port, pol)
                                 raise ValueError(msg)
-                        keyup = '{}:A'.format(pam)
-                        self._keyup_status(keyup, pol)
-                        self.gsheet.connections['up'][keyup] = {pol: CMPC.Connections()}
-                        self.gsheet.connections['up'][keyup][pol].connection(
-                                upstream_part=pam, up_part_rev='A',
-                                upstream_output_port=pol.lower(),
-                                downstream_part=snap, down_part_rev='A',
-                                downstream_input_port=port)
-                    elif col == 'SNAP':  # snap-node
+                        keyup = cm_utils.make_part_key(pam, 'A')
+                        if self._status_OK(keyup, pol, [pam, snap, port]):
+                            self._ugconn(keyup, pol, [pam, 'A', pol.lower()], [snap, 'A', port])
+                    elif col == 'SNAP':  # snap-node, pam-pch, pch-node
+                        # ... snap-node
                         snap = self.get_hpn_from_col('SNAP', gkey, header)
                         node = util.gen_hpn("Node", node_num)
                         loc = "loc{}".format(self.gsheet.data[gkey][header.index('SNAPloc')])
-                        keyup = '{}:A'.format(snap)
-                        self._keyup_status(keyup, pol)
-                        self.gsheet.connections['up'][keyup] = {pol: CMPC.Connections()}
-                        self.gsheet.connections['up'][keyup][pol].connection(
-                                upstream_part=snap, up_part_rev='A',
-                                upstream_output_port='rack',
-                                downstream_part=node, down_part_rev='A',
-                                downstream_input_port=loc)
-                    # elif col == 'SNAPloc':  # extra to get pam @slot
-                    #     pam = self.get_hpn_from_col('PAM', key, header)
-                    #     try:
-                    #         pamkey = cm_utils.make_part_key(pam, 'A')
-                    #         pch = self.hookup.active.connections['up'][pamkey]['@SLOT'].downstream_part  # noqa
-                    #     except KeyError:
-                    #         print("{} {} is not an active connection!".format(ant, pol))
-                    #         pch = None
-                    #     slot = '{}{}'.format('@SLOT', self.gsheet.data[key][header.index('NBP/PAMloc')])  # noqa
-                    #     if slot is not None:
-                    #         slot = slot.lower()
-                    #     tc_.connection(upstream_part=pam, up_part_rev='A',
-                    #                    upstream_output_port='@slot',
-                    #                    downstream_part=pch, down_part_rev='A',
-                    #                    downstream_input_port=slot)
-                    #
-                    # if tc_.upstream_part is None or tc_.up_part_rev is None or\
-                    #    tc_.upstream_output_port is None or tc_.downstream_part is None or\
-                    #    tc_.down_part_rev is None or tc_.downstream_input_port is None:
-                    #     continue
-                    # self.gsheet.connection[key].append(tc_)
+                        if self._status_OK('-', pol, [snap, node, loc]):
+                            keyup = cm_utils.make_part_key(snap, 'A')
+                            pku = 'RACK'
+                            self._ugconn(keyup, pku, [snap, 'A', 'rack'], [node, 'A', loc])
+                        if self.active is None:
+                            continue
+                        # pam-pch
+                        pam = self.get_hpn_from_col('PAM', gkey, header)
+                        pku = 'SLOT'
+                        try:
+                            keyup = cm_utils.make_part_key(pam, 'A')
+                            pch = self.active.connections['up'][keyup][pku].downstream_part
+                        except KeyError:
+                            continue
+                        slot = '{}{}'.format('slot',
+                                             self.gsheet.data[gkey][header.index('NBP/PAMloc')])
+                        if self._status_OK('-', pol, [pam, pch, slot]):
+                            self._ugconn(keyup, pku, [pam, 'A', 'slot'], [pch, 'A', slot])
+                        # pch-node
+                        node = util.gen_hpn("Node", node_num)
+                        if self._status_OK('-', pol, [pch, slot, node]):
+                            keyup = cm_utils.make_part_key(pch, 'A')
+                            pku = 'RACK'
+                            self._ugconn(keyup, pku, [pch, 'A', 'rack'], [node, 'A', 'bottom'])
 
-    def _keyup_status(self, keyup, pol):
-        if pol == self.pols[1]:  # Make sure key already there
-            if keyup not in self.gsheet.connections['up']:
-                raise ValueError("{} not present ({}).".format(keyup, pol))
-        else:  # Make sure it is not there, then process
-            if keyup in self.gsheet.connections['up']:
-                raise ValueError("{} already present ({}).".format(keyup, pol))
+    def _ugconn(self, k, p, up, dn):
+        self.gsheet.connections['up'].setdefault(k, {})
+        self.gsheet.connections['up'][k][p] = CMPC.Connections()
+        self.gsheet.connections['up'][k][p].connection(
+            upstream_part=up[0], up_part_rev=up[1], upstream_output_port=up[2],
+            downstream_part=dn[0], down_part_rev=dn[1], downstream_input_port=dn[2])
 
-    def compare_connection(self):
+    def _status_OK(self, keyup, pol, list_to_check):
+        if None in list_to_check:
+            print('skipping ', list_to_check)
+            return False
+        if keyup != '-':
+            if pol == self.pols[1]:  # Make sure key already there
+                if keyup not in self.gsheet.connections['up']:
+                    raise ValueError("{} not present ({}).".format(keyup, pol))
+            else:  # Make sure it is not there, then process
+                if keyup in self.gsheet.connections['up']:
+                    raise ValueError("{} already present ({}).".format(keyup, pol))
+        return True
+
+    def _sta_from_ant(self, ant):
+        antnum = int(ant[1:])
+        if antnum < 320:
+            return 'HH{}'.format(antnum)
+        else:
+            raise ValueError("NEED TO ADD OUTRIGGERS")
+
+    def compare_connections(self, direction='gsheet-active'):
         """
         Step through all of the sheet Connections and make sure they are all there and the same.
         """
-        for sckey, scvals in self.gsheet.connection.items():
-            for scval in scvals:
-                ackey = cm_utils.make_part_key(scval.downstream_part, scval.down_part_rev)
-                acport = scval.downstream_input_port.upper()
-                try:
-                    acval = self.hookup.active.connections['down'][ackey][acport]
-                except KeyError:
-                    acval = None
-                if acval is None or acval != scval:
-                    self.mismatches.connection.setdefault(sckey, [])
-                    self.mismatches.connection[sckey].append([acval, scval])
-
-    def OUT_OF_DATE_compare_hookup(self):
-        """
-        ## Note that this is left in for sanity/double-checking purposes.
-        Compares the hookup data with the spreadsheet.  Writes self.mismatches.hookup
-        keyed on 'ant:rev-pol' then 'sheet' and 'diff
-        e.g. self.mismatches.hookup['HH30:A-E']['diff']
-             self.mismatches.hookup['HH30:A-N']['sheet']
-        """
-        for antkey in self.gsheet.ants:
-            for pol in self.pols:
-                sheet_key = "{}-{}".format(antkey, pol)
-                tab = 'node{}'.format(self.gsheet.data[sheet_key][0])
-                header = self.gsheet.header[tab]
-                sheet_row = util.get_row_dict(header, self.gsheet.data[sheet_key])
-                for i, col in enumerate(header):
-                    val = self._get_val_from_cmdb(antkey, pol, col)
-                    if val is not None:
-                        sheet_val = self.gsheet.data[sheet_key][i]
-                        if val.upper() != sheet_val.upper():
-                            if val != self.NotFound or len(sheet_val.strip()):
-                                self.mismatches.hookup.setdefault(sheet_key, {'sheet': sheet_row, 'diff': []})  # noqa
-                                self.mismatches.hookup[sheet_key]['diff'].append([col, val, sheet_val])  # noqa
-
-    def view_conn(self):
-        """
-        Views the comparison with cm database and spreadsheet.
-
-        Parameters
-        ----------
-        ctypes : list, str
-            List of strings for compare type:  connection/hookup
-
-        Returns
-        -------
-        str
-            output string
-        """
-        for node, ants in self.gsheet.node_to_ant.items():
-            print('---------Node:  {}'.format(node))
-            for a in ants:
-                ukey = a + ':A-E'
-                if len(self.gsheet.connection[ukey]):
-                    print(self.gsheet.connection[ukey])
-
-    def view_diff(self):
-        print("---------Diffs")
-        for antkey, diff in self.mismatches.connection.items():
-            node = self.gsheet.ant_to_node[antkey.split('-')[0]]
-            if len(diff):
-                print('{} ({}):  {}'.format(antkey, node, diff))
+        pside = 'up'
+        d = Namespace(direction=direction, missing={}, partial={}, different={}, same={})
+        if direction.startswith('g'):
+            A = self.gsheet.connections[pside]
+            B = self.active.connections[pside]
+        else:
+            A = self.active.connections[pside]
+            B = self.gsheet.connections[pside]
+        for gkey, gpts in A.items():
+            if gkey not in B.keys():
+                d.missing[gkey] = gpts
+                continue
+            for p, c in gpts.items():
+                if p not in B[gkey].keys():
+                    d.partial.setdefault(gkey, {})
+                    d.partial[gkey][p] = c
+                elif B[gkey][p] == c:
+                    d.same.setdefault(gkey, {})
+                    d.same[gkey][p] = c
+                else:
+                    d.different.setdefault(gkey, {})
+                    d.different[gkey][p] = c
+        return d
 
     def gen_compare_script(self):
         """

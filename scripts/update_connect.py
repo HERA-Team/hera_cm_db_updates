@@ -33,7 +33,7 @@ update = upd_connect.UpdateConnect(script_nom=script_nom, script_path=args.scrip
 update.load_gsheet(node_csv=args.node_csv)
 update.load_active()
 update.make_sheet_connections()
-update.compare_connection()
+data = update.compare_connections('gsheet-active')
 if args.look_only:
     update.view_conn()
     update.view_diff()
