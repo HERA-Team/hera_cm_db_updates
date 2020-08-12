@@ -18,8 +18,9 @@ class UpdateConnect(upd_base.Update):
     pols = ['E', 'N']
     NotFound = "Not Found"
 
-    def __init__(self, script_nom='connupd', script_path='./', verbose=True):
-        super(UpdateConnect, self).__init__(script_nom=script_nom, script_path=script_path,
+    def __init__(self, script_type='connupd', script_path='./', verbose=True):
+        super(UpdateConnect, self).__init__(script_type=script_type,
+                                            script_path=script_path,
                                             verbose=verbose)
         self.active = None
 
@@ -128,7 +129,7 @@ class UpdateConnect(upd_base.Update):
                             self._ugconn(keyup, pku, [snap, 'A', 'rack'], [node, 'A', loc])
                         if self.active is None:
                             continue
-                        # pam-pch
+                        # ... pam-pch
                         pam = self.get_hpn_from_col('PAM', gkey, header)
                         pku = 'SLOT'
                         try:
@@ -140,7 +141,7 @@ class UpdateConnect(upd_base.Update):
                                              self.gsheet.data[gkey][header.index('NBP/PAMloc')])
                         if self._status_OK('-', pol, [pam, pch, slot]):
                             self._ugconn(keyup, pku, [pam, 'A', 'slot'], [pch, 'A', slot])
-                        # pch-node
+                        # ... pch-node
                         node = util.gen_hpn("Node", node_num)
                         if self._status_OK('-', pol, [pch, slot, node]):
                             keyup = cm_utils.make_part_key(pch, 'A')
@@ -156,7 +157,8 @@ class UpdateConnect(upd_base.Update):
 
     def _status_OK(self, keyup, pol, list_to_check):
         if None in list_to_check:
-            print('skipping ', list_to_check)
+            if self.verbose:
+                print('skipping ', list_to_check)
             return False
         if keyup != '-':
             if pol == self.pols[1]:  # Make sure key already there
@@ -179,7 +181,11 @@ class UpdateConnect(upd_base.Update):
         Step through all of the sheet Connections and make sure they are all there and the same.
         """
         pside = 'up'
-        d = Namespace(direction=direction, missing={}, partial={}, different={}, same={})
+        self.compare_direction = direction
+        self.missing = {}
+        self.partial = {}
+        self.different = {}
+        self.same = {}
         if direction.startswith('g'):
             A = self.gsheet.connections[pside]
             B = self.active.connections[pside]
@@ -188,90 +194,41 @@ class UpdateConnect(upd_base.Update):
             B = self.gsheet.connections[pside]
         for gkey, gpts in A.items():
             if gkey not in B.keys():
-                d.missing[gkey] = gpts
+                self.missing[gkey] = gpts
                 continue
             for p, c in gpts.items():
                 if p not in B[gkey].keys():
-                    d.partial.setdefault(gkey, {})
-                    d.partial[gkey][p] = c
+                    self.partial.setdefault(gkey, {})
+                    self.partial[gkey][p] = c
                 elif B[gkey][p] == c:
-                    d.same.setdefault(gkey, {})
-                    d.same[gkey][p] = c
+                    self.same.setdefault(gkey, {})
+                    self.same[gkey][p] = c
                 else:
-                    d.different.setdefault(gkey, {})
-                    d.different[gkey][p] = c
-        return d
+                    self.different.setdefault(gkey, {})
+                    self.different[gkey][p] = c
 
-    def gen_compare_script(self):
-        """
-        Generate the compare script.
-        """
-        antkeys = cm_utils.put_keys_in_order(list(self.mismatches.connection.keys()),
-                                             sort_order='NPR')
-        added_parts = []
-        for antkey in antkeys:
-            key, pol = antkey.split('-')
-            for diff in self.mismatches.connection[antkey]:
+    def add_missing_parts(self):
+        self.active.load_parts()
+        missing_parts = set()
+        for pc in self.missing.values():
+            for conn in pc.values():
+                key = cm_utils.make_part_key(conn.upstream_part, conn.up_part_rev)
+                if key not in self.active.parts.keys():
+                    missing_parts.add(key)
+                key = cm_utils.make_part_key(conn.downstream_part, conn.down_part_rev)
+                if key not in self.active.parts.keys():
+                    missing_parts.add(key)
+        self.missing_parts = list(missing_parts)
+        for part in self.missing_parts:
+            self.update_counter += 1
+            p = list(cm_utils.split_part_key(part))
+            this_part = p + [upd_base.signal_chain.part_types[part[:3]], p[0]]
+            self.hera.update_part('add', this_part, cdate=self.cdate, ctime='10:00')
+
+    def add_missing_connections(self):
+        for pc in self.missing.values():
+            for conn in pc.values():
                 self.update_counter += 1
-                if diff[0] is None:
-                    up, urev, uprt = diff[1].upstream_part, diff[1].up_part_rev,\
-                                     diff[1].upstream_output_port
-                    add_part = self.hera.get_general_part(up, urev)
-                    if add_part is not None and up not in added_parts:
-                        added_parts.append(up)
-                        self.hera.update_part('add', add_part, cdate=self.cdate, ctime=self.ctime)
-                    dn, drev, dprt = diff[1].downstream_part, diff[1].down_part_rev,\
-                                     diff[1].downstream_input_port  # noqa
-                    add_part = self.hera.get_general_part(dn, drev)
-                    if add_part is not None and dn not in added_parts:
-                        added_parts.append(dn)
-                        self.hera.update_part('add', add_part, cdate=self.cdate, ctime=self.ctime)
-                    self.hera.update_connection('add', [up, urev, uprt], [dn, drev, dprt],
-                                                cdate=self.cdate, ctime=self.ctime)
-                else:
-                    s = "{:30s}   <--->   {}  ({}  {})".format(str(diff[0]), diff[1],
-                                                               self.cdate, self.ctime)
-                    self.hera.no_op_comment(s)
-
-    def OUT_OF_DATE__get_val_from_cmdb(self, antkey, pol, sheet_col):
-        """
-        Bunch of ad hoc stuff to map the hookup_dict to the googlesheet column for comparison.
-        """
-        if sheet_col not in cm_gsheet.hu_col.keys():
-            return None
-        hu = self.hookup_dict[antkey]
-        pol = pol.upper()
-        for ppkey in hu.hookup.keys():
-            if ppkey.upper().startswith(pol.upper()):
-                break
-        try:
-            pam_slot = util.get_num(hu.hookup[ppkey][cm_gsheet.hu_col['Bulkhead-PAM_Slot']].downstream_input_port)  # noqa
-        except IndexError:
-            return self.NotFound
-        try:
-            snap_slot = str(int(util.get_num(hu.hookup[ppkey][cm_gsheet.hu_col['Node']].downstream_input_port)))  # noqa
-        except IndexError:
-            return self.NotFound
-        i2c = (int(pam_slot) + 2) % 3 + 1
-
-        if sheet_col.lower() == 'i2c_bus':
-            return str(i2c)
-        if sheet_col.lower() == 'node-pam_slot':
-            return pam_slot
-        if sheet_col.lower() == 'snap_slot':
-            return snap_slot
-        if sheet_col.lower() == 'port' or sheet_col.lower() == 'pol':
-            try:
-                return hu.hookup[ppkey][cm_gsheet.hu_col[sheet_col]].downstream_input_port.upper()
-            except IndexError:
-                return self.NotFound
-        try:
-            part = hu.hookup[ppkey][cm_gsheet.hu_col[sheet_col]].downstream_part
-        except IndexError:
-            return self.NotFound
-        num = str(int(util.get_num(part)))
-
-        if sheet_col.lower() == 'snap':
-            return "{}{}".format(part[3], num)
-
-        return num
+                up = [conn.upstream_part, conn.up_part_rev, conn.upstream_output_port]
+                dn = [conn.downstream_part, conn.down_part_rev, conn.downstream_input_port]
+                self.hera.update_connection('add', up, dn, cdate=self.cdate, ctime='11:00')

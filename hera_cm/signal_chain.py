@@ -51,22 +51,26 @@ class Update:
         self.active = cm_active.ActiveData()
         self.load_active(cdate=None)
         self.handle = cm_handling.Handling()
-        input_script = os.path.basename(exename)
-        if output_script_path is None:
-            self.output_script = input_script.split('.')[0]
+        if exename is None:
+            print("No script file started.  It'll probably error out.")
+            self.output_script = None
         else:
-            self.output_script = os.path.join(output_script_path, input_script.split('.')[0])
-        if self.verbose:
-            print("Writing script {}".format(self.output_script))
-        self.fp = open(self.output_script, 'w')
-        s = '#! /bin/bash\n'
-        unameInfo = os.uname()
-        if unameInfo.sysname == 'Linux':
-            s += 'source ~/.bashrc\n'
-        s += 'echo "{}" >> {} \n'.format(exename, self.log_file)
-        self.fp.write(s)
-        if self.verbose:
-            print('-----------------')
+            input_script = os.path.basename(exename)
+            if output_script_path is None:
+                self.output_script = input_script.split('.')[0]
+            else:
+                self.output_script = os.path.join(output_script_path, input_script.split('.')[0])
+            if self.verbose:
+                print("Writing script {}".format(self.output_script))
+            self.fp = open(self.output_script, 'w')
+            s = '#! /bin/bash\n'
+            unameInfo = os.uname()
+            if unameInfo.sysname == 'Linux':
+                s += 'source ~/.bashrc\n'
+            s += 'echo "{}" >> {} \n'.format(exename, self.log_file)
+            self.fp.write(s)
+            if self.verbose:
+                print('-----------------')
 
     # THESE ARE NEW COMPONENTS - eventually break out with a parent class
     # General order:
@@ -656,6 +660,8 @@ class Update:
 
     def done(self):
         """Finish."""
+        if self.output_script is None:
+            return
         self.fp.close()
         if self.verbose:
             print("----------------------DONE-----------------------")

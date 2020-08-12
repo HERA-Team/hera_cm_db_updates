@@ -10,8 +10,10 @@ from hera_cm import upd_info
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
-    ap.add_argument('--arc-path', dest='arc_path', help="Path for update archive.", default=None)
-    ap.add_argument('--script-path', dest='script_path', help="Path for cron script", default='./')
+    ap.add_argument('--script-path', dest='script_path', help="Path for active script",
+                    default='./')
+    ap.add_argument('--archive-path', dest='archive_path', help="Path for script archive.",
+                    default=None)
     ap.add_argument('-n', '--node_csv', help="For testing: flag for read/write of gsheet (r/w/n)",
                     choices=['read', 'write', 'none', 'r', 'w', 'n'], default='n')
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
@@ -22,25 +24,27 @@ if __name__ == '__main__':
     ap.add_argument('--look_only', help='Flag to only look at data.', action='store_true')
     args = ap.parse_args()
 else:
-    args = argparse.Namespace(arc_path=None, script_path='./', node_csv='n', verbose=True,
+    args = argparse.Namespace(archive_path=None, script_path='./', node_csv='n', verbose=True,
                               duplication_window=90.0, view_duplicate=0.0, look_only=True)
 
 if args.look_only:
-    script_nom = None
-    cron_nom = None
+    script_type = None
+    cron_script = None
 else:
-    script_nom = 'infoupd'
-    cron_nom = 'info_update.sh'
+    script_type = 'infoupd'
+    cron_script = 'info_update.sh'
 
 args.duplication_window = float(args.duplication_window)
 args.view_duplicate = float(args.view_duplicate)
-update = upd_info.UpdateInfo(script_nom=script_nom, script_path=args.script_path,
+update = upd_info.UpdateInfo(script_type=script_type,
+                             script_path=args.script_path,
                              verbose=args.verbose)
 update.load_gsheet(node_csv=args.node_csv)
 update.load_active()
 update.add_apriori()
-update.add_sheet_notes(duplication_window=args.duplication_window, view_duplicate=args.view_duplicate)  # noqa
+update.add_sheet_notes(duplication_window=args.duplication_window,
+                       view_duplicate=args.view_duplicate)
 if args.look_only:
     update.view_info()
 else:
-    update.finish(arc_path=args.arc_path, cron_script=cron_nom)
+    update.finish(cron_script=cron_script, archive_to=args.archive_path)

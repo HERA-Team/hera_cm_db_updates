@@ -11,9 +11,10 @@ from . import cm_gsheet, util, upd_base
 class UpdateInfo(upd_base.Update):
     """Generates the script to update comments and "apriori" info from the configuration gsheet."""
 
-    def __init__(self, script_nom='infoupd', script_path='./', verbose=True):
+    def __init__(self, script_type='infoupd', script_path='./', verbose=True):
         """Init of base."""
-        super(UpdateInfo, self).__init__(script_nom=script_nom, script_path=script_path,
+        super(UpdateInfo, self).__init__(script_type=script_type,
+                                         script_path=script_path,
                                          verbose=verbose)
 
     def load_active(self):
