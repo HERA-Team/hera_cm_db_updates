@@ -20,7 +20,7 @@ if __name__ == '__main__':
     args = ap.parse_args()
     cron_script = 'conn_update.sh'
 else:
-    args = argparse.Namespace(archive_path=None, script_path='./', node_csv='n', verbose=True)
+    args = argparse.Namespace(archive_path=None, script_path='./', node_csv='w', verbose=True)
     print(args)
     cron_script = None
 
