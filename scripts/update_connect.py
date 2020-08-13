@@ -18,12 +18,13 @@ if __name__ == '__main__':
                     choices=['read', 'write', 'none', 'r', 'w', 'n'], default='n')
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
     args = ap.parse_args()
+    cron_script = 'conn_update.sh'
 else:
     args = argparse.Namespace(archive_path=None, script_path='./', node_csv='n', verbose=True)
     print(args)
+    cron_script = None
 
 script_type = 'connupd'
-cron_script = 'conn_update.sh'
 
 update = upd_connect.UpdateConnect(script_type=script_type,
                                    script_path=args.script_path,
