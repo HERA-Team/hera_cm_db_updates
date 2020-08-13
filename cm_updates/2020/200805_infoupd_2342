@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200805_infoupd_2342" >> scripts.log 
+add_part_info.py -p HH128 -r A -c 'Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great' -l "infoupd" --date 2020/08/05 --time 23:42:00
+add_part_info.py -p HH128 -r A -c 'Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great' -l "infoupd" --date 2020/08/05 --time 23:42:02
