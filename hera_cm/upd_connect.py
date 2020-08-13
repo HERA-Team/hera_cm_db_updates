@@ -23,6 +23,7 @@ class UpdateConnect(upd_base.Update):
                                             script_path=script_path,
                                             verbose=verbose)
         self.active = None
+        self.skipping = []
 
     def get_hpn_from_col(self, col, key, header):
         return util.gen_hpn(col, self.gsheet.data[key][header.index(col)])
@@ -159,6 +160,7 @@ class UpdateConnect(upd_base.Update):
         if None in list_to_check:
             if self.verbose:
                 print('skipping ', list_to_check)
+                self.skipping.append(keyup)
             return False
         if keyup != '-':
             if pol == self.pols[1]:  # Make sure key already there
@@ -232,3 +234,23 @@ class UpdateConnect(upd_base.Update):
                 up = [conn.upstream_part, conn.up_part_rev, conn.upstream_output_port]
                 dn = [conn.downstream_part, conn.down_part_rev, conn.downstream_input_port]
                 self.hera.update_connection('add', up, dn, cdate=self.cdate, ctime='11:00')
+
+    def show_summary_of_compare(self):
+        print("\n---Summary---")
+        print("Missing:  {}".format(len(self.missing)))
+        print("Same:  {}".format(len(self.same)))
+        print("Skipping:  {}".format(len(self.skipping)))
+        print("Partial:  {}".format(len(self.partial)), end='   ')
+        if len(self.partial):
+            print("*****CHECK*****")
+            for p in self.partial:
+                print("\t{}".format(p))
+        else:
+            print()
+        print("Different:  {}".format(len(self.different)))
+        if len(self.different):
+            print("*****CHECK*****")
+            for d in self.different:
+                print("\t{}".format(d))
+        else:
+            print()

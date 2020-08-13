@@ -20,7 +20,7 @@ if __name__ == '__main__':
     args = ap.parse_args()
     cron_script = 'conn_update.sh'
 else:
-    args = argparse.Namespace(archive_path=None, script_path='./', node_csv='w', verbose=True)
+    args = argparse.Namespace(archive_path=None, script_path='./', node_csv='n', verbose=True)
     print(args)
     cron_script = None
 
@@ -36,3 +36,5 @@ data = update.compare_connections('gsheet-active')
 update.add_missing_parts()
 update.add_missing_connections()
 update.finish(cron_script=cron_script, archive_to=args.archive_path)
+if cron_script is None:
+    update.show_summary_of_compare()
