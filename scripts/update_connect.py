@@ -19,7 +19,7 @@ if __name__ == '__main__':
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
     args = ap.parse_args()
 else:
-    args = argparse.Namespace(archive_path=None, script_path='./', node_csv='r', verbose=True)
+    args = argparse.Namespace(archive_path=None, script_path='./', node_csv='n', verbose=True)
     print(args)
 
 script_type = 'connupd'
