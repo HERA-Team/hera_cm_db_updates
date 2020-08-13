@@ -5,6 +5,7 @@
 """
 This class sets up to update the connections database.
 """
+import datetime
 from hera_mc import cm_active, cm_utils, cm_sysdef
 from hera_mc import cm_partconnect as CMPC
 from . import util, cm_gsheet, upd_base
@@ -187,6 +188,7 @@ class UpdateConnect(upd_base.Update):
         self.missing = {}
         self.partial = {}
         self.different = {}
+        self.different_stop = {}
         self.same = {}
         if direction.startswith('g'):
             A = self.gsheet.connections[pside]
@@ -208,6 +210,8 @@ class UpdateConnect(upd_base.Update):
                 else:
                     self.different.setdefault(gkey, {})
                     self.different[gkey][p] = c
+                    self.different_stop.setdefault(gkey, {})
+                    self.different_stop[gkey][p] = B[gkey][p]
 
     def add_missing_parts(self):
         self.active.load_parts()
@@ -221,19 +225,43 @@ class UpdateConnect(upd_base.Update):
                 if key not in self.active.parts.keys():
                     missing_parts.add(key)
         self.missing_parts = list(missing_parts)
+        if len(self.missing_parts):
+            self.hera.no_op_comment('Adding missing parts')
+            add_part_time_offset = self.now - datetime.timedelta(seconds=300)
+            cdate = add_part_time_offset.strftime('%Y/%m/%d')
+            ctime = add_part_time_offset.strftime('%H:%M')
         for part in self.missing_parts:
             self.update_counter += 1
             p = list(cm_utils.split_part_key(part))
             this_part = p + [upd_base.signal_chain.part_types[part[:3]], p[0]]
-            self.hera.update_part('add', this_part, cdate=self.cdate, ctime='10:00')
+            self.hera.update_part('add', this_part, cdate=cdate, ctime=ctime)
 
     def add_missing_connections(self):
-        for pc in self.missing.values():
-            for conn in pc.values():
+        if len(self.missing):
+            self.hera.no_op_comment('Adding missing connections')
+            self._modify_connections(self.missing, 'add', self.cdate, self.ctime)
+
+    def add_partial_connections(self):
+        if len(self.partial):
+            self.hera.no_op_comment('Adding partial connections')
+            self._modify_connections(self.partial, 'add', self.cdate, self.ctime)
+
+    def add_different_connections(self):
+        if len(self.different):
+            self.hera.no_op_comment('Adding different connections')
+            stop_conn_time_offset = self.now - datetime.timedelta(seconds=90)
+            cdate = stop_conn_time_offset.strftime('%Y/%m/%d')
+            ctime = stop_conn_time_offset.strftime('%H:%M')
+            self._modify_connections(self.different_stop, 'stop', cdate, ctime)
+            self._modify_connections(self.different, 'add', self.cdate, self.ctime)
+
+    def _modify_connections(self, this_one, add_or_stop, cdate, ctime):
+        for mod_conn in this_one.values():
+            for conn in mod_conn.values():
                 self.update_counter += 1
                 up = [conn.upstream_part, conn.up_part_rev, conn.upstream_output_port]
                 dn = [conn.downstream_part, conn.down_part_rev, conn.downstream_input_port]
-                self.hera.update_connection('add', up, dn, cdate=self.cdate, ctime='11:00')
+                self.hera.update_connection(add_or_stop, up, dn, cdate=cdate, ctime=ctime)
 
     def show_summary_of_compare(self):
         print("\n---Summary---")
