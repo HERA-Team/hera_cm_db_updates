@@ -24,8 +24,9 @@ if __name__ == '__main__':
     ap.add_argument('--look_only', help='Flag to only look at data.', action='store_true')
     args = ap.parse_args()
 else:
-    args = argparse.Namespace(archive_path=None, script_path='./', node_csv='n', verbose=True,
-                              duplication_window=90.0, view_duplicate=0.0, look_only=True)
+    args = argparse.Namespace(archive_path=None, script_path='./', node_csv='r', verbose=True,
+                              duplication_window=70.0, view_duplicate=10.0, look_only=False)
+    print(args)
 
 if args.look_only:
     script_type = None
