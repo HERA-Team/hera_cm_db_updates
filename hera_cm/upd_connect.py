@@ -179,6 +179,18 @@ class UpdateConnect(upd_base.Update):
         else:
             raise ValueError("NEED TO ADD OUTRIGGERS")
 
+    def add_rosetta(self):
+        for t2u in ['missing', 'different']:
+            t2u_attr = getattr(self, t2u)
+            self.hera.no_op_comment('Adding {} parts'.format(t2u))
+            for key in t2u_attr:
+                if not key.startswith('SNP'):
+                    continue
+                conn = self.active.connections[key]['up']['RACK']
+                hname = "heraNode{}Snap{}".format(int(conn.downstream_part[1:]),
+                                                  int(conn.downstream_input_port[-1]))
+                self.hera.add_part_rosetta(conn.upstream_part, hname, self.cdate, self.ctime)
+
     def compare_connections(self, direction='gsheet-active'):
         """
         Step through all of the sheet Connections and make sure they are all there and the same.

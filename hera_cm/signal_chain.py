@@ -568,6 +568,25 @@ class Update:
         self.fp.write('update_apriori.py -p {} -s {} --date {} --time {}\n'
                       .format(antenna, status, cdate, ctime))
 
+    def add_part_rosetta(self, hpn, syspn, date1, time1='10:00', date2=None, time2='10:00'):
+        """
+        Add part_rosetta information.
+
+        Parameters
+        ----------
+        hpn : str
+            HERA part number
+        syspn : str
+            System part number
+        date1 : str
+        date2 : str if not None
+        """
+        s = "add_part_rosetta.py -p {} -s {} --date {} --time {}".format(hpn, syspn, date1, time1)
+        if date2 is not None:
+            s += " --date2 {} --time2 {}".format(date2, time2)
+        s += '\n'
+        self.fp.write(s)
+
     def add_part_info(self, hpn, rev, note, cdate, ctime, ref=None):
         """
         Add a note/comment for a part to the database.
