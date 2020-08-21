@@ -10,7 +10,8 @@ import subprocess
 import os.path
 
 table_dump_list = ['apriori_antenna', 'cm_version', 'connections',
-                   'geo_location', 'part_info', 'parts', 'station_type']
+                   'geo_location', 'part_info', 'parts', 'station_type',
+                   'part_rosetta']
 
 cm_csv_path = mc.get_cm_csv_path(None)
 
