@@ -182,6 +182,8 @@ class UpdateConnect(upd_base.Update):
     def add_rosetta(self):
         for t2u in ['missing', 'different']:
             t2u_attr = getattr(self, t2u)
+            if not len(t2u_attr):
+                continue
             self.hera.no_op_comment('Adding {} parts'.format(t2u))
             for key in t2u_attr:
                 if not key.startswith('SNP'):

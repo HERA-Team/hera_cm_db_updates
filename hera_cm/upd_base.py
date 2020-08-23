@@ -65,6 +65,8 @@ class Update(object):
             if os.path.exists(cron_script):
                 os.remove(cron_script)
 
+        print("UPDB68:  ",script, cron_script)
+        print(self.update_counter)
         if self.update_counter == 0:
             os.remove(script)
             if self.verbose:
