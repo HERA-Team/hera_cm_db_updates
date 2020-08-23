@@ -1,0 +1,29 @@
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
+84,E,35,54,10,19,C56,e2,3,RF_maintenance,,Z= 4.406
+84,N,35,54,10,19,C56,n0,3,RF_maintenance,,
+85,E,36,55,2,11,C23,e6,0,digital_ok,,reported sync ok by dgorki Aug 7 
+85,N,36,55,2,11,C23,n4,0,digital_ok,,reported sync ok by dgorki Aug 7 
+86,E,37,56,3,12,C23,e10,0,RF_maintenance,,Some reflections
+86,N,37,56,3,12,C23,n8,0,RF_maintenance,,Some reflections
+87,E,38,57,7,16,C55,e2,2,RF_maintenance,,One tension is frayed
+87,N,38,57,7,16,C55,n0,2,RF_maintenance,,loose central line
+101,E,39,154,8,17,C55,e6,2,digital_ok,"FEM: 58 until 10Mar2020, thence 153",reported sync ok by dgorki Aug 7 
+101,N,39,154,8,17,C55,n4,2,digital_ok,"FEM: 58 until 10Mar2020, thence 154",reported sync ok by dgorki Aug 7 
+102,E,40,153,1,10,C23,e2,0,digital_ok,"FEM: 59 until 10Mar2020, thence 153",reported sync ok by dgorki Aug 7 
+102,N,40,153,1,10,C23,n0,0,digital_ok,"FEM: 59 until 10Mar2020, thence 154",reported sync ok by dgorki Aug 7 
+103,E,41,34,6,15,C44,e10,1,digital_ok,FEM: 60,reported sync ok by dgorki Aug 7 
+103,N,41,34,6,15,C44,n8,1,digital_ok,FEM: 60,reported sync ok by dgorki Aug 7 
+104,E,10,61,5,14,C44,e6,1,digital_ok,,reported sync ok by dgorki Aug 7 
+104,N,10,61,5,14,C44,n4,1,digital_ok,,reported sync ok by dgorki Aug 7 
+120,E,42,62,4,13,C44,e2,1,RF_maintenance,,pretty bad reflections
+120,N,42,62,4,13,C44,n0,1,RF_maintenance,,pretty bad reflections
+121,E,43,63,12,21,C56,e10,3,RF_maintenance,,loose central line
+121,N,43,63,12,21,C56,n8,3,RF_maintenance,,
+122,E,44,64,9,18,C55,e10,2,digital_ok,,reported sync ok by dgorki Aug 7 
+122,N,44,64,9,18,C55,n8,2,digital_ok,,reported sync ok by dgorki Aug 7 
+123,E,45,65,11,20,C56,e6,3,RF_maintenance,,loose central line
+123,N,45,65,11,20,C56,n4,3,RF_maintenance,,
+Date:,2019/11/01,,,,,,,,,,
+,,,,,,,,,,,
+Note,2019Oct31,,MRD,NCM Production SN 1,,,,,,,
+Note,2019Nov11,,MRD,"Date of fan tray install to be verified.  1U Fan tray, rion Fan tray with 3 fans OA300ST-23,  is (probably) mounted to the front of the rack right above the PAM chassis",,,,,,,

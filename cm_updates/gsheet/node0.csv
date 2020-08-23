@@ -1,0 +1,26 @@
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
+0,E,1,16,1,22,C72,e2,0,digital_ok,,reported sync ok by dgorki Aug 7 
+0,N,1,16,1,22,C72,n0,0,digital_ok,,reported sync ok by dgorki Aug 7 
+2,E,8,40,2,48,C72,e6,0,digital_ok,FEM: 17 | PAM: 23,reported sync ok by dgorki Aug 7 
+2,N,8,40,2,48,C72,n4,0,digital_ok,,reported sync ok by dgorki Aug 7 
+1,E,2,18,3,24,C72,e10,0,digital_ok,,reported sync ok by dgorki Aug 7 
+1,N,2,18,3,24,C72,n8,0,digital_ok,,reported sync ok by dgorki Aug 7 
+11,E,9,45,4,52,A8,e2,1,RF_maintenance,FEM: 19 | PAM: 25,
+11,N,9,45,4,52,A8,n0,1,RF_maintenance,,
+12,E,3,41,5,50,A8,e6,1,digital_ok,FEM: 20 | PAM: 26,reported sync ok by dgorki Aug 7 
+12,N,3,41,5,50,A8,n4,1,digital_ok,,reported sync ok by dgorki Aug 7 
+13,E,4,21,6,27,A8,e10,1,digital_ok,,reported sync ok by dgorki Aug 7 
+13,N,4,21,6,27,A8,n8,1,digital_ok,,reported sync ok by dgorki Aug 7 
+14,E,5,22,7,47,A24,e2,2,digital_ok,FEM: 28,reported sync ok by dgorki Aug 7 
+14,N,5,22,7,47,A24,n0,2,digital_ok,,reported sync ok by dgorki Aug 7 
+23,E,11,23,8,29,A24,e6,2,digital_ok,,reported sync ok by dgorki Aug 7 
+23,N,11,23,8,29,A24,n4,2,digital_ok,,reported sync ok by dgorki Aug 7 
+24,E,12,43,9,30,A24,e10,2,RF_maintenance,PAM: 24,No central line for this feed
+24,N,12,43,9,30,A24,n8,2,RF_maintenance,,No central line for this feed
+25,E,6,25,10,51,A20,e2,3,digital_ok,FEM: 31,reported sync ok by dgorki Aug 7 
+25,N,6,25,10,51,A20,n0,3,digital_ok,,reported sync ok by dgorki Aug 7 
+26,E,7,27,11,32,A20,e6,3,digital_ok,PAM: 26,reported sync ok by dgorki Aug 7 
+26,N,7,27,11,32,A20,n4,3,digital_ok,,reported sync ok by dgorki Aug 7 
+39,E,14,42,12,33,A20,e10,3,digital_ok,PAM: 27,reported sync ok by dgorki Aug 7 
+39,N,14,42,12,33,A20,n8,3,digital_ok,,reported sync ok by dgorki Aug 7 
+Date:,2019/09/17,,,,,,,,,,

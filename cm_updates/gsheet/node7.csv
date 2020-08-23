@@ -1,0 +1,29 @@
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
+81,E,26,17,1,53,C19,e2,0,digital_ok,,reported sync ok by dgorki Aug 7 
+81,N,26,17,1,53,C19,n0,0,digital_ok,,reported sync ok by dgorki Aug 7 
+82,E,27,51,2,54,C19,e6,0,digital_ok,,reported sync ok by dgorki Aug 7 
+82,N,27,51,2,54,C19,n4,0,digital_ok,,reported sync ok by dgorki Aug 7 
+83,E,48,37,3,58,C19,e10,0,digital_ok,,reported sync ok by dgorki Aug 7 
+83,N,48,37,3,58,C19,n8,0,digital_ok,,reported sync ok by dgorki Aug 7 
+100,E,30,48,4,56,C21,e2,1,digital_ok,,reported sync ok by dgorki Aug 7 
+100,N,30,48,4,56,C21,n0,1,digital_ok,,reported sync ok by dgorki Aug 7 
+119,E,34,13,5,57,C21,e6,1,digital_ok,,reported sync ok by dgorki Aug 7 
+119,N,34,13,5,57,C21,n4,1,digital_ok,,reported sync ok by dgorki Aug 7 
+138,E,47,47,6,55,C21,e10,1,RF_maintenance,,
+138,N,47,47,6,55,C21,n8,1,RF_maintenance,,
+98,E,28,50,7,59,C30,e2,2,digital_ok,,reported sync ok by dgorki Aug 7 
+98,N,28,50,7,59,C30,n0,2,digital_ok,,reported sync ok by dgorki Aug 7 
+99,E,29,52,8,60,C30,e6,2,digital_ok,,reported sync ok by dgorki Aug 7 
+99,N,29,52,8,60,C30,n4,2,digital_ok,,reported sync ok by dgorki Aug 7 
+116,E,31,14,9,61,C30,e10,2,RF_maintenance,,Post-PAM spectra of 116E has a strange look.
+116,N,31,14,9,61,C30,n8,2,RF_maintenance,,
+117,E,32,15,10,62,C31,e2,3,digital_ok,,reported sync ok by dgorki Aug 7 
+117,N,32,15,10,62,C31,n0,3,digital_ok,,reported sync ok by dgorki Aug 7 
+118,E,33,53,11,63,C31,e6,3,digital_ok,,reported sync ok by dgorki Aug 7 
+118,N,33,53,11,63,C31,n4,3,digital_ok,,reported sync ok by dgorki Aug 7 
+137,E,49,49,12,49,C31,e10,3,RF_maintenance,,
+137,N,49,49,12,49,C31,n8,3,RF_maintenance,,
+Date:,2019/11/11,,,,,,,,,,
+,,,,,,,,,,,
+Note,2019Oct31,,MRD,"remove NCM Production SN 2 from Node 7 (move it to Node 9).  Install NCM pre-Production SN 2 - it has been upgraded to 7.5VDC PSU, etc.",,,,,,,
+Note,2019Nov11,,MRD,"Date of fan tray install to be verified.  1U Fan tray, rion Fan tray with 3 fans OA300ST-23,  is (probably) mounted to the front of the rack right above the PAM chassis",,,,,,,

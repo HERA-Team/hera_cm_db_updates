@@ -1,0 +1,31 @@
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
+88,E,15,38,3,37,C10,e10,0,RF_maintenance,,11 March 2020 Z= 4.400
+88,N,15,38,3,37,C10,n8,0,RF_maintenance,,11 March 2020 Z= 4.400
+89,E,16,44,9,23,C13,e10,2,digital_ok,PAM: 43,10Mar2020 z = 4.409
+89,N,16,44,9,23,C13,n8,2,digital_ok,,10Mar2020 z = 4.409
+90,E,17,39,2,36,C10,e6,0,digital_ok,,different reflections on each pol
+90,N,17,39,2,36,C10,n4,0,digital_ok,,different reflections on each pol
+91,E,18,35,6,40,C11,e10,1,RF_maintenance,,11 March 2020 Z=4.411
+91,N,18,35,6,40,C11,n8,1,RF_maintenance,,11 March 2020 Z=4.411
+105,E,19,36,4,38,C11,e2,1,RF_maintenance,,11 March 2020 Z=4.407
+105,N,19,36,4,38,C11,n0,1,RF_maintenance,,11 March 2020 Z=4.407
+106,E,20,30,10,44,C33,e2,3,digital_ok,,10Mar2020 z = 4.414
+106,N,20,30,10,44,C33,n0,3,digital_ok,,10Mar2020 z = 4.414
+107,E,21,31,1,35,C10,e2,0,RF_maintenance,,different reflections on each pol
+107,N,21,31,1,35,C10,n0,0,RF_maintenance,,different reflections on each pol
+108,E,22,33,5,39,C11,e6,1,digital_ok,,10Mar2020 z = 4.403
+108,N,22,33,5,39,C11,n4,1,digital_ok,,10Mar2020 z = 4.403
+124,E,24,32,8,41,C13,e6,2,RF_maintenance,PAM: 42,11 March 2020 Z= 4.412
+124,N,24,32,8,41,C13,n4,2,RF_maintenance,,11 March 2020 Z= 4.412
+125,E,25,29,12,46,C33,e10,3,digital_ok,,10Mar2020 z = 4.405
+125,N,25,29,12,46,C33,n8,3,digital_ok,,10Mar2020 z = 4.405
+126,E,13,28,11,45,C33,e6,3,RF_maintenance,,11 March 2020 Z= 4.405
+126,N,13,28,11,45,C33,n4,3,RF_maintenance,,11 March 2020 Z= 4.405
+Date:,2019/11/18,,,,,,,,,,
+,,,,,,,,,,,
+Note,2019Oct31,,MRD,remove NCM pre-Production SN 2 from Node 9 (upgrade it then move it to Node 7).  Install NCM Production SN 2.,,,,,,,
+Note,2019Aug15,,MRD,"Rack has non standard layout.  EG 1U power strip mounted to the rear of the rack, PAM chassis up from the bottom, FEM PSU down from the top, etc ",,,,,,,
+Note,2019Aug15,,MRD,Yellow Harting cable assemblies from the rear of the PAM chassis to the side panels - not COTS CAT6 SSTP RJ45 cables.,,,,,,,
+Note,2019Aug15,,MRD,"1U Fan tray is mounted to the front of the rack right above the PAM chassis.  No PVC air curtains/baffles,",,,,,,,
+Note,2019Nov13,,MRD,Is the top back stop part of the SNAPv2 mounting scheme actually installed ?,,,,,,,
+Note,2020Mar03,,SBCD,Boom reports all N9 feeds  are lowered - moved the status of all N9 ants to 'RF_maintenance',,,,,,,

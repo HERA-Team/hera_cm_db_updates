@@ -5,4 +5,3 @@ scripts.log
 conn_update.sh
 *.pyc
 cm_updates/scripts.log
-node*.csv

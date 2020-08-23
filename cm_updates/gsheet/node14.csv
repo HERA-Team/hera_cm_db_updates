@@ -1,0 +1,33 @@
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed Heights
+143,E,139,175,9,181,28,e10,2,RF_maintenance,,,Z = 4.404
+143,N,139,175,9,181,28,n8,2,RF_maintenance,,,
+144,E,127,179,10,182,38,e2,3,RF_ok,,,Z = 4.410
+144,N,127,179,10,182,38,n0,3,RF_ok,,,
+145,E,111,183,11,183,38,e6,3,RF_ok,,,Z = 4.405
+145,N,111,183,11,183,38,n4,3,RF_ok,,,
+146,E,,,12,184,38,e10,3,RF_maintenance,,"SMA and CAT7 cables too short, wont connect feed to node.",
+146,N,,,12,184,38,n8,3,RF_maintenance,,,
+163,E,110,173,7,179,28,e2,2,RF_ok,,,Z = 4.410
+163,N,110,173,7,179,28,n0,2,RF_ok,,,
+164,E,106,174,8,180,28,e6,2,RF_ok,,,Z = 4.400
+164,N,106,174,8,180,28,n4,2,RF_ok,,,
+165,E,108,181,1,173,51,e2,0,RF_ok,,,Z = 4.401
+165,N,108,181,1,173,51,n0,0,RF_ok,,,
+166,E,105,198,2,174,51,e6,0,RF_maintenance,,,
+166,N,105,198,2,174,51,n4,0,RF_maintenance,,,
+184,E,107,180,3,175,51,e10,0,RF_maintenance,,,
+184,N,107,180,3,175,51,n8,0,RF_maintenance,,,
+185,E,125,178,4,176,43,e2,1,RF_ok,,,Z = 4.410
+185,N,125,178,4,176,43,n0,1,RF_ok,,,
+186,E,112,184,5,177,43,e6,1,RF_ok,,,Z = 4.409
+186,N,112,184,5,177,43,n4,1,RF_ok,,,
+187,E,115,177,6,178,43,e10,1,RF_ok,,,Z = 4.406
+187,N,115,177,6,178,43,n8,1,RF_ok,,,
+Date,2020/02/01,,,,,,,,,,,
+,These need to be completed by the site crew,,,,,,,,,,,
+,,,,,,,,,,,,
+Note,2019Nov11,,MRD,,"Node Enclosure now stores 1 bag of 20 LMR195 coax cables, 1 bag of 50 RG402 coax cables, 2 long C13/C14 power cables, 1 short C13/C14 power cable, 5 blue CAT7 RJ45s (for NCM), 4 of D-Sub37 cables, 4 of D-Sub9 cables",,,,,,,
+Note,2019Nov11,,MRD,,bag of 30 FC/APC fiber optic cables.  Have 3 rail sets (in boxes) sitting on the floor of the Node Enclosure.  No rack.,,,,,,,
+Note,2019Nov11,,MRD,,due to come online 2020jan21,,,,,,,
+Note ,2020Jan31,,ATJ,,NCM Prod # 10,,,,,,,
+Node,2020Mar02,,MRD,,notes on NCM Production SN 10,,,,"WR Endpoint: AD000097, 7S-WRLEN-v1.0-S10.494, MAC ID: 08:00:30:6f:18:98, 1st PSU set to be about 8.253V, Arduino Ethernet Shield Rev 2 08:  Arduino Ethernet 02:02:0A:01:01:F3,  90:A2:DA:11:07:BA",,,
