@@ -1168,6 +1168,7 @@ HH161,A,Feed heights (NE/SE/SW/NW): Z dstance = 4.412,infoupd,1265708538
 HH162,A,Feed heights (NE/SE/SW/NW): Z distance = 4.411,infoupd,1265708538
 HH181,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1265708538
 HH182,A,Feed heights (NE/SE/SW/NW): Z distance =4.415,infoupd,1265708538
+ND04,A,Door direction: NW,,1280318418
 HH160,A,Final post-PAM spectra looks fine,infoupd,1265726538
 HH160,A,Final post-PAM spectra looks fine,infoupd,1265726540
 HH161,A,Final check for 161N has an unexpected dip @ ~70 MHz,infoupd,1265726538
@@ -1475,6 +1476,7 @@ HH74,A,74E and N look dead,infoupd,1272836538
 HH74,A,74E and N look dead,infoupd,1272836540
 HH127,A,Was seen as not raised 29 Jan 2020,infoupd,1272912138
 HH127,A,Was seen as not raised 29 Jan 2020,infoupd,1272912140
+ND05,A,Door direction: NE,,1280318418
 HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1272912138
 HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1272912140
 HH130,A,"Central line too loose to be RF OK, door mesh in dish",infoupd,1272912138
@@ -1654,6 +1656,7 @@ HH103,A,History: FEM: 60,infoupd,1279791738
 HH103,A,History: FEM: 60,infoupd,1279791740
 HH89,A,History: PAM: 43,infoupd,1279791738
 HH124,A,History: PAM: 42,infoupd,1279791738
+ND06,A,Door direction: SE,,1280318418
 HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1280054538
 HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1280054540
 HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1280054538
@@ -1739,6 +1742,7 @@ HH36,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH36,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH40,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH41,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+ND07,A,Door direction: N,,1280318418
 HH41,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH56,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH56,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
@@ -1825,3 +1829,27 @@ HH66,A,loose central line,infoupd,1281134538
 HH87,A,loose central line,infoupd,1281134538
 HH121,A,loose central line,infoupd,1281134538
 HH123,A,loose central line,infoupd,1281134538
+ND00,A,Door direction: E,,1280318418
+ND01,A,Door direction: NW,,1280318418
+ND02,A,Door direction: E,,1280318418
+ND03,A,Door direction: SW,,1280318418
+ND08,A,Door direction: NE,,1280318418
+ND09,A,Door direction: E,,1280318418
+ND10,A,Door direction: SE,,1280318418
+ND11,A,Door direction: SW,,1280318418
+ND12,A,Door direction: NW,,1280318418
+ND13,A,Door direction: NE,,1280318418
+ND14,A,Door direction: SE,,1280318418
+ND15,A,Door direction: SW,,1280318418
+ND16,A,Door direction: S,,1280318418
+ND17,A,Door direction: E,,1280318418
+ND18,A,Door direction: SE,,1280318418
+ND19,A,Door direction: SE,,1280318418
+ND20,A,Door direction: NW,,1280318418
+ND21,A,Door direction: NE,,1280318418
+ND22,A,Door direction: NW,,1280318418
+ND23,A,Door direction: NW,,1280318418
+ND24,A,Door direction: NE,,1280318418
+ND25,A,Door direction: SE,,1280318418
+ND26,A,Door direction: SW,,1280318418
+ND27,A,Door direction: NW,,1280318418
