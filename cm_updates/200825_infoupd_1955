@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200825_infoupd_1955" >> scripts.log 
+update_apriori.py -p HH185 -s RF_maintenance --date 2020/08/25 --time 19:55
