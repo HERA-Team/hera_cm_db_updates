@@ -32,7 +32,7 @@ class UpdateInfo(upd_base.Update):
             N = self.gsheet.data[key + '-N'][ap_col]
             ant, rev = cm_utils.split_part_key(key)
             if E != N:
-                print("{} and {} should be the same.".format(E, N))
+                print("{}:  {} and {} should be the same.".format(key, E, N))
                 continue
             if len(E) == 0:
                 continue
