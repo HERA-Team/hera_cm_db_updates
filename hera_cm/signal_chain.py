@@ -140,6 +140,40 @@ class Update:
             added['connection'].append(conn)
         return added
 
+    def just_add_node(self, node, sn, cdate, ctime='10:00'):
+        """
+        Add a node into database (geo_location and parts).
+
+        Parameters
+        ----------
+        node : int
+                node number
+        ser_num : str
+                node serial number
+        cdate : string
+                YYYY/MM/DD format
+        ctime : [string, string]
+                part-add time, connection-add time in HH:MM format
+        """
+        check_date = cm_utils.get_astropytime(adate=cdate, atime=ctime)
+        part_to_add = {}
+        hpn = 'N{:02d}'.format(node)
+        part_to_add['node'] = (hpn, 'A', 'node', sn)
+        hpn = 'ND{:02d}'.format(node)
+        part_to_add['node-station'] = (hpn, 'A', 'station', sn)
+        # Add node as station
+        p = part_to_add['node-station']
+        self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'
+                      .format(p[0], p[3], cdate, ctime))
+
+        # Check for parts to add and add them
+        for p in part_to_add.values():
+            if not p[0].startswith('ND'):  # Because add_station already added it
+                if not self.exists('part', p[0], p[1], None, check_date=check_date):
+                    self.update_part('add', p, cdate, ctime)
+                else:
+                    print("Part {} is already added".format(p))
+
     def add_node(self, node, fps, pch, ncm, pams, snaps, cdate, ctime=['10:00', '11:00'],
                  ser_num={}, override=False):
         """
