@@ -16,6 +16,7 @@ class UpdateInfo(upd_base.Update):
         super(UpdateInfo, self).__init__(script_type=script_type,
                                          script_path=script_path,
                                          verbose=verbose)
+        self.new_apriori = {}
 
     def load_active(self):
         """Load active data."""
@@ -80,11 +81,14 @@ class UpdateInfo(upd_base.Update):
                 if "'" in statement:
                     statement = statement.replace("'", "")
                 if not self.is_duplicate(antrev_key, statement, duplication_window, view_duplicate):
+                    refout = 'infoupd'
+                    if antrev_key in self.new_apriori.keys():
+                        refout = 'apa-infoupd'
                     self.new_notes.setdefault(antrev_key, [])
                     self.new_notes[antrev_key].append(statement)
                     if self.verbose:
                         print("Adding comment: {}:{} - {}".format(ant, rev, statement))
-                    self.hera.add_part_info(ant, rev, statement, pdate, ptime, ref='infoupd')
+                    self.hera.add_part_info(ant, rev, statement, pdate, ptime, ref=refout)
                     self.update_counter += 1
                     primary_keys.append(pkey)
 
