@@ -1,0 +1,7 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200910_infoupd_2142" >> scripts.log 
+update_apriori.py -p HH122 -s RF_maintenance --date 2020/09/10 --time 21:42
+update_apriori.py -p HH135 -s RF_maintenance --date 2020/09/10 --time 21:42
+add_part_info.py -p HH122 -r A -c '122e is very high and flat in the SNAP spectra 10 Sept 23:32 site time' -l "apa-infoupd" --date 2020/09/10 --time 21:42:00
+add_part_info.py -p HH122 -r A -c '122e is very high and flat in the SNAP spectra 10 Sept 23:32 site time' -l "apa-infoupd" --date 2020/09/10 --time 21:42:02
