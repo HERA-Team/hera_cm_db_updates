@@ -5,18 +5,18 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
 89,N,16,44,9,23,C13,n8,2,digital_ok,,10Mar2020 z = 4.409
 90,E,17,39,2,36,C10,e6,0,digital_ok,,different reflections on each pol
 90,N,17,39,2,36,C10,n4,0,digital_ok,,different reflections on each pol
-91,E,18,35,6,40,C11,e10,1,RF_maintenance,,11 March 2020 Z=4.411
-91,N,18,35,6,40,C11,n8,1,RF_maintenance,,11 March 2020 Z=4.411
-105,E,19,36,4,38,C11,e2,1,RF_maintenance,,11 March 2020 Z=4.407
-105,N,19,36,4,38,C11,n0,1,RF_maintenance,,11 March 2020 Z=4.407
+91,E,18,35,6,40,C11,e10,1,RF_ok,,11 March 2020 Z=4.411
+91,N,18,35,6,40,C11,n8,1,RF_ok,,11 March 2020 Z=4.411
+105,E,19,36,4,38,C11,e2,1,RF_ok,,11 March 2020 Z=4.407
+105,N,19,36,4,38,C11,n0,1,RF_ok,,11 March 2020 Z=4.407
 106,E,20,30,10,44,C33,e2,3,digital_ok,,10Mar2020 z = 4.414
 106,N,20,30,10,44,C33,n0,3,digital_ok,,10Mar2020 z = 4.414
 107,E,21,31,1,35,C10,e2,0,RF_maintenance,,different reflections on each pol
 107,N,21,31,1,35,C10,n0,0,RF_maintenance,,different reflections on each pol
-108,E,22,33,5,39,C11,e6,1,digital_ok,,10Mar2020 z = 4.403
-108,N,22,33,5,39,C11,n4,1,digital_ok,,10Mar2020 z = 4.403
-124,E,24,32,8,41,C13,e6,2,RF_maintenance,PAM: 42,11 March 2020 Z= 4.412
-124,N,24,32,8,41,C13,n4,2,RF_maintenance,,11 March 2020 Z= 4.412
+108,E,22,33,5,39,C11,e6,1,RF_maintenance,,"nice autos in the 49100 notebook, but in heranow 10Sept2221 Sitetime it looks like 108 is not seeing sky"
+108,N,22,33,5,39,C11,n4,1,RF_maintenance,,"nice autos in the 49100 notebook, but in heranow 10Sept2221 Sitetime it looks like 108 is not seeing sky"
+124,E,24,32,8,41,C13,e6,2,RF_ok,PAM: 42,11 March 2020 Z= 4.412
+124,N,24,32,8,41,C13,n4,2,RF_ok,,11 March 2020 Z= 4.412
 125,E,25,29,12,46,C33,e10,3,digital_ok,,10Mar2020 z = 4.405
 125,N,25,29,12,46,C33,n8,3,digital_ok,,10Mar2020 z = 4.405
 126,E,13,28,11,45,C33,e6,3,RF_maintenance,,11 March 2020 Z= 4.405
