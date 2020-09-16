@@ -1,0 +1,21 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200915_infoupd_1942" >> scripts.log 
+update_apriori.py -p HH98 -s digital_ok --date 2020/09/15 --time 19:42
+update_apriori.py -p HH99 -s digital_ok --date 2020/09/15 --time 19:42
+update_apriori.py -p HH100 -s digital_ok --date 2020/09/15 --time 19:42
+update_apriori.py -p HH117 -s digital_ok --date 2020/09/15 --time 19:42
+update_apriori.py -p HH118 -s digital_ok --date 2020/09/15 --time 19:42
+update_apriori.py -p HH119 -s digital_ok --date 2020/09/15 --time 19:42
+add_part_info.py -p HH100 -r A -c 'FEM turned back on 15 Sept 2020' -l "apa-infoupd" --date 2020/09/15 --time 19:42:00
+add_part_info.py -p HH100 -r A -c 'FEM turned back on 15 Sept 2020' -l "apa-infoupd" --date 2020/09/15 --time 19:42:02
+add_part_info.py -p HH119 -r A -c 'FEM turned back on 15 Sept 2020' -l "apa-infoupd" --date 2020/09/15 --time 19:42:00
+add_part_info.py -p HH119 -r A -c 'FEM turned back on 15 Sept 2020' -l "apa-infoupd" --date 2020/09/15 --time 19:42:02
+add_part_info.py -p HH98 -r A -c 'FEM turned back on 15 Sept 2020' -l "apa-infoupd" --date 2020/09/15 --time 19:42:00
+add_part_info.py -p HH98 -r A -c 'FEM turned back on 15 Sept 2020' -l "apa-infoupd" --date 2020/09/15 --time 19:42:02
+add_part_info.py -p HH99 -r A -c 'FEM turned back on 15 Sept 2020' -l "apa-infoupd" --date 2020/09/15 --time 19:42:00
+add_part_info.py -p HH99 -r A -c 'FEM turned back on 15 Sept 2020' -l "apa-infoupd" --date 2020/09/15 --time 19:42:02
+add_part_info.py -p HH117 -r A -c 'FEM turned back on 15 Sept 2020' -l "apa-infoupd" --date 2020/09/15 --time 19:42:00
+add_part_info.py -p HH117 -r A -c 'FEM turned back on 15 Sept 2020' -l "apa-infoupd" --date 2020/09/15 --time 19:42:02
+add_part_info.py -p HH118 -r A -c 'FEM turned back on 15 Sept 2020' -l "apa-infoupd" --date 2020/09/15 --time 19:42:00
+add_part_info.py -p HH118 -r A -c 'FEM turned back on 15 Sept 2020' -l "apa-infoupd" --date 2020/09/15 --time 19:42:02

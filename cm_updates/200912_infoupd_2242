@@ -1,0 +1,21 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200912_infoupd_2242" >> scripts.log 
+update_apriori.py -p HH98 -s RF_maintenance --date 2020/09/12 --time 22:42
+update_apriori.py -p HH99 -s RF_maintenance --date 2020/09/12 --time 22:42
+update_apriori.py -p HH100 -s RF_maintenance --date 2020/09/12 --time 22:42
+update_apriori.py -p HH117 -s RF_maintenance --date 2020/09/12 --time 22:42
+update_apriori.py -p HH118 -s RF_maintenance --date 2020/09/12 --time 22:42
+update_apriori.py -p HH119 -s RF_maintenance --date 2020/09/12 --time 22:42
+add_part_info.py -p HH100 -r A -c 'No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected' -l "apa-infoupd" --date 2020/09/12 --time 22:42:00
+add_part_info.py -p HH100 -r A -c 'No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected' -l "apa-infoupd" --date 2020/09/12 --time 22:42:02
+add_part_info.py -p HH119 -r A -c 'No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected' -l "apa-infoupd" --date 2020/09/12 --time 22:42:00
+add_part_info.py -p HH119 -r A -c 'No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected' -l "apa-infoupd" --date 2020/09/12 --time 22:42:02
+add_part_info.py -p HH98 -r A -c 'No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected' -l "apa-infoupd" --date 2020/09/12 --time 22:42:00
+add_part_info.py -p HH98 -r A -c 'No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected' -l "apa-infoupd" --date 2020/09/12 --time 22:42:02
+add_part_info.py -p HH99 -r A -c 'No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected' -l "apa-infoupd" --date 2020/09/12 --time 22:42:00
+add_part_info.py -p HH99 -r A -c 'No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected' -l "apa-infoupd" --date 2020/09/12 --time 22:42:02
+add_part_info.py -p HH117 -r A -c 'No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected' -l "apa-infoupd" --date 2020/09/12 --time 22:42:00
+add_part_info.py -p HH117 -r A -c 'No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected' -l "apa-infoupd" --date 2020/09/12 --time 22:42:02
+add_part_info.py -p HH118 -r A -c 'No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected' -l "apa-infoupd" --date 2020/09/12 --time 22:42:00
+add_part_info.py -p HH118 -r A -c 'No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected' -l "apa-infoupd" --date 2020/09/12 --time 22:42:02
