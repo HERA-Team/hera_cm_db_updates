@@ -2050,3 +2050,19 @@ HH71,A,71E looks atypical in 18 Sept post-PAM sprectra,infoupd,1284493338
 HH71,A,71N looks fine in 18 Sept post-PAM sprectra,infoupd,1284493340
 HH43,A,43 E looks dead  in 18 Sept post-PAM spectre,infoupd,1284493338
 HH43,A,43 N looks fine in 18 Sept post-PAM spectre,infoupd,1284493340
+HH2,A,2E looks fine 18 Sept,infoupd,1284496938
+HH2,A,2N still looks wonky in SNAP spectra 18 Sept,infoupd,1284496940
+HH11,A,sbcd 18 sept due to heranow autos and SNAP spectra,apa-infoupd,1284496938
+HH11,A,sbcd 18 sept due to heranow autos and SNAP spectra,apa-infoupd,1284496940
+HH13,A,sbcd 18 sept due to heranow autos and SNAP spectra,apa-infoupd,1284496938
+HH13,A,sbcd 18 sept due to heranow autos and SNAP spectra,apa-infoupd,1284496940
+HH67,A,"SNAP autos look low, flat, spiky ,as does all of N3 18 Sept",infoupd,1284496938
+HH67,A,"SNAP autos look low, flat, spiky ,as does all of N3 18 Sept",infoupd,1284496940
+HH72,A,72E looks fine in 18 Sept SNAP sprectra,apa-infoupd,1284496938
+HH72,A,72N looks fine in 18 Sept SNAP sprectra,apa-infoupd,1284496940
+HH46,A,fine SNAP spectra on 18-Sept,apa-infoupd,1284496938
+HH46,A,fine SNAP spectra on 18-Sept,apa-infoupd,1284496940
+HH60,A,SNAP spectra look bad  18 sept; N5S2 last data is from March,apa-infoupd,1284496938
+HH60,A,SNAP spectra look bad  18 sept; N5S2 last data is from March,apa-infoupd,1284496940
+HH83,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284496938
+HH83,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284496940
