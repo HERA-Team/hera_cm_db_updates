@@ -27,6 +27,9 @@ class UpdateInfo(upd_base.Update):
     def add_apriori(self):
         """Write out for apriori differences."""
         self.new_apriori = {}
+        rev = 'A'
+        stmt_hdr = "apriori_antenna status change:"
+        refout = 'apa-infoupd'
         for key in self.gsheet.ants:
             ap_col = self.gsheet.header[self.gsheet.ant_to_node[key]].index('APriori')
             E = self.gsheet.data[key + '-E'][ap_col]
@@ -42,6 +45,8 @@ class UpdateInfo(upd_base.Update):
                 if self.verbose:
                     print("Updating {}   {}".format(E, self.active.apriori[key].status))
                 self.hera.update_apriori(ant, E, self.cdate, self.ctime)
+                statement = "{} {} -> {}".format(stmt_hdr, self.active.apriori[key].status, E)
+                self.hera.add_part_info(ant, rev, statement, self.cdate, self.ctime, ref=refout)
                 self.update_counter += 1
 
     def add_sheet_notes(self, duplication_window=90.0, view_duplicate=0.0):
