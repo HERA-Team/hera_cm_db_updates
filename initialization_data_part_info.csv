@@ -2109,3 +2109,23 @@ HH81,A,N7A81 E is too low. N looks fine. 22 Sept. See Observing review for day 5
 HH81,A, ,apa-infoupd,1284853340
 HH90,A,"N9A90 E has lower power, but looks fine. 22 Sept. See Observing review for day 591115 issue",apa-infoupd,1284853338
 HH90,A, ,apa-infoupd,1284853340
+HH50,A,59116 SNAP spect look fine. Moving from rf_maint to rf_ok,apa-infoupd,1284925338
+HH51,A,59116 SNAP spectra look fine. Returning to dig_ok,apa-infoupd,1284925338
+HH51,A, ,apa-infoupd,1284925340
+HH52,A,59116 SNAP spect look fine. Moving from rf_maint to rf_ok,apa-infoupd,1284925338
+HH53,A,59116 SNAP spectra look fine. Returning to dig_ok,apa-infoupd,1284925338
+HH53,A, ,apa-infoupd,1284925340
+HH68,A,59116 SNAP spectra look fine. Returning to dig_ok,apa-infoupd,1284925338
+HH40,A,Feed heights: Ant 40 Z= 4.410 from jig,infoupd,1284925338
+HH41,A,Feed heights: Ant 41 Z = 4.418 from jig,infoupd,1284925338
+HH42,A,Feed heights: Ant 42 Z= 4.406 from jig,infoupd,1284925338
+HH54,A,Feed heights: Ant 54 Z = 4.415 from jig,infoupd,1284925338
+HH55,A,Feed heights: Ant 55 Z = 4.413 from jig,infoupd,1284925338
+HH56,A,Feed heights: Ant 56 Z= 4.407 from jig,infoupd,1284925338
+HH57,A,Node was xyz positioned 23 Sept; A57 moved from  rf_maint to rf_ok,apa-infoupd,1284925338
+HH57,A,Feed heights: Ant 57 Z = 4.409 from jig,apa-infoupd,1284925340
+HH57,A, ,apa-infoupd,1284925342
+HH69,A,Feed heights: Ant 69 Z =4.412 from jig,infoupd,1284925338
+HH70,A,Feed heights: Ant 70 Z = 4.409 from jig,infoupd,1284925338
+HH71,A,Feed heights: Ant 71 Z = 4.410 from jig,infoupd,1284925338
+HH72,A,Feed heights: Ant 72 Z = 4.413 from jig,infoupd,1284925338
