@@ -1,0 +1,12 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200917_infoupd_1742" >> scripts.log 
+update_apriori.py -p HH58 -s RF_ok --date 2020/09/17 --time 17:42
+add_part_info.py -p HH58 -r A -c '17 sept post-PAM spectre look fine ' -l "apa-infoupd" --date 2020/09/17 --time 17:42:00
+add_part_info.py -p HH58 -r A -c '17 sept post-PAM spectre look fine' -l "apa-infoupd" --date 2020/09/17 --time 17:42:02
+add_part_info.py -p HH60 -r A -c 'post-PAM spectre look fine 17 sept' -l "infoupd" --date 2020/09/17 --time 17:42:00
+add_part_info.py -p HH60 -r A -c 'post-PAM spectre look fine 17 sept' -l "infoupd" --date 2020/09/17 --time 17:42:02
+add_part_info.py -p HH74 -r A -c '74E and N look dead 17 sept in post-PAM spectre' -l "infoupd" --date 2020/09/17 --time 17:42:00
+add_part_info.py -p HH74 -r A -c '74E and N look dead 17 sept in post-PAM spectre' -l "infoupd" --date 2020/09/17 --time 17:42:02
+add_part_info.py -p HH75 -r A -c 'sbcd 17 Sept due to low N post-PAM spectra ' -l "infoupd" --date 2020/09/17 --time 17:42:00
+add_part_info.py -p HH75 -r A -c 'sbcd 17 Sept due to low N post-PAM spectra ' -l "infoupd" --date 2020/09/17 --time 17:42:02

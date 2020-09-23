@@ -1,0 +1,29 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200923_infoupd_1942" >> scripts.log 
+update_apriori.py -p HH50 -s RF_ok --date 2020/09/23 --time 19:42
+update_apriori.py -p HH51 -s digital_ok --date 2020/09/23 --time 19:42
+update_apriori.py -p HH52 -s RF_ok --date 2020/09/23 --time 19:42
+update_apriori.py -p HH53 -s digital_ok --date 2020/09/23 --time 19:42
+update_apriori.py -p HH57 -s RF_ok --date 2020/09/23 --time 19:42
+update_apriori.py -p HH68 -s digital_ok --date 2020/09/23 --time 19:42
+add_part_info.py -p HH50 -r A -c '59116 SNAP spect look fine. Moving from rf_maint to rf_ok' -l "apa-infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH51 -r A -c '59116 SNAP spectra look fine. Returning to dig_ok' -l "apa-infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH51 -r A -c ' ' -l "apa-infoupd" --date 2020/09/23 --time 19:42:02
+add_part_info.py -p HH52 -r A -c '59116 SNAP spect look fine. Moving from rf_maint to rf_ok' -l "apa-infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH53 -r A -c '59116 SNAP spectra look fine. Returning to dig_ok' -l "apa-infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH53 -r A -c ' ' -l "apa-infoupd" --date 2020/09/23 --time 19:42:02
+add_part_info.py -p HH68 -r A -c '59116 SNAP spectra look fine. Returning to dig_ok' -l "apa-infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH40 -r A -c 'Feed heights: Ant 40 Z= 4.410 from jig' -l "infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH41 -r A -c 'Feed heights: Ant 41 Z = 4.418 from jig' -l "infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH42 -r A -c 'Feed heights: Ant 42 Z= 4.406 from jig' -l "infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH54 -r A -c 'Feed heights: Ant 54 Z = 4.415 from jig' -l "infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH55 -r A -c 'Feed heights: Ant 55 Z = 4.413 from jig' -l "infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH56 -r A -c 'Feed heights: Ant 56 Z= 4.407 from jig' -l "infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH57 -r A -c 'Node was xyz positioned 23 Sept; A57 moved from  rf_maint to rf_ok' -l "apa-infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH57 -r A -c 'Feed heights: Ant 57 Z = 4.409 from jig' -l "apa-infoupd" --date 2020/09/23 --time 19:42:02
+add_part_info.py -p HH57 -r A -c ' ' -l "apa-infoupd" --date 2020/09/23 --time 19:42:04
+add_part_info.py -p HH69 -r A -c 'Feed heights: Ant 69 Z =4.412 from jig' -l "infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH70 -r A -c 'Feed heights: Ant 70 Z = 4.409 from jig' -l "infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH71 -r A -c 'Feed heights: Ant 71 Z = 4.410 from jig' -l "infoupd" --date 2020/09/23 --time 19:42:00
+add_part_info.py -p HH72 -r A -c 'Feed heights: Ant 72 Z = 4.413 from jig' -l "infoupd" --date 2020/09/23 --time 19:42:00

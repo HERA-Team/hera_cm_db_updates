@@ -1,0 +1,476 @@
+HH  54    01/09  20:42  No final spectra as of 8Jan2020
+HH  55    01/09  20:42  No final spectra as of 8Jan2020
+HH  69    01/09  20:42  No final spectra as of 8Jan2020
+HH  70    01/09  20:42  No final spectra as of 8Jan2020
+HH  71    01/09  20:42  No final spectra as of 8Jan2020
+HH  72    01/09  20:42  No final spectra as of 8Jan2020
+HH  44    01/09  20:42  No final spectra as of 8Jan2020
+HH  45    01/09  20:42  No final spectra as of 8Jan2020
+HH  46    01/09  20:42  No final spectra as of 8Jan2020
+HH  58    01/09  20:42  No final spectra as of 8Jan2020
+HH  59    01/09  20:42  No final spectra as of 8Jan2020
+HH  60    01/09  20:42  No final spectra as of 8Jan2020
+HH  73    01/09  20:42  No final spectra as of 8Jan2020
+HH  74    01/09  20:42  No final spectra as of 8Jan2020
+HH  75    01/09  20:42  No final spectra as of 8Jan2020
+HH   2    01/27  20:53  History: FEM: 17 | PAM: 23
+HH  11    01/27  20:53  History: FEM: 19 | PAM: 25
+HH  12    01/27  20:53  History: FEM: 20 | PAM: 26
+HH  14    01/27  20:53  History: FEM: 28
+HH  24    01/27  20:53  History: PAM: 24
+HH  25    01/27  20:53  History: FEM: 31
+HH  26    01/27  20:53  History: PAM: 26
+HH  39    01/27  20:53  History: PAM: 27
+HH  99    01/27  20:53  History: FEM: 14
+HH  99    01/27  20:53  History: FEM: 14
+HH  86    01/27  20:53  Cat7 cable connection is questionable
+HH  87    01/27  20:53  One tension is frayed
+HH 101    01/27  20:53  History: FEM: 58
+HH 101    01/27  20:53  Cat7 cable connection is questionable
+HH 101    01/27  20:53  History: FEM: 58
+HH 101    01/27  20:53  Not raised - waiting on pulldown rope
+HH 102    01/27  20:53  Not raised - waiting on pulldown rope
+HH 103    01/27  20:53  History: FEM: 60
+HH 103    01/27  20:53  History: FEM: 60
+HH 120    01/27  20:53  Not raised - waiting on pulldown rope
+HH  89    01/27  20:53  History: PAM: 43
+HH 124    01/27  20:53  History: PAM: 42
+HH 139    01/31  08:42  SMA and CAT7 cables too short to connect feed to node
+HH 139    01/31  08:42  SMA and CAT7 cables too short to connect feed to node
+HH 159    01/31  08:42  SMA and CAT7 cables too short to connect feed to node
+HH 159    01/31  08:42  SMA and CAT7 cables too short to connect feed to node
+HH 146    01/31  08:42  SMA and CAT7 cables too short, won't connect feed to node.
+HH 110    02/05  14:42  Was seen as not raised 29 Jan 2020
+HH 110    02/05  14:42  Was seen as not raised 29 Jan 2021
+HH 127    02/05  14:42  Was seen as not raised 29 Jan 2021
+HH 127    02/05  14:42  Was seen as not raised 29 Jan 2022
+HH  24    02/06  20:42  No central line for this feed
+HH  24    02/06  20:42  No central line for this feed
+HH  65    02/06  20:42  65E looks dead
+HH  42    02/06  20:42  43E looks dead
+HH  55    02/06  20:42  55N looks dead
+HH  57    02/06  20:42  central line is detached
+HH  57    02/06  20:42  central line is detached
+HH  71    02/06  20:42  71E looks very atypical
+HH  74    02/06  20:42  74E and N look dead
+HH  74    02/06  20:42  74E and N look dead
+HH 127    02/07  17:42  Was seen as not raised 29 Jan 2020
+HH 127    02/07  17:42  Was seen as not raised 29 Jan 2020
+HH 128    02/07  17:42  Central line too loose to be RF OK, door mesh in dish; 'nicest dish' candidate; spectra look great
+HH 128    02/07  17:42  Central line too loose to be RF OK, door mesh in dish; 'nicest dish' candidate; spectra look great
+HH 129    02/07  17:42  129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity
+HH 129    02/07  17:42  129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity
+HH 130    02/07  17:42  Central line too loose to be RF OK, door mesh in dish
+HH 130    02/07  17:42  Central line too loose to be RF OK, door mesh in dish
+HH 177    02/07  17:42  Preliminary specrta looks fine
+HH 177    02/07  17:42  Preliminary specrta looks fine
+HH 178    02/07  17:42  Preliminary specrta looks fine
+HH 178    02/07  17:42  Preliminary specrta looks fine
+HH 179    02/07  17:42  Preliminary specrta looks fine
+HH 179    02/07  17:42  Preliminary specrta looks fine
+HH 135    02/07  17:42  Preliminary specrta looks fine
+HH 135    02/07  17:42  Preliminary specrta looks fine
+HH 136    02/07  17:42  Preliminary specrta looks fine
+HH 136    02/07  17:42  Preliminary specrta looks fine
+HH 155    02/07  17:42  Preliminary specrta looks fine
+HH 155    02/07  17:42  Preliminary specrta looks fine
+HH 156    02/07  17:42  Preliminary specrta looks fine
+HH 156    02/07  17:42  Preliminary specrta looks fine
+HH 157    02/07  17:42  Preliminary specrta looks fine
+HH 157    02/07  17:42  Preliminary specrta looks fine
+HH 158    02/07  17:42  Preliminary specrta looks fine
+HH 158    02/07  17:42  Preliminary specrta looks fine
+HH 140    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 140    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 141    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 141    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 142    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 142    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 160    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 160    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 161    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 161    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 162    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 162    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 180    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 180    02/07  17:42  Preliminary post-PAM spectra is very low amplitude but not dead
+HH 181    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 181    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 182    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 182    02/07  17:42  Preliminary post-PAM spectra looks fine
+HH 183    02/07  17:42  Preliminary post-PAM spectra shows 183 N, E dead
+HH 183    02/07  17:42  Preliminary post-PAM spectra shows 183 N, E dead
+HH 116    02/07  17:42  Post-PAM spectra of 116E has a strange look.
+HH  85    02/07  17:42  Feed down as of 31 Jan 2020
+HH  85    02/07  17:42  Feed down as of 31 Jan 2020
+HH 101    02/07  17:42  101E and N look dead from post-PAM spectra taken the last week of Jan 2020
+HH 101    02/07  17:42  101E and N look dead from post-PAM spectra taken the last week of Jan 2020
+HH 102    02/07  17:42   
+HH 104    02/07  17:42  Feed down as of 31 Jan 2020
+HH 104    02/07  17:42  Feed down as of 31 Jan 2020
+HH 120    02/07  17:42   
+HH 122    02/07  17:42  Feed down as of 31 Jan 2020
+HH 122    02/07  17:42  Feed down as of 31 Jan 2020
+HH 106    02/07  17:42  Late Jan 2020 post-PAM spectra show N pol about half the amplitude of E pol. 31Jan2020 Measured center of feed as differing from center of hub by 2-3 cm. Z= [ 4.424 4.423] from hub (spec is 4.428-4.448)
+HH 106    02/07  17:42  Late Jan 2020 post-PAM spectra show N pol about half the amplitude of E pol. 31Jan2020 Measured center of feed as differing from center of hub by 2-3 cm. Z= [ 4.424 4.423] from hub (spec is 4.428-4.448)
+HH 183    02/07  20:42  Preliminary post-PAM spectra looks fine
+HH 183    02/07  20:42  Preliminary post-PAM spectra looks fine
+HH 177    02/11  09:42  Feed heights (NE/SE/SW/NW): Z distance = 4.410
+HH 179    02/11  09:42  Feed heights (NE/SE/SW/NW): Z distance = 4.412
+HH 135    02/11  09:42  Feed heights (NE/SE/SW/NW): Z distance = 4.412
+HH 155    02/11  09:42  Feed heights (NE/SE/SW/NW): Z distance =4.407
+HH 156    02/11  09:42  Feed heights (NE/SE/SW/NW): Z distance = 4.407
+HH 157    02/11  09:42  Feed heights (NE/SE/SW/NW): z distance = 4.415
+HH 136    02/11  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.411
+HH 135    02/11  14:42  Final specrta looks fine
+HH 135    02/11  14:42  Final specrta looks fine
+HH 136    02/11  14:42  Final specrta looks fine
+HH 136    02/11  14:42  Final specrta looks fine
+HH 155    02/11  14:42  Final specrta looks fine
+HH 155    02/11  14:42  Final specrta looks fine
+HH 156    02/11  14:42  Strange bumps in final spectra for 156E - will ask for a check
+HH 156    02/11  14:42  Final spectre looks fine
+HH 157    02/11  14:42  Final spectre looks fine
+HH 157    02/11  14:42  Final spectre looks fine
+HH 158    02/11  14:42  Final spectre looks fine
+HH 158    02/11  14:42  Feed heights (NE/SE/SW/NW): z distance = 4.411
+HH 158    02/11  14:42  Final spectre looks fine
+HH 177    02/11  14:42  Final spectra looks fine
+HH 177    02/11  14:42  Final spectra looks fine
+HH 179    02/11  14:42  Final spectre looks fine
+HH 179    02/11  14:42  Final spectre looks fine
+HH 109    02/12  20:42  Door is open
+HH 178    02/12  20:42  No final check spectra - Preliminary specrta looks fine
+HH 178    02/12  20:42  No final check spectra - Preliminary specrta looks fine
+HH  66    02/12  20:42  loose central line
+HH  86    02/12  20:42  loose central line
+HH  87    02/12  20:42  loose central line
+HH 103    02/12  20:42  loose central line
+HH 121    02/12  20:42  loose central line
+HH 123    02/12  20:42  loose central line
+HH 160    02/14  09:42  Feed heights (NE/SE/SW/NW): Z diztance = 4.413
+HH 161    02/14  09:42  Feed heights (NE/SE/SW/NW): Z dstance = 4.412
+HH 162    02/14  09:42  Feed heights (NE/SE/SW/NW): Z distance = 4.411
+HH 181    02/14  09:42  Feed heights (NE/SE/SW/NW): Z distance = 4.410
+HH 182    02/14  09:42  Feed heights (NE/SE/SW/NW): Z distance =4.415
+HH 160    02/14  14:42  Final post-PAM spectra looks fine
+HH 160    02/14  14:42  Final post-PAM spectra looks fine
+HH 161    02/14  14:42  Final check for 161N has an unexpected dip @ ~70 MHz
+HH 161    02/14  14:42  Final post-PAM spectra looks fine
+HH 162    02/14  14:42  Final post-PAM spectra looks fine
+HH 162    02/14  14:42  Final post-PAM spectra looks fine
+HH 181    02/14  14:42  Final post-PAM spectra looks fine
+HH 181    02/14  14:42  Final post-PAM spectra looks fine
+HH 182    02/14  14:42  Final post-PAM spectra looks fine
+HH 182    02/14  14:42  Final post-PAM spectra looks fine
+HH 156    02/16  16:42  re-take of final spectra for 156E looks fine. Ticket #463
+HH  92    02/18  09:42  Feed heights (NE/SE/SW/NW): Z distance =4.404
+HH  93    02/18  09:42  Feed heights (NE/SE/SW/NW): Z distance =4.410
+HH  94    02/18  09:42  Feed heights (NE/SE/SW/NW): Z distance = 4.397
+HH 109    02/18  09:42  Feed heights (NE/SE/SW/NW): Z distance = 4.406
+HH 110    02/18  09:42  Feed heights (NE/SE/SW/NW): Z distance = 4.414
+HH 111    02/18  09:42  Feed heights (NE/SE/SW/NW): Z disstance = 4.414
+HH 112    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.404
+HH 128    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance =4.400
+HH 129    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.402
+HH 130    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.400
+HH 176    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.413
+HH 178    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.407
+HH 140    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance =4.411
+HH 141    02/18  10:42  History: FEM 164 replaced with 156
+HH 141    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.411
+HH 142    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.408
+HH  65    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.397
+HH  66    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.403
+HH  67    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.408
+HH  68    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.397
+HH  37    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.404
+HH  38    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance =4.398
+HH  53    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.406
+HH  51    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.398
+HH  52    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.408
+HH  36    02/18  10:42  Feed heights (NE/SE/SW/NW): Z distance = 4.404
+HH  84    02/23  13:42  Z= 4.406
+HH  85    02/23  13:42  Z = 4.407
+HH  86    02/23  14:42  z = 4.414
+HH 103    02/23  14:42  Z = 4.409
+HH 104    02/23  14:42  Z = 4.409
+HH 104    02/23  14:42   
+HH 120    02/23  14:42  Z = 4.411
+HH 122    02/23  14:42  Z = 4.414
+HH 122    02/23  14:42   
+HH   2    02/29  07:42  Replaced SNAP (C57->C72). ADC is likely working now.
+HH  88    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH  88    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH  89    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH  89    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH  90    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH  90    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH  91    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH  91    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 105    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 105    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 106    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 106    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 107    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 107    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 108    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 108    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 124    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 124    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 125    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 125    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 126    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 126    03/03  19:42  Boom reports feed as lowered 03Mar2020
+HH 101    03/10  17:42  History: FEM: 58 until 10Mar2020, thence 153
+HH 101    03/10  17:42  10Mar2020 z = 4.406 
+HH 101    03/10  17:42  History: FEM: 58 until 10Mar2020, thence 154
+HH 101    03/10  17:42  10Mar2020 z = 4.406; despite changed FEM amplitude of spectre looks small
+HH 102    03/10  17:42  History: FEM: 59 until 10Mar2020, thence 153
+HH 102    03/10  17:42  10Mar2020 z = 4.409 
+HH 102    03/10  17:42  History: FEM: 59 until 10Mar2020, thence 154
+HH 102    03/10  17:42  10Mar2020 z = 4.409 
+HH  89    03/10  17:42  10Mar2020 z = 4.409
+HH  89    03/10  17:42  10Mar2020 z = 4.409
+HH  90    03/10  17:42  10Mar 2020 Z = 4.400
+HH  90    03/10  17:42  10Mar 2020 Z = 4.400
+HH 106    03/10  17:42  10Mar2020 z = 4.414
+HH 106    03/10  17:42  10Mar2020 z = 4.414
+HH 107    03/10  17:42  10Mar2020 z = 4.407
+HH 107    03/10  17:42  10Mar2020 z = 4.407
+HH 108    03/10  17:42  10Mar2020 z = 4.403
+HH 108    03/10  17:42  10Mar2020 z = 4.403
+HH 125    03/10  17:42  10Mar2020 z = 4.405
+HH 125    03/10  17:42  10Mar2020 z = 4.405
+HH  88    03/11  12:42  11 March 2020 Z= 4.400
+HH  88    03/11  12:42  11 March 2020 Z= 4.400
+HH  91    03/11  12:42  11 March 2020 Z=4.411
+HH  91    03/11  12:42  11 March 2020 Z=4.411
+HH 105    03/11  12:42  11 March 2020 Z=4.407
+HH 105    03/11  12:42  11 March 2020 Z=4.407
+HH 124    03/11  12:42  11 March 2020 Z= 4.412
+HH 124    03/11  12:42  11 March 2020 Z= 4.412
+HH 126    03/11  12:42  11 March 2020 Z= 4.405
+HH 126    03/11  12:42  11 March 2020 Z= 4.405
+HH 143    03/14  06:42  Feed Heights: Z = 4.404
+HH 144    03/14  06:42  Feed Heights: Z = 4.410
+HH 145    03/14  06:42  Feed Heights: Z = 4.405
+HH 163    03/14  06:42  Feed Heights: Z = 4.410
+HH 164    03/14  06:42  Feed Heights: Z = 4.400
+HH 165    03/14  06:42  Feed Heights: Z = 4.401
+HH 185    03/14  06:42  Feed Heights: Z = 4.410
+HH  58    03/16  19:42  `
+HH  58    03/16  20:42  `
+HH  58    03/16  21:42  `
+HH  58    03/16  22:42  `
+HH  58    03/16  23:42  `
+HH  58    03/17  00:42  `
+HH  58    03/17  01:42  `
+HH  58    03/17  02:42  `
+HH  58    03/17  03:42  `
+HH  58    03/17  04:42  `
+HH  58    03/17  05:42  `
+HH 141    03/17  08:42  lz
+HH 141    03/17  08:42  -*
+HH 141    03/17  09:42  -*
+HH 141    03/17  10:42  -*
+HH 141    03/17  11:42  -*
+HH 141    03/17  12:42  -*
+HH 141    03/17  13:42  -*
+HH 141    03/17  14:42  -*
+HH 141    03/17  15:42  -*
+HH 186    03/18  13:42  infoupd
+HH 187    03/18  13:42  infoupd
+HH 109    07/22  09:42  infoupd
+HH 110    07/22  09:42  infoupd
+HH 110    07/22  09:42  infoupd
+HH 127    07/22  09:42  infoupd
+HH 127    07/22  09:42  infoupd
+HH 130    07/22  09:42  infoupd
+HH 130    07/22  09:42  infoupd
+HH  76    07/25  01:42  infoupd
+HH  76    07/25  01:42  infoupd
+HH   2    07/26  09:42  infoupd
+HH  11    07/26  09:42  infoupd
+HH  12    07/26  09:42  infoupd
+HH  14    07/26  09:42  infoupd
+HH  24    07/26  09:42  infoupd
+HH  25    07/26  09:42  infoupd
+HH  26    07/26  09:42  infoupd
+HH  39    07/26  09:42  infoupd
+HH  87    07/26  09:42  infoupd
+HH 103    07/26  09:42  infoupd
+HH 103    07/26  09:42  infoupd
+HH  89    07/26  09:42  infoupd
+HH 124    07/26  09:42  infoupd
+HH 139    07/29  10:42  infoupd
+HH 139    07/29  10:42  infoupd
+HH 159    07/29  10:42  infoupd
+HH 159    07/29  10:42  infoupd
+HH 146    07/29  18:42  infoupd
+HH  24    08/04  22:42  infoupd
+HH  24    08/04  22:42  infoupd
+HH  65    08/04  22:42  infoupd
+HH  42    08/04  22:42  infoupd
+HH  55    08/04  22:42  infoupd
+HH  57    08/04  22:42  infoupd
+HH  57    08/04  22:42  infoupd
+HH  71    08/04  22:42  infoupd
+HH  74    08/04  22:42  infoupd
+HH  74    08/04  22:42  infoupd
+HH 129    08/05  19:42  infoupd
+HH 129    08/05  19:42  infoupd
+HH 140    08/05  19:42  infoupd
+HH 140    08/05  19:42  infoupd
+HH 142    08/05  19:42  infoupd
+HH 142    08/05  19:42  infoupd
+HH 180    08/05  19:42  infoupd
+HH 180    08/05  19:42  infoupd
+HH 116    08/05  19:42  infoupd
+HH  85    08/05  20:42  infoupd
+HH 183    08/05  22:42  infoupd
+HH 183    08/05  22:42  infoupd
+HH 128    08/05  23:42  infoupd
+HH 128    08/05  23:42  infoupd
+HH 135    08/09  11:42  infoupd
+HH 155    08/09  11:42  infoupd
+HH 156    08/09  11:42  infoupd
+HH 157    08/09  11:42  infoupd
+HH 177    08/09  11:42  infoupd
+HH 179    08/09  11:42  infoupd
+HH 135    08/09  16:42  infoupd
+HH 135    08/09  16:42  infoupd
+HH 136    08/09  16:42  infoupd
+HH 136    08/09  16:42  infoupd
+HH 155    08/09  16:42  infoupd
+HH 155    08/09  16:42  infoupd
+HH 156    08/09  16:42  infoupd
+HH 157    08/09  16:42  infoupd
+HH 157    08/09  16:42  infoupd
+HH 158    08/09  16:42  infoupd
+HH 158    08/09  16:42  infoupd
+HH 158    08/09  16:42  infoupd
+HH 177    08/09  16:42  infoupd
+HH 177    08/09  16:42  infoupd
+HH   0    08/09  20:42  infoupd
+HH   0    08/09  20:42  infoupd
+HH   2    08/09  20:42  infoupd
+HH   2    08/09  20:42  infoupd
+HH   1    08/09  20:42  infoupd
+HH   1    08/09  20:42  infoupd
+HH  12    08/09  20:42  infoupd
+HH  12    08/09  20:42  infoupd
+HH  13    08/09  20:42  infoupd
+HH  13    08/09  20:42  infoupd
+HH  14    08/09  20:42  infoupd
+HH  14    08/09  20:42  infoupd
+HH  23    08/09  20:42  infoupd
+HH  23    08/09  20:42  infoupd
+HH  25    08/09  20:42  infoupd
+HH  25    08/09  20:42  infoupd
+HH  26    08/09  20:42  infoupd
+HH  26    08/09  20:42  infoupd
+HH  39    08/09  20:42  infoupd
+HH  39    08/09  20:42  infoupd
+HH  67    08/09  20:42  infoupd
+HH  67    08/09  20:42  infoupd
+HH  68    08/09  20:42  infoupd
+HH  68    08/09  20:42  infoupd
+HH  37    08/09  20:42  infoupd
+HH  37    08/09  20:42  infoupd
+HH  38    08/09  20:42  infoupd
+HH  38    08/09  20:42  infoupd
+HH  53    08/09  20:42  infoupd
+HH  53    08/09  20:42  infoupd
+HH  51    08/09  20:42  infoupd
+HH  51    08/09  20:42  infoupd
+HH  36    08/09  20:42  infoupd
+HH  36    08/09  20:42  infoupd
+HH  40    08/09  20:42  infoupd
+HH  41    08/09  20:42  infoupd
+HH  41    08/09  20:42  infoupd
+HH  56    08/09  20:42  infoupd
+HH  56    08/09  20:42  infoupd
+HH  69    08/09  20:42  infoupd
+HH  69    08/09  20:42  infoupd
+HH  70    08/09  20:42  infoupd
+HH  70    08/09  20:42  infoupd
+HH  43    08/09  20:42  infoupd
+HH  43    08/09  20:42  infoupd
+HH  44    08/09  20:42  infoupd
+HH  44    08/09  20:42  infoupd
+HH  45    08/09  20:42  infoupd
+HH  45    08/09  20:42  infoupd
+HH  46    08/09  20:42  infoupd
+HH  46    08/09  20:42  infoupd
+HH  58    08/09  20:42  infoupd
+HH  58    08/09  20:42  infoupd
+HH  59    08/09  20:42  infoupd
+HH  59    08/09  20:42  infoupd
+HH  60    08/09  20:42  infoupd
+HH  60    08/09  20:42  infoupd
+HH  73    08/09  20:42  infoupd
+HH  73    08/09  20:42  infoupd
+HH  75    08/09  20:42  infoupd
+HH  75    08/09  20:42  infoupd
+HH  81    08/09  20:42  infoupd
+HH  81    08/09  20:42  infoupd
+HH  82    08/09  20:42  infoupd
+HH  82    08/09  20:42  infoupd
+HH  83    08/09  20:42  infoupd
+HH  83    08/09  20:42  infoupd
+HH 100    08/09  20:42  infoupd
+HH 100    08/09  20:42  infoupd
+HH 119    08/09  20:42  infoupd
+HH 119    08/09  20:42  infoupd
+HH  98    08/09  20:42  infoupd
+HH  98    08/09  20:42  infoupd
+HH  99    08/09  20:42  infoupd
+HH  99    08/09  20:42  infoupd
+HH 117    08/09  20:42  infoupd
+HH 117    08/09  20:42  infoupd
+HH 118    08/09  20:42  infoupd
+HH 118    08/09  20:42  infoupd
+HH  85    08/09  20:42  infoupd
+HH  85    08/09  20:42  infoupd
+HH 101    08/09  20:42  infoupd
+HH 101    08/09  20:42  infoupd
+HH 102    08/09  20:42  infoupd
+HH 102    08/09  20:42  infoupd
+HH 103    08/09  20:42  infoupd
+HH 103    08/09  20:42  infoupd
+HH 104    08/09  20:42  infoupd
+HH 104    08/09  20:42  infoupd
+HH 122    08/09  20:42  infoupd
+HH 122    08/09  20:42  infoupd
+HH  92    08/09  21:42  infoupd
+HH  92    08/09  21:42  infoupd
+HH  93    08/09  21:42  infoupd
+HH  93    08/09  21:42  infoupd
+HH  94    08/09  21:42  infoupd
+HH  94    08/09  21:42  infoupd
+HH 110    08/09  21:42  infoupd
+HH 110    08/09  21:42  infoupd
+HH 111    08/09  21:42  infoupd
+HH 111    08/09  21:42  infoupd
+HH 112    08/09  21:42  infoupd
+HH 112    08/09  21:42  infoupd
+HH 135    08/09  21:42  infoupd
+HH 135    08/09  21:42  infoupd
+HH 136    08/09  21:42  infoupd
+HH 136    08/09  21:42  infoupd
+HH 155    08/09  21:42  infoupd
+HH 155    08/09  21:42  infoupd
+HH 156    08/09  21:42  infoupd
+HH 157    08/09  21:42  infoupd
+HH 157    08/09  21:42  infoupd
+HH 158    08/09  21:42  infoupd
+HH 158    08/09  21:42  infoupd
+HH 177    08/09  21:42  infoupd
+HH 177    08/09  21:42  infoupd
+HH 178    08/10  22:42  infoupd
+HH 178    08/10  22:42  infoupd
+HH  66    08/10  22:42  infoupd
+HH  87    08/10  22:42  infoupd
+HH 121    08/10  22:42  infoupd
+HH 123    08/10  22:42  infoupd
