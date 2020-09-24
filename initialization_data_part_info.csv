@@ -2144,3 +2144,8 @@ HH67,A, ,apa-infoupd,1285018940
 HH84,A, ,apa-infoupd,1285018940
 HH86,A, ,apa-infoupd,1285018940
 HH89,A, ,apa-infoupd,1285018940
+HH89,A,N9A89 has unexpected bumps and wiggles in both pols. Moving from dig_ok to rf_maint. 24 Sept.,apa-infoupd,1285022298
+HH136,A,N12A136 N has unexpected wiggles low in the bandpass. Moving from RF_ok to RF_maint. 24 Sept.,infoupd,1285022538
+HH67,A,N3A67 N is low amplitude. moving from dig_maint to rf_maint. 24 Sept. ,infoupd,1285022538
+HH84,A,N8A84 E is low amplitude. Moving from RF_ok to RF_maint. 24 Sept. ,infoupd,1285022538
+HH86,A,N8A86 N shows unexpected bump around 200 MHz. Moving from RF_ok to RF_maint. 24 Sept. ,infoupd,1285022538
