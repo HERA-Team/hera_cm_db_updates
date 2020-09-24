@@ -44,9 +44,9 @@ class UpdateInfo(upd_base.Update):
                 self.new_apriori[key] = "{} -> {}".format(E, self.active.apriori[key].status)
                 if self.verbose:
                     print("Updating {}   {}".format(E, self.active.apriori[key].status))
-                self.hera.update_apriori(ant, E, self.cdate, self.ctime)
+                self.hera.update_apriori(ant, E, self.cdate2, self.ctime2)
                 statement = "{} {} -> {}".format(stmt_hdr, self.active.apriori[key].status, E)
-                self.hera.add_part_info(ant, rev, statement, self.cdate, self.ctime, ref=refout)
+                self.hera.add_part_info(ant, rev, statement, self.cdate2, self.ctime2, ref=refout)
                 self.update_counter += 1
 
     def add_sheet_notes(self, duplication_window=90.0, view_duplicate=0.0):
