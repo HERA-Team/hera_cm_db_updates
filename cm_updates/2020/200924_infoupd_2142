@@ -1,0 +1,27 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200924_infoupd_2142" >> scripts.log 
+update_apriori.py -p HH67 -s RF_maintenance --date 2020/09/24 --time 21:42
+add_part_info.py -p HH67 -r A -c 'apriori_antenna status change: digital_maintenance -> RF_maintenance' -l "apa-infoupd" --date 2020/09/24 --time 21:42
+update_apriori.py -p HH84 -s RF_maintenance --date 2020/09/24 --time 21:42
+add_part_info.py -p HH84 -r A -c 'apriori_antenna status change: RF_ok -> RF_maintenance' -l "apa-infoupd" --date 2020/09/24 --time 21:42
+update_apriori.py -p HH86 -s RF_maintenance --date 2020/09/24 --time 21:42
+add_part_info.py -p HH86 -r A -c 'apriori_antenna status change: RF_ok -> RF_maintenance' -l "apa-infoupd" --date 2020/09/24 --time 21:42
+update_apriori.py -p HH89 -s RF_maintenance --date 2020/09/24 --time 21:42
+add_part_info.py -p HH89 -r A -c 'apriori_antenna status change: digital_ok -> RF_maintenance' -l "apa-infoupd" --date 2020/09/24 --time 21:42
+update_apriori.py -p HH136 -s RF_maintenance --date 2020/09/24 --time 21:42
+add_part_info.py -p HH136 -r A -c 'apriori_antenna status change: RF_ok -> RF_maintenance' -l "apa-infoupd" --date 2020/09/24 --time 21:42
+add_part_info.py -p HH136 -r A -c 'N12A136 N has unexpected wiggles low in the bandpass. Moving from RF_ok to RF_maint. 24 Sept.' -l "apa-infoupd" --date 2020/09/24 --time 21:42:00
+add_part_info.py -p HH136 -r A -c ' ' -l "apa-infoupd" --date 2020/09/24 --time 21:42:02
+add_part_info.py -p HH37 -r A -c 'post-PAM spectra of 18 Sept show nice E spectra; N looks PAM alive, not seeing sky' -l "infoupd" --date 2020/09/24 --time 21:42:00
+add_part_info.py -p HH37 -r A -c ' ' -l "infoupd" --date 2020/09/24 --time 21:42:02
+add_part_info.py -p HH38 -r A -c 'post-PAM spectra of 18 Sept show nice E spectra; N looks PAM alive not seeing sky' -l "infoupd" --date 2020/09/24 --time 21:42:00
+add_part_info.py -p HH38 -r A -c ' ' -l "infoupd" --date 2020/09/24 --time 21:42:02
+add_part_info.py -p HH67 -r A -c 'N3A67 N is low amplitude. moving from dig_maint to rf_maint. 24 Sept. ' -l "apa-infoupd" --date 2020/09/24 --time 21:42:00
+add_part_info.py -p HH67 -r A -c ' ' -l "apa-infoupd" --date 2020/09/24 --time 21:42:02
+add_part_info.py -p HH84 -r A -c 'N8A84 E is low amplitude. Moving from RF_ok to RF_maint. 24 Sept. ' -l "apa-infoupd" --date 2020/09/24 --time 21:42:00
+add_part_info.py -p HH84 -r A -c ' ' -l "apa-infoupd" --date 2020/09/24 --time 21:42:02
+add_part_info.py -p HH86 -r A -c 'N8A86 N shows unexpected bump around 200 MHz. Moving from RF_ok to RF_maint. 24 Sept. ' -l "apa-infoupd" --date 2020/09/24 --time 21:42:00
+add_part_info.py -p HH86 -r A -c ' ' -l "apa-infoupd" --date 2020/09/24 --time 21:42:02
+add_part_info.py -p HH89 -r A -c 'N9A89 has unexpected bumps and wiggles in both pols. Moving from dig_ok to rf_maint. 24 Sept.' -l "apa-infoupd" --date 2020/09/24 --time 21:42:00
+add_part_info.py -p HH89 -r A -c ' ' -l "apa-infoupd" --date 2020/09/24 --time 21:42:02
