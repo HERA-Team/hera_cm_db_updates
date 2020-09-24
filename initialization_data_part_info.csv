@@ -2130,3 +2130,17 @@ HH70,A,Feed heights: Ant 70 Z = 4.409 from jig,infoupd,1284925338
 HH71,A,Feed heights: Ant 71 Z = 4.410 from jig,infoupd,1284925338
 HH72,A,Feed heights: Ant 72 Z = 4.413 from jig,infoupd,1284925338
 HH123,A,SNAP autos look like no sky; moved from rf_ok to rf_maint,infoupd,1284943338
+HH67,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1285018938
+HH84,A,apriori_antenna status change: RF_ok -> RF_maintenance,apa-infoupd,1285018938
+HH86,A,apriori_antenna status change: RF_ok -> RF_maintenance,apa-infoupd,1285018938
+HH89,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1285018938
+HH136,A,apriori_antenna status change: RF_ok -> RF_maintenance,apa-infoupd,1285018938
+HH136,A, ,apa-infoupd,1285018940
+HH37,A,"post-PAM spectra of 18 Sept show nice E spectra; N looks PAM alive, not seeing sky",infoupd,1285018938
+HH37,A, ,infoupd,1285018940
+HH38,A,post-PAM spectra of 18 Sept show nice E spectra; N looks PAM alive not seeing sky,infoupd,1285018938
+HH38,A, ,infoupd,1285018940
+HH67,A, ,apa-infoupd,1285018940
+HH84,A, ,apa-infoupd,1285018940
+HH86,A, ,apa-infoupd,1285018940
+HH89,A, ,apa-infoupd,1285018940
