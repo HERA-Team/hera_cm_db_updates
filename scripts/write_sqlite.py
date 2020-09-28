@@ -4,7 +4,7 @@
 # Licensed under the 2-clause BSD license.
 
 """Update the sqlite db from the psql database."""
-from . import db_mgmt
+from hera_cm import db_mgmt
 
 hash_dict = db_mgmt.get_table_hash_info()
 
