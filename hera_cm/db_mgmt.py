@@ -3,6 +3,8 @@ Methods to check and update the database files for csv and sqlite
 """
 from hera_mc import mc, cm_table_info
 import os.path
+CM_CSV_PATH = mc.get_cm_csv_path(None)
+INIT_DATA_PREFIX = "initialization_data"
 
 use_later = cm_table_info.cm_tables  # but for now be safe...mainly about order and cm_version
 csv_init_table_list = ['apriori_antenna', 'connections', 'geo_location',
@@ -11,17 +13,31 @@ csv_init_table_list = ['apriori_antenna', 'connections', 'geo_location',
 
 psql_table_dump_list = ['apriori_antenna', 'cm_version', 'connections',
                         'geo_location', 'part_info', 'parts', 'station_type',
-                        'part_rosetta']
+                        'part_rosetta']  # what about cm_version?
 
 
-cm_table_hash_filename = 'cm_table_file_hash.txt'
+cm_table_hash_filename = 'cm_table_file_hash.csv'
 
 
-def check_table_hash_info(hash_dict, hash_filename=cm_table_hash_filename):
-    cm_csv_path = mc.get_cm_csv_path(None)
+def same_table_hash_info(hash_dict, hash_filename=cm_table_hash_filename):
+    """
+    Check that the current and previous table file hashes are the same.
+
+    Parameters
+    ----------
+    hash_dict : dict
+        current table hash information
+    hash_filename : str
+        file containing previous table hash information
+
+    Return
+    ------
+    bool
+        True if they are the same
+    """
     current_hash_dict = get_table_hash_info(table_list=csv_init_table_list)
     previous_hash_dict = {}
-    fnfp = os.path.join(cm_csv_path, hash_filename)
+    fnfp = os.path.join(CM_CSV_PATH, hash_filename)
     if not os.path.exists(fnfp):
         return False
     with open(fnfp, 'r') as fp:
@@ -39,29 +55,58 @@ def check_table_hash_info(hash_dict, hash_filename=cm_table_hash_filename):
 
 
 def get_table_hash_info(table_list=csv_init_table_list):
-    """Writes the hash of the csv data-files to cm_table_file_hash.csv"""
-    cm_csv_path = mc.get_cm_csv_path(None)
+    """
+    Compute the hash_dict for the data csv files.
+
+    Parameter
+    ---------
+    table_list : list
+        list of tables to use
+
+    Return
+    ------
+    dict
+        dictionary containing hash information
+    """
     hash_dict = {}
     for table in table_list:
-        fn = "initialization_{}.csv".format(table)
-        fnfp = os.path.join(cm_csv_path, fn)
+        fn = "{}_{}.csv".format(INIT_DATA_PREFIX, table)
+        fnfp = os.path.join(CM_CSV_PATH, fn)
         hash_dict[fn] = hash_file(fnfp)
     return hash_dict
 
 
-def write_table_hash_info(table_list=csv_init_table_list, hash_filename=cm_table_hash_filename):
-    """Writes the hash of the csv data-files to cm_table_file_hash.csv"""
-    cm_csv_path = mc.get_cm_csv_path(None)
-    with open(os.path.join(cm_csv_path, hash_filename), 'w') as fp:
-        for table in table_list:
-            fn = "initialization_{}.csv".format(table)
-            x = hash_file(fn)
-            print("{},{}".format(fn, x), file=fp)
+def write_table_hash_info(hash_dict, hash_filename=cm_table_hash_filename):
+    """
+    Write the hash of the csv data-files to hash_filename.
+
+    Parameters
+    ----------
+    hash_dict : dict
+        current table hash information
+    hash_filename : str
+        file containing previous table hash information
+    """
+    with open(os.path.join(CM_CSV_PATH, hash_filename), 'w') as fp:
+        for fn, hsh in hash_dict.items():
+            print("{},{}".format(fn, hsh), file=fp)
 
 
 def hash_file(filename):
+    """
+    This function returns the MD5 hash of the file passed into it.
+
+    Parameter
+    ---------
+    filename : str
+        filename to use to compute hash
+
+    Return
+    ------
+    str
+        string containing the hexdigest of the hash for the file
+    """
     import hashlib
-    """This function returns the MD5 hash of the file passed into it"""
     h = hashlib.md5()
     with open(filename, 'rb') as file:
         chunk = 0
@@ -72,8 +117,8 @@ def hash_file(filename):
 
 
 def update_sqlite(table_dump_list=psql_table_dump_list):
+    """Dump psql database to sqlite file."""
     import subprocess
-    cm_csv_path = mc.get_cm_csv_path(None)
 
     subprocess.call('pg_dump -s hera_mc > schema.sql', shell=True)
     dump = ('pg_dump --inserts --data-only hera_mc -t {} > inserts.sql'
@@ -105,8 +150,8 @@ def update_sqlite(table_dump_list=psql_table_dump_list):
             if 'INSERT' in modline:
                 inserts += modline
 
-    sqlfile = os.path.join(cm_csv_path, 'cm_hera.sql')
-    dbfile = os.path.join(cm_csv_path, 'hera_mc.db')
+    sqlfile = os.path.join(CM_CSV_PATH, 'cm_hera.sql')
+    dbfile = os.path.join(CM_CSV_PATH, 'hera_mc.db')
     with open(sqlfile, 'w') as f:
         f.write(schema)
         f.write(inserts)
