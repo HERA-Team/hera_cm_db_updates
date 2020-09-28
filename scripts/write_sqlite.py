@@ -10,3 +10,4 @@ hash_dict = db_mgmt.get_table_hash_info()
 
 if not db_mgmt.same_table_hash_info(hash_dict):
     db_mgmt.update_sqlite()
+    db_mgmt.write_table_hash_info(hash_dict)
