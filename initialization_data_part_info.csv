@@ -2149,3 +2149,13 @@ HH136,A,N12A136 N has unexpected wiggles low in the bandpass. Moving from RF_ok 
 HH67,A,N3A67 N is low amplitude. moving from dig_maint to rf_maint. 24 Sept. ,infoupd,1285022538
 HH84,A,N8A84 E is low amplitude. Moving from RF_ok to RF_maint. 24 Sept. ,infoupd,1285022538
 HH86,A,N8A86 N shows unexpected bump around 200 MHz. Moving from RF_ok to RF_maint. 24 Sept. ,infoupd,1285022538
+HH66,A,apriori_antenna status change: RF_maintenance -> RF_ok,apa-infoupd,1285353738
+HH87,A,apriori_antenna status change: RF_maintenance -> RF_ok,apa-infoupd,1285353738
+HH130,A,apriori_antenna status change: RF_maintenance -> RF_ok,apa-infoupd,1285353738
+HH24,A, ,infoupd,1285353738
+HH24,A,Feed Heights: Ant 24 Z= 4.415,infoupd,1285353740
+HH24,A, ,infoupd,1285353742
+HH130,A,Feed heights (NE/SE/SW/NW): Ant 130 Z= 4.409,apa-infoupd,1285353740
+HH130,A, ,apa-infoupd,1285353742
+HH66,A,Feed heights (NE/SE/SW/NW): Ant 66 Z= 4.402,apa-infoupd,1285353740
+HH66,A, ,apa-infoupd,1285353742
