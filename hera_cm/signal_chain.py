@@ -640,6 +640,8 @@ class Update:
         ref : str
               Reference note.
         """
+        if not len(note.strip()):
+            return
         if ref is None:
             ref = ''
         else:
