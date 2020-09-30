@@ -2162,3 +2162,24 @@ HH66,A, ,apa-infoupd,1285353742
 HH130,A,N10A130 xyz positoned and spectra looks fine 28 Sept.,infoupd,1285357338
 HH66,A,N3A66 xyz positioned and spectra looks very fine 28 Sept.,infoupd,1285357338
 HH87,A,N8A86 xyz positioned and SNAP spectra looks fine 28 Sept.,infoupd,1285357338
+HH0,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-infoupd,1285515738
+HH1,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-infoupd,1285515738
+HH11,A,apriori_antenna status change: RF_ok -> digital_maintenance,apa-infoupd,1285515738
+HH13,A,apriori_antenna status change: RF_ok -> digital_maintenance,apa-infoupd,1285515738
+HH14,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-infoupd,1285515738
+HH25,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-infoupd,1285515738
+HH26,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-infoupd,1285515738
+HH39,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-infoupd,1285515738
+HH45,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1285515738
+HH46,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH58,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH82,A,apriori_antenna status change: RF_ok -> RF_maintenance,apa-infoupd,1285515738
+HH83,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH87,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH88,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH90,A,apriori_antenna status change: RF_ok -> RF_maintenance,apa-infoupd,1285515738
+HH91,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH92,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH94,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH105,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH107,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
