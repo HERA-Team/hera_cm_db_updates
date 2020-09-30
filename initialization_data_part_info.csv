@@ -2183,3 +2183,81 @@ HH92,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
 HH94,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
 HH105,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
 HH107,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH108,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH109,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH111,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH112,A,apriori_antenna status change: RF_ok -> RF_maintenance,apa-infoupd,1285515738
+HH120,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH122,A,apriori_antenna status change: RF_ok -> digital_maintenance,apa-infoupd,1285515738
+HH124,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH127,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH128,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH129,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH130,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH135,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH140,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH141,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH143,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH144,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH145,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH156,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH157,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH162,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH163,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH164,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH165,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH166,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH176,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH177,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH178,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH179,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH181,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH183,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH185,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH186,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH187,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+HH0,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
+HH1,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
+HH11,A,placing in dig_maint from rf_ok 29 Sept. ,infoupd,1285519338
+HH13,A,placing in dig_maint from rf_ok 29 Sept. ,infoupd,1285519338
+HH14,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
+HH25,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
+HH26,A, reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
+HH39,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
+HH92,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH94,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH109,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH111,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH112,A,N10A112 E is out of family with others. Looks like 110N.29 Sept,infoupd,1285519338
+HH127,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH128,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH129,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH130,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH135,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH156,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH157,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH176,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH177,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH178,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH179,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH162,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH183,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH140,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH141,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH181,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH143,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH144,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH145,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH163,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH164,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH165,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH166,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH185,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH186,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH187,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH45,A,heranow auto shows rising power at high freqs. 29 Sept.,infoupd,1285519338
+HH46,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH58,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH82,A,SNAP auto looks fine 18 SeptN7A82 N auto too low in heranow. 29 Sept,infoupd,1285519338
+HH83,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+HH87,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
