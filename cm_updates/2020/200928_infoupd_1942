@@ -1,0 +1,6 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200928_infoupd_1942" >> scripts.log 
+add_part_info.py -p HH130 -r A -c 'N10A130 xyz positoned and spectra looks fine 28 Sept.' -l "infoupd" --date 2020/09/28 --time 19:42:00
+add_part_info.py -p HH66 -r A -c 'N3A66 xyz positioned and spectra looks very fine 28 Sept.' -l "infoupd" --date 2020/09/28 --time 19:42:00
+add_part_info.py -p HH87 -r A -c 'N8A86 xyz positioned and SNAP spectra looks fine 28 Sept.' -l "infoupd" --date 2020/09/28 --time 19:42:00

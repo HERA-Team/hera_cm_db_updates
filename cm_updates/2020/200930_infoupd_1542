@@ -1,0 +1,165 @@
+#! /bin/bash
+source ~/.bashrc
+echo "200930_infoupd_1542" >> scripts.log 
+update_apriori.py -p HH0 -s digital_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH0 -r A -c 'apriori_antenna status change: digital_ok -> digital_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH1 -s digital_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH1 -r A -c 'apriori_antenna status change: digital_ok -> digital_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH11 -s digital_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH11 -r A -c 'apriori_antenna status change: RF_ok -> digital_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH13 -s digital_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH13 -r A -c 'apriori_antenna status change: RF_ok -> digital_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH14 -s digital_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH14 -r A -c 'apriori_antenna status change: digital_ok -> digital_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH25 -s digital_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH25 -r A -c 'apriori_antenna status change: digital_ok -> digital_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH26 -s digital_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH26 -r A -c 'apriori_antenna status change: digital_ok -> digital_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH39 -s digital_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH39 -r A -c 'apriori_antenna status change: digital_ok -> digital_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH45 -s RF_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH45 -r A -c 'apriori_antenna status change: digital_ok -> RF_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH46 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH46 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH58 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH58 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH82 -s RF_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH82 -r A -c 'apriori_antenna status change: RF_ok -> RF_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH83 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH83 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH87 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH87 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH88 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH88 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH90 -s RF_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH90 -r A -c 'apriori_antenna status change: RF_ok -> RF_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH91 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH91 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH92 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH92 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH94 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH94 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH105 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH105 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH107 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH107 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH108 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH108 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH109 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH109 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH111 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH111 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH112 -s RF_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH112 -r A -c 'apriori_antenna status change: RF_ok -> RF_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH120 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH120 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH122 -s digital_maintenance --date 2020/09/30 --time 15:42
+add_part_info.py -p HH122 -r A -c 'apriori_antenna status change: RF_ok -> digital_maintenance' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH124 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH124 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH127 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH127 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH128 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH128 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH129 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH129 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH130 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH130 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH135 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH135 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH140 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH140 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH141 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH141 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH143 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH143 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH144 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH144 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH145 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH145 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH156 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH156 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH157 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH157 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH162 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH162 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH163 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH163 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH164 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH164 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH165 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH165 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH166 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH166 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH176 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH176 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH177 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH177 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH178 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH178 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH179 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH179 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH181 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH181 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH183 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH183 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH185 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH185 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH186 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH186 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+update_apriori.py -p HH187 -s digital_ok --date 2020/09/30 --time 15:42
+add_part_info.py -p HH187 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/09/30 --time 15:42
+add_part_info.py -p HH0 -r A -c 'reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH1 -r A -c 'reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH11 -r A -c 'placing in dig_maint from rf_ok 29 Sept. ' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH13 -r A -c 'placing in dig_maint from rf_ok 29 Sept. ' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH14 -r A -c 'reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH25 -r A -c 'reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH26 -r A -c ' reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH39 -r A -c 'reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH92 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH94 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH109 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH111 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH112 -r A -c 'N10A112 E is out of family with others. Looks like 110N.29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH127 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH128 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH129 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH130 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH135 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH156 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH157 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH176 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH177 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH178 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH179 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH162 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH183 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH140 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH141 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH181 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH143 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH144 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH145 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH163 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH164 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH165 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH166 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH185 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH186 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH187 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH45 -r A -c 'heranow auto shows rising power at high freqs. 29 Sept.' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH46 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH58 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH82 -r A -c 'SNAP auto looks fine 18 SeptN7A82 N auto too low in heranow. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH83 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH87 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH120 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH122 -r A -c 'N8A122 E heranow auto has unexpectedly small spikes in unexpected places. 29 Sept.' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH88 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH90 -r A -c 'N9A90 have unexpected bumps. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH91 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH105 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH107 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH108 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
+add_part_info.py -p HH124 -r A -c 'Moved from rk_ok to dig_ok based on heranow autos. 29 Sept' -l "apa-infoupd" --date 2020/09/30 --time 15:42:00
