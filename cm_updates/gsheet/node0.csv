@@ -1,26 +1,26 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
-0,E,1,16,1,22,C72,e2,0,digital_ok,,reported sync ok by dgorki Aug 7 
-0,N,1,16,1,22,C72,n0,0,digital_ok,,reported sync ok by dgorki Aug 7 
-2,E,8,40,2,48,C72,e6,0,RF_maintenance,FEM: 17 | PAM: 23,reported sync ok by dgorki Aug 7 
-2,N,8,40,2,48,C72,n4,0,RF_maintenance,,reported sync ok by dgorki Aug 7 
-1,E,2,18,3,24,C72,e10,0,digital_ok,,reported sync ok by dgorki Aug 7 
-1,N,2,18,3,24,C72,n8,0,digital_ok,,reported sync ok by dgorki Aug 7 
-11,E,9,45,4,52,A8,e2,1,RF_maintenance,FEM: 19 | PAM: 25,sbcd 25 aug due to heranow autos
-11,N,9,45,4,52,A8,n0,1,RF_maintenance,,sbcd 25 aug due to heranow autos
-12,E,3,41,5,50,A8,e6,1,RF_maintenance,FEM: 20 | PAM: 26,reported sync ok by dgorki Aug 7 
-12,N,3,41,5,50,A8,n4,1,RF_maintenance,,reported sync ok by dgorki Aug 7 
-13,E,4,21,6,27,A8,e10,1,RF_maintenance,,reported sync ok by dgorki Aug 7 
-13,N,4,21,6,27,A8,n8,1,RF_maintenance,,reported sync ok by dgorki Aug 7 
-14,E,5,22,7,47,A24,e2,2,digital_ok,FEM: 28,reported sync ok by dgorki Aug 7 
-14,N,5,22,7,47,A24,n0,2,digital_ok,,reported sync ok by dgorki Aug 7 
-23,E,11,23,8,29,A24,e6,2,RF_maintenance,,reported sync ok by dgorki Aug 7 
-23,N,11,23,8,29,A24,n4,2,RF_maintenance,,reported sync ok by dgorki Aug 7 
-24,E,12,43,9,30,A24,e10,2,RF_maintenance,PAM: 24,No central line for this feed
-24,N,12,43,9,30,A24,n8,2,RF_maintenance,,No central line for this feed
-25,E,6,25,10,51,A20,e2,3,digital_ok,FEM: 31,reported sync ok by dgorki Aug 7 
-25,N,6,25,10,51,A20,n0,3,digital_ok,,reported sync ok by dgorki Aug 7 
-26,E,7,27,11,32,A20,e6,3,digital_ok,PAM: 26,reported sync ok by dgorki Aug 7 
-26,N,7,27,11,32,A20,n4,3,digital_ok,,reported sync ok by dgorki Aug 7 
-39,E,14,42,12,33,A20,e10,3,digital_ok,PAM: 27,reported sync ok by dgorki Aug 7 
-39,N,14,42,12,33,A20,n8,3,digital_ok,,reported sync ok by dgorki Aug 7 
-Date:,2019/09/17,,,,,,,,,,
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed Heights
+0,E,1,16,1,22,C72,e2,0,digital_maintenance,,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: don't use N0 for science,
+0,N,1,16,1,22,C72,n0,0,digital_maintenance,, ,
+2,E,8,40,2,48,C72,e6,0,RF_maintenance,FEM: 17 | PAM: 23,2E looks fine 18 Sept,
+2,N,8,40,2,48,C72,n4,0,RF_maintenance,,2N still looks wonky in SNAP spectra 18 Sept,
+1,E,2,18,3,24,C72,e10,0,digital_maintenance,,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: don't use N0 for science,
+1,N,2,18,3,24,C72,n8,0,digital_maintenance,, ,
+11,E,9,45,4,52,A8,e2,1,digital_maintenance,FEM: 19 | PAM: 25,placing in dig_maint from rf_ok 29 Sept. ,
+11,N,9,45,4,52,A8,n0,1,digital_maintenance,,sbcd 18 sept due to heranow autos and SNAP spectra,
+12,E,3,41,5,50,A8,e6,1,RF_maintenance,FEM: 20 | PAM: 26,Post-PAM spectra of 18 Sept show both pols looking dead,
+12,N,3,41,5,50,A8,n4,1,RF_maintenance,,Post-PAM spectra of 18 Sept show both pols looking dead,
+13,E,4,21,6,27,A8,e10,1,digital_maintenance,,placing in dig_maint from rf_ok 29 Sept. ,
+13,N,4,21,6,27,A8,n8,1,digital_maintenance,, ,
+14,E,5,22,7,47,A24,e2,2,digital_maintenance,FEM: 28,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: don't use N0 for science,
+14,N,5,22,7,47,A24,n0,2,digital_maintenance,,reported sync ok by dgorki Aug 7 ,
+23,E,11,23,8,29,A24,e6,2,RF_maintenance,,loose central line,
+23,N,11,23,8,29,A24,n4,2,RF_maintenance,,Post-PAM spectra of 18 Sept show both pols low amplitude and showing correct atuo shape,
+24,E,12,43,9,30,A24,e10,2,RF_maintenance,PAM: 24, ,Ant 24 Z= 4.415
+24,N,12,43,9,30,A24,n8,2,RF_maintenance,, ,
+25,E,6,25,10,51,A20,e2,3,digital_maintenance,FEM: 31,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: don't use N0 for science,
+25,N,6,25,10,51,A20,n0,3,digital_maintenance,, ,
+26,E,7,27,11,32,A20,e6,3,digital_maintenance,PAM: 26, reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: don't use N0 for science,
+26,N,7,27,11,32,A20,n4,3,digital_maintenance,, ,
+39,E,14,42,12,33,A20,e10,3,digital_maintenance,PAM: 27,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: don't use N0 for science,
+39,N,14,42,12,33,A20,n8,3,digital_maintenance,, ,
+Date:,2019/09/17,,,,,,,,,,,
