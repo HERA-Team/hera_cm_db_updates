@@ -2271,3 +2271,4 @@ HH107,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,12855
 HH108,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH124,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH166,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1285699338
+HH166,A,Moved from dig_ok to rf_maint as looks like seing load rather than sky. 02 Oct.,infoupd,1285702938
