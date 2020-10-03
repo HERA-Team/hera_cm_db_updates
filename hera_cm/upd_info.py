@@ -85,6 +85,9 @@ class UpdateInfo(upd_base.Update):
                 statement = '{}{}'.format(prefix, col_data)
                 if "'" in statement:
                     statement = statement.replace("'", "")
+                statement = statement.strip()
+                if len(statement) == 0:
+                    continue
                 if not self.is_duplicate(antrev_key, statement, duplication_window, view_duplicate):
                     refout = 'infoupd'
                     if antrev_key in self.new_apriori.keys():
