@@ -1,8 +1,11 @@
 def wr(pn):
-    if int(pn) < 150:
-        p = 'A'
-    else:
-        p = 'C'
+    try:
+        if int(pn) < 150:
+            p = 'A'
+        else:
+            p = 'C'
+    except ValueError:
+        return 'WR{}'.format(pn)
     return 'WR{}{:06d}'.format(p, int(pn)), 'A'
 
 
