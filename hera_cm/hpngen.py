@@ -5,7 +5,7 @@ def wr(pn):
         else:
             p = 'C'
     except ValueError:
-        return 'WR{}'.format(pn)
+        return 'WR{}'.format(pn), 'A'
     return 'WR{}{:06d}'.format(p, int(pn)), 'A'
 
 
