@@ -2216,6 +2216,7 @@ HH183,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,128551573
 HH185,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
 HH186,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
 HH187,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
+RD16,A,IP - 10.80.2.216,,1267095678
 HH0,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
 HH1,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
 HH11,A,placing in dig_maint from rf_ok 29 Sept. ,infoupd,1285519338
@@ -2253,6 +2254,7 @@ HH164,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,12855
 HH165,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH166,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH185,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
+RD17,A,MAC - 02:02:0a:01:01:d9,,1267095618
 HH186,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH187,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH45,A,heranow auto shows rising power at high freqs. 29 Sept.,infoupd,1285519338
@@ -2326,3 +2328,23 @@ HH85,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
 HH86,A,N8A86 N shows unexpected bump around 200 MHz. Moving from RF_ok to RF_maint. 24 Sept.,infoupd,1285954938
 HH104,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
 HH104,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
+RD04,A,MAC - 02:02:0a:01:01:cc,,1267095618
+RD04,A,IP - 10.80.2.204,,1267095678
+RD05,A,MAC - 02:02:0a:01:01:cd,,1267095618
+RD05,A,IP - 10.80.2.205,,1267095678
+RD07,A,MAC - 02:02:0a:01:01:cf,,1267095618
+RD07,A,IP - 10.80.2.207,,1267095678
+RD09,A,MAC - 02:02:0a:01:01:d1,,1267095618
+RD09,A,IP - 10.80.2.209,,1267095678
+RD11,A,MAC - 02:02:0a:01:01:d3,,1267095618
+RD11,A,IP - 10.80.2.211,,1267095678
+RD13,A,MAC - 02:02:0a:01:01:d5,,1267095618
+RD13,A,IP - 10.80.2.213,,1267095678
+RD14,A,MAC - 02:02:0a:01:01:d6,,1267095618
+RD14,A,IP - 10.80.2.214,,1267095678
+RD16,A,MAC - 02:02:0a:01:01:d8,,1267095618
+RD17,A,IP - 10.80.2.217,,1267095678
+RD47,A,MAC - 02:02:0a:01:01:f7,,1267095618
+RD47,A,IP - 10.80.2.247,,1267095678
+RD48,A,MAC - 02:02:0a:01:01:f8,,1267095618
+RD48,A,IP - 10.80.2.248,,1267095678
