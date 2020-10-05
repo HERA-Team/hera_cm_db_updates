@@ -2300,3 +2300,29 @@ WRC000154,A,MAC - 08:00:30:6e:b9:69,,1267095618
 WRC000154,A,IP - 10.80.2.192,,1267095678
 HH51,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1285947738
 HH51,A,59128 51n is not seeing sky - moved from dig_ok to rf_maint,infoupd,1285951338
+HH11,A,placing in dig_maint from rf_ok 29 Sept.,infoupd,1285954938
+HH13,A,placing in dig_maint from rf_ok 29 Sept.,infoupd,1285954938
+HH14,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
+HH26,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285954938
+HH6,A,cable too short to reach Node,infoupd,1285954938
+HH158,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
+HH158,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
+HH184,A,Ant 184 N newly high under and over the bandpass; bandpass looks flatter than expected. See Observing review for day 591115 issue.,infoupd,1285954938
+HH36,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
+HH36,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
+HH67,A,N3A67 N is low amplitude. moving from dig_maint to rf_maint. 24 Sept.,infoupd,1285954938
+HH40,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
+HH69,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
+HH69,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
+HH70,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
+HH70,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
+HH73,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
+HH73,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
+HH75,A,sbcd 17 Sept due to low N post-PAM spectra,infoupd,1285954938
+HH75,A,sbcd 17 Sept due to low N post-PAM spectra,infoupd,1285954940
+HH84,A,N8A84 E is low amplitude. Moving from RF_ok to RF_maint. 24 Sept.,infoupd,1285954938
+HH85,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
+HH85,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
+HH86,A,N8A86 N shows unexpected bump around 200 MHz. Moving from RF_ok to RF_maint. 24 Sept.,infoupd,1285954938
+HH104,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
+HH104,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
