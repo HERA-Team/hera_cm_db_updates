@@ -1,0 +1,46 @@
+#! /bin/bash
+echo "./201004_add_wr.py" >> scripts.log 
+add_part_info.py -p WRA000006 -r A -c 'MAC - 08:00:30:13:0f:a3' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRA000006 -r A -c 'IP - 10.80.2.134' --date 2020/03/01 --time 11:01
+add_part_info.py -p WRA000028 -r A -c 'MAC - 08:00:30:50:e0:56' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRA000028 -r A -c 'IP - 10.80.2.144' --date 2020/03/01 --time 11:01
+add_part_info.py -p WRA000079 -r A -c 'MAC - 08:00:30:b2:74:88' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRA000079 -r A -c 'IP - 10.80.2.160' --date 2020/03/01 --time 11:01
+add_part_info.py -p WRA000080 -r A -c 'MAC - 08:00:30:b2:17:81' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRA000080 -r A -c 'IP - 10.80.2.161' --date 2020/03/01 --time 11:01
+add_part_info.py -p WRA000085 -r A -c 'MAC - 08:00:30:b1:81:7e' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRA000085 -r A -c 'IP - 10.80.2.172' --date 2020/03/01 --time 11:01
+add_part_info.py -p WRA000087 -r A -c 'MAC - 08:00:30:b2:2e:07' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRA000087 -r A -c 'IP - 10.80.2.178' --date 2020/03/01 --time 11:01
+add_part_info.py -p WRA000090 -r A -c 'MAC - 08:00:30:b1:e9:92' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRA000090 -r A -c 'IP - 10.80.2.170' --date 2020/03/01 --time 11:01
+add_part.py -p WRA000101 -r A -t white-rabit -m S10.484 --date 2020/03/01 --time 10:00
+add_part_info.py -p WRA000101 -r A -c 'MAC - 08:00:30:6e:d7:5e' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRA000101 -r A -c 'IP - 10.80.2.187' --date 2020/03/01 --time 11:01
+add_part.py -p NCM18 -r A -t node-control-module -m NCM-Pro18 --date 2020/03/01 --time 10:00
+add_connection.py -u WRA000101 --uprev A --upport mnt -d NCM18 --dnrev A --dnport mnt1 --date 2020/03/01 --time 11:00
+add_part.py -p WRA000102 -r A -t white-rabit -m S10.485 --date 2020/03/01 --time 10:00
+add_part_info.py -p WRA000102 -r A -c 'MAC - 08:00:30:6e:d7:5d' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRA000102 -r A -c 'IP - 10.80.2.188' --date 2020/03/01 --time 11:01
+add_part.py -p NCM22 -r A -t node-control-module -m NCM-Pro22 --date 2020/03/01 --time 10:00
+add_connection.py -u WRA000102 --uprev A --upport mnt -d NCM22 --dnrev A --dnport mnt1 --date 2020/03/01 --time 11:00
+add_part.py -p WRC000151 -r A -t white-rabit -m S10.477 --date 2020/03/01 --time 10:00
+add_part_info.py -p WRC000151 -r A -c 'MAC - 08:00:30:6e:b8:22' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRC000151 -r A -c 'IP - 10.80.2.189' --date 2020/03/01 --time 11:01
+add_part.py -p NCM20 -r A -t node-control-module -m NCM-Pro20 --date 2020/03/01 --time 10:00
+add_connection.py -u WRC000151 --uprev A --upport mnt -d NCM20 --dnrev A --dnport mnt1 --date 2020/03/01 --time 11:00
+add_part.py -p WRC000152 -r A -t white-rabit -m S10.481 --date 2020/03/01 --time 10:00
+add_part_info.py -p WRC000152 -r A -c 'MAC - 08:00:30:6e:2c:d0' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRC000152 -r A -c 'IP - 10.80.2.190' --date 2020/03/01 --time 11:01
+add_part.py -p NCM17 -r A -t node-control-module -m NCM-Pro17 --date 2020/03/01 --time 10:00
+add_connection.py -u WRC000152 --uprev A --upport mnt -d NCM17 --dnrev A --dnport mnt1 --date 2020/03/01 --time 11:00
+add_part.py -p WRC000153 -r A -t white-rabit -m S10.482 --date 2020/03/01 --time 10:00
+add_part_info.py -p WRC000153 -r A -c 'MAC - 08:00:30:6e:2c:db' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRC000153 -r A -c 'IP - 10.80.2.191' --date 2020/03/01 --time 11:01
+add_part.py -p NCM21 -r A -t node-control-module -m NCM-Pro21 --date 2020/03/01 --time 10:00
+add_connection.py -u WRC000153 --uprev A --upport mnt -d NCM21 --dnrev A --dnport mnt1 --date 2020/03/01 --time 11:00
+add_part.py -p WRC000154 -r A -t white-rabit -m S10.476 --date 2020/03/01 --time 10:00
+add_part_info.py -p WRC000154 -r A -c 'MAC - 08:00:30:6e:b9:69' --date 2020/03/01 --time 11:00
+add_part_info.py -p WRC000154 -r A -c 'IP - 10.80.2.192' --date 2020/03/01 --time 11:01
+add_part.py -p NCM19 -r A -t node-control-module -m NCM-Pro19 --date 2020/03/01 --time 10:00
+add_connection.py -u WRC000154 --uprev A --upport mnt -d NCM19 --dnrev A --dnport mnt1 --date 2020/03/01 --time 11:00
