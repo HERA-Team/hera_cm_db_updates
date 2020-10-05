@@ -29,7 +29,7 @@ class Update(object):
         self.now = datetime.datetime.now()
         self.cdate = self.now.strftime('%Y/%m/%d')
         self.ctime = self.now.strftime('%H:%M')
-        time_offset = self.now + datetime.timedelta(seconds=2)
+        time_offset = self.now + datetime.timedelta(seconds=100)
         self.cdate2 = time_offset.strftime('%Y/%m/%d')
         self.ctime2 = time_offset.strftime('%H:%M')
         if script_type is None:
