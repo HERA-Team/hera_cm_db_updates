@@ -2299,3 +2299,4 @@ WRC000153,A,IP - 10.80.2.191,,1267095678
 WRC000154,A,MAC - 08:00:30:6e:b9:69,,1267095618
 WRC000154,A,IP - 10.80.2.192,,1267095678
 HH51,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1285947738
+HH51,A,59128 51n is not seeing sky - moved from dig_ok to rf_maint,infoupd,1285951338
