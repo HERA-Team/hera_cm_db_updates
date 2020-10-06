@@ -2353,3 +2353,16 @@ WRlen4p0,A,MAC - 08:00:30:50:e8:17,,1267095618
 WRlen4p0,A,IP - 10.80.2.138,,1267095678
 WRA000087,A,IP - 10.80.2.166,,1267095678
 HH162,A,59129 N13A162 e and n have high and noisy autos. Moving from dig_ok to dig_maint,infoupd,1286037738
+HH50,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1286041398
+HH52,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1286041398
+HH66,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1286041398
+HH67,A,apriori_antenna status change: RF_maintenance -> digital_ok,apa-infoupd,1286041398
+HH123,A,apriori_antenna status change: RF_maintenance -> digital_ok,apa-infoupd,1286041398
+HH162,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-infoupd,1286041398
+HH166,A,apriori_antenna status change: RF_maintenance -> digital_ok,apa-infoupd,1286041398
+HH166,A,Moved from rf_maint  to dig_ok  as looks like seing sky rather than load. 06 Oct.,apa-infoupd,1286041338
+HH50,A,"Looks OK in heranow autos and 59125 DN, moving from rf_maint to dig_ok. 06 Oct.",apa-infoupd,1286041338
+HH52,A,"Looks OK in heranow autos and 59125 DN, moving from rf_maint to dig_ok. 06 Oct.",apa-infoupd,1286041338
+HH66,A,"Looks OK in heranow autos and 59125 DN, moving from rf_maint to dig_ok. 06 Oct.",apa-infoupd,1286041338
+HH67,A,"N3A67 n and e auto amplitudes look OK in heranow autos, moving from rf_maint to dig_ok. 06 Oct.",apa-infoupd,1286041338
+HH123,A,"Looks OK in heranow autos and 59125 DN, moving from rf_maint to dig_ok. 06 Oct.",apa-infoupd,1286041338
