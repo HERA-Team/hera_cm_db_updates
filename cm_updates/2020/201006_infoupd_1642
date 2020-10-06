@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "201006_infoupd_1642" >> scripts.log 
+add_part_info.py -p HH162 -r A -c '59129 N13A162 e and n have high and noisy autos. Moving from dig_ok to dig_maint' -l "infoupd" --date 2020/10/06 --time 16:42:00
