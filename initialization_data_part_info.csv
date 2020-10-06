@@ -2352,3 +2352,4 @@ RD02,A,IP - 10.80.2.202,,1267095678
 WRlen4p0,A,MAC - 08:00:30:50:e8:17,,1267095618
 WRlen4p0,A,IP - 10.80.2.138,,1267095678
 WRA000087,A,IP - 10.80.2.166,,1267095678
+HH162,A,59129 N13A162 e and n have high and noisy autos. Moving from dig_ok to dig_maint,infoupd,1286037738
