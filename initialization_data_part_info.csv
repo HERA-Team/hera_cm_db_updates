@@ -2380,3 +2380,23 @@ HH170,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,128612419
 HH189,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1286124198
 HH190,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1286124198
 HH191,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1286124198
+HH3,A,apriori_antenna status change: RF_maintenance -> digital_ok,apa-infoupd,1286206998
+HH4,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1286206998
+HH5,A,apriori_antenna status change: RF_maintenance -> digital_ok,apa-infoupd,1286206998
+HH15,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1286206998
+HH16,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1286206998
+HH18,A,apriori_antenna status change: RF_maintenance -> digital_ok,apa-infoupd,1286206998
+HH147,A,apriori_antenna status change: RF_maintenance -> digital_ok,apa-infoupd,1286206998
+HH150,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1286206998
+HH168,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1286206998
+HH18,A,59131 SNAP auto look fine. No DN to check other metrics,apa-infoupd,1286206938
+HH3,A,59131 SNAP auto look fine. No DN to check other metrics,apa-infoupd,1286206938
+HH4,A,59131 SNAP auto looks like N1A4 is seeing sky,apa-infoupd,1286206938
+HH5,A,59131 SNAP auto look fine. No DN to check other metrics,apa-infoupd,1286206938
+HH15,A,59131  N1A5 e  SNAP auto has a glitch at 185 MHz,apa-infoupd,1286206938
+HH16,A,59131 SNAP auto looks like N1A4 is seeing sky,apa-infoupd,1286206938
+HH147,A,59131 SNAP auto look fine. No DN to check other metrics,apa-infoupd,1286206938
+HH148,A,59131 SNAP auto look fine. No DN to check other metrics,infoupd,1286206938
+HH149,A,59131 N15A149 n SNAP auto has unexpected wobbles.,infoupd,1286206938
+HH150,A,59131 N15A150 SNAP auto looks like sky/load.,apa-infoupd,1286206938
+HH168,A,59131 N15A149 n SNAP auto has unexpected glitch @ 213 MHz,apa-infoupd,1286206938
