@@ -1,0 +1,31 @@
+#! /bin/bash
+source ~/.bashrc
+echo "201007_infoupd_1642" >> scripts.log 
+update_apriori.py -p HH4 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH4 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH15 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH15 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH16 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH16 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH17 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH17 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH29 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH29 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH148 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH148 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH150 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH150 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH167 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH167 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH168 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH168 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH169 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH169 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH170 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH170 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH189 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH189 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH190 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH190 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
+update_apriori.py -p HH191 -s digital_ok --date 2020/10/07 --time 16:43
+add_part_info.py -p HH191 -r A -c 'apriori_antenna status change: RF_ok -> digital_ok' -l "apa-infoupd" --date 2020/10/07 --time 16:43
