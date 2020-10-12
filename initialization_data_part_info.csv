@@ -2349,9 +2349,6 @@ RD48,A,MAC - 02:02:0a:01:01:f8,,1267095618
 RD48,A,IP - 10.80.2.248,,1267095678
 RD02,A,MAC - 02:02:0a:01:01:ca,,1267095618
 RD02,A,IP - 10.80.2.202,,1267095678
-WRlen4p0,A,MAC - 08:00:30:50:e8:17,,1267095618
-WRlen4p0,A,IP - 10.80.2.138,,1267095678
-WRA000087,A,IP - 10.80.2.166,,1267095678
 HH162,A,59129 N13A162 e and n have high and noisy autos. Moving from dig_ok to dig_maint,infoupd,1286037738
 HH50,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1286041398
 HH52,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1286041398
@@ -2400,3 +2397,6 @@ HH148,A,59131 SNAP auto look fine. No DN to check other metrics,infoupd,12862069
 HH149,A,59131 N15A149 n SNAP auto has unexpected wobbles.,infoupd,1286206938
 HH150,A,59131 N15A150 SNAP auto looks like sky/load.,apa-infoupd,1286206938
 HH168,A,59131 N15A149 n SNAP auto has unexpected glitch @ 213 MHz,apa-infoupd,1286206938
+WR-len4p0,A,MAC - 08:00:30:50:e8:17,,1267095618
+WR-len4p0,A,IP - 10.80.2.138,,1267095678
+WR-unknown,A,IP - 10.80.2.199,,1267095678
