@@ -1,0 +1,28 @@
+#! /bin/bash
+echo "./201012_add_wr_rd_rosetta.py" >> scripts.log 
+add_part_rosetta.py -p "WR-len4p0" -s heraNode0wr --date 2020/03/01 --time 10:00
+add_part_rosetta.py -p RD02 -s heraNode0 --date 2020/03/01 --time 10:00
+add_part_rosetta.py -p WRA000096 -s heraNode1wr --date 2020/02/15 --time 10:00
+add_part_rosetta.py -p RD18 -s heraNode1 --date 2020/02/15 --time 10:00
+add_part_rosetta.py -p WRA000089 -s heraNode3wr --date 2019/11/13 --time 10:00
+add_part_rosetta.py -p RD06 -s heraNode3 --date 2019/11/13 --time 10:00
+add_part_rosetta.py -p "WR-unknown" -s heraNode4wr --date 2019/10/31 --time 10:00
+add_part_rosetta.py -p RD41 -s heraNode4 --date 2019/10/31 --time 10:00
+add_part_rosetta.py -p WRA000084 -s heraNode5wr --date 2019/10/31 --time 10:00
+add_part_rosetta.py -p RD42 -s heraNode5 --date 2019/10/31 --time 10:00
+add_part_rosetta.py -p WRA000028 -s heraNode7wr --date 2019/08/02 --time 10:00
+add_part_rosetta.py -p RD31 -s heraNode7 --date 2019/08/02 --time 10:00
+add_part_rosetta.py -p WRA000086 -s heraNode8wr --date 2019/08/02 --time 10:00
+add_part_rosetta.py -p RD45 -s heraNode8 --date 2019/08/02 --time 10:00
+add_part_rosetta.py -p WRA000083 -s heraNode9wr --date 2019/05/15 --time 10:00
+add_part_rosetta.py -p RD46 -s heraNode9 --date 2019/05/15 --time 10:00
+add_part_rosetta.py -p WRA000093 -s heraNode10wr --date 2019/11/13 --time 10:00
+add_part_rosetta.py -p RD20 -s heraNode10 --date 2019/11/13 --time 10:00
+add_part_rosetta.py -p WRA000091 -s heraNode12wr --date 2020/01/31 --time 10:00
+add_part_rosetta.py -p RD15 -s heraNode12 --date 2020/01/31 --time 10:00
+add_part_rosetta.py -p WRA000094 -s heraNode13wr --date 2020/01/31 --time 10:00
+add_part_rosetta.py -p RD19 -s heraNode13 --date 2020/01/31 --time 10:00
+add_part_rosetta.py -p WRA000097 -s heraNode14wr --date 2020/01/31 --time 10:00
+add_part_rosetta.py -p RD43 -s heraNode14 --date 2020/01/31 --time 10:00
+add_part_rosetta.py -p WRA000006 -s heraNode15wr --date 2020/01/28 --time 10:00
+add_part_rosetta.py -p RD40 -s heraNode15 --date 2020/01/28 --time 10:00
