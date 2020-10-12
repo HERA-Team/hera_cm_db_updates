@@ -35,5 +35,5 @@ rd = {'RD02': ['heraNode0', '2020/03/01'],
       }
 
 for w, r in zip(wr.keys(), rd.keys()):
-    hera.add_part_rosetta(w, wr[w][0], wr[w][1])
-    hera.add_part_rosetta(r, rd[r][0], rd[r][1])
+    hera.update_part_rosetta(w, wr[w][0], wr[w][1])
+    hera.update_part_rosetta(r, rd[r][0], rd[r][1])

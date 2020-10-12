@@ -602,7 +602,7 @@ class Update:
         self.fp.write('update_apriori.py -p {} -s {} --date {} --time {}\n'
                       .format(antenna, status, cdate, ctime))
 
-    def add_part_rosetta(self, hpn, syspn, date1, time1='10:00', date2=None, time2='10:00'):
+    def update_part_rosetta(self, hpn, syspn, date1, time1='10:00', date2=None, time2='10:00'):
         """
         Add part_rosetta information.
 
@@ -615,7 +615,8 @@ class Update:
         date1 : str
         date2 : str if not None
         """
-        s = "add_part_rosetta.py -p {} -s {} --date {} --time {}".format(hpn, syspn, date1, time1)
+        s = ("update_part_rosetta.py '{}' '{}' --date {} --time {}"
+             .format(hpn, syspn, date1, time1))
         if date2 is not None:
             s += " --date2 {} --time2 {}".format(date2, time2)
         s += '\n'
