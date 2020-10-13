@@ -2400,3 +2400,5 @@ HH168,A,59131 N15A149 n SNAP auto has unexpected glitch @ 213 MHz,apa-infoupd,12
 WR-len4p0,A,MAC - 08:00:30:50:e8:17,,1267095618
 WR-len4p0,A,IP - 10.80.2.138,,1267095678
 WR-unknown,A,IP - 10.80.2.199,,1267095678
+HH148,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1286642598
+HH148,A,Broken fibre report by Thaki on 10/13/20,apa-infoupd,1286642538
