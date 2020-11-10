@@ -2402,3 +2402,8 @@ WR-len4p0,A,IP - 10.80.2.138,,1267095678
 WR-unknown,A,IP - 10.80.2.199,,1267095678
 HH148,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1286642598
 HH148,A,Broken fibre report by Thaki on 10/13/20,apa-infoupd,1286642538
+HH161,A,Feed heights (NE/SE/SW/NW): Z dstance = 4.412,infoupd,1289043738
+HH162,A,Feed heights (NE/SE/SW/NW): Z distance = 4.411,infoupd,1289043738
+HH182,A,Feed heights (NE/SE/SW/NW): Z distance =4.415,infoupd,1289043738
+HH160,A,Feed heights (NE/SE/SW/NW): Z diztance = 4.413,infoupd,1289043738
+HH181,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1289043738
