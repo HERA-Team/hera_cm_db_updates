@@ -26,6 +26,19 @@ class UpdateConnect(upd_base.Update):
         self.active = None
         self.skipping = []
 
+    def pipe(self, node_csv='n'):
+        self.load_gsheet(node_csv)
+        self.load_active()
+        self.make_sheet_connections()
+        self.compare_connections()
+        self.add_missing_parts()
+        self.add_missing_connections()
+        self.add_partial_connections()
+        self.add_different_connections()
+        self.add_rosetta()
+        self.finish()
+        self.show_summary_of_compare()
+
     def get_hpn_from_col(self, col, key, header):
         return util.gen_hpn(col, self.gsheet.data[key][header.index(col)])
 
@@ -289,10 +302,17 @@ class UpdateConnect(upd_base.Update):
                 print("\t{}".format(p))
         else:
             print()
-        print("Different:  {}".format(len(self.different)))
+        print("Different:  {}".format(len(self.different)), end='   ')
         if len(self.different):
             print("*****CHECK*****")
             for d in self.different:
+                print("\t{}".format(d))
+        else:
+            print()
+        print("Different_stop:  {}".format(len(self.different_stop)), end='   ')
+        if len(self.different_stop):
+            print("*****CHECK*****")
+            for d in self.different_stop:
                 print("\t{}".format(d))
         else:
             print()
