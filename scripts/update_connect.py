@@ -32,7 +32,7 @@ update = upd_connect.UpdateConnect(script_type=script_type,
 update.load_gsheet(node_csv=args.node_csv)
 update.load_active()
 update.make_sheet_connections()
-data = update.compare_connections('gsheet-active')
+update.compare_connections('gsheet-active')
 update.add_missing_parts()
 update.add_missing_connections()
 update.add_partial_connections()
