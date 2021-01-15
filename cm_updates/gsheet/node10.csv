@@ -33,3 +33,5 @@ Note,2019Nov13,,MRD,"Twelve (12) 6ft (1.8m) blue CAT7 SSTP cables, originally in
 Note,2019Nov13,,MRD,Minor detail: may have a long (6ft) IEC 60320 C13/C14 VAC power cord for NCM to FEM PSU where a short (3ft) version intended,,,,,,,,,
 Note,2019Nov13,,MRD,The fiber optic cables to/from the patch panel and the NCM and SNAPv2s were not installed.  There was no fiber optic cable through the side panel connecting this Node's patch panel to the signal processing container.,,,,,,,,,
 Note,2019Nov13,,MRD,"NCM Production SN 6.  SNAPv2s: C000042, C000016, C000014, C000045",,,,,,,,,
+,,,,,,,,,,,,,
+,2020Oct06,,sbcd,N10 was xyz positioned 05 Oct Issue # 618,,,,,,,,,

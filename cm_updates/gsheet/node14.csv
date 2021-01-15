@@ -13,7 +13,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 164,N,106,174,8,180,28,n4,2,digital_ok,, ,
 165,E,108,181,1,173,51,e2,0,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,Z = 4.401
 165,N,108,181,1,173,51,n0,0,digital_ok,, ,
-166,E,105,198,2,174,51,e6,0,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,
+166,E,105,198,2,174,51,e6,0,digital_ok,,Moved from rf_maint  to dig_ok  as looks like seing sky rather than load. 06 Oct.,
 166,N,105,198,2,174,51,n4,0,digital_ok,, ,
 184,E,107,180,3,175,51,e10,0,RF_maintenance,,Ant 184 N newly high under and over the bandpass; bandpass looks flatter than expected. See 'Observing review for day 591115' issue. ,
 184,N,107,180,3,175,51,n8,0,RF_maintenance,, ,
@@ -31,3 +31,4 @@ Note,2019Nov11,,MRD,,bag of 30 FC/APC fiber optic cables.  Have 3 rail sets (in 
 Note,2019Nov11,,MRD,,due to come online 2020jan21,,,,,,,
 Note ,2020Jan31,,ATJ,,NCM Prod # 10,,,,,,,
 Node,2020Mar02,,MRD,,notes on NCM Production SN 10,,,,"WR Endpoint: AD000097, 7S-WRLEN-v1.0-S10.494, MAC ID: 08:00:30:6f:18:98, 1st PSU set to be about 8.253V, Arduino Ethernet Shield Rev 2 08:  Arduino Ethernet 02:02:0A:01:01:F3,  90:A2:DA:11:07:BA",,,
+,2020Oct01,,,,node xyz positioned per Comm issue #612,,,,,,,
