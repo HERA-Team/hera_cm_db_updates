@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "201220_infoupd_2142" >> scripts.log 
+add_part_info.py -p HH136 -r A -c 'Feed heights (NE/SE/SW/NW): charge pump' -l "infoupd" --date 2020/12/20 --time 21:42:00

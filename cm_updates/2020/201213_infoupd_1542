@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "201213_infoupd_1542" >> scripts.log 
+add_part_info.py -p HH186 -r A -c 'Feed Heights: Z = 4.409' -l "infoupd" --date 2020/12/13 --time 15:42:00
+add_part_info.py -p HH187 -r A -c 'Feed Heights: Z = 4.406' -l "infoupd" --date 2020/12/13 --time 15:42:00

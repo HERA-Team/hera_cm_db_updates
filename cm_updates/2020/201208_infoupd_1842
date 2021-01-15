@@ -1,0 +1,13 @@
+#! /bin/bash
+source ~/.bashrc
+echo "201208_infoupd_1842" >> scripts.log 
+add_part_info.py -p HH101 -r A -c 'History: FEM: 58 until 10Mar2020, thence 153' -l "infoupd" --date 2020/12/08 --time 18:42:00
+add_part_info.py -p HH101 -r A -c 'History: FEM: 58 until 10Mar2020, thence 154' -l "infoupd" --date 2020/12/08 --time 18:42:02
+add_part_info.py -p HH102 -r A -c 'History: FEM: 59 until 10Mar2020, thence 153' -l "infoupd" --date 2020/12/08 --time 18:42:00
+add_part_info.py -p HH102 -r A -c 'History: FEM: 59 until 10Mar2020, thence 154' -l "infoupd" --date 2020/12/08 --time 18:42:02
+add_part_info.py -p HH106 -r A -c '10Mar2020 z = 4.414' -l "infoupd" --date 2020/12/08 --time 18:42:00
+add_part_info.py -p HH106 -r A -c '10Mar2020 z = 4.414' -l "infoupd" --date 2020/12/08 --time 18:42:02
+add_part_info.py -p HH125 -r A -c '10Mar2020 z = 4.405' -l "infoupd" --date 2020/12/08 --time 18:42:00
+add_part_info.py -p HH125 -r A -c '10Mar2020 z = 4.405' -l "infoupd" --date 2020/12/08 --time 18:42:02
+add_part_info.py -p HH126 -r A -c '11 March 2020 Z= 4.405' -l "infoupd" --date 2020/12/08 --time 18:42:00
+add_part_info.py -p HH126 -r A -c '11 March 2020 Z= 4.405' -l "infoupd" --date 2020/12/08 --time 18:42:02
