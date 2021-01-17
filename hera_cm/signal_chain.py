@@ -494,8 +494,8 @@ class Update:
 
     def to_implement(self, command, ant, rev, statement, pdate, ptime):
         """Write generic 'to_implement' line."""
-        stmt = "{} not implemented! {} {} {} {} {} {}\n".format(command, ant, rev,
-                                                                statement, pdate, ptime)
+        stmt = "{} not implemented! {} {} {} {} {}\n".format(command, ant, rev,
+                                                             statement, pdate, ptime)
         self.fp.write(stmt)
         print("{}".format(stmt.strip()))
 

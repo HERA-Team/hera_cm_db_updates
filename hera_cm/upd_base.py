@@ -8,7 +8,7 @@ import os
 from . import signal_chain, cm_gsheet
 
 
-class Update(object):
+class Update():
     """Base update class."""
 
     def __init__(self, script_type, script_path='./', verbose=True):
