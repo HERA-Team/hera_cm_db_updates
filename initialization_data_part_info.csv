@@ -2466,3 +2466,15 @@ HH191,A,Feed heights (NE/SE/SW/NW): Z = 4.410,infoupd,1294486938
 HH27,A,Feed heights (NE/SE/SW/NW): something wrong with fiber,infoupd,1294504938
 HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1295232138
 HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1295232140
+HH2,A,History: FEM: 17 | PAM: 23,infoupd,1295347338
+HH11,A,History: FEM: 19 | PAM: 25,infoupd,1295347338
+HH12,A,History: FEM: 20 | PAM: 26,infoupd,1295347338
+HH14,A,History: FEM: 28,infoupd,1295347338
+HH24,A,History: PAM: 24,infoupd,1295347338
+HH25,A,History: FEM: 31,infoupd,1295347338
+HH26,A,History: PAM: 26,infoupd,1295347338
+HH39,A,History: PAM: 27,infoupd,1295347338
+HH103,A,History: FEM: 60,infoupd,1295347338
+HH103,A,History: FEM: 60,infoupd,1295347340
+HH89,A,History: PAM: 43,infoupd,1295347338
+HH124,A,History: PAM: 42,infoupd,1295347338
