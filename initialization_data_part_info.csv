@@ -2485,3 +2485,9 @@ HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1295610140
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1295638938
 HH65,A,65E looks dead,infoupd,1296171738
 HH55,A,55N looks dead,infoupd,1296171738
+HH135,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1296564138
+HH155,A,Feed heights (NE/SE/SW/NW): Z distance =4.407,infoupd,1296564138
+HH156,A,Feed heights (NE/SE/SW/NW): Z distance = 4.407,infoupd,1296564138
+HH157,A,Feed heights (NE/SE/SW/NW): z distance = 4.415,infoupd,1296564138
+HH177,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1296564138
+HH179,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1296564138
