@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "210121_infoupd_0242" >> scripts.log 
+add_part_info.py -p HH76 -r A -c 'Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna' -l "infoupd" --date 2021/01/21 --time 02:42:00
+add_part_info.py -p HH76 -r A -c 'Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna' -l "infoupd" --date 2021/01/21 --time 02:42:02
