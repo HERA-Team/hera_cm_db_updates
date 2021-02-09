@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "210206_infoupd_2342" >> scripts.log 
+add_part_info.py -p HH121 -r A -c 'loose central line' -l "infoupd" --date 2021/02/06 --time 23:42:00

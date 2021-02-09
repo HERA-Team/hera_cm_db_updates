@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "210131_infoupd_2342" >> scripts.log 
+add_part_info.py -p HH65 -r A -c '65E looks dead' -l "infoupd" --date 2021/01/31 --time 23:42:00
+add_part_info.py -p HH55 -r A -c '55N looks dead' -l "infoupd" --date 2021/01/31 --time 23:42:00
