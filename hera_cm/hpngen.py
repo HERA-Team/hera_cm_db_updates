@@ -1,11 +1,26 @@
-def wr(pn):
+def wr(pn, p=None):
+    """
+    Return wr part number and version.
+
+    Parameters
+    ==========
+    pn : int or str
+         (see logic below...)
+    p : str
+        Currently 'A' or 'C'.  If none, assumes pn is str with value.
+    """
     try:
-        if int(pn) < 150:
-            p = 'A'
+        if int(pn) < 202:
+            pn = int(pn)
         else:
-            p = 'C'
+            raise ValueError('pn too large')
     except ValueError:
-        return 'WR{}'.format(pn), 'A'
+        if pn.startswith('WR'):
+            return pn, 'A'
+        else:
+            return 'WR{}'.format(pn), 'A'
+    if p is None:
+        raise ValueError('must specify A or C')
     return 'WR{}{:06d}'.format(p, int(pn)), 'A'
 
 
