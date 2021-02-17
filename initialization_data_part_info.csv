@@ -2493,8 +2493,6 @@ HH179,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1296564138
 HH158,A,Feed heights (NE/SE/SW/NW): z distance = 4.411,infoupd,1296582138
 HH121,A,loose central line,infoupd,1296690138
 WRA000087,A,IP - 10.80.2.199,,1267095678
-WRA000201,A,MAC - 08:00:30:12:7c:a1,,126709228
-WRA000201,A,IP - 10.80.2.136,,126709238
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
 WRA000098,A,MAC - 08:00:30:6e:cd:a4,,1296212418
@@ -2504,3 +2502,25 @@ WRA000156,A,MAC - 08:00:30:6e:6e:f0,,1296212418
 WRA000100,A,MAC - 08:00:30:6e:7d:ca,,1296212418
 WRA000158,A,MAC - 08:00:30:6e:b8:fa,,1296212418
 WRA000095,A,MAC - 08:00:30:6e:b9:75,,1296212418
+HH7,A,apriori_antenna status change: not_connected -> dish_ok,apa-infoupd,1297557798
+HH8,A,apriori_antenna status change: not_connected -> dish_ok,apa-infoupd,1297557798
+HH9,A,apriori_antenna status change: not_connected -> dish_ok,apa-infoupd,1297557798
+HH10,A,apriori_antenna status change: not_connected -> dish_ok,apa-infoupd,1297557798
+HH19,A,apriori_antenna status change: not_connected -> dish_ok,apa-infoupd,1297557798
+HH20,A,apriori_antenna status change: not_connected -> dish_ok,apa-infoupd,1297557798
+HH21,A,apriori_antenna status change: not_connected -> dish_ok,apa-infoupd,1297557798
+HH31,A,apriori_antenna status change: not_connected -> dish_ok,apa-infoupd,1297557798
+HH32,A,apriori_antenna status change: not_connected -> dish_ok,apa-infoupd,1297557798
+HH33,A,apriori_antenna status change: not_connected -> dish_ok,apa-infoupd,1297557798
+HH7,A,Feed heights (NE/SE/SW/NW): Z = 4.416,apa-infoupd,1297557738
+HH8,A,Feed heights (NE/SE/SW/NW): Z = 4.412,apa-infoupd,1297557738
+HH9,A,Feed heights (NE/SE/SW/NW): Z = 4.408,apa-infoupd,1297557738
+HH19,A,Feed heights (NE/SE/SW/NW): Z = 4.405,apa-infoupd,1297557738
+HH20,A,Feed heights (NE/SE/SW/NW): Z = 4.398,apa-infoupd,1297557738
+HH10,A,Feed heights (NE/SE/SW/NW): Z = 4.409,apa-infoupd,1297557738
+HH21,A,Feed heights (NE/SE/SW/NW): Z = 4.412,apa-infoupd,1297557738
+HH31,A,Feed heights (NE/SE/SW/NW): Z = 4.407,apa-infoupd,1297557738
+HH32,A,Feed heights (NE/SE/SW/NW): Z = 4.404,apa-infoupd,1297557738
+HH33,A,Feed heights (NE/SE/SW/NW): Z = 4.405,apa-infoupd,1297557738
+WRA000201,A,MAC - 08:00:30:12:7c:a1,,1267095228
+WRA000201,A,IP - 10.80.2.136,,1267095238
