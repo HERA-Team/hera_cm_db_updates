@@ -1,0 +1,33 @@
+#! /bin/bash
+source ~/.bashrc
+echo "210217_infoupd_0042" >> scripts.log 
+update_apriori.py -p HH7 -s dish_ok --date 2021/02/17 --time 00:43
+add_part_info.py -p HH7 -r A -c 'apriori_antenna status change: not_connected -> dish_ok' -l "apa-infoupd" --date 2021/02/17 --time 00:43
+update_apriori.py -p HH8 -s dish_ok --date 2021/02/17 --time 00:43
+add_part_info.py -p HH8 -r A -c 'apriori_antenna status change: not_connected -> dish_ok' -l "apa-infoupd" --date 2021/02/17 --time 00:43
+update_apriori.py -p HH9 -s dish_ok --date 2021/02/17 --time 00:43
+add_part_info.py -p HH9 -r A -c 'apriori_antenna status change: not_connected -> dish_ok' -l "apa-infoupd" --date 2021/02/17 --time 00:43
+update_apriori.py -p HH10 -s dish_ok --date 2021/02/17 --time 00:43
+add_part_info.py -p HH10 -r A -c 'apriori_antenna status change: not_connected -> dish_ok' -l "apa-infoupd" --date 2021/02/17 --time 00:43
+update_apriori.py -p HH19 -s dish_ok --date 2021/02/17 --time 00:43
+add_part_info.py -p HH19 -r A -c 'apriori_antenna status change: not_connected -> dish_ok' -l "apa-infoupd" --date 2021/02/17 --time 00:43
+update_apriori.py -p HH20 -s dish_ok --date 2021/02/17 --time 00:43
+add_part_info.py -p HH20 -r A -c 'apriori_antenna status change: not_connected -> dish_ok' -l "apa-infoupd" --date 2021/02/17 --time 00:43
+update_apriori.py -p HH21 -s dish_ok --date 2021/02/17 --time 00:43
+add_part_info.py -p HH21 -r A -c 'apriori_antenna status change: not_connected -> dish_ok' -l "apa-infoupd" --date 2021/02/17 --time 00:43
+update_apriori.py -p HH31 -s dish_ok --date 2021/02/17 --time 00:43
+add_part_info.py -p HH31 -r A -c 'apriori_antenna status change: not_connected -> dish_ok' -l "apa-infoupd" --date 2021/02/17 --time 00:43
+update_apriori.py -p HH32 -s dish_ok --date 2021/02/17 --time 00:43
+add_part_info.py -p HH32 -r A -c 'apriori_antenna status change: not_connected -> dish_ok' -l "apa-infoupd" --date 2021/02/17 --time 00:43
+update_apriori.py -p HH33 -s dish_ok --date 2021/02/17 --time 00:43
+add_part_info.py -p HH33 -r A -c 'apriori_antenna status change: not_connected -> dish_ok' -l "apa-infoupd" --date 2021/02/17 --time 00:43
+add_part_info.py -p HH7 -r A -c 'Feed heights (NE/SE/SW/NW): Z = 4.416' -l "apa-infoupd" --date 2021/02/17 --time 00:42:00
+add_part_info.py -p HH8 -r A -c 'Feed heights (NE/SE/SW/NW): Z = 4.412' -l "apa-infoupd" --date 2021/02/17 --time 00:42:00
+add_part_info.py -p HH9 -r A -c 'Feed heights (NE/SE/SW/NW): Z = 4.408' -l "apa-infoupd" --date 2021/02/17 --time 00:42:00
+add_part_info.py -p HH19 -r A -c 'Feed heights (NE/SE/SW/NW): Z = 4.405' -l "apa-infoupd" --date 2021/02/17 --time 00:42:00
+add_part_info.py -p HH20 -r A -c 'Feed heights (NE/SE/SW/NW): Z = 4.398' -l "apa-infoupd" --date 2021/02/17 --time 00:42:00
+add_part_info.py -p HH10 -r A -c 'Feed heights (NE/SE/SW/NW): Z = 4.409' -l "apa-infoupd" --date 2021/02/17 --time 00:42:00
+add_part_info.py -p HH21 -r A -c 'Feed heights (NE/SE/SW/NW): Z = 4.412' -l "apa-infoupd" --date 2021/02/17 --time 00:42:00
+add_part_info.py -p HH31 -r A -c 'Feed heights (NE/SE/SW/NW): Z = 4.407' -l "apa-infoupd" --date 2021/02/17 --time 00:42:00
+add_part_info.py -p HH32 -r A -c 'Feed heights (NE/SE/SW/NW): Z = 4.404' -l "apa-infoupd" --date 2021/02/17 --time 00:42:00
+add_part_info.py -p HH33 -r A -c 'Feed heights (NE/SE/SW/NW): Z = 4.405' -l "apa-infoupd" --date 2021/02/17 --time 00:42:00
