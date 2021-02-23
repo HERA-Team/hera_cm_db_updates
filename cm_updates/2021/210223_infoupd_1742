@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "210223_infoupd_1742" >> scripts.log 
+add_part_info.py -p HH121 -r A -c 'PAM208 swapped in from Node2 (replace broken 21)' -l "infoupd" --date 2021/02/23 --time 17:42:00
