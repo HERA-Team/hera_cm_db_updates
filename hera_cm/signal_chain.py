@@ -1,6 +1,7 @@
 """Various signal chain modification methods."""
 
 import os
+from hera_cm import util
 from hera_mc import cm_utils, cm_active, cm_handling
 
 current_revs = {'HH': 'A', 'A': 'H', 'FDV': 'V'}
@@ -157,7 +158,8 @@ class Update:
         """
         check_date = cm_utils.get_astropytime(adate=cdate, atime=ctime)
         part_to_add = {}
-        hpn = 'N{:02d}'.format(node)
+        # hpn = 'N{:02d}'.format(node)
+        hpn = util.get_hpn('node', node)
         part_to_add['node'] = (hpn, 'A', 'node', sn)
         hpn = 'ND{:02d}'.format(node)
         part_to_add['node-station'] = (hpn, 'A', 'station', sn)
@@ -234,7 +236,7 @@ class Update:
         hpn = 'NCM{}'.format(ncm)
         sn = self.get_ser_num(hpn, 'ncm')
         part_to_add['node-control-module'] = (hpn, 'A', 'node-control-module', sn)
-        hpn = 'N{:02d}'.format(node)
+        hpn = util.get_hpn('node', node)
         sn = self.get_ser_num(hpn, 'node')
         part_to_add['node'] = (hpn, 'A', 'node', sn)
         hpn = 'ND{:02d}'.format(node)
@@ -244,11 +246,11 @@ class Update:
         sn = self.get_ser_num(hpn, 'node')
         part_to_add['node-bulkhead'] = (hpn, 'A', 'node-bulkhead', sn)
         for _pam in pams:
-            hpn = 'PAM{:03d}'.format(_pam)
+            hpn = util.get_hpn('pam', _pam)
             sn = '{:03d}'.format(_pam)
             part_to_add[hpn] = (hpn, 'A', 'post-amp', sn)
         for _snap in snaps:
-            hpn = 'SNP{}'.format(_snap)
+            hpn = util.get_hpn('snap', _snap)
             sn = '{}'.format(_snap)
             part_to_add[hpn] = (hpn, 'A', 'snap', sn)
         # Add node as station
@@ -285,7 +287,7 @@ class Update:
         dn = [part_to_add['node'][0], part_to_add['node'][1], '@middle']
         connection_to_add.append([up, dn, cdate, connadd_time])
         for i, _pam in enumerate(pams):
-            hpn = 'PAM{:03d}'.format(_pam)
+            hpn = util.get_hpn('pam', _pam)
             up = [part_to_add[hpn][0], part_to_add[hpn][1], '@slot']
             dn = [part_to_add['pam-chassis'][0], part_to_add['pam-chassis'][1],
                   '@slot{}'.format(i + 1)]
@@ -296,13 +298,13 @@ class Update:
                 dn = [part_to_add[hpn][0], part_to_add[hpn][1], pol]
                 connection_to_add.append([up, dn, cdate, connadd_time])
         for i, _snap in enumerate(snaps):
-            snap_hpn = 'SNP{}'.format(_snap)
+            snap_hpn = util.get_hpn('snap', _snap)
             up = [part_to_add[snap_hpn][0], part_to_add[snap_hpn][1], 'rack']
             dn = [part_to_add['node'][0], part_to_add['node'][1], 'loc{}'.format(i)]
             connection_to_add.append([up, dn, cdate, connadd_time])
             for pol in ['e', 'n']:
                 for j in range(3):
-                    pam_hpn = 'PAM{:03d}'.format(pams[i * 3 + j])
+                    pam_hpn = util.get_hpn('pam', pams[i * 3 + j])
                     up = [part_to_add[pam_hpn][0], part_to_add[pam_hpn][1], pol]
                     dn = [part_to_add[snap_hpn][0], part_to_add[snap_hpn][1],
                           self.snap_ports[j][pol]]
@@ -352,11 +354,11 @@ class Update:
         # Set up parts
         part_to_add = {}
 
-        hpn = 'FDV{}'.format(feed)
+        hpn = util.get_hpn('feed', feed)
         sn = self.get_ser_num(hpn, 'feed')
         part_to_add['feed'] = (hpn, 'A', 'feed', sn)
 
-        hpn = 'FEM{:03d}'.format(fem)
+        hpn = util.get_hpn('fem', fem)
         sn = self.get_ser_num(hpn, 'front-end')
         part_to_add['fem'] = (hpn, 'A', 'front-end', sn)
 
@@ -374,10 +376,10 @@ class Update:
                 added['part'].append(list(p) + [added['time']])
 
         # These added after, since already included in add_station/add_node
-        hpn = 'A{}'.format(ant)
+        hpn = util.get_hpn('antenna', ant)
         part_to_add['ant'] = (hpn, 'H')
 
-        hpn = 'NBP{:02d}'.format(node)
+        hpn = util.get_hpn('nbp', node)
         part_to_add['nbp'] = (hpn, 'A')
 
         # Set up connections
