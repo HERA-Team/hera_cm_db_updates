@@ -2525,3 +2525,4 @@ HH33,A,Feed heights (NE/SE/SW/NW): Z = 4.405,apa-infoupd,1297557738
 WRA000201,A,MAC - 08:00:30:12:7c:a1,,1267095228
 WRA000201,A,IP - 10.80.2.136,,1267095238
 HH121,A,PAM208 swapped in from Node2 (replace broken 21),infoupd,1298137338
+PAM021,A,PAM removed by staff during node 8 polish,site staff,1298109618
