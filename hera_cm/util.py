@@ -94,7 +94,7 @@ def get_row_dict(hdr, data):
 
 def gen_hpn(ptype, pnum, verbose=False):
     """
-    From the sheet data (via ptype, pnum) it will generate a HERA Part Number
+    From the sheet data (via ptype, pnum) etc it will generate a HERA Part Number
     """
     ptype = ptype.upper()
     if isinstance(pnum, str):
@@ -110,6 +110,8 @@ def gen_hpn(ptype, pnum, verbose=False):
             return 'SNP{}{:06d}'.format(snpletter, snpnum)
         if ptype in ['PAM', 'FEM']:
             return '{}{:03d}'.format(ptype, int(pnum))
+        if ptype in ['NODE-STATION']:
+            return 'ND{:02d}'.format(int(pnum))
         if ptype in ['NODE', 'ND']:
             return 'N{:02d}'.format(int(pnum))
         if ptype in ['NBP']:
@@ -120,6 +122,12 @@ def gen_hpn(ptype, pnum, verbose=False):
             return 'A{}'.format(int(pnum))
         if ptype in ['STATION']:
             return 'HH{}'.format(int(pnum))
+        if ptype in ['FPS']:
+            return 'FPS{:02d}'.format(int(pnum))
+        if ptype in ['PCH']:
+            return 'PCH{:02d}'.format(int(pnum))
+        if ptype in ['NCM']:
+            return 'NCM{}'.format(int(pnum))
     except ValueError:
         if verbose:
             print("ValueError:  util.gen_hpn:  Invalid pnum '{}'".format(pnum))

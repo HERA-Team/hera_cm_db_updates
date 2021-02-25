@@ -4,7 +4,7 @@ import os
 from hera_cm import util
 from hera_mc import cm_utils, cm_active, cm_handling
 
-current_revs = {'HH': 'A', 'A': 'H', 'FDV': 'V'}
+current_revs = {'HH': 'A', 'HA': 'A', 'HB': 'A', 'A': 'H', 'FDV': 'V'}
 part_types = {'FDV': 'feed', 'FEM': 'front-end', 'NBP': 'node-bulkhead',
               'PAM': 'post-amp', 'SNP': 'snap'}
 
@@ -115,8 +115,8 @@ class Update:
         """
         added = {'station': [], 'part': [], 'connection': []}
         added['time'] = str(int(cm_utils.get_astropytime(cdate, ctime).gps))
-        s = "HH{}".format(stn)
-        a = "A{}".format(stn)
+        s = util.get_hpn('station', stn)
+        a = util.get_hpn('antenna', stn)
         n = "S/N{}".format(ser_num)
         self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'
                       .format(s, ser_num, cdate, ctime))
@@ -161,7 +161,7 @@ class Update:
         # hpn = 'N{:02d}'.format(node)
         hpn = util.get_hpn('node', node)
         part_to_add['node'] = (hpn, 'A', 'node', sn)
-        hpn = 'ND{:02d}'.format(node)
+        hpn = util.get_hpn('node-station', node)
         part_to_add['node-station'] = (hpn, 'A', 'station', sn)
         # Add node as station
         p = part_to_add['node-station']
@@ -227,22 +227,22 @@ class Update:
         added['time'] = str(int(cm_utils.get_astropytime(cdate, partadd_time).gps))
         self.ser_num_dict = ser_num
         part_to_add = {}
-        hpn = 'FPS{:02d}'.format(fps)
+        hpn = util.get_hpn('fps', fps)
         sn = self.get_ser_num(hpn, 'fps')
         part_to_add['fem-power-supply'] = (hpn, 'A', 'fem-power-supply', sn)
-        hpn = 'PCH{:02d}'.format(pch)
+        hpn = util.get_hpn('pch', pch)
         sn = self.get_ser_num(hpn, 'pch')
         part_to_add['pam-chassis'] = (hpn, 'A', 'pam-chassis', sn)
-        hpn = 'NCM{}'.format(ncm)
+        hpn = util.get_hpn('ncm', ncm)
         sn = self.get_ser_num(hpn, 'ncm')
         part_to_add['node-control-module'] = (hpn, 'A', 'node-control-module', sn)
         hpn = util.get_hpn('node', node)
         sn = self.get_ser_num(hpn, 'node')
         part_to_add['node'] = (hpn, 'A', 'node', sn)
-        hpn = 'ND{:02d}'.format(node)
+        hpn = util.get_hpn('node-station', node)
         sn = self.get_ser_num(hpn, 'node')
         part_to_add['node-station'] = (hpn, 'A', 'station', sn)
-        hpn = 'NBP{:02d}'.format(node)
+        hpn = util.get_hpn('nbp', node)
         sn = self.get_ser_num(hpn, 'node')
         part_to_add['node-bulkhead'] = (hpn, 'A', 'node-bulkhead', sn)
         for _pam in pams:
