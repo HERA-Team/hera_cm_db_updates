@@ -38,15 +38,14 @@ nodes = [18, 19, 20]
 ncms = [12, 18, 15]
 fpss = [20, 17, 19]
 pchs = [15, 16, 17]
-pams = [[700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711],
-        [720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731],
-        [740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751]]
+pams = [233, 257, 221]
 snaps = [['A00002', 65, 83, 68],
          [78, 8, 61, 25],
-         [70, 85, 85, 86]]
+         [70, 82, 85, 86]]
 cdate = '2021/02/25'
 
-for node, ncm, fps, pch, pam, snap in zip(nodes, ncms, fpss, pchs, pams, snaps):
+for node, ncm, fps, pch, start_pam, snap in zip(nodes, ncms, fpss, pchs, pams, snaps):
+    pam = list(range(start_pam, start_pam+12))
     hera.add_node(node, fps, pch, ncm, pam, snap, cdate=cdate, ctime='10:00', override=True)
 
 hera.done()
