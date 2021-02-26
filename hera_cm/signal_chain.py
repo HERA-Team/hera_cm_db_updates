@@ -274,23 +274,23 @@ class Update:
         # Add connections
         added['time'] = str(int(cm_utils.get_astropytime(cdate, connadd_time).gps))
         connection_to_add = []
-        up = [part_to_add['node'][0], part_to_add['node'][1], '@ground']
-        dn = [part_to_add['node-station'][0], part_to_add['node-station'][1], '@ground']
+        up = [part_to_add['node'][0], part_to_add['node'][1], 'ground']
+        dn = [part_to_add['node-station'][0], part_to_add['node-station'][1], 'ground']
         connection_to_add.append([up, dn, cdate, connadd_time])
-        up = [part_to_add['fem-power-supply'][0], part_to_add['fem-power-supply'][1], '@rack']
-        dn = [part_to_add['node'][0], part_to_add['node'][1], '@top']
+        up = [part_to_add['fem-power-supply'][0], part_to_add['fem-power-supply'][1], 'rack']
+        dn = [part_to_add['node'][0], part_to_add['node'][1], 'top']
         connection_to_add.append([up, dn, cdate, connadd_time])
-        up = [part_to_add['pam-chassis'][0], part_to_add['pam-chassis'][1], '@rack']
-        dn = [part_to_add['node'][0], part_to_add['node'][1], '@bottom']
+        up = [part_to_add['pam-chassis'][0], part_to_add['pam-chassis'][1], 'rack']
+        dn = [part_to_add['node'][0], part_to_add['node'][1], 'bottom']
         connection_to_add.append([up, dn, cdate, connadd_time])
-        up = [part_to_add['node-control-module'][0], part_to_add['node-control-module'][1], '@rack']
-        dn = [part_to_add['node'][0], part_to_add['node'][1], '@middle']
+        up = [part_to_add['node-control-module'][0], part_to_add['node-control-module'][1], 'rack']
+        dn = [part_to_add['node'][0], part_to_add['node'][1], 'middle']
         connection_to_add.append([up, dn, cdate, connadd_time])
         for i, _pam in enumerate(pams):
             hpn = util.get_hpn('pam', _pam)
-            up = [part_to_add[hpn][0], part_to_add[hpn][1], '@slot']
+            up = [part_to_add[hpn][0], part_to_add[hpn][1], 'slot']
             dn = [part_to_add['pam-chassis'][0], part_to_add['pam-chassis'][1],
-                  '@slot{}'.format(i + 1)]
+                  'slot{}'.format(i + 1)]
             connection_to_add.append([up, dn, cdate, connadd_time])
             for pol in ['e', 'n']:
                 nbport = '{}{}'.format(pol, i + 1)
