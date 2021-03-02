@@ -2526,3 +2526,23 @@ WRA000201,A,MAC - 08:00:30:12:7c:a1,,1267095228
 WRA000201,A,IP - 10.80.2.136,,1267095238
 HH121,A,PAM208 swapped in from Node2 (replace broken 21),infoupd,1298137338
 PAM021,A,PAM removed by staff during node 8 polish,site staff,1298109618
+HH0,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1298742198
+HH1,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1298742198
+HH11,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1298742198
+HH13,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1298742198
+HH14,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1298742198
+HH25,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1298742198
+HH26,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1298742198
+HH39,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1298742198
+HH0,A,PAM not turning on.,apa-infoupd,1298742138
+HH2,A,PAM not turning on.,infoupd,1298742138
+HH1,A,PAM not turning on.,apa-infoupd,1298742138
+HH11,A,PAM not turning on.,apa-infoupd,1298742138
+HH12,A,PAM not turning on.,infoupd,1298742138
+HH13,A,PAM not turning on.,apa-infoupd,1298742138
+HH14,A,PAM not turning on.,apa-infoupd,1298742138
+HH23,A,PAM not turning on.,infoupd,1298742138
+HH24,A,PAM not turning on.,infoupd,1298742138
+HH25,A,PAM not turning on.,apa-infoupd,1298742138
+HH26,A,PAM not turning on.,apa-infoupd,1298742138
+HH39,A,PAM not turning on.,apa-infoupd,1298742138
