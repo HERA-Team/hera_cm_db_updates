@@ -173,7 +173,7 @@ class UpdateConnect(upd_base.Update):
     def _status_OK(self, keyup, pol, list_to_check):
         if None in list_to_check:
             if self.verbose:
-                print('skipping ', list_to_check)
+                print(f'skipping {keyup} {pol}', list_to_check)
                 self.skipping.append(keyup)
             return False
         if keyup != '-':
