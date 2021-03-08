@@ -207,7 +207,8 @@ class UpdateConnect(upd_base.Update):
                                                       int(conn.downstream_input_port[-1]))
                     self.hera.add_part_rosetta(conn.upstream_part, hname, self.cdate, self.ctime)
                 except KeyError:
-                    print(f"Need to put {key} in active connections.")
+                    with open('upd_connect.log', 'a') as fp:
+                        print(f"Need to put {key} in active connections.", file=fp)
 
     def compare_connections(self, direction='gsheet-active'):
         """
