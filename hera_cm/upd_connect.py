@@ -201,10 +201,13 @@ class UpdateConnect(upd_base.Update):
             for key in t2u_attr:
                 if not key.startswith('SNP'):
                     continue
-                conn = self.active.connections[key]['up']['RACK']
-                hname = "heraNode{}Snap{}".format(int(conn.downstream_part[1:]),
-                                                  int(conn.downstream_input_port[-1]))
-                self.hera.add_part_rosetta(conn.upstream_part, hname, self.cdate, self.ctime)
+                try:
+                    conn = self.active.connections[key]['up']['RACK']
+                    hname = "heraNode{}Snap{}".format(int(conn.downstream_part[1:]),
+                                                      int(conn.downstream_input_port[-1]))
+                    self.hera.add_part_rosetta(conn.upstream_part, hname, self.cdate, self.ctime)
+                except KeyError:
+                    print(f"Need to put {key} in active connections.")
 
     def compare_connections(self, direction='gsheet-active'):
         """
