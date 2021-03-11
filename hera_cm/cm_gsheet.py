@@ -3,7 +3,9 @@ import csv
 import requests
 from . import util
 from hera_mc import cm_utils
+from argparse import Namespace
 
+apriori_enum_header = 'Current apriori enum'
 hu_col = {'Ant': 0, 'Pol': 4, 'Feed': 1, 'FEM': 2, 'PAM': 4, 'NBP/PAMloc': 3,
           'SNAP': 5, 'Port': 5, 'SNAPloc': 6, 'Node': 6}
 sheet_headers = ['Ant', 'Pol', 'Feed', 'FEM', 'NBP/PAMloc', 'PAM', 'SNAP', 'Port',
@@ -33,6 +35,8 @@ gsheet['node19'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBX
 gsheet['node20'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=319083641&single=true&output=csv"  # noqa
 no_prefix = ['Comments']
 
+README = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1630961076&single=true&output=csv"  # noqa
+
 
 class SheetData:
     """Class for googlesheet."""
@@ -48,6 +52,37 @@ class SheetData:
         self.date = {}
         self.notes = {}
         self.ants = []
+
+    def load_readme(self):
+        """
+        Load relevant data out of README tab.
+
+        Currently, this is the apriori enums and emails.
+        """
+        xxx = requests.get(README)
+        csv_tab = b''
+        for line in xxx:
+            csv_tab += line
+        csv_data = csv_tab.decode('utf-8').splitlines()
+        self.readme = {}
+        self.apriori_enum = []
+        self.apriori_email = {}
+        capture_enums = False
+        for data in csv.reader(csv_data):
+            self.readme[data[0]] = data[1:]
+            if data[0] == apriori_enum_header:
+                capture_enums = True
+                for _i, email_addr in enumerate(data[1:]):
+                    if len(email_addr):
+                        self.apriori_email[email_addr] = Namespace(eno=_i+1, notify=[])
+            elif capture_enums and not len(data[0]):
+                capture_enums = False
+            if capture_enums:
+                if data[0] != apriori_enum_header:
+                    self.apriori_enum.append(data[0])
+                    for notifyee, nent in self.apriori_email.items():
+                        if data[nent.eno].lower() == 'y':
+                            nent.notify.append(data[0])
 
     def load_sheet(self, node_csv='none', tabs=None, check_headers=False):
         """

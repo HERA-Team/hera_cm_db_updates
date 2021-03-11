@@ -17,6 +17,7 @@ class UpdateInfo(upd_base.Update):
                                          script_path=script_path,
                                          verbose=verbose)
         self.new_apriori = {}
+        self.apriori_notify_file = 'apriori_notify.txt'
 
     def load_active(self):
         """Load active data."""
@@ -24,12 +25,23 @@ class UpdateInfo(upd_base.Update):
         self.active.load_info()
         self.active.load_apriori()
 
+    def process_apriori_notification(self, notify):
+        print("read in the file, send the emails and init new one")
+        with open(self.apriori_notify_file, 'r') as fp:
+            for line in fp:
+                if line[0] == '>':
+                    continue
+                print(line)
+        with open(self.apriori_notify_file, 'w') as fp:
+            print(">Some sort of header.", file=fp)
+
     def add_apriori(self):
         """Write out for apriori differences."""
         self.new_apriori = {}
         rev = 'A'
         stmt_hdr = "apriori_antenna status change:"
         refout = 'apa-infoupd'
+        fp = open(self.apriori_notify_file, 'a')
         for key in self.gsheet.ants:
             ap_col = self.gsheet.header[self.gsheet.ant_to_node[key]].index('APriori')
             E = self.gsheet.data[key + '-E'][ap_col]
@@ -48,6 +60,7 @@ class UpdateInfo(upd_base.Update):
                 statement = "{} {} -> {}".format(stmt_hdr, self.active.apriori[key].status, E)
                 self.hera.add_part_info(ant, rev, statement, self.cdate2, self.ctime2, ref=refout)
                 self.update_counter += 1
+                print(statement, file=fp)
 
     def add_sheet_notes(self, duplication_window=90.0, view_duplicate=0.0):
         """
