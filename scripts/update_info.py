@@ -45,6 +45,7 @@ update.load_active()
 update.add_apriori()
 update.add_sheet_notes(duplication_window=args.duplication_window,
                        view_duplicate=args.view_duplicate)
+update.log_apriori_notifications()
 if args.look_only:
     update.view_info()
 else:

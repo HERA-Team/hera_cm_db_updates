@@ -7,6 +7,7 @@ This class sets up to update the part information database.
 from hera_mc import cm_utils, cm_active, mc
 from . import cm_gsheet, util, upd_base
 import os.path
+from argparse import Namespace
 
 
 class UpdateInfo(upd_base.Update):
@@ -28,7 +29,10 @@ class UpdateInfo(upd_base.Update):
         self.active.load_apriori()
 
     def process_apriori_notification(self, notify):
-        print("read in the file, send the emails and init new one")
+        """
+        Processes the log apriori updates and send email digest.
+        """
+        print("read in the file, send the emails and init new one -- make a script/daily-cronjob")
         with open(self.apriori_notify_file, 'r') as fp:
             for line in fp:
                 if line[0] == '>':
@@ -37,13 +41,31 @@ class UpdateInfo(upd_base.Update):
         with open(self.apriori_notify_file, 'w') as fp:
             print(">Some sort of header.", file=fp)
 
+    def log_apriori_notifications(self):
+        """
+        Log the found apriori updates to a file with update_info script.
+
+        Gets processed and distributed per "process_apriori_notification".
+        """
+        if not len(self.new_apriori):
+            return
+        with open(self.apriori_notify_file, 'a') as fp:
+            for key, info in self.new_apriori.items():
+                ant, rev = cm_utils.split_part_key(key)
+                if info.warning:
+                    print(f"{ant}: {info.warning}", end=' ', file=fp)
+                else:
+                    print(f"{ant}: {info.status_change} {info.cdate} {info.ctime}", end=' ', file=fp)  # noqa
+                    for cmt in info.info:
+                        print(cmt, end=' ', file=fp)
+                print('\n', file=fp)
+
     def add_apriori(self):
         """Write out for apriori differences."""
         self.new_apriori = {}
         rev = 'A'
         stmt_hdr = "apriori_antenna status change:"
         refout = 'apa-infoupd'
-        fp = open(self.apriori_notify_file, 'a')
         for key in self.gsheet.ants:
             ap_col = self.gsheet.header[self.gsheet.ant_to_node[key]].index('APriori')
             E = self.gsheet.data[key + '-E'][ap_col]
@@ -51,18 +73,23 @@ class UpdateInfo(upd_base.Update):
             ant, rev = cm_utils.split_part_key(key)
             if E != N:
                 print("{}:  {} and {} should be the same.".format(key, E, N))
+                self.new_apriori[key] = Namespace(warning=f"Pols don't match: {E} vs {N}")
                 continue
             if len(E) == 0:
                 continue
             if E != self.active.apriori[key].status:
-                self.new_apriori[key] = "{} -> {}".format(E, self.active.apriori[key].status)
+                self.new_apriori[key] = Namespace(warning=False, info=[])
+                self.new_apriori[key].status_change = f"{self.active.apriori[key].status} > {E}"
+                self.new_apriori[key].cdate = self.cdate2
+                self.new_apriori[key].ctime = self.ctime2
                 if self.verbose:
-                    print("Updating {}   {}".format(E, self.active.apriori[key].status))
-                self.hera.update_apriori(ant, E, self.cdate2, self.ctime2)
-                statement = "{} {} -> {}".format(stmt_hdr, self.active.apriori[key].status, E)
-                self.hera.add_part_info(ant, rev, statement, self.cdate2, self.ctime2, ref=refout)
+                    print(f"Updating {ant}:  {self.new_apriori[key].status_change}")
+                self.hera.update_apriori(ant, E, self.new_apriori[key].cdate,
+                                         self.new_apriori[key].ctime)
+                statement = f"{stmt_hdr} {self.new_apriori[key].status_change}"
+                self.hera.add_part_info(ant, rev, statement, self.new_apriori[key].cdate,
+                                        self.new_apriori[key].ctime, ref=refout)
                 self.update_counter += 1
-                print(statement, file=fp)
 
     def add_sheet_notes(self, duplication_window=90.0, view_duplicate=0.0):
         """
@@ -109,6 +136,8 @@ class UpdateInfo(upd_base.Update):
                         refout = 'apa-infoupd'
                     self.new_notes.setdefault(antrev_key, [])
                     self.new_notes[antrev_key].append(statement)
+                    if antrev_key in self.new_apriori.keys():
+                        self.new_apriori[antrev_key].info.append(statement)
                     if self.verbose:
                         print("Adding comment: {}:{} - {}".format(ant, rev, statement))
                     self.hera.add_part_info(ant, rev, statement, pdate, ptime, ref=refout)
