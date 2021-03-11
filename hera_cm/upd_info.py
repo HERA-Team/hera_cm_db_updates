@@ -4,8 +4,9 @@
 """
 This class sets up to update the part information database.
 """
-from hera_mc import cm_utils, cm_active
+from hera_mc import cm_utils, cm_active, mc
 from . import cm_gsheet, util, upd_base
+import os.path
 
 
 class UpdateInfo(upd_base.Update):
@@ -17,7 +18,8 @@ class UpdateInfo(upd_base.Update):
                                          script_path=script_path,
                                          verbose=verbose)
         self.new_apriori = {}
-        self.apriori_notify_file = 'apriori_notify.txt'
+        cm_csv_path = mc.get_cm_csv_path()
+        self.apriori_notify_file = os.path.join(cm_csv_path, 'apriori_notify.txt')
 
     def load_active(self):
         """Load active data."""
