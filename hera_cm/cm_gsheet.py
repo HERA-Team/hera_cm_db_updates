@@ -36,6 +36,7 @@ gsheet['node20'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBX
 no_prefix = ['Comments']
 
 README = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1630961076&single=true&output=csv"  # noqa
+WORKFLOW = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=2096134790&single=true&output=csv"  # noqa
 
 
 class SheetData:
@@ -53,23 +54,23 @@ class SheetData:
         self.notes = {}
         self.ants = []
 
-    def load_readme(self):
+    def load_workflow(self):
         """
         Load relevant data out of README tab.
 
         Currently, this is the apriori enums and emails.
         """
-        xxx = requests.get(README)
+        xxx = requests.get(WORKFLOW)
         csv_tab = b''
         for line in xxx:
             csv_tab += line
         csv_data = csv_tab.decode('utf-8').splitlines()
-        self.readme = {}
+        self.workflow = {}
         self.apriori_enum = []
         self.apriori_email = {}
         capture_enums = False
         for data in csv.reader(csv_data):
-            self.readme[data[0]] = data[1:]
+            self.workflow[data[0]] = data[1:]
             if data[0] == apriori_enum_header:
                 capture_enums = True
                 for _i, email_addr in enumerate(data[1:]):

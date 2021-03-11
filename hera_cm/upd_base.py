@@ -44,7 +44,7 @@ class Update():
     def load_gsheet(self, node_csv='none', tabs=None):
         """Get the googlesheet information from the internet."""
         self.gsheet = cm_gsheet.SheetData()
-        self.gsheet.load_readme()
+        self.gsheet.load_workflow()
         self.gsheet.load_sheet(node_csv=node_csv, tabs=None)
 
     def finish(self, cron_script=None, archive_to=None):
