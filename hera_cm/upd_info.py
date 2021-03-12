@@ -5,7 +5,7 @@
 This class sets up to update the part information database.
 """
 from hera_mc import cm_utils, cm_active, mc
-from . import cm_gsheet, util, upd_base
+from . import util, upd_base
 import os.path
 import json
 
@@ -37,14 +37,12 @@ class UpdateInfo(upd_base.Update):
         self.active.load_info()
         self.active.load_apriori()
 
-    def process_apriori_notification(self, notify, notify_type='either'):
+    def process_apriori_notification(self, notify_type='either'):
         """
         Processes the log apriori updates and send email digest.
 
         Parameters
         ----------
-        notify : dict
-            people to contact in format from gsheet.workflow apriori_email
         notify_type : str
             one of 'either', 'old', 'new':  notify if status in old, new, either
         """
@@ -54,13 +52,13 @@ class UpdateInfo(upd_base.Update):
         if os.path.isfile(self.apriori_notify_file):
             with open(self.apriori_notify_file, 'r') as fp:
                 anotify = json.load(fp)
-            print("Uncomment54")
             remove(self.apriori_notify_file)
         else:
             return
+        self.load_gworkflow()
         subject = 'Apriori system changes.'
         from_addr = 'hera@lists.berkeley.edu'
-        for email, n in notify.items():
+        for email, n in self.gsheet.apriori_email.items():
             msg = ""
             used_antdt = []
             for antdt, data in anotify.items():

@@ -40,12 +40,18 @@ class Update():
         self.hera = signal_chain.Update(self.script, output_script_path=script_path, chmod=True,
                                         verbose=verbose, cdate=self.cdate, ctime=self.ctime)
         self.update_counter = 0
+        self.gsheet = None
 
     def load_gsheet(self, node_csv='none', tabs=None):
         """Get the googlesheet information from the internet."""
-        self.gsheet = cm_gsheet.SheetData()
-        self.gsheet.load_workflow()
+        if self.gsheet is None:
+            self.gsheet = cm_gsheet.SheetData()
         self.gsheet.load_sheet(node_csv=node_csv, tabs=None)
+
+    def load_gworkflow(self):
+        if self.gsheet is None:
+            self.gsheet = cm_gsheet.SheetData()
+        self.gsheet.load_workflow()
 
     def finish(self, cron_script=None, archive_to=None):
         """

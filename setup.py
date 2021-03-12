@@ -16,7 +16,8 @@ setup_args = {
     'author_email': "hera-sw@lists.berkeley.edu",
     'version': '1.0',
     'packages': ['hera_cm'],
-    'scripts': ['scripts/write_sqlite.py', 'scripts/update_info.py', 'scripts/update_connect.py'],
+    'scripts': ['scripts/write_sqlite.py', 'scripts/update_info.py',
+                'scripts/update_connect.py', 'scripts/apriori_notification.py'],
     'include_package_data': True,
     'install_requires': []
 }
