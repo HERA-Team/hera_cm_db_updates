@@ -5,7 +5,7 @@
 This class sets up to update the part information database.
 """
 from hera_mc import cm_utils, cm_active, mc
-from . import util, upd_base
+from . import util, upd_base, cm_gsheet
 import os.path
 import json
 
