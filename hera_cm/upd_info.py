@@ -71,11 +71,11 @@ class UpdateInfo(upd_base.Update):
                 else:
                     using = [data['old_status'], data['new_status']]
                 for this_status in n.notify:
-                    if this_status in using and antdt not in used_antdt:
-                        msg += _dict2msg(data)
-                        used_antdt.append(antdt)
                     if '!Warning!' in data['new_status']:
                         msg += _dict2msg(data, warning=True)
+                        used_antdt.append(antdt)
+                    elif this_status in using and antdt not in used_antdt:
+                        msg += _dict2msg(data, warning=False)
                         used_antdt.append(antdt)
             if len(msg):
                 to_addr = [email]
