@@ -37,7 +37,7 @@ class UpdateInfo(upd_base.Update):
         self.active.load_info()
         self.active.load_apriori()
 
-    def process_apriori_notification(self, notify_type='either'):
+    def process_apriori_notification(self, notify_type='new'):
         """
         Processes the log apriori updates and send email digest.
 
@@ -70,6 +70,9 @@ class UpdateInfo(upd_base.Update):
                     using = [data['old_status'], data['new_status']]
                 for this_status in n.notify:
                     if this_status in using and antdt not in used_antdt:
+                        msg += _dict2msg(data)
+                        used_antdt.append(antdt)
+                    if '!Warning!' in data['new_status']:
                         msg += _dict2msg(data)
                         used_antdt.append(antdt)
             if len(msg):
