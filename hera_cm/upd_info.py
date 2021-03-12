@@ -12,8 +12,8 @@ import json
 
 def _dict2msg(data, warning=False):
     if warning:
-        return f"********{data['ant']}:  {data['new_status']}********"
-    msg = f"--------{data['ant']}: {data['cdate']}  {data['ctime']}\n"
+        return f"*************{data['ant']}:  {data['new_status']}*************"
+    msg = f"-------------{data['ant']}: {data['cdate']}  {data['ctime']}\n"
     msg += f"\t{data['old_status']} --> {data['new_status']}\n"
     for info in data['info']:
         msg += f"\t{info}\n"
@@ -59,7 +59,7 @@ class UpdateInfo(upd_base.Update):
             return
         self.load_gworkflow()
         from_addr = 'hera@lists.berkeley.edu'
-        msg_header = 'Apriori system changes.\n------------------\n'
+        msg_header = 'Apriori system changes.\n------------------------------\n'
         for email, n in self.gsheet.apriori_email.items():
             msg = "{}".format(msg_header)
             used_antdt = []
