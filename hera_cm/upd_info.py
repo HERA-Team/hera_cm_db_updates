@@ -10,7 +10,9 @@ import os.path
 import json
 
 
-def _dict2msg(data):
+def _dict2msg(data, warning=False):
+    if warning:
+        return f"********{data['ant']}:  {data['new_status']}********"
     msg = f"--------{data['ant']}: {data['cdate']}  {data['ctime']}\n"
     msg += f"\t{data['old_status']} --> {data['new_status']}\n"
     for info in data['info']:
@@ -73,7 +75,7 @@ class UpdateInfo(upd_base.Update):
                         msg += _dict2msg(data)
                         used_antdt.append(antdt)
                     if '!Warning!' in data['new_status']:
-                        msg += _dict2msg(data)
+                        msg += _dict2msg(data, warning=True)
                         used_antdt.append(antdt)
             if len(msg):
                 to_addr = [email]
