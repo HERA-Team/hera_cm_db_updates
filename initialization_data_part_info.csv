@@ -2603,3 +2603,6 @@ HH123,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1
 HH125,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
 HH125,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH0,A,Gratuitous change to test email system.,apa-infoupd,1299555738
+HH2,A,apriori_antenna status change: RF_maintenance > dish_ok,apa-infoupd,1299606198
+HH0,A,Test warning,apa-infoupd,1299606138
+HH2,A,Test apriori change,apa-infoupd,1299606138
