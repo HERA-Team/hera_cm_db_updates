@@ -1,6 +1,6 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed Heights
-143,E,139,175,9,181,28,e10,2,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,Z = 4.404
-143,N,139,175,9,181,28,n8,2,digital_ok,,,
+143,E,139,175,9,181,28,e10,2,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/660,Z = 4.404
+143,N,139,175,9,181,28,n8,2,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/660,
 144,E,127,179,10,182,38,e2,3,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,Z = 4.410
 144,N,127,179,10,182,38,n0,3,digital_ok,, ,
 145,E,111,183,11,183,38,e6,3,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,Z = 4.405
@@ -13,16 +13,16 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 164,N,106,174,8,180,28,n4,2,digital_ok,, ,
 165,E,108,181,1,173,51,e2,0,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,Z = 4.401
 165,N,108,181,1,173,51,n0,0,digital_ok,, ,
-166,E,105,198,2,174,51,e6,0,digital_ok,,Moved from rf_maint  to dig_ok  as looks like seing sky rather than load. 06 Oct.,
-166,N,105,198,2,174,51,n4,0,digital_ok,, ,
-184,E,107,180,3,175,51,e10,0,RF_maintenance,,Ant 184 N newly high under and over the bandpass; bandpass looks flatter than expected. See 'Observing review for day 591115' issue. ,
-184,N,107,180,3,175,51,n8,0,RF_maintenance,, ,
+166,E,105,198,2,174,51,e6,0,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/660,
+166,N,105,198,2,174,51,n4,0,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/660,
+184,E,107,180,3,175,51,e10,0,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/660,
+184,N,107,180,3,175,51,n8,0,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/660,
 185,E,125,178,4,176,43,e2,1,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,Z = 4.410
 185,N,125,178,4,176,43,n0,1,digital_ok,, ,
 186,E,112,184,5,177,43,e6,1,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,Z = 4.409
 186,N,112,184,5,177,43,n4,1,digital_ok,, ,
-187,E,115,177,6,178,43,e10,1,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,Z = 4.406
-187,N,115,177,6,178,43,n8,1,digital_ok,,,
+187,E,115,177,6,178,43,e10,1,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/660,Z = 4.406
+187,N,115,177,6,178,43,n8,1,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/660,
 Date,2020/02/01,,,,,,,,,,,
 ,These need to be completed by the site crew,,,,,,,,,,,
 ,,,,,,,,,,,,

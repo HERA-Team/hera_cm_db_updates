@@ -17,8 +17,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
 108,N,22,33,5,39,C11,n4,1,digital_ok,, 
 124,E,24,32,8,41,C13,e6,2,digital_ok,PAM: 42,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept
 124,N,24,32,8,41,C13,n4,2,digital_ok,, 
-125,E,25,29,12,46,C33,e10,3,digital_ok,,10Mar2020 z = 4.405
-125,N,25,29,12,46,C33,n8,3,digital_ok,,10Mar2020 z = 4.405
+125,E,25,29,12,46,C33,e10,3,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/660
+125,N,25,29,12,46,C33,n8,3,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/660
 126,E,13,28,11,45,C33,e6,3,RF_maintenance,,11 March 2020 Z= 4.405
 126,N,13,28,11,45,C33,n4,3,RF_maintenance,,11 March 2020 Z= 4.405
 Date:,2019/11/18,,,,,,,,,,
