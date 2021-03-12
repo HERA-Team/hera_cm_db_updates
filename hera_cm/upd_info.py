@@ -58,10 +58,10 @@ class UpdateInfo(upd_base.Update):
         else:
             return
         self.load_gworkflow()
-        subject = 'Apriori system changes.'
         from_addr = 'hera@lists.berkeley.edu'
+        msg_header = 'Apriori system changes.\n------------------\n'
         for email, n in self.gsheet.apriori_email.items():
-            msg = ""
+            msg = "{}".format(msg_header)
             used_antdt = []
             for antdt, data in anotify.items():
                 if notify_type == 'old':
@@ -77,9 +77,10 @@ class UpdateInfo(upd_base.Update):
                     elif this_status in using and antdt not in used_antdt:
                         msg += _dict2msg(data, warning=False)
                         used_antdt.append(antdt)
-            if len(msg):
+            if msg != msg_header:
                 to_addr = [email]
-                watch_dog.send_email(subject, msg, to_addr, from_addr, skip_send=False)
+                watch_dog.send_email(msg_header.splitlines()[0], msg, to_addr,
+                                     from_addr, skip_send=False)
 
     def log_apriori_notifications(self):
         """
