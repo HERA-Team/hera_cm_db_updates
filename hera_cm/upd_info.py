@@ -7,12 +7,15 @@ This class sets up to update the part information database.
 from hera_mc import cm_utils, cm_active, mc
 from . import cm_gsheet, util, upd_base
 import os.path
-from os import remove
 import json
 
 
 def _dict2msg(data):
-    msg = f"{data['ant']}: {data['old_status']} -> {data['new_status']}"
+    msg = f"--------{data['ant']}: {data['cdate']}  {data['ctime']}\n"
+    msg += f"\t{data['old_status']} --> {data['new_status']}\n"
+    for info in data['info']:
+        msg += f"\t{info}\n"
+    msg += '\n'
     return msg
 
 
@@ -45,16 +48,18 @@ class UpdateInfo(upd_base.Update):
         notify_type : str
             one of 'either', 'old', 'new':  notify if status in old, new, either
         """
-        print("read in the file, send the emails and init new one -- make a script/daily-cronjob")
+        from hera_mc import watch_dog
+        from os import remove
         anotify = {}
         if os.path.isfile(self.apriori_notify_file):
             with open(self.apriori_notify_file, 'r') as fp:
                 anotify = json.load(fp)
-            print("Uncomment41")
-            #remove(fp)
+            print("Uncomment54")
+            remove(self.apriori_notify_file)
         else:
             return
-        email_msg = {}
+        subject = 'Apriori system changes.'
+        from_addr = 'hera@lists.berkeley.edu'
         for email, n in notify.items():
             msg = ""
             used_antdt = []
@@ -66,14 +71,12 @@ class UpdateInfo(upd_base.Update):
                 else:
                     using = [data['old_status'], data['new_status']]
                 for this_status in n.notify:
-                    print(email, antdt, this_status, using)
                     if this_status in using and antdt not in used_antdt:
-                        print("FOOUDNFSDLKFJHSLDKFJHSLDFJHDLSHJF")
                         msg += _dict2msg(data)
                         used_antdt.append(antdt)
             if len(msg):
-                email_msg[email] = msg
-        return email_msg
+                to_addr = [email]
+                watch_dog.send_email(subject, msg, to_addr, from_addr, skip_send=False)
 
     def log_apriori_notifications(self):
         """
