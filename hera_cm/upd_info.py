@@ -7,7 +7,13 @@ This class sets up to update the part information database.
 from hera_mc import cm_utils, cm_active, mc
 from . import cm_gsheet, util, upd_base
 import os.path
+from os import remove
 import json
+
+
+def _dict2msg(data):
+    msg = f"{data['ant']}: {data['old_status']} -> {data['new_status']}"
+    return msg
 
 
 class UpdateInfo(upd_base.Update):
@@ -28,28 +34,46 @@ class UpdateInfo(upd_base.Update):
         self.active.load_info()
         self.active.load_apriori()
 
-    def process_apriori_notification(self, notify):
+    def process_apriori_notification(self, notify, notify_type='either'):
         """
         Processes the log apriori updates and send email digest.
+
+        Parameters
+        ----------
+        notify : dict
+            people to contact in format from gsheet.workflow apriori_email
+        notify_type : str
+            one of 'either', 'old', 'new':  notify if status in old, new, either
         """
         print("read in the file, send the emails and init new one -- make a script/daily-cronjob")
         anotify = {}
-        with open(self.apriori_notify_file, 'r') as fp:
-            for line in fp:
-                if line[0] == '>':
-                    continue
-                ant = line.split()[0]
-                data = line.split('|')
-                cdate, ctime = data[1], data[2]
-                if '!Warning!' in line:
-                    anotify['warning'] = f"{data[0]}: {data[1]}"
-                    continue
-                data = line.split()
-                ant, old_stat, new_stat, cdate, ctime = data[0], data[1], data[3], data[4], data[5]
-                comments = line.split("^")[1].split('|')
-                anotify[new_stat] = [ant, old_stat, cdate, ctime]
-        #with open(self.apriori_notify_file, 'w') as fp:
-        #    print(">Some sort of header.", file=fp)
+        if os.path.isfile(self.apriori_notify_file):
+            with open(self.apriori_notify_file, 'r') as fp:
+                anotify = json.load(fp)
+            print("Uncomment41")
+            #remove(fp)
+        else:
+            return
+        email_msg = {}
+        for email, n in notify.items():
+            msg = ""
+            used_antdt = []
+            for antdt, data in anotify.items():
+                if notify_type == 'old':
+                    using = [data['old_status']]
+                elif notify_type == 'new':
+                    using = [data['new_status']]
+                else:
+                    using = [data['old_status'], data['new_status']]
+                for this_status in n.notify:
+                    print(email, antdt, this_status, using)
+                    if this_status in using and antdt not in used_antdt:
+                        print("FOOUDNFSDLKFJHSLDKFJHSLDFJHDLSHJF")
+                        msg += _dict2msg(data)
+                        used_antdt.append(antdt)
+            if len(msg):
+                email_msg[email] = msg
+        return email_msg
 
     def log_apriori_notifications(self):
         """
@@ -59,13 +83,16 @@ class UpdateInfo(upd_base.Update):
         """
         if not len(self.new_apriori):
             return
-        with open(self.apriori_notify_file, 'a') as fp:
-            for key, info in self.new_apriori.items():
-                ant, rev = cm_utils.split_part_key(key)
-                print(f"{ant} {info.status_change}|{info.cdate}|{info.ctime}", end='^', file=fp)  # noqa
-                for cmt in info.info:
-                    print(cmt, end='|', file=fp)
-                print('', file=fp)
+        try:
+            with open(self.apriori_notify_file, 'r') as fp:
+                full_notify = json.load(fp)
+        except FileNotFoundError:
+            full_notify = {}
+        for k, v in self.new_apriori.items():
+            new_key = f"{v['ant']}|{v['cdate']}|{v['ctime']}"
+            full_notify[new_key] = v
+        with open(self.apriori_notify_file, 'w') as fp:
+            json.dump(full_notify, fp, indent=4)
 
     def add_apriori(self):
         """Write out for apriori differences."""
@@ -81,6 +108,7 @@ class UpdateInfo(upd_base.Update):
             if E != N:
                 print("{}:  {} and {} should be the same.".format(key, E, N))
                 self.new_apriori[key] = {'info': []}
+                self.new_apriori[key]['ant'] = ant
                 self.new_apriori[key]['old_status'] = self.active.apriori[key].status
                 self.new_apriori[key]['new_status'] = f"!Warning! Pols don't match: {E} vs {N}"
                 self.new_apriori[key]['cdate'] = self.cdate2
@@ -90,6 +118,7 @@ class UpdateInfo(upd_base.Update):
                 continue
             if E != self.active.apriori[key].status:
                 self.new_apriori[key] = {'info': []}
+                self.new_apriori[key]['ant'] = ant
                 self.new_apriori[key]['old_status'] = self.active.apriori[key].status
                 self.new_apriori[key]['new_status'] = E
                 self.new_apriori[key]['cdate'] = self.cdate2
@@ -147,7 +176,8 @@ class UpdateInfo(upd_base.Update):
                     refout = 'infoupd'
                     if antrev_key in self.new_apriori.keys():
                         refout = 'apa-infoupd'
-                        self.new_apriori[antrev_key]['info'].append(statement)
+                        if statement not in self.new_apriori[antrev_key]['info']:
+                            self.new_apriori[antrev_key]['info'].append(statement)
                     self.new_notes.setdefault(antrev_key, [])
                     self.new_notes[antrev_key].append(statement)
                     if self.verbose:

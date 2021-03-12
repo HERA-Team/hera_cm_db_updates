@@ -56,7 +56,7 @@ class SheetData:
 
     def load_workflow(self):
         """
-        Load relevant data out of README tab.
+        Load relevant data out of WORKFLOW tab.
 
         Currently, this is the apriori enums and emails.
         """
