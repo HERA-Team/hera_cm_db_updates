@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "210312_infoupd_0342" >> scripts.log 
+add_part_info.py -p HH0 -r A -c 'Gratuitous change to test email system.' -l "apa-infoupd" --date 2021/03/12 --time 03:42:00
