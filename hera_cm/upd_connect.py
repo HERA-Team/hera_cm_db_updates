@@ -19,7 +19,7 @@ class UpdateConnect(upd_base.Update):
     pols = ['E', 'N']
     NotFound = "Not Found"
 
-    def __init__(self, script_type='connupd', script_path='./', verbose=True):
+    def __init__(self, script_type='connupd', script_path='default', verbose=True):
         super(UpdateConnect, self).__init__(script_type=script_type,
                                             script_path=script_path,
                                             verbose=verbose)
