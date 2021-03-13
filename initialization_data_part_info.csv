@@ -2607,3 +2607,7 @@ HH2,A,apriori_antenna status change: RF_maintenance > dish_ok,apa-infoupd,129960
 HH0,A,Test warning,apa-infoupd,1299606138
 HH2,A,Test apriori change,apa-infoupd,1299606138
 HH2,A,apriori_antenna status change: dish_ok > RF_maintenance,apa-infoupd,1299609798
+HH0,A,apriori_antenna status change: RF_maintenance > dish_ok,apa-infoupd,1299634998
+HH0,A,Another test of apriori notification.,apa-infoupd,1299634938
+HH0,A,Testing the full automation,apa-infoupd,1299634940
+HH2,A,Another test of apriori mis-match warning,apa-infoupd,1299634938
