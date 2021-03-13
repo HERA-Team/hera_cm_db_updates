@@ -11,7 +11,7 @@ from . import signal_chain, cm_gsheet
 class Update():
     """Base update class."""
 
-    def __init__(self, script_type, script_path='./', verbose=True):
+    def __init__(self, script_type, script_path='default', verbose=True):
         """
         Initialize.
 
@@ -24,7 +24,11 @@ class Update():
         verbose : bool
             Verbose or not.
         """
-        self.script_path = script_path
+        if script_path == 'default':
+            from hera_mc import mc
+            self.script_path = mc.get_cm_csv_path()
+        else:
+            self.script_path = script_path
         self.verbose = verbose
         self.now = datetime.datetime.now()
         self.cdate = self.now.strftime('%Y/%m/%d')
@@ -37,8 +41,9 @@ class Update():
         else:
             self.script = '{}_{}_{}'.format(self.cdate.replace('/', '')[2:], script_type,
                                             self.ctime.replace(':', ''))
-        self.hera = signal_chain.Update(self.script, output_script_path=script_path, chmod=True,
-                                        verbose=verbose, cdate=self.cdate, ctime=self.ctime)
+        self.hera = signal_chain.Update(self.script, output_script_path=self.script_path,
+                                        chmod=True, verbose=verbose,
+                                        cdate=self.cdate, ctime=self.ctime)
         self.update_counter = 0
         self.gsheet = None
 

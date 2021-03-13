@@ -11,9 +11,9 @@ from hera_cm import upd_info
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--script-path', dest='script_path', help="Path for active script",
-                    default='./')
+                    default='default')
     ap.add_argument('--archive-path', dest='archive_path', help="Path for script archive.",
-                    default=None)
+                    default='___cm_updates')
     ap.add_argument('-n', '--node_csv', help="For testing: flag for read/write of gsheet (r/w/n)",
                     choices=['read', 'write', 'none', 'r', 'w', 'n'], default='n')
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
@@ -24,7 +24,7 @@ if __name__ == '__main__':
     ap.add_argument('--look_only', help='Flag to only look at data.', action='store_true')
     args = ap.parse_args()
 else:
-    args = argparse.Namespace(archive_path=None, script_path='./', node_csv='r', verbose=True,
+    args = argparse.Namespace(archive_path=None, script_path='default', node_csv='r', verbose=True,
                               duplication_window=70.0, view_duplicate=10.0, look_only=False)
     print(args)
 
@@ -40,6 +40,9 @@ args.view_duplicate = float(args.view_duplicate)
 update = upd_info.UpdateInfo(script_type=script_type,
                              script_path=args.script_path,
                              verbose=args.verbose)
+if args.archive_path.startswith('___'):
+    import os.path
+    args.archive_path = os.path.join(update.script_path, args.archive_path[3:])
 update.load_gsheet(node_csv=args.node_csv)
 update.load_active()
 update.add_apriori()

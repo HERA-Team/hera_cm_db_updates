@@ -24,7 +24,7 @@ def _dict2msg(data, warning=False):
 class UpdateInfo(upd_base.Update):
     """Generates the script to update comments and "apriori" info from the configuration gsheet."""
 
-    def __init__(self, script_type='infoupd', script_path='./', verbose=True):
+    def __init__(self, script_type='infoupd', script_path='default', verbose=True):
         """Init of base."""
         super(UpdateInfo, self).__init__(script_type=script_type,
                                          script_path=script_path,
