@@ -9,3 +9,4 @@ from hera_cm import upd_info
 
 update = upd_info.UpdateInfo()
 update.process_apriori_notification()
+update.finish()
