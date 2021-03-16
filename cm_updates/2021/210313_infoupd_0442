@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "210313_infoupd_0442" >> scripts.log 
+update_apriori.py -p HH0 -s RF_maintenance --date 2021/03/13 --time 04:43
+add_part_info.py -p HH0 -r A -c 'apriori_antenna status change: dish_ok > RF_maintenance' -l "apa-infoupd" --date 2021/03/13 --time 04:43
