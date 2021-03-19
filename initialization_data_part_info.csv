@@ -2634,3 +2634,13 @@ HH93,A,Looks dead in post-PAM spectre 17 Sept,infoupd,1299958940
 HH45,A,post-PAM spectre looks fine 17 sept,infoupd,1299958938
 HH59,A,59E has rising tail in 17 spet post-pam spectre,infoupd,1299958938
 HH59,A,59E has rising tail in 17 spet post-pam spectre,infoupd,1299958940
+HH16,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1300214598
+HH73,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1300214598
+HH127,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1300214598
+HH130,A,apriori_antenna status change: digital_ok > digital_maintenance,apa-infoupd,1300214598
+HH144,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1300214598
+HH16,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,apa-infoupd,1300214538
+HH127,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,apa-infoupd,1300214538
+HH130,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,apa-infoupd,1300214538
+HH144,A,Feed Heights: https://github.com/HERA-Team/HERA_Commissioning/issues/666,apa-infoupd,1300214538
+HH73,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,apa-infoupd,1300214538
