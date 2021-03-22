@@ -1,0 +1,18 @@
+#! /bin/bash
+source ~/.bashrc
+echo "210319_infoupd_1842" >> scripts.log 
+update_apriori.py -p HH16 -s digital_ok --date 2021/03/19 --time 18:43
+add_part_info.py -p HH16 -r A -c 'apriori_antenna status change: RF_maintenance > digital_ok' -l "apa-infoupd" --date 2021/03/19 --time 18:43
+update_apriori.py -p HH73 -s RF_maintenance --date 2021/03/19 --time 18:43
+add_part_info.py -p HH73 -r A -c 'apriori_antenna status change: digital_ok > RF_maintenance' -l "apa-infoupd" --date 2021/03/19 --time 18:43
+update_apriori.py -p HH127 -s RF_maintenance --date 2021/03/19 --time 18:43
+add_part_info.py -p HH127 -r A -c 'apriori_antenna status change: digital_ok > RF_maintenance' -l "apa-infoupd" --date 2021/03/19 --time 18:43
+update_apriori.py -p HH130 -s digital_maintenance --date 2021/03/19 --time 18:43
+add_part_info.py -p HH130 -r A -c 'apriori_antenna status change: digital_ok > digital_maintenance' -l "apa-infoupd" --date 2021/03/19 --time 18:43
+update_apriori.py -p HH144 -s RF_maintenance --date 2021/03/19 --time 18:43
+add_part_info.py -p HH144 -r A -c 'apriori_antenna status change: digital_ok > RF_maintenance' -l "apa-infoupd" --date 2021/03/19 --time 18:43
+add_part_info.py -p HH16 -r A -c 'https://github.com/HERA-Team/HERA_Commissioning/issues/666' -l "apa-infoupd" --date 2021/03/19 --time 18:42:00
+add_part_info.py -p HH127 -r A -c 'https://github.com/HERA-Team/HERA_Commissioning/issues/666' -l "apa-infoupd" --date 2021/03/19 --time 18:42:00
+add_part_info.py -p HH130 -r A -c 'https://github.com/HERA-Team/HERA_Commissioning/issues/666' -l "apa-infoupd" --date 2021/03/19 --time 18:42:00
+add_part_info.py -p HH144 -r A -c 'Feed Heights: https://github.com/HERA-Team/HERA_Commissioning/issues/666' -l "apa-infoupd" --date 2021/03/19 --time 18:42:00
+add_part_info.py -p HH73 -r A -c 'https://github.com/HERA-Team/HERA_Commissioning/issues/666' -l "apa-infoupd" --date 2021/03/19 --time 18:42:00
