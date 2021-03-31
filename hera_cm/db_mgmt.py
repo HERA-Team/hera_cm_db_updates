@@ -3,19 +3,9 @@ Methods to check and update the database files for csv and sqlite
 """
 from hera_mc import mc, cm_table_info
 import os.path
+
 CM_CSV_PATH = mc.get_cm_csv_path(None)
-INIT_DATA_PREFIX = "initialization_data"
-
-use_later = cm_table_info.cm_tables  # but for now be safe...mainly about order and cm_version
-csv_init_table_list = ['apriori_antenna', 'connections', 'geo_location',
-                       'part_info', 'parts', 'station_type', 'part_rosetta']
-
-
-psql_table_dump_list = ['apriori_antenna', 'cm_version', 'connections',
-                        'geo_location', 'part_info', 'parts', 'station_type',
-                        'part_rosetta']  # what about cm_version?
-
-
+table_list = cm_table_info.cm_tables.keys()
 cm_table_hash_filename = 'cm_table_file_hash.csv'
 
 
@@ -35,7 +25,7 @@ def same_table_hash_info(hash_dict, hash_filename=cm_table_hash_filename):
     bool
         True if they are the same
     """
-    current_hash_dict = get_table_hash_info(table_list=csv_init_table_list)
+    current_hash_dict = get_table_hash_info(table_list=table_list)
     previous_hash_dict = {}
     fnfp = os.path.join(CM_CSV_PATH, hash_filename)
     if not os.path.exists(fnfp):
@@ -54,7 +44,7 @@ def same_table_hash_info(hash_dict, hash_filename=cm_table_hash_filename):
     return True
 
 
-def get_table_hash_info(table_list=csv_init_table_list):
+def get_table_hash_info(table_list=table_list):
     """
     Compute the hash_dict for the data csv files.
 
@@ -70,7 +60,7 @@ def get_table_hash_info(table_list=csv_init_table_list):
     """
     hash_dict = {}
     for table in table_list:
-        fn = "{}_{}.csv".format(INIT_DATA_PREFIX, table)
+        fn = "{}{}.csv".format(cm_table_info.data_prefix, table)
         fnfp = os.path.join(CM_CSV_PATH, fn)
         hash_dict[fn] = hash_file(fnfp)
     return hash_dict
@@ -116,7 +106,7 @@ def hash_file(filename):
     return h.hexdigest()
 
 
-def update_sqlite(table_dump_list=psql_table_dump_list):
+def update_sqlite(table_dump_list=table_list):
     """Dump psql database to sqlite file."""
     import subprocess
 
