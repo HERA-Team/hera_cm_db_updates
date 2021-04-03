@@ -5,3 +5,4 @@ scripts.log
 conn_update.sh
 *.pyc
 cm_updates/scripts.log
+cm_table_file_hash.json
