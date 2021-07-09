@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "210709_infoupd_0242" >> scripts.log 
+add_part_info.py -p HH134 -r A -c 'cables too short' -l "infoupd" --date 2021/07/09 --time 02:42:00
