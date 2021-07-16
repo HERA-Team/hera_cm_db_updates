@@ -179,9 +179,11 @@ class UpdateConnect(upd_base.Update):
         if keyup != '-':
             if pol == self.pols[1]:  # Make sure key already there
                 if keyup not in self.gsheet.connections['up']:
+                    print(self.gsheet.connections['up'][keyup])
                     raise ValueError("{} not present ({}).".format(keyup, pol))
             else:  # Make sure it is not there, then process
                 if keyup in self.gsheet.connections['up']:
+                    print(self.gsheet.connections['up'][keyup])
                     raise ValueError("{} already present ({}).".format(keyup, pol))
         return True
 

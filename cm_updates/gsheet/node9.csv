@@ -1,28 +1,30 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
-88,E,15,38,3,37,C10,e10,0,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept
-88,N,15,38,3,37,C10,n8,0,digital_ok,, 
-89,E,16,44,9,23,C13,e10,2,RF_maintenance,PAM: 43,N9A89 has unexpected bumps and wiggles in both pols. Moving from dig_ok to rf_maint. 24 Sept.
-89,N,16,44,9,23,C13,n8,2,RF_maintenance,, 
-90,E,17,39,2,36,C10,e6,0,RF_maintenance,,N9A90 have unexpected bumps. 29 Sept
-90,N,17,39,2,36,C10,n4,0,RF_maintenance,, 
-91,E,18,35,6,40,C11,e10,1,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept
-91,N,18,35,6,40,C11,n8,1,digital_ok,, 
-105,E,19,36,4,38,C11,e2,1,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept
-105,N,19,36,4,38,C11,n0,1,digital_ok,, 
-106,E,20,30,10,44,C33,e2,3,digital_ok,,10Mar2020 z = 4.414
-106,N,20,30,10,44,C33,n0,3,digital_ok,,10Mar2020 z = 4.414
-107,E,21,31,1,35,C10,e2,0,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept
-107,N,21,31,1,35,C10,n0,0,digital_ok,, 
-108,E,22,33,5,39,C11,e6,1,digital_ok,,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept
-108,N,22,33,5,39,C11,n4,1,digital_ok,, 
-124,E,24,32,8,41,C13,e6,2,digital_ok,PAM: 42,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept
-124,N,24,32,8,41,C13,n4,2,digital_ok,, 
-125,E,25,29,12,46,C33,e10,3,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/660
-125,N,25,29,12,46,C33,n8,3,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/660
-126,E,13,28,11,45,C33,e6,3,RF_maintenance,,11 March 2020 Z= 4.405
-126,N,13,28,11,45,C33,n4,3,RF_maintenance,,11 March 2020 Z= 4.405
+88,E,15,38,3,37,C10,e10,0,digital_ok,,
+88,N,15,38,3,37,C10,n8,0,digital_ok,,
+89,E,16,44,9,23,C13,e10,2,RF_maintenance,,
+89,N,16,44,9,23,C13,n8,2,RF_maintenance,,
+90,E,17,39,2,36,C10,e6,0,RF_maintenance,,
+90,N,17,39,2,36,C10,n4,0,RF_maintenance,,
+91,E,18,35,6,40,C11,e10,1,digital_ok,,
+91,N,18,35,6,40,C11,n8,1,digital_ok,,
+105,E,19,36,4,38,C11,e2,1,digital_ok,,
+105,N,19,36,4,38,C11,n0,1,digital_ok,,
+106,E,20,30,10,44,C33,e2,3,digital_ok,,
+106,N,20,30,10,44,C33,n0,3,digital_ok,,
+107,E,21,31,1,35,C10,e2,0,digital_ok,,
+107,N,21,31,1,35,C10,n0,0,digital_ok,,
+108,E,22,33,5,39,C11,e6,1,digital_ok,,
+108,N,22,33,5,39,C11,n4,1,digital_ok,,
+124,E,24,32,8,41,C13,e6,2,digital_ok,,
+124,N,24,32,8,41,C13,n4,2,digital_ok,,
+125,E,25,29,12,46,C33,e10,3,RF_maintenance,,
+125,N,25,29,12,46,C33,n8,3,RF_maintenance,,
+126,E,13,28,11,45,C33,e6,3,RF_maintenance,,
+126,N,13,28,11,45,C33,n4,3,RF_maintenance,,
 Date:,2019/11/18,,,,,,,,,,
-,,,,,,,,,,,
+NCM,2,,,,,,,,,,
+FPS,2,,,,,,,,,,
+PCH,2,,,,,,,,,,
 Note,2019Oct31,,MRD,remove NCM pre-Production SN 2 from Node 9 (upgrade it then move it to Node 7).  Install NCM Production SN 2.,,,,,,,
 Note,2019Aug15,,MRD,"Rack has non standard layout.  EG 1U power strip mounted to the rear of the rack, PAM chassis up from the bottom, FEM PSU down from the top, etc ",,,,,,,
 Note,2019Aug15,,MRD,Yellow Harting cable assemblies from the rear of the PAM chassis to the side panels - not COTS CAT6 SSTP RJ45 cables.,,,,,,,
