@@ -121,7 +121,16 @@ def gen_hpn(ptype, pnum, verbose=False):
         if ptype in ['ANT', 'ANTENNA']:
             return 'A{}'.format(int(pnum))
         if ptype in ['STATION']:
-            return 'HH{}'.format(int(pnum))
+            HA = [325, 326, 327, 330, 334, 338, 331, 335, 339, 342, 343, 344]
+            HB = [320, 321, 322, 323, 324, 328, 329, 333, 337, 332, 336, 340,
+                  341, 345, 346, 347, 348, 349]
+            if int(pnum) in HA:
+                pre = 'HA'
+            elif int(pnum) in HB:
+                pre = 'HB'
+            else:
+                pre = 'HH'
+            return '{}{}'.format(pre, int(pnum))
         if ptype in ['FPS']:
             return 'FPS{:02d}'.format(int(pnum))
         if ptype in ['PCH']:

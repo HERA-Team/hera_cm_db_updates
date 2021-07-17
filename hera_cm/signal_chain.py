@@ -117,7 +117,7 @@ class Update:
         added['time'] = str(int(cm_utils.get_astropytime(cdate, ctime).gps))
         s = util.gen_hpn('station', stn)
         a = util.gen_hpn('antenna', stn)
-        n = "S/N{}".format(ser_num)
+        n = "H{}".format(ser_num)
         self.fp.write('add_station.py {} --sernum {} --date {} --time {}\n'
                       .format(s, ser_num, cdate, ctime))
         added['station'].append([s, added['time']])
