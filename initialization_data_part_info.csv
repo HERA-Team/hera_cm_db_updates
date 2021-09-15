@@ -2706,3 +2706,8 @@ SNPC000127,A,MAC - 00:40:83:ca:17:01,,1304938818
 SNPC000128,A,MAC - 00:26:3e:2c:17:01,,1304938818
 SNPC000129,A,MAC - 00:36:2f:9d:17:01,,1304938818
 HH134,A,cables too short,infoupd,1309833738
+HH16,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1315770138
+HH127,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1315770138
+HH130,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1315770138
+HH144,A,Feed Heights: https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1315770138
+HH73,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1315770138
