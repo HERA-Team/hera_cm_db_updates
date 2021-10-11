@@ -8,4 +8,4 @@ conda activate HERA
 write_sqlite.py
 cm_pack.py --go
 cd /home/obs/src/hera_cm_db_updates
-git push origin master
+git push origin main
