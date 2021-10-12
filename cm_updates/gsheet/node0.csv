@@ -1,4 +1,4 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed Heights
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Spectra,Comments
 0,E,1,16,1,22,C72,e2,0,RF_maintenance,,,
 0,N,1,16,1,22,C72,n0,0,RF_maintenance,,,
 2,E,8,40,2,48,C72,e6,0,RF_maintenance,,,
