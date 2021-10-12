@@ -115,9 +115,9 @@ class SheetData:
         if node_csv == 'w' and time_tag:
             import time
             ttag = f"_{int(time.time())}"
-            print(ttag)
         else:
             ttag = ""
+        print(node_csv,time_tag,ttag)
         for tab in tabs:
             if node_csv == 'r':
                 csv_data = []
