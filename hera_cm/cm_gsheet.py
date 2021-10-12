@@ -85,7 +85,8 @@ class SheetData:
                         if data[nent.eno].lower() == 'y':
                             nent.notify.append(data[0])
 
-    def load_sheet(self, node_csv='none', tabs=None, check_headers=False):
+    def load_sheet(self, node_csv='none', tabs=None, check_headers=False,
+                   path='', time_tag=True):
         """
         Get the googlesheet information from the internet (or locally for testing etc).
 
@@ -100,6 +101,10 @@ class SheetData:
             List of tabs to use.  None == all of them.
         check_headers : bool
             If True, it will make sure all of the headers agree with sheet_headers
+        path : str
+            Path to use if reading/writing csv files.
+        time_tag : bool
+            If True, time_tag the output files (if node_csv=w).
         """
         ant_set = set()
         node_csv = node_csv[0].lower()
@@ -107,10 +112,16 @@ class SheetData:
             tabs = sorted(list(gsheet.keys()))
         elif isinstance(tabs, str):
             tabs = tabs.split(',')
+        if node_csv == 'w' and time_tag:
+            import time
+            ttag = f"_{int(time.time())}"
+        else:
+            ttag = ""
         for tab in tabs:
             if node_csv == 'r':
                 csv_data = []
-                with open(tab + '.csv', 'r') as fp:
+                ofnc = f"{path}/{tab}.csv"
+                with open(ofnc, 'r') as fp:
                     for line in fp:
                         csv_data.append(line)
             else:
@@ -121,7 +132,8 @@ class SheetData:
                 csv_data = csv_tab.decode('utf-8').splitlines()
             csv_tab = csv.reader(csv_data)
             if node_csv == 'w':
-                with open(tab + '.csv', 'w') as fp:
+                ofnc = f"{path}/{tab}{ttag}.csv"
+                with open(ofnc, 'w') as fp:
                     fp.write('\n'.join(csv_data))
             self.node_to_ant[tab] = []
             for data in csv_tab:

@@ -43,7 +43,7 @@ update = upd_info.UpdateInfo(script_type=script_type,
 if args.archive_path.startswith('___'):
     import os.path
     args.archive_path = os.path.join(update.script_path, args.archive_path[3:])
-update.load_gsheet(node_csv=args.node_csv)
+update.load_gsheet(node_csv=args.node_csv, path=args.archive_path)
 update.load_active()
 update.add_apriori()
 update.add_sheet_notes(duplication_window=args.duplication_window,
