@@ -47,11 +47,11 @@ class Update():
         self.update_counter = 0
         self.gsheet = None
 
-    def load_gsheet(self, node_csv='none', tabs=None):
+    def load_gsheet(self, node_csv='none', tabs=None, path='', time_tag=True):
         """Get the googlesheet information from the internet."""
         if self.gsheet is None:
             self.gsheet = cm_gsheet.SheetData()
-        self.gsheet.load_sheet(node_csv=node_csv, tabs=None)
+        self.gsheet.load_sheet(node_csv=node_csv, tabs=None, path=path, time_tag=time_tag)
 
     def load_gworkflow(self):
         if self.gsheet is None:
