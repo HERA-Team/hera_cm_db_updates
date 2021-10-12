@@ -86,7 +86,7 @@ class SheetData:
                             nent.notify.append(data[0])
 
     def load_sheet(self, node_csv='none', tabs=None, check_headers=False,
-                   path='', time_tag=True):
+                   path='', time_tag='_%y%m%d'):
         """
         Get the googlesheet information from the internet (or locally for testing etc).
 
@@ -103,8 +103,8 @@ class SheetData:
             If True, it will make sure all of the headers agree with sheet_headers
         path : str
             Path to use if reading/writing csv files.
-        time_tag : bool
-            If True, time_tag the output files (if node_csv=w).
+        time_tag : str
+            If non-zero length string use as time_tag format for the output files (if node_csv=w).
         """
         ant_set = set()
         node_csv = node_csv[0].lower()
@@ -112,9 +112,9 @@ class SheetData:
             tabs = sorted(list(gsheet.keys()))
         elif isinstance(tabs, str):
             tabs = tabs.split(',')
-        if node_csv == 'w' and time_tag:
+        if node_csv == 'w' and isinstance(time_tag, str) and len(time_tag):
             from datetime import datetime
-            ttag = datetime.strftime(datetime.now(), '_%y%m%d')
+            ttag = datetime.strftime(datetime.now(), time_tag)
         else:
             ttag = ""
         for tab in tabs:

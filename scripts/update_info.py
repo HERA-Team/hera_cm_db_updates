@@ -36,6 +36,9 @@ else:
     script_type = 'infoupd'
     cron_script = 'info_update.sh'
 
+if args.time_tag:
+    args.time_tag = '_%y%m%d'
+
 args.duplication_window = float(args.duplication_window)
 args.view_duplicate = float(args.view_duplicate)
 update = upd_info.UpdateInfo(script_type=script_type,

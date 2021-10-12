@@ -47,7 +47,7 @@ class Update():
         self.update_counter = 0
         self.gsheet = None
 
-    def load_gsheet(self, node_csv='none', tabs=None, path='', time_tag=True):
+    def load_gsheet(self, node_csv='none', tabs=None, path='', time_tag='_%y%m%d'):
         """Get the googlesheet information from the internet."""
         if self.gsheet is None:
             self.gsheet = cm_gsheet.SheetData()
