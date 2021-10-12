@@ -22,6 +22,7 @@ if __name__ == '__main__':
     ap.add_argument('--view_duplicate',
                     help='In verbose, only show duplicates after this many days', default=0.0)
     ap.add_argument('--look_only', help='Flag to only look at data.', action='store_true')
+    ap.add_argument('--time_tag', help='Flag to add time to node csv filename', action='store_true')
     args = ap.parse_args()
 else:
     args = argparse.Namespace(archive_path=None, script_path='default', node_csv='r', verbose=True,
@@ -43,7 +44,7 @@ update = upd_info.UpdateInfo(script_type=script_type,
 if args.archive_path.startswith('___'):
     import os.path
     args.archive_path = os.path.join(update.script_path, args.archive_path[3:])
-update.load_gsheet(node_csv=args.node_csv, path=args.archive_path)
+update.load_gsheet(node_csv=args.node_csv, path=args.archive_path, time_tag=args.time_tag)
 update.load_active()
 update.add_apriori()
 update.add_sheet_notes(duplication_window=args.duplication_window,
