@@ -113,8 +113,8 @@ class SheetData:
         elif isinstance(tabs, str):
             tabs = tabs.split(',')
         if node_csv == 'w' and time_tag:
-            import time
-            ttag = f"_{int(time.time())}"
+            from datetime import datetime
+            ttag = datetime.strftime(datetime.now(), '_%y%m%d')
         else:
             ttag = ""
         for tab in tabs:
