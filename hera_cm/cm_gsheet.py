@@ -33,8 +33,10 @@ gsheet['node16'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBX
 gsheet['node18'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=2120802515&single=true&output=csv"  # noqa
 gsheet['node19'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=488699377&single=true&output=csv"  # noqa
 gsheet['node20'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=319083641&single=true&output=csv"  # noqa
+# gsheet['node21'] = ""
 no_prefix = ['Comments']
 
+NodeNotes = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=906207981&single=true&output=csv"  # noqa
 README = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1630961076&single=true&output=csv"  # noqa
 WORKFLOW = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=2096134790&single=true&output=csv"  # noqa
 
@@ -84,6 +86,14 @@ class SheetData:
                     for notifyee, nent in self.apriori_email.items():
                         if data[nent.eno].lower() == 'y':
                             nent.notify.append(data[0])
+
+    def load_node_notes(self):
+        xxx = requests.get(NodeNotes)
+        csv_tab = b''
+        for line in xxx:
+            csv_tab += line
+        _nodenotes = csv_tab.decode('utf-8').splitlines()
+        self.node_notes = csv.reader(_nodenotes)
 
     def load_sheet(self, node_csv='none', tabs=None, check_headers=False,
                    path='', time_tag='_%y%m%d'):
