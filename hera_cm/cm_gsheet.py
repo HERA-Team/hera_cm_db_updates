@@ -93,7 +93,9 @@ class SheetData:
         for line in xxx:
             csv_tab += line
         _nodenotes = csv_tab.decode('utf-8').splitlines()
-        self.node_notes = csv.reader(_nodenotes)
+        self.node_notes = []
+        for nn in csv.reader(_nodenotes):
+            self.node_notes.append(nn)
 
     def load_sheet(self, node_csv='none', tabs=None, check_headers=False,
                    path='', time_tag='_%y%m%d'):

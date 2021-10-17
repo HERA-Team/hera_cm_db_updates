@@ -39,6 +39,19 @@ class UpdateInfo(upd_base.Update):
         self.active.load_info()
         self.active.load_apriori()
 
+    def load_gnodes(self):
+        """Load node notes tab of googlesheet."""
+        self.node_notes = {}
+        for line in self.gsheet.load_node_notes():
+            try:
+                node_n = f"N{int(line[0])}"
+            except ValueError:
+                continue
+            self.node_notes.setdefault(node_n, [])
+            for entry in line[1:]:
+                if len(entry):
+                    self.node_notes[node_n].append(entry)
+
     def process_apriori_notification(self, notify_type='new'):
         """
         Processes the log apriori updates and send email digest.
@@ -192,10 +205,6 @@ class UpdateInfo(upd_base.Update):
                     self.hera.add_part_info(ant, rev, statement, pdate, ptime, ref=refout)
                     self.update_counter += 1
                     primary_keys.append(pkey)
-
-    def add_below_notes(self):
-        """Need to do this."""
-        print("ADD THE NOTES FROM BELOW THE TABLE")
 
     def is_duplicate(self, key, statement, duplication_window, view_duplicate=0.0):
         """Check if duplicate."""
