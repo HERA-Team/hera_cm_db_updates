@@ -31,8 +31,8 @@ class RedisKeys():
                         val = self.r.hget(this_key, thishk)
                     except UnicodeDecodeError:
                         val = '<<byte-data>>'
-                    self.hashvals[culled_key].setdefault(thishk, {})[thishk] = val
-                    #self.hashvals[culled_key][thishk] = val
+                    self.hashvals[culled_key].setdefault(thishk, {})
+                    self.hashvals[culled_key][thishk] = val
             except redis.ResponseError:
                 if culled_key in self.keyvals:
                     continue
