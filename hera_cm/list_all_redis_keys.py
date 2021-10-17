@@ -85,4 +85,7 @@ class RedisKeys():
                     cnt = f"({len(self.culled[k])})"
                 print("{}  {}".format(k, cnt), file=fp)
                 for k2, v2 in v.items():
+                    data = str(v2)
+                    if len(data) > 100:
+                        data += ' ...'
                     print("\t{}: {}".format(k2, v2), file=fp)
