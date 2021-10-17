@@ -26,6 +26,7 @@ class RedisKeys():
             culled_key = self._cull_entry(this_key)
             try:
                 these_hkeys = sorted(self.r.hkeys(this_key))
+                self.hashvals.setdefault(culled_key, {})
                 for thishk in these_hkeys:
                     try:
                         val = self.r.hget(this_key, thishk)
