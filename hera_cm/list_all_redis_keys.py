@@ -58,7 +58,7 @@ class RedisKeys():
             print("\n----------Single----------", file=fp)
             print(f"{', '.join(single)}", file=fp)
 
-    def write_kv(self, fn='key_vals.txt', trunc=5):
+    def write_kv(self, fn='key_vals.txt', trunc=55):
         print(f"Writing {fn}")
         with open(fn, 'w') as fp:
             for k, v in self.keyvals.items():
