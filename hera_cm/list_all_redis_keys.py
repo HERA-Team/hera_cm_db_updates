@@ -43,22 +43,22 @@ class RedisKeys():
                     val = '<<byte-data>>'
                 self.keyvals[culled_key] = val
 
-    def write_cull_info(self, fn='key_overview.txt'):
+    def write_cull_info(self, fn='key_overview.txt', trunc=50):
         print(f"Writing {fn}")
         single = []
         with open(fn, 'w') as fp:
             for ck, cv in self.culled.items():
                 if len(cv) > 1:
                     data = ', '.join(cv[:12])
-                    if len(data) > 100:
-                        data = data[:100] + ' ...'
+                    if len(data) > 50:
+                        data = data[:50] + ' ...'
                     print(f"{ck:20s}: {len(cv):03d} - {data}", file=fp)
                 else:
                     single.append(ck)
             print("\n----------Single----------", file=fp)
             print(f"{', '.join(single)}", file=fp)
 
-    def write_kv(self, fn='key_vals.txt', trunc=55):
+    def write_kv(self, fn='key_vals.txt', trunc=50):
         print(f"Writing {fn}")
         with open(fn, 'w') as fp:
             for k, v in self.keyvals.items():
@@ -66,16 +66,12 @@ class RedisKeys():
                     cnt = ""
                 else:
                     cnt = f"{len(self.culled[k]):03d}"
-                print("{:20s}  {}  -  {}".format(k, cnt, v[:trunc]), file=fp)
+                data = str(v)
+                if len(data) > trunc:
+                    data = data[:trunc] + ' ...'
+                print("{:20s}  {}  -  {}".format(k, cnt, data), file=fp)
 
-    def _dictitems(self, val):
-        s = ''
-        if isinstance(val, dict):
-            s += self._dict_items(val)
-        else:
-            return f"\t{val}"
-
-    def write_hv(self, fn='hash_vals.txt', trunc=35):
+    def write_hv(self, fn='hash_vals.txt', trunc=50):
         print(f"Writing {fn}")
         with open(fn, 'w') as fp:
             for k, v in self.hashvals.items():
@@ -86,6 +82,6 @@ class RedisKeys():
                 print("{}  {}".format(k, cnt), file=fp)
                 for k2, v2 in v.items():
                     data = str(v2)
-                    if len(data) > 100:
-                        data = data[:100] + ' ...'
+                    if len(data) > trunc:
+                        data = data[:trunc] + ' ...'
                     print("\t{}: {}".format(k2, data), file=fp)
