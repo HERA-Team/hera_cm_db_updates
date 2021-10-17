@@ -88,4 +88,4 @@ class RedisKeys():
                     data = str(v2)
                     if len(data) > 100:
                         data += ' ...'
-                    print("\t{}: {}".format(k2, v2), file=fp)
+                    print("\t{}: {}".format(k2, data), file=fp)
