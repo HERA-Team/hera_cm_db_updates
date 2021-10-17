@@ -22,24 +22,25 @@ class RedisKeys():
     def split(self, cull=None):
         self.cull = cull
         self.culled = {}
-        for ak in self.all_keys:
-            cak = self._cull_entry(ak)
+        for this_key in self.all_keys:
+            culled_key = self._cull_entry(this_key)
             try:
-                sahk = sorted(self.r.hkeys(ak))
-                for ahk in sahk:
+                these_hkeys = sorted(self.r.hkeys(this_key))
+                for thishk in these_hkeys:
                     try:
-                        val = self.r.hget(ak, ahk)
+                        val = self.r.hget(this_key, thishk)
                     except UnicodeDecodeError:
                         val = '<<byte-data>>'
-                    self.hashvals[cak] = {ahk: val}
+                    self.hashvals[culled_key].setdefault(thishk, {})[thishk] = val
+                    #self.hashvals[culled_key][thishk] = val
             except redis.ResponseError:
-                if cak in self.keyvals:
+                if culled_key in self.keyvals:
                     continue
                 try:
-                    val = self.r.get(ak)
+                    val = self.r.get(this_key)
                 except (redis.ResponseError, UnicodeDecodeError):
                     val = '<<byte-data>>'
-                self.keyvals[cak] = val
+                self.keyvals[culled_key] = val
 
     def write_cull_info(self, fn='key_overview.txt'):
         print(f"Writing {fn}")
