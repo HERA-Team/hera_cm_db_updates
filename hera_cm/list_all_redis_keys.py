@@ -49,7 +49,7 @@ class RedisKeys():
         with open(fn, 'w') as fp:
             for ck, cv in self.culled.items():
                 if len(cv) > 1:
-                    print(f"{ck:20s}: {len(cv):03d} - {cv[0]}", file=fp)
+                    print(f"{ck:20s}: {len(cv):03d} - {cv[:4]}", file=fp)
                 else:
                     single.append(ck)
             print("\n----------Single----------", file=fp)
@@ -63,7 +63,14 @@ class RedisKeys():
                     cnt = ""
                 else:
                     cnt = f"{len(self.culled[k]):03d}"
-                print("---------{:20s}  {}  -  {}".format(k, cnt, v[:trunc]), file=fp)
+                print("{:20s}  {}  -  {}".format(k, cnt, v[:trunc]), file=fp)
+
+    def _dictitems(self, val):
+        s = ''
+        if isinstance(val, dict):
+            s += self._dict_items(val)
+        else:
+            return f"\t{val}"
 
     def write_hv(self, fn='hash_vals.txt', trunc=35):
         print(f"Writing {fn}")
@@ -73,19 +80,6 @@ class RedisKeys():
                     cnt = ""
                 else:
                     cnt = f"({len(self.culled[k])})"
-                print("---------{}  {}".format(k, cnt), file=fp)
+                print("{}  {}".format(k, cnt), file=fp)
                 for k2, v2 in v.items():
-                    print("\t{}: {}".format(k2, v2[:trunc]), file=fp)
-#
-# with open('allhkeys.txt', 'w') as fp:
-#     for ah in sorted(list(all_hash.keys())):
-#         print("----------{}".format(ah), file=fp)
-#         for ahk in all_hash[ah]:
-#             print("\t-----{}".format(ahk), file=fp)
-#             try:
-#                 val = r.hget(ah, ahk)
-#             except UnicodeDecodeError:
-#                 val = '<<byte-data>>'
-#             print("\t{}".format(val), file=fp)
-#             #for k, v in val.items():
-#             #    print(f"\t\t{k}:   {v}", file=fp)
+                    print("\t{}: {}".format(k2, v2), file=fp)
