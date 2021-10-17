@@ -2739,3 +2739,5 @@ HH37,A,Spectra: N3P2E,infoupd,1318326138
 HH37,A,Spectra: N3P2N,infoupd,1318326140
 HH38,A,Spectra: N3P3E,infoupd,1318326138
 HH38,A,Spectra: N3P3N,infoupd,1318326140
+N04,A,"WR endpoint is not functioning properly (works as a switch, but not for timing) -- swapped it (NCM4) with the one in node 21 (NCM21)",infoupd,1318524138
+N21,A,Removed NCM to put in node 4,infoupd,1318524138
