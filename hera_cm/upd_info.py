@@ -41,16 +41,23 @@ class UpdateInfo(upd_base.Update):
 
     def load_gnodes(self):
         """Load node notes tab of googlesheet."""
-        self.node_notes = {}
-        for line in self.gsheet.load_node_notes():
+        if self.gsheet is None:
+            self.gsheet = cm_gsheet.SheetData()
+        lnn = {}
+        self.gsheet.load_node_notes()
+        for line in self.gsheet.node_notes:
             try:
-                node_n = f"N{int(line[0])}"
+                node_n = f"N{int(line[0]):02d}"
             except ValueError:
                 continue
-            self.node_notes.setdefault(node_n, [])
+            lnn.setdefault(node_n, [])
             for entry in line[1:]:
                 if len(entry):
-                    self.node_notes[node_n].append(entry)
+                    lnn[node_n].append(entry)
+        self.node_notes = {}
+        for key, val in lnn.items():
+            if len(val):
+                self.node_notes[key] = val
 
     def process_apriori_notification(self, notify_type='new'):
         """
@@ -153,6 +160,24 @@ class UpdateInfo(upd_base.Update):
                                         self.new_apriori[key]['ctime'], ref=refout)
                 self.update_counter += 1
 
+    def add_gnodes(self, rev='A', duplication_window=90.0, view_duplicate=0.0):
+        primary_keys = []
+        for node, notes in self.node_notes.items():
+            ndkey = cm_utils.make_part_key(node, rev)
+            pdate = self.cdate + ''
+            ptime = self.ctime + ''
+            for this_note in notes:
+                if not self.is_duplicate(ndkey, this_note, duplication_window, view_duplicate):
+                    pkey, pdate, ptime = util.get_unique_pkey(node, rev, pdate, ptime, primary_keys)
+                    refout = 'infoupd'
+                    self.new_notes.setdefault(ndkey, [])
+                    self.new_notes[ndkey].append(this_note)
+                    if self.verbose:
+                        print("Adding comment: {}:{} - {}".format(node, rev, this_note))
+                    self.hera.add_part_info(node, rev, this_note, pdate, ptime, ref=refout)
+                    self.update_counter += 1
+                    primary_keys.append(pkey)
+
     def add_sheet_notes(self, duplication_window=90.0, view_duplicate=0.0):
         """
         Search the relevant fields in the googlesheets and generate add note commands.
@@ -214,7 +239,10 @@ class UpdateInfo(upd_base.Update):
                 dt = self.now - note_time
                 ddays = dt.days + dt.seconds / (3600.0 * 24)
                 if ddays < duplication_window and statement == note.comment:
-                    node = self.gsheet.ant_to_node[key]
+                    if key.startswith('N'):
+                        node = key
+                    else:
+                        node = self.gsheet.ant_to_node[key]
                     if self.verbose and ddays > view_duplicate:
                         print("Duplicate for {:8s}  ({}) - {}  ({:.1f} days)"
                               .format(key, node, statement, ddays))

@@ -49,9 +49,12 @@ if args.archive_path.startswith('___'):
     args.archive_path = os.path.join(update.script_path, args.archive_path[3:])
 update.load_gsheet(node_csv=args.node_csv, path=args.archive_path, time_tag=args.time_tag)
 update.load_active()
+update.load_gnodes()
 update.add_apriori()
 update.add_sheet_notes(duplication_window=args.duplication_window,
                        view_duplicate=args.view_duplicate)
+update.add_gnodes(duplication_window=args.duplication_window,
+                  view_duplicate=args.view_duplicate)
 update.log_apriori_notifications()
 if args.look_only:
     update.view_info()
