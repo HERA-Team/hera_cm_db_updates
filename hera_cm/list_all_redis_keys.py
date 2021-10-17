@@ -49,13 +49,16 @@ class RedisKeys():
         with open(fn, 'w') as fp:
             for ck, cv in self.culled.items():
                 if len(cv) > 1:
-                    print(f"{ck:20s}: {len(cv):03d} - {cv[:4]}", file=fp)
+                    data = ', '.join(cv[:12])
+                    if len(data) > 100:
+                        data += ' ...'
+                    print(f"{ck:20s}: {len(cv):03d} - {data}", file=fp)
                 else:
                     single.append(ck)
             print("\n----------Single----------", file=fp)
             print(f"{', '.join(single)}", file=fp)
 
-    def write_kv(self, fn='key_vals.txt', trunc=35):
+    def write_kv(self, fn='key_vals.txt', trunc=5):
         print(f"Writing {fn}")
         with open(fn, 'w') as fp:
             for k, v in self.keyvals.items():
