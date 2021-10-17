@@ -51,7 +51,7 @@ class RedisKeys():
                 if len(cv) > 1:
                     data = ', '.join(cv[:12])
                     if len(data) > 100:
-                        data += ' ...'
+                        data = data[:100] + ' ...'
                     print(f"{ck:20s}: {len(cv):03d} - {data}", file=fp)
                 else:
                     single.append(ck)
@@ -87,5 +87,5 @@ class RedisKeys():
                 for k2, v2 in v.items():
                     data = str(v2)
                     if len(data) > 100:
-                        data += ' ...'
+                        data = data[:100] + ' ...'
                     print("\t{}: {}".format(k2, data), file=fp)
