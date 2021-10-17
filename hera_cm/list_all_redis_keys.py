@@ -26,8 +26,6 @@ class RedisKeys():
             cak = self._cull_entry(ak)
             try:
                 sahk = sorted(self.r.hkeys(ak))
-                if cak in self.hashvals:
-                    continue
                 for ahk in sahk:
                     try:
                         val = self.r.hget(ak, ahk)
