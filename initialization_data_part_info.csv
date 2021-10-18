@@ -473,7 +473,6 @@ HH116,A,SMA cable is missing; needs eyebolts,,1254225618
 HH116,A,Springs installed; pulldown ropes pending,,1254225619
 HH117,A,Springs installed; pulldown ropes pending,,1254225618
 HH117,A,Needs eyebolts,,1254225619
-HH68,A,SNAPloc: 1,infoupd,1264203740
 HH37,A,SNAPloc: 1,infoupd,1264203738
 HH118,A,Springs installed; pulldown ropes pending,,1254225618
 HH118,A,Needs eyebolts,,1254225619
@@ -538,34 +537,8 @@ HH119,A,raised,,1256904018
 HH137,A,raised,,1256904018
 HH138,A,raised,,1256904018
 HH107,A,Low amplitude after equalized to noise,,1258113618
-HH0,A,Goodness E: OK?,,1258930938
-HH0,A,Goodness N: OK?,,1258930940
-HH1,A,Goodness E: OK?,,1258930938
-HH1,A,Goodness N: OK?,,1258930940
-HH2,A,Goodness E: OK?,,1258930938
-HH2,A,Goodness N: Bad,,1258930940
-HH11,A,Goodness E: OK?,,1258930938
-HH11,A,Goodness N: OK?,,1258930940
-HH12,A,Goodness E: OK?,,1258930938
-HH12,A,Goodness N: OK?,,1258930940
-HH13,A,Goodness E: OK?,,1258930938
-HH13,A,Goodness N: OK?,,1258930940
-HH14,A,Goodness E: OK?,,1258930938
-HH14,A,Goodness N: Check!,,1258930940
-HH23,A,Goodness E: OK?,,1258930938
-HH23,A,Goodness N: OK?,,1258930940
-HH24,A,Goodness E: NO?,,1258930938
 HH24,A,height raised from 4.33m to 4.465 on 11/1/19,,1258930940
-HH24,A,Goodness N: OK?,,1258930942
-HH24,A,height raised from 4.33m to 4.465 on 11/1/19,,1258930944
-HH25,A,Goodness E: OK?,,1258930938
-HH25,A,Goodness N: OK?,,1258930940
-HH26,A,Goodness E: OK?,,1258930938
-HH26,A,Goodness N: OK?,,1258930940
-HH39,A,Goodness E: OK?,,1258930938
 HH39,A,height rasied from 4.37m to 4.465m on 11/1/19,,1258930940
-HH39,A,Goodness N: OK?,,1258930942
-HH39,A,height rasied from 4.37m to 4.465m on 11/1/19,,1258930944
 HH67,A,"Antenna wire but could not be checked, NCM does not switch on FEM/PAM power",,1258930938
 HH68,A,"Antenna wire but could not be checked, NCM does not switch on FEM/PAM power",,1258930938
 HH38,A,"Antenna wire but could not be checked, NCM does not switch on FEM/PAM power",,1258930938
@@ -576,7 +549,6 @@ HH55,A,Feed heights: Aligned Z= 4.405 (from Jig),,1258930938
 HH69,A,Feed heights: Aligned Z= 4.396 (from jig),,1258930938
 HH70,A,Feed heights: Aligned Z=4.411 (from jig),,1258930938
 HH71,A,Feed heights: Aligned Z=4.396 (from jig),,1258930938
-HH37,A,SNAPloc: 1,infoupd,1264203740
 HH72,A,Feed heights: Aligned Z= 4.399 (from jig),,1258930938
 HH43,A,"Aligned, Z=4.399 from jig",,1258930938
 HH44,A,Aligned Z=4.408 from jig,,1258930938
@@ -610,28 +582,7 @@ HH101,A,Comments (added 11/1/19): Not raised - waiting on pulldown rope,,1258930
 HH102,A,Comments (added 11/1/19): Not raised - waiting on pulldown rope,,1258930938
 HH120,A,Comments (added 11/1/19): Not raised - waiting on pulldown rope,,1258930938
 HH123,A,Comments (added 11/1/19): height raised from 4.041m to 4.406m 10/31/19,,1258930938
-HH88,A,Goodness E: ?,,1258930938
-HH88,A,Goodness N: ?,,1258930940
-HH89,A,Goodness E: OK,,1258930938
-HH89,A,Goodness N: OK,,1258930940
-HH90,A,Goodness E: ?,,1258930938
-HH90,A,Goodness N: ?,,1258930940
-HH91,A,Goodness E: NA,,1258930938
-HH91,A,Goodness N: NA,,1258930940
-HH105,A,Goodness E: ?,,1258930938
-HH105,A,Goodness N: ?,,1258930940
-HH106,A,Goodness E: Bad,,1258930938
-HH106,A,Goodness N: OK,,1258930940
 HH107,A,Goodness E: Bad,,1258930938
-HH107,A,Goodness N: ?,,1258930940
-HH108,A,Goodness E: ?,,1258930938
-HH108,A,Goodness N: ?,,1258930940
-HH124,A,Goodness E: Bad,,1258930938
-HH124,A,Goodness N: OK,,1258930940
-HH125,A,Goodness E: OK,,1258930938
-HH125,A,Goodness N: OK,,1258930940
-HH126,A,Goodness E: OK,,1258930938
-HH126,A,Goodness N: OK,,1258930940
 HH38,A,Feed heights (NE/SE/SW/NW): Z distance from jig =4.398,,1259444418
 HH51,A,Feed heights (NE/SE/SW/NW): Z distance from jig =4.398,,1259444418
 HH36,A,"Feed heights (NE/SE/SW/NW): Z distance from jig = 4,404",,1259444418
@@ -662,41 +613,26 @@ HH68,A,FEM 130 replaced with 128. PAM replaced with 124,,1260193338
 HH52,A,moved from port 8 to 10. Pam changed to 134,,1260193338
 HH50,A,moved from port 10 to 12.FEM  129 replaced with 107,,1260193338
 HH65,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196938
-HH65,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196940
 HH66,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196938
-HH66,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196940
 HH67,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196938
-HH67,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196940
 HH37,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196938
-HH37,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196940
 HH53,A,sbcd: shape is fine; plateau is low but peaks look of good power. Needs checking,,1260196938
-HH53,A,sbcd: shape is fine; plateau is low but peaks look of good power. Needs checking,,1260196940
 HH51,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196938
-HH51,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196940
 HH36,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196938
-HH36,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196940
 HH38,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260200538
-HH38,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260200540
 HH52,A,Feed heights (NE/SE/SW/NW): Z distance from jig =4.405,,1260261738
 HH68,A,"FEM 130 replaced with FEM 128. PAM 124 taken from node 5, installed in Node 3",,1260265338
 HH52,A,Moved from PAM port 8 to 10. PAM changed from 132 to 134,,1260265338
 HH50,A,"Moved from port PAM 10 to 12, PAM changed from 134 to 136.FEM  129 replaced with 107",,1260265338
 HH68,A,Feed heights (NE/SE/SW/NW): Z distance from jig = 4.,,1260268938
 HH92,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
-HH92,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
 HH93,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
-HH93,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
 HH94,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
-HH94,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
 HH109,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
-HH109,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
 HH111,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
-HH111,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
 HH112,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
-HH112,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
 HH128,A,Final spectra for 128E look sterrible,,1260294138
 HH130,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
-HH130,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294140
 HH128,A,Final spectra for 128E looks terrible,infoupd,1260546138
 HH50,A,"Moved from port PAM 10 to 12, PAM changed from 134 to 136.",infoupd,1261161738
 HH54,A,No final spectra as of 8Jan2020,infoupd,1262637738
@@ -714,98 +650,6 @@ HH60,A,No final spectra as of 8Jan2020,infoupd,1262637738
 HH73,A,No final spectra as of 8Jan2020,infoupd,1262637738
 HH74,A,No final spectra as of 8Jan2020,infoupd,1262637738
 HH75,A,No final spectra as of 8Jan2020,infoupd,1262637738
-HH42,A,PAM 103 replaced with 112,infoupd,1263300138
-HH43,A,E channel shows ~6dB lower gain due to fibre.  We tested the fibre for both channels and the E channel had 3dB more loss (6dB in RF),infoupd,1263300138
-HH0,A,Goodness E: OK?,infoupd,1264117338
-HH0,A,Goodness N: OK?,infoupd,1264117340
-HH1,A,Goodness E: OK?,infoupd,1264117338
-HH1,A,Goodness N: OK?,infoupd,1264117340
-HH2,A,Goodness E: OK?,infoupd,1264117338
-HH2,A,Goodness N: Bad,infoupd,1264117340
-HH11,A,Goodness E: OK?,infoupd,1264117338
-HH11,A,Goodness N: OK?,infoupd,1264117340
-HH12,A,Goodness E: OK?,infoupd,1264117338
-HH12,A,Goodness N: OK?,infoupd,1264117340
-HH13,A,Goodness E: OK?,infoupd,1264117338
-HH13,A,Goodness N: OK?,infoupd,1264117340
-HH14,A,Goodness E: OK?,infoupd,1264117338
-HH14,A,Goodness N: Check!,infoupd,1264117340
-HH23,A,Goodness E: OK?,infoupd,1264117338
-HH23,A,Goodness N: OK?,infoupd,1264117340
-HH24,A,Goodness E: NO?,infoupd,1264117338
-HH24,A,height raised from 4.33m to 4.465 on 11/1/19,infoupd,1264117340
-HH24,A,Goodness N: OK?,infoupd,1264117342
-HH24,A,height raised from 4.33m to 4.465 on 11/1/19,infoupd,1264117344
-HH25,A,Goodness E: OK?,infoupd,1264117338
-HH25,A,Goodness N: OK?,infoupd,1264117340
-HH26,A,Goodness E: OK?,infoupd,1264117338
-HH26,A,Goodness N: OK?,infoupd,1264117340
-HH39,A,Goodness E: OK?,infoupd,1264117338
-HH39,A,height rasied from 4.37m to 4.465m on 11/1/19,infoupd,1264117340
-HH39,A,Goodness N: OK?,infoupd,1264117342
-HH39,A,height rasied from 4.37m to 4.465m on 11/1/19,infoupd,1264117344
-HH54,A,Feed heights: Aligned Z=4.396 (from jig),infoupd,1264117338
-HH55,A,Feed heights: Aligned Z= 4.405 (from Jig),infoupd,1264117338
-HH69,A,Feed heights: Aligned Z= 4.396 (from jig),infoupd,1264117338
-HH70,A,Feed heights: Aligned Z=4.411 (from jig),infoupd,1264117338
-HH71,A,Feed heights: Aligned Z=4.396 (from jig),infoupd,1264117338
-HH72,A,Feed heights: Aligned Z= 4.399 (from jig),infoupd,1264117338
-HH45,A,Aligned Z=4.401 (from jig same as 58),infoupd,1264117338
-HH46,A,aligned Z=4.403(from Jig),infoupd,1264117338
-HH73,A,Aligned Z=4.399 (from jig),infoupd,1264117338
-HH59,A,Aligned Z=4.413 (from jig),infoupd,1264117338
-HH58,A,Aligned Z=4.401 (from jig),infoupd,1264117338
-HH44,A,Aligned Z=4.408 from jig,infoupd,1264117338
-HH60,A,Aligned Z= 4.404 (from Jig),infoupd,1264117338
-HH43,A,"Aligned, Z=4.399 from jig",infoupd,1264117338
-HH74,A,Aligned Z=4.404 (from jig),infoupd,1264117338
-HH75,A,Aligned Z= 4.410 (from Jig),infoupd,1264117338
-HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1264117338
-HH81,A,"FEM checked, xyz positioned, height 4.407 [2019/11/15]",infoupd,1264117338
-HH82,A,"FEM checked, xyz positioned, height 4.403 [2019/11/15]",infoupd,1264117338
-HH83,A,"FEM checked, xyz positioned, height 4.409 [2019/11/15]",infoupd,1264117338
-HH83,A,PAM input seems fixed maybe after reseating PAM in swap and removing dirt [2019/11/15],infoupd,1264117340
-HH100,A,"Aligned, Z=4.404 from jig. North lifting line is failing - needs to be replaced [2019/11/19]",infoupd,1264117338
-HH119,A,lowered for FEM check and xyz positioning [2019/11/17],infoupd,1264117338
-HH138,A,raised [2019/11/4] waiting for heat shrink ,infoupd,1264117338
-HH98,A,"FEM checked, xyz positioned, height 4.414 [2019/11/15]",infoupd,1264117338
-HH99,A,Fiber fixed ,infoupd,1264117338
-HH99,A,Aligned Z=4.396 (from jig),infoupd,1264117340
-HH116,A,"FEM checked, xyz positioned, height 4.398 [2019/11/19]",infoupd,1264117338
-HH117,A,"FEM checked. Aligned, Z=4.408 from jig.",infoupd,1264117338
-HH118,A,FEM checked ,infoupd,1264117338
-HH118,A,Aligned Z=4.413(from jig),infoupd,1264117340
-HH137,A,raised [2019/11/4] waiting for heat shrink,infoupd,1264117338
-HH84,A,Comments (added 11/1/19): height raised from 4.117m to 4.492m 10/31/19,infoupd,1264117338
-HH86,A,Comments (added 11/1/19): Cat7 cable connection is questionable,infoupd,1264117338
-HH87,A,Comments (added 11/1/19): One tension is frayed,infoupd,1264117338
-HH101,A,Comments (added 11/1/19): Cat7 cable connection is questionable,infoupd,1264117338
-HH101,A,Comments (added 11/1/19): Not raised - waiting on pulldown rope,infoupd,1264117340
-HH102,A,Comments (added 11/1/19): Not raised - waiting on pulldown rope,infoupd,1264117338
-HH120,A,Comments (added 11/1/19): Not raised - waiting on pulldown rope,infoupd,1264117338
-HH123,A,Comments (added 11/1/19): height raised from 4.041m to 4.406m 10/31/19,infoupd,1264117338
-HH88,A,Goodness E: ?,infoupd,1264117338
-HH88,A,Goodness N: ?,infoupd,1264117340
-HH89,A,Goodness E: OK,infoupd,1264117338
-HH89,A,Goodness N: OK,infoupd,1264117340
-HH90,A,Goodness E: ?,infoupd,1264117338
-HH90,A,Goodness N: ?,infoupd,1264117340
-HH91,A,Goodness E: NA,infoupd,1264117338
-HH91,A,Goodness N: NA,infoupd,1264117340
-HH105,A,Goodness E: ?,infoupd,1264117338
-HH105,A,Goodness N: ?,infoupd,1264117340
-HH106,A,Goodness E: Bad,infoupd,1264117338
-HH106,A,Goodness N: OK,infoupd,1264117340
-HH107,A,Goodness E: Bad,infoupd,1264117338
-HH107,A,Goodness N: ?,infoupd,1264117340
-HH108,A,Goodness E: ?,infoupd,1264117338
-HH108,A,Goodness N: ?,infoupd,1264117340
-HH124,A,Goodness E: Bad,infoupd,1264117338
-HH124,A,Goodness N: OK,infoupd,1264117340
-HH125,A,Goodness E: OK,infoupd,1264117338
-HH125,A,Goodness N: OK,infoupd,1264117340
-HH126,A,Goodness E: OK,infoupd,1264117338
-HH126,A,Goodness N: OK,infoupd,1264117340
 HH2,A,History: FEM: 17 | PAM: 23,infoupd,1264193598
 HH11,A,History: FEM: 19 | PAM: 25,infoupd,1264193598
 HH12,A,History: FEM: 20 | PAM: 26,infoupd,1264193598
@@ -815,321 +659,168 @@ HH25,A,History: FEM: 31,infoupd,1264193598
 HH26,A,History: PAM: 26,infoupd,1264193598
 HH39,A,History: PAM: 27,infoupd,1264193598
 HH99,A,History: FEM: 14,infoupd,1264193598
-HH99,A,History: FEM: 14,infoupd,1264193600
-HH86,A,Cat7 cable connection is questionable,infoupd,1264193598
-HH87,A,One tension is frayed,infoupd,1264193598
 HH101,A,History: FEM: 58,infoupd,1264193598
-HH101,A,Cat7 cable connection is questionable,infoupd,1264193600
-HH101,A,History: FEM: 58,infoupd,1264193602
-HH101,A,Not raised - waiting on pulldown rope,infoupd,1264193604
-HH102,A,Not raised - waiting on pulldown rope,infoupd,1264193598
 HH103,A,History: FEM: 60,infoupd,1264193598
-HH103,A,History: FEM: 60,infoupd,1264193600
-HH120,A,Not raised - waiting on pulldown rope,infoupd,1264193598
 HH89,A,History: PAM: 43,infoupd,1264193598
 HH124,A,History: PAM: 42,infoupd,1264193598
 HH0,A,SNAPloc: 0,infoupd,1264203738
-HH0,A,SNAPloc: 0,infoupd,1264203740
 HH1,A,SNAPloc: 0,infoupd,1264203738
-HH1,A,SNAPloc: 0,infoupd,1264203740
 HH2,A,SNAPloc: 0,infoupd,1264203738
-HH2,A,SNAPloc: 0,infoupd,1264203740
 HH11,A,SNAPloc: 1,infoupd,1264203738
-HH11,A,SNAPloc: 1,infoupd,1264203740
 HH12,A,SNAPloc: 1,infoupd,1264203738
-HH12,A,SNAPloc: 1,infoupd,1264203740
 HH13,A,SNAPloc: 1,infoupd,1264203738
-HH13,A,SNAPloc: 1,infoupd,1264203740
 HH14,A,SNAPloc: 2,infoupd,1264203738
-HH14,A,SNAPloc: 2,infoupd,1264203740
 HH23,A,SNAPloc: 2,infoupd,1264203738
-HH23,A,SNAPloc: 2,infoupd,1264203740
 HH24,A,SNAPloc: 2,infoupd,1264203738
-HH24,A,SNAPloc: 2,infoupd,1264203740
 HH25,A,SNAPloc: 3,infoupd,1264203738
-HH25,A,SNAPloc: 3,infoupd,1264203740
 HH26,A,SNAPloc: 3,infoupd,1264203738
-HH26,A,SNAPloc: 3,infoupd,1264203740
 HH39,A,SNAPloc: 3,infoupd,1264203738
-HH39,A,SNAPloc: 3,infoupd,1264203740
 HH65,A,SNAPloc: 0,infoupd,1264203738
-HH65,A,SNAPloc: 0,infoupd,1264203740
 HH66,A,SNAPloc: 0,infoupd,1264203738
-HH66,A,SNAPloc: 0,infoupd,1264203740
 HH67,A,SNAPloc: 0,infoupd,1264203738
-HH67,A,SNAPloc: 0,infoupd,1264203740
 HH68,A,SNAPloc: 1,infoupd,1264203738
 HH38,A,SNAPloc: 1,infoupd,1264203738
-HH38,A,SNAPloc: 1,infoupd,1264203740
 HH53,A,SNAPloc: 2,infoupd,1264203738
-HH53,A,SNAPloc: 2,infoupd,1264203740
 HH51,A,SNAPloc: 2,infoupd,1264203738
-HH51,A,SNAPloc: 2,infoupd,1264203740
 HH52,A,SNAPloc: 2,infoupd,1264203738
-HH52,A,SNAPloc: 2,infoupd,1264203740
 HH36,A,SNAPloc: 3,infoupd,1264203738
-HH36,A,SNAPloc: 3,infoupd,1264203740
 HH50,A,SNAPloc: 3,infoupd,1264203738
-HH50,A,SNAPloc: 3,infoupd,1264203740
 HH40,A,SNAPloc: 1,infoupd,1264203738
-HH40,A,SNAPloc: 1,infoupd,1264203740
 HH41,A,SNAPloc: 3,infoupd,1264203738
-HH41,A,SNAPloc: 3,infoupd,1264203740
 HH42,A,SNAPloc: 0,infoupd,1264203738
-HH42,A,SNAPloc: 0,infoupd,1264203740
 HH54,A,SNAPloc: 0,infoupd,1264203738
-HH54,A,SNAPloc: 0,infoupd,1264203740
 HH55,A,SNAPloc: 2,infoupd,1264203738
-HH55,A,SNAPloc: 2,infoupd,1264203740
 HH56,A,SNAPloc: 1,infoupd,1264203738
-HH56,A,SNAPloc: 1,infoupd,1264203740
 HH57,A,SNAPloc: 3,infoupd,1264203738
-HH57,A,SNAPloc: 3,infoupd,1264203740
 HH69,A,SNAPloc: 1,infoupd,1264203738
-HH69,A,SNAPloc: 1,infoupd,1264203740
 HH70,A,SNAPloc: 2,infoupd,1264203738
-HH70,A,SNAPloc: 2,infoupd,1264203740
 HH71,A,SNAPloc: 2,infoupd,1264203738
-HH71,A,SNAPloc: 2,infoupd,1264203740
 HH72,A,SNAPloc: 0,infoupd,1264203738
-HH72,A,SNAPloc: 0,infoupd,1264203740
 HH45,A,SNAPloc: 0,infoupd,1264203738
-HH45,A,SNAPloc: 0,infoupd,1264203740
 HH46,A,SNAPloc: 0,infoupd,1264203738
-HH46,A,SNAPloc: 0,infoupd,1264203740
 HH73,A,SNAPloc: 0,infoupd,1264203738
-HH73,A,SNAPloc: 0,infoupd,1264203740
 HH59,A,SNAPloc: 1,infoupd,1264203738
-HH59,A,SNAPloc: 1,infoupd,1264203740
 HH58,A,SNAPloc: 1,infoupd,1264203738
-HH58,A,SNAPloc: 1,infoupd,1264203740
 HH44,A,SNAPloc: 1,infoupd,1264203738
-HH44,A,SNAPloc: 1,infoupd,1264203740
 HH60,A,SNAPloc: 2,infoupd,1264203738
-HH60,A,SNAPloc: 2,infoupd,1264203740
 HH43,A,SNAPloc: 2,infoupd,1264203738
-HH43,A,SNAPloc: 2,infoupd,1264203740
 HH74,A,SNAPloc: 2,infoupd,1264203738
-HH74,A,SNAPloc: 2,infoupd,1264203740
 HH75,A,SNAPloc: 3,infoupd,1264203738
-HH75,A,SNAPloc: 3,infoupd,1264203740
 HH76,A,SNAPloc: 3,infoupd,1264203738
-HH76,A,SNAPloc: 3,infoupd,1264203740
 HH81,A,SNAPloc: 0,infoupd,1264203738
-HH81,A,SNAPloc: 0,infoupd,1264203740
 HH82,A,SNAPloc: 0,infoupd,1264203738
-HH82,A,SNAPloc: 0,infoupd,1264203740
 HH83,A,SNAPloc: 0,infoupd,1264203738
-HH83,A,SNAPloc: 0,infoupd,1264203740
 HH100,A,SNAPloc: 1,infoupd,1264203738
-HH100,A,SNAPloc: 1,infoupd,1264203740
 HH119,A,SNAPloc: 1,infoupd,1264203738
-HH119,A,SNAPloc: 1,infoupd,1264203740
 HH138,A,SNAPloc: 1,infoupd,1264203738
-HH138,A,SNAPloc: 1,infoupd,1264203740
 HH98,A,SNAPloc: 2,infoupd,1264203738
-HH98,A,SNAPloc: 2,infoupd,1264203740
 HH99,A,SNAPloc: 2,infoupd,1264203738
-HH99,A,SNAPloc: 2,infoupd,1264203740
 HH116,A,SNAPloc: 2,infoupd,1264203738
-HH116,A,SNAPloc: 2,infoupd,1264203740
 HH117,A,SNAPloc: 3,infoupd,1264203738
-HH117,A,SNAPloc: 3,infoupd,1264203740
 HH118,A,SNAPloc: 3,infoupd,1264203738
-HH118,A,SNAPloc: 3,infoupd,1264203740
 HH137,A,SNAPloc: 3,infoupd,1264203738
-HH137,A,SNAPloc: 3,infoupd,1264203740
 HH84,A,SNAPloc: 3,infoupd,1264203738
-HH84,A,SNAPloc: 3,infoupd,1264203740
 HH85,A,SNAPloc: 0,infoupd,1264203738
-HH85,A,SNAPloc: 0,infoupd,1264203740
 HH86,A,SNAPloc: 0,infoupd,1264203738
-HH86,A,SNAPloc: 0,infoupd,1264203740
 HH87,A,SNAPloc: 2,infoupd,1264203738
-HH87,A,SNAPloc: 2,infoupd,1264203740
 HH101,A,SNAPloc: 2,infoupd,1264203738
-HH101,A,SNAPloc: 2,infoupd,1264203740
 HH102,A,SNAPloc: 0,infoupd,1264203738
-HH102,A,SNAPloc: 0,infoupd,1264203740
 HH103,A,SNAPloc: 1,infoupd,1264203738
-HH103,A,SNAPloc: 1,infoupd,1264203740
 HH104,A,SNAPloc: 1,infoupd,1264203738
-HH104,A,SNAPloc: 1,infoupd,1264203740
 HH120,A,SNAPloc: 1,infoupd,1264203738
-HH120,A,SNAPloc: 1,infoupd,1264203740
 HH121,A,SNAPloc: 3,infoupd,1264203738
-HH121,A,SNAPloc: 3,infoupd,1264203740
 HH122,A,SNAPloc: 2,infoupd,1264203738
-HH122,A,SNAPloc: 2,infoupd,1264203740
 HH123,A,SNAPloc: 3,infoupd,1264203738
-HH123,A,SNAPloc: 3,infoupd,1264203740
 HH88,A,SNAPloc: 0,infoupd,1264203738
-HH88,A,SNAPloc: 0,infoupd,1264203740
 HH89,A,SNAPloc: 2,infoupd,1264203738
-HH89,A,SNAPloc: 2,infoupd,1264203740
 HH90,A,SNAPloc: 0,infoupd,1264203738
-HH90,A,SNAPloc: 0,infoupd,1264203740
 HH91,A,SNAPloc: 1,infoupd,1264203738
-HH91,A,SNAPloc: 1,infoupd,1264203740
 HH105,A,SNAPloc: 1,infoupd,1264203738
-HH105,A,SNAPloc: 1,infoupd,1264203740
 HH106,A,SNAPloc: 3,infoupd,1264203738
-HH106,A,SNAPloc: 3,infoupd,1264203740
 HH107,A,SNAPloc: 0,infoupd,1264203738
-HH107,A,SNAPloc: 0,infoupd,1264203740
 HH108,A,SNAPloc: 1,infoupd,1264203738
-HH108,A,SNAPloc: 1,infoupd,1264203740
 HH124,A,SNAPloc: 2,infoupd,1264203738
-HH124,A,SNAPloc: 2,infoupd,1264203740
 HH125,A,SNAPloc: 3,infoupd,1264203738
-HH125,A,SNAPloc: 3,infoupd,1264203740
 HH126,A,SNAPloc: 3,infoupd,1264203738
-HH126,A,SNAPloc: 3,infoupd,1264203740
 HH92,A,SNAPloc: 0,infoupd,1264203738
-HH92,A,SNAPloc: 0,infoupd,1264203740
 HH93,A,SNAPloc: 0,infoupd,1264203738
-HH93,A,SNAPloc: 0,infoupd,1264203740
 HH94,A,SNAPloc: 0,infoupd,1264203738
-HH94,A,SNAPloc: 0,infoupd,1264203740
 HH109,A,SNAPloc: 1,infoupd,1264203738
-HH109,A,SNAPloc: 1,infoupd,1264203740
 HH110,A,SNAPloc: 1,infoupd,1264203738
-HH110,A,SNAPloc: 1,infoupd,1264203740
 HH111,A,SNAPloc: 1,infoupd,1264203738
-HH111,A,SNAPloc: 1,infoupd,1264203740
 HH112,A,SNAPloc: 2,infoupd,1264203738
-HH112,A,SNAPloc: 2,infoupd,1264203740
 HH127,A,SNAPloc: 2,infoupd,1264203738
-HH127,A,SNAPloc: 2,infoupd,1264203740
 HH128,A,SNAPloc: 2,infoupd,1264203738
-HH128,A,SNAPloc: 2,infoupd,1264203740
 HH129,A,SNAPloc: 3,infoupd,1264203738
-HH129,A,SNAPloc: 3,infoupd,1264203740
 HH130,A,SNAPloc: 3,infoupd,1264203738
-HH130,A,SNAPloc: 3,infoupd,1264203740
 HH135,A,SNAPloc: 2,infoupd,1264236138
-HH135,A,SNAPloc: 2,infoupd,1264236140
 HH136,A,SNAPloc: 3,infoupd,1264236138
-HH136,A,SNAPloc: 3,infoupd,1264236140
 HH155,A,SNAPloc: 2,infoupd,1264236138
-HH155,A,SNAPloc: 2,infoupd,1264236140
 HH156,A,SNAPloc: 3,infoupd,1264236138
-HH156,A,SNAPloc: 3,infoupd,1264236140
 HH157,A,SNAPloc: 2,infoupd,1264236138
-HH157,A,SNAPloc: 2,infoupd,1264236140
 HH158,A,SNAPloc: 3,infoupd,1264236138
-HH158,A,SNAPloc: 3,infoupd,1264236140
 HH176,A,SNAPloc: 0,infoupd,1264236138
-HH176,A,SNAPloc: 0,infoupd,1264236140
 HH177,A,SNAPloc: 1,infoupd,1264236138
-HH177,A,SNAPloc: 1,infoupd,1264236140
 HH178,A,SNAPloc: 0,infoupd,1264236138
-HH178,A,SNAPloc: 0,infoupd,1264236140
 HH179,A,SNAPloc: 1,infoupd,1264236138
-HH179,A,SNAPloc: 1,infoupd,1264236140
 HH140,A,SNAPloc: 2,infoupd,1264236138
-HH140,A,SNAPloc: 2,infoupd,1264236140
 HH141,A,SNAPloc: 2,infoupd,1264236138
-HH141,A,SNAPloc: 2,infoupd,1264236140
 HH142,A,SNAPloc: 2,infoupd,1264236138
-HH142,A,SNAPloc: 2,infoupd,1264236140
 HH160,A,SNAPloc: 3,infoupd,1264236138
-HH160,A,SNAPloc: 3,infoupd,1264236140
 HH161,A,SNAPloc: 0,infoupd,1264236138
-HH161,A,SNAPloc: 0,infoupd,1264236140
 HH162,A,SNAPloc: 0,infoupd,1264236138
-HH162,A,SNAPloc: 0,infoupd,1264236140
 HH180,A,SNAPloc: 3,infoupd,1264236138
-HH180,A,SNAPloc: 3,infoupd,1264236140
 HH181,A,SNAPloc: 3,infoupd,1264236138
-HH181,A,SNAPloc: 3,infoupd,1264236140
 HH182,A,SNAPloc: 0,infoupd,1264236138
-HH182,A,SNAPloc: 0,infoupd,1264236140
 HH183,A,SNAPloc: 1,infoupd,1264236138
-HH183,A,SNAPloc: 1,infoupd,1264236140
 HH2,A,ADC is broken!,infoupd,1264264938
-HH84,A,height raised from 4.117m to 4.492m 10/31/19,infoupd,1264423338
-HH123,A,height raised from 4.041m to 4.406m 10/31/19,infoupd,1264423338
 HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495338
-HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495340
 HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495338
-HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495340
 HH146,A,"SMA and CAT7 cables too short, won't connect feed to node.",infoupd,1264495338
 HH110,A,Was seen as not raised 29 Jan 2020,infoupd,1264948938
 HH110,A,Was seen as not raised 29 Jan 2021,infoupd,1264948940
 HH127,A,Was seen as not raised 29 Jan 2021,infoupd,1264948938
 HH127,A,Was seen as not raised 29 Jan 2022,infoupd,1264948940
 HH24,A,No central line for this feed,infoupd,1265056938
-HH24,A,No central line for this feed,infoupd,1265056940
 HH65,A,65E looks dead,infoupd,1265056938
 HH42,A,43E looks dead,infoupd,1265056938
 HH55,A,55N looks dead,infoupd,1265056938
 HH57,A,central line is detached,infoupd,1265056938
-HH57,A,central line is detached,infoupd,1265056940
 HH71,A,71E looks very atypical,infoupd,1265056938
 HH74,A,74E and N look dead,infoupd,1265056938
-HH74,A,74E and N look dead,infoupd,1265056940
 HH127,A,Was seen as not raised 29 Jan 2020,infoupd,1265132538
-HH127,A,Was seen as not raised 29 Jan 2020,infoupd,1265132540
 HH128,A,"Central line too loose to be RF OK, door mesh in dish; 'nicest dish' candidate; spectra look great",infoupd,1265132538
-HH128,A,"Central line too loose to be RF OK, door mesh in dish; 'nicest dish' candidate; spectra look great",infoupd,1265132540
 HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1265132538
-HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1265132540
 HH130,A,"Central line too loose to be RF OK, door mesh in dish",infoupd,1265132538
-HH130,A,"Central line too loose to be RF OK, door mesh in dish",infoupd,1265132540
 HH177,A,Preliminary specrta looks fine,infoupd,1265132538
-HH177,A,Preliminary specrta looks fine,infoupd,1265132540
 HH178,A,Preliminary specrta looks fine,infoupd,1265132538
-HH178,A,Preliminary specrta looks fine,infoupd,1265132540
 HH179,A,Preliminary specrta looks fine,infoupd,1265132538
-HH179,A,Preliminary specrta looks fine,infoupd,1265132540
 HH135,A,Preliminary specrta looks fine,infoupd,1265132538
-HH135,A,Preliminary specrta looks fine,infoupd,1265132540
 HH136,A,Preliminary specrta looks fine,infoupd,1265132538
-HH136,A,Preliminary specrta looks fine,infoupd,1265132540
 HH155,A,Preliminary specrta looks fine,infoupd,1265132538
-HH155,A,Preliminary specrta looks fine,infoupd,1265132540
 HH156,A,Preliminary specrta looks fine,infoupd,1265132538
-HH156,A,Preliminary specrta looks fine,infoupd,1265132540
 HH157,A,Preliminary specrta looks fine,infoupd,1265132538
-HH157,A,Preliminary specrta looks fine,infoupd,1265132540
 HH158,A,Preliminary specrta looks fine,infoupd,1265132538
-HH158,A,Preliminary specrta looks fine,infoupd,1265132540
 HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
-HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
 HH141,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
-HH141,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
 HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
-HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
 HH160,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
-HH160,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
 HH161,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
-HH161,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
 HH162,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
-HH162,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
 HH180,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
 HH180,A,Preliminary post-PAM spectra is very low amplitude but not dead,infoupd,1265132540
 HH181,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
-HH181,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
 HH182,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
-HH182,A,Preliminary post-PAM spectra looks fine,infoupd,1265132540
 HH183,A,"Preliminary post-PAM spectra shows 183 N, E dead",infoupd,1265132538
-HH183,A,"Preliminary post-PAM spectra shows 183 N, E dead",infoupd,1265132540
 HH116,A,Post-PAM spectra of 116E has a strange look.,infoupd,1265132538
 HH85,A,Feed down as of 31 Jan 2020,infoupd,1265132538
-HH85,A,Feed down as of 31 Jan 2020,infoupd,1265132540
 HH101,A,101E and N look dead from post-PAM spectra taken the last week of Jan 2020,infoupd,1265132538
-HH101,A,101E and N look dead from post-PAM spectra taken the last week of Jan 2020,infoupd,1265132540
 HH102,A, ,infoupd,1265132538
 HH104,A,Feed down as of 31 Jan 2020,infoupd,1265132538
-HH104,A,Feed down as of 31 Jan 2020,infoupd,1265132540
 HH120,A, ,infoupd,1265132538
 HH122,A,Feed down as of 31 Jan 2020,infoupd,1265132538
-HH122,A,Feed down as of 31 Jan 2020,infoupd,1265132540
 HH106,A,Late Jan 2020 post-PAM spectra show N pol about half the amplitude of E pol. 31Jan2020 Measured center of feed as differing from center of hub by 2-3 cm. Z= [ 4.424 4.423] from hub (spec is 4.428-4.448),infoupd,1265132538
-HH106,A,Late Jan 2020 post-PAM spectra show N pol about half the amplitude of E pol. 31Jan2020 Measured center of feed as differing from center of hub by 2-3 cm. Z= [ 4.424 4.423] from hub (spec is 4.428-4.448),infoupd,1265132540
 HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1265143338
-HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1265143340
 HH177,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1265449338
 HH179,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1265449338
 HH135,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1265449338
@@ -1138,25 +829,17 @@ HH156,A,Feed heights (NE/SE/SW/NW): Z distance = 4.407,infoupd,1265449338
 HH157,A,Feed heights (NE/SE/SW/NW): z distance = 4.415,infoupd,1265449338
 HH136,A,Feed heights (NE/SE/SW/NW): Z distance = 4.411,infoupd,1265452938
 HH135,A,Final specrta looks fine,infoupd,1265467338
-HH135,A,Final specrta looks fine,infoupd,1265467340
 HH136,A,Final specrta looks fine,infoupd,1265467338
-HH136,A,Final specrta looks fine,infoupd,1265467340
 HH155,A,Final specrta looks fine,infoupd,1265467338
-HH155,A,Final specrta looks fine,infoupd,1265467340
 HH156,A,Strange bumps in final spectra for 156E - will ask for a check,infoupd,1265467338
 HH156,A,Final spectre looks fine,infoupd,1265467340
 HH157,A,Final spectre looks fine,infoupd,1265467338
-HH157,A,Final spectre looks fine,infoupd,1265467340
 HH158,A,Final spectre looks fine,infoupd,1265467338
 HH158,A,Feed heights (NE/SE/SW/NW): z distance = 4.411,infoupd,1265467340
-HH158,A,Final spectre looks fine,infoupd,1265467342
 HH177,A,Final spectra looks fine,infoupd,1265467338
-HH177,A,Final spectra looks fine,infoupd,1265467340
 HH179,A,Final spectre looks fine,infoupd,1265467338
-HH179,A,Final spectre looks fine,infoupd,1265467340
 HH109,A,Door is open,infoupd,1265575338
 HH178,A,No final check spectra - Preliminary specrta looks fine,infoupd,1265575338
-HH178,A,No final check spectra - Preliminary specrta looks fine,infoupd,1265575340
 HH66,A,loose central line,infoupd,1265575338
 HH86,A,loose central line,infoupd,1265575338
 HH87,A,loose central line,infoupd,1265575338
@@ -1170,15 +853,11 @@ HH181,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1265708538
 HH182,A,Feed heights (NE/SE/SW/NW): Z distance =4.415,infoupd,1265708538
 ND04,A,Door direction: NW,,1280318418
 HH160,A,Final post-PAM spectra looks fine,infoupd,1265726538
-HH160,A,Final post-PAM spectra looks fine,infoupd,1265726540
 HH161,A,Final check for 161N has an unexpected dip @ ~70 MHz,infoupd,1265726538
 HH161,A,Final post-PAM spectra looks fine,infoupd,1265726540
 HH162,A,Final post-PAM spectra looks fine,infoupd,1265726538
-HH162,A,Final post-PAM spectra looks fine,infoupd,1265726540
 HH181,A,Final post-PAM spectra looks fine,infoupd,1265726538
-HH181,A,Final post-PAM spectra looks fine,infoupd,1265726540
 HH182,A,Final post-PAM spectra looks fine,infoupd,1265726538
-HH182,A,Final post-PAM spectra looks fine,infoupd,1265726540
 HH156,A,re-take of final spectra for 156E looks fine. Ticket #463,infoupd,1265906538
 HH92,A,Feed heights (NE/SE/SW/NW): Z distance =4.404,infoupd,1266054138
 HH93,A,Feed heights (NE/SE/SW/NW): Z distance =4.410,infoupd,1266054138
@@ -1217,27 +896,16 @@ HH122,A,Z = 4.414,infoupd,1266504138
 HH122,A, ,infoupd,1266504140
 HH2,A,Replaced SNAP (C57->C72). ADC is likely working now.,infoupd,1266997338
 HH88,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
-HH88,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
 HH89,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
-HH89,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
 HH90,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
-HH90,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
 HH91,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
-HH91,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
 HH105,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
-HH105,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
 HH106,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
-HH106,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
 HH107,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
-HH107,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
 HH108,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
-HH108,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
 HH124,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
-HH124,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
 HH125,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
-HH125,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
 HH126,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
-HH126,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299740
 HH101,A,"History: FEM: 58 until 10Mar2020, thence 153",infoupd,1267897338
 HH101,A,10Mar2020 z = 4.406 ,infoupd,1267897340
 HH101,A,"History: FEM: 58 until 10Mar2020, thence 154",infoupd,1267897342
@@ -1245,29 +913,17 @@ HH101,A,10Mar2020 z = 4.406; despite changed FEM amplitude of spectre looks smal
 HH102,A,"History: FEM: 59 until 10Mar2020, thence 153",infoupd,1267897338
 HH102,A,10Mar2020 z = 4.409 ,infoupd,1267897340
 HH102,A,"History: FEM: 59 until 10Mar2020, thence 154",infoupd,1267897342
-HH102,A,10Mar2020 z = 4.409 ,infoupd,1267897344
 HH89,A,10Mar2020 z = 4.409,infoupd,1267897338
-HH89,A,10Mar2020 z = 4.409,infoupd,1267897340
 HH90,A,10Mar 2020 Z = 4.400,infoupd,1267897338
-HH90,A,10Mar 2020 Z = 4.400,infoupd,1267897340
 HH106,A,10Mar2020 z = 4.414,infoupd,1267897338
-HH106,A,10Mar2020 z = 4.414,infoupd,1267897340
 HH107,A,10Mar2020 z = 4.407,infoupd,1267897338
-HH107,A,10Mar2020 z = 4.407,infoupd,1267897340
 HH108,A,10Mar2020 z = 4.403,infoupd,1267897338
-HH108,A,10Mar2020 z = 4.403,infoupd,1267897340
 HH125,A,10Mar2020 z = 4.405,infoupd,1267897338
-HH125,A,10Mar2020 z = 4.405,infoupd,1267897340
 HH88,A,11 March 2020 Z= 4.400,infoupd,1267965738
-HH88,A,11 March 2020 Z= 4.400,infoupd,1267965740
 HH91,A,11 March 2020 Z=4.411,infoupd,1267965738
-HH91,A,11 March 2020 Z=4.411,infoupd,1267965740
 HH105,A,11 March 2020 Z=4.407,infoupd,1267965738
-HH105,A,11 March 2020 Z=4.407,infoupd,1267965740
 HH124,A,11 March 2020 Z= 4.412,infoupd,1267965738
-HH124,A,11 March 2020 Z= 4.412,infoupd,1267965740
 HH126,A,11 March 2020 Z= 4.405,infoupd,1267965738
-HH126,A,11 March 2020 Z= 4.405,infoupd,1267965740
 HH143,A,Feed Heights: Z = 4.404,infoupd,1268203338
 HH144,A,Feed Heights: Z = 4.410,infoupd,1268203338
 HH145,A,Feed Heights: Z = 4.405,infoupd,1268203338
@@ -1322,15 +978,10 @@ WRA000097,A,MAC - 08:00:30:6f:18:98,,1264500018
 WRA000097,A,IP - 10.80.2.176,,1264500078
 HH136,A,Feed heights (NE/SE/SW/NW): charge pump,infoupd,1269200538
 HH179,A,Reflections,infoupd,1269200538
-HH179,A,Reflections,infoupd,1269200540
 HH86,A,Some reflections,infoupd,1269200538
-HH86,A,Some reflections,infoupd,1269200540
 HH120,A,pretty bad reflections,infoupd,1269200538
-HH120,A,pretty bad reflections,infoupd,1269200540
 HH90,A,different reflections on each pol,infoupd,1269200538
-HH90,A,different reflections on each pol,infoupd,1269200540
 HH107,A,different reflections on each pol,infoupd,1269200538
-HH107,A,different reflections on each pol,infoupd,1269200540
 SNPC000002,A,MAC - 00:25:bd:96:16:04,,1269252018
 SNPC000002,A,IP - 10.80.40.27,,1269252078
 SNPC000003,A,MAC - 00:08:f9:1d:13:03,,1269252018
@@ -1435,194 +1086,9 @@ SNPC000079,A,MAC - 00:17:fa:8d:17:01,,1269252018
 SNPC000079,A,IP - 10.80.40.104,,1269252078
 SNPC000081,A,MAC - 00:44:e9:a0:17:01,,1269252018
 SNPC000081,A,IP - 10.80.40.106,,1269252078
-HH44,A,No final spectra as of 8Jan2020,infoupd,1270417338
-HH45,A,No final spectra as of 8Jan2020,infoupd,1270417338
-HH46,A,No final spectra as of 8Jan2020,infoupd,1270417338
-HH59,A,No final spectra as of 8Jan2020,infoupd,1270417338
-HH60,A,No final spectra as of 8Jan2020,infoupd,1270417338
-HH73,A,No final spectra as of 8Jan2020,infoupd,1270417338
-HH75,A,No final spectra as of 8Jan2020,infoupd,1270417338
-HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1271896938
-HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1271896940
-HH2,A,History: FEM: 17 | PAM: 23,infoupd,1271972538
-HH11,A,History: FEM: 19 | PAM: 25,infoupd,1271972538
-HH12,A,History: FEM: 20 | PAM: 26,infoupd,1271972538
-HH14,A,History: FEM: 28,infoupd,1271972538
-HH24,A,History: PAM: 24,infoupd,1271972538
-HH25,A,History: FEM: 31,infoupd,1271972538
-HH26,A,History: PAM: 26,infoupd,1271972538
-HH39,A,History: PAM: 27,infoupd,1271972538
-HH87,A,One tension is frayed,infoupd,1271972538
-HH103,A,History: FEM: 60,infoupd,1271972538
-HH103,A,History: FEM: 60,infoupd,1271972540
-HH89,A,History: PAM: 43,infoupd,1271972538
-HH124,A,History: PAM: 42,infoupd,1271972538
-HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1272274938
-HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1272274940
-HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1272274938
-HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1272274940
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
-HH110,A,Was seen as not raised 29 Jan 2020,infoupd,1272728538
-HH110,A,Was seen as not raised 29 Jan 2020,infoupd,1272728540
-HH24,A,No central line for this feed,infoupd,1272836538
-HH24,A,No central line for this feed,infoupd,1272836540
-HH65,A,65E looks dead,infoupd,1272836538
-HH42,A,43E looks dead,infoupd,1272836538
-HH55,A,55N looks dead,infoupd,1272836538
-HH57,A,central line is detached,infoupd,1272836538
-HH57,A,central line is detached,infoupd,1272836540
-HH71,A,71E looks very atypical,infoupd,1272836538
-HH74,A,74E and N look dead,infoupd,1272836538
-HH74,A,74E and N look dead,infoupd,1272836540
-HH127,A,Was seen as not raised 29 Jan 2020,infoupd,1272912138
-HH127,A,Was seen as not raised 29 Jan 2020,infoupd,1272912140
 ND05,A,Door direction: NE,,1280318418
-HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1272912138
-HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1272912140
-HH130,A,"Central line too loose to be RF OK, door mesh in dish",infoupd,1272912138
-HH130,A,"Central line too loose to be RF OK, door mesh in dish",infoupd,1272912140
-HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1272912138
-HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1272912140
-HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1272912138
-HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1272912140
-HH180,A,Preliminary post-PAM spectra looks fine,infoupd,1272912138
-HH180,A,Preliminary post-PAM spectra is very low amplitude but not dead,infoupd,1272912140
-HH116,A,Post-PAM spectra of 116E has a strange look.,infoupd,1272912138
-HH85,A,Feed down as of 31 Jan 2020,infoupd,1272912138
-HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1272922938
-HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1272922940
 HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1272926538
-HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1272926540
-HH135,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1273228938
-HH155,A,Feed heights (NE/SE/SW/NW): Z distance =4.407,infoupd,1273228938
-HH156,A,Feed heights (NE/SE/SW/NW): Z distance = 4.407,infoupd,1273228938
-HH157,A,Feed heights (NE/SE/SW/NW): z distance = 4.415,infoupd,1273228938
-HH177,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1273228938
-HH179,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1273228938
-HH135,A,Final specrta looks fine,infoupd,1273246938
-HH135,A,Final specrta looks fine,infoupd,1273246940
-HH136,A,Final specrta looks fine,infoupd,1273246938
-HH136,A,Final specrta looks fine,infoupd,1273246940
-HH155,A,Final specrta looks fine,infoupd,1273246938
-HH155,A,Final specrta looks fine,infoupd,1273246940
-HH156,A,Final spectre looks fine,infoupd,1273246938
-HH157,A,Final spectre looks fine,infoupd,1273246938
-HH157,A,Final spectre looks fine,infoupd,1273246940
-HH158,A,Final spectre looks fine,infoupd,1273246938
-HH158,A,Feed heights (NE/SE/SW/NW): z distance = 4.411,infoupd,1273246940
-HH158,A,Final spectre looks fine,infoupd,1273246942
-HH177,A,Final spectra looks fine,infoupd,1273246938
-HH177,A,Final spectra looks fine,infoupd,1273246940
-HH109,A,Door is open,infoupd,1273354938
-HH178,A,No final check spectra - Preliminary specrta looks fine,infoupd,1273354938
-HH178,A,No final check spectra - Preliminary specrta looks fine,infoupd,1273354940
-HH66,A,loose central line,infoupd,1273354938
-HH87,A,loose central line,infoupd,1273354938
-HH121,A,loose central line,infoupd,1273354938
-HH123,A,loose central line,infoupd,1273354938
-HH161,A,Feed heights (NE/SE/SW/NW): Z dstance = 4.412,infoupd,1273488138
-HH162,A,Feed heights (NE/SE/SW/NW): Z distance = 4.411,infoupd,1273488138
-HH182,A,Feed heights (NE/SE/SW/NW): Z distance =4.415,infoupd,1273488138
-HH160,A,Feed heights (NE/SE/SW/NW): Z diztance = 4.413,infoupd,1273488138
-HH181,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1273488138
-HH161,A,Final check for 161N has an unexpected dip @ ~70 MHz,infoupd,1273506138
-HH161,A,Final post-PAM spectra looks fine,infoupd,1273506140
-HH162,A,Final post-PAM spectra looks fine,infoupd,1273506138
-HH162,A,Final post-PAM spectra looks fine,infoupd,1273506140
-HH182,A,Final post-PAM spectra looks fine,infoupd,1273506138
-HH182,A,Final post-PAM spectra looks fine,infoupd,1273506140
-HH160,A,Final post-PAM spectra looks fine,infoupd,1273506138
-HH160,A,Final post-PAM spectra looks fine,infoupd,1273506140
-HH181,A,Final post-PAM spectra looks fine,infoupd,1273506138
-HH181,A,Final post-PAM spectra looks fine,infoupd,1273506140
-HH156,A,re-take of final spectra for 156E looks fine. Ticket #463,infoupd,1273686138
-HH92,A,Feed heights (NE/SE/SW/NW): Z distance =4.404,infoupd,1273833738
-HH93,A,Feed heights (NE/SE/SW/NW): Z distance =4.410,infoupd,1273833738
-HH94,A,Feed heights (NE/SE/SW/NW): Z distance = 4.397,infoupd,1273833738
-HH109,A,Feed heights (NE/SE/SW/NW): Z distance = 4.406,infoupd,1273833738
-HH110,A,Feed heights (NE/SE/SW/NW): Z distance = 4.414,infoupd,1273833738
-HH111,A,Feed heights (NE/SE/SW/NW): Z disstance = 4.414,infoupd,1273833738
-HH112,A,Feed heights (NE/SE/SW/NW): Z distance = 4.404,infoupd,1273837338
-HH128,A,Feed heights (NE/SE/SW/NW): Z distance =4.400,infoupd,1273837338
-HH129,A,Feed heights (NE/SE/SW/NW): Z distance = 4.402,infoupd,1273837338
-HH130,A,Feed heights (NE/SE/SW/NW): Z distance = 4.400,infoupd,1273837338
-HH176,A,Feed heights (NE/SE/SW/NW): Z distance = 4.413,infoupd,1273837338
-HH178,A,Feed heights (NE/SE/SW/NW): Z distance = 4.407,infoupd,1273837338
-HH140,A,Feed heights (NE/SE/SW/NW): Z distance =4.411,infoupd,1273837338
-HH141,A,History: FEM 164 replaced with 156,infoupd,1273837338
-HH141,A,Feed heights (NE/SE/SW/NW): Z distance = 4.411,infoupd,1273837340
-HH142,A,Feed heights (NE/SE/SW/NW): Z distance = 4.408,infoupd,1273837338
-HH65,A,Feed heights (NE/SE/SW/NW): Z distance = 4.397,infoupd,1273837338
-HH66,A,Feed heights (NE/SE/SW/NW): Z distance = 4.403,infoupd,1273837338
-HH67,A,Feed heights (NE/SE/SW/NW): Z distance = 4.408,infoupd,1273837338
-HH68,A,Feed heights (NE/SE/SW/NW): Z distance = 4.397,infoupd,1273837338
-HH37,A,Feed heights (NE/SE/SW/NW): Z distance = 4.404,infoupd,1273837338
-HH38,A,Feed heights (NE/SE/SW/NW): Z distance =4.398,infoupd,1273837338
-HH53,A,Feed heights (NE/SE/SW/NW): Z distance = 4.406,infoupd,1273837338
-HH51,A,Feed heights (NE/SE/SW/NW): Z distance = 4.398,infoupd,1273837338
-HH52,A,Feed heights (NE/SE/SW/NW): Z distance = 4.408,infoupd,1273837338
-HH36,A,Feed heights (NE/SE/SW/NW): Z distance = 4.404,infoupd,1273837338
-HH84,A,Z= 4.406,infoupd,1274280138
-HH85,A,Z = 4.407,infoupd,1274280138
-HH103,A,Z = 4.409,infoupd,1274283738
-HH104,A,Z = 4.409,infoupd,1274283738
-HH104,A, ,infoupd,1274283740
-HH122,A,Z = 4.414,infoupd,1274283738
-HH122,A, ,infoupd,1274283740
-HH2,A,Replaced SNAP (C57->C72). ADC is likely working now.,infoupd,1274776938
-HH101,A,"History: FEM: 58 until 10Mar2020, thence 153",infoupd,1275676938
-HH101,A,10Mar2020 z = 4.406 ,infoupd,1275676940
-HH101,A,"History: FEM: 58 until 10Mar2020, thence 154",infoupd,1275676942
-HH101,A,10Mar2020 z = 4.406; despite changed FEM amplitude of spectre looks small,infoupd,1275676944
-HH102,A,"History: FEM: 59 until 10Mar2020, thence 153",infoupd,1275676938
-HH102,A,10Mar2020 z = 4.409 ,infoupd,1275676940
-HH102,A,"History: FEM: 59 until 10Mar2020, thence 154",infoupd,1275676942
-HH102,A,10Mar2020 z = 4.409 ,infoupd,1275676944
-HH89,A,10Mar2020 z = 4.409,infoupd,1275676938
-HH89,A,10Mar2020 z = 4.409,infoupd,1275676940
-HH106,A,10Mar2020 z = 4.414,infoupd,1275676938
-HH106,A,10Mar2020 z = 4.414,infoupd,1275676940
-HH108,A,10Mar2020 z = 4.403,infoupd,1275676938
-HH108,A,10Mar2020 z = 4.403,infoupd,1275676940
-HH125,A,10Mar2020 z = 4.405,infoupd,1275676938
-HH125,A,10Mar2020 z = 4.405,infoupd,1275676940
-HH88,A,11 March 2020 Z= 4.400,infoupd,1275745338
-HH88,A,11 March 2020 Z= 4.400,infoupd,1275745340
-HH91,A,11 March 2020 Z=4.411,infoupd,1275745338
-HH91,A,11 March 2020 Z=4.411,infoupd,1275745340
-HH105,A,11 March 2020 Z=4.407,infoupd,1275745338
-HH105,A,11 March 2020 Z=4.407,infoupd,1275745340
-HH124,A,11 March 2020 Z= 4.412,infoupd,1275745338
-HH124,A,11 March 2020 Z= 4.412,infoupd,1275745340
-HH126,A,11 March 2020 Z= 4.405,infoupd,1275745338
-HH126,A,11 March 2020 Z= 4.405,infoupd,1275745340
-HH143,A,Feed Heights: Z = 4.404,infoupd,1275982938
-HH144,A,Feed Heights: Z = 4.410,infoupd,1275982938
-HH145,A,Feed Heights: Z = 4.405,infoupd,1275982938
-HH163,A,Feed Heights: Z = 4.410,infoupd,1275982938
-HH164,A,Feed Heights: Z = 4.400,infoupd,1275982938
-HH165,A,Feed Heights: Z = 4.401,infoupd,1275982938
-HH185,A,Feed Heights: Z = 4.410,infoupd,1275982938
-HH186,A,Feed Heights: Z = 4.409,infoupd,1276353738
-HH187,A,Feed Heights: Z = 4.406,infoupd,1276353738
-HH136,A,Feed heights (NE/SE/SW/NW): charge pump,infoupd,1276980138
-HH179,A,Reflections,infoupd,1276980138
-HH179,A,Reflections,infoupd,1276980140
-HH86,A,Some reflections,infoupd,1276980138
-HH86,A,Some reflections,infoupd,1276980140
-HH120,A,pretty bad reflections,infoupd,1276980138
-HH120,A,pretty bad reflections,infoupd,1276980140
-HH90,A,different reflections on each pol,infoupd,1276980138
-HH90,A,different reflections on each pol,infoupd,1276980140
-HH107,A,different reflections on each pol,infoupd,1276980138
-HH107,A,different reflections on each pol,infoupd,1276980140
-HH44,A,No final spectra as of 8Jan2020,infoupd,1278196938
-HH45,A,No final spectra as of 8Jan2020,infoupd,1278196938
-HH46,A,No final spectra as of 8Jan2020,infoupd,1278196938
-HH59,A,No final spectra as of 8Jan2020,infoupd,1278196938
-HH60,A,No final spectra as of 8Jan2020,infoupd,1278196938
-HH73,A,No final spectra as of 8Jan2020,infoupd,1278196938
-HH75,A,No final spectra as of 8Jan2020,infoupd,1278196938
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1636,199 +1102,69 @@ HH190,A,Feed heights (NE/SE/SW/NW): Z = 4.410,infoupd,1278931338
 HH191,A,Feed heights (NE/SE/SW/NW): Z = 4.410,infoupd,1278931338
 HH109,A,Door closed ,infoupd,1279446138
 HH110,A,Feed raised,infoupd,1279446138
-HH110,A,Feed raised,infoupd,1279446140
 HH127,A,Feed raised,infoupd,1279446138
-HH127,A,Feed raised,infoupd,1279446140
 HH130,A,"Central line too loose to be RF OK, door mesh closed",infoupd,1279446138
-HH130,A,"Central line too loose to be RF OK, door mesh closed",infoupd,1279446140
-HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1279676538
-HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1279676540
-HH2,A,History: FEM: 17 | PAM: 23,infoupd,1279791738
-HH11,A,History: FEM: 19 | PAM: 25,infoupd,1279791738
-HH12,A,History: FEM: 20 | PAM: 26,infoupd,1279791738
-HH14,A,History: FEM: 28,infoupd,1279791738
-HH24,A,History: PAM: 24,infoupd,1279791738
-HH25,A,History: FEM: 31,infoupd,1279791738
-HH26,A,History: PAM: 26,infoupd,1279791738
-HH39,A,History: PAM: 27,infoupd,1279791738
-HH87,A,One tension is frayed,infoupd,1279791738
-HH103,A,History: FEM: 60,infoupd,1279791738
-HH103,A,History: FEM: 60,infoupd,1279791740
-HH89,A,History: PAM: 43,infoupd,1279791738
-HH124,A,History: PAM: 42,infoupd,1279791738
 ND06,A,Door direction: SE,,1280318418
-HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1280054538
-HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1280054540
-HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1280054538
-HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1280054540
-HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1280083338
-HH24,A,No central line for this feed,infoupd,1280616138
-HH24,A,No central line for this feed,infoupd,1280616140
-HH65,A,65E looks dead,infoupd,1280616138
-HH42,A,43E looks dead,infoupd,1280616138
-HH55,A,55N looks dead,infoupd,1280616138
-HH57,A,central line is detached,infoupd,1280616138
-HH57,A,central line is detached,infoupd,1280616140
-HH71,A,71E looks very atypical,infoupd,1280616138
-HH74,A,74E and N look dead,infoupd,1280616138
-HH74,A,74E and N look dead,infoupd,1280616140
-HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1280691738
-HH129,A,"129E very attenuated; 129N looks fine. Has no door, but piece of mesh in dish (curled up and protruding ~40 cm) likely is for the door. Broken PVC rib SE - ~ 3 cm discontinuity",infoupd,1280691740
-HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1280691738
-HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1280691740
-HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1280691738
-HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1280691740
-HH180,A,Preliminary post-PAM spectra looks fine,infoupd,1280691738
-HH180,A,Preliminary post-PAM spectra is very low amplitude but not dead,infoupd,1280691740
-HH116,A,Post-PAM spectra of 116E has a strange look.,infoupd,1280691738
-HH85,A,Feed down as of 31 Jan 2020,infoupd,1280695338
-HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1280702538
-HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1280702540
-HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1280706138
-HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1280706140
-HH135,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1281008538
-HH155,A,Feed heights (NE/SE/SW/NW): Z distance =4.407,infoupd,1281008538
-HH156,A,Feed heights (NE/SE/SW/NW): Z distance = 4.407,infoupd,1281008538
-HH157,A,Feed heights (NE/SE/SW/NW): z distance = 4.415,infoupd,1281008538
-HH177,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1281008538
-HH179,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1281008538
-HH135,A,Final specrta looks fine,infoupd,1281026538
-HH135,A,Final specrta looks fine,infoupd,1281026540
-HH136,A,Final specrta looks fine,infoupd,1281026538
-HH136,A,Final specrta looks fine,infoupd,1281026540
-HH155,A,Final specrta looks fine,infoupd,1281026538
-HH155,A,Final specrta looks fine,infoupd,1281026540
-HH156,A,Final spectre looks fine,infoupd,1281026538
-HH157,A,Final spectre looks fine,infoupd,1281026538
-HH157,A,Final spectre looks fine,infoupd,1281026540
-HH158,A,Final spectre looks fine,infoupd,1281026538
-HH158,A,Feed heights (NE/SE/SW/NW): z distance = 4.411,infoupd,1281026540
-HH158,A,Final spectre looks fine,infoupd,1281026542
-HH177,A,Final spectra looks fine,infoupd,1281026538
-HH177,A,Final spectra looks fine,infoupd,1281026540
 HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH12,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH12,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH13,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH13,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH14,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH14,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH23,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH23,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH25,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH25,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH26,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH26,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH39,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH39,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH67,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH67,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH68,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH68,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH37,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH37,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH38,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH38,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH53,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH53,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH51,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH51,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH36,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH36,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH40,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH41,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 ND07,A,Door direction: N,,1280318418
-HH41,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH56,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH56,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH69,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH69,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH70,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH70,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH43,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH43,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH44,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH44,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH45,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH45,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH46,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH46,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH58,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH58,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH59,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH59,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH60,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH60,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH73,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH73,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH75,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH75,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH81,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH81,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH82,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH82,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH83,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH83,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH100,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH100,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH119,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH119,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH98,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH98,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH99,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH99,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH117,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH117,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH118,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH118,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH85,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH85,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH101,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH101,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH102,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH102,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH103,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH103,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH104,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH104,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH122,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
-HH122,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040940
 HH92,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
-HH92,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
 HH93,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
-HH93,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
 HH94,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
-HH94,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
 HH110,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
-HH110,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
 HH111,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
-HH111,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
 HH112,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
-HH112,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
 HH135,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
-HH135,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
 HH136,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
-HH136,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
 HH155,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
-HH155,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
 HH156,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH157,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
-HH157,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
 HH158,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
-HH158,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
 HH177,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
-HH177,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044540
-HH178,A,No final check spectra - Preliminary specrta looks fine,infoupd,1281134538
-HH178,A,No final check spectra - Preliminary specrta looks fine,infoupd,1281134540
-HH66,A,loose central line,infoupd,1281134538
-HH87,A,loose central line,infoupd,1281134538
-HH121,A,loose central line,infoupd,1281134538
-HH123,A,loose central line,infoupd,1281134538
 ND00,A,Door direction: E,,1280318418
 ND01,A,Door direction: NW,,1280318418
 ND02,A,Door direction: E,,1280318418
@@ -1858,72 +1194,40 @@ HH110,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
 HH111,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
 HH112,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
 HH155,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
-HH155,A,sbcd 25 aug due to heranow autos,infoupd,1282416140
 HH165,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
-HH165,A,sbcd 25 aug due to heranow autos,infoupd,1282416140
 HH185,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
 HH186,A, ,infoupd,1282416138
 HH75,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
-HH75,A,sbcd 25 aug due to heranow autos,infoupd,1282416140
 HH81,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
-HH81,A,sbcd 25 aug due to heranow autos,infoupd,1282416140
 HH82,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
-HH82,A,sbcd 25 aug due to heranow autos,infoupd,1282416140
 HH83,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
-HH83,A,sbcd 25 aug due to heranow autos,infoupd,1282416140
 HH101,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
-HH101,A,sbcd 25 aug due to heranow autos,infoupd,1282416140
 HH169,A,Feed heights (NE/SE/SW/NW): Z= 4.406,infoupd,1283506938
 HH176,A,SNAP specta OK 10 sept,apa-infoupd,1283784138
-HH176,A,SNAP specta OK 10 sept,apa-infoupd,1283784140
 HH135,A,SNAP specta not OK 10 sept,infoupd,1283802138
-HH135,A,SNAP specta not OK 10 sept,infoupd,1283802140
 HH136,A,SNAP specta OK 10 sept,apa-infoupd,1283802138
-HH136,A,SNAP specta OK 10 sept,apa-infoupd,1283802140
 HH92,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805738
-HH92,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805740
 HH93,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805738
-HH93,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805740
 HH94,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805738
-HH94,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805740
 HH128,A,Looks fine in 59100 notebook,apa-infoupd,1283805738
-HH128,A,Looks fine in 59100 notebook,apa-infoupd,1283805740
 HH129,A,"See nice autos in 59100 notebook, but no z height",apa-infoupd,1283805738
-HH129,A,"See nice autos in 59100 notebook, but no z height",apa-infoupd,1283805740
 HH108,A,"nice autos in the 49100 notebook, but in heranow 10Sept2221 Sitetime it looks like 108 is not seeing sky",apa-infoupd,1283805738
-HH108,A,"nice autos in the 49100 notebook, but in heranow 10Sept2221 Sitetime it looks like 108 is not seeing sky",apa-infoupd,1283805740
 HH122,A,122e is very high and flat in the SNAP spectra 10 Sept 23:32 site time,apa-infoupd,1283809338
-HH122,A,122e is very high and flat in the SNAP spectra 10 Sept 23:32 site time,apa-infoupd,1283809340
 HH46,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
-HH46,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816540
 HH58,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
-HH58,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816540
 HH59,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
-HH59,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816540
 HH100,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
-HH100,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985740
 HH119,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
-HH119,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985740
 HH98,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
-HH98,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985740
 HH99,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
-HH99,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985740
 HH117,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
-HH117,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985740
 HH118,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
-HH118,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985740
 HH100,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
-HH100,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234140
 HH119,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
-HH119,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234140
 HH98,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
-HH98,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234140
 HH99,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
-HH99,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234140
 HH117,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
-HH117,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234140
 HH118,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
-HH118,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234140
 HH28,A,Feed heights (NE/SE/SW/NW): Z = 4.402,apa-infoupd,1284255738
 HH29,A,Feed heights (NE/SE/SW/NW): Z = 4.403,apa-infoupd,1284255738
 HH6,A,cable too short to reach Node ,apa-infoupd,1284255738
@@ -1937,115 +1241,71 @@ HH17,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1284280938
 HH58,A,17 sept post-PAM spectre look fine ,apa-infoupd,1284399738
 HH58,A,17 sept post-PAM spectre look fine,apa-infoupd,1284399740
 HH60,A,post-PAM spectre look fine 17 sept,infoupd,1284399738
-HH60,A,post-PAM spectre look fine 17 sept,infoupd,1284399740
 HH74,A,74E and N look dead 17 sept in post-PAM spectre,infoupd,1284399738
-HH74,A,74E and N look dead 17 sept in post-PAM spectre,infoupd,1284399740
 HH75,A,sbcd 17 Sept due to low N post-PAM spectra ,infoupd,1284399738
-HH75,A,sbcd 17 Sept due to low N post-PAM spectra ,infoupd,1284399740
 HH92,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
-HH92,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403340
 HH93,A,Looks dead in post-PAM spectre 17 Sept,infoupd,1284403338
-HH93,A,Looks dead in post-PAM spectre 17 Sept,infoupd,1284403340
 HH94,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
-HH94,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403340
 HH109,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
-HH109,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403340
 HH110,A,"Nice post-PAM autos 17 Sept, but SNAP spectra looks wonky",infoupd,1284403338
 HH110,A,OK post-PAM autos 17 Sept,infoupd,1284403340
 HH111,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
-HH111,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403340
 HH112,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
-HH112,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403340
 HH127,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
-HH127,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403340
 HH129,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
-HH129,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403340
 HH45,A,post-PAM spectre looks fine 17 sept,infoupd,1284403338
-HH45,A,post-PAM spectre looks fine 17 sept,infoupd,1284403340
 HH59,A,59E has rising tail in 17 spet post-pam spectre,infoupd,1284403338
-HH59,A,59E has rising tail in 17 spet post-pam spectre,infoupd,1284403340
 HH155,A,low post-PAM auto 17 Sept,infoupd,1284482538
 HH156,A,Nice post-PAM auto 17 Sept,infoupd,1284482538
 HH156,A,low post-PAM auto 17 Sept,infoupd,1284482540
 HH157,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284482538
-HH157,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284482540
 HH116,A,116 autos look dead in post-PAM auto 17 Sept,infoupd,1284482538
-HH116,A,116 autos look dead in post-PAM auto 17 Sept,infoupd,1284482540
 HH137,A,137 autos look dead in post-PAM auto 17 Sept,infoupd,1284482538
-HH137,A,137 autos look dead in post-PAM auto 17 Sept,infoupd,1284482540
 HH101,A,Nice post-PAM auto 17 Sept,infoupd,1284482538
 HH101,A,101N looks dead in post-PAM auto  17 Sept,infoupd,1284482540
 HH102,A,Nice post-PAM auto 17 Sept,infoupd,1284482538
-HH102,A,Nice post-PAM auto 17 Sept,infoupd,1284482540
 HH103,A,Nice post-PAM auto 17 Sept,infoupd,1284482538
-HH103,A,Nice post-PAM auto 17 Sept,infoupd,1284482540
 HH122,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284482538
-HH122,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284482540
 HH123,A,Auto is just a low hump in post-PAM autos 17 Sept,infoupd,1284482538
 HH123,A,Nice post-PAM autos 17 Sept,infoupd,1284482540
 HH89,A,Nice post-PAM autos 17 Sept,infoupd,1284482538
-HH89,A,Nice post-PAM autos 17 Sept,infoupd,1284482540
 HH90,A,90N low in post-PAM autos 17 Sept,apa-infoupd,1284482538
 HH90,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284482540
 HH23,A,loose central line,infoupd,1284486138
 HH135,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
-HH135,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486140
 HH155,A,"low, flat  post-PAM auto 17 Sept",infoupd,1284486138
-HH155,A,"low, flat  post-PAM auto 17 Sept",infoupd,1284486140
 HH177,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
-HH177,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486140
 HH178,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
-HH178,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486140
 HH179,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
-HH179,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486140
 HH162,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
-HH162,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486140
 HH183,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
-HH183,A,Nice post-PAM autos 17 Sept,infoupd,1284486140
 HH140,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
-HH140,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486140
 HH142,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
 HH142,A,post-PAM auto is low and flat 17 Sept,infoupd,1284486140
 HH160,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
-HH160,A,Nice post-PAM autos 17 Sept,infoupd,1284486140
 HH180,A,post-PAM auto looks strange - lopsided at low freq 17 Sept,infoupd,1284486138
 HH180,A,post-PAM auto is low and flat 17 Sept,infoupd,1284486140
 HH181,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
-HH181,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486140
 HH144,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
-HH144,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486140
 HH145,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
-HH145,A,Nice post-PAM autos 17 Sept,infoupd,1284486140
 HH163,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
-HH163,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486140
 HH164,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
-HH164,A,Nice post-PAM autos 17 Sept,infoupd,1284486140
 HH165,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH165,A,"Nice post-PAM autos 17 Sept,",apa-infoupd,1284486140
 HH166,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
-HH166,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486140
 HH184,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
-HH184,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486140
 HH185,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
-HH185,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486140
 HH186,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
-HH186,A,Nice post-PAM autos 17 Sept,infoupd,1284486140
 HH84,A,Nice post-PAM auto 17 Sept,apa-infoupd,1284486138
-HH84,A,Nice post-PAM auto 17 Sept,apa-infoupd,1284486140
 HH87,A,Nice post-PAM auto 17 Sept,infoupd,1284486138
 HH12,A,Post-PAM spectra of 18 Sept show both pols looking dead,infoupd,1284493338
-HH12,A,Post-PAM spectra of 18 Sept show both pols looking dead,infoupd,1284493340
 HH23,A,Post-PAM spectra of 18 Sept show both pols low amplitude and showing correct atuo shape,infoupd,1284493338
 HH37,A,post-PAM spectra of 18 Sept show nice E spectra; N looks dead,apa-infoupd,1284493338
-HH37,A,post-PAM spectra of 18 Sept show nice E spectra; N looks dead,apa-infoupd,1284493340
 HH38,A,post-PAM spectra of 18 Sept show nice E spectra; N looks dead,apa-infoupd,1284493338
-HH38,A,post-PAM spectra of 18 Sept show nice E spectra; N looks dead,apa-infoupd,1284493340
 HH41,A,Looks fine in 18 Sept post-PAM sprectra,infoupd,1284493338
-HH41,A,Looks fine in 18 Sept post-PAM sprectra,infoupd,1284493340
 HH42,A,42 E looks dead and spiky in 18 Sept post-PAM spectre,infoupd,1284493338
 HH42,A,42 N looks ok (not great) in 18 Sept post-PAM spectre,infoupd,1284493340
 HH56,A,Looks fine in 18 Sept post_PAM spectre,infoupd,1284493338
-HH56,A,Looks fine in 18 Sept post_PAM spectre,infoupd,1284493340
 HH71,A,71E looks atypical in 18 Sept post-PAM sprectra,infoupd,1284493338
 HH71,A,71N looks fine in 18 Sept post-PAM sprectra,infoupd,1284493340
 HH43,A,43 E looks dead  in 18 Sept post-PAM spectre,infoupd,1284493338
@@ -2053,52 +1313,30 @@ HH43,A,43 N looks fine in 18 Sept post-PAM spectre,infoupd,1284493340
 HH2,A,2E looks fine 18 Sept,infoupd,1284496938
 HH2,A,2N still looks wonky in SNAP spectra 18 Sept,infoupd,1284496940
 HH11,A,sbcd 18 sept due to heranow autos and SNAP spectra,apa-infoupd,1284496938
-HH11,A,sbcd 18 sept due to heranow autos and SNAP spectra,apa-infoupd,1284496940
 HH13,A,sbcd 18 sept due to heranow autos and SNAP spectra,apa-infoupd,1284496938
-HH13,A,sbcd 18 sept due to heranow autos and SNAP spectra,apa-infoupd,1284496940
 HH67,A,"SNAP autos look low, flat, spiky ,as does all of N3 18 Sept",infoupd,1284496938
-HH67,A,"SNAP autos look low, flat, spiky ,as does all of N3 18 Sept",infoupd,1284496940
 HH72,A,72E looks fine in 18 Sept SNAP sprectra,apa-infoupd,1284496938
 HH72,A,72N looks fine in 18 Sept SNAP sprectra,apa-infoupd,1284496940
 HH46,A,fine SNAP spectra on 18-Sept,apa-infoupd,1284496938
-HH46,A,fine SNAP spectra on 18-Sept,apa-infoupd,1284496940
 HH60,A,SNAP spectra look bad  18 sept; N5S2 last data is from March,apa-infoupd,1284496938
-HH60,A,SNAP spectra look bad  18 sept; N5S2 last data is from March,apa-infoupd,1284496940
 HH83,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284496938
-HH83,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284496940
 HH110,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284500538
 HH156,A,Nice SNAP auto 18 Sept,apa-infoupd,1284500538
-HH156,A,Nice SNAP auto 18 Sept,apa-infoupd,1284500540
 HH182,A,Nice SNAP auto 18 Sept,apa-infoupd,1284500538
-HH182,A,Nice SNAP auto 18 Sept,apa-infoupd,1284500540
 HH81,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284500538
-HH81,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284500540
 HH82,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284500538
-HH82,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284500540
 HH86,A,Nice SNAP auto 18 Sept,apa-infoupd,1284500538
-HH86,A,Nice SNAP auto 18 Sept,apa-infoupd,1284500540
 HH120,A,OK looking SNAP spectra 18 Sept,apa-infoupd,1284500538
-HH120,A,OK looking SNAP spectra 18 Sept,apa-infoupd,1284500540
 HH123,A,Nice SNAP autos 178 Sept,apa-infoupd,1284500538
-HH123,A,Nice SNAP autos 178 Sept,apa-infoupd,1284500540
 HH88,A,autos look fine in 59111 DN,apa-infoupd,1284500538
-HH88,A,autos look fine in 59111 DN,apa-infoupd,1284500540
 HH108,A,nice autos in SNAP spectra 18 Sept,apa-infoupd,1284500538
-HH108,A,nice autos in SNAP spectra 18 Sept,apa-infoupd,1284500540
 HH138,A,138N SNAP auto looks too bumpy on 21 Sept.,infoupd,1284752538
-HH138,A,138N SNAP auto looks too bumpy on 21 Sept.,infoupd,1284752540
 HH110,A,Ant 110 N has rising slope at hi freq and looks bad in 113 DN. 21 Sept.,apa-infoupd,1284756138
-HH110,A,Ant 110 N has rising slope at hi freq and looks bad in 113 DN. 21 Sept.,apa-infoupd,1284756140
 HH182,A,"113 DN has E pol showing high niosy line (knwon FFT issue, I think)...",apa-infoupd,1284756138
-HH182,A,"113 DN has E pol showing high niosy line (knwon FFT issue, I think)...",apa-infoupd,1284756140
 HH51,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
-HH51,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756140
 HH53,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
-HH53,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756140
 HH67,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
-HH67,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756140
 HH68,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
-HH68,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756140
 HH107,A,107 SNAP autos have a fine shape; N pol is lower amplidude. DN autos look the same. 21 Sept. ,infoupd,1284756138
 HH107,A,107 SNAP autos have a fine shape; N pol is lower amplidude. DN autos look the same. 21 Sept.,infoupd,1284756140
 HH184,A,Ant 184 N newly high under and over the bandpass; bandpass looks flatter than expected. See Observing review for day 591115 issue. ,apa-infoupd,1284853338
@@ -2154,7 +1392,6 @@ HH87,A,apriori_antenna status change: RF_maintenance -> RF_ok,apa-infoupd,128535
 HH130,A,apriori_antenna status change: RF_maintenance -> RF_ok,apa-infoupd,1285353738
 HH24,A, ,infoupd,1285353738
 HH24,A,Feed Heights: Ant 24 Z= 4.415,infoupd,1285353740
-HH24,A, ,infoupd,1285353742
 HH130,A,Feed heights (NE/SE/SW/NW): Ant 130 Z= 4.409,apa-infoupd,1285353740
 HH130,A, ,apa-infoupd,1285353742
 HH66,A,Feed heights (NE/SE/SW/NW): Ant 66 Z= 4.402,apa-infoupd,1285353740
@@ -2306,26 +1543,18 @@ HH14,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
 HH26,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285954938
 HH6,A,cable too short to reach Node,infoupd,1285954938
 HH158,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
-HH158,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
 HH184,A,Ant 184 N newly high under and over the bandpass; bandpass looks flatter than expected. See Observing review for day 591115 issue.,infoupd,1285954938
 HH36,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
-HH36,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
 HH67,A,N3A67 N is low amplitude. moving from dig_maint to rf_maint. 24 Sept.,infoupd,1285954938
 HH40,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
 HH69,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
-HH69,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
 HH70,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
-HH70,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
 HH73,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
-HH73,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
 HH75,A,sbcd 17 Sept due to low N post-PAM spectra,infoupd,1285954938
-HH75,A,sbcd 17 Sept due to low N post-PAM spectra,infoupd,1285954940
 HH84,A,N8A84 E is low amplitude. Moving from RF_ok to RF_maint. 24 Sept.,infoupd,1285954938
 HH85,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
-HH85,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
 HH86,A,N8A86 N shows unexpected bump around 200 MHz. Moving from RF_ok to RF_maint. 24 Sept.,infoupd,1285954938
 HH104,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
-HH104,A,reported sync ok by dgorki Aug 7,infoupd,1285954940
 RD04,A,MAC - 02:02:0a:01:01:cc,,1267095618
 RD04,A,IP - 10.80.2.204,,1267095678
 RD05,A,MAC - 02:02:0a:01:01:cd,,1267095618
@@ -2401,97 +1630,7 @@ WR-len4p0,A,MAC - 08:00:30:50:e8:17,,1267095618
 WR-len4p0,A,IP - 10.80.2.138,,1267095678
 HH148,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1286642598
 HH148,A,Broken fibre report by Thaki on 10/13/20,apa-infoupd,1286642538
-HH161,A,Feed heights (NE/SE/SW/NW): Z dstance = 4.412,infoupd,1289043738
-HH162,A,Feed heights (NE/SE/SW/NW): Z distance = 4.411,infoupd,1289043738
-HH182,A,Feed heights (NE/SE/SW/NW): Z distance =4.415,infoupd,1289043738
-HH160,A,Feed heights (NE/SE/SW/NW): Z diztance = 4.413,infoupd,1289043738
-HH181,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1289043738
-HH161,A,Final post-PAM spectra looks fine,infoupd,1289061738
-HH161,A,Final post-PAM spectra looks fine,infoupd,1289061740
-HH92,A,Feed heights (NE/SE/SW/NW): Z distance =4.404,infoupd,1289389338
-HH93,A,Feed heights (NE/SE/SW/NW): Z distance =4.410,infoupd,1289389338
-HH94,A,Feed heights (NE/SE/SW/NW): Z distance = 4.397,infoupd,1289389338
-HH109,A,Feed heights (NE/SE/SW/NW): Z distance = 4.406,infoupd,1289389338
-HH110,A,Feed heights (NE/SE/SW/NW): Z distance = 4.414,infoupd,1289389338
-HH111,A,Feed heights (NE/SE/SW/NW): Z disstance = 4.414,infoupd,1289389338
-HH112,A,Feed heights (NE/SE/SW/NW): Z distance = 4.404,infoupd,1289392938
-HH128,A,Feed heights (NE/SE/SW/NW): Z distance =4.400,infoupd,1289392938
-HH129,A,Feed heights (NE/SE/SW/NW): Z distance = 4.402,infoupd,1289392938
-HH176,A,Feed heights (NE/SE/SW/NW): Z distance = 4.413,infoupd,1289392938
-HH178,A,Feed heights (NE/SE/SW/NW): Z distance = 4.407,infoupd,1289392938
-HH140,A,Feed heights (NE/SE/SW/NW): Z distance =4.411,infoupd,1289392938
-HH141,A,History: FEM 164 replaced with 156,infoupd,1289392938
-HH141,A,Feed heights (NE/SE/SW/NW): Z distance = 4.411,infoupd,1289392940
-HH142,A,Feed heights (NE/SE/SW/NW): Z distance = 4.408,infoupd,1289392938
-HH36,A,Feed heights (NE/SE/SW/NW): Z distance = 4.404,infoupd,1289392938
-HH37,A,Feed heights (NE/SE/SW/NW): Z distance = 4.404,infoupd,1289392938
-HH38,A,Feed heights (NE/SE/SW/NW): Z distance =4.398,infoupd,1289392938
-HH51,A,Feed heights (NE/SE/SW/NW): Z distance = 4.398,infoupd,1289392938
-HH52,A,Feed heights (NE/SE/SW/NW): Z distance = 4.408,infoupd,1289392938
-HH53,A,Feed heights (NE/SE/SW/NW): Z distance = 4.406,infoupd,1289392938
-HH65,A,Feed heights (NE/SE/SW/NW): Z distance = 4.397,infoupd,1289392938
-HH67,A,Feed heights (NE/SE/SW/NW): Z distance = 4.408,infoupd,1289392938
-HH68,A,Feed heights (NE/SE/SW/NW): Z distance = 4.397,infoupd,1289392938
-HH101,A,"History: FEM: 58 until 10Mar2020, thence 153",infoupd,1291488138
-HH101,A,"History: FEM: 58 until 10Mar2020, thence 154",infoupd,1291488140
-HH102,A,"History: FEM: 59 until 10Mar2020, thence 153",infoupd,1291488138
-HH102,A,"History: FEM: 59 until 10Mar2020, thence 154",infoupd,1291488140
-HH106,A,10Mar2020 z = 4.414,infoupd,1291488138
-HH106,A,10Mar2020 z = 4.414,infoupd,1291488140
-HH125,A,10Mar2020 z = 4.405,infoupd,1291488138
-HH125,A,10Mar2020 z = 4.405,infoupd,1291488140
-HH126,A,11 March 2020 Z= 4.405,infoupd,1291488138
-HH126,A,11 March 2020 Z= 4.405,infoupd,1291488140
-HH143,A,Feed Heights: Z = 4.404,infoupd,1291538538
-HH144,A,Feed Heights: Z = 4.410,infoupd,1291538538
-HH145,A,Feed Heights: Z = 4.405,infoupd,1291538538
-HH163,A,Feed Heights: Z = 4.410,infoupd,1291538538
-HH164,A,Feed Heights: Z = 4.400,infoupd,1291538538
-HH165,A,Feed Heights: Z = 4.401,infoupd,1291538538
-HH185,A,Feed Heights: Z = 4.410,infoupd,1291538538
-HH186,A,Feed Heights: Z = 4.409,infoupd,1291909338
-HH187,A,Feed Heights: Z = 4.406,infoupd,1291909338
-HH136,A,Feed heights (NE/SE/SW/NW): charge pump,infoupd,1292535738
-HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1294486938
-HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1294486938
-HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1294486938
-HH150,A,Feed heights (NE/SE/SW/NW): Z = 4.411,infoupd,1294486938
-HH167,A,Feed heights (NE/SE/SW/NW): Z = 4.410,infoupd,1294486938
-HH168,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1294486938
-HH170,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1294486938
-HH189,A,Feed heights (NE/SE/SW/NW): Z = 4.409,infoupd,1294486938
-HH190,A,Feed heights (NE/SE/SW/NW): Z = 4.410,infoupd,1294486938
-HH191,A,Feed heights (NE/SE/SW/NW): Z = 4.410,infoupd,1294486938
 HH27,A,Feed heights (NE/SE/SW/NW): something wrong with fiber,infoupd,1294504938
-HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1295232138
-HH76,A,"Feed is there, but it is too far from node 5 and may need to be fed by another node.  FEM #106 has been left in node 5 enclosure for this antenna",infoupd,1295232140
-HH2,A,History: FEM: 17 | PAM: 23,infoupd,1295347338
-HH11,A,History: FEM: 19 | PAM: 25,infoupd,1295347338
-HH12,A,History: FEM: 20 | PAM: 26,infoupd,1295347338
-HH14,A,History: FEM: 28,infoupd,1295347338
-HH24,A,History: PAM: 24,infoupd,1295347338
-HH25,A,History: FEM: 31,infoupd,1295347338
-HH26,A,History: PAM: 26,infoupd,1295347338
-HH39,A,History: PAM: 27,infoupd,1295347338
-HH103,A,History: FEM: 60,infoupd,1295347338
-HH103,A,History: FEM: 60,infoupd,1295347340
-HH89,A,History: PAM: 43,infoupd,1295347338
-HH124,A,History: PAM: 42,infoupd,1295347338
-HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1295610138
-HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1295610140
-HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1295610138
-HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1295610140
-HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1295638938
-HH65,A,65E looks dead,infoupd,1296171738
-HH55,A,55N looks dead,infoupd,1296171738
-HH135,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1296564138
-HH155,A,Feed heights (NE/SE/SW/NW): Z distance =4.407,infoupd,1296564138
-HH156,A,Feed heights (NE/SE/SW/NW): Z distance = 4.407,infoupd,1296564138
-HH157,A,Feed heights (NE/SE/SW/NW): z distance = 4.415,infoupd,1296564138
-HH177,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1296564138
-HH179,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1296564138
-HH158,A,Feed heights (NE/SE/SW/NW): z distance = 4.411,infoupd,1296582138
-HH121,A,loose central line,infoupd,1296690138
 WRA000087,A,IP - 10.80.2.199,,1267095678
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
@@ -2546,17 +1685,13 @@ HH24,A,PAM not turning on.,infoupd,1298742138
 HH25,A,PAM not turning on.,apa-infoupd,1298742138
 HH26,A,PAM not turning on.,apa-infoupd,1298742138
 HH39,A,PAM not turning on.,apa-infoupd,1298742138
-HH169,A,Feed heights (NE/SE/SW/NW): Z= 4.406,infoupd,1299062538
 SNPA000022,A,Restarting part.  Previous data <heraPartNumber id=SNPA000022:A type=snap :: 1221387618 - 1234347018>,,1298282418
 HH15,A,apriori_antenna status change: RF_maintenance -> digital_ok,apa-infoupd,1299519798
 HH81,A,apriori_antenna status change: RF_maintenance -> digital_ok,apa-infoupd,1299519798
 HH138,A,apriori_antenna status change: RF_maintenance -> digital_ok,apa-infoupd,1299519798
 HH15,A,https://github.com/HERA-Team/HERA_Commissioning/issues/659,apa-infoupd,1299519738
-HH15,A,https://github.com/HERA-Team/HERA_Commissioning/issues/659,apa-infoupd,1299519740
 HH81,A,https://github.com/HERA-Team/HERA_Commissioning/issues/659,apa-infoupd,1299519738
-HH81,A,https://github.com/HERA-Team/HERA_Commissioning/issues/659,apa-infoupd,1299519740
 HH138,A,https://github.com/HERA-Team/HERA_Commissioning/issues/659,apa-infoupd,1299519738
-HH138,A,https://github.com/HERA-Team/HERA_Commissioning/issues/659,apa-infoupd,1299519740
 HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1299526998
 HH94,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1299526998
 HH98,A,apriori_antenna status change: digital_ok > digital_maintenance,apa-infoupd,1299526998
@@ -2571,37 +1706,21 @@ HH158,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1
 HH166,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1299526998
 HH187,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1299526998
 HH18,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
-HH18,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH28,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,infoupd,1299526938
-HH28,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,infoupd,1299526940
 HH30,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,infoupd,1299526938
-HH30,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,infoupd,1299526940
 HH94,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
-HH94,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH156,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
-HH156,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH158,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
-HH158,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH143,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
-HH143,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH166,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
-HH166,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH184,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,infoupd,1299526938
-HH184,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,infoupd,1299526940
 HH187,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
-HH187,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH100,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
-HH100,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH119,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
-HH119,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH98,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
-HH98,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH86,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,infoupd,1299526938
-HH86,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,infoupd,1299526940
 HH123,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
-HH123,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH125,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
-HH125,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526940
 HH0,A,Gratuitous change to test email system.,apa-infoupd,1299555738
 HH2,A,apriori_antenna status change: RF_maintenance > dish_ok,apa-infoupd,1299606198
 HH0,A,Test warning,apa-infoupd,1299606138
@@ -2612,28 +1731,6 @@ HH0,A,Another test of apriori notification.,apa-infoupd,1299634938
 HH0,A,Testing the full automation,apa-infoupd,1299634940
 HH2,A,Another test of apriori mis-match warning,apa-infoupd,1299634938
 HH0,A,apriori_antenna status change: dish_ok > RF_maintenance,apa-infoupd,1299645798
-HH99,A,FEM turned back on 15 Sept 2020,infoupd,1299789738
-HH99,A,FEM turned back on 15 Sept 2020,infoupd,1299789740
-HH117,A,FEM turned back on 15 Sept 2020,infoupd,1299789738
-HH117,A,FEM turned back on 15 Sept 2020,infoupd,1299789740
-HH118,A,FEM turned back on 15 Sept 2020,infoupd,1299789738
-HH118,A,FEM turned back on 15 Sept 2020,infoupd,1299789740
-HH28,A,Feed heights (NE/SE/SW/NW): Z = 4.402,infoupd,1299811338
-HH29,A,Feed heights (NE/SE/SW/NW): Z = 4.403,infoupd,1299811338
-HH3,A,Feed heights (NE/SE/SW/NW): Z = 4.406,infoupd,1299811338
-HH4,A,Feed heights (NE/SE/SW/NW): Z = 4.414,infoupd,1299811338
-HH15,A,Feed heights (NE/SE/SW/NW): Z = 4.410,infoupd,1299811338
-HH18,A,Feed heights (NE/SE/SW/NW): Z =4.404,infoupd,1299836538
-HH30,A,Feed heights (NE/SE/SW/NW): Z = 4.402,infoupd,1299836538
-HH16,A,Feed heights (NE/SE/SW/NW): Z = 4.409,infoupd,1299836538
-HH17,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1299836538
-HH74,A,74E and N look dead 17 sept in post-PAM spectre,infoupd,1299955338
-HH74,A,74E and N look dead 17 sept in post-PAM spectre,infoupd,1299955340
-HH93,A,Looks dead in post-PAM spectre 17 Sept,infoupd,1299958938
-HH93,A,Looks dead in post-PAM spectre 17 Sept,infoupd,1299958940
-HH45,A,post-PAM spectre looks fine 17 sept,infoupd,1299958938
-HH59,A,59E has rising tail in 17 spet post-pam spectre,infoupd,1299958938
-HH59,A,59E has rising tail in 17 spet post-pam spectre,infoupd,1299958940
 HH16,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1300214598
 HH73,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1300214598
 HH127,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1300214598
@@ -2706,11 +1803,6 @@ SNPC000127,A,MAC - 00:40:83:ca:17:01,,1304938818
 SNPC000128,A,MAC - 00:26:3e:2c:17:01,,1304938818
 SNPC000129,A,MAC - 00:36:2f:9d:17:01,,1304938818
 HH134,A,cables too short,infoupd,1309833738
-HH16,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1315770138
-HH127,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1315770138
-HH130,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1315770138
-HH144,A,Feed Heights: https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1315770138
-HH73,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1315770138
 HH27,A,Antenna is not raised and entire door sector is out.,infoupd,1317994938
 HH41,A,Cables running down from feed are not secured to tether rope.,infoupd,1317994938
 HH108,A,History: The 108 marker fell off of the north pole.,infoupd,1317994938
