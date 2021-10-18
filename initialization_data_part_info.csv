@@ -287,6 +287,7 @@ HH11,A,Tension N:W:E (lbs): 335:340:400,,1248696019
 HH11,A,Eye-bolt N:W:E (m): 6.48:6.41:6.33,,1248696020
 HH11,A,RF PWR N: -7.4,,1244462423
 HH11,A,Goodness N: OK?,,1244462424
+HH16,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1318574538
 HH12,A,FEM I2C: y,,1244462418
 HH12,A,PAM I2C: y,,1244462419
 HH12,A,RF PWR E: -3.2,,1244462420
@@ -315,6 +316,8 @@ HH14,A,Feed Height (m): 4.407,,1248696018
 HH14,A,Tension N:W:E (lbs): 425:365:395,,1248696019
 HH14,A,Eye-bolt N:W:E (m): 6.25:6.24:6.22,,1248696020
 HH14,A,RF PWR N: -14.2,,1244462422
+HH127,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1318574538
+HH130,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1318574538
 HH14,A,Goodness N: Check!,,1244462423
 HH14,A,Maybe damaged fibre?,,1244462424
 HH23,A,FEM I2C: y,,1244462418
@@ -346,6 +349,7 @@ HH25,A,Tension N:W:E (lbs): 370:345:375,,1248696019
 HH25,A,Eye-bolt N:W:E (m): 6.50:6.28:6.23,,1248696020
 HH25,A,RF PWR N: -4.5,,1244462423
 HH25,A,Goodness N: OK?,,1244462424
+HH144,A,Feed Heights: https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1318574538
 HH26,A,FEM I2C: n,,1244462418
 HH26,A,PAM I2C: y,,1244462419
 HH26,A,RF PWR E: -0.3,,1244462420
@@ -356,6 +360,7 @@ HH26,A,Tension N:W:E (lbs): 305:455:300,,1248696019
 HH26,A,Eye-bolt N:W:E (m): 6.43:6.17:6.40,,1248696020
 HH26,A,RF PWR N: -4.7,,1244462423
 HH26,A,Goodness N: OK?,,1244462424
+HH73,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1318574538
 HH39,A,FEM I2C: y,,1244462418
 HH39,A,PAM I2C: y,,1244462419
 HH39,A,RF PWR E: -1.7,,1244462420
