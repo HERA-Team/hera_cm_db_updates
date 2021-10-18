@@ -16,7 +16,7 @@ class Checks:
         self.stop = cm_utils.get_astropytime(stop_time)
         self.step = day_step
 
-    def check_for_duplicate_comments(self):
+    def check_for_duplicate_comments(self, verbose=False):
         """Check the database for duplicate comments."""
         cmdpre = 'delete from part_info where hpn='
         filename = 'dupcomm.sql'
@@ -36,6 +36,8 @@ class Checks:
                                 posting_gpstime = comments[j].posting_gpstime
                             print("{}'{}' and hpn_rev='{}' and posting_gpstime='{}';"
                                   .format(cmdpre, hpn, rev, posting_gpstime), file=fp)
+                            if verbose:
+                                print(f"{hpn}: {comments[i]}")
         if duplicates_found:
             print("{} duplicates found".format(duplicates_found))
             print("run 'psql hera_mc -f {}'".format(filename))
@@ -75,11 +77,20 @@ class Checks:
                                 list(self.cmad.connections['down'].keys()))
             for key in full_conn_set:
                 if key not in full_part_set:
+                    if key not in missing_parts:
+                        print(self.cmad.at_date.isot)
+                        print("\t{} is not listed as an active part "
+                              "even though listed in an active connection.".format(key))
+                        try:
+                            print(self.cmad.connections['up'][key])
+                        except KeyError:
+                            pass
+                        try:
+                            print(self.cmad.connections['down'][key])
+                        except KeyError:
+                            pass
                     missing_parts.setdefault(key, [])
                     missing_parts[key].append(next)
-                    print(self.cmad.at_date.isot)
-                    print("\t{} is not listed as an active part "
-                          "even though listed in an active connection.".format(key))
             next += self.step
         print("Stopping check at {}".format(next.isot))
         if len(missing_parts.keys()):
