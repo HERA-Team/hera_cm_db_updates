@@ -82,18 +82,18 @@ class Checks:
                         print("\t{} is not listed as an active part "
                               "even though listed in an active connection.".format(key))
                         try:
-                            print(self.cmad.connections['up'][key])
+                            print('\t', self.cmad.connections['up'][key])
                         except KeyError:
                             pass
                         try:
-                            print(self.cmad.connections['down'][key])
+                            print('\t', self.cmad.connections['down'][key])
                         except KeyError:
                             pass
                     missing_parts.setdefault(key, [])
-                    missing_parts[key].append(next)
+                    missing_parts[key].append(next.gps)
             next += self.step
         print("Stopping check at {}".format(next.isot))
         if len(missing_parts.keys()):
             print('Found the following parts:')
-            print(missing_parts.keys())
-        return missing_parts
+            for key in missing_parts.keys():
+                print(f"\t{key}:  {missing_parts[key][0]}")
