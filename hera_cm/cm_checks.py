@@ -3,7 +3,9 @@
 # Licensed under the 2-clause BSD license.
 
 """Series of database checks."""
-from hera_mc import cm_active, cm_utils
+from hera_mc import cm_utils
+from hera_mc import cm_active
+import redis
 
 
 class Checks:
@@ -11,19 +13,90 @@ class Checks:
 
     def __init__(self, start_time=2458500, stop_time='now', day_step=1.0):
         """Initialize."""
-        self.cmad = cm_active.ActiveData()
+        self.active = cm_active.ActiveData()
         self.start = cm_utils.get_astropytime(start_time)
         self.stop = cm_utils.get_astropytime(stop_time)
         self.step = day_step
+
+    def check_hosts_ethers(self, load_to_redis=False):
+        self.active.load_connections()
+        self.active.load_info()
+
+        macip = {
+           'rd': {'mac': {}, 'ip': {}},
+           'wr': {'mac': {}, 'ip': {}}
+        }
+        found = {'mac': [], 'ip': []}
+        self.dups = {}
+        for ikey, info in self.active.info.items():
+            rdwr = ikey[:2].lower()
+            if rdwr in macip.keys():
+                for note in info:
+                    idtype = note.comment.lower().split('-')[0].strip()
+                    if idtype in found:
+                        val = note.comment.split('-')[1].strip()
+                        if val in found[idtype]:
+                            self.dups.setdefault(val, [])
+                            self.dups[val].append(ikey)
+                            self.dups[val].append(macip[rdwr][idtype][val])
+                            print(f"{val} already found:  {self.dups[val]}!!!")
+                        found[idtype].append(val)
+                        macip[rdwr][idtype][val] = ikey
+        print('=+=+=+=+=+=+=+=+=+=+=+=+=+=')
+        # "invert" macip -- I should be able to skip macip
+        self.picam = {}
+        for rdwr in macip:
+            for idtype in macip[rdwr]:
+                for val in macip[rdwr][idtype]:
+                    hpnkey = macip[rdwr][idtype][val]
+                    self.picam.setdefault(hpnkey, {})
+                    self.picam[hpnkey][idtype] = val
+                    ncm = self.active.connections['up'][hpnkey]['MNT'].downstream_part
+                    self.picam[hpnkey]['ncm'] = ncm
+                    ncmkey = f"{ncm}:A"
+                    try:
+                        node = int(self.active.connections['up'][ncmkey]['RACK'].downstream_part[1:])  # noqa
+                    except KeyError:
+                        node = -1
+                    self.picam[hpnkey]['node'] = node
+
+        r = redis.Redis('redishost', decode_responses=True)
+        for key, info in self.picam.items():
+            redis_key = f"status:node:{info['node']}"
+            data = r.hgetall(redis_key)
+            dnod, dm, di = self._get_keys(data, ['node_ID', 'mac', 'ip'], 'rr')
+            inod, im, ii = self._get_keys(info, ['node', 'mac', 'ip'], 'pp')
+            if dnod == inod and dm == im and di == ii:
+                print(f"<<<Node {dnod} agrees>>>")
+            else:
+                print(f"-------------{key}------------------")
+                print(f"- redis {dnod:2s}  {dm:18s}  {di}")
+                print(f"- psql  {inod:2s}  {im:18s}  {ii}")
+            if load_to_redis:
+                raise ValueError("NOTE READY YET")
+                hostn = f"heraNode{info['node']}"
+                vals = [hostn, info['ip'], info['mac']]
+                check_redis_key = f"check:node:{info['node']}"
+                r.hset(check_redis_key, vals, ex=3600)
+
+    def _get_keys(self, this_dict, these_keys, defv):
+        fndkeys = []
+        for key in these_keys:
+            try:
+                x = str(this_dict[key])
+            except KeyError:
+                x = defv
+            fndkeys.append(x)
+        return fndkeys
 
     def check_for_duplicate_comments(self, verbose=False):
         """Check the database for duplicate comments."""
         cmdpre = 'delete from part_info where hpn='
         filename = 'dupcomm.sql'
-        self.cmad.load_info()
+        self.active.load_info()
         duplicates_found = 0
         with open(filename, 'w') as fp:
-            for part, comments in self.cmad.info.items():
+            for part, comments in self.active.info.items():
                 ncomm = len(comments)
                 for i in range(ncomm - 1):
                     for j in range(i + 1, ncomm):
@@ -50,7 +123,7 @@ class Checks:
         while next < self.stop:
             print(next.isot)
             print("This doesn't do anything yet")
-            self.cmad.load_apriori(next)
+            self.active.load_apriori(next)
             next += self.step
 
     def part_conn_assoc(self):
@@ -70,23 +143,23 @@ class Checks:
         next = self.start
         print("Starting check at {}".format(next.isot))
         while next < self.stop:
-            self.cmad.load_parts(next)
-            self.cmad.load_connections(next)
-            full_part_set = list(self.cmad.parts.keys())
-            full_conn_set = set(list(self.cmad.connections['up'].keys()) +
-                                list(self.cmad.connections['down'].keys()))
+            self.active.load_parts(next)
+            self.active.load_connections(next)
+            full_part_set = list(self.active.parts.keys())
+            full_conn_set = set(list(self.active.connections['up'].keys()) +
+                                list(self.active.connections['down'].keys()))
             for key in full_conn_set:
                 if key not in full_part_set:
                     if key not in missing_parts:
-                        print(self.cmad.at_date.isot)
+                        print(self.active.at_date.isot)
                         print("\t{} is not listed as an active part "
                               "even though listed in an active connection.".format(key))
                         try:
-                            print('\t', self.cmad.connections['up'][key])
+                            print('\t', self.active.connections['up'][key])
                         except KeyError:
                             pass
                         try:
-                            print('\t', self.cmad.connections['down'][key])
+                            print('\t', self.active.connections['down'][key])
                         except KeyError:
                             pass
                     missing_parts.setdefault(key, [])
