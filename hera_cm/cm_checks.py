@@ -37,7 +37,7 @@ class Checks:
                             print("{}'{}' and hpn_rev='{}' and posting_gpstime='{}';"
                                   .format(cmdpre, hpn, rev, posting_gpstime), file=fp)
                             if verbose:
-                                print(f"{hpn}: {comments[i]}")
+                                print(f"{hpn} ({posting_gpstime}): {comments[i]}")
         if duplicates_found:
             print("{} duplicates found".format(duplicates_found))
             print("run 'psql hera_mc -f {}'".format(filename))
