@@ -68,6 +68,8 @@ class Checks:
             inod, im, ii = self._get_keys(info, ['node', 'mac', 'ip'], 'pp')
             if dnod == inod and dm == im and di == ii:
                 print(f"<<<Node {dnod} agrees>>>")
+                print(f"<<< redis {dnod:2s}  {dm:18s}  {di}")
+                print(f"<<< psql  {inod:2s}  {im:18s}  {ii}")
             else:
                 print(f"-------------{key}------------------")
                 print(f"- redis {dnod:2s}  {dm:18s}  {di}")
