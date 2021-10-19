@@ -45,6 +45,7 @@ class Checks:
         print('=+=+=+=+=+=+=+=+=+=+=+=+=+=')
         # "invert" macip -- I should be able to skip macip
         self.picam = {}
+        self.by_node = {}
         for rdwr in macip:
             for idtype in macip[rdwr]:
                 for val in macip[rdwr][idtype]:
@@ -59,6 +60,8 @@ class Checks:
                     except KeyError:
                         node = -1
                     self.picam[hpnkey]['node'] = node
+                    self.by_node.setdefault(node, [])
+                    self.by_node[node].append(hpnkey)
 
         r = redis.Redis('redishost', decode_responses=True)
         for key, info in self.picam.items():
