@@ -3,8 +3,7 @@
 # Licensed under the 2-clause BSD license.
 
 """Series of database checks."""
-from hera_mc import cm_utils
-from hera_mc import cm_active
+from hera_mc import cm_utils, cm_active, cm_sysutils
 import redis
 
 
@@ -21,6 +20,7 @@ class Checks:
     def check_hosts_ethers(self, load_to_redis=False):
         self.active.load_connections()
         self.active.load_info()
+        hera_mc = cm_sysutils.node_info()
 
         macip = {
            'rd': {'mac': {}, 'ip': {}},
@@ -64,7 +64,13 @@ class Checks:
                     self.by_node[node].append(hpnkey)
 
         r = redis.Redis('redishost', decode_responses=True)
-        for key, info in self.picam.items():
+        for nd in range(-1, 21):
+            key = self.by_node[nd]
+            info = self.picam[key]
+            hmc = hera_mc[f"N{int(nd):02d}"]
+            print(":::HERA_MC::::")
+            print(self._get_keys(hera_mc, [hmc], 'hmc'))
+            print(self._get_keys(hera_mc, [key], 'mck'))
             redis_key = f"status:node:{info['node']}"
             data = r.hgetall(redis_key)
             dnod, dm, di = self._get_keys(data, ['node_ID', 'mac', 'ip'], 'rr')
