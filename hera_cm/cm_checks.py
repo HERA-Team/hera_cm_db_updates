@@ -66,11 +66,15 @@ class Checks:
         r = redis.Redis('redishost', decode_responses=True)
         for nd in range(-1, 21):
             key = self.by_node[nd]
+            if len(key) > 0:
+                print(key)
+            key = key[0]
             info = self.picam[key]
-            hmc = hera_mc[f"N{int(nd):02d}"]
-            print(":::HERA_MC::::")
-            print(self._get_keys(hera_mc, [hmc], 'hmc'))
-            print(self._get_keys(hera_mc, [key], 'mck'))
+            if nd > -1:
+                hmc = hera_mc[f"N{int(nd):02d}"]
+                print(":::HERA_MC::::")
+                print(self._get_keys(hera_mc, [hmc], 'hmc'))
+                print(self._get_keys(hera_mc, [key], 'mck'))
             redis_key = f"status:node:{info['node']}"
             data = r.hgetall(redis_key)
             dnod, dm, di = self._get_keys(data, ['node_ID', 'mac', 'ip'], 'rr')
