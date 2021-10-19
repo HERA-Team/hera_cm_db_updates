@@ -18,53 +18,9 @@ class Checks:
         self.step = day_step
 
     def check_hosts_ethers(self, load_to_redis=False):
-        self.active.load_connections()
-        self.active.load_info()
         hera_mc = cm_sysutils.node_info()
-
-        macip = {
-           'rd': {'mac': {}, 'ip': {}},
-           'wr': {'mac': {}, 'ip': {}}
-        }
-        found = {'mac': [], 'ip': []}
-        self.dups = {}
-        for ikey, info in self.active.info.items():
-            rdwr = ikey[:2].lower()
-            if rdwr in macip.keys():
-                for note in info:
-                    idtype = note.comment.lower().split('-')[0].strip()
-                    if idtype in found:
-                        val = note.comment.split('-')[1].strip()
-                        if val in found[idtype]:
-                            self.dups.setdefault(val, [])
-                            self.dups[val].append(ikey)
-                            self.dups[val].append(macip[rdwr][idtype][val])
-                            print(f"{val} already found:  {self.dups[val]}!!!")
-                        found[idtype].append(val)
-                        macip[rdwr][idtype][val] = ikey
-        print('=+=+=+=+=+=+=+=+=+=+=+=+=+=')
-        # "invert" macip -- I should be able to skip macip
-        self.picam = {}
-        self.by_node = {}
-        for rdwr in macip:
-            for idtype in macip[rdwr]:
-                for val in macip[rdwr][idtype]:
-                    hpnkey = macip[rdwr][idtype][val]
-                    self.picam.setdefault(hpnkey, {})
-                    self.picam[hpnkey][idtype] = val
-                    ncm = self.active.connections['up'][hpnkey]['MNT'].downstream_part
-                    self.picam[hpnkey]['ncm'] = ncm
-                    ncmkey = f"{ncm}:A"
-                    try:
-                        node = int(self.active.connections['up'][ncmkey]['RACK'].downstream_part[1:])  # noqa
-                    except KeyError:
-                        node = -1
-                    self.picam[hpnkey]['node'] = node
-                    self.by_node.setdefault(node, [])
-                    self.by_node[node].append(hpnkey)
-
         r = redis.Redis('redishost', decode_responses=True)
-        for nd in range(-1, 21):
+        for nd in range(0, 30):
             key = self.by_node[nd]
             if len(key) > 0:
                 print(key)
