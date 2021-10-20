@@ -18,37 +18,13 @@ class Checks:
         self.step = day_step
 
     def check_hosts_ethers(self, load_to_redis=False):
-        hera_mc = cm_sysutils.node_info()
+        self.hera_mc = cm_sysutils.node_info()
         r = redis.Redis('redishost', decode_responses=True)
+        self.redis_rd = {}
+        self.redis_wr = {}
         for nd in range(0, 30):
-            key = self.by_node[nd]
-            if len(key) > 0:
-                print(key)
-            key = key[0]
-            info = self.picam[key]
-            if nd > -1:
-                hmc = hera_mc[f"N{int(nd):02d}"]
-                print(":::HERA_MC::::")
-                print(self._get_keys(hera_mc, [hmc], 'hmc'))
-                print(self._get_keys(hera_mc, [key], 'mck'))
-            redis_key = f"status:node:{info['node']}"
-            data = r.hgetall(redis_key)
-            dnod, dm, di = self._get_keys(data, ['node_ID', 'mac', 'ip'], 'rr')
-            inod, im, ii = self._get_keys(info, ['node', 'mac', 'ip'], 'pp')
-            if dnod == inod and dm == im and di == ii:
-                print(f"<<<Node {dnod} agrees>>>")
-                print(f"<<< redis {dnod:2s}  {dm:18s}  {di}")
-                print(f"<<< psql  {inod:2s}  {im:18s}  {ii}")
-            else:
-                print(f"-------------{key}------------------")
-                print(f"- redis {dnod:2s}  {dm:18s}  {di}")
-                print(f"- psql  {inod:2s}  {im:18s}  {ii}")
-            if load_to_redis:
-                raise ValueError("NOTE READY YET")
-                hostn = f"heraNode{info['node']}"
-                vals = [hostn, info['ip'], info['mac']]
-                check_redis_key = f"check:node:{info['node']}"
-                r.hset(check_redis_key, vals, ex=3600)
+            self.redis_rd[nd] = r.hgetall(f"status:node:{nd}")
+            self.redis_wr[nd] = r.hgetall(f"status:wr:heraNode{nd}wr")
 
     def _get_keys(self, this_dict, these_keys, defv):
         fndkeys = []
