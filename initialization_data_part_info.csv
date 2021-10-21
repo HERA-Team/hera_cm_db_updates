@@ -599,6 +599,8 @@ HH38,A,Spectra: N3P6N,infoupd,1318668140
 HH51,A,Spectra: N3P9E,infoupd,1318668138
 HH51,A,Spectra: N3P9N,infoupd,1318668140
 HH57,A,Spectre: N4P11N,infoupd,1318668140
+HH200,A,East channel has low power feed not raised,infoupd,1318848138
+HH203,A,East channel has low power feed not raised,infoupd,1318848138
 HH107,A,Goodness E: Bad,,1258930938
 HH38,A,Feed heights (NE/SE/SW/NW): Z distance from jig =4.398,,1259444418
 HH51,A,Feed heights (NE/SE/SW/NW): Z distance from jig =4.398,,1259444418
