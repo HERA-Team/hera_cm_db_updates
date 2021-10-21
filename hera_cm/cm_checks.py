@@ -36,27 +36,25 @@ class Checks:
         tdat = []
         headers = ['source', 'arduino', 'wr', 'snap0', 'snap1', 'snap2', 'snap3']
         divider = ['-'*7, '-'*17, '-'*17, '-'*17, '-'*17, '-'*17, '-'*17]
-        d, d1, d4 = '-', ['-'], ['-'] * 4
         for nd in range(0, 30):
             key = f"N{nd:02d}"
             tdat.append([key] * len(headers))
             try:
                 hmc = self.hera_mc[key]
-                rd = {'serial': _get_keys(hmc, ['arduino'], d), 'ip': d1, 'mac': d1}
-                wr = {'serial': _get_keys(hmc, ['wr'], d), 'ip': d1, 'mac': d1}
-                sn = {'serial': _get_keys(hmc, ['snaps'], d4)[0], 'ip': d4, 'mac': d4}
+                rd = {'serial': _get_keys(hmc, ['arduino'], '-'), 'ip': ['-'], 'mac': ['-']}
+                wr = {'serial': _get_keys(hmc, ['wr'], '-'), 'ip': ['-'], 'mac': ['-']}
+                sn = {'serial': _get_keys(hmc, ['snaps'], ['-']*4)[0], 'ip': ['-']*4, 'mac': ['-']*4}  # noqa
                 for x in [rd, wr, sn]:
                     for i in range(len(x['serial'])):
                         notes = _get_keys(self.hera_mc, [x['serial'][i]], [['-']])[0]
-                        for note in notes:
-                            tts = 0
                         for dv in ['ip', 'mac']:
                             tts = 0
                             for note in notes:
                                 if note.lower().startswith(dv):
+                                    ntn = note.split('|')[0]
                                     nts = int(note.split('|')[1])
                                     if nts > tts:
-                                        x[dv][i] = note.split('-')[1].split('|')[0].strip()
+                                        x[dv][i] = ntn.split('-')[1].strip()
                                         tts = nts
                 for x in ['serial', 'mac', 'ip']:
                     col1 = hmc['ncm']
@@ -65,12 +63,22 @@ class Checks:
                 hmc = None
             self.redis_rd[key] = r.hgetall(f"status:node:{nd}")
             self.redis_wr[key] = r.hgetall(f"status:wr:heraNode{nd}wr")
-            rmac = _get_keys(self.redis_rd[key], ['mac'], d)[0]
-            wmac = _get_keys(self.redis_wr[key], ['mac'], d)[0]
+            self.redis_sn = {}
+            for i in range(4):
+                self.redis_sn[key + str(i)] = r.hgetall(f"status:snap:heraNode{nd}Snap{i}")
+            rser = '-'
+            wser = _get_keys(self.redis_wr[key], ['serial'], '-')[0]
+            sser = []
+            for i in range(4):
+                sser.append(_get_keys(self.redis_sn[key + str(i)], ['serial'], '-')[0])
+            if len(rser + wser + sser[0] + sser[1] + sser[2] + sser[3]) > 6:
+                tdat.append(['redis', rser, wser, sser[0], sser[1], sser[2], sser[3]])
+            rmac = _get_keys(self.redis_rd[key], ['mac'], '-')[0]
+            wmac = _get_keys(self.redis_wr[key], ['mac'], '-')[0]
             if len(rmac + wmac) > 2:
                 tdat.append(['redis', rmac, wmac, '', '', '', ''])
-            rip = _get_keys(self.redis_rd[key], ['ip'], d)[0]
-            wip = _get_keys(self.redis_wr[key], ['ip'], d)[0]
+            rip = _get_keys(self.redis_rd[key], ['ip'], '-')[0]
+            wip = _get_keys(self.redis_wr[key], ['ip'], '-')[0]
             if len(rip + wip) > 2:
                 tdat.append(['redis', rip, wip, '', '', '', ''])
 
