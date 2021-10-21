@@ -7,6 +7,17 @@ from hera_mc import cm_utils, cm_active, cm_sysutils
 import redis
 
 
+def _get_keys(this_dict, these_keys, defv):
+    fndkeys = []
+    for key in these_keys:
+        try:
+            x = this_dict[key]
+        except KeyError:
+            x = defv
+        fndkeys.append(x)
+    return fndkeys
+
+
 class Checks:
     """Check class."""
 
@@ -22,19 +33,51 @@ class Checks:
         r = redis.Redis('redishost', decode_responses=True)
         self.redis_rd = {}
         self.redis_wr = {}
+        tdat = []
+        headers = ['source', 'arduino', 'wr', 'snap0', 'snap1', 'snap2', 'snap3']
+        divider = ['-'*7, '-'*17, '-'*17, '-'*17, '-'*17, '-'*17, '-'*17]
+        d, d1, d4 = '-', ['-'], ['-'] * 4
         for nd in range(0, 30):
-            self.redis_rd[nd] = r.hgetall(f"status:node:{nd}")
-            self.redis_wr[nd] = r.hgetall(f"status:wr:heraNode{nd}wr")
-
-    def _get_keys(self, this_dict, these_keys, defv):
-        fndkeys = []
-        for key in these_keys:
+            key = f"N{nd:02d}"
+            tdat.append([key] * len(headers))
             try:
-                x = str(this_dict[key])
+                hmc = self.hera_mc[key]
+                rd = {'serial': _get_keys(hmc, ['arduino'], d), 'ip': d1, 'mac': d1}
+                wr = {'serial': _get_keys(hmc, ['wr'], d), 'ip': d1, 'mac': d1}
+                sn = {'serial': _get_keys(hmc, ['snaps'], d4)[0], 'ip': d4, 'mac': d4}
+                for x in [rd, wr, sn]:
+                    for i in range(len(x['serial'])):
+                        notes = _get_keys(self.hera_mc, [x['serial'][i]], [['-']])[0]
+                        for note in notes:
+                            tts = 0
+                        for dv in ['ip', 'mac']:
+                            tts = 0
+                            for note in notes:
+                                if note.lower().startswith(dv):
+                                    nts = int(note.split('|')[1])
+                                    if nts > tts:
+                                        x[dv][i] = note.split('-')[1].split('|')[0].strip()
+                                        tts = nts
+                for x in ['serial', 'mac', 'ip']:
+                    col1 = hmc['ncm']
+                    tdat.append([col1] + rd[x] + wr[x] + sn[x])
             except KeyError:
-                x = defv
-            fndkeys.append(x)
-        return fndkeys
+                hmc = None
+            self.redis_rd[key] = r.hgetall(f"status:node:{nd}")
+            self.redis_wr[key] = r.hgetall(f"status:wr:heraNode{nd}wr")
+            rmac = _get_keys(self.redis_rd[key], ['mac'], d)[0]
+            wmac = _get_keys(self.redis_wr[key], ['mac'], d)[0]
+            if len(rmac + wmac) > 2:
+                tdat.append(['redis', rmac, wmac, '', '', '', ''])
+            rip = _get_keys(self.redis_rd[key], ['ip'], d)[0]
+            wip = _get_keys(self.redis_wr[key], ['ip'], d)[0]
+            if len(rip + wip) > 2:
+                tdat.append(['redis', rip, wip, '', '', '', ''])
+
+            tdat.append(divider)
+
+        print(cm_utils.general_table_handler(headers, tdat, 'orgtbl'))
+
 
     def check_for_duplicate_comments(self, verbose=False):
         """Check the database for duplicate comments."""
