@@ -601,7 +601,15 @@ HH51,A,Spectra: N3P9N,infoupd,1318668140
 HH57,A,Spectre: N4P11N,infoupd,1318668140
 HH200,A,East channel has low power feed not raised,infoupd,1318848138
 HH203,A,East channel has low power feed not raised,infoupd,1318848138
+HH201,A,Spectre: N18P2E,infoupd,1318862538
+HH201,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1318862540
 HH107,A,Goodness E: Bad,,1258930938
+HH201,A,Spectre: N18P2N,infoupd,1318862542
+HH202,A,Spectre: N18P3N,infoupd,1318862542
+HH219,A,Spectre: N18P5E,infoupd,1318862538
+HH220,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1318862540
+HH221,A,Feed heights (NE/SE/SW/NW): 4.413,infoupd,1318862540
+HH222,A,Feed heights (NE/SE/SW/NW): 4.413,infoupd,1318862540
 HH38,A,Feed heights (NE/SE/SW/NW): Z distance from jig =4.398,,1259444418
 HH51,A,Feed heights (NE/SE/SW/NW): Z distance from jig =4.398,,1259444418
 HH36,A,"Feed heights (NE/SE/SW/NW): Z distance from jig = 4,404",,1259444418
@@ -651,10 +659,15 @@ HH68,A,Feed heights (NE/SE/SW/NW): Z distance from jig = 4.,,1260268938
 HH92,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
 HH52,A,Spectra: N3P10E,infoupd,1318668138
 HH93,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH202,A,Spectre: N18P3E,infoupd,1318862538
 HH94,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH219,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1318862540
 HH109,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH220,A,Spectre: N18P7N,infoupd,1318862542
 HH111,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH221,A,Spectre: N18P8N,infoupd,1318862542
 HH112,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH222,A,Spectre: N18P9N,infoupd,1318862542
 HH128,A,Final spectra for 128E look sterrible,,1260294138
 HH130,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
 HH128,A,Final spectra for 128E looks terrible,infoupd,1260546138
@@ -678,6 +691,11 @@ HH67,A,Spectra: N3P3E,infoupd,1318668138
 HH37,A,Spectra: N3P5E,infoupd,1318668138
 HH53,A,Spectra: N3P7N,infoupd,1318668140
 HH52,A,Spectra: N3P10N,infoupd,1318668140
+HH202,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1318862540
+HH219,A,Spectre: N18P5N,infoupd,1318862542
+HH221,A,Spectre: N18P8E,infoupd,1318862538
+HH222,A,Spectre: N18P9E,infoupd,1318862538
+HH239,A,Spectre: N18P10E,infoupd,1318862538
 HH2,A,History: FEM: 17 | PAM: 23,infoupd,1264193598
 HH11,A,History: FEM: 19 | PAM: 25,infoupd,1264193598
 HH12,A,History: FEM: 20 | PAM: 26,infoupd,1264193598
@@ -710,7 +728,9 @@ HH68,A,SNAPloc: 1,infoupd,1264203738
 HH38,A,SNAPloc: 1,infoupd,1264203738
 HH36,A,Spectra: N3P11E,infoupd,1318668138
 HH53,A,SNAPloc: 2,infoupd,1264203738
+HH220,A,Spectre: N18P7E,infoupd,1318862538
 HH51,A,SNAPloc: 2,infoupd,1264203738
+HH239,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1318862540
 HH52,A,SNAPloc: 2,infoupd,1264203738
 HH36,A,SNAPloc: 3,infoupd,1264203738
 HH50,A,SNAPloc: 3,infoupd,1264203738
@@ -771,6 +791,7 @@ HH108,A,SNAPloc: 1,infoupd,1264203738
 HH124,A,SNAPloc: 2,infoupd,1264203738
 HH36,A,Spectra: N3P11N,infoupd,1318668140
 HH125,A,SNAPloc: 3,infoupd,1264203738
+HH239,A,Spectre: N18P10N,infoupd,1318862542
 HH126,A,SNAPloc: 3,infoupd,1264203738
 HH92,A,SNAPloc: 0,infoupd,1264203738
 HH93,A,SNAPloc: 0,infoupd,1264203738
@@ -827,6 +848,7 @@ HH178,A,Preliminary specrta looks fine,infoupd,1265132538
 HH179,A,Preliminary specrta looks fine,infoupd,1265132538
 HH50,A,Spectra: N3P12E,infoupd,1318668138
 HH135,A,Preliminary specrta looks fine,infoupd,1265132538
+HH238,A,Spectre: N18P11E,infoupd,1318862538
 HH136,A,Preliminary specrta looks fine,infoupd,1265132538
 HH155,A,Preliminary specrta looks fine,infoupd,1265132538
 HH156,A,Preliminary specrta looks fine,infoupd,1265132538
@@ -888,6 +910,7 @@ HH50,A,Spectra: N3P12N,infoupd,1318668140
 HH161,A,Final check for 161N has an unexpected dip @ ~70 MHz,infoupd,1265726538
 HH161,A,Final post-PAM spectra looks fine,infoupd,1265726540
 HH162,A,Final post-PAM spectra looks fine,infoupd,1265726538
+HH238,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1318862540
 HH181,A,Final post-PAM spectra looks fine,infoupd,1265726538
 HH182,A,Final post-PAM spectra looks fine,infoupd,1265726538
 HH156,A,re-take of final spectra for 156E looks fine. Ticket #463,infoupd,1265906538
@@ -954,6 +977,7 @@ HH125,A,10Mar2020 z = 4.405,infoupd,1267897338
 HH88,A,11 March 2020 Z= 4.400,infoupd,1267965738
 HH72,A,Spectre: N4P1E,infoupd,1318668138
 HH91,A,11 March 2020 Z=4.411,infoupd,1267965738
+HH238,A,Spectre: N18P11N,infoupd,1318862542
 HH105,A,11 March 2020 Z=4.407,infoupd,1267965738
 HH124,A,11 March 2020 Z= 4.412,infoupd,1267965738
 HH126,A,11 March 2020 Z= 4.405,infoupd,1267965738
@@ -1120,11 +1144,14 @@ SNPC000079,A,IP - 10.80.40.104,,1269252078
 SNPC000081,A,MAC - 00:44:e9:a0:17:01,,1269252018
 SNPC000081,A,IP - 10.80.40.106,,1269252078
 HH72,A,Spectre: N4P1N,infoupd,1318668140
+HH237,A,Spectre: N18P12E,infoupd,1318862538
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 ND05,A,Door direction: NE,,1280318418
 HH42,A,Spectre: N4P2E,infoupd,1318668138
+HH237,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1318862540
 HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1272926538
 HH42,A,Spectre: N4P2N,infoupd,1318668140
+HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
