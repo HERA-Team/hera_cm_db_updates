@@ -33,9 +33,11 @@ class Checks:
         r = redis.Redis('redishost', decode_responses=True)
         self.redis_rd = {}
         self.redis_wr = {}
+        self.redis_sn = {}
         tdat = []
         headers = ['source', 'arduino', 'wr', 'snap0', 'snap1', 'snap2', 'snap3']
         divider = ['-'*7, '-'*17, '-'*17, '-'*17, '-'*17, '-'*17, '-'*17]
+        # Read hera_mc
         for nd in range(0, 30):
             key = f"N{nd:02d}"
             tdat.append([key] * len(headers))
@@ -56,36 +58,38 @@ class Checks:
                                     if nts > tts:
                                         x[dv][i] = ntn.split('-')[1].strip()
                                         tts = nts
+                col1 = hmc['ncm']
                 for x in ['serial', 'mac', 'ip']:
-                    col1 = hmc['ncm']
                     tdat.append([col1] + rd[x] + wr[x] + sn[x])
             except KeyError:
-                hmc = None
+                pass
+            # Read redis
             self.redis_rd[key] = r.hgetall(f"status:node:{nd}")
             self.redis_wr[key] = r.hgetall(f"status:wr:heraNode{nd}wr")
-            self.redis_sn = {}
             for i in range(4):
                 self.redis_sn[key + str(i)] = r.hgetall(f"status:snap:heraNode{nd}Snap{i}")
-            rser = '-'
+            # ...get serial numbers
+            rser = 'x'
             wser = _get_keys(self.redis_wr[key], ['serial'], '-')[0]
             sser = []
             for i in range(4):
                 sser.append(_get_keys(self.redis_sn[key + str(i)], ['serial'], '-')[0])
             if len(rser + wser + sser[0] + sser[1] + sser[2] + sser[3]) > 6:
                 tdat.append(['redis', rser, wser, sser[0], sser[1], sser[2], sser[3]])
+            # --- get macs
             rmac = _get_keys(self.redis_rd[key], ['mac'], '-')[0]
             wmac = _get_keys(self.redis_wr[key], ['mac'], '-')[0]
             if len(rmac + wmac) > 2:
-                tdat.append(['redis', rmac, wmac, '', '', '', ''])
+                tdat.append(['redis', rmac, wmac, 'x', 'x', 'x', 'x'])
+            # --- get ips
             rip = _get_keys(self.redis_rd[key], ['ip'], '-')[0]
             wip = _get_keys(self.redis_wr[key], ['ip'], '-')[0]
             if len(rip + wip) > 2:
-                tdat.append(['redis', rip, wip, '', '', '', ''])
+                tdat.append(['redis', rip, wip, 'x', 'x', 'x', 'x'])
 
             tdat.append(divider)
 
         print(cm_utils.general_table_handler(headers, tdat, 'orgtbl'))
-
 
     def check_for_duplicate_comments(self, verbose=False):
         """Check the database for duplicate comments."""

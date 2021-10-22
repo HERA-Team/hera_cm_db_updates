@@ -14,9 +14,14 @@ import argparse
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
-    ap.add_argument('--comments', help="Check for duplicate comments", action='store_true')
-    ap.add_argument('--connections', help="Check connections for ...", action='store_true')
-    ap.add_argument('--apriori', help="Check for overlapping apriori states", action='store_true')
+    ap.add_argument('-m', '--comments', help="Check for duplicate comments",
+                    action='store_true')
+    ap.add_argument('-n', '--connections', help="Check connections for ...",
+                    action='store_true')
+    ap.add_argument('-a', '--apriori', help="Check for overlapping apriori states",
+                    action='store_true')
+    ap.add_argument('-e', '--ethers', help="Check the hosts/ethers hera_mc vs redis",
+                    action='store_true')
     args = ap.parse_args()
 
     cc = cm_checks.Checks()
@@ -27,3 +32,5 @@ if __name__ == '__main__':
         cc.part_conn_assoc()
     if args.apriori:
         cc.apriori()
+    if args.ethers:
+        cc.check_hosts_ethers()

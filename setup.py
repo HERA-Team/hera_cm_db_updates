@@ -19,7 +19,8 @@ setup_args = {
     'scripts': ['scripts/update_info.py',
                 'scripts/update_connect.py',
                 'scripts/apriori_notification.py',
-                'scripts/update_hera_mc_db_repo.sh'],
+                'scripts/update_hera_mc_db_repo.sh',
+                'scripts/checkcm.py'],
     'include_package_data': True,
     'install_requires': []
 }
