@@ -28,7 +28,7 @@ class Checks:
         self.stop = cm_utils.get_astropytime(stop_time)
         self.step = day_step
 
-    def check_hosts_ethers(self, load_to_redis=False):
+    def check_hosts_ethers(self, table_fmt='orgtbl'):
         self.hera_mc = cm_sysutils.node_info()
         r = redis.Redis('redishost', decode_responses=True)
         self.redis_rd = {}
@@ -89,7 +89,7 @@ class Checks:
 
             tdat.append(divider)
 
-        print(cm_utils.general_table_handler(headers, tdat, 'orgtbl'))
+        print(cm_utils.general_table_handler(headers, tdat, table_fmt))
 
     def check_for_duplicate_comments(self, verbose=False):
         """Check the database for duplicate comments."""

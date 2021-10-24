@@ -22,6 +22,8 @@ if __name__ == '__main__':
                     action='store_true')
     ap.add_argument('-e', '--ethers', help="Check the hosts/ethers hera_mc vs redis",
                     action='store_true')
+    ap.add_argument('--output-format', dest='output_format', default='orgtbl',
+                    help='Format of output table - uses cm_utils.general_table_handler')
     args = ap.parse_args()
 
     cc = cm_checks.Checks()
@@ -33,4 +35,4 @@ if __name__ == '__main__':
     if args.apriori:
         cc.apriori()
     if args.ethers:
-        cc.check_hosts_ethers()
+        cc.check_hosts_ethers(table_fmt=args.output_format)
