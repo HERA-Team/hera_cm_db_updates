@@ -610,6 +610,9 @@ HH219,A,Spectre: N18P5E,infoupd,1318862538
 HH220,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1318862540
 HH221,A,Feed heights (NE/SE/SW/NW): 4.413,infoupd,1318862540
 HH222,A,Feed heights (NE/SE/SW/NW): 4.413,infoupd,1318862540
+HH201,A,door closed 25/10/2021,infoupd,1319211738
+HH202,A,door closed 25/10/2021,infoupd,1319211738
+HH219,A,door closed 25/10/2021,infoupd,1319211738
 HH38,A,Feed heights (NE/SE/SW/NW): Z distance from jig =4.398,,1259444418
 HH51,A,Feed heights (NE/SE/SW/NW): Z distance from jig =4.398,,1259444418
 HH36,A,"Feed heights (NE/SE/SW/NW): Z distance from jig = 4,404",,1259444418
@@ -640,6 +643,7 @@ HH68,A,FEM 130 replaced with 128. PAM replaced with 124,,1260193338
 HH52,A,moved from port 8 to 10. Pam changed to 134,,1260193338
 HH50,A,moved from port 10 to 12.FEM  129 replaced with 107,,1260193338
 HH65,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196938
+HH222,A,door closed 25/10/2021,infoupd,1319211738
 HH66,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196938
 HH67,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196938
 HH37,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260196938
@@ -670,6 +674,7 @@ HH112,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,126
 HH222,A,Spectre: N18P9N,infoupd,1318862542
 HH128,A,Final spectra for 128E look sterrible,,1260294138
 HH130,A,Sbcd thinks final spectra look good; ready to pass to commissioning,,1260294138
+HH220,A,door closed 25/10/2021,infoupd,1319211738
 HH128,A,Final spectra for 128E looks terrible,infoupd,1260546138
 HH50,A,"Moved from port PAM 10 to 12, PAM changed from 134 to 136.",infoupd,1261161738
 HH54,A,No final spectra as of 8Jan2020,infoupd,1262637738
@@ -687,6 +692,7 @@ HH60,A,No final spectra as of 8Jan2020,infoupd,1262637738
 HH73,A,No final spectra as of 8Jan2020,infoupd,1262637738
 HH74,A,No final spectra as of 8Jan2020,infoupd,1262637738
 HH75,A,No final spectra as of 8Jan2020,infoupd,1262637738
+HH239,A,door closed 25/10/2021,infoupd,1319211738
 HH67,A,Spectra: N3P3E,infoupd,1318668138
 HH37,A,Spectra: N3P5E,infoupd,1318668138
 HH53,A,Spectra: N3P7N,infoupd,1318668140
@@ -696,6 +702,7 @@ HH219,A,Spectre: N18P5N,infoupd,1318862542
 HH221,A,Spectre: N18P8E,infoupd,1318862538
 HH222,A,Spectre: N18P9E,infoupd,1318862538
 HH239,A,Spectre: N18P10E,infoupd,1318862538
+HH221,A,door closed 25/10/2021,infoupd,1319211738
 HH2,A,History: FEM: 17 | PAM: 23,infoupd,1264193598
 HH11,A,History: FEM: 19 | PAM: 25,infoupd,1264193598
 HH12,A,History: FEM: 20 | PAM: 26,infoupd,1264193598
