@@ -73,10 +73,10 @@ class Checks:
                 chk_same[key]['source'].append(col1)
                 for x in ['serial', 'mac', 'ip']:
                     tdat.append([col1] + rd[x] + wr[x] + sn[x])
-                    chk_same[key]['arduino'][x] = rd[x]
-                    chk_same[key]['white_rabbit'][x] = wr[x]
+                    chk_same[key]['arduino'][x].append(rd[x][0])
+                    chk_same[key]['wr'][x].append(wr[x][0])
                     for i in range(4):
-                        chk_same[key][f'snap{i}'][x] = [sn[x][i]]
+                        chk_same[key][f'snap{i}'][x].append(sn[x][i])
             except KeyError:
                 pass
             # Read redis
