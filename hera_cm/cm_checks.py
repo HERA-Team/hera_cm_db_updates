@@ -37,18 +37,18 @@ class Checks:
         for key, data in self.chk_same.items():
             for dev in ['arduino', 'wr', 'snap0', 'snap1', 'snap2', 'snap3']:
                 for id in ['serial', 'mac', 'ip']:
-                    for _i in range(1, len(data['source'])):
-                        for _j in range(_i):
+                    for _i in range(len(data['source']) - 1):
+                        for _j in range(_i+1, len(data['source'])):
                             if data[dev][id][_i].lower() != data[dev][id][_j].lower():
                                 if data[dev][id][_i].lower() == 'x' or\
                                   data[dev][id][_j].lower() == 'x':
                                     pass
                                 else:
-                                    print(f"====={key}=====")
-                                    print("\t{}: {} != {}: {}".format(data['source'][_i],
-                                                                      data[dev][id][_i],
-                                                                      data['source'][_j],
-                                                                      data[dev][id][_j]))
+                                    print(f"{key}", end='\t')
+                                    print("{}/{}  {} != {}".format(data['source'][_i],
+                                                                   data['source'][_j],
+                                                                   data[dev][id][_i],
+                                                                   data[dev][id][_j]))
 
     def check_hosts_ethers(self, table_fmt='orgtbl'):
         self.hera_mc = cm_sysutils.node_info()
