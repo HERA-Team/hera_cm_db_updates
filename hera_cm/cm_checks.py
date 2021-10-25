@@ -159,6 +159,7 @@ class Checks:
             if table_fmt != 'csv':
                 tdat.append(divider)
         print(cm_utils.general_table_handler(headers, tdat, table_fmt))
+        self.check_for_same()
 
     def check_for_duplicate_comments(self, verbose=False):
         """Check the database for duplicate comments."""
