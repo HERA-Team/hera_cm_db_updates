@@ -49,7 +49,7 @@ class Checks:
         for hname, datastr in crontab.items():
             data = datastr.splitlines()
             for line in data:
-                if line[0] != '#':
+                if len(line) and line[0] != '#':
                     print(f"{hname}:  {line}")
 
     def check_for_same(self, use_lower=True, sep=','):
