@@ -43,7 +43,10 @@ class Checks:
         self.step = day_step
         self.chk_same = None
 
-    def check_for_same(self, use_lower=True):
+    def check_for_same(self, use_lower=True, sep=','):
+        """
+        use sep='\t' for pretty and ',' for csv
+        """
         if self.chk_same is None:
             print("Run 'check_hosts_ethers' first.")
             return
@@ -53,13 +56,14 @@ class Checks:
                     for _i in range(len(data['source']) - 1):
                         for _j in range(_i+1, len(data['source'])):
                             if not_same(data[dev][id][_i], data[dev][id][_j], use_lower=use_lower):
-                                print(f"{key}", end='\t')
-                                print("{}/{}  \t{} != {}".format(data['source'][_i],
-                                                                 data['source'][_j],
-                                                                 data[dev][id][_i],
-                                                                 data[dev][id][_j]))
+                                print(f"{key}", end=sep)
+                                print("{}/{}{}{} != {}".format(data['source'][_i],
+                                                               data['source'][_j], sep,
+                                                               data[dev][id][_i],
+                                                               data[dev][id][_j]))
 
     def check_hosts_ethers(self, table_fmt='orgtbl'):
+        print("Run 'hera_upload_hosts_ethers_to_redis.py' on hera-node-head and hera-snap-head")
         self.hera_mc = cm_sysutils.node_info()
         r = redis.Redis('redishost', decode_responses=True)
         # Read hosts/ethers from redis
