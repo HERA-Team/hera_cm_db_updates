@@ -44,7 +44,7 @@ class Checks:
                                 print("\t{}: {} != {}: {}".format(data['source'][_i],
                                                                   data[dev][id][_i],
                                                                   data['source'][_j],
-                                                                  data[dev][id][_j])
+                                                                  data[dev][id][_j]))
 
     def check_hosts_ethers(self, table_fmt='orgtbl'):
         self.hera_mc = cm_sysutils.node_info()
