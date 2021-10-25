@@ -42,15 +42,16 @@ class Checks:
         tdat = []
         headers = ['source', 'arduino', 'wr', 'snap0', 'snap1', 'snap2', 'snap3']
         divider = ['-'*7, '-'*17, '-'*17, '-'*17, '-'*17, '-'*17, '-'*17]
-        chk_same = {'source': []}
-        for hdr in headers[1:]:
-            chk_same[hdr] = {}
-            for _d in ['serial', 'mac', 'ip']:
-                chk_same[hdr][_d] = []
+        chk_same = {}
         # Read hera_mc
         for nd in range(0, 30):
             key = f"N{nd:02d}"
             tdat.append([key] * len(headers))
+            chk_same[key] = {'source': []}
+            for hdr in headers[1:]:
+                chk_same[key][hdr] = {}
+                for _d in ['serial', 'mac', 'ip']:
+                    chk_same[key][hdr][_d] = []
             try:
                 hmc = self.hera_mc[key]
                 rd = {'serial': _get_keys(hmc, ['arduino'], '-'), 'ip': ['-'], 'mac': ['-']}
@@ -69,13 +70,13 @@ class Checks:
                                         x[dv][i] = ntn.split('-')[1].strip()
                                         tts = nts
                 col1 = hmc['ncm']
-                chk_same['source'].append(col1)
+                chk_same[key]['source'].append(col1)
                 for x in ['serial', 'mac', 'ip']:
                     tdat.append([col1] + rd[x] + wr[x] + sn[x])
-                    chk_same['arduino'][x] = rd[x]
-                    chk_same['white_rabbit'][x] = wr[x]
+                    chk_same[key]['arduino'][x] = rd[x]
+                    chk_same[key]['white_rabbit'][x] = wr[x]
                     for i in range(4):
-                        chk_same[f'snap{i}'][x] = [sn[x][i]]
+                        chk_same[key][f'snap{i}'][x] = [sn[x][i]]
             except KeyError:
                 pass
             # Read redis
