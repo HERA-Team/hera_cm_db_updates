@@ -103,7 +103,7 @@ class Checks:
                 self.chk_same[key]['source'].append(col1)
                 for x in ['serial', 'mac', 'ip']:
                     tdat.append([col1] + rd[x] + wr[x] + sn[x])
-                    self.chk_same[key]['arduino'][x].append(rd[x][0])
+                    self.chk_same[key]['arduino'][x].append(rd[x][0].replace('RD', 'arduino'))
                     self.chk_same[key]['wr'][x].append(wr[x][0])
                     for i in range(4):
                         self.chk_same[key][f'snap{i}'][x].append(sn[x][i])
