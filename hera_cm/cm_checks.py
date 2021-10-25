@@ -43,6 +43,15 @@ class Checks:
         self.step = day_step
         self.chk_same = None
 
+    def check_crontab(self):
+        r = redis.Redis('redishost', decode_responses=True)
+        crontab = r.hgetall('crontab')
+        for hname, datastr in crontab.items():
+            data = datastr.splitlines()
+            for line in data:
+                if line[0] != '#':
+                    print(f"{hname}:  {line}")
+
     def check_for_same(self, use_lower=True, sep=','):
         """
         use sep='\t' for pretty and ',' for csv
