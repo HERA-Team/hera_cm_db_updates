@@ -80,6 +80,7 @@ class Checks:
             except KeyError:
                 pass
             # Read redis
+            chk_same[key]['source'].append('redis')
             self.redis_rd[key] = r.hgetall(f"status:node:{nd}")
             self.redis_wr[key] = r.hgetall(f"status:wr:heraNode{nd}wr")
             for i in range(4):
@@ -87,26 +88,43 @@ class Checks:
             # ...get serial numbers
             rser = 'x'
             wser = _get_keys(self.redis_wr[key], ['serial'], '-')[0]
+            chk_same[key]['arduino']['serial'].append(rser)
+            chk_same[key]['wr']['serial'].append(wser)
             sser = []
             for i in range(4):
                 sser.append(_get_keys(self.redis_sn[key + str(i)], ['serial'], '-')[0])
+                chk_same[key][f"snap{i}"]['serial'].append(sser[i])
             if len(rser + wser + sser[0] + sser[1] + sser[2] + sser[3]) > 6:
                 tdat.append(['redis', rser, wser, sser[0], sser[1], sser[2], sser[3]])
             # --- get macs
             rmac = _get_keys(self.redis_rd[key], ['mac'], '-')[0]
             wmac = _get_keys(self.redis_wr[key], ['mac'], 'x')[0]
+            chk_same[key]['arduino']['mac'].append(rmac)
+            chk_same[key]['wr']['mac'].append(wmac)
+            for i in range(4):
+                chk_same[key][f"snap{i}"]['mac'].append('x')
             if len(rmac + wmac) > 2:
                 tdat.append(['redis', rmac, wmac, 'x', 'x', 'x', 'x'])
             # --- get ips
             rip = _get_keys(self.redis_rd[key], ['ip'], '-')[0]
             wip = _get_keys(self.redis_wr[key], ['ip'], '-')[0]
+            chk_same[key]['arduino']['ip'].append(rip)
+            chk_same[key]['wr']['ip'].append(wip)
+            for i in range(4):
+                chk_same[key][f"snap{i}"]['ip'].append('x')
             if len(rip + wip) > 2:
                 tdat.append(['redis', rip, wip, 'x', 'x', 'x', 'x'])
             # Add hosts/ethers
+            chk_same[key]['source'].append('host')
             for _e in ['serial', 'mac', 'ip']:
                 trow = ['host']
                 for _d in ['arduino', 'white_rabbit', 'snap0', 'snap1', 'snap2', 'snap3']:
                     trow.append(he_node_control[key][_e][_d])
+                    if _d == 'white_rabbit':
+                        _x = 'wr'
+                    else:
+                        _x = _d
+                    chk_same[key][_x][_e].append(he_node_control[key][_e][_d])
                 tdat.append(trow)
             if table_fmt != 'csv':
                 tdat.append(divider)
