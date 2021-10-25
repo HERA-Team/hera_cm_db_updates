@@ -40,11 +40,15 @@ class Checks:
                     for _i in range(1, len(data['source'])):
                         for _j in range(_i):
                             if data[dev][id][_i].lower() != data[dev][id][_j].lower():
-                                print(f"====={key}=====")
-                                print("\t{}: {} != {}: {}".format(data['source'][_i],
-                                                                  data[dev][id][_i],
-                                                                  data['source'][_j],
-                                                                  data[dev][id][_j]))
+                                if data[dev][id][_i].lower() == 'x' or\
+                                  data[dev][id][_j].lower() == 'x':
+                                    pass
+                                else:
+                                    print(f"====={key}=====")
+                                    print("\t{}: {} != {}: {}".format(data['source'][_i],
+                                                                      data[dev][id][_i],
+                                                                      data['source'][_j],
+                                                                      data[dev][id][_j]))
 
     def check_hosts_ethers(self, table_fmt='orgtbl'):
         self.hera_mc = cm_sysutils.node_info()
