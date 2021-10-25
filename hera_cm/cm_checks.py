@@ -5,6 +5,7 @@
 """Series of database checks."""
 from hera_mc import cm_utils, cm_active, cm_sysutils
 import redis
+from node_control import he_check
 
 
 def _get_keys(this_dict, these_keys, defv):
@@ -31,6 +32,10 @@ class Checks:
     def check_hosts_ethers(self, table_fmt='orgtbl'):
         self.hera_mc = cm_sysutils.node_info()
         r = redis.Redis('redishost', decode_responses=True)
+        # Read hosts/ethers from redis
+        he = he_check.Check('redis')
+        he.parse_data()
+        he_node_control = he.write_csv('return_only')
         self.redis_rd = {}
         self.redis_wr = {}
         self.redis_sn = {}
@@ -78,7 +83,7 @@ class Checks:
                 tdat.append(['redis', rser, wser, sser[0], sser[1], sser[2], sser[3]])
             # --- get macs
             rmac = _get_keys(self.redis_rd[key], ['mac'], '-')[0]
-            wmac = _get_keys(self.redis_wr[key], ['mac'], '-')[0]
+            wmac = _get_keys(self.redis_wr[key], ['mac'], 'x')[0]
             if len(rmac + wmac) > 2:
                 tdat.append(['redis', rmac, wmac, 'x', 'x', 'x', 'x'])
             # --- get ips
@@ -86,7 +91,12 @@ class Checks:
             wip = _get_keys(self.redis_wr[key], ['ip'], '-')[0]
             if len(rip + wip) > 2:
                 tdat.append(['redis', rip, wip, 'x', 'x', 'x', 'x'])
-
+            # Add hosts/ethers
+            for _e in ['serial', 'mac', 'ip']:
+                trow = ['host']
+                for _d in ['arduino', 'white_rabbit', 'snap0', 'snap1', 'snap2', 'snap3']:
+                    trow.append(he_node_control[key][_e][_d])
+                tdat.append(trow)
             tdat.append(divider)
 
         print(cm_utils.general_table_handler(headers, tdat, table_fmt))
