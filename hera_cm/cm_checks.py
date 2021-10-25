@@ -50,7 +50,8 @@ class Checks:
             data = datastr.splitlines()
             for line in data:
                 if len(line) and line[0] != '#':
-                    print(f"{hname}:  {line}")
+                    x = f"{hname} {line}".split()
+                    print(','.join(x))
 
     def check_for_same(self, use_lower=True, sep=','):
         """
