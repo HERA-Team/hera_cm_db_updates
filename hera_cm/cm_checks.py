@@ -57,7 +57,7 @@ class Checks:
                         for _j in range(_i+1, len(data['source'])):
                             if not_same(data[dev][id][_i], data[dev][id][_j], use_lower=use_lower):
                                 print(f"{key}", end=sep)
-                                print("{}/{}{}{}{}!={}{}".format(data['source'][_i],
+                                print("{}|{}{}{}{}!={}{}".format(data['source'][_i],
                                                                  data['source'][_j], sep,
                                                                  data[dev][id][_i], sep, sep,
                                                                  data[dev][id][_j]))
