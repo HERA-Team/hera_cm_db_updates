@@ -28,6 +28,23 @@ class Checks:
         self.start = cm_utils.get_astropytime(start_time)
         self.stop = cm_utils.get_astropytime(stop_time)
         self.step = day_step
+        self.chk_same = None
+
+    def check_for_same(self):
+        if self.chk_same is None:
+            print("Run 'check_hosts_ethers' first.")
+            return
+        for key, data in self.chk_same.items():
+            for dev in ['arduino', 'wr', 'snap0', 'snap1', 'snap2', 'snap3']:
+                for id in ['serial', 'mac', 'ip']:
+                    for _i in range(1, len(data['source'])):
+                        for _j in range(_i):
+                            if data[dev][id][_i].lower() != data[dev][id][_j].lower():
+                                print(f"====={key}=====")
+                                print("\t{}: {} != {}: {}".format(data['source'][_i],
+                                                                  data[dev][id][_i],
+                                                                  data['source'][_j],
+                                                                  data[dev][id][_j])
 
     def check_hosts_ethers(self, table_fmt='orgtbl'):
         self.hera_mc = cm_sysutils.node_info()
@@ -42,16 +59,16 @@ class Checks:
         tdat = []
         headers = ['source', 'arduino', 'wr', 'snap0', 'snap1', 'snap2', 'snap3']
         divider = ['-'*7, '-'*17, '-'*17, '-'*17, '-'*17, '-'*17, '-'*17]
-        chk_same = {}
+        self.chk_same = {}
         # Read hera_mc
         for nd in range(0, 30):
             key = f"N{nd:02d}"
             tdat.append([key] * len(headers))
-            chk_same[key] = {'source': []}
+            self.chk_same[key] = {'source': []}
             for hdr in headers[1:]:
-                chk_same[key][hdr] = {}
+                self.chk_same[key][hdr] = {}
                 for _d in ['serial', 'mac', 'ip']:
-                    chk_same[key][hdr][_d] = []
+                    self.chk_same[key][hdr][_d] = []
             try:
                 hmc = self.hera_mc[key]
                 rd = {'serial': _get_keys(hmc, ['arduino'], '-'), 'ip': ['-'], 'mac': ['-']}
@@ -70,17 +87,17 @@ class Checks:
                                         x[dv][i] = ntn.split('-')[1].strip()
                                         tts = nts
                 col1 = hmc['ncm']
-                chk_same[key]['source'].append(col1)
+                self.chk_same[key]['source'].append(col1)
                 for x in ['serial', 'mac', 'ip']:
                     tdat.append([col1] + rd[x] + wr[x] + sn[x])
-                    chk_same[key]['arduino'][x].append(rd[x][0])
-                    chk_same[key]['wr'][x].append(wr[x][0])
+                    self.chk_same[key]['arduino'][x].append(rd[x][0])
+                    self.chk_same[key]['wr'][x].append(wr[x][0])
                     for i in range(4):
-                        chk_same[key][f'snap{i}'][x].append(sn[x][i])
+                        self.chk_same[key][f'snap{i}'][x].append(sn[x][i])
             except KeyError:
                 pass
             # Read redis
-            chk_same[key]['source'].append('redis')
+            self.chk_same[key]['source'].append('redis')
             self.redis_rd[key] = r.hgetall(f"status:node:{nd}")
             self.redis_wr[key] = r.hgetall(f"status:wr:heraNode{nd}wr")
             for i in range(4):
@@ -88,34 +105,34 @@ class Checks:
             # ...get serial numbers
             rser = 'x'
             wser = _get_keys(self.redis_wr[key], ['serial'], '-')[0]
-            chk_same[key]['arduino']['serial'].append(rser)
-            chk_same[key]['wr']['serial'].append(wser)
+            self.chk_same[key]['arduino']['serial'].append(rser)
+            self.chk_same[key]['wr']['serial'].append(wser)
             sser = []
             for i in range(4):
                 sser.append(_get_keys(self.redis_sn[key + str(i)], ['serial'], '-')[0])
-                chk_same[key][f"snap{i}"]['serial'].append(sser[i])
+                self.chk_same[key][f"snap{i}"]['serial'].append(sser[i])
             if len(rser + wser + sser[0] + sser[1] + sser[2] + sser[3]) > 6:
                 tdat.append(['redis', rser, wser, sser[0], sser[1], sser[2], sser[3]])
             # --- get macs
             rmac = _get_keys(self.redis_rd[key], ['mac'], '-')[0]
             wmac = _get_keys(self.redis_wr[key], ['mac'], 'x')[0]
-            chk_same[key]['arduino']['mac'].append(rmac)
-            chk_same[key]['wr']['mac'].append(wmac)
+            self.chk_same[key]['arduino']['mac'].append(rmac)
+            self.chk_same[key]['wr']['mac'].append(wmac)
             for i in range(4):
-                chk_same[key][f"snap{i}"]['mac'].append('x')
+                self.chk_same[key][f"snap{i}"]['mac'].append('x')
             if len(rmac + wmac) > 2:
                 tdat.append(['redis', rmac, wmac, 'x', 'x', 'x', 'x'])
             # --- get ips
             rip = _get_keys(self.redis_rd[key], ['ip'], '-')[0]
             wip = _get_keys(self.redis_wr[key], ['ip'], '-')[0]
-            chk_same[key]['arduino']['ip'].append(rip)
-            chk_same[key]['wr']['ip'].append(wip)
+            self.chk_same[key]['arduino']['ip'].append(rip)
+            self.chk_same[key]['wr']['ip'].append(wip)
             for i in range(4):
-                chk_same[key][f"snap{i}"]['ip'].append('x')
+                self.chk_same[key][f"snap{i}"]['ip'].append('x')
             if len(rip + wip) > 2:
                 tdat.append(['redis', rip, wip, 'x', 'x', 'x', 'x'])
             # Add hosts/ethers
-            chk_same[key]['source'].append('host')
+            self.chk_same[key]['source'].append('host')
             for _e in ['serial', 'mac', 'ip']:
                 trow = ['host']
                 for _d in ['arduino', 'white_rabbit', 'snap0', 'snap1', 'snap2', 'snap3']:
@@ -124,12 +141,11 @@ class Checks:
                         _x = 'wr'
                     else:
                         _x = _d
-                    chk_same[key][_x][_e].append(he_node_control[key][_e][_d])
+                    self.chk_same[key][_x][_e].append(he_node_control[key][_e][_d])
                 tdat.append(trow)
             if table_fmt != 'csv':
                 tdat.append(divider)
         print(cm_utils.general_table_handler(headers, tdat, table_fmt))
-        return chk_same
 
     def check_for_duplicate_comments(self, verbose=False):
         """Check the database for duplicate comments."""
