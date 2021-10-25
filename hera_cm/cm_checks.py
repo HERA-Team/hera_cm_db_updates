@@ -42,6 +42,11 @@ class Checks:
         tdat = []
         headers = ['source', 'arduino', 'wr', 'snap0', 'snap1', 'snap2', 'snap3']
         divider = ['-'*7, '-'*17, '-'*17, '-'*17, '-'*17, '-'*17, '-'*17]
+        chk_same = {'source': []}
+        for hdr in headers[1:]:
+            chk_same[hdr] = {}
+            for _d in ['serial', 'mac', 'ip']:
+                chk_same[hdr][_d] = []
         # Read hera_mc
         for nd in range(0, 30):
             key = f"N{nd:02d}"
@@ -64,8 +69,13 @@ class Checks:
                                         x[dv][i] = ntn.split('-')[1].strip()
                                         tts = nts
                 col1 = hmc['ncm']
+                chk_same['source'].append(col1)
                 for x in ['serial', 'mac', 'ip']:
                     tdat.append([col1] + rd[x] + wr[x] + sn[x])
+                    chk_same['arduino'][x] = rd[x]
+                    chk_same['white_rabbit'][x] = wr[x]
+                    for i in range(4):
+                        chk_same[f'snap{i}'][x] = [sn[x][i]]
             except KeyError:
                 pass
             # Read redis
@@ -97,9 +107,10 @@ class Checks:
                 for _d in ['arduino', 'white_rabbit', 'snap0', 'snap1', 'snap2', 'snap3']:
                     trow.append(he_node_control[key][_e][_d])
                 tdat.append(trow)
-            tdat.append(divider)
-
+            if table_fmt != 'csv':
+                tdat.append(divider)
         print(cm_utils.general_table_handler(headers, tdat, table_fmt))
+        return chk_same
 
     def check_for_duplicate_comments(self, verbose=False):
         """Check the database for duplicate comments."""
