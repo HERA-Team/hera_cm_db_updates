@@ -19,11 +19,13 @@ def _get_keys(this_dict, these_keys, defv):
     return fndkeys
 
 
-def not_same(a, b, use_lower=True, ignore_no_data=True):
+def not_same(a, b, use_lower=True, ignore_no_data=True, really_ignore_no_data=True):
     if use_lower:
         a = a.lower()
         b = b.lower()
     if ignore_no_data and (a == '-' and b == '-'):  # no data for either
+        return False
+    if really_ignore_no_data and (a == '-' or b == '-'):  # no data for either
         return False
     if a == 'x' or b == 'x':  # one doesn't have access
         return False
@@ -74,7 +76,7 @@ class Checks:
                                                                  data[dev][id][_j]))
 
     def check_hosts_ethers(self, table_fmt='orgtbl'):
-        print("Run 'hera_upload_hosts_ethers_to_redis.py' on hera-node-head and hera-snap-head")
+        print("Run 'hera_upload_meta_to_redis.py' on hera-node-head and hera-snap-head")
         self.hera_mc = cm_sysutils.node_info()
         r = redis.Redis('redishost', decode_responses=True)
         # Read hosts/ethers from redis
