@@ -19,21 +19,6 @@ def _get_keys(this_dict, these_keys, defv):
     return fndkeys
 
 
-def not_same(a, b, use_lower=True, ignore_no_data=True, really_ignore_no_data=True):
-    if use_lower:
-        a = a.lower()
-        b = b.lower()
-    if ignore_no_data and (a == '-' and b == '-'):  # no data for either
-        return False
-    if really_ignore_no_data and (a == '-' or b == '-'):  # no data for either
-        return False
-    if a == 'x' or b == 'x':  # one doesn't have access
-        return False
-    if a == b:
-        return False
-    return True
-
-
 class Checks:
     """Check class."""
 
@@ -56,7 +41,27 @@ class Checks:
                     print_line = ','.join(x).replace(':', ',')
                     print(print_line)
 
-    def check_for_same(self, use_lower=True, sep=','):
+    def _not_same(self, a, b, **kwargs):
+        valid = {'use_lower': True, 'ignore_no_data': True, 'really_ignore_no_data': True}
+        for key, val in valid.items():
+            setattr(self, key, val)
+        for key, val in kwargs.items():
+            if key in valid:
+                setattr(self, key, val)
+        if self.use_lower:
+            a = a.lower()
+            b = b.lower()
+        if self.ignore_no_data and (a == '-' and b == '-'):  # no data for either
+            return False
+        if self.really_ignore_no_data and (a == '-' or b == '-'):  # no data for either
+            return False
+        if a == 'x' or b == 'x':  # one doesn't have access
+            return False
+        if a == b:
+            return False
+        return True
+
+    def check_for_same(self, sep=',', **kwargs):
         """
         use sep='\t' for pretty and ',' for csv
         """
@@ -68,7 +73,7 @@ class Checks:
                 for id in ['serial', 'mac', 'ip']:
                     for _i in range(len(data['source']) - 1):
                         for _j in range(_i+1, len(data['source'])):
-                            if not_same(data[dev][id][_i], data[dev][id][_j], use_lower=use_lower):
+                            if self._not_same(data[dev][id][_i], data[dev][id][_j], **kwargs):
                                 print(f"{key}", end=sep)
                                 print("{}|{}{}{}{}!={}{}".format(data['source'][_i],
                                                                  data['source'][_j], sep,
@@ -179,7 +184,6 @@ class Checks:
             if table_fmt != 'csv':
                 tdat.append(divider)
         print(cm_utils.general_table_handler(headers, tdat, table_fmt))
-        self.check_for_same()
 
     def check_for_duplicate_comments(self, verbose=False):
         """Check the database for duplicate comments."""
