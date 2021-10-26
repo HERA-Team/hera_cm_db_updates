@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "211021_infoupd_1042" >> scripts.log 
+add_part_info.py -p HH200 -r A -c 'East channel has low power feed not raised' -l "infoupd" --date 2021/10/21 --time 10:42:00
+add_part_info.py -p HH203 -r A -c 'East channel has low power feed not raised' -l "infoupd" --date 2021/10/21 --time 10:42:00
