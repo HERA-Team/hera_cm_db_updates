@@ -20,15 +20,15 @@ def _getkeys(this_dict, these_keys, defv):
 
 
 def _notsame(a, b, **kwargs):
-    params = {'use_lower': True, 'ignore_no_data': True, 'really_ignore_no_data': True}
+    params = {'ignore_case': True, 'ignore_no_data': 1}
     for key, val in kwargs.items():
         params[key] = val
-    if params['use_lower']:
+    if params['ignore_case']:
         a = a.lower()
         b = b.lower()
     if params['ignore_no_data'] and (a == '-' and b == '-'):  # no data for either
         return False
-    if params['really_ignore_no_data'] and (a == '-' or b == '-'):  # no data for one
+    if params['ignore_no_data'] > 1 and (a == '-' or b == '-'):  # no data for one
         return False
     if a == 'x' or b == 'x':  # one doesn't have access
         return False

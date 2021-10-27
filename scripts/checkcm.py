@@ -28,6 +28,11 @@ if __name__ == '__main__':
                     action='store_true')
     ap.add_argument('--output-format', dest='output_format', default='orgtbl',
                     help='Format of output table - uses cm_utils.general_table_handler')
+    ap.add_argument('--use-case', dest='ignore_case', help="For serial and mac use case",
+                    action='store_false')
+    ap.add_argument('--ignore-no-data-level', dest='ignore_no_data', default=1,
+                    help="Level at which to ignore no serial/hosts/ethers data", type=int,
+                    choices=[0, 1, 2])
     args = ap.parse_args()
 
     check = cm_checks.Checks()
@@ -40,7 +45,7 @@ if __name__ == '__main__':
         check.apriori()
     if args.ethers:
         check.hosts_ethers(table_fmt=args.output_format)
-        check.for_same(use_lower=True, ignore_no_data=True)
+        check.for_same(ignore_case=args.ignore_case, ignore_no_data=args.ignore_no_data)
     if args.crontabs:
         check.crontab()
     if args.daemons:
