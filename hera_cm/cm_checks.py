@@ -19,6 +19,13 @@ def _get_keys(this_dict, these_keys, defv):
     return fndkeys
 
 
+def _isthere(line, lookfor):
+    for lf in lookfor:
+        if lf in line:
+            return True
+    return False
+
+
 class Checks:
     """Check class."""
 
@@ -29,10 +36,20 @@ class Checks:
         self.stop = cm_utils.get_astropytime(stop_time)
         self.step = day_step
         self.chk_same = None
+        self.r = redis.Redis('redishost', decode_responses=True)
+
+    def check_daemon(self, lookfor=['hera', 'rtp']):
+        daemon = self.r.hgetall('check:daemon')
+        for hname, datastr in daemon.items():
+            data = datastr.splitlines()
+            for line in data:
+                if _isthere(line, lookfor):
+                    x = f"{hname} {line}".split()
+                    print_line = ','.join(x)
+                    print(print_line)
 
     def check_crontab(self):
-        r = redis.Redis('redishost', decode_responses=True)
-        crontab = r.hgetall('crontab')
+        crontab = self.r.hgetall('check:crontab')
         for hname, datastr in crontab.items():
             data = datastr.splitlines()
             for line in data:
@@ -83,7 +100,6 @@ class Checks:
     def check_hosts_ethers(self, table_fmt='orgtbl'):
         print("Run 'hera_upload_meta_to_redis.py' on hera-node-head and hera-snap-head")
         self.hera_mc = cm_sysutils.node_info()
-        r = redis.Redis('redishost', decode_responses=True)
         # Read hosts/ethers from redis
         he = he_check.Check('redis')
         he.parse_data()
@@ -136,10 +152,10 @@ class Checks:
                 pass
             # Read redis
             self.chk_same[key]['source'].append('redis')
-            self.redis_rd[key] = r.hgetall(f"status:node:{nd}")
-            self.redis_wr[key] = r.hgetall(f"status:wr:heraNode{nd}wr")
+            self.redis_rd[key] = self.r.hgetall(f"status:node:{nd}")
+            self.redis_wr[key] = self.r.hgetall(f"status:wr:heraNode{nd}wr")
             for i in range(4):
-                self.redis_sn[key + str(i)] = r.hgetall(f"status:snap:heraNode{nd}Snap{i}")
+                self.redis_sn[key + str(i)] = self.r.hgetall(f"status:snap:heraNode{nd}Snap{i}")
             # ...get serial numbers
             rser = 'x'
             wser = _get_keys(self.redis_wr[key], ['serial'], '-')[0]
