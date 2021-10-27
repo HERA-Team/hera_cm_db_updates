@@ -20,15 +20,15 @@ def _getkeys(this_dict, these_keys, defv):
 
 
 def _notsame(a, b, **kwargs):
-    valid = {'use_lower': True, 'ignore_no_data': True, 'really_ignore_no_data': True}
+    params = {'use_lower': True, 'ignore_no_data': True, 'really_ignore_no_data': False}
     for key, val in kwargs.items():
-        valid[key] = val
-    if valid['use_lower']:
+        params[key] = val
+    if params['use_lower']:
         a = a.lower()
         b = b.lower()
-    if valid['ignore_no_data'] and (a == '-' and b == '-'):  # no data for either
+    if params['ignore_no_data'] and (a == '-' and b == '-'):  # no data for either
         return False
-    if valid['really_ignore_no_data'] and (a == '-' or b == '-'):  # no data for either
+    if params['really_ignore_no_data'] and (a == '-' or b == '-'):  # no data for one
         return False
     if a == 'x' or b == 'x':  # one doesn't have access
         return False
@@ -187,13 +187,9 @@ class Checks:
             self.chk_same[key]['source'].append('host')
             for _e in ['serial', 'mac', 'ip']:
                 trow = ['host']
-                for _d in ['arduino', 'white_rabbit', 'snap0', 'snap1', 'snap2', 'snap3']:
+                for _d in ['arduino', 'wr', 'snap0', 'snap1', 'snap2', 'snap3']:
                     trow.append(he_node_control[key][_e][_d])
-                    if _d == 'white_rabbit':
-                        _x = 'wr'
-                    else:
-                        _x = _d
-                    self.chk_same[key][_x][_e].append(he_node_control[key][_e][_d])
+                    self.chk_same[key][_d][_e].append(he_node_control[key][_e][_d])
                 tdat.append(trow)
             if table_fmt != 'csv':
                 tdat.append(divider)
