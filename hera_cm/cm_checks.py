@@ -8,7 +8,7 @@ import redis
 from node_control import he_check
 
 
-def _get_keys(this_dict, these_keys, defv):
+def _getkeys(this_dict, these_keys, defv):
     fndkeys = []
     for key in these_keys:
         try:
@@ -17,6 +17,24 @@ def _get_keys(this_dict, these_keys, defv):
             x = defv
         fndkeys.append(x)
     return fndkeys
+
+
+def _notsame(a, b, **kwargs):
+    valid = {'use_lower': True, 'ignore_no_data': True, 'really_ignore_no_data': True}
+    for key, val in kwargs.items():
+        valid[key] = val
+    if valid['use_lower']:
+        a = a.lower()
+        b = b.lower()
+    if valid['ignore_no_data'] and (a == '-' and b == '-'):  # no data for either
+        return False
+    if valid['really_ignore_no_data'] and (a == '-' or b == '-'):  # no data for either
+        return False
+    if a == 'x' or b == 'x':  # one doesn't have access
+        return False
+    if a == b:
+        return False
+    return True
 
 
 def _isthere(line, lookfor):
@@ -58,26 +76,6 @@ class Checks:
                     print_line = ','.join(x).replace(':', ',')
                     print(print_line)
 
-    def _not_same(self, a, b, **kwargs):
-        valid = {'use_lower': True, 'ignore_no_data': True, 'really_ignore_no_data': True}
-        for key, val in valid.items():
-            setattr(self, key, val)
-        for key, val in kwargs.items():
-            if key in valid:
-                setattr(self, key, val)
-        if self.use_lower:
-            a = a.lower()
-            b = b.lower()
-        if self.ignore_no_data and (a == '-' and b == '-'):  # no data for either
-            return False
-        if self.really_ignore_no_data and (a == '-' or b == '-'):  # no data for either
-            return False
-        if a == 'x' or b == 'x':  # one doesn't have access
-            return False
-        if a == b:
-            return False
-        return True
-
     def check_for_same(self, sep=',', **kwargs):
         """
         use sep='\t' for pretty and ',' for csv
@@ -90,7 +88,7 @@ class Checks:
                 for id in ['serial', 'mac', 'ip']:
                     for _i in range(len(data['source']) - 1):
                         for _j in range(_i+1, len(data['source'])):
-                            if self._not_same(data[dev][id][_i], data[dev][id][_j], **kwargs):
+                            if _notsame(data[dev][id][_i], data[dev][id][_j], **kwargs):
                                 print(f"{key}", end=sep)
                                 print("{}|{}{}{}{}!={}{}".format(data['source'][_i],
                                                                  data['source'][_j], sep,
@@ -122,12 +120,12 @@ class Checks:
                     self.chk_same[key][hdr][_d] = []
             try:
                 hmc = self.hera_mc[key]
-                rd = {'serial': _get_keys(hmc, ['arduino'], '-'), 'ip': ['-'], 'mac': ['-']}
-                wr = {'serial': _get_keys(hmc, ['wr'], '-'), 'ip': ['-'], 'mac': ['-']}
-                sn = {'serial': _get_keys(hmc, ['snaps'], ['-']*4)[0], 'ip': ['-']*4, 'mac': ['-']*4}  # noqa
+                rd = {'serial': _getkeys(hmc, ['arduino'], '-'), 'ip': ['-'], 'mac': ['-']}
+                wr = {'serial': _getkeys(hmc, ['wr'], '-'), 'ip': ['-'], 'mac': ['-']}
+                sn = {'serial': _getkeys(hmc, ['snaps'], ['-']*4)[0], 'ip': ['-']*4, 'mac': ['-']*4}  # noqa
                 for x in [rd, wr, sn]:
                     for i in range(len(x['serial'])):
-                        notes = _get_keys(self.hera_mc, [x['serial'][i]], [['-']])[0]
+                        notes = _getkeys(self.hera_mc, [x['serial'][i]], [['-']])[0]
                         for dv in ['ip', 'mac']:
                             tts = 0
                             for note in notes:
@@ -158,18 +156,18 @@ class Checks:
                 self.redis_sn[key + str(i)] = self.r.hgetall(f"status:snap:heraNode{nd}Snap{i}")
             # ...get serial numbers
             rser = 'x'
-            wser = _get_keys(self.redis_wr[key], ['serial'], '-')[0]
+            wser = _getkeys(self.redis_wr[key], ['serial'], '-')[0]
             self.chk_same[key]['arduino']['serial'].append(rser)
             self.chk_same[key]['wr']['serial'].append(wser)
             sser = []
             for i in range(4):
-                sser.append(_get_keys(self.redis_sn[key + str(i)], ['serial'], '-')[0])
+                sser.append(_getkeys(self.redis_sn[key + str(i)], ['serial'], '-')[0])
                 self.chk_same[key][f"snap{i}"]['serial'].append(sser[i])
             if len(rser + wser + sser[0] + sser[1] + sser[2] + sser[3]) > 6:
                 tdat.append(['redis', rser, wser, sser[0], sser[1], sser[2], sser[3]])
             # --- get macs
-            rmac = _get_keys(self.redis_rd[key], ['mac'], '-')[0]
-            wmac = _get_keys(self.redis_wr[key], ['mac'], 'x')[0]
+            rmac = _getkeys(self.redis_rd[key], ['mac'], '-')[0]
+            wmac = _getkeys(self.redis_wr[key], ['mac'], 'x')[0]
             self.chk_same[key]['arduino']['mac'].append(rmac)
             self.chk_same[key]['wr']['mac'].append(wmac)
             for i in range(4):
@@ -177,8 +175,8 @@ class Checks:
             if len(rmac + wmac) > 2:
                 tdat.append(['redis', rmac, wmac, 'x', 'x', 'x', 'x'])
             # --- get ips
-            rip = _get_keys(self.redis_rd[key], ['ip'], '-')[0]
-            wip = _get_keys(self.redis_wr[key], ['ip'], '-')[0]
+            rip = _getkeys(self.redis_rd[key], ['ip'], '-')[0]
+            wip = _getkeys(self.redis_wr[key], ['ip'], '-')[0]
             self.chk_same[key]['arduino']['ip'].append(rip)
             self.chk_same[key]['wr']['ip'].append(wip)
             for i in range(4):
