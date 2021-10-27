@@ -45,7 +45,7 @@ class Checks:
             for line in data:
                 if _isthere(line, lookfor):
                     x = f"{hname} {line}".split()
-                    print_line = ','.join(x)
+                    print_line = ','.join(x).replace(':', ',')
                     print(print_line)
 
     def check_crontab(self):
