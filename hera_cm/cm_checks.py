@@ -20,7 +20,7 @@ def _getkeys(this_dict, these_keys, defv):
 
 
 def _notsame(a, b, **kwargs):
-    params = {'use_lower': True, 'ignore_no_data': True, 'really_ignore_no_data': False}
+    params = {'use_lower': True, 'ignore_no_data': True, 'really_ignore_no_data': True}
     for key, val in kwargs.items():
         params[key] = val
     if params['use_lower']:
@@ -56,9 +56,9 @@ class Checks:
         self.chk_same = None
         self.r = redis.Redis('redishost', decode_responses=True)
 
-    def check_daemon(self, lookfor=['hera', 'rtp']):
-        daemon = self.r.hgetall('check:daemon')
-        for hname, datastr in daemon.items():
+    def daemon(self, lookfor=['hera', 'rtp']):
+        rdaemon = self.r.hgetall('check:daemon')
+        for hname, datastr in rdaemon.items():
             data = datastr.splitlines()
             for line in data:
                 if _isthere(line, lookfor):
@@ -66,9 +66,9 @@ class Checks:
                     print_line = ','.join(x).replace(':', ',')
                     print(print_line)
 
-    def check_crontab(self):
-        crontab = self.r.hgetall('check:crontab')
-        for hname, datastr in crontab.items():
+    def crontab(self):
+        rcrontab = self.r.hgetall('check:crontab')
+        for hname, datastr in rcrontab.items():
             data = datastr.splitlines()
             for line in data:
                 if len(line) and line[0] != '#':
@@ -76,7 +76,7 @@ class Checks:
                     print_line = ','.join(x).replace(':', ',')
                     print(print_line)
 
-    def check_for_same(self, sep=',', **kwargs):
+    def for_same(self, sep=',', **kwargs):
         """
         use sep='\t' for pretty and ',' for csv
         """
@@ -95,7 +95,7 @@ class Checks:
                                                                  data[dev][id][_i], sep, sep,
                                                                  data[dev][id][_j]))
 
-    def check_hosts_ethers(self, table_fmt='orgtbl'):
+    def hosts_ethers(self, table_fmt='orgtbl'):
         print("Run 'hera_upload_meta_to_redis.py' on hera-node-head and hera-snap-head")
         self.hera_mc = cm_sysutils.node_info()
         # Read hosts/ethers from redis
@@ -195,7 +195,7 @@ class Checks:
                 tdat.append(divider)
         print(cm_utils.general_table_handler(headers, tdat, table_fmt))
 
-    def check_for_duplicate_comments(self, verbose=False):
+    def duplicate_comments(self, verbose=False):
         """Check the database for duplicate comments."""
         cmdpre = 'delete from part_info where hpn='
         filename = 'dupcomm.sql'

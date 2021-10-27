@@ -24,20 +24,24 @@ if __name__ == '__main__':
                     action='store_true')
     ap.add_argument('-d', '--daemons', help="Check running daemons",
                     action='store_true')
+    ap.add_argument('-c', '--crontabs', help="Check crontable.",
+                    action='store_true')
     ap.add_argument('--output-format', dest='output_format', default='orgtbl',
                     help='Format of output table - uses cm_utils.general_table_handler')
     args = ap.parse_args()
 
-    cc = cm_checks.Checks()
+    check = cm_checks.Checks()
 
     if args.comments:
-        cc.check_for_duplicate_comments()
+        check.duplicate_comments()
     if args.connections:
-        cc.part_conn_assoc()
+        check.part_conn_assoc()
     if args.apriori:
-        cc.apriori()
+        check.apriori()
     if args.ethers:
-        cc.check_hosts_ethers(table_fmt=args.output_format)
-        cc.check_for_same(use_lower=True, ignore_no_data=True)
+        check.hosts_ethers(table_fmt=args.output_format)
+        check.for_same(use_lower=True, ignore_no_data=True)
+    if args.crontabs:
+        check.crontab()
     if args.daemons:
-        cc.check_daemon()
+        check.daemon()
