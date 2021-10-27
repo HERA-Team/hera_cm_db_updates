@@ -39,5 +39,5 @@ if __name__ == '__main__':
     if args.ethers:
         cc.check_hosts_ethers(table_fmt=args.output_format)
         cc.check_for_same(use_lower=True, ignore_no_data=True)
-    if args.daemon:
+    if args.daemons:
         cc.check_daemon()
