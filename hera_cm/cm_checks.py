@@ -62,9 +62,11 @@ class Checks:
             data = datastr.splitlines()
             for line in data:
                 if _isthere(line, lookfor):
-                    x = f"{hname} {line}".split()
-                    print_line = ','.join(x).replace(':', ',')
-                    print(print_line)
+                    x = line.split()
+                    ct = ','.join(x[:5])
+                    cm = ' '.join(x[5:])
+                    hn = hname.replace(':', ',')
+                    print(f"{hn},{ct},{cm}")
 
     def crontab(self):
         rcrontab = self.r.hgetall('check:crontab')
