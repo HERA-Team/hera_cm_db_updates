@@ -732,6 +732,7 @@ SNPC000070,A,IP - 10.80.40.95,,1304938828
 SNPC000082,A,IP - 10.80.40.107,,1304938828
 SNPC000085,A,IP - 10.80.40.110,,1304938828
 SNPC000086,A,IP - 10.80.40.111,,1304938828
+HH206,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1319892138
 HH2,A,History: FEM: 17 | PAM: 23,infoupd,1264193598
 HH11,A,History: FEM: 19 | PAM: 25,infoupd,1264193598
 HH12,A,History: FEM: 20 | PAM: 26,infoupd,1264193598
@@ -768,6 +769,7 @@ HH220,A,Spectre: N18P7E,infoupd,1318862538
 HH51,A,SNAPloc: 2,infoupd,1264203738
 HH239,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1318862540
 HH52,A,SNAPloc: 2,infoupd,1264203738
+HH223,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1319892138
 HH36,A,SNAPloc: 3,infoupd,1264203738
 HH50,A,SNAPloc: 3,infoupd,1264203738
 HH40,A,SNAPloc: 1,infoupd,1264203738
@@ -829,6 +831,7 @@ HH36,A,Spectra: N3P11N,infoupd,1318668140
 HH125,A,SNAPloc: 3,infoupd,1264203738
 HH239,A,Spectre: N18P10N,infoupd,1318862542
 HH126,A,SNAPloc: 3,infoupd,1264203738
+HH225,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1319892138
 HH92,A,SNAPloc: 0,infoupd,1264203738
 HH93,A,SNAPloc: 0,infoupd,1264203738
 HH94,A,SNAPloc: 0,infoupd,1264203738
@@ -886,6 +889,7 @@ HH50,A,Spectra: N3P12E,infoupd,1318668138
 HH135,A,Preliminary specrta looks fine,infoupd,1265132538
 HH238,A,Spectre: N18P11E,infoupd,1318862538
 HH136,A,Preliminary specrta looks fine,infoupd,1265132538
+HH242,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1319892138
 HH155,A,Preliminary specrta looks fine,infoupd,1265132538
 HH156,A,Preliminary specrta looks fine,infoupd,1265132538
 HH157,A,Preliminary specrta looks fine,infoupd,1265132538
