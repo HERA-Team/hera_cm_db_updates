@@ -1,0 +1,30 @@
+#! /bin/bash
+source ~/.bashrc
+echo "211104_infoupd_1542" >> scripts.log 
+add_part_info.py -p HH204 -r A -c 'North channel low' -l "infoupd" --date 2021/11/04 --time 15:42:00
+add_part_info.py -p HH205 -r A -c 'Spectre: N19P2E' -l "infoupd" --date 2021/11/04 --time 15:42:00
+add_part_info.py -p HH205 -r A -c 'Feed heights (NE/SE/SW/NW): 4.404' -l "infoupd" --date 2021/11/04 --time 15:42:02
+add_part_info.py -p HH205 -r A -c 'Spectre: N19P2N' -l "infoupd" --date 2021/11/04 --time 15:42:04
+add_part_info.py -p HH206 -r A -c 'Spectre: N19P3E' -l "infoupd" --date 2021/11/04 --time 15:42:00
+add_part_info.py -p HH206 -r A -c 'Spectre: N19P3N' -l "infoupd" --date 2021/11/04 --time 15:42:02
+add_part_info.py -p HH207 -r A -c 'Spectre: N19P4E' -l "infoupd" --date 2021/11/04 --time 15:42:00
+add_part_info.py -p HH207 -r A -c 'Feed heights (NE/SE/SW/NW): 4.408' -l "infoupd" --date 2021/11/04 --time 15:42:02
+add_part_info.py -p HH207 -r A -c 'Spectre: N19P4N' -l "infoupd" --date 2021/11/04 --time 15:42:04
+add_part_info.py -p HH223 -r A -c 'Spectre: N19P5E' -l "infoupd" --date 2021/11/04 --time 15:42:00
+add_part_info.py -p HH223 -r A -c 'Spectre: N19P5N' -l "infoupd" --date 2021/11/04 --time 15:42:02
+add_part_info.py -p HH224 -r A -c 'Spectre: N19P6E' -l "infoupd" --date 2021/11/04 --time 15:42:00
+add_part_info.py -p HH224 -r A -c 'Feed heights (NE/SE/SW/NW): 4.404' -l "infoupd" --date 2021/11/04 --time 15:42:02
+add_part_info.py -p HH224 -r A -c 'Spectre: N19P6N' -l "infoupd" --date 2021/11/04 --time 15:42:04
+add_part_info.py -p HH225 -r A -c 'Spectre: N19P7E' -l "infoupd" --date 2021/11/04 --time 15:42:00
+add_part_info.py -p HH225 -r A -c 'Spectre: N19P7N' -l "infoupd" --date 2021/11/04 --time 15:42:02
+add_part_info.py -p HH226 -r A -c 'Spectre: N19P8E' -l "infoupd" --date 2021/11/04 --time 15:42:00
+add_part_info.py -p HH226 -r A -c 'Feed heights (NE/SE/SW/NW): 4.412' -l "infoupd" --date 2021/11/04 --time 15:42:02
+add_part_info.py -p HH226 -r A -c 'Spectre: N19P8N' -l "infoupd" --date 2021/11/04 --time 15:42:04
+add_part_info.py -p HH240 -r A -c 'east channel low' -l "infoupd" --date 2021/11/04 --time 15:42:00
+add_part_info.py -p HH241 -r A -c 'Spectre: N19P10E' -l "infoupd" --date 2021/11/04 --time 15:42:00
+add_part_info.py -p HH241 -r A -c 'Feed heights (NE/SE/SW/NW): 4.405' -l "infoupd" --date 2021/11/04 --time 15:42:02
+add_part_info.py -p HH241 -r A -c 'Spectre: N19P10N' -l "infoupd" --date 2021/11/04 --time 15:42:04
+add_part_info.py -p HH242 -r A -c 'Spectre: N19P11E' -l "infoupd" --date 2021/11/04 --time 15:42:00
+add_part_info.py -p HH242 -r A -c 'Spectre: N19P11N' -l "infoupd" --date 2021/11/04 --time 15:42:02
+add_part_info.py -p HH243 -r A -c 'Spectre: N19P12E' -l "infoupd" --date 2021/11/04 --time 15:42:00
+add_part_info.py -p HH243 -r A -c 'Spectre: N19P12N' -l "infoupd" --date 2021/11/04 --time 15:42:02
