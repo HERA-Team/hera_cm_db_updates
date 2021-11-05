@@ -56,6 +56,21 @@ class Checks:
         self.chk_same = None
         self.r = redis.Redis('redishost', decode_responses=True)
 
+    def info_log(self, look_back=7.0, outfile='info.csv'):
+        """
+        Get all info comments within look_back time (days).
+        """
+        import csv
+        self.active.load_info()
+        look_gps = cm_utils.get_astropytime('now').gps - look_back * 3600 * 24
+        with open(outfile, 'w') as fp:
+            writer = csv.writer(fp)
+            for hpn, data in self.active.info.items():
+                for entry in data:
+                    if entry.posting_gpstime >= look_gps:
+                        datet = cm_utils.get_astropytime(entry.posting_gpstime, float_format='gps')
+                        writer.writerow([hpn, entry.comment, datet.isot])
+
     def daemon(self, lookfor=['hera', 'rtp']):
         rdaemon = self.r.hgetall('check:daemon')
         for hname, datastr in rdaemon.items():
