@@ -734,6 +734,7 @@ HH206,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1319892138
 HH243,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1319895738
 HH204,A,North channel low,infoupd,1320075738
 HH16,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1320187338
+HH205,A,door closed 08/11/2021,infoupd,1320489738
 HH2,A,History: FEM: 17 | PAM: 23,infoupd,1264193598
 HH11,A,History: FEM: 19 | PAM: 25,infoupd,1264193598
 HH12,A,History: FEM: 20 | PAM: 26,infoupd,1264193598
@@ -776,6 +777,7 @@ HH205,A,Spectre: N19P2E,infoupd,1320075738
 HH50,A,SNAPloc: 3,infoupd,1264203738
 HH127,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1320187338
 HH40,A,SNAPloc: 1,infoupd,1264203738
+HH206,A,door closed 08/11/21,infoupd,1320489738
 HH41,A,SNAPloc: 3,infoupd,1264203738
 HH42,A,SNAPloc: 0,infoupd,1264203738
 HH54,A,SNAPloc: 0,infoupd,1264203738
@@ -840,6 +842,7 @@ HH205,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1320075740
 HH93,A,SNAPloc: 0,infoupd,1264203738
 HH130,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1320187338
 HH94,A,SNAPloc: 0,infoupd,1264203738
+HH207,A,door closed 08/11/2021,infoupd,1320489738
 HH109,A,SNAPloc: 1,infoupd,1264203738
 HH110,A,SNAPloc: 1,infoupd,1264203738
 HH111,A,SNAPloc: 1,infoupd,1264203738
@@ -900,6 +903,7 @@ HH205,A,Spectre: N19P2N,infoupd,1320075742
 HH156,A,Preliminary specrta looks fine,infoupd,1265132538
 HH73,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1320187338
 HH157,A,Preliminary specrta looks fine,infoupd,1265132538
+HH223,A,door closed 08/11/2021,infoupd,1320489738
 HH158,A,Preliminary specrta looks fine,infoupd,1265132538
 HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
 HH141,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
@@ -961,6 +965,7 @@ HH238,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1318862540
 HH181,A,Final post-PAM spectra looks fine,infoupd,1265726538
 HH206,A,Spectre: N19P3E,infoupd,1320075738
 HH182,A,Final post-PAM spectra looks fine,infoupd,1265726538
+HH224,A,door closed 08/11/2021,infoupd,1320489738
 HH156,A,re-take of final spectra for 156E looks fine. Ticket #463,infoupd,1265906538
 HH92,A,Feed heights (NE/SE/SW/NW): Z distance =4.404,infoupd,1266054138
 HH93,A,Feed heights (NE/SE/SW/NW): Z distance =4.410,infoupd,1266054138
@@ -1130,6 +1135,7 @@ SNPC000030,A,IP - 10.80.40.55,,1269252078
 WRA000094,A,IP - 10.80.2.143,,1264500078
 SNPC000023,A,IP - 10.80.40.18,,1269252078
 HH206,A,Spectre: N19P3N,infoupd,1320075740
+HH225,A,door closed 08/11/2021,infoupd,1320489738
 SNPC000031,A,MAC - 00:39:9a:e1:17:01,,1269252018
 SNPC000031,A,IP - 10.80.40.56,,1269252078
 SNPC000032,A,MAC - 00:23:15:5d:16:04,,1269252018
@@ -1195,15 +1201,18 @@ SNPC000081,A,IP - 10.80.40.106,,1269252078
 HH72,A,Spectre: N4P1N,infoupd,1318668140
 HH237,A,Spectre: N18P12E,infoupd,1318862538
 HH207,A,Spectre: N19P4E,infoupd,1320075738
+HH226,A,door closed 08/11/2021,infoupd,1320489738
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 ND05,A,Door direction: NE,,1280318418
 HH42,A,Spectre: N4P2E,infoupd,1318668138
 HH237,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1318862540
 HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1320075740
+HH241,A,door closed 08/11/2021,infoupd,1320489738
 HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1272926538
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
+HH242,A,door closed 08/11/2021,infoupd,1320489738
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1222,6 +1231,7 @@ HH130,A,"Central line too loose to be RF OK, door mesh closed",infoupd,127944613
 ND06,A,Door direction: SE,,1280318418
 HH54,A,Spectre: N4P3E,infoupd,1318668138
 HH223,A,Spectre: N19P5E,infoupd,1320075738
+HH243,A,door closed 08/11/2021,infoupd,1320489738
 HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
