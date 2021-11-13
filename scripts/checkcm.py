@@ -14,6 +14,10 @@ import argparse
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
+    ap.add_argument('-l', '--info_log', help="Check latest info log",
+                    action='store_true')
+    ap.add_argument('--look-back', dest='look_back', help="Days back for log.",
+                    type=float, default=7.0)
     ap.add_argument('-m', '--comments', help="Check for duplicate comments",
                     action='store_true')
     ap.add_argument('-n', '--connections', help="Check connections for ...",
@@ -37,6 +41,8 @@ if __name__ == '__main__':
 
     check = cm_checks.Checks()
 
+    if args.info_log:
+        check.info_log(look_back=args.look_back)
     if args.comments:
         check.duplicate_comments()
     if args.connections:

@@ -56,10 +56,11 @@ class Checks:
         self.chk_same = None
         self.r = redis.Redis('redishost', decode_responses=True)
 
-    def info_log(self, look_back=7.0, outfile='info.csv'):
+    def info_log(self, look_back=7.0, outfile='info_log.csv'):
         """
         Get all info comments within look_back time (days).
         """
+        print(f"Writing log of last {look_back} days to {outfile}")
         import csv
         self.active.load_info()
         look_gps = cm_utils.get_astropytime('now').gps - look_back * 3600 * 24
