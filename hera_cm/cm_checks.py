@@ -50,8 +50,8 @@ class Checks:
     def __init__(self, start_time=2458500, stop_time='now', day_step=1.0):
         """Initialize."""
         self.active = cm_active.ActiveData()
-        self.start = cm_utils.get_astropytime(start_time)
-        self.stop = cm_utils.get_astropytime(stop_time)
+        self.start = cm_utils.get_astropytime(start_time, float_format='jd')
+        self.stop = cm_utils.get_astropytime(stop_time, float_format='jd')
         self.step = day_step
         self.chk_same = None
         self.r = redis.Redis('redishost', decode_responses=True)
@@ -62,15 +62,19 @@ class Checks:
         """
         print(f"Writing log of last {look_back} days to {outfile}")
         import csv
-        self.active.load_info()
         look_gps = cm_utils.get_astropytime('now').gps - look_back * 3600 * 24
+        self.active.load_info()
+        fnd = {}
+        for hpn, data in self.active.info.items():
+            for entry in data:
+                if entry.posting_gpstime >= look_gps:
+                    key = f"{entry.posting_gpstime}:{hpn}"
+                    datet = cm_utils.get_astropytime(entry.posting_gpstime, float_format='gps')
+                    fnd[key] = [hpn, entry.comment, datet.isot]
         with open(outfile, 'w') as fp:
             writer = csv.writer(fp)
-            for hpn, data in self.active.info.items():
-                for entry in data:
-                    if entry.posting_gpstime >= look_gps:
-                        datet = cm_utils.get_astropytime(entry.posting_gpstime, float_format='gps')
-                        writer.writerow([hpn, entry.comment, datet.isot])
+            for key in sorted(fnd.keys(), reverse=True):
+                writer.writerow(fnd[key])
 
     def daemon(self, lookfor=['hera', 'rtp']):
         rdaemon = self.r.hgetall('check:daemon')

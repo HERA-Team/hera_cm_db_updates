@@ -22,8 +22,8 @@ if __name__ == '__main__':
                     action='store_true')
     ap.add_argument('-n', '--connections', help="Check connections for ...",
                     action='store_true')
-    # ap.add_argument('-a', '--apriori', help="Check for overlapping apriori states",
-    #                 action='store_true')
+    ap.add_argument('-a', '--apriori', help="Check for overlapping apriori states XXX",
+                    action='store_true')
     ap.add_argument('-e', '--ethers', help="Check the hosts/ethers hera_mc vs redis",
                     action='store_true')
     ap.add_argument('-d', '--daemons', help="Check running daemons",
