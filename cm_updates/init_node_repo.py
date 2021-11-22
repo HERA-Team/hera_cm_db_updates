@@ -7,10 +7,9 @@ ap.add_argument('day')
 args = ap.parse_args()
 
 for node in range(0, 21):
-    nfile = f"node{node}.csv"
-    ndfile = f"node{node}_{args.day}.csv"
+    nfile = f"gsheet/node{node}.csv"
+    ndfile = f"gsheettmp/node{node}_{args.day}.csv"
     try:
-        print(ndfile, nfile)
-        # copyfile(ndfile, f"../{nfile}")
+        copyfile(ndfile, nfile)
     except FileNotFoundError:
         continue
