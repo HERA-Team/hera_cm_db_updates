@@ -1,7 +1,7 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed heights (NE/SE/SW/NW),Feed Installed By
 135,E,96,150,7,155,20,e2,2,digital_ok,,,,
 135,N,96,150,7,155,20,n0,2,digital_ok,,,,
-136,E,82,151,8,156,20,e6,2,RF_maintenance,,,,
+136,E,82,151,8,156,20,e6,2,RF_maintenance,,Josh noted time variability over a few nights.,,
 136,N,82,151,8,156,20,n4,2,RF_maintenance,,,,
 155,E,97,152,9,157,20,e10,2,RF_maintenance,,,,
 155,N,97,152,9,157,20,n8,2,RF_maintenance,,,,
@@ -17,7 +17,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 177,N,102,159,2,150,49,n4,0,digital_ok,,,,
 178,E,103,149,3,151,49,e10,0,digital_ok,,,,
 178,N,103,149,3,151,49,n8,0,digital_ok,,,,
-179,E,104,155,4,152,60,e2,1,digital_ok,,,,
+179,E,104,155,4,152,60,e2,1,digital_ok,,Josh noted time variability over a few nights.,,
 179,N,104,155,4,152,60,n0,1,digital_ok,, ,,
 Date:,2019/11/18,,,,,,,,,,,,
 NCM,7,,,,,,,,,,,,
