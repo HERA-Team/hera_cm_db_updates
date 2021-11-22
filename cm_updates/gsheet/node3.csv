@@ -1,10 +1,10 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed heights (NE/SE/SW/NW),Feed Installed By
-36,E,93,132,11,135,C54,E6,3,digital_ok,,,,
-36,N,93,132,11,135,C54,N4,3,digital_ok,,,,
-37,E,86,136,5,129,C2,E6,1,RF_maintenance,,,,
-37,N,86,136,5,129,C2,N4,1,RF_maintenance,, ,,
-38,E,87,117,6,130,C2,E10,1,RF_maintenance,,,,
-38,N,87,117,6,130,C2,N8,1,RF_maintenance,, ,,
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Spectra,Feed Installed By
+36,E,93,132,11,135,C54,E6,3,digital_ok,,,n3p1E,
+36,N,93,132,11,135,C54,N4,3,digital_ok,,,N3P1N,
+37,E,86,136,5,129,C2,E6,1,RF_maintenance,,,N3P2E,
+37,N,86,136,5,129,C2,N4,1,RF_maintenance,, ,N3P2N,
+38,E,87,117,6,130,C2,E10,1,RF_maintenance,,,N3P3E,
+38,N,87,117,6,130,C2,N8,1,RF_maintenance,, ,N3P3N,
 50,E,85,107,12,136,C54,E10,3,digital_ok,,,,
 50,N,85,107,12,136,C54,N8,3,digital_ok,,,,
 51,E,75,133,9,133,C37,E10,2,RF_maintenance,,,,

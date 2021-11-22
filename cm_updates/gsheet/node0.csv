@@ -1,10 +1,10 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Spectra,Comments
-0,E,1,16,1,22,C72,e2,0,RF_maintenance,,n3p1E,
-0,N,1,16,1,22,C72,n0,0,RF_maintenance,,N3P1N,
-2,E,8,40,2,48,C72,e6,0,RF_maintenance,,N3P2E,
-2,N,8,40,2,48,C72,n4,0,RF_maintenance,,N3P2N,
-1,E,2,18,3,24,C72,e10,0,RF_maintenance,,N3P3E,
-1,N,2,18,3,24,C72,n8,0,RF_maintenance,,N3P3N,
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,,Comments
+0,E,1,16,1,22,C72,e2,0,RF_maintenance,,,
+0,N,1,16,1,22,C72,n0,0,RF_maintenance,,,
+2,E,8,40,2,48,C72,e6,0,RF_maintenance,,,
+2,N,8,40,2,48,C72,n4,0,RF_maintenance,,,
+1,E,2,18,3,24,C72,e10,0,RF_maintenance,,,
+1,N,2,18,3,24,C72,n8,0,RF_maintenance,,,
 11,E,9,45,4,52,A8,e2,1,RF_maintenance,,,
 11,N,9,45,4,52,A8,n0,1,RF_maintenance,,,
 12,E,3,41,5,50,A8,e6,1,RF_maintenance,,,
