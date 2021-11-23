@@ -1,8 +1,7 @@
 """Various signal chain modification methods."""
-
-import os
 from hera_cm import util
 from hera_mc import cm_utils, cm_active, cm_handling
+import os
 
 current_revs = {'HH': 'A', 'HA': 'A', 'HB': 'A', 'A': 'H', 'FDV': 'V'}
 part_types = {'FDV': 'feed', 'FEM': 'front-end', 'NBP': 'node-bulkhead',
@@ -33,15 +32,16 @@ class Update:
 
     snap_ports = [{'e': 'e2', 'n': 'n0'}, {'e': 'e6', 'n': 'n4'}, {'e': 'e10', 'n': 'n8'}]
 
-    def __init__(self, exename, output_script_path=None, chmod=False, cdate='now', ctime='10:00',
+    def __init__(self, script_to_run=None, chmod=False,
+                 cdate='now', ctime='10:00',
                  log_file='scripts.log', verbose=True):
         """
         Initialize.
 
         Parameters
         ----------
-        exename : str
-            the name of the script executed (argv[0])
+        script_to_run : str
+            the name of the script to write (is executed outside of this)
         log_file : str
             name of log_file
         """
@@ -52,23 +52,19 @@ class Update:
         self.active = cm_active.ActiveData()
         self.load_active(cdate=None)
         self.handle = cm_handling.Handling()
-        if exename is None:
+        self.script_to_run = script_to_run
+        if script_to_run is None:
             print("No script file started.  It'll probably error out.")
-            self.output_script = None
+            self.script_to_run = None
         else:
-            input_script = os.path.basename(exename)
-            if output_script_path is None:
-                self.output_script = input_script.split('.')[0]
-            else:
-                self.output_script = os.path.join(output_script_path, input_script.split('.')[0])
             if self.verbose:
-                print("Writing script {}".format(self.output_script))
-            self.fp = open(self.output_script, 'w')
+                print("Writing script {}".format(self.script_to_run))
+            self.fp = open(self.script_to_run, 'w')
             s = '#! /bin/bash\n'
             unameInfo = os.uname()
             if unameInfo.sysname == 'Linux':
                 s += 'source ~/.bashrc\n'
-            s += 'echo "{}" >> {} \n'.format(exename, self.log_file)
+            s += 'echo "{}" >> {} \n'.format(script_to_run, self.log_file)
             self.fp.write(s)
             if self.verbose:
                 print('-----------------')
@@ -716,20 +712,18 @@ class Update:
             dnpart = [val.downstream_part, val.down_part_rev, val.downstream_input_port]
             self.update_connection('add', uppart, dnpart, cdate, ctime)
 
-    def done(self, move_node_gsheet=False):
+    def done(self):
         """Finish."""
-        if self.output_script is None:
+        if self.script_to_run is None:
             return
-        if move_node_gsheet:
-            self.fp.write('mv -f node*.csv gsheet\n')
         self.fp.close()
         if self.verbose:
             print("----------------------DONE-----------------------")
         if not self.chmod:
             if self.verbose:
                 print("If changes OK, 'chmod u+x {}' and run that script."
-                      .format(self.output_script))
+                      .format(self.script_to_run))
         else:
-            os.chmod(self.output_script, 0o755)
+            os.chmod(self.script_to_run, 0o755)
             if self.verbose:
-                print("Run {}".format(self.output_script))
+                print("Run {}".format(self.script_to_run))

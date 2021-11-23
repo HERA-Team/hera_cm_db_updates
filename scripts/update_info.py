@@ -7,6 +7,8 @@
 
 import argparse
 from hera_cm import upd_info
+from os import path
+
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
@@ -23,6 +25,8 @@ if __name__ == '__main__':
                     help='In verbose, only show duplicates after this many days', default=0.0)
     ap.add_argument('--look_only', help='Flag to only look at data.', action='store_true')
     ap.add_argument('--time_tag', help='Flag to add time to node csv filename', action='store_true')
+    ap.add_argument('--archive_gsheet', help='Path to move gsheet archive',
+                    default='___cm_updates/gsheet')
     args = ap.parse_args()
 else:
     args = argparse.Namespace(archive_path=None, script_path='default', node_csv='r', verbose=True,
@@ -45,9 +49,10 @@ update = upd_info.UpdateInfo(script_type=script_type,
                              script_path=args.script_path,
                              verbose=args.verbose)
 if args.archive_path.startswith('___'):
-    import os.path
-    args.archive_path = os.path.join(update.script_path, args.archive_path[3:])
-update.load_gsheet(node_csv=args.node_csv, path=args.archive_path, time_tag=args.time_tag)
+    args.archive_path = path.join(update.script_path, args.archive_path[3:])
+if args.archive_gsheet.startswith('___'):
+    args.archive_gsheet = path.join(update.script_path, args.archive_gsheet[3:])
+update.load_gsheet(node_csv=args.node_csv, path=args.archive_gsheet, time_tag=args.time_tag)
 update.load_active()
 update.load_gnodes()
 update.add_apriori()
@@ -59,4 +64,4 @@ update.log_apriori_notifications()
 if args.look_only:
     update.view_info()
 else:
-    update.finish(cron_script=cron_script, archive_to=args.archive_path, move_node_gsheet=True)
+    update.finish(cron_script=cron_script, archive_to=args.archive_path)

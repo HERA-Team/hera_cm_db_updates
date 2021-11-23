@@ -41,7 +41,8 @@ class Update():
         else:
             self.script = '{}_{}_{}'.format(self.cdate.replace('/', '')[2:], script_type,
                                             self.ctime.replace(':', ''))
-        self.hera = signal_chain.Update(self.script, output_script_path=self.script_path,
+            self.script = os.path.join(self.script_path)
+        self.hera = signal_chain.Update(script_to_run=self.script,
                                         chmod=True, verbose=verbose,
                                         cdate=self.cdate, ctime=self.ctime)
         self.update_counter = 0
@@ -58,7 +59,7 @@ class Update():
             self.gsheet = cm_gsheet.SheetData()
         self.gsheet.load_workflow()
 
-    def finish(self, cron_script=None, archive_to=None, move_node_gsheet=False):
+    def finish(self, cron_script=None, archive_to=None):
         """
         Close out process.  If no updates, it deletes the script file.
         If both parameters are None, it just leaves things alone.
@@ -71,7 +72,7 @@ class Update():
         archive_to : str or None
             If str, moves the script file to that directory.  If not, deletes.
         """
-        self.hera.done(move_node_gsheet=move_node_gsheet)
+        self.hera.done()
         if self.script is None or (cron_script is None and archive_to is None):
             return
         script = os.path.join(self.script_path, self.script)
