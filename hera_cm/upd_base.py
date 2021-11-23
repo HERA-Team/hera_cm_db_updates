@@ -58,7 +58,7 @@ class Update():
             self.gsheet = cm_gsheet.SheetData()
         self.gsheet.load_workflow()
 
-    def finish(self, cron_script=None, archive_to=None):
+    def finish(self, cron_script=None, archive_to=None, move_node_gsheet=False):
         """
         Close out process.  If no updates, it deletes the script file.
         If both parameters are None, it just leaves things alone.
@@ -71,7 +71,7 @@ class Update():
         archive_to : str or None
             If str, moves the script file to that directory.  If not, deletes.
         """
-        self.hera.done()
+        self.hera.done(move_node_gsheet=move_node_gsheet)
         if self.script is None or (cron_script is None and archive_to is None):
             return
         script = os.path.join(self.script_path, self.script)

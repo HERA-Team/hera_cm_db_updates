@@ -59,4 +59,4 @@ update.log_apriori_notifications()
 if args.look_only:
     update.view_info()
 else:
-    update.finish(cron_script=cron_script, archive_to=args.archive_path)
+    update.finish(cron_script=cron_script, archive_to=args.archive_path, move_node_gsheet=True)

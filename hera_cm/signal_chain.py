@@ -716,10 +716,12 @@ class Update:
             dnpart = [val.downstream_part, val.down_part_rev, val.downstream_input_port]
             self.update_connection('add', uppart, dnpart, cdate, ctime)
 
-    def done(self):
+    def done(self, move_node_gsheet=False):
         """Finish."""
         if self.output_script is None:
             return
+        if move_node_gsheet:
+            self.fp.write('mv -f node*.csv gsheet\n')
         self.fp.close()
         if self.verbose:
             print("----------------------DONE-----------------------")
