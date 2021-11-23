@@ -737,6 +737,7 @@ HH16,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,132018
 HH205,A,door closed 08/11/2021,infoupd,1320489738
 HH227,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1320507738
 HH240,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1320568938
+HH211,A,door closed 19/11/2021,infoupd,1321741158
 HH2,A,History: FEM: 17 | PAM: 23,infoupd,1264193598
 HH11,A,History: FEM: 19 | PAM: 25,infoupd,1264193598
 HH12,A,History: FEM: 20 | PAM: 26,infoupd,1264193598
@@ -783,6 +784,7 @@ HH206,A,door closed 08/11/21,infoupd,1320489738
 HH41,A,SNAPloc: 3,infoupd,1264203738
 HH227,A,Spectre: N20P10E,infoupd,1320568938
 HH42,A,SNAPloc: 0,infoupd,1264203738
+HH211,A,Spectre: N20P1E,infoupd,1321741160
 HH54,A,SNAPloc: 0,infoupd,1264203738
 HH55,A,SNAPloc: 2,infoupd,1264203738
 HH56,A,SNAPloc: 1,infoupd,1264203738
@@ -849,6 +851,7 @@ HH207,A,door closed 08/11/2021,infoupd,1320489738
 HH109,A,SNAPloc: 1,infoupd,1264203738
 HH227,A,Spectre: N20P10N,infoupd,1320568940
 HH110,A,SNAPloc: 1,infoupd,1264203738
+HH211,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1321741162
 HH111,A,SNAPloc: 1,infoupd,1264203738
 HH112,A,SNAPloc: 2,infoupd,1264203738
 HH127,A,SNAPloc: 2,infoupd,1264203738
@@ -909,6 +912,7 @@ HH73,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,132018
 HH157,A,Preliminary specrta looks fine,infoupd,1265132538
 HH223,A,door closed 08/11/2021,infoupd,1320489738
 HH158,A,Preliminary specrta looks fine,infoupd,1265132538
+HH211,A,Spectre: N20P1N,infoupd,1321741164
 HH140,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
 HH141,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
 HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
@@ -1008,6 +1012,7 @@ HH122,A,Z = 4.414,infoupd,1266504138
 HH122,A, ,infoupd,1266504140
 HH2,A,Replaced SNAP (C57->C72). ADC is likely working now.,infoupd,1266997338
 HH88,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
+HH244,A,Spectre: N2OP2E,infoupd,1321741158
 HH89,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH90,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH91,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
@@ -1140,6 +1145,7 @@ WRA000094,A,IP - 10.80.2.143,,1264500078
 SNPC000023,A,IP - 10.80.40.18,,1269252078
 HH206,A,Spectre: N19P3N,infoupd,1320075740
 HH225,A,door closed 08/11/2021,infoupd,1320489738
+HH244,A,Feed heights (NE/SE/SW/NW): 4.399,infoupd,1321741160
 SNPC000031,A,MAC - 00:39:9a:e1:17:01,,1269252018
 SNPC000031,A,IP - 10.80.40.56,,1269252078
 SNPC000032,A,MAC - 00:23:15:5d:16:04,,1269252018
@@ -1206,17 +1212,20 @@ HH72,A,Spectre: N4P1N,infoupd,1318668140
 HH237,A,Spectre: N18P12E,infoupd,1318862538
 HH207,A,Spectre: N19P4E,infoupd,1320075738
 HH226,A,door closed 08/11/2021,infoupd,1320489738
+HH244,A,Spectre: N20P2N,infoupd,1321741162
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 ND05,A,Door direction: NE,,1280318418
 HH42,A,Spectre: N4P2E,infoupd,1318668138
 HH237,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1318862540
 HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1320075740
 HH241,A,door closed 08/11/2021,infoupd,1320489738
+HH245,A,door closed 19/11/2021,infoupd,1321741158
 HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1272926538
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
 HH242,A,door closed 08/11/2021,infoupd,1320489738
+HH245,A,Spectre: N20P3E,infoupd,1321741160
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1236,6 +1245,7 @@ ND06,A,Door direction: SE,,1280318418
 HH54,A,Spectre: N4P3E,infoupd,1318668138
 HH223,A,Spectre: N19P5E,infoupd,1320075738
 HH243,A,door closed 08/11/2021,infoupd,1320489738
+HH245,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1321741162
 HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1260,6 +1270,7 @@ HH54,A,Spectre: N4P3N,infoupd,1318668140
 HH56,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH223,A,Spectre: N19P5N,infoupd,1320075740
 HH69,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH245,A,Spectre: N20P3N,infoupd,1321741164
 HH70,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH43,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH44,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1333,6 +1344,7 @@ HH224,A,Spectre: N19P6E,infoupd,1320075738
 HH185,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
 HH186,A, ,infoupd,1282416138
 HH75,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
+HH246,A,Spectre: N20P4E,infoupd,1321741158
 HH81,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
 HH82,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
 HH83,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
@@ -1365,6 +1377,7 @@ HH56,A,Spectre: N4P4N,infoupd,1318668140
 HH117,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
 HH224,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1320075740
 HH118,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
+HH246,A,Spectre: N20P3N,infoupd,1321741160
 HH28,A,Feed heights (NE/SE/SW/NW): Z = 4.402,apa-infoupd,1284255738
 HH29,A,Feed heights (NE/SE/SW/NW): Z = 4.403,apa-infoupd,1284255738
 HH6,A,cable too short to reach Node ,apa-infoupd,1284255738
@@ -1427,6 +1440,7 @@ HH69,A,Spectre: N4P5E,infoupd,1318668138
 HH144,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH224,A,Spectre: N19P6N,infoupd,1320075742
 HH145,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
+HH261,A,door closed 19/11/2021,infoupd,1321741158
 HH163,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH164,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
 HH165,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
@@ -1478,6 +1492,7 @@ HH69,A,Spectre: N4P5N,infoupd,1318668140
 HH67,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
 HH225,A,Spectre: N19P7E,infoupd,1320075738
 HH68,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
+HH261,A,Spectre: N20P4E,infoupd,1321741160
 HH107,A,107 SNAP autos have a fine shape; N pol is lower amplidude. DN autos look the same. 21 Sept. ,infoupd,1284756138
 HH107,A,107 SNAP autos have a fine shape; N pol is lower amplidude. DN autos look the same. 21 Sept.,infoupd,1284756140
 HH184,A,Ant 184 N newly high under and over the bandpass; bandpass looks flatter than expected. See Observing review for day 591115 issue. ,apa-infoupd,1284853338
@@ -1510,6 +1525,7 @@ HH71,A,Feed heights: Ant 71 Z = 4.410 from jig,infoupd,1284925338
 HH72,A,Feed heights: Ant 72 Z = 4.413 from jig,infoupd,1284925338
 HH40,A,Spectre: N4P6E,infoupd,1318668138
 HH225,A,Spectre: N19P7N,infoupd,1320075740
+HH261,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1321741162
 HH123,A,SNAP autos look like no sky; moved from rf_ok to rf_maint,infoupd,1284943338
 HH67,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1285018938
 HH84,A,apriori_antenna status change: RF_ok -> RF_maintenance,apa-infoupd,1285018938
@@ -1598,9 +1614,11 @@ HH186,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,128551573
 HH187,A,apriori_antenna status change: RF_ok -> digital_ok,apa-infoupd,1285515738
 HH40,A,Spectre: N4P6N,infoupd,1318668140
 HH226,A,Spectre: N19P8E,infoupd,1320075738
+HH261,A,Spectre: N20P4N,infoupd,1321741164
 RD16,A,IP - 10.80.2.216,,1267095678
 HH55,A,Spectre: N4P7E,infoupd,1318668138
 HH226,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1320075740
+HH227,A,door closed 19/11/2021,infoupd,1321741158
 HH0,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
 HH1,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
 HH11,A,placing in dig_maint from rf_ok 29 Sept. ,infoupd,1285519338
@@ -1702,6 +1720,7 @@ HH75,A,sbcd 17 Sept due to low N post-PAM spectra,infoupd,1285954938
 HH226,A,Spectre: N19P8N,infoupd,1320075742
 HH84,A,N8A84 E is low amplitude. Moving from RF_ok to RF_maint. 24 Sept.,infoupd,1285954938
 HH85,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
+HH228,A,Spectre: N20P11E,infoupd,1321741158
 HH86,A,N8A86 N shows unexpected bump around 200 MHz. Moving from RF_ok to RF_maint. 24 Sept.,infoupd,1285954938
 HH104,A,reported sync ok by dgorki Aug 7,infoupd,1285954938
 RD04,A,MAC - 02:02:0a:01:01:cc,,1267095618
@@ -1778,11 +1797,13 @@ HH148,A,59131 SNAP auto look fine. No DN to check other metrics,infoupd,12862069
 HH149,A,59131 N15A149 n SNAP auto has unexpected wobbles.,infoupd,1286206938
 HH150,A,59131 N15A150 SNAP auto looks like sky/load.,apa-infoupd,1286206938
 HH168,A,59131 N15A149 n SNAP auto has unexpected glitch @ 213 MHz,apa-infoupd,1286206938
+HH228,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1321741160
 WR-len4p0,A,MAC - 08:00:30:50:e8:17,,1267095618
 HH148,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1286642598
 HH148,A,Broken fibre report by Thaki on 10/13/20,apa-infoupd,1286642538
 HH71,A,Spectre: N4P8N,infoupd,1318668140
 HH241,A,Spectre: N19P10E,infoupd,1320075738
+HH228,A,Spectre: N20P11N,infoupd,1321741162
 HH27,A,Feed heights (NE/SE/SW/NW): something wrong with fiber,infoupd,1294504938
 WRA000087,A,IP - 10.80.2.199,,1267095678
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
@@ -1847,6 +1868,7 @@ WRA000201,A,IP - 10.80.2.132,,1267095238
 HH81,A,https://github.com/HERA-Team/HERA_Commissioning/issues/659,apa-infoupd,1299519738
 HH241,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1320075740
 HH138,A,https://github.com/HERA-Team/HERA_Commissioning/issues/659,apa-infoupd,1299519738
+HH229,A,door closed 19/11/2021,infoupd,1321741158
 HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1299526998
 HH94,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1299526998
 HH98,A,apriori_antenna status change: digital_ok > digital_maintenance,apa-infoupd,1299526998
@@ -1871,6 +1893,7 @@ HH70,A,Spectre: N4P9N,infoupd,1318668140
 HH166,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
 HH241,A,Spectre: N19P10N,infoupd,1320075742
 HH184,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,infoupd,1299526938
+HH229,A,Spectre: N20P12E,infoupd,1321741160
 HH187,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
 HH100,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
 HH119,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
@@ -1962,6 +1985,7 @@ SNPC000129,A,MAC - 00:36:2f:9d:17:01,,1304938818
 HH134,A,cables too short,infoupd,1309833738
 HH41,A,Spectre: N4P10E,infoupd,1318668138
 HH242,A,Spectre: N19P11E,infoupd,1320075738
+HH229,A,Spectre: N20P12N,infoupd,1321741162
 HH27,A,Antenna is not raised and entire door sector is out.,infoupd,1317994938
 HH41,A,Cables running down from feed are not secured to tether rope.,infoupd,1317994938
 HH108,A,History: The 108 marker fell off of the north pole.,infoupd,1317994938
