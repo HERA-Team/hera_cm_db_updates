@@ -41,7 +41,7 @@ class Update():
         else:
             self.script = '{}_{}_{}'.format(self.cdate.replace('/', '')[2:], script_type,
                                             self.ctime.replace(':', ''))
-            self.script = os.path.join(self.script_path)
+            self.script = os.path.join(self.script_path, self.script)
         self.hera = signal_chain.Update(script_to_run=self.script,
                                         chmod=True, verbose=verbose,
                                         cdate=self.cdate, ctime=self.ctime)
