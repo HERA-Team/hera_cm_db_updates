@@ -75,16 +75,15 @@ class Update():
         self.hera.done()
         if self.script is None or (cron_script is None and archive_to is None):
             return
-        script = os.path.join(self.script_path, self.script)
         if cron_script is not None:
             cron_script = os.path.join(self.script_path, cron_script)
             if os.path.exists(cron_script):
                 os.remove(cron_script)
 
         if self.update_counter == 0:
-            os.remove(script)
+            os.remove(self.script)
             if self.verbose:
-                print("No updates found.  Deleting {}.".format(script))
+                print("No updates found.  Removing {}.".format(self.script))
             if cron_script is not None:
                 with open(cron_script, 'w') as fp:
                     fp.write('\n')
@@ -92,15 +91,15 @@ class Update():
                     print("Writing empty {}.".format(cron_script))
         else:
             if archive_to is not None:
-                os.system('cp {} {}'.format(script, archive_to))
+                os.system('cp {} {}'.format(self.script, archive_to))
                 if self.verbose:
-                    print("Copying {}  -->  {}".format(script, archive_to))
+                    print("Copying {}  -->  {}".format(self.script, archive_to))
             if cron_script is not None:
-                os.rename(script, cron_script)
+                os.rename(self.script, cron_script)
                 if self.verbose:
-                    print("Copying {}  -->  {}".format(script, cron_script))
+                    print("Copying {}  -->  {}".format(self.script, cron_script))
             else:
-                os.remove(script)
+                os.remove(self.script)
 
         if os.path.exists(cron_script):
             os.chmod(cron_script, 0o755)

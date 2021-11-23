@@ -19,9 +19,9 @@ if __name__ == '__main__':
     ap.add_argument('-n', '--node_csv', help="For testing: flag for read/write of gsheet (r/w/n)",
                     choices=['read', 'write', 'none', 'r', 'w', 'n'], default='n')
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
-    ap.add_argument('-d', '--duplication_window',
+    ap.add_argument('-d', '--duplication_window', type=float,
                     help="Number of days to use for duplicate comments.", default=180.0)
-    ap.add_argument('--view_duplicate',
+    ap.add_argument('--view_duplicate', type=float,
                     help='In verbose, only show duplicates after this many days', default=0.0)
     ap.add_argument('--look_only', help='Flag to only look at data.', action='store_true')
     ap.add_argument('--time_tag', help='Flag to add time to node csv filename', action='store_true')
@@ -43,8 +43,6 @@ else:
 if args.time_tag:
     args.time_tag = '_%y%m%d'
 
-args.duplication_window = float(args.duplication_window)
-args.view_duplicate = float(args.view_duplicate)
 update = upd_info.UpdateInfo(script_type=script_type,
                              script_path=args.script_path,
                              verbose=args.verbose)
