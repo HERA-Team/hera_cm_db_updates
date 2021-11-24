@@ -97,7 +97,7 @@ class Update():
             if cron_script is not None:
                 os.rename(self.script, cron_script)
                 if self.verbose:
-                    print("Copying {}  -->  {}".format(self.script, cron_script))
+                    print("Moving {}  -->  {}".format(self.script, cron_script))
             else:
                 os.remove(self.script)
 
