@@ -3,7 +3,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Spect
 65,N,95,127,1,125,C1,N0,0,RF_maintenance,,,N3P1N,
 66,E,76,135,2,126,C1,E6,0,digital_ok,,,N3P2E,
 66,N,76,135,2,126,C1,N4,0,digital_ok,,,N3P2N,
-67,E,88,126,3,127,C1,E10,0,digital_ok,,,N3P3E,
+67,E,88,126,3,127,C1,E10,0,digital_ok,,Pam 124 was taken out of node 5,N3P3E,
 67,N,88,126,3,127,C1,N8,0,digital_ok,,,N3P3N,
 68,E,77,128,4,124,C2,E2,1,digital_ok,,,N3P4E,
 68,N,77,128,4,124,C2,N0,1,digital_ok,,,N3P4N,
