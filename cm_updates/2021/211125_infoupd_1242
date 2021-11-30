@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/211125_infoupd_1242" >> scripts.log 
+add_part_info.py -p HH67 -r A -c 'Pam 124 was taken out of node 5' -l "infoupd" --date 2021/11/25 --time 12:42:00

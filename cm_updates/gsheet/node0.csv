@@ -19,7 +19,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,,Comments
 24,N,12,43,9,30,A24,n8,2,RF_maintenance,, ,
 25,E,6,25,10,51,A20,e2,3,RF_maintenance,,,
 25,N,6,25,10,51,A20,n0,3,RF_maintenance,, ,
-26,E,7,27,11,32,A20,e6,3,RF_maintenance,,N3P11E,
+26,E,7,27,11,32,A20,e6,3,RF_maintenance,,,
 26,N,7,27,11,32,A20,n4,3,RF_maintenance,, ,
 39,E,14,42,12,33,A20,e10,3,RF_maintenance,,,
 39,N,14,42,12,33,A20,n8,3,RF_maintenance,, ,
