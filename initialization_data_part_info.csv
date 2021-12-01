@@ -755,6 +755,7 @@ HH200,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoup
 HH241,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347398
 HH245,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347398
 HH101,A,History: FEM: 58,infoupd,1264193598
+HH240,A,door closed 10/11/2021,infoupd,1322412138
 HH103,A,History: FEM: 60,infoupd,1264193598
 HH89,A,History: PAM: 43,infoupd,1264193598
 HH124,A,History: PAM: 42,infoupd,1264193598
@@ -799,6 +800,7 @@ HH242,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347
 HH56,A,SNAPloc: 1,infoupd,1264203738
 HH246,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoupd,1322347398
 HH57,A,SNAPloc: 3,infoupd,1264203738
+HH240,A,Spectre: N19P9E,infoupd,1322412140
 HH69,A,SNAPloc: 1,infoupd,1264203738
 HH70,A,SNAPloc: 2,infoupd,1264203738
 HH71,A,SNAPloc: 2,infoupd,1264203738
@@ -869,6 +871,7 @@ HH243,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347
 HH127,A,SNAPloc: 2,infoupd,1264203738
 HH261,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347398
 HH128,A,SNAPloc: 2,infoupd,1264203738
+HH240,A,Spectre: N19P9N,infoupd,1322412142
 HH129,A,SNAPloc: 3,infoupd,1264203738
 HH130,A,SNAPloc: 3,infoupd,1264203738
 HH135,A,SNAPloc: 2,infoupd,1264236138
@@ -933,6 +936,7 @@ HH244,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoup
 HH142,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
 HH262,A,apriori_antenna status change: not_connected > dish_maintenance,apa-infoupd,1322347398
 HH160,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
+HH244,A,door closed 19/11/2021,infoupd,1322412138
 HH161,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
 HH162,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
 HH180,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
@@ -1032,6 +1036,7 @@ HH244,A,Spectre: N2OP2E,infoupd,1321741158
 HH89,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH204,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoupd,1322347398
 HH90,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
+HH244,A,Spectre: N20P2E,infoupd,1322412140
 HH91,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH105,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH106,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
@@ -1164,6 +1169,7 @@ HH206,A,Spectre: N19P3N,infoupd,1320075740
 HH225,A,door closed 08/11/2021,infoupd,1320489738
 HH244,A,Feed heights (NE/SE/SW/NW): 4.399,infoupd,1321741160
 HH205,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347398
+HH246,A,After raising feed the N channel became low,infoupd,1322412138
 SNPC000031,A,MAC - 00:39:9a:e1:17:01,,1269252018
 SNPC000031,A,IP - 10.80.40.56,,1269252078
 SNPC000032,A,MAC - 00:23:15:5d:16:04,,1269252018
@@ -1232,6 +1238,7 @@ HH207,A,Spectre: N19P4E,infoupd,1320075738
 HH226,A,door closed 08/11/2021,infoupd,1320489738
 HH244,A,Spectre: N20P2N,infoupd,1321741162
 HH206,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347398
+HH262,A,"Both Chanels are low, did all the checklist but nothing changed",infoupd,1322412138
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 ND05,A,Door direction: NE,,1280318418
 HH42,A,Spectre: N4P2E,infoupd,1318668138
@@ -1240,6 +1247,7 @@ HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1320075740
 HH241,A,door closed 08/11/2021,infoupd,1320489738
 HH245,A,door closed 19/11/2021,infoupd,1321741158
 HH207,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347398
+HH208,A,both channels dead,infoupd,1322412138
 HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1272926538
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
@@ -1247,6 +1255,7 @@ HH207,A,Spectre: N19P4N,infoupd,1320075742
 HH242,A,door closed 08/11/2021,infoupd,1320489738
 HH245,A,Spectre: N20P3E,infoupd,1321741160
 HH208,A,apriori_antenna status change: not_connected > dish_maintenance,apa-infoupd,1322347398
+HH209,A,both channels dead,infoupd,1322412138
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1268,6 +1277,7 @@ HH223,A,Spectre: N19P5E,infoupd,1320075738
 HH243,A,door closed 08/11/2021,infoupd,1320489738
 HH245,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1321741162
 HH209,A,apriori_antenna status change: not_connected > dish_maintenance,apa-infoupd,1322347398
+HH210,A,boths chanels dead,infoupd,1322412138
 HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1296,6 +1306,7 @@ HH245,A,Spectre: N20P3N,infoupd,1321741164
 HH70,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH210,A,apriori_antenna status change: not_connected > dish_maintenance,apa-infoupd,1322347398
 HH43,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH228,A,door closed 19/11/2021,infoupd,1322412138
 HH44,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH45,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH46,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1371,6 +1382,7 @@ HH246,A,Spectre: N20P4E,infoupd,1321741158
 HH81,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
 HH211,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347398
 HH82,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
+HH229,A,Feed heights (NE/SE/SW/NW): 4.398,infoupd,1322412138
 HH83,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
 HH101,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
 HH169,A,Feed heights (NE/SE/SW/NW): Z= 4.406,infoupd,1283506938
