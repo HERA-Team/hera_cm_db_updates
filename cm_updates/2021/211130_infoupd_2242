@@ -1,0 +1,73 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/211130_infoupd_2242" >> scripts.log 
+update_apriori.py -p HH200 -s RF_maintenance --date 2021/11/30 --time 22:43
+add_part_info.py -p HH200 -r A -c 'apriori_antenna status change: not_connected > RF_maintenance' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH201 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH201 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH202 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH202 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH203 -s RF_maintenance --date 2021/11/30 --time 22:43
+add_part_info.py -p HH203 -r A -c 'apriori_antenna status change: not_connected > RF_maintenance' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH204 -s RF_maintenance --date 2021/11/30 --time 22:43
+add_part_info.py -p HH204 -r A -c 'apriori_antenna status change: not_connected > RF_maintenance' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH205 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH205 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH206 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH206 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH207 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH207 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH208 -s dish_maintenance --date 2021/11/30 --time 22:43
+add_part_info.py -p HH208 -r A -c 'apriori_antenna status change: not_connected > dish_maintenance' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH209 -s dish_maintenance --date 2021/11/30 --time 22:43
+add_part_info.py -p HH209 -r A -c 'apriori_antenna status change: not_connected > dish_maintenance' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH210 -s dish_maintenance --date 2021/11/30 --time 22:43
+add_part_info.py -p HH210 -r A -c 'apriori_antenna status change: not_connected > dish_maintenance' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH211 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH211 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH219 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH219 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH220 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH220 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH221 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH221 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH222 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH222 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH223 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH223 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH224 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH224 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH225 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH225 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH226 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH226 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH227 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH227 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH228 -s RF_maintenance --date 2021/11/30 --time 22:43
+add_part_info.py -p HH228 -r A -c 'apriori_antenna status change: not_connected > RF_maintenance' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH229 -s RF_maintenance --date 2021/11/30 --time 22:43
+add_part_info.py -p HH229 -r A -c 'apriori_antenna status change: not_connected > RF_maintenance' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH237 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH237 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH238 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH238 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH239 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH239 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH240 -s RF_maintenance --date 2021/11/30 --time 22:43
+add_part_info.py -p HH240 -r A -c 'apriori_antenna status change: not_connected > RF_maintenance' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH241 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH241 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH242 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH242 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH243 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH243 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH244 -s RF_maintenance --date 2021/11/30 --time 22:43
+add_part_info.py -p HH244 -r A -c 'apriori_antenna status change: not_connected > RF_maintenance' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH245 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH245 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH246 -s RF_maintenance --date 2021/11/30 --time 22:43
+add_part_info.py -p HH246 -r A -c 'apriori_antenna status change: not_connected > RF_maintenance' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH261 -s RF_ok --date 2021/11/30 --time 22:43
+add_part_info.py -p HH261 -r A -c 'apriori_antenna status change: not_connected > RF_ok' -l "apa-infoupd" --date 2021/11/30 --time 22:43
+update_apriori.py -p HH262 -s dish_maintenance --date 2021/11/30 --time 22:43
+add_part_info.py -p HH262 -r A -c 'apriori_antenna status change: not_connected > dish_maintenance' -l "apa-infoupd" --date 2021/11/30 --time 22:43
