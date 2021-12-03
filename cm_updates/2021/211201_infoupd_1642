@@ -1,0 +1,15 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/211201_infoupd_1642" >> scripts.log 
+add_part_info.py -p HH240 -r A -c 'door closed 10/11/2021' -l "infoupd" --date 2021/12/01 --time 16:42:00
+add_part_info.py -p HH240 -r A -c 'Spectre: N19P9E' -l "infoupd" --date 2021/12/01 --time 16:42:02
+add_part_info.py -p HH240 -r A -c 'Spectre: N19P9N' -l "infoupd" --date 2021/12/01 --time 16:42:04
+add_part_info.py -p HH244 -r A -c 'door closed 19/11/2021' -l "infoupd" --date 2021/12/01 --time 16:42:00
+add_part_info.py -p HH244 -r A -c 'Spectre: N20P2E' -l "infoupd" --date 2021/12/01 --time 16:42:02
+add_part_info.py -p HH246 -r A -c 'After raising feed the N channel became low' -l "infoupd" --date 2021/12/01 --time 16:42:00
+add_part_info.py -p HH262 -r A -c 'Both Chanels are low, did all the checklist but nothing changed' -l "infoupd" --date 2021/12/01 --time 16:42:00
+add_part_info.py -p HH208 -r A -c 'both channels dead' -l "infoupd" --date 2021/12/01 --time 16:42:00
+add_part_info.py -p HH209 -r A -c 'both channels dead' -l "infoupd" --date 2021/12/01 --time 16:42:00
+add_part_info.py -p HH210 -r A -c 'boths chanels dead' -l "infoupd" --date 2021/12/01 --time 16:42:00
+add_part_info.py -p HH228 -r A -c 'door closed 19/11/2021' -l "infoupd" --date 2021/12/01 --time 16:42:00
+add_part_info.py -p HH229 -r A -c 'Feed heights (NE/SE/SW/NW): 4.398' -l "infoupd" --date 2021/12/01 --time 16:42:00
