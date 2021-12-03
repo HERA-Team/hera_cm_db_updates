@@ -68,14 +68,21 @@ class Checks:
         fnd = {}
         hookup = cm_hookup.Hookup()
         for hpn, data in self.active.info.items():
-            xhpn, xrev = cm_utils.split_part_key(hpn)
-            xx = hookup.get_hookup(xhpn)
-            node = xx[hpn].hookup.popitem()[-1][-1].downstream_port
+            found_one_yet = False
             for entry in data:
                 if entry.posting_gpstime >= look_gps:
+                    if not found_one_yet:  # Get node
+                        found_one_yet = True
+                        xhpn, xrev = cm_utils.split_part_key(hpn)
+                        xx = hookup.get_hookup(xhpn)
+                        try:
+                            node = xx[hpn].hookup.popitem()[-1][-1].downstream_part
+                        except:  # noqa
+                            node = 'N/A'
                     key = f"{entry.posting_gpstime}:{hpn}"
                     datet = cm_utils.get_astropytime(entry.posting_gpstime, float_format='gps')
                     fnd[key] = [hpn, node, entry.comment, datet.isot]
+
         with open(outfile, 'w') as fp:
             writer = csv.writer(fp)
             for key in sorted(fnd.keys(), reverse=True):

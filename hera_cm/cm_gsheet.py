@@ -62,14 +62,18 @@ class SheetData:
 
         Currently, this is the apriori enums and emails.
         """
-        xxx = requests.get(WORKFLOW)
+        self.workflow = {}
+        self.apriori_enum = []
+        self.apriori_email = {}
+        try:
+            xxx = requests.get(WORKFLOW)
+        except:  # noqa
+            print(f"Error reading {WORKFLOW}")
+            return
         csv_tab = b''
         for line in xxx:
             csv_tab += line
         csv_data = csv_tab.decode('utf-8').splitlines()
-        self.workflow = {}
-        self.apriori_enum = []
-        self.apriori_email = {}
         capture_enums = False
         for data in csv.reader(csv_data):
             self.workflow[data[0]] = data[1:]
@@ -88,12 +92,16 @@ class SheetData:
                             nent.notify.append(data[0])
 
     def load_node_notes(self):
-        xxx = requests.get(NodeNotes)
+        self.node_notes = []
+        try:
+            xxx = requests.get(NodeNotes)
+        except:  # noqa
+            print(f"Error reading {NodeNotes}")
+            return
         csv_tab = b''
         for line in xxx:
             csv_tab += line
         _nodenotes = csv_tab.decode('utf-8').splitlines()
-        self.node_notes = []
         for nn in csv.reader(_nodenotes):
             self.node_notes.append(nn)
 
@@ -137,7 +145,11 @@ class SheetData:
                     for line in fp:
                         csv_data.append(line)
             else:
-                xxx = requests.get(gsheet[tab])
+                try:
+                    xxx = requests.get(gsheet[tab])
+                except:  # noqa
+                    print(f"Error reading {gsheet[tab]}")
+                    return
                 csv_tab = b''
                 for line in xxx:
                     csv_tab += line
