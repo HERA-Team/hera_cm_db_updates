@@ -757,6 +757,7 @@ HH245,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347
 HH101,A,History: FEM: 58,infoupd,1264193598
 HH240,A,door closed 10/11/2021,infoupd,1322412138
 HH134,A,cables too short,infoupd,1325389338
+HH210,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1327599738
 HH103,A,History: FEM: 60,infoupd,1264193598
 HH89,A,History: PAM: 43,infoupd,1264193598
 HH124,A,History: PAM: 42,infoupd,1264193598

@@ -15,7 +15,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Spect
 208,N,195,259,7,263,C85,n0,2,dish_maintenance,,,,,
 209,E,196,265,8,264,C85,e6,2,dish_maintenance,,both channels dead ,,,
 209,N,196,265,8,264,C85,n4,2,dish_maintenance,,,,,
-210,E,190,260,9,265,C85,e10,2,dish_maintenance,,boths chanels dead ,,,
+210,E,190,260,9,265,C85,e10,2,dish_maintenance,,,,4.408,
 210,N,190,260,9,265,C85,n8,2,dish_maintenance,,,,,
 227,E,186,255,10,266,C86,e2,3,RF_ok,,door closed 19/11/2021,N20P10E,4.406,
 227,N,186,255,10,266,C86,n0,3,RF_ok,,,N20P10N,,
