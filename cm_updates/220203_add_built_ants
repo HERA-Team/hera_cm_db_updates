@@ -1,0 +1,38 @@
+#! /bin/bash
+echo "220203_add_built_ants" >> scripts.log 
+add_station.py HB329 --sernum 339 --date 2022/01/24 --time 10:00
+add_part.py -p A329 -r H -t antenna -m H339 --date 2022/01/24 --time 10:00
+add_connection.py -u HB329 --uprev A --upport ground -d A329 --dnrev H --dnport ground --date 2022/01/24 --time 10:00
+add_station.py HB333 --sernum 340 --date 2022/01/24 --time 10:00
+add_part.py -p A333 -r H -t antenna -m H340 --date 2022/01/24 --time 10:00
+add_connection.py -u HB333 --uprev A --upport ground -d A333 --dnrev H --dnport ground --date 2022/01/24 --time 10:00
+add_station.py HB337 --sernum 341 --date 2022/01/24 --time 10:00
+add_part.py -p A337 -r H -t antenna -m H341 --date 2022/01/24 --time 10:00
+add_connection.py -u HB337 --uprev A --upport ground -d A337 --dnrev H --dnport ground --date 2022/01/24 --time 10:00
+add_station.py HB341 --sernum 342 --date 2022/01/24 --time 10:00
+add_part.py -p A341 -r H -t antenna -m H342 --date 2022/01/24 --time 10:00
+add_connection.py -u HB341 --uprev A --upport ground -d A341 --dnrev H --dnport ground --date 2022/01/24 --time 10:00
+add_station.py HA342 --sernum 343 --date 2022/01/25 --time 10:00
+add_part.py -p A342 -r H -t antenna -m H343 --date 2022/01/25 --time 10:00
+add_connection.py -u HA342 --uprev A --upport ground -d A342 --dnrev H --dnport ground --date 2022/01/25 --time 10:00
+add_station.py HA343 --sernum 344 --date 2022/01/24 --time 10:00
+add_part.py -p A343 -r H -t antenna -m H344 --date 2022/01/24 --time 10:00
+add_connection.py -u HA343 --uprev A --upport ground -d A343 --dnrev H --dnport ground --date 2022/01/24 --time 10:00
+add_station.py HA344 --sernum 345 --date 2022/01/24 --time 10:00
+add_part.py -p A344 -r H -t antenna -m H345 --date 2022/01/24 --time 10:00
+add_connection.py -u HA344 --uprev A --upport ground -d A344 --dnrev H --dnport ground --date 2022/01/24 --time 10:00
+add_station.py HB345 --sernum 346 --date 2022/01/24 --time 10:00
+add_part.py -p A345 -r H -t antenna -m H346 --date 2022/01/24 --time 10:00
+add_connection.py -u HB345 --uprev A --upport ground -d A345 --dnrev H --dnport ground --date 2022/01/24 --time 10:00
+add_station.py HB346 --sernum 347 --date 2022/01/25 --time 10:00
+add_part.py -p A346 -r H -t antenna -m H347 --date 2022/01/25 --time 10:00
+add_connection.py -u HB346 --uprev A --upport ground -d A346 --dnrev H --dnport ground --date 2022/01/25 --time 10:00
+add_station.py HB347 --sernum 348 --date 2022/01/25 --time 10:00
+add_part.py -p A347 -r H -t antenna -m H348 --date 2022/01/25 --time 10:00
+add_connection.py -u HB347 --uprev A --upport ground -d A347 --dnrev H --dnport ground --date 2022/01/25 --time 10:00
+add_station.py HB348 --sernum 349 --date 2022/01/25 --time 10:00
+add_part.py -p A348 -r H -t antenna -m H349 --date 2022/01/25 --time 10:00
+add_connection.py -u HB348 --uprev A --upport ground -d A348 --dnrev H --dnport ground --date 2022/01/25 --time 10:00
+add_station.py HB349 --sernum 350 --date 2022/01/25 --time 10:00
+add_part.py -p A349 -r H -t antenna -m H350 --date 2022/01/25 --time 10:00
+add_connection.py -u HB349 --uprev A --upport ground -d A349 --dnrev H --dnport ground --date 2022/01/25 --time 10:00

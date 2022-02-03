@@ -52,14 +52,17 @@ class Update:
         self.active = cm_active.ActiveData()
         self.load_active(cdate=None)
         self.handle = cm_handling.Handling()
-        self.script_to_run = script_to_run
         if script_to_run is None:
             print("No script file started.  It'll probably error out.")
             self.script_to_run = None
         else:
+            if script_to_run.startswith('./'):
+                script_to_run = script_to_run.strip('./')
+            if script_to_run.endswith('.py'):
+                script_to_run = script_to_run.split('.')[0]
             if self.verbose:
-                print("Writing script {}".format(self.script_to_run))
-            self.fp = open(self.script_to_run, 'w')
+                print("Writing script {}".format(script_to_run))
+            self.fp = open(script_to_run, 'w')
             s = '#! /bin/bash\n'
             unameInfo = os.uname()
             if unameInfo.sysname == 'Linux':
@@ -68,6 +71,7 @@ class Update:
             self.fp.write(s)
             if self.verbose:
                 print('-----------------')
+        self.script_to_run = script_to_run
 
     # THESE ARE NEW COMPONENTS - eventually break out with a parent class
     # General order:

@@ -68,7 +68,9 @@ class SheetData:
         try:
             xxx = requests.get(WORKFLOW)
         except:  # noqa
-            print(f"Error reading {WORKFLOW}")
+            import sys
+            e = sys.exc_info()[0]
+            print(f"Error reading {WORKFLOW}:  {e}")
             return
         csv_tab = b''
         for line in xxx:
@@ -96,7 +98,9 @@ class SheetData:
         try:
             xxx = requests.get(NodeNotes)
         except:  # noqa
-            print(f"Error reading {NodeNotes}")
+            import sys
+            e = sys.exc_info()[0]
+            print(f"Error reading {NodeNotes}:  {e}")
             return
         csv_tab = b''
         for line in xxx:
@@ -148,7 +152,9 @@ class SheetData:
                 try:
                     xxx = requests.get(gsheet[tab])
                 except:  # noqa
-                    print(f"Error reading {gsheet[tab]}")
+                    import sys
+                    e = sys.exc_info()[0]
+                    print(f"Error reading {gsheet[tab]}: {e}")
                     return
                 csv_tab = b''
                 for line in xxx:
