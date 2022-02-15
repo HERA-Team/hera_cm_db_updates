@@ -758,6 +758,7 @@ HH101,A,History: FEM: 58,infoupd,1264193598
 HH240,A,door closed 10/11/2021,infoupd,1322412138
 HH134,A,cables too short,infoupd,1325389338
 HH210,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1327599738
+HH210,A,Door closed 9/2/22,infoupd,1328960538
 HH103,A,History: FEM: 60,infoupd,1264193598
 HH89,A,History: PAM: 43,infoupd,1264193598
 HH124,A,History: PAM: 42,infoupd,1264193598
@@ -804,6 +805,7 @@ HH246,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoup
 HH57,A,SNAPloc: 3,infoupd,1264203738
 HH240,A,Spectre: N19P9E,infoupd,1322412140
 HH69,A,SNAPloc: 1,infoupd,1264203738
+HH210,A,Spectre: N20P9E,infoupd,1328960540
 HH70,A,SNAPloc: 2,infoupd,1264203738
 HH71,A,SNAPloc: 2,infoupd,1264203738
 HH72,A,SNAPloc: 0,infoupd,1264203738
@@ -875,6 +877,7 @@ HH261,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347
 HH128,A,SNAPloc: 2,infoupd,1264203738
 HH240,A,Spectre: N19P9N,infoupd,1322412142
 HH129,A,SNAPloc: 3,infoupd,1264203738
+HH210,A,Spectre: N20P9N,infoupd,1328960542
 HH130,A,SNAPloc: 3,infoupd,1264203738
 HH135,A,SNAPloc: 2,infoupd,1264236138
 HH136,A,SNAPloc: 3,infoupd,1264236138
