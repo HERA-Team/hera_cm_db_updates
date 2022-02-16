@@ -760,6 +760,7 @@ HH134,A,cables too short,infoupd,1325389338
 HH210,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1327599738
 HH210,A,Door closed 9/2/22,infoupd,1328960538
 HH103,A,History: FEM: 60,infoupd,1264193598
+HH22,A,Feed heights (NE/SE/SW/NW): 4.402,infoupd,1329061338
 HH89,A,History: PAM: 43,infoupd,1264193598
 HH124,A,History: PAM: 42,infoupd,1264193598
 HH0,A,SNAPloc: 0,infoupd,1264203738
@@ -807,6 +808,7 @@ HH240,A,Spectre: N19P9E,infoupd,1322412140
 HH69,A,SNAPloc: 1,infoupd,1264203738
 HH210,A,Spectre: N20P9E,infoupd,1328960540
 HH70,A,SNAPloc: 2,infoupd,1264203738
+HH34,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1329061338
 HH71,A,SNAPloc: 2,infoupd,1264203738
 HH72,A,SNAPloc: 0,infoupd,1264203738
 HH45,A,SNAPloc: 0,infoupd,1264203738
@@ -879,6 +881,7 @@ HH240,A,Spectre: N19P9N,infoupd,1322412142
 HH129,A,SNAPloc: 3,infoupd,1264203738
 HH210,A,Spectre: N20P9N,infoupd,1328960542
 HH130,A,SNAPloc: 3,infoupd,1264203738
+HH35,A,Feed heights (NE/SE/SW/NW): 4.415,infoupd,1329061338
 HH135,A,SNAPloc: 2,infoupd,1264236138
 HH136,A,SNAPloc: 3,infoupd,1264236138
 HH155,A,SNAPloc: 2,infoupd,1264236138
@@ -943,6 +946,7 @@ HH262,A,apriori_antenna status change: not_connected > dish_maintenance,apa-info
 HH160,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
 HH244,A,door closed 19/11/2021,infoupd,1322412138
 HH161,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
+HH47,A,Feed heights (NE/SE/SW/NW): 4.41,infoupd,1329061338
 HH162,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
 HH180,A,Preliminary post-PAM spectra looks fine,infoupd,1265132538
 HH180,A,Preliminary post-PAM spectra is very low amplitude but not dead,infoupd,1265132540
@@ -1043,6 +1047,7 @@ HH204,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoup
 HH90,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH244,A,Spectre: N20P2E,infoupd,1322412140
 HH91,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
+HH61,A,Feed heights (NE/SE/SW/NW): 4.413,infoupd,1329061338
 HH105,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH106,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH107,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
