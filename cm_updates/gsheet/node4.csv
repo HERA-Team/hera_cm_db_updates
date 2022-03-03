@@ -1,7 +1,7 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed heights,Spectre,Feed Installed By
 72,E,61,124,1,101,C22,E2,0,RF_ok,,,,N4P1E,
 72,N,61,124,1,101,C22,N0,0,RF_ok,,,,N4P1N,
-42,E,53,123,2,102,C22,E6,0,RF_maintenance,,,,N4P2E,
+42,E,53,123,2,102,C22,E6,0,RF_maintenance,,inner panel has popped up,,N4P2E,
 42,N,53,123,2,102,C22,N4,0,RF_maintenance,,,,N4P2N,
 54,E,54,120,3,112,C22,E10,0,RF_maintenance,,,,N4P3E,
 54,N,54,120,3,112,C22,N8,0,RF_maintenance,,,,N4P3N,

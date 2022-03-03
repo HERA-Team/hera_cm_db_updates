@@ -516,6 +516,7 @@ HH131,A,Feed heights (NE/SE/SW/NW): 4.398,infoupd,1329576138
 HH138,A,lowered,,1256644818
 HH113,A,Spectre: N11P12N,infoupd,1329590538
 HH84,A,height raised from 4.117m to 4.492m 10/31/19,,1256644818
+HH6,A,PAM is missing,infoupd,1330342938
 HH123,A,height raised from 4.041m to 4.406m 10/31/19,,1256644818
 HH88,A,height raised from 4.205m to 4.418m 10/31/19,,1256644818
 HH126,A,height raised from 4.15m to 4.446m 10/31/19,,1256644818
@@ -700,6 +701,7 @@ HH243,A,Spectre: N19P12N,infoupd,1320075740
 HH240,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoupd,1322347398
 HH34,A,door closed 18/02/22,infoupd,1329230538
 HH131,A,Spectre: N11P1E,infoupd,1329576140
+HH42,A,inner panel has popped up,infoupd,1330342938
 HH67,A,Spectra: N3P3E,infoupd,1318668138
 HH37,A,Spectra: N3P5E,infoupd,1318668138
 HH53,A,Spectra: N3P7N,infoupd,1318668140
@@ -777,6 +779,7 @@ HH35,A,door closed 18/02/22,infoupd,1329230538
 HH2,A,SNAPloc: 0,infoupd,1264203738
 HH131,A,Spectre: N11P1N,infoupd,1329576142
 HH11,A,SNAPloc: 1,infoupd,1264203738
+HH102,A,fiber shredded at hub of antenna,infoupd,1330342938
 HH12,A,SNAPloc: 1,infoupd,1264203738
 HH13,A,SNAPloc: 1,infoupd,1264203738
 HH14,A,SNAPloc: 2,infoupd,1264203738
@@ -828,6 +831,7 @@ HH47,A,door closed 18/02/22,infoupd,1329230538
 HH46,A,SNAPloc: 0,infoupd,1264203738
 HH132,A,Feed heights (NE/SE/SW/NW): 4.398,infoupd,1329576138
 HH73,A,SNAPloc: 0,infoupd,1264203738
+HH121,A,door is open,infoupd,1330342938
 HH59,A,SNAPloc: 1,infoupd,1264203738
 HH58,A,SNAPloc: 1,infoupd,1264203738
 HH44,A,SNAPloc: 1,infoupd,1264203738
@@ -905,6 +909,7 @@ HH61,A,door closed 18/02/22,infoupd,1329230538
 HH156,A,SNAPloc: 3,infoupd,1264236138
 HH132,A,Spectre: N11P6E,infoupd,1329576140
 HH157,A,SNAPloc: 2,infoupd,1264236138
+N01,A,Moved temperature sensor 1 to rest on top of pams,infoupd,1330342938
 HH158,A,SNAPloc: 3,infoupd,1264236138
 HH176,A,SNAPloc: 0,infoupd,1264236138
 HH177,A,SNAPloc: 1,infoupd,1264236138
@@ -977,6 +982,7 @@ HH183,A,"Preliminary post-PAM spectra shows 183 N, E dead",infoupd,1265132538
 HH132,A,Spectre: N11P6N,infoupd,1329576142
 HH116,A,Post-PAM spectra of 116E has a strange look.,infoupd,1265132538
 HH85,A,Feed down as of 31 Jan 2020,infoupd,1265132538
+N03,A,Removed NCM (NCM 5) for fixing,infoupd,1330342938
 HH101,A,101E and N look dead from post-PAM spectra taken the last week of Jan 2020,infoupd,1265132538
 HH102,A, ,infoupd,1265132538
 HH104,A,Feed down as of 31 Jan 2020,infoupd,1265132538
@@ -1079,6 +1085,7 @@ HH48,A,door closed 18/02/22,infoupd,1329230538
 HH108,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH114,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1329576138
 HH124,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
+N06,A,No plastic inside node,infoupd,1330342938
 HH125,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH126,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 HH101,A,"History: FEM: 58 until 10Mar2020, thence 153",infoupd,1267897338

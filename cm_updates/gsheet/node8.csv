@@ -1,5 +1,5 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
-102,E,40,153,1,10,C23,e2,0,digital_ok,,
+102,E,40,153,1,10,C23,e2,0,digital_ok,,fiber shredded at hub of antenna
 102,N,40,153,1,10,C23,n0,0,digital_ok,,
 85,E,36,55,2,11,C23,e6,0,digital_ok,,
 85,N,36,55,2,11,C23,n4,0,digital_ok,,
@@ -21,7 +21,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
 84,N,35,54,10,19,C56,n0,3,RF_maintenance,,
 123,E,45,65,11,20,C56,e6,3,RF_maintenance,,
 123,N,45,65,11,20,C56,n4,3,RF_maintenance,,
-121,E,43,63,12,208,C56,e10,3,RF_maintenance,,
+121,E,43,63,12,208,C56,e10,3,RF_maintenance,,door is open
 121,N,43,63,12,208,C56,n8,3,RF_maintenance,,
 Date:,2019/11/01,,,,,,,,,,
 NCM,1,,,,,,,,,,
