@@ -19,7 +19,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 180,N,119,167,11,171,47,n4,3,RF_maintenance,,,,
 181,E,120,169,12,172,47,e10,3,digital_ok,,,,
 181,N,120,169,12,172,47,n8,3,digital_ok,,,,
-139,E,,,,,,,,RF_maintenance,,,,
+139,E,,,,,,,,RF_maintenance,,"PAMS 165, 166 inside node as well",,
 139,N,,,,,,,,RF_maintenance,,,,
 159,E,,,,,,,,RF_maintenance,,,,
 159,N,,,,,,,,RF_maintenance,,,,
