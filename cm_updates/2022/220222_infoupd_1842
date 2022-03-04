@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220222_infoupd_1842" >> scripts.log 
+add_part_info.py -p HH113 -r A -c 'Spectre: N11P12N' -l "infoupd" --date 2022/02/22 --time 18:42:00

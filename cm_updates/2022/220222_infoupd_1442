@@ -1,0 +1,14 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220222_infoupd_1442" >> scripts.log 
+add_part_info.py -p HH131 -r A -c 'Feed heights (NE/SE/SW/NW): 4.398' -l "infoupd" --date 2022/02/22 --time 14:42:00
+add_part_info.py -p HH131 -r A -c 'Spectre: N11P1E' -l "infoupd" --date 2022/02/22 --time 14:42:02
+add_part_info.py -p HH131 -r A -c 'Spectre: N11P1N' -l "infoupd" --date 2022/02/22 --time 14:42:04
+add_part_info.py -p HH132 -r A -c 'Feed heights (NE/SE/SW/NW): 4.398' -l "infoupd" --date 2022/02/22 --time 14:42:00
+add_part_info.py -p HH132 -r A -c 'Spectre: N11P6E' -l "infoupd" --date 2022/02/22 --time 14:42:02
+add_part_info.py -p HH132 -r A -c 'Spectre: N11P6N' -l "infoupd" --date 2022/02/22 --time 14:42:04
+add_part_info.py -p HH114 -r A -c 'Feed heights (NE/SE/SW/NW): 4.406' -l "infoupd" --date 2022/02/22 --time 14:42:00
+add_part_info.py -p HH114 -r A -c 'Spectre: N11P9E' -l "infoupd" --date 2022/02/22 --time 14:42:02
+add_part_info.py -p HH114 -r A -c 'Spectre: N11P9N' -l "infoupd" --date 2022/02/22 --time 14:42:04
+add_part_info.py -p HH113 -r A -c 'Feed heights (NE/SE/SW/NW): 4.397' -l "infoupd" --date 2022/02/22 --time 14:42:00
+add_part_info.py -p HH113 -r A -c 'Spectre: N11P12E' -l "infoupd" --date 2022/02/22 --time 14:42:02

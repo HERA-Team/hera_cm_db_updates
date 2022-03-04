@@ -1,0 +1,8 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220304_infoupd_0742" >> scripts.log 
+add_part_info.py -p HH139 -r A -c 'PAMS 165, 166 inside node as well' -l "infoupd" --date 2022/03/04 --time 07:42:00
+add_part_info.py -p N07 -r A -c 'No plastic inside node, dusty inside, saw FPS 7 inside node but this doc says FPS 5 is installed' -l "infoupd" --date 2022/03/04 --time 07:42:00
+add_part_info.py -p N09 -r A -c 'no plastic inside node, dusty inside, chokes on snaps, PAM 42 not listed in node9 tab in this doc' -l "infoupd" --date 2022/03/04 --time 07:42:00
+add_part_info.py -p N14 -r A -c 'FPS16 inside node but FPS12 listed in this doc' -l "infoupd" --date 2022/03/04 --time 07:42:00
+add_part_info.py -p N18 -r A -c 'no plastic inside node, NCM 20 observed but NCM 12 listed in this doc' -l "infoupd" --date 2022/03/04 --time 07:42:00

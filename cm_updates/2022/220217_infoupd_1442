@@ -1,0 +1,27 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220217_infoupd_1442" >> scripts.log 
+add_part_info.py -p HH22 -r A -c 'Spectre: N6P1E' -l "infoupd" --date 2022/02/17 --time 14:42:00
+add_part_info.py -p HH22 -r A -c 'Spectre: N6P1N' -l "infoupd" --date 2022/02/17 --time 14:42:02
+add_part_info.py -p HH34 -r A -c 'Spectre: N6P2E' -l "infoupd" --date 2022/02/17 --time 14:42:00
+add_part_info.py -p HH34 -r A -c 'Spectre: N6P2N' -l "infoupd" --date 2022/02/17 --time 14:42:02
+add_part_info.py -p HH35 -r A -c 'Spectre: N6P3E' -l "infoupd" --date 2022/02/17 --time 14:42:00
+add_part_info.py -p HH35 -r A -c 'Spectre: N6P3N' -l "infoupd" --date 2022/02/17 --time 14:42:02
+add_part_info.py -p HH47 -r A -c 'Spectre: N6P4E' -l "infoupd" --date 2022/02/17 --time 14:42:00
+add_part_info.py -p HH47 -r A -c 'Spectre: N6P4N' -l "infoupd" --date 2022/02/17 --time 14:42:02
+add_part_info.py -p HH61 -r A -c 'Spectre: N6P5E' -l "infoupd" --date 2022/02/17 --time 14:42:00
+add_part_info.py -p HH61 -r A -c 'Spectre: N6P4N' -l "infoupd" --date 2022/02/17 --time 14:42:02
+add_part_info.py -p HH77 -r A -c 'Spectre: N6P6E' -l "infoupd" --date 2022/02/17 --time 14:42:00
+add_part_info.py -p HH77 -r A -c 'Spectre: N6P6N' -l "infoupd" --date 2022/02/17 --time 14:42:02
+add_part_info.py -p HH48 -r A -c 'Spectre: N6P7E' -l "infoupd" --date 2022/02/17 --time 14:42:00
+add_part_info.py -p HH48 -r A -c 'Spectre: N6P7N' -l "infoupd" --date 2022/02/17 --time 14:42:02
+add_part_info.py -p HH49 -r A -c 'Spectre: N6P8E' -l "infoupd" --date 2022/02/17 --time 14:42:00
+add_part_info.py -p HH49 -r A -c 'Spectre: N6P8N' -l "infoupd" --date 2022/02/17 --time 14:42:02
+add_part_info.py -p HH62 -r A -c 'Spectre: N6P9E' -l "infoupd" --date 2022/02/17 --time 14:42:00
+add_part_info.py -p HH62 -r A -c 'Spectre: N6P9N' -l "infoupd" --date 2022/02/17 --time 14:42:02
+add_part_info.py -p HH63 -r A -c 'Spectre: N6P10E' -l "infoupd" --date 2022/02/17 --time 14:42:00
+add_part_info.py -p HH63 -r A -c 'Spectre: N6P10N' -l "infoupd" --date 2022/02/17 --time 14:42:02
+add_part_info.py -p HH64 -r A -c 'Spectre: N6P11E' -l "infoupd" --date 2022/02/17 --time 14:42:00
+add_part_info.py -p HH64 -r A -c 'Spectre: N6P11N' -l "infoupd" --date 2022/02/17 --time 14:42:02
+add_part_info.py -p HH78 -r A -c 'Spectre: N6P12E' -l "infoupd" --date 2022/02/17 --time 14:42:00
+add_part_info.py -p HH78 -r A -c 'Spectre: N6P12N' -l "infoupd" --date 2022/02/17 --time 14:42:02

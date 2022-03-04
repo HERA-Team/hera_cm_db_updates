@@ -1,0 +1,7 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220304_infoupd_1242" >> scripts.log 
+add_part_info.py -p N00 -r A -c 'top and middle temperature sensor has not data' -l "infoupd" --date 2022/03/04 --time 12:42:00
+add_part_info.py -p N04 -r A -c 'WR endpoint is not functioning properly (works as a switch, but not for timing) -- swapped it (NCM4) with the one in node 21 (NCM21), plastic detatched and inside of node very dusty, temperature sensor 1 has broken plastic coating, bottom temperature sensor has no data' -l "infoupd" --date 2022/03/04 --time 12:42:00
+add_part_info.py -p N10 -r A -c 'dusty inside, fan tray not screwed in and resting on PAM chassis' -l "infoupd" --date 2022/03/04 --time 12:42:00
+add_part_info.py -p N12 -r A -c 'no plastic inside node, very dusty inside, bottom temperature sensor has no data' -l "infoupd" --date 2022/03/04 --time 12:42:00

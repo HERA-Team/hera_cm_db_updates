@@ -1,0 +1,15 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220218_infoupd_1442" >> scripts.log 
+add_part_info.py -p HH22 -r A -c 'door closed 18/02/22' -l "infoupd" --date 2022/02/18 --time 14:42:00
+add_part_info.py -p HH34 -r A -c 'door closed 18/02/22' -l "infoupd" --date 2022/02/18 --time 14:42:00
+add_part_info.py -p HH35 -r A -c 'door closed 18/02/22' -l "infoupd" --date 2022/02/18 --time 14:42:00
+add_part_info.py -p HH47 -r A -c 'door closed 18/02/22' -l "infoupd" --date 2022/02/18 --time 14:42:00
+add_part_info.py -p HH61 -r A -c 'door closed 18/02/22' -l "infoupd" --date 2022/02/18 --time 14:42:00
+add_part_info.py -p HH77 -r A -c 'door closed 18/02/22' -l "infoupd" --date 2022/02/18 --time 14:42:00
+add_part_info.py -p HH48 -r A -c 'door closed 18/02/22' -l "infoupd" --date 2022/02/18 --time 14:42:00
+add_part_info.py -p HH49 -r A -c 'door closed 18/02/22' -l "infoupd" --date 2022/02/18 --time 14:42:00
+add_part_info.py -p HH62 -r A -c 'door closed 18/02/22' -l "infoupd" --date 2022/02/18 --time 14:42:00
+add_part_info.py -p HH63 -r A -c 'door closed 18/02/22' -l "infoupd" --date 2022/02/18 --time 14:42:00
+add_part_info.py -p HH64 -r A -c 'door closed 18/02/22' -l "infoupd" --date 2022/02/18 --time 14:42:00
+add_part_info.py -p HH78 -r A -c 'door closed 18/02/22' -l "infoupd" --date 2022/02/18 --time 14:42:00

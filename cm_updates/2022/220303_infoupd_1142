@@ -1,0 +1,10 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220303_infoupd_1142" >> scripts.log 
+add_part_info.py -p HH6 -r A -c 'PAM is missing' -l "infoupd" --date 2022/03/03 --time 11:42:00
+add_part_info.py -p HH42 -r A -c 'inner panel has popped up' -l "infoupd" --date 2022/03/03 --time 11:42:00
+add_part_info.py -p HH102 -r A -c 'fiber shredded at hub of antenna' -l "infoupd" --date 2022/03/03 --time 11:42:00
+add_part_info.py -p HH121 -r A -c 'door is open' -l "infoupd" --date 2022/03/03 --time 11:42:00
+add_part_info.py -p N01 -r A -c 'Moved temperature sensor 1 to rest on top of pams' -l "infoupd" --date 2022/03/03 --time 11:42:00
+add_part_info.py -p N03 -r A -c 'Removed NCM (NCM 5) for fixing' -l "infoupd" --date 2022/03/03 --time 11:42:00
+add_part_info.py -p N06 -r A -c 'No plastic inside node' -l "infoupd" --date 2022/03/03 --time 11:42:00

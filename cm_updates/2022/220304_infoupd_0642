@@ -1,0 +1,15 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220304_infoupd_0642" >> scripts.log 
+add_part_info.py -p N04 -r A -c 'WR endpoint is not functioning properly (works as a switch, but not for timing) -- swapped it (NCM4) with the one in node 21 (NCM21), plastic detatched and inside of node very dusty, temperature sensor 1 has broken plastic coating' -l "infoupd" --date 2022/03/04 --time 06:42:00
+add_part_info.py -p N07 -r A -c 'No plastic inside node, dusty inside' -l "infoupd" --date 2022/03/04 --time 06:42:00
+add_part_info.py -p N08 -r A -c 'no plastic inside node, dusty inside, chokes on snaps' -l "infoupd" --date 2022/03/04 --time 06:42:00
+add_part_info.py -p N09 -r A -c 'no plastic inside node, dusty inside, chokes on snaps' -l "infoupd" --date 2022/03/04 --time 06:42:00
+add_part_info.py -p N10 -r A -c 'dusty inside, fan tray not screwed in and resting on PAM chassis (there is a note inside the node stating this)' -l "infoupd" --date 2022/03/04 --time 06:42:00
+add_part_info.py -p N11 -r A -c 'no plastic inside node' -l "infoupd" --date 2022/03/04 --time 06:42:00
+add_part_info.py -p N12 -r A -c 'no plastic inside node, very dusty inside' -l "infoupd" --date 2022/03/04 --time 06:42:00
+add_part_info.py -p N16 -r A -c 'no temperature sensors' -l "infoupd" --date 2022/03/04 --time 06:42:00
+add_part_info.py -p N17 -r A -c 'no temperature sensors, snaps not connected to NCM yet' -l "infoupd" --date 2022/03/04 --time 06:42:00
+add_part_info.py -p N18 -r A -c 'no plastic inside node' -l "infoupd" --date 2022/03/04 --time 06:42:00
+add_part_info.py -p N19 -r A -c 'no plastic inside node' -l "infoupd" --date 2022/03/04 --time 06:42:00
+add_part_info.py -p N21 -r A -c 'Removed NCM to put in node 4, no plastic inside node' -l "infoupd" --date 2022/03/04 --time 06:42:00
