@@ -522,6 +522,7 @@ HH139,A,"PAMS 165, 166 inside node as well",infoupd,1330414938
 HH167,A,feed conduit fell out,infoupd,1330425738
 N00,A,top and middle temperature sensor has not data,infoupd,1330432938
 HH6,A,Need to replace mesh panel,infoupd,1330440138
+N20,A,"humidity sensor broken (port 1, temperature measurement is working)",infoupd,1330594938
 HH123,A,height raised from 4.041m to 4.406m 10/31/19,,1256644818
 HH88,A,height raised from 4.205m to 4.418m 10/31/19,,1256644818
 HH126,A,height raised from 4.15m to 4.446m 10/31/19,,1256644818
@@ -712,6 +713,7 @@ N07,A,"No plastic inside node, dusty inside, saw FPS 7 inside node but this doc 
 HH207,A,door open 03/03/22,infoupd,1330425738
 N04,A,"WR endpoint is not functioning properly (works as a switch, but not for timing) -- swapped it (NCM4) with the one in node 21 (NCM21), plastic detatched and inside of node very dusty, temperature sensor 1 has broken plastic coating, bottom temperature sensor has no data",infoupd,1330432938
 N12,A,"no plastic inside node, very dusty inside, bottom temperature sensor has no data (port 0), NCM temperature port 2 broken, no utility power strip",infoupd,1330440138
+N21,A,"Removed NCM to put in node 4, no plastic inside node, all temperature sensors not taking data",infoupd,1330594938
 HH67,A,Spectra: N3P3E,infoupd,1318668138
 HH37,A,Spectra: N3P5E,infoupd,1318668138
 HH53,A,Spectra: N3P7N,infoupd,1318668140
