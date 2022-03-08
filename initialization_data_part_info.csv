@@ -715,6 +715,7 @@ HH207,A,door open 03/03/22,infoupd,1330425738
 N04,A,"WR endpoint is not functioning properly (works as a switch, but not for timing) -- swapped it (NCM4) with the one in node 21 (NCM21), plastic detatched and inside of node very dusty, temperature sensor 1 has broken plastic coating, bottom temperature sensor has no data",infoupd,1330432938
 N12,A,"no plastic inside node, very dusty inside, bottom temperature sensor has no data (port 0), NCM temperature port 2 broken, no utility power strip",infoupd,1330440138
 N21,A,"Removed NCM to put in node 4, no plastic inside node, all temperature sensors not taking data",infoupd,1330594938
+N04,A,"WR endpoint is not functioning properly (works as a switch, but not for timing) -- swapped it (NCM4) with the one in node 21 (NCM21), plastic detatched and inside of node very dusty, temperature sensor 1 has broken plastic coating (not a big deal), bottom temperature sensor has no data",infoupd,1330789338
 HH67,A,Spectra: N3P3E,infoupd,1318668138
 HH37,A,Spectra: N3P5E,infoupd,1318668138
 HH53,A,Spectra: N3P7N,infoupd,1318668140
