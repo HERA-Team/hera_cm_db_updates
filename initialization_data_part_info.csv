@@ -524,6 +524,7 @@ N00,A,top and middle temperature sensor has not data,infoupd,1330432938
 HH6,A,Need to replace mesh panel,infoupd,1330440138
 N20,A,"humidity sensor broken (port 1, temperature measurement is working)",infoupd,1330594938
 HH123,A,height raised from 4.041m to 4.406m 10/31/19,,1256644818
+N20,A,"humidity sensor broken (port 1, temperature measurement on temperature-humidity sensor is still working)",infoupd,1330767738
 HH88,A,height raised from 4.205m to 4.418m 10/31/19,,1256644818
 HH126,A,height raised from 4.15m to 4.446m 10/31/19,,1256644818
 PAM042,A,"Seems to be broken, so swapped slots with PAM041",,1249898418
