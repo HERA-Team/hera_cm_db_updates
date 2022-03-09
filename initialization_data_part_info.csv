@@ -801,6 +801,7 @@ N09,A,"no plastic inside node, dusty inside, chokes on snaps, PAM 42 not listed 
 HH14,A,SNAPloc: 2,infoupd,1264203738
 N10,A,"dusty inside, fan tray not screwed in and resting on PAM chassis",infoupd,1330432938
 HH23,A,SNAPloc: 2,infoupd,1264203738
+N04,A,fiber spools in bad shape,infoupd,1330850538
 HH24,A,SNAPloc: 2,infoupd,1264203738
 HH25,A,SNAPloc: 3,infoupd,1264203738
 HH26,A,SNAPloc: 3,infoupd,1264203738
