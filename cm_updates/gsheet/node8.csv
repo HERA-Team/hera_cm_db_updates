@@ -5,8 +5,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
 85,N,36,55,2,11,C23,n4,0,digital_ok,,
 86,E,37,56,3,12,C23,e10,0,RF_maintenance,,
 86,N,37,56,3,12,C23,n8,0,RF_maintenance,,
-120,E,42,62,4,13,C44,e2,1,digital_ok,,
-120,N,42,62,4,13,C44,n0,1,digital_ok,,
+120,E,42,62,4,13,C44,e2,1,digital_ok,,north pol has 3 dB pad between PAM and SNAP
+120,N,42,62,4,13,C44,n0,1,digital_ok,,east pol has 6 dB pad between PAM and SNAP
 104,E,10,61,5,14,C44,e6,1,digital_ok,,
 104,N,10,61,5,14,C44,n4,1,digital_ok,,
 103,E,41,34,6,15,C44,e10,1,digital_ok,,

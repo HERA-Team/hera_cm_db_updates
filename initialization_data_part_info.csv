@@ -803,6 +803,7 @@ N10,A,"dusty inside, fan tray not screwed in and resting on PAM chassis",infoupd
 HH23,A,SNAPloc: 2,infoupd,1264203738
 N04,A,fiber spools in bad shape,infoupd,1330850538
 HH24,A,SNAPloc: 2,infoupd,1264203738
+HH20,A,east pol has a 3 dB pad between PAM and SNAP,infoupd,1330890138
 HH25,A,SNAPloc: 3,infoupd,1264203738
 HH26,A,SNAPloc: 3,infoupd,1264203738
 HH39,A,SNAPloc: 3,infoupd,1264203738
@@ -857,6 +858,7 @@ N14,A,FPS16 inside node but FPS12 listed in this doc,infoupd,1330414938
 HH44,A,SNAPloc: 1,infoupd,1264203738
 N12,A,"no plastic inside node, very dusty inside, bottom temperature sensor has no data",infoupd,1330432938
 HH60,A,SNAPloc: 2,infoupd,1264203738
+HH31,A,History: east pol has a 6 dB pad between PAM and SNAP,infoupd,1330890138
 HH43,A,SNAPloc: 2,infoupd,1264203738
 HH74,A,SNAPloc: 2,infoupd,1264203738
 HH75,A,SNAPloc: 3,infoupd,1264203738
@@ -936,6 +938,7 @@ N10,A,"dusty inside, fan tray not screwed in and resting on PAM chassis (there i
 HH176,A,SNAPloc: 0,infoupd,1264236138
 N18,A,"no plastic inside node, NCM 20 observed but NCM 12 listed in this doc",infoupd,1330414938
 HH177,A,SNAPloc: 1,infoupd,1264236138
+HH120,A,north pol has 3 dB pad between PAM and SNAP,infoupd,1330890138
 HH178,A,SNAPloc: 0,infoupd,1264236138
 HH179,A,SNAPloc: 1,infoupd,1264236138
 HH140,A,SNAPloc: 2,infoupd,1264236138
@@ -1010,6 +1013,7 @@ HH101,A,101E and N look dead from post-PAM spectra taken the last week of Jan 20
 N11,A,no plastic inside node,infoupd,1330411338
 HH102,A, ,infoupd,1265132538
 HH104,A,Feed down as of 31 Jan 2020,infoupd,1265132538
+HH120,A,east pol has 6 dB pad between PAM and SNAP,infoupd,1330890140
 HH120,A, ,infoupd,1265132538
 HH122,A,Feed down as of 31 Jan 2020,infoupd,1265132538
 HH106,A,Late Jan 2020 post-PAM spectra show N pol about half the amplitude of E pol. 31Jan2020 Measured center of feed as differing from center of hub by 2-3 cm. Z= [ 4.424 4.423] from hub (spec is 4.428-4.448),infoupd,1265132538
