@@ -805,6 +805,7 @@ N04,A,fiber spools in bad shape,infoupd,1330850538
 HH24,A,SNAPloc: 2,infoupd,1264203738
 HH20,A,east pol has a 3 dB pad between PAM and SNAP,infoupd,1330890138
 HH25,A,SNAPloc: 3,infoupd,1264203738
+HH120,A,Placed external noise source on input to SNAP on east pol,,1330272018
 HH26,A,SNAPloc: 3,infoupd,1264203738
 HH39,A,SNAPloc: 3,infoupd,1264203738
 HH65,A,SNAPloc: 0,infoupd,1264203738
@@ -860,6 +861,7 @@ N12,A,"no plastic inside node, very dusty inside, bottom temperature sensor has 
 HH60,A,SNAPloc: 2,infoupd,1264203738
 HH31,A,History: east pol has a 6 dB pad between PAM and SNAP,infoupd,1330890138
 HH43,A,SNAPloc: 2,infoupd,1264203738
+HH120,A,Removed external noise source on east pol and moved to input to SNAP on north pol,,1330358418
 HH74,A,SNAPloc: 2,infoupd,1264203738
 HH75,A,SNAPloc: 3,infoupd,1264203738
 HH76,A,SNAPloc: 3,infoupd,1264203738
@@ -940,6 +942,7 @@ N18,A,"no plastic inside node, NCM 20 observed but NCM 12 listed in this doc",in
 HH177,A,SNAPloc: 1,infoupd,1264236138
 HH120,A,north pol has 3 dB pad between PAM and SNAP,infoupd,1330890138
 HH178,A,SNAPloc: 0,infoupd,1264236138
+HH120,A,External noise source on north pol.,,1330444818
 HH179,A,SNAPloc: 1,infoupd,1264236138
 HH140,A,SNAPloc: 2,infoupd,1264236138
 HH141,A,SNAPloc: 2,infoupd,1264236138
@@ -1016,6 +1019,7 @@ HH104,A,Feed down as of 31 Jan 2020,infoupd,1265132538
 HH120,A,east pol has 6 dB pad between PAM and SNAP,infoupd,1330890140
 HH120,A, ,infoupd,1265132538
 HH122,A,Feed down as of 31 Jan 2020,infoupd,1265132538
+HH120,A,External noise source on north pol.,,1330531218
 HH106,A,Late Jan 2020 post-PAM spectra show N pol about half the amplitude of E pol. 31Jan2020 Measured center of feed as differing from center of hub by 2-3 cm. Z= [ 4.424 4.423] from hub (spec is 4.428-4.448),infoupd,1265132538
 HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1265143338
 HH177,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1265449338
@@ -1117,6 +1121,7 @@ N06,A,No plastic inside node,infoupd,1330342938
 HH125,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
 N12,A,"no plastic inside node, very dusty inside",infoupd,1330411338
 HH126,A,Boom reports feed as lowered 03Mar2020,infoupd,1267299738
+HH120,A,Used a splitter on input to snap of north pol to feed antenna to snap and total power meter,,1330617618
 HH101,A,"History: FEM: 58 until 10Mar2020, thence 153",infoupd,1267897338
 HH101,A,10Mar2020 z = 4.406 ,infoupd,1267897340
 HH101,A,"History: FEM: 58 until 10Mar2020, thence 154",infoupd,1267897342
@@ -1317,6 +1322,7 @@ HH35,A,Spectre: N6P3N,infoupd,1329144140
 HH49,A,door closed 18/02/22,infoupd,1329230538
 HH114,A,Spectre: N11P9E,infoupd,1329576140
 N16,A,no temperature sensors,infoupd,1330411338
+HH120,A,Used a splitter on input to snap of north pol to feed antenna to snap and total power meter,,1330704018
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 ND05,A,Door direction: NE,,1280318418
 HH42,A,Spectre: N4P2E,infoupd,1318668138
@@ -1331,6 +1337,7 @@ HH47,A,Spectre: N6P4E,infoupd,1329144138
 HH62,A,door closed 18/02/22,infoupd,1329230538
 HH114,A,Spectre: N11P9N,infoupd,1329576142
 N17,A,"no temperature sensors, snaps not connected to NCM yet",infoupd,1330411338
+HH120,A,Removed splitter and just input external noise source to input of north pol,,1330790418
 HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1272926538
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
