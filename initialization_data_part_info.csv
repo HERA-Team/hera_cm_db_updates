@@ -859,10 +859,10 @@ N14,A,FPS16 inside node but FPS12 listed in this doc,infoupd,1330414938
 HH44,A,SNAPloc: 1,infoupd,1264203738
 N12,A,"no plastic inside node, very dusty inside, bottom temperature sensor has no data",infoupd,1330432938
 HH60,A,SNAPloc: 2,infoupd,1264203738
-HH31,A,History: east pol has a 6 dB pad between PAM and SNAP,infoupd,1330890138
 HH43,A,SNAPloc: 2,infoupd,1264203738
 HH120,A,Removed external noise source on east pol and moved to input to SNAP on north pol,,1330358418
 HH74,A,SNAPloc: 2,infoupd,1264203738
+HH31,A,east pol has a 6 dB pad between PAM and SNAP,infoupd,1330890138
 HH75,A,SNAPloc: 3,infoupd,1264203738
 HH76,A,SNAPloc: 3,infoupd,1264203738
 HH81,A,SNAPloc: 0,infoupd,1264203738
