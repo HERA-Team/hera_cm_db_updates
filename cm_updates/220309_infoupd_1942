@@ -1,0 +1,7 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220309_infoupd_1942" >> scripts.log 
+add_part_info.py -p HH20 -r A -c 'east pol has a 3 dB pad between PAM and SNAP' -l "infoupd" --date 2022/03/09 --time 19:42:00
+add_part_info.py -p HH31 -r A -c 'History: east pol has a 6 dB pad between PAM and SNAP' -l "infoupd" --date 2022/03/09 --time 19:42:00
+add_part_info.py -p HH120 -r A -c 'north pol has 3 dB pad between PAM and SNAP' -l "infoupd" --date 2022/03/09 --time 19:42:00
+add_part_info.py -p HH120 -r A -c 'east pol has 6 dB pad between PAM and SNAP' -l "infoupd" --date 2022/03/09 --time 19:42:02

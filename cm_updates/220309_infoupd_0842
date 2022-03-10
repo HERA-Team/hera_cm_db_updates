@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220309_infoupd_0842" >> scripts.log 
+add_part_info.py -p N04 -r A -c 'fiber spools in bad shape' -l "infoupd" --date 2022/03/09 --time 08:42:00

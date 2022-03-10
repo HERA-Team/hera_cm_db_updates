@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220306_infoupd_0942" >> scripts.log 
+add_part_info.py -p N20 -r A -c 'humidity sensor broken (port 1, temperature measurement is working)' -l "infoupd" --date 2022/03/06 --time 09:42:00
+add_part_info.py -p N21 -r A -c 'Removed NCM to put in node 4, no plastic inside node, all temperature sensors not taking data' -l "infoupd" --date 2022/03/06 --time 09:42:00
