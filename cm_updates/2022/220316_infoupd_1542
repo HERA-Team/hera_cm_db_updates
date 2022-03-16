@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220316_infoupd_1542" >> scripts.log 
+add_part_info.py -p HH110 -r A -c 'SLP-250+ low-pass filters installed on both polarizations.' -l "infoupd" --date 2022/03/16 --time 15:42:00

@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220310_infoupd_0642" >> scripts.log 
+add_part_info.py -p HH20 -r A -c 'east pol has 3 db pad between pam and snap' -l "infoupd" --date 2022/03/10 --time 06:42:00
