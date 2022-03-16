@@ -809,6 +809,7 @@ HH120,A,Placed external noise source on input to SNAP on east pol,,1330272018
 HH26,A,SNAPloc: 3,infoupd,1264203738
 HH20,A,east pol has 3 db pad between pam and snap,infoupd,1330929738
 HH39,A,SNAPloc: 3,infoupd,1264203738
+HH110,A,SLP-250+ low-pass filters installed on both polarizations.,infoupd,1331480538
 HH65,A,SNAPloc: 0,infoupd,1264203738
 HH66,A,SNAPloc: 0,infoupd,1264203738
 HH67,A,SNAPloc: 0,infoupd,1264203738

@@ -7,7 +7,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 94,N,78,147,3,139,C14,N8,0,RF_maintenance,,,,
 109,E,89,145,4,140,C16,E2,1,digital_ok,,,,
 109,N,89,145,4,140,C16,N0,1,digital_ok,,,,
-110,E,68,148,5,141,C16,E6,1,RF_maintenance,,,,
+110,E,68,148,5,141,C16,E6,1,RF_maintenance,,SLP-250+ low-pass filters installed on both polarizations.,,
 110,N,68,148,5,141,C16,N4,1,RF_maintenance,,,,
 111,E,83,142,6,142,C16,E10,1,digital_ok,,,,
 111,N,83,142,6,142,C16,N8,1,digital_ok,,,,
