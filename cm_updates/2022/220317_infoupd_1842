@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220317_infoupd_1842" >> scripts.log 
+add_part_info.py -p N03 -r A -c 'Reinstalled NCM' -l "infoupd" --date 2022/03/17 --time 18:42:00
