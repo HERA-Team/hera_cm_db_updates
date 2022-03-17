@@ -136,7 +136,7 @@ def gen_hpn(ptype, pnum, verbose=False):
         if ptype in ['PCH']:
             return 'PCH{:02d}'.format(int(pnum))
         if ptype in ['NCM']:
-            return 'NCM{}'.format(int(pnum))
+            return 'NCM{:02d}'.format(int(pnum))
     except ValueError:
         if verbose:
             print("ValueError:  util.gen_hpn:  Invalid pnum '{}'".format(pnum))
