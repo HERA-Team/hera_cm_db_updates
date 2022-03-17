@@ -10,6 +10,9 @@ from hera_cm import upd_connect
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
+    ap.add_argument('-d', '--direction', choices=['active-gsheet', 'gsheet-active'],
+                    default='gsheet-active',
+                    help="Compare A vs B, missing means present in A and not B.")
     ap.add_argument('--script-path', dest='script_path', help="Path for active script",
                     default='default')
     ap.add_argument('--archive-path', dest='archive_path', help="Path for script archive.",
@@ -35,7 +38,7 @@ if args.archive_path.startswith('___'):
 update.load_gsheet(node_csv=args.node_csv)
 update.load_active()
 update.make_sheet_connections()
-update.compare_connections('active-gsheet')
+update.compare_connections(args.direction)
 update.add_missing_parts()
 update.add_missing_connections()
 update.add_partial_connections()
