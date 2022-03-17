@@ -1,0 +1,53 @@
+#! /bin/bash
+echo "220317_add_node21" >> scripts.log 
+add_station.py ND21 --sernum ND21 --date 2022/03/17 --time 10:00
+add_part.py -p FPS24 -r A -t fem-power-supply -m FPS24 --date 2022/03/17 --time 10:00
+add_part.py -p PCH22 -r A -t pam-chassis -m PCH22 --date 2022/03/17 --time 10:00
+add_part.py -p PAM308 -r A -t post-amp -m 308 --date 2022/03/17 --time 10:00
+add_part.py -p PAM309 -r A -t post-amp -m 309 --date 2022/03/17 --time 10:00
+add_part.py -p PAM310 -r A -t post-amp -m 310 --date 2022/03/17 --time 10:00
+add_part.py -p PAM314 -r A -t post-amp -m 314 --date 2022/03/17 --time 10:00
+add_part.py -p PAM315 -r A -t post-amp -m 315 --date 2022/03/17 --time 10:00
+add_part.py -p PAM316 -r A -t post-amp -m 316 --date 2022/03/17 --time 10:00
+add_connection.py -u N21 --uprev A --upport ground -d ND21 --dnrev A --dnport ground --date 2022/03/17 --time 10:00
+add_connection.py -u FPS24 --uprev A --upport rack -d N21 --dnrev A --dnport top --date 2022/03/17 --time 10:00
+add_connection.py -u PCH22 --uprev A --upport rack -d N21 --dnrev A --dnport bottom --date 2022/03/17 --time 10:00
+add_connection.py -u NCM04 --uprev A --upport rack -d N21 --dnrev A --dnport middle --date 2022/03/17 --time 10:00
+add_connection.py -u PAM305 --uprev A --upport slot -d PCH22 --dnrev A --dnport slot1 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM306 --uprev A --upport slot -d PCH22 --dnrev A --dnport slot2 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM307 --uprev A --upport slot -d PCH22 --dnrev A --dnport slot3 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM308 --uprev A --upport slot -d PCH22 --dnrev A --dnport slot4 --date 2022/03/17 --time 10:00
+add_connection.py -u NBP21 --uprev A --upport e4 -d PAM308 --dnrev A --dnport e --date 2022/03/17 --time 10:00
+add_connection.py -u NBP21 --uprev A --upport n4 -d PAM308 --dnrev A --dnport n --date 2022/03/17 --time 10:00
+add_connection.py -u PAM309 --uprev A --upport slot -d PCH22 --dnrev A --dnport slot5 --date 2022/03/17 --time 10:00
+add_connection.py -u NBP21 --uprev A --upport e5 -d PAM309 --dnrev A --dnport e --date 2022/03/17 --time 10:00
+add_connection.py -u NBP21 --uprev A --upport n5 -d PAM309 --dnrev A --dnport n --date 2022/03/17 --time 10:00
+add_connection.py -u PAM310 --uprev A --upport slot -d PCH22 --dnrev A --dnport slot6 --date 2022/03/17 --time 10:00
+add_connection.py -u NBP21 --uprev A --upport e6 -d PAM310 --dnrev A --dnport e --date 2022/03/17 --time 10:00
+add_connection.py -u NBP21 --uprev A --upport n6 -d PAM310 --dnrev A --dnport n --date 2022/03/17 --time 10:00
+add_connection.py -u PAM311 --uprev A --upport slot -d PCH22 --dnrev A --dnport slot7 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM312 --uprev A --upport slot -d PCH22 --dnrev A --dnport slot8 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM313 --uprev A --upport slot -d PCH22 --dnrev A --dnport slot9 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM314 --uprev A --upport slot -d PCH22 --dnrev A --dnport slot10 --date 2022/03/17 --time 10:00
+add_connection.py -u NBP21 --uprev A --upport e10 -d PAM314 --dnrev A --dnport e --date 2022/03/17 --time 10:00
+add_connection.py -u NBP21 --uprev A --upport n10 -d PAM314 --dnrev A --dnport n --date 2022/03/17 --time 10:00
+add_connection.py -u PAM315 --uprev A --upport slot -d PCH22 --dnrev A --dnport slot11 --date 2022/03/17 --time 10:00
+add_connection.py -u NBP21 --uprev A --upport e11 -d PAM315 --dnrev A --dnport e --date 2022/03/17 --time 10:00
+add_connection.py -u NBP21 --uprev A --upport n11 -d PAM315 --dnrev A --dnport n --date 2022/03/17 --time 10:00
+add_connection.py -u PAM316 --uprev A --upport slot -d PCH22 --dnrev A --dnport slot12 --date 2022/03/17 --time 10:00
+add_connection.py -u NBP21 --uprev A --upport e12 -d PAM316 --dnrev A --dnport e --date 2022/03/17 --time 10:00
+add_connection.py -u NBP21 --uprev A --upport n12 -d PAM316 --dnrev A --dnport n --date 2022/03/17 --time 10:00
+add_connection.py -u SNPC000127 --uprev A --upport rack -d N21 --dnrev A --dnport loc1 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM308 --uprev A --upport e -d SNPC000127 --dnrev A --dnport e2 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM309 --uprev A --upport e -d SNPC000127 --dnrev A --dnport e6 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM310 --uprev A --upport e -d SNPC000127 --dnrev A --dnport e10 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM308 --uprev A --upport n -d SNPC000127 --dnrev A --dnport n0 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM309 --uprev A --upport n -d SNPC000127 --dnrev A --dnport n4 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM310 --uprev A --upport n -d SNPC000127 --dnrev A --dnport n8 --date 2022/03/17 --time 10:00
+add_connection.py -u SNPC000117 --uprev A --upport rack -d N21 --dnrev A --dnport loc3 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM314 --uprev A --upport e -d SNPC000117 --dnrev A --dnport e2 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM315 --uprev A --upport e -d SNPC000117 --dnrev A --dnport e6 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM316 --uprev A --upport e -d SNPC000117 --dnrev A --dnport e10 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM314 --uprev A --upport n -d SNPC000117 --dnrev A --dnport n0 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM315 --uprev A --upport n -d SNPC000117 --dnrev A --dnport n4 --date 2022/03/17 --time 10:00
+add_connection.py -u PAM316 --uprev A --upport n -d SNPC000117 --dnrev A --dnport n8 --date 2022/03/17 --time 10:00
