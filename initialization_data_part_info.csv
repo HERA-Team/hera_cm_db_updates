@@ -811,6 +811,7 @@ HH20,A,east pol has 3 db pad between pam and snap,infoupd,1330929738
 HH39,A,SNAPloc: 3,infoupd,1264203738
 HH110,A,SLP-250+ low-pass filters installed on both polarizations.,infoupd,1331480538
 HH65,A,SNAPloc: 0,infoupd,1264203738
+HH115,A,Feed heights (NE/SE/SW/NW): 4.416,infoupd,1331541738
 HH66,A,SNAPloc: 0,infoupd,1264203738
 HH67,A,SNAPloc: 0,infoupd,1264203738
 HH68,A,SNAPloc: 1,infoupd,1264203738
@@ -866,6 +867,7 @@ HH120,A,Removed external noise source on east pol and moved to input to SNAP on 
 HH74,A,SNAPloc: 2,infoupd,1264203738
 HH31,A,east pol has a 6 dB pad between PAM and SNAP,infoupd,1330890138
 HH75,A,SNAPloc: 3,infoupd,1264203738
+HH96,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1331541738
 HH76,A,SNAPloc: 3,infoupd,1264203738
 HH81,A,SNAPloc: 0,infoupd,1264203738
 HH82,A,SNAPloc: 0,infoupd,1264203738
@@ -946,6 +948,7 @@ HH120,A,north pol has 3 dB pad between PAM and SNAP,infoupd,1330890138
 HH178,A,SNAPloc: 0,infoupd,1264236138
 HH120,A,External noise source on north pol.,,1330444818
 HH179,A,SNAPloc: 1,infoupd,1264236138
+HH79,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1331541738
 HH140,A,SNAPloc: 2,infoupd,1264236138
 HH141,A,SNAPloc: 2,infoupd,1264236138
 HH142,A,SNAPloc: 2,infoupd,1264236138
