@@ -35,7 +35,7 @@ if args.archive_path.startswith('___'):
 update.load_gsheet(node_csv=args.node_csv)
 update.load_active()
 update.make_sheet_connections()
-update.compare_connections('gsheet-active')
+update.compare_connections('active-gsheet')
 update.add_missing_parts()
 update.add_missing_connections()
 update.add_partial_connections()

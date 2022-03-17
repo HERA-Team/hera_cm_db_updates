@@ -11,34 +11,36 @@ hu_col = {'Ant': 0, 'Pol': 4, 'Feed': 1, 'FEM': 2, 'PAM': 4, 'NBP/PAMloc': 3,
 sheet_headers = ['Ant', 'Pol', 'Feed', 'FEM', 'NBP/PAMloc', 'PAM', 'SNAP', 'Port',
                  'SNAPloc', 'APriori', 'History', 'Comments']
 
+gsheet_prefix = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?"  # noqa
+
 gsheet = {}
-gsheet['node0'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=0&single=true&output=csv"  # noqa
-gsheet['node1'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=6391145&single=true&output=csv"  # noqa
-gsheet['node2'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1387042544&single=true&output=csv"  # noqa
-gsheet['node3'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1451443110&single=true&output=csv"  # noqa
-gsheet['node4'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1237822868&single=true&output=csv"  # noqa
-gsheet['node5'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1836116919&single=true&output=csv"  # noqa
-gsheet['node6'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1913506139&single=true&output=csv" # noqa
-gsheet['node7'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=780596546&single=true&output=csv"  # noqa
-gsheet['node8'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1174361876&single=true&output=csv"  # noqa
-gsheet['node9'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=59309582&single=true&output=csv"  # noqa
-gsheet['node10'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=298497018&single=true&output=csv"  # noqa
-gsheet['node11'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=660944848&single=true&output=csv"  # noqa
-gsheet['node12'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1465370847&single=true&output=csv"  # noqa
-gsheet['node13'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=954070149&single=true&output=csv"  # noqa
-gsheet['node14'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1888985402&single=true&output=csv"  # noqa
-gsheet['node15'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1947163734&single=true&output=csv"  # noqa
-gsheet['node16'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1543199929&single=true&output=csv"  # noqa
-gsheet['node17'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=523815291&single=true&output=csv",  # noqa
-gsheet['node18'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=2120802515&single=true&output=csv"  # noqa
-gsheet['node19'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=488699377&single=true&output=csv"  # noqa
-gsheet['node20'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=319083641&single=true&output=csv"  # noqa
-gsheet['node21'] = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=535819481&single=true&output=csv"  # noqa
+gsheet['node0'] = "gid=0&single=true&output=csv"
+gsheet['node1'] = "gid=6391145&single=true&output=csv"
+gsheet['node2'] = "gid=1387042544&single=true&output=csv"
+gsheet['node3'] = "gid=1451443110&single=true&output=csv"
+gsheet['node4'] = "gid=1237822868&single=true&output=csv"
+gsheet['node5'] = "gid=1836116919&single=true&output=csv"
+gsheet['node6'] = "gid=1913506139&single=true&output=csv"
+gsheet['node7'] = "gid=780596546&single=true&output=csv"
+gsheet['node8'] = "gid=1174361876&single=true&output=csv"
+gsheet['node9'] = "gid=59309582&single=true&output=csv"
+gsheet['node10'] = "gid=298497018&single=true&output=csv"
+gsheet['node11'] = "gid=660944848&single=true&output=csv"
+gsheet['node12'] = "gid=1465370847&single=true&output=csv"
+gsheet['node13'] = "gid=954070149&single=true&output=csv"
+gsheet['node14'] = "gid=1888985402&single=true&output=csv"
+gsheet['node15'] = "gid=1947163734&single=true&output=csv"
+gsheet['node16'] = "gid=1543199929&single=true&output=csv"
+gsheet['node17'] = "gid=523815291&single=true&output=csv"
+gsheet['node18'] = "gid=2120802515&single=true&output=csv"
+gsheet['node19'] = "gid=488699377&single=true&output=csv"
+gsheet['node20'] = "gid=319083641&single=true&output=csv"
+gsheet['node21'] = "gid=535819481&single=true&output=csv"
 no_prefix = ['Comments']
 
-NodeNotes = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=906207981&single=true&output=csv"  # noqa
-README = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=1630961076&single=true&output=csv"  # noqa
-WORKFLOW = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?gid=2096134790&single=true&output=csv"  # noqa
+gsheet['NodeNotes'] = "gid=906207981&single=true&output=csv"
+gsheet['README'] = "gid=1630961076&single=true&output=csv"
+gsheet['AprioriWorkflow'] = "gid=2096134790&single=true&output=csv"
 
 
 class SheetData:
@@ -46,7 +48,12 @@ class SheetData:
 
     def __init__(self):
         """Initialize dictionaries/lists."""
-        self.tabs = list(gsheet.keys())
+        self.tabs = []
+        for key in gsheet.keys():
+            gsheet[key] = gsheet_prefix + gsheet[key]
+            if key.startswith('node'):
+                self.tabs.append(key)
+        self.tabs = sorted(self.tabs)
         # It reads into the variables below
         self.data = {}
         self.ant_to_node = {}
@@ -58,7 +65,7 @@ class SheetData:
 
     def load_workflow(self):
         """
-        Load relevant data out of WORKFLOW tab.
+        Load relevant data out of AprioriWorkflow tab.
 
         Currently, this is the apriori enums and emails.
         """
@@ -66,11 +73,11 @@ class SheetData:
         self.apriori_enum = []
         self.apriori_email = {}
         try:
-            xxx = requests.get(WORKFLOW)
+            xxx = requests.get(gsheet['AprioriWorkflow'])
         except:  # noqa
             import sys
             e = sys.exc_info()[0]
-            print(f"Error reading {WORKFLOW}:  {e}")
+            print(f"Error reading {gsheet['AprioriWorkflow']}:  {e}")
             return
         csv_tab = b''
         for line in xxx:
@@ -96,11 +103,11 @@ class SheetData:
     def load_node_notes(self):
         self.node_notes = []
         try:
-            xxx = requests.get(NodeNotes)
+            xxx = requests.get(gsheet['NodeNotes'])
         except:  # noqa
             import sys
             e = sys.exc_info()[0]
-            print(f"Error reading {NodeNotes}:  {e}")
+            print(f"Error reading {gsheet['NodeNotes']}:  {e}")
             return
         csv_tab = b''
         for line in xxx:
@@ -133,7 +140,7 @@ class SheetData:
         ant_set = set()
         node_csv = node_csv[0].lower()
         if tabs is None or str(tabs) == 'all':
-            tabs = sorted(list(gsheet.keys()))
+            tabs = self.tabs
         elif isinstance(tabs, str):
             tabs = tabs.split(',')
         if node_csv == 'w' and isinstance(time_tag, str) and len(time_tag):
