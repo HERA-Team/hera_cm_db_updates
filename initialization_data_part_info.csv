@@ -758,7 +758,6 @@ SNPC000086,A,IP - 10.80.40.111,,1304938828
 HH206,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1319892138
 HH243,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1319895738
 HH204,A,North channel low,infoupd,1320075738
-HH16,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1320187338
 HH205,A,door closed 08/11/2021,infoupd,1320489738
 HH227,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1320507738
 HH240,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1320568938
@@ -778,7 +777,6 @@ HH241,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347
 HH245,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347398
 HH101,A,History: FEM: 58,infoupd,1264193598
 HH240,A,door closed 10/11/2021,infoupd,1322412138
-HH134,A,cables too short,infoupd,1325389338
 HH210,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1327599738
 HH210,A,Door closed 9/2/22,infoupd,1328960538
 HH103,A,History: FEM: 60,infoupd,1264193598
@@ -817,6 +815,7 @@ WRA000089,A,IP -,removed,1330423218
 HH67,A,SNAPloc: 0,infoupd,1264203738
 N03,A,Reinstalled NCM,infoupd,1331577738
 HH68,A,SNAPloc: 1,infoupd,1264203738
+HH16,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1331664138
 HH38,A,SNAPloc: 1,infoupd,1264203738
 HH36,A,Spectra: N3P11E,infoupd,1318668138
 HH53,A,SNAPloc: 2,infoupd,1264203738
@@ -828,7 +827,6 @@ HH223,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1319892138
 HH36,A,SNAPloc: 3,infoupd,1264203738
 HH205,A,Spectre: N19P2E,infoupd,1320075738
 HH50,A,SNAPloc: 3,infoupd,1264203738
-HH127,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1320187338
 HH40,A,SNAPloc: 1,infoupd,1264203738
 HH206,A,door closed 08/11/21,infoupd,1320489738
 HH41,A,SNAPloc: 3,infoupd,1264203738
@@ -873,6 +871,7 @@ HH96,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1331541738
 HH76,A,SNAPloc: 3,infoupd,1264203738
 WRA000080,A,IP -,removed,1330768818
 HH81,A,SNAPloc: 0,infoupd,1264203738
+HH127,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1331664138
 HH82,A,SNAPloc: 0,infoupd,1264203738
 HH83,A,SNAPloc: 0,infoupd,1264203738
 HH100,A,SNAPloc: 1,infoupd,1264203738
@@ -913,7 +912,6 @@ HH225,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1319892138
 HH92,A,SNAPloc: 0,infoupd,1264203738
 HH205,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1320075740
 HH93,A,SNAPloc: 0,infoupd,1264203738
-HH130,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1320187338
 HH94,A,SNAPloc: 0,infoupd,1264203738
 HH207,A,door closed 08/11/2021,infoupd,1320489738
 HH109,A,SNAPloc: 1,infoupd,1264203738
@@ -955,6 +953,7 @@ HH79,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1331541738
 HH140,A,SNAPloc: 2,infoupd,1264236138
 WRA000095,A,IP - 10.80.2.151,added,1330423218
 HH141,A,SNAPloc: 2,infoupd,1264236138
+HH130,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1331664138
 HH142,A,SNAPloc: 2,infoupd,1264236138
 HH160,A,SNAPloc: 3,infoupd,1264236138
 HH161,A,SNAPloc: 0,infoupd,1264236138
@@ -993,7 +992,6 @@ HH242,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1319892138
 HH155,A,Preliminary specrta looks fine,infoupd,1265132538
 HH205,A,Spectre: N19P2N,infoupd,1320075742
 HH156,A,Preliminary specrta looks fine,infoupd,1265132538
-HH73,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1320187338
 HH157,A,Preliminary specrta looks fine,infoupd,1265132538
 HH223,A,door closed 08/11/2021,infoupd,1320489738
 HH158,A,Preliminary specrta looks fine,infoupd,1265132538
@@ -1028,10 +1026,10 @@ HH104,A,Feed down as of 31 Jan 2020,infoupd,1265132538
 HH120,A,east pol has 6 dB pad between PAM and SNAP,infoupd,1330890140
 HH120,A, ,infoupd,1265132538
 HH122,A,Feed down as of 31 Jan 2020,infoupd,1265132538
-HH120,A,External noise source on north pol.,,1330531218
 HH106,A,Late Jan 2020 post-PAM spectra show N pol about half the amplitude of E pol. 31Jan2020 Measured center of feed as differing from center of hub by 2-3 cm. Z= [ 4.424 4.423] from hub (spec is 4.428-4.448),infoupd,1265132538
 WRA000758,A,MAC - 08:00:30:b7:11:d0,added,1330768818
 HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1265143338
+HH134,A,cables too short,infoupd,1331664138
 HH177,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1265449338
 HH179,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1265449338
 HH135,A,Feed heights (NE/SE/SW/NW): Z distance = 4.412,infoupd,1265449338
@@ -1141,6 +1139,7 @@ HH102,A,10Mar2020 z = 4.409 ,infoupd,1267897340
 HH102,A,"History: FEM: 59 until 10Mar2020, thence 154",infoupd,1267897342
 WRA000758,A,IP - 10.80.2.147,added,1330768878
 HH89,A,10Mar2020 z = 4.409,infoupd,1267897338
+HH73,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1331664138
 HH90,A,10Mar 2020 Z = 4.400,infoupd,1267897338
 HH106,A,10Mar2020 z = 4.414,infoupd,1267897338
 HH107,A,10Mar2020 z = 4.407,infoupd,1267897338
@@ -1333,7 +1332,6 @@ HH35,A,Spectre: N6P3N,infoupd,1329144140
 HH49,A,door closed 18/02/22,infoupd,1329230538
 HH114,A,Spectre: N11P9E,infoupd,1329576140
 N16,A,no temperature sensors,infoupd,1330411338
-HH120,A,Used a splitter on input to snap of north pol to feed antenna to snap and total power meter,,1330704018
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 ND05,A,Door direction: NE,,1280318418
 HH42,A,Spectre: N4P2E,infoupd,1318668138
