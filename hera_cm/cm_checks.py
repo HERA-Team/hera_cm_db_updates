@@ -123,7 +123,7 @@ class Checks:
                     for _i in range(len(data['source']) - 1):
                         for _j in range(_i+1, len(data['source'])):
                             if _notsame(data[dev][id][_i], data[dev][id][_j], **kwargs):
-                                print(f"{key}-{data}-{dev}-{id}", end=sep)
+                                print(f"{key}-{dev}-{id}", end=sep)
                                 print("{}|{}{}{}{}!={}{}".format(data['source'][_i],
                                                                  data['source'][_j], sep,
                                                                  data[dev][id][_i], sep, sep,
