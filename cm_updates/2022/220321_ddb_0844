@@ -1,0 +1,5 @@
+delete from part_info where reference = 'removed';
+update part_info set comment = 'IP - 10.80.2.141' where comment = 'IP - 10.80.2.189';
+update part_info set comment = 'IP - 10.80.2.149' where comment = 'IP - 10.80.2.160';
+update part_info set comment = 'IP - 10.80.2.134' where comment = 'IP - 10.80.2.199';
+update part_info set comment = 'MAC - 08:00:30:b2:2e:07' where comment = 'MAC - 08:00:30:b2:2e:08';
