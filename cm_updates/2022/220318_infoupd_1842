@@ -1,0 +1,8 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220318_infoupd_1842" >> scripts.log 
+add_part_info.py -p HH16 -r A -c 'https://github.com/HERA-Team/HERA_Commissioning/issues/666' -l "infoupd" --date 2022/03/18 --time 18:42:00
+add_part_info.py -p HH127 -r A -c 'https://github.com/HERA-Team/HERA_Commissioning/issues/666' -l "infoupd" --date 2022/03/18 --time 18:42:00
+add_part_info.py -p HH130 -r A -c 'https://github.com/HERA-Team/HERA_Commissioning/issues/666' -l "infoupd" --date 2022/03/18 --time 18:42:00
+add_part_info.py -p HH134 -r A -c 'cables too short' -l "infoupd" --date 2022/03/18 --time 18:42:00
+add_part_info.py -p HH73 -r A -c 'https://github.com/HERA-Team/HERA_Commissioning/issues/666' -l "infoupd" --date 2022/03/18 --time 18:42:00
