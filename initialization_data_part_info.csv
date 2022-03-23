@@ -815,6 +815,7 @@ HH67,A,SNAPloc: 0,infoupd,1264203738
 N03,A,Reinstalled NCM,infoupd,1331577738
 HH68,A,SNAPloc: 1,infoupd,1264203738
 HH16,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1331664138
+HH151,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1332070938
 HH38,A,SNAPloc: 1,infoupd,1264203738
 HH36,A,Spectra: N3P11E,infoupd,1318668138
 HH53,A,SNAPloc: 2,infoupd,1264203738
@@ -871,6 +872,7 @@ HH76,A,SNAPloc: 3,infoupd,1264203738
 HH81,A,SNAPloc: 0,infoupd,1264203738
 HH127,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1331664138
 HH82,A,SNAPloc: 0,infoupd,1264203738
+HH171,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1332070938
 HH83,A,SNAPloc: 0,infoupd,1264203738
 HH100,A,SNAPloc: 1,infoupd,1264203738
 HH119,A,SNAPloc: 1,infoupd,1264203738
@@ -953,6 +955,7 @@ WRA000095,A,IP - 10.80.2.151,added,1330423218
 HH141,A,SNAPloc: 2,infoupd,1264236138
 HH130,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1331664138
 HH142,A,SNAPloc: 2,infoupd,1264236138
+HH192,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1332070938
 HH160,A,SNAPloc: 3,infoupd,1264236138
 HH161,A,SNAPloc: 0,infoupd,1264236138
 HH162,A,SNAPloc: 0,infoupd,1264236138
@@ -1036,6 +1039,7 @@ HH156,A,Feed heights (NE/SE/SW/NW): Z distance = 4.407,infoupd,1265449338
 HH157,A,Feed heights (NE/SE/SW/NW): z distance = 4.415,infoupd,1265449338
 HH136,A,Feed heights (NE/SE/SW/NW): Z distance = 4.411,infoupd,1265452938
 HH135,A,Final specrta looks fine,infoupd,1265467338
+HH193,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1332070938
 HH136,A,Final specrta looks fine,infoupd,1265467338
 HH155,A,Final specrta looks fine,infoupd,1265467338
 HH156,A,Strange bumps in final spectra for 156E - will ask for a check,infoupd,1265467338
@@ -1139,6 +1143,7 @@ WRA000758,A,IP - 10.80.2.147,added,1330768878
 HH89,A,10Mar2020 z = 4.409,infoupd,1267897338
 HH73,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1331664138
 HH90,A,10Mar 2020 Z = 4.400,infoupd,1267897338
+HH152,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1332070938
 HH106,A,10Mar2020 z = 4.414,infoupd,1267897338
 HH107,A,10Mar2020 z = 4.407,infoupd,1267897338
 HH108,A,10Mar2020 z = 4.403,infoupd,1267897338
@@ -1330,6 +1335,7 @@ HH35,A,Spectre: N6P3N,infoupd,1329144140
 HH49,A,door closed 18/02/22,infoupd,1329230538
 HH114,A,Spectre: N11P9E,infoupd,1329576140
 N16,A,no temperature sensors,infoupd,1330411338
+HH153,A,Feed heights (NE/SE/SW/NW): 4.410,infoupd,1332070938
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 ND05,A,Door direction: NE,,1280318418
 HH42,A,Spectre: N4P2E,infoupd,1318668138
@@ -1345,6 +1351,7 @@ HH62,A,door closed 18/02/22,infoupd,1329230538
 HH114,A,Spectre: N11P9N,infoupd,1329576142
 N17,A,"no temperature sensors, snaps not connected to NCM yet",infoupd,1330411338
 HH120,A,Removed splitter and just input external noise source to input of north pol,,1330790418
+HH154,A,Feed heights (NE/SE/SW/NW): 4.40,infoupd,1332070938
 HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1272926538
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
@@ -1358,6 +1365,7 @@ HH47,A,Spectre: N6P4N,infoupd,1329144140
 HH63,A,door closed 18/02/22,infoupd,1329230538
 HH113,A,Feed heights (NE/SE/SW/NW): 4.397,infoupd,1329576138
 N18,A,no plastic inside node,infoupd,1330411338
+HH174,A,Feed heights (NE/SE/SW/NW): 4.402,infoupd,1332070938
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
