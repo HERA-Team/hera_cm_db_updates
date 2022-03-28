@@ -816,6 +816,7 @@ N03,A,Reinstalled NCM,infoupd,1331577738
 HH68,A,SNAPloc: 1,infoupd,1264203738
 HH16,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1331664138
 HH151,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1332070938
+HH115,A,Spectre: N11P2E,infoupd,1332517338
 HH38,A,SNAPloc: 1,infoupd,1264203738
 HH36,A,Spectra: N3P11E,infoupd,1318668138
 HH53,A,SNAPloc: 2,infoupd,1264203738
@@ -874,6 +875,7 @@ HH127,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,13316
 HH82,A,SNAPloc: 0,infoupd,1264203738
 HH171,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1332070938
 HH83,A,SNAPloc: 0,infoupd,1264203738
+HH115,A,Spectre: N11P2N,infoupd,1332517340
 HH100,A,SNAPloc: 1,infoupd,1264203738
 HH119,A,SNAPloc: 1,infoupd,1264203738
 HH138,A,SNAPloc: 1,infoupd,1264203738
@@ -957,6 +959,7 @@ HH130,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,13316
 HH142,A,SNAPloc: 2,infoupd,1264236138
 HH192,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1332070938
 HH160,A,SNAPloc: 3,infoupd,1264236138
+HH96,A,Spectre: N11P8E,infoupd,1332517338
 HH161,A,SNAPloc: 0,infoupd,1264236138
 HH162,A,SNAPloc: 0,infoupd,1264236138
 HH180,A,SNAPloc: 3,infoupd,1264236138
@@ -1041,6 +1044,7 @@ HH136,A,Feed heights (NE/SE/SW/NW): Z distance = 4.411,infoupd,1265452938
 HH135,A,Final specrta looks fine,infoupd,1265467338
 HH193,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1332070938
 HH136,A,Final specrta looks fine,infoupd,1265467338
+HH96,A,Spectre: N11P8N,infoupd,1332517340
 HH155,A,Final specrta looks fine,infoupd,1265467338
 HH156,A,Strange bumps in final spectra for 156E - will ask for a check,infoupd,1265467338
 HH156,A,Final spectre looks fine,infoupd,1265467340
@@ -1145,6 +1149,7 @@ HH73,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,133166
 HH90,A,10Mar 2020 Z = 4.400,infoupd,1267897338
 HH152,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1332070938
 HH106,A,10Mar2020 z = 4.414,infoupd,1267897338
+HH79,A,Spectre: N11P10E,infoupd,1332517338
 HH107,A,10Mar2020 z = 4.407,infoupd,1267897338
 HH108,A,10Mar2020 z = 4.403,infoupd,1267897338
 HH125,A,10Mar2020 z = 4.405,infoupd,1267897338
@@ -1336,6 +1341,7 @@ HH49,A,door closed 18/02/22,infoupd,1329230538
 HH114,A,Spectre: N11P9E,infoupd,1329576140
 N16,A,no temperature sensors,infoupd,1330411338
 HH153,A,Feed heights (NE/SE/SW/NW): 4.410,infoupd,1332070938
+HH79,A,Spectre: N11P10N,infoupd,1332517340
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 ND05,A,Door direction: NE,,1280318418
 HH42,A,Spectre: N4P2E,infoupd,1318668138
@@ -1353,6 +1359,7 @@ N17,A,"no temperature sensors, snaps not connected to NCM yet",infoupd,133041133
 HH120,A,Removed splitter and just input external noise source to input of north pol,,1330790418
 HH154,A,Feed heights (NE/SE/SW/NW): 4.40,infoupd,1332070938
 HH128,A,"Central line too loose to be RF OK, door mesh in dish; nicest dish candidate; spectra look great",infoupd,1272926538
+HH95,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1332517338
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1366,6 +1373,7 @@ HH63,A,door closed 18/02/22,infoupd,1329230538
 HH113,A,Feed heights (NE/SE/SW/NW): 4.397,infoupd,1329576138
 N18,A,no plastic inside node,infoupd,1330411338
 HH174,A,Feed heights (NE/SE/SW/NW): 4.402,infoupd,1332070938
+HH95,A,Spectre: N11P11E,infoupd,1332517340
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1392,6 +1400,7 @@ HH61,A,Spectre: N6P5E,infoupd,1329144138
 HH64,A,door closed 18/02/22,infoupd,1329230538
 HH113,A,Spectre: N11P12E,infoupd,1329576140
 N19,A,no plastic inside node,infoupd,1330411338
+HH95,A,Spectre: N11P11N,infoupd,1332517342
 HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1428,6 +1437,7 @@ HH78,A,door closed 18/02/22,infoupd,1329230538
 HH46,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 N21,A,"Removed NCM to put in node 4, no plastic inside node",infoupd,1330411338
 HH58,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH151,A,Spectre: N16P1E,infoupd,1332517338
 HH59,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH60,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH73,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1503,6 +1513,7 @@ HH229,A,Feed heights (NE/SE/SW/NW): 4.398,infoupd,1322412138
 HH83,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
 HH77,A,Spectre: N6P6E,infoupd,1329144138
 HH101,A,sbcd 25 aug due to heranow autos,infoupd,1282416138
+HH151,A,Spectre: N16P1N,infoupd,1332517340
 HH169,A,Feed heights (NE/SE/SW/NW): Z= 4.406,infoupd,1283506938
 HH176,A,SNAP specta OK 10 sept,apa-infoupd,1283784138
 HH135,A,SNAP specta not OK 10 sept,infoupd,1283802138
@@ -1549,6 +1560,7 @@ HH219,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347
 HH74,A,74E and N look dead 17 sept in post-PAM spectre,infoupd,1284399738
 HH77,A,Spectre: N6P6N,infoupd,1329144140
 HH75,A,sbcd 17 Sept due to low N post-PAM spectra ,infoupd,1284399738
+HH171,A,Spectre: N16P2E,infoupd,1332517338
 HH92,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
 HH93,A,Looks dead in post-PAM spectre 17 Sept,infoupd,1284403338
 HH94,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
@@ -1604,6 +1616,7 @@ HH48,A,Spectre: N6P7E,infoupd,1329144138
 HH165,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH165,A,"Nice post-PAM autos 17 Sept,",apa-infoupd,1284486140
 HH166,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
+HH171,A,Spectre: N16P2n,infoupd,1332517340
 HH184,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH185,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH186,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
@@ -1683,11 +1696,13 @@ HH71,A,Feed heights: Ant 71 Z = 4.410 from jig,infoupd,1284925338
 HH72,A,Feed heights: Ant 72 Z = 4.413 from jig,infoupd,1284925338
 HH221,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347398
 HH48,A,Spectre: N6P7N,infoupd,1329144140
+HH192,A,Spectre: N16P5E,infoupd,1332517338
 HH40,A,Spectre: N4P6E,infoupd,1318668138
 HH225,A,Spectre: N19P7N,infoupd,1320075740
 HH261,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1321741162
 HH222,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347398
 HH49,A,Spectre: N6P8E,infoupd,1329144138
+HH154,A,Feed heights (NE/SE/SW/NW): 4.400,infoupd,1332517338
 HH123,A,SNAP autos look like no sky; moved from rf_ok to rf_maint,infoupd,1284943338
 HH67,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1285018938
 HH84,A,apriori_antenna status change: RF_ok -> RF_maintenance,apa-infoupd,1285018938
