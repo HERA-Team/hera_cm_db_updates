@@ -21,8 +21,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 41,N,52,104,10,110,C40,N0,3,digital_ok,,,,N4P10N,
 57,E,71,113,11,111,C40,E6,3,RF_ok,,,,N4P11E,
 57,N,71,113,11,111,C40,N4,3,RF_ok,,,,N4P11N,
-324,E,317,327,12,311,C40,E10,3,,,,4.400,,
-324,N,317,327,12,311,C40,N8,3,,,,,,
+324,E,317,327,12,311,C40,E10,3,,,,4.400,N4P12E,https://drive.google.com/drive/folders/1bHiRKy2b-xxflyGtJwySjkze8-Pi6PNf?usp=sharing
+324,N,317,327,12,311,C40,N8,3,,,,,N4P12N,
 Date:,2019/11/18,,,,,,,,,,,,,
 NCM,4,,,,,,,,,,,,,
 FPS,6,,,,,,,,,,,,,
