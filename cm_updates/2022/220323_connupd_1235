@@ -1,0 +1,13 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220323_connupd_1235" >> scripts.log 
+# Adding missing parts
+add_part.py -p FEM279 -r A -t front-end -m FEM279 --date 2022/03/23 --time 12:30
+add_part.py -p FEM325 -r A -t front-end -m FEM325 --date 2022/03/23 --time 12:30
+# Adding missing connections
+add_connection.py -u FDV221 --uprev A --upport terminals -d FEM325 --dnrev A --dnport input --date 2022/03/23 --time 12:35
+add_connection.py -u FEM325 --uprev A --upport e -d NBP16 --dnrev A --dnport e9 --date 2022/03/23 --time 12:35
+add_connection.py -u FDV133 --uprev A --upport terminals -d FEM279 --dnrev A --dnport input --date 2022/03/23 --time 12:35
+add_connection.py -u FEM279 --uprev A --upport e -d NBP16 --dnrev A --dnport e2 --date 2022/03/23 --time 12:35
+add_connection.py -u FEM279 --uprev A --upport n -d NBP16 --dnrev A --dnport n2 --date 2022/03/23 --time 12:35
+# Adding missing parts
