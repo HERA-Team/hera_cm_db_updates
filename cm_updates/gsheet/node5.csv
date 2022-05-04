@@ -3,7 +3,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 45,N,56,102,1,113,C58,N0,0,RF_maintenance,,,,,
 46,E,57,110,2,114,C58,E6,0,digital_ok,,,,,
 46,N,57,110,2,114,C58,N4,0,digital_ok,,,,,
-73,E,60,122,3,115,C58,E10,0,RF_maintenance,,https://github.com/HERA-Team/HERA_Commissioning/issues/666,,,
+73,E,60,122,3,115,C58,E10,0,RF_maintenance,,,,,
 73,N,60,122,3,115,C58,N8,0,RF_maintenance,,,,,
 59,E,66,103,4,116,C50,E2,1,RF_maintenance,,,,,
 59,N,66,103,4,116,C50,N0,1,RF_maintenance,,,,,

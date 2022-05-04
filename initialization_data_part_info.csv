@@ -1383,6 +1383,7 @@ HH95,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1332517338
 HH153,A,Spectre: N16P8E,infoupd,1332520938
 HH201,A,Spectre: N18P2N,infoupd,1334860944
 HH239,A,Spectre: N18P10N,infoupd,1334860944
+HH120,A,Removed 3dB pad on E pol and 6 dB pad on N pol.,ddb,1335696138
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1400,6 +1401,7 @@ HH95,A,Spectre: N11P11E,infoupd,1332517340
 HH153,A,Spectre: N16P8N,infoupd,1332520940
 HH202,A,door closed 25/10/2021,infoupd,1334860938
 HH238,A,door closd 25/10/2021,infoupd,1334860938
+HH120,A,Hooked up ports 1/2 of Nimas noise generator onto E/N,ddb,1335696738
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1430,6 +1432,7 @@ HH95,A,Spectre: N11P11N,infoupd,1332517342
 HH154,A,Spectre: N16P9E,infoupd,1332520938
 HH202,A,Spectre: N18P3E,infoupd,1334860940
 HH238,A,Spectre: N18P11E,infoupd,1334860940
+HH103,A,Hooked up port 3 of Nimas noise generator onto E,ddb,1335696738
 HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1490,6 +1493,7 @@ HH103,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH104,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH122,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH92,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH103,A,Installed VLF-180+ onto N pol,ddb,1335697338
 HH93,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH94,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH110,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
@@ -1570,6 +1574,7 @@ HH99,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disc
 HH117,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
 HH118,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
 HH100,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
+HH121,A,Hooked up port 4 of Nimas noise generator onto E,ddb,1335696738
 HH119,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
 HH98,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
 HH99,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
@@ -1631,6 +1636,7 @@ HH23,A,loose central line,infoupd,1284486138
 HH135,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH155,A,"low, flat  post-PAM auto 17 Sept",infoupd,1284486138
 HH177,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
+HH121,A,Installed VLF-180+ onto N pol,ddb,1335697338
 HH178,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH179,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH162,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
@@ -1689,6 +1695,7 @@ HH156,A,Nice SNAP auto 18 Sept,apa-infoupd,1284500538
 HH182,A,Nice SNAP auto 18 Sept,apa-infoupd,1284500538
 HH81,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284500538
 HH82,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284500538
+HH104,A,Installed VLF-180+ onto  pol,ddb,1335697338
 HH86,A,Nice SNAP auto 18 Sept,apa-infoupd,1284500538
 HH120,A,OK looking SNAP spectra 18 Sept,apa-infoupd,1284500538
 HH123,A,Nice SNAP autos 178 Sept,apa-infoupd,1284500538
@@ -1739,6 +1746,7 @@ HH48,A,Spectre: N6P7N,infoupd,1329144140
 HH192,A,Spectre: N16P5E,infoupd,1332517338
 HH219,A,Spectre: N18P5E,infoupd,1334860940
 HH237,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1334860942
+HH87,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH40,A,Spectre: N4P6E,infoupd,1318668138
 HH225,A,Spectre: N19P7N,infoupd,1320075740
 HH261,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1321741162
@@ -1747,6 +1755,7 @@ HH49,A,Spectre: N6P8E,infoupd,1329144138
 HH154,A,Feed heights (NE/SE/SW/NW): 4.400,infoupd,1332517338
 HH219,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1334860942
 HH237,A,Spectre: N18P12N,infoupd,1334860944
+HH101,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH123,A,SNAP autos look like no sky; moved from rf_ok to rf_maint,infoupd,1284943338
 HH67,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1285018938
 HH84,A,apriori_antenna status change: RF_ok -> RF_maintenance,apa-infoupd,1285018938
@@ -1841,6 +1850,7 @@ HH49,A,Spectre: N6P8N,infoupd,1329144140
 HH219,A,Spectre: N18P5N,infoupd,1334860944
 HH321,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1334860938
 RD16,A,IP - 10.80.2.216,,1267095678
+HH122,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH55,A,Spectre: N4P7E,infoupd,1318668138
 HH226,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1320075740
 HH227,A,door closed 19/11/2021,infoupd,1321741158
@@ -1848,6 +1858,7 @@ HH224,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347
 HH62,A,Spectre: N6P9E,infoupd,1329144138
 HH220,A,door closed 25/10/2021,infoupd,1334860938
 HH321,A,Spectre: N2P11E,infoupd,1334860940
+HH84,A,Installed VLF-180+ onto  both pols,ddb,1335697338
 HH0,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
 HH1,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
 HH11,A,placing in dig_maint from rf_ok 29 Sept. ,infoupd,1285519338
@@ -2046,6 +2057,7 @@ HH63,A,Spectre: N6P10N,infoupd,1329144140
 WRA000087,A,IP - 10.80.2.134,,1267095678
 HH220,A,Spectre: N18P7N,infoupd,1334860944
 HH323,A,Spectre: N2P12E,infoupd,1334860940
+HH123,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH27,A,Feed heights (NE/SE/SW/NW): something wrong with fiber,infoupd,1294504938
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
@@ -2160,6 +2172,7 @@ HH0,A,Another test of apriori notification.,apa-infoupd,1299634938
 HH0,A,Testing the full automation,apa-infoupd,1299634940
 HH2,A,Another test of apriori mis-match warning,apa-infoupd,1299634938
 HH0,A,apriori_antenna status change: dish_ok > RF_maintenance,apa-infoupd,1299645798
+HH81,A,Hooked in signal from splitter (shared with noise meter) on E pol,ddb,1335697938
 HH16,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1300214598
 HH73,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1300214598
 HH127,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1300214598
