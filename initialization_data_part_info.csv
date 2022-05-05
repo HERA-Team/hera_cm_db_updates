@@ -1384,6 +1384,7 @@ HH153,A,Spectre: N16P8E,infoupd,1332520938
 HH201,A,Spectre: N18P2N,infoupd,1334860944
 HH239,A,Spectre: N18P10N,infoupd,1334860944
 HH120,A,Removed 3dB pad on E pol and 6 dB pad on N pol.,ddb,1335696138
+HH81,A,Removed splitter/power meter on E pol,ddb,1335798738
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1402,6 +1403,7 @@ HH153,A,Spectre: N16P8N,infoupd,1332520940
 HH202,A,door closed 25/10/2021,infoupd,1334860938
 HH238,A,door closd 25/10/2021,infoupd,1334860938
 HH120,A,Hooked up ports 1/2 of Nimas noise generator onto E/N,ddb,1335696738
+HH70,A,Hooked in signal from splitter (shared with noise meter) on E pol,ddb,1335798738
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
