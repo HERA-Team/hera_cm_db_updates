@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220505_infoupd_1500" >> scripts.log 
+add_part_info.py -p HH81 -r A -c 'Removed splitter/power meter on E pol' -l "ddb" --date 2022/05/05 --time 15:12:00
+add_part_info.py -p HH70 -r A -c 'Hooked in signal from splitter (shared with noise meter) on E pol' -l "ddb" --date 2022/05/05 --time 15:12:00
