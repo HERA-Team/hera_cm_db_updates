@@ -145,7 +145,7 @@ class UpdateInfo(upd_base.Update):
             try:
                 arcstat = self.active.apriori[key].status
             except KeyError:
-                print(f"Skipping {key}.")
+                print(f"Skipping apriori update for {key}.")
                 continue
             if E != arcstat:
                 self.new_apriori[key] = {'info': []}
