@@ -142,7 +142,12 @@ class UpdateInfo(upd_base.Update):
                 continue
             if len(E) == 0:
                 continue
-            if E != self.active.apriori[key].status:
+            try:
+                arcstat = self.active.apriori[key].status
+            except KeyError:
+                print(f"Skipping {key}.")
+                continue
+            if E != arcstat:
                 self.new_apriori[key] = {'info': []}
                 self.new_apriori[key]['ant'] = ant
                 self.new_apriori[key]['old_status'] = self.active.apriori[key].status
