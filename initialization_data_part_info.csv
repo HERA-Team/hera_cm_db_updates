@@ -718,6 +718,13 @@ N12,A,"no plastic inside node, very dusty inside, bottom temperature sensor has 
 N21,A,"Removed NCM to put in node 4, no plastic inside node, all temperature sensors not taking data",infoupd,1330594938
 N04,A,"WR endpoint is not functioning properly (works as a switch, but not for timing) -- swapped it (NCM4) with the one in node 21 (NCM21), plastic detatched and inside of node very dusty, temperature sensor 1 has broken plastic coating (not a big deal), bottom temperature sensor has no data",infoupd,1330789338
 HH222,A,door closed 25/10/2021,infoupd,1334860938
+HH224,A,Spectre: N19P6E,infoupd,1335439818
+HH243,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1335439820
+HH37,A,Spectra: N3P5E,infoupd,1335439818
+HH50,A,Spectra: N3P12E,infoupd,1335439818
+HH71,A,Spectre: N4P8E,infoupd,1335439818
+HH325,A,SPECTRE: N9P7N,infoupd,1335439822
+HH325,A,SPECTRE: N9P7N,infoupd,1335872542
 HH67,A,Spectra: N3P3E,infoupd,1318668138
 HH37,A,Spectra: N3P5E,infoupd,1318668138
 HH53,A,Spectra: N3P7N,infoupd,1318668140
@@ -1363,7 +1370,14 @@ HH152,A,Spectre: N16P7N,infoupd,1332520940
 HH201,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1334860942
 HH239,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1334860942
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
+HH224,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
+HH243,A,Spectre: N19P12N,infoupd,1335439822
+HH37,A,Spectra: N3P5N,infoupd,1335439820
+HH50,A,Spectra: N3P12N,infoupd,1335439820
+HH71,A,Spectre: N4P8N,infoupd,1335439820
+N03,A,Ground around node 3 pitbox is opening up.,infoupd,1335439818
 ND05,A,Door direction: NE,,1280318418
+N03,A,Ground around node 3 pitbox is opening up.,infoupd,1335872538
 HH42,A,Spectre: N4P2E,infoupd,1318668138
 HH237,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1318862540
 HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1320075740
@@ -1385,6 +1399,14 @@ HH201,A,Spectre: N18P2N,infoupd,1334860944
 HH239,A,Spectre: N18P10N,infoupd,1334860944
 HH120,A,Removed 3dB pad on E pol and 6 dB pad on N pol.,ddb,1335696138
 HH81,A,Removed splitter/power meter on E pol,ddb,1335798738
+HH190,A,Feed conduit fell out,infoupd,1335439818
+HH224,A,Spectre: N19P6N,infoupd,1335439822
+HH175,A,Feed heights (NE/SE/SW/NW): 4.402,infoupd,1335439818
+HH38,A,Spectra: N3P6E,infoupd,1335439818
+HH72,A,Spectre: N4P1E,infoupd,1335439818
+HH70,A,Spectre: N4P9E,infoupd,1335439818
+N08,A,Reseated snap0 power to see if that was the problem.,infoupd,1335699018
+N08,A,Reseated snap0 power to see if that was the problem.,infoupd,1335872538
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1404,6 +1426,13 @@ HH202,A,door closed 25/10/2021,infoupd,1334860938
 HH238,A,door closd 25/10/2021,infoupd,1334860938
 HH120,A,Hooked up ports 1/2 of Nimas noise generator onto E/N,ddb,1335696738
 HH70,A,Hooked in signal from splitter (shared with noise meter) on E pol,ddb,1335798738
+HH204,A,North channel low,infoupd,1335439818
+HH225,A,Spectre: N19P7E,infoupd,1335439818
+HH195,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1335439818
+HH38,A,Spectra: N3P6N,infoupd,1335439820
+HH72,A,Spectre: N4P1N,infoupd,1335439820
+HH70,A,Spectre: N4P9N,infoupd,1335439822
+HH206,A,Spectre: N19P3E,infoupd,1335872538
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1435,6 +1464,13 @@ HH154,A,Spectre: N16P9E,infoupd,1332520938
 HH202,A,Spectre: N18P3E,infoupd,1334860940
 HH238,A,Spectre: N18P11E,infoupd,1334860940
 HH103,A,Hooked up port 3 of Nimas noise generator onto E,ddb,1335696738
+HH205,A,Spectre: N19P2E,infoupd,1335439818
+HH225,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1335439820
+HH214,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1335439818
+HH53,A,Spectra: N3P7E,infoupd,1335439818
+HH42,A,Spectre: N4P2E,infoupd,1335439818
+HH41,A,Spectre: N4P10E,infoupd,1335439818
+HH206,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335872540
 HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1497,12 +1533,19 @@ HH122,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH92,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH103,A,Installed VLF-180+ onto N pol,ddb,1335697338
 HH93,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH205,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
 HH94,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH225,A,Spectre: N19P7N,infoupd,1335439822
 HH110,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH212,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1335439818
 HH111,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH53,A,Spectra: N3P7N,infoupd,1335439820
 HH112,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH42,A,Spectre: N4P2N,infoupd,1335439820
 HH135,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH41,A,Spectre: N4P10N,infoupd,1335439820
 HH136,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH206,A,Spectre: N19P3N,infoupd,1335872542
 HH155,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH156,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH157,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
@@ -1578,8 +1621,15 @@ HH118,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/dis
 HH100,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
 HH121,A,Hooked up port 4 of Nimas noise generator onto E,ddb,1335696738
 HH119,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
+HH205,A,Spectre: N19P2N,infoupd,1335439822
 HH98,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
+HH226,A,Spectre: N19P8E,infoupd,1335439818
 HH99,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
+HH231,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1335439818
+HH320,A,height: 4.405,infoupd,1335439818
+HH54,A,Spectre: N4P3E,infoupd,1335439818
+HH57,A,Feed heights: 4.407,infoupd,1335439818
+HH243,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1335872538
 HH56,A,Spectre: N4P4N,infoupd,1318668140
 HH117,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
 HH224,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1320075740
@@ -1640,15 +1690,22 @@ HH155,A,"low, flat  post-PAM auto 17 Sept",infoupd,1284486138
 HH177,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH121,A,Installed VLF-180+ onto N pol,ddb,1335697338
 HH178,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
+HH201,A,Spectre: N19P3E,infoupd,1335439818
 HH179,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
+HH226,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1335439820
 HH162,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
+HH232,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1335439818
 HH183,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
+HH320,A,Spectra: N3P8E,infoupd,1335439820
 HH140,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
+HH54,A,Spectre: N4P3N,infoupd,1335439820
 HH142,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
 HH142,A,post-PAM auto is low and flat 17 Sept,infoupd,1284486140
 HH160,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
+HH57,A,Spectre: N4P11E,infoupd,1335439820
 HH180,A,post-PAM auto looks strange - lopsided at low freq 17 Sept,infoupd,1284486138
 HH180,A,post-PAM auto is low and flat 17 Sept,infoupd,1284486140
+HH70,A,Feed Installed By: Installed splitter and power meter on E pol.,infoupd,1335872538
 HH181,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH69,A,Spectre: N4P5E,infoupd,1318668138
 HH144,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
@@ -1699,12 +1756,19 @@ HH81,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284500538
 HH82,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284500538
 HH104,A,Installed VLF-180+ onto  pol,ddb,1335697338
 HH86,A,Nice SNAP auto 18 Sept,apa-infoupd,1284500538
+HH201,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
 HH120,A,OK looking SNAP spectra 18 Sept,apa-infoupd,1284500538
+HH226,A,Spectre: N19P8N,infoupd,1335439822
 HH123,A,Nice SNAP autos 178 Sept,apa-infoupd,1284500538
+HH65,A,Spectra: N3P1E,infoupd,1335439818
 HH88,A,autos look fine in 59111 DN,apa-infoupd,1284500538
+HH320,A,Spectra: N3P8N,infoupd,1335439822
 HH108,A,nice autos in SNAP spectra 18 Sept,apa-infoupd,1284500538
+HH56,A,Spectre: N4P4E,infoupd,1335439818
 HH138,A,138N SNAP auto looks too bumpy on 21 Sept.,infoupd,1284752538
+HH57,A,Spectre: N4P11N,infoupd,1335439822
 HH110,A,Ant 110 N has rising slope at hi freq and looks bad in 113 DN. 21 Sept.,apa-infoupd,1284756138
+HH57,A,Spectre: N4P11N,infoupd,1335872538
 HH182,A,"113 DN has E pol showing high niosy line (knwon FFT issue, I think)...",apa-infoupd,1284756138
 HH51,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
 HH53,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
@@ -1749,6 +1813,13 @@ HH192,A,Spectre: N16P5E,infoupd,1332517338
 HH219,A,Spectre: N18P5E,infoupd,1334860940
 HH237,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1334860942
 HH87,A,Installed VLF-180+ onto both pols,ddb,1335697338
+HH201,A,Spectre: N19P3N,infoupd,1335439822
+HH241,A,Spectre: N19P10E,infoupd,1335439818
+HH65,A,Spectra: N3P1N,infoupd,1335439820
+HH51,A,Spectra: N3P9E,infoupd,1335439818
+HH56,A,Spectre: N4P4N,infoupd,1335439820
+HH324,A,Feed heights: 4.400,infoupd,1335439818
+HH324,A,Feed heights: 4.400,infoupd,1335872538
 HH40,A,Spectre: N4P6E,infoupd,1318668138
 HH225,A,Spectre: N19P7N,infoupd,1320075740
 HH261,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1321741162
@@ -1758,12 +1829,19 @@ HH154,A,Feed heights (NE/SE/SW/NW): 4.400,infoupd,1332517338
 HH219,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1334860942
 HH237,A,Spectre: N18P12N,infoupd,1334860944
 HH101,A,Installed VLF-180+ onto both pols,ddb,1335697338
+HH207,A,Spectre: N19P4E,infoupd,1335439818
+HH241,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1335439820
+HH66,A,Spectra: N3P2E,infoupd,1335439818
+HH51,A,Spectra: N3P9N,infoupd,1335439820
+HH69,A,Spectre: N4P5E,infoupd,1335439818
+HH324,A,Spectre: N4P12E,infoupd,1335439820
 HH123,A,SNAP autos look like no sky; moved from rf_ok to rf_maint,infoupd,1284943338
 HH67,A,apriori_antenna status change: digital_maintenance -> RF_maintenance,apa-infoupd,1285018938
 HH84,A,apriori_antenna status change: RF_ok -> RF_maintenance,apa-infoupd,1285018938
 HH86,A,apriori_antenna status change: RF_ok -> RF_maintenance,apa-infoupd,1285018938
 HH89,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1285018938
 HH136,A,apriori_antenna status change: RF_ok -> RF_maintenance,apa-infoupd,1285018938
+HH324,A,Spectre: N4P12E,infoupd,1335872540
 HH136,A, ,apa-infoupd,1285018940
 HH37,A,"post-PAM spectra of 18 Sept show nice E spectra; N looks PAM alive, not seeing sky",infoupd,1285018938
 HH37,A, ,infoupd,1285018940
@@ -1853,6 +1931,13 @@ HH219,A,Spectre: N18P5N,infoupd,1334860944
 HH321,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1334860938
 RD16,A,IP - 10.80.2.216,,1267095678
 HH122,A,Installed VLF-180+ onto both pols,ddb,1335697338
+HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1335439820
+HH241,A,Spectre: N19P10N,infoupd,1335439822
+HH66,A,Spectra: N3P2N,infoupd,1335439820
+HH52,A,Feed conduit fell out.,infoupd,1335439818
+HH69,A,Spectre: N4P5N,infoupd,1335439820
+HH324,A,Spectre: N4P12N,infoupd,1335439819
+HH324,A,Spectre: N4P12N,infoupd,1335872544
 HH55,A,Spectre: N4P7E,infoupd,1318668138
 HH226,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1320075740
 HH227,A,door closed 19/11/2021,infoupd,1321741158
@@ -1861,6 +1946,13 @@ HH62,A,Spectre: N6P9E,infoupd,1329144138
 HH220,A,door closed 25/10/2021,infoupd,1334860938
 HH321,A,Spectre: N2P11E,infoupd,1334860940
 HH84,A,Installed VLF-180+ onto  both pols,ddb,1335697338
+HH207,A,Spectre: N19P4N,infoupd,1335439822
+HH242,A,Spectre: N19P11E,infoupd,1335439818
+HH67,A,Spectra: N3P3E,infoupd,1335439818
+HH52,A,Spectra: N3P10E,infoupd,1335439820
+HH40,A,Spectre: N4P6E,infoupd,1335439818
+HH322,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1335439818
+HH322,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1335872538
 HH0,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
 HH1,A,reducing to digital maintenance from dig_ok per Comm weekly 29 Sept: dont use N0 for science,infoupd,1285519338
 HH11,A,placing in dig_maint from rf_ok 29 Sept. ,infoupd,1285519338
@@ -2060,6 +2152,13 @@ WRA000087,A,IP - 10.80.2.134,,1267095678
 HH220,A,Spectre: N18P7N,infoupd,1334860944
 HH323,A,Spectre: N2P12E,infoupd,1334860940
 HH123,A,Installed VLF-180+ onto both pols,ddb,1335697338
+HH223,A,Spectre: N19P5E,infoupd,1335439818
+HH242,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
+HH67,A,Spectra: N3P3N,infoupd,1335439820
+HH52,A,Spectra: N3P10N,infoupd,1335439822
+HH40,A,Spectre: N4P6N,infoupd,1335439820
+HH81,A,Removed splitter/power meter on E pol.,infoupd,1335439818
+HH81,A,Removed splitter/power meter on E pol.,infoupd,1335872538
 HH27,A,Feed heights (NE/SE/SW/NW): something wrong with fiber,infoupd,1294504938
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
@@ -2175,6 +2274,13 @@ HH0,A,Testing the full automation,apa-infoupd,1299634940
 HH2,A,Another test of apriori mis-match warning,apa-infoupd,1299634938
 HH0,A,apriori_antenna status change: dish_ok > RF_maintenance,apa-infoupd,1299645798
 HH81,A,Hooked in signal from splitter (shared with noise meter) on E pol,ddb,1335697938
+HH223,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1335439820
+HH242,A,Spectre: N19P11N,infoupd,1335439822
+HH68,A,Spectra: N3P4E,infoupd,1335439818
+HH36,A,Spectra: N3P11E,infoupd,1335439818
+HH55,A,Spectre: N4P7E,infoupd,1335439818
+HH325,A,HEIGHT: 4.397,infoupd,1335439818
+HH325,A,HEIGHT: 4.397,infoupd,1335872538
 HH16,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1300214598
 HH73,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1300214598
 HH127,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1300214598
@@ -2284,3 +2390,10 @@ HH38,A,Spectra: N3P3N,infoupd,1318326140
 N04,A,"WR endpoint is not functioning properly (works as a switch, but not for timing) -- swapped it (NCM4) with the one in node 21 (NCM21)",infoupd,1318524138
 N21,A,Removed NCM to put in node 4,infoupd,1318524138
 N15,A,Snap 0 being is not working tonight -- removed from yaml,infoupd,1318527738
+HH223,A,Spectre: N19P5N,infoupd,1335439822
+HH243,A,Spectre: N19P12E,infoupd,1335439818
+HH68,A,Spectra: N3P4N,infoupd,1335439820
+HH36,A,Spectra: N3P11N,infoupd,1335439820
+HH55,A,Spectre: N4P7N,infoupd,1335439820
+HH325,A,SPECTRE: N9P7E,infoupd,1335439820
+HH325,A,SPECTRE: N9P7E,infoupd,1335872540
