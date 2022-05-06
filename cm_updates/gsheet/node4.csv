@@ -15,7 +15,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 55,N,23,119,7,107,C48,N0,2,RF_maintenance,,,,N4P7N,
 71,E,63,114,8,108,C48,E6,2,RF_maintenance,,,,N4P8E,
 71,N,63,114,8,108,C48,N4,2,RF_maintenance,,,,N4P8N,
-70,E,55,312,9,109,C48,E10,2,digital_ok,,,,N4P9E,Installed splitter and power meter on E pol.
+70,E,55,312,9,109,C48,E10,2,digital_ok,,,,N4P9E,Put VLT-180+ filter between the splitter and the power meter.
 70,N,55,312,9,109,C48,N8,2,digital_ok,,,,N4P9N,
 41,E,52,104,10,110,C40,E2,3,digital_ok,,,,N4P10E,
 41,N,52,104,10,110,C40,N0,3,digital_ok,,,,N4P10N,
