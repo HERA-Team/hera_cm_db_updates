@@ -53,10 +53,7 @@ if args.archive_gsheet.startswith('___'):
 update.load_gsheet(node_csv=args.node_csv, path=args.archive_gsheet, time_tag=args.time_tag)
 update.load_active()
 update.load_gnodes()
-try:
-    update.add_apriori()
-except KeyError:
-    print("APRIORI KEY ERROR.  Skipping update_apriori")
+update.add_apriori()
 update.add_sheet_notes(duplication_window=args.duplication_window,
                        view_duplicate=args.view_duplicate)
 update.add_gnodes(duplication_window=args.duplication_window,
