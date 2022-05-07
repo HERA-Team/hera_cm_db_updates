@@ -74,7 +74,11 @@ class UpdateConnect(upd_base.Update):
                     if col in ['Ant', 'Feed', 'SNAP'] and pol == self.pols[1]:
                         this = self.get_hpn_from_col(col, gkey, header)
                         if this != previous[col]:
-                            raise ValueError("{} != {}".format(this, previous[col]))
+                            msg = f'Error: {this} != {previous[col]}'
+                            if self.disable_err:
+                                print(msg)
+                            else:
+                                raise ValueError(msg)
                         continue
                     if col == 'Ant':  # Make station-antenna, antenna-feed
                         ant = self.get_hpn_from_col('Ant', gkey, header)
@@ -132,7 +136,10 @@ class UpdateConnect(upd_base.Update):
                             if port[0] != pol[0].lower():
                                 msg = "{} port ({}) and pol ({}) don't match".format(snap,
                                                                                      port, pol)
-                                raise ValueError(msg)
+                                if self.disable_err:
+                                    print(msg)
+                                else:
+                                    raise ValueError(msg)
                         keyup = cm_utils.make_part_key(pam, 'A')
                         if self._status_OK(keyup, pol, [pam, snap, port]):
                             self._ugconn(keyup, pol, [pam, 'A', pol.lower()], [snap, 'A', port])
@@ -183,13 +190,19 @@ class UpdateConnect(upd_base.Update):
             if pol == self.pols[1]:  # Make sure key already there
                 if keyup not in self.gsheet.connections['up']:
                     print(self.gsheet.connections['up'][keyup])
-                    if not self.disable_err:
-                        raise ValueError("{} not present ({}).".format(keyup, pol))
+                    msg = "Error: {} not present ({}).".format(keyup, pol)
+                    if self.disable_err:
+                        print(msg)
+                    else:
+                        raise ValueError(msg)
             else:  # Make sure it is not there, then process
                 if keyup in self.gsheet.connections['up']:
                     print(self.gsheet.connections['up'][keyup])
-                    if not self.disable_err:
-                        raise ValueError("{} already present ({}).".format(keyup, pol))
+                    msg = "Error: {} already present ({}).".format(keyup, pol)
+                    if self.disable_err:
+                        print(msg)
+                    else:
+                        raise ValueError(msg)
         return True
 
     def _sta_from_ant(self, ant):
