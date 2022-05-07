@@ -26,7 +26,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 Note,2019Nov13,,MRD,"Twelve (12) 6ft (1.8m) blue CAT7 SSTP cables, originally intended just for NCM I2C sensors and Node ID, used for the rear of PAM chassis to the side panel connections.",,,,,,,,,,
 Date:,2019/11/18,,,,,,,,,,,,,
 NCM,3,,,,,,,,,,,,,
-FPS,7,,,,,,,,,,,,,
+FPS,6,,,,,,,,,,,,,
 PCH,6,,,,,,,,,,,,,
 Note,2019Nov11,,MRD,"1U Fan tray, rion Fan tray with 3 fans OA300ST-23,  is (probably) mounted to the front of the rack right above the PAM chassis",,,,,,,,,,
 ,,,,,,,,,,,,,,
