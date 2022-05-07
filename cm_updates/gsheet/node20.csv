@@ -23,6 +23,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Spect
 228,N,192,266,11,267,C86,n4,3,RF_maintenance,,,N20P11N,,
 229,E,183,254,12,268,C86,e10,3,RF_maintenance,,,N20P12E,4.398,
 229,N,183,254,12,268,C86,n8,3,RF_maintenance,,,N20P12N,,
+#END,,,,,,,,,,,,,,
 Date:,2019/11/18,,,,,,,,,,,,,
 NCM,15,,,,,,,,,,,,,
 FPS,19,,,,,,,,,,,,,

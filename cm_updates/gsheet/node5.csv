@@ -23,6 +23,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 322,N,328,312,11,327,C18,N4,3,RF_maintenance,,,,N5P11N,
 ,,,,12,132,C18,E10,3,dish_maintenance,,,,,
 ,,,,12,132,C18,N8,3,dish_maintenance,,,,,
+#END,,,,,,,,,,,,,,
 Note,2019Nov13,,MRD,"Twelve (12) 6ft (1.8m) blue CAT7 SSTP cables, originally intended just for NCM I2C sensors and Node ID, used for the rear of PAM chassis to the side panel connections.",,,,,,,,,,
 Date:,2019/11/18,,,,,,,,,,,,,
 NCM,3,,,,,,,,,,,,,

@@ -23,6 +23,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 64,N,175,286,11,279,C100,n4,3,,,,,,N6P11N,,
 78,E,173,283,12,280,C100,e10,3,,,,4.407,,N6P12E,,
 78,N,173,283,12,280,C100,n8,3,,,,,,N6P12N,,
+#END,,,,,,,,,,,,,,,,
 Date:,2019/11/18,,,,,,,,,,,,,,,
 NCM,16,,,,,,,,,,,,,,,
 FPS,21,,,,,,,,,,,,,,,

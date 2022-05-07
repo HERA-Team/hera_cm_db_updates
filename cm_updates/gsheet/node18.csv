@@ -23,6 +23,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Spect
 238,N,204,263,11,243,C68,n4,3,RF_ok,,,N18P11N,,
 237,E,227,253,12,244,C68,e10,3,RF_ok,,door closed 25/10/2021,N18P12E,4.411,
 237,N,227,253,12,244,C68,n8,3,RF_ok,,,N18P12N,,
+#END,,,,,,,,,,,,,,
 Date:,2019/11/18,2022/03/03,,,,,,,,,,,,
 NCM,12,,,,,,,,,,,,,
 FPS,20,,,,,,,,,,,,,
