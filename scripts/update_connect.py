@@ -31,9 +31,8 @@ else:
 
 script_type = 'connupd'
 
-update = upd_connect.UpdateConnect(script_type=script_type,
-                                   script_path=args.script_path,
-                                   verbose=args.verbose)
+update = upd_connect.UpdateConnect(script_type=script_type, script_path=args.script_path,
+                                   disable_err=args.disable_err, verbose=args.verbose)
 if args.archive_path.startswith('___'):
     import os.path
     args.archive_path = os.path.join(update.script_path, args.archive_path[3:])
