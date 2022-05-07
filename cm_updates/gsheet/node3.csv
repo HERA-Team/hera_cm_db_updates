@@ -23,6 +23,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,heigh
 36,N,93,132,11,135,C54,N4,3,digital_ok,,,,N3P11N,
 50,E,85,107,12,136,C54,E10,3,digital_ok,,,,N3P12E,
 50,N,85,107,12,136,C54,N8,3,digital_ok,,,,N3P12N,
+#END,,,,,,,,,,,,,,
 Date:,2019/10/03,,,,,,,,,,,,,
 NCM,5,,,,,,,,,,,,,
 FPS,9,,,,,,,,,,,,,

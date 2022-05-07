@@ -11,8 +11,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,HEIGH
 108,N,22,33,5,39,C11,n4,1,digital_ok,,,,
 91,E,18,35,6,40,C11,e10,1,digital_ok,,,,
 91,N,18,35,6,40,C11,n8,1,digital_ok,,,,
-325,E,276,269,7,325,C13,,2,dish_ok,,,4.397,N9P7E
-325,N,276,269,7,325,C13,,2,dish_ok,,,,N9P7N
+325,E,276,269,7,325,C13,e2,2,dish_ok,,,4.397,N9P7E
+325,N,276,269,7,325,C13,n0,2,dish_ok,,,,N9P7N
 124,E,24,32,8,41,C13,e6,2,digital_ok,,,,
 124,N,24,32,8,41,C13,n4,2,digital_ok,,,,
 89,E,16,44,9,23,C13,e10,2,RF_maintenance,,,,
@@ -23,6 +23,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,HEIGH
 126,N,13,28,11,45,C33,n4,3,RF_maintenance,,,,
 125,E,25,29,12,46,C33,e10,3,RF_maintenance,,,,
 125,N,25,29,12,46,C33,n8,3,RF_maintenance,,,,
+#END,,,,,,,,,,,,,
 Note,2019Aug15,,MRD,"1U Fan tray is mounted to the front of the rack right above the PAM chassis.  No PVC air curtains/baffles,",,,,,,,,,
 Note,2020Mar03,,SBCD,Boom reports all N9 feeds  are lowered - moved the status of all N9 ants to 'RF_maintenance',,,,,,,,,
 Note,2019Nov13,,MRD,Is the top back stop part of the SNAPv2 mounting scheme actually installed ?,,,,,,,,,
