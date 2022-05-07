@@ -20,12 +20,14 @@ class UpdateConnect(upd_base.Update):
     pols = ['E', 'N']
     NotFound = "Not Found"
 
-    def __init__(self, script_type='connupd', script_path='default', verbose=True):
+    def __init__(self, script_type='connupd', script_path='default',
+                 verbose=True, disable_err=False):
         super(UpdateConnect, self).__init__(script_type=script_type,
                                             script_path=script_path,
                                             verbose=verbose)
         self.active = None
         self.skipping = []
+        self.disable_err = disable_err
 
     def pipe(self, node_csv='n'):
         self.load_gsheet(node_csv)
@@ -181,11 +183,13 @@ class UpdateConnect(upd_base.Update):
             if pol == self.pols[1]:  # Make sure key already there
                 if keyup not in self.gsheet.connections['up']:
                     print(self.gsheet.connections['up'][keyup])
-                    raise ValueError("{} not present ({}).".format(keyup, pol))
+                    if not self.disable_err:
+                        raise ValueError("{} not present ({}).".format(keyup, pol))
             else:  # Make sure it is not there, then process
                 if keyup in self.gsheet.connections['up']:
                     print(self.gsheet.connections['up'][keyup])
-                    raise ValueError("{} already present ({}).".format(keyup, pol))
+                    if not self.disable_err:
+                        raise ValueError("{} already present ({}).".format(keyup, pol))
         return True
 
     def _sta_from_ant(self, ant):
