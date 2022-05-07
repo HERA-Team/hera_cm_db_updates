@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220506_infoupd_2042" >> scripts.log 
+add_part_info.py -p HH70 -r A -c 'Feed Installed By: Put VLT-180+ filter between the splitter and the power meter.' -l "infoupd" --date 2022/05/06 --time 20:42:00

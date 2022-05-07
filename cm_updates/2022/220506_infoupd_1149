@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220506_infoupd_1149" >> scripts.log 
+add_part_info.py -p HH324 -r A -c 'Feed Installed By: https://drive.google.com/drive/folders/1bHiRKy2b-xxflyGtJwySjkze8-Pi6PNf?usp=sharing' -l "infoupd" --date 2022/05/06 --time 11:49:00
+add_part_info.py -p HH322 -r A -c 'Feed Installed By: https://drive.google.com/drive/folders/1bHiRKy2b-xxflyGtJwySjkze8-Pi6PNf?usp=sharing' -l "infoupd" --date 2022/05/06 --time 11:49:00
