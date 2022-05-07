@@ -7,6 +7,7 @@ This class sets up to update the connections database.
 """
 import datetime
 from hera_mc import cm_active, cm_utils, cm_sysdef
+from hera_mc.geo_sysdef import region
 from hera_mc import cm_partconnect as CMPC
 from . import util, cm_gsheet, upd_base
 from argparse import Namespace
@@ -189,10 +190,11 @@ class UpdateConnect(upd_base.Update):
 
     def _sta_from_ant(self, ant):
         antnum = int(ant[1:])
-        if antnum < 320:
-            return 'HH{}'.format(antnum)
-        else:
-            raise ValueError("NEED TO ADD OUTRIGGERS")
+        if antnum in region['heraringa']:
+            return f"HA{antnum}"
+        if antnum in region['heraringb']:
+            return f"HB{antnum}"
+        return f"HH{antnum}"
 
     def add_rosetta(self):
         for t2u in ['missing', 'different']:
