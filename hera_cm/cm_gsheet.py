@@ -125,7 +125,7 @@ class SheetData:
             self.node_notes.append(nn)
 
     def load_sheet(self, node_csv='none', tabs=None, check_headers=False,
-                   path='', time_tag='_%y%m%d'):
+                   path='.', time_tag='_%y%m%d'):
         """
         Get the googlesheet information from the internet (or locally for testing etc).
 

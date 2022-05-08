@@ -86,7 +86,6 @@ add_connection.py -u NBP05 --uprev A --upport n11 -d PAM327 --dnrev A --dnport n
 add_connection.py -u FDV55 --uprev A --upport terminals -d FEM312 --dnrev A --dnport input --date 2022/05/07 --time 19:32
 add_connection.py -u FEM269 --uprev A --upport e -d NBP09 --dnrev A --dnport e7 --date 2022/05/07 --time 19:32
 add_connection.py -u FEM269 --uprev A --upport n -d NBP09 --dnrev A --dnport n7 --date 2022/05/07 --time 19:32
-add_connection.py -u PCH22 --uprev A --upport rack -d N04 --dnrev A --dnport bottom --date 2022/05/07 --time 19:32
 add_connection.py -u FEM302 --uprev A --upport e -d NBP02 --dnrev A --dnport e11 --date 2022/05/07 --time 19:32
 add_connection.py -u FEM302 --uprev A --upport n -d NBP02 --dnrev A --dnport n11 --date 2022/05/07 --time 19:32
 add_connection.py -u FEM231 --uprev A --upport e -d NBP03 --dnrev A --dnport e8 --date 2022/05/07 --time 19:32
