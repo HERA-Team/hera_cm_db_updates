@@ -1408,6 +1408,7 @@ HH70,A,Spectre: N4P9E,infoupd,1335439818
 N08,A,Reseated snap0 power to see if that was the problem.,infoupd,1335699018
 N08,A,Reseated snap0 power to see if that was the problem.,infoupd,1335872538
 HH70,A,Feed Installed By: Put VLT-180+ filter between the splitter and the power meter.,infoupd,1335904938
+HH120,A,Removed Nimas noise source and installed SLP-250+ filter,infoupd,1336048938
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1434,6 +1435,7 @@ HH38,A,Spectra: N3P6N,infoupd,1335439820
 HH72,A,Spectre: N4P1N,infoupd,1335439820
 HH70,A,Spectre: N4P9N,infoupd,1335439822
 HH206,A,Spectre: N19P3E,infoupd,1335872538
+HH120,A,Removed Nimas noise source and installed SLP-250+ filter,infoupd,1336048940
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1472,6 +1474,7 @@ HH53,A,Spectra: N3P7E,infoupd,1335439818
 HH42,A,Spectre: N4P2E,infoupd,1335439818
 HH41,A,Spectre: N4P10E,infoupd,1335439818
 HH206,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335872540
+HH103,A,Removed Nimas noise source and installed SLP-250+ filter,infoupd,1336048938
 HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1548,6 +1551,7 @@ HH41,A,Spectre: N4P10N,infoupd,1335439820
 HH136,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH206,A,Spectre: N19P3N,infoupd,1335872542
 HH155,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH121,A,Removed Nimas noise source and installed SLP-250+ filter,infoupd,1336048938
 HH156,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH157,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH158,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
@@ -1631,6 +1635,7 @@ HH320,A,height: 4.405,infoupd,1335439818
 HH54,A,Spectre: N4P3E,infoupd,1335439818
 HH57,A,Feed heights: 4.407,infoupd,1335439818
 HH243,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1335872538
+N21,A,"Had taken out NCM to see if we could fix the WR-LEN.  We did not succeed, but we re-installed NCM15 which still acts like a switch for Arduino",infoupd,1336048938
 HH56,A,Spectre: N4P4N,infoupd,1318668140
 HH117,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
 HH224,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1320075740
