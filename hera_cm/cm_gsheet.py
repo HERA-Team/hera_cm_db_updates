@@ -178,6 +178,7 @@ class SheetData:
             csv_tab = csv.reader(csv_data)
             if node_csv == 'w':
                 ofnc = f"{path}/{tab}{ttag}.csv"
+                print(f"Node file: {ofnc}")
                 with open(ofnc, 'w') as fp:
                     fp.write('\n'.join(csv_data))
             self.node_to_ant[tab] = []
