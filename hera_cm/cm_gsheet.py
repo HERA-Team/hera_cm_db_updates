@@ -182,8 +182,7 @@ class SheetData:
                     if check_headers:
                         util.compare_lists(sheet_headers, data, info=tab)
                     continue
-                elif data[0].startswith('Date:'):  # This is the overall date line
-                    self.date[tab] = data[1]
+                elif data[0].startswith('#END'):
                     break
                 try:
                     antnum = int(data[0])
