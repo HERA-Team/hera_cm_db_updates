@@ -725,6 +725,7 @@ HH50,A,Spectra: N3P12E,infoupd,1335439818
 HH71,A,Spectre: N4P8E,infoupd,1335439818
 HH325,A,SPECTRE: N9P7N,infoupd,1335439822
 HH325,A,SPECTRE: N9P7N,infoupd,1335872542
+HH320,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH67,A,Spectra: N3P3E,infoupd,1318668138
 HH37,A,Spectra: N3P5E,infoupd,1318668138
 HH53,A,Spectra: N3P7N,infoupd,1318668140
@@ -1378,6 +1379,7 @@ HH71,A,Spectre: N4P8N,infoupd,1335439820
 N03,A,Ground around node 3 pitbox is opening up.,infoupd,1335439818
 ND05,A,Door direction: NE,,1280318418
 N03,A,Ground around node 3 pitbox is opening up.,infoupd,1335872538
+HH320,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH42,A,Spectre: N4P2E,infoupd,1318668138
 HH237,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1318862540
 HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1320075740
@@ -1409,6 +1411,8 @@ N08,A,Reseated snap0 power to see if that was the problem.,infoupd,1335699018
 N08,A,Reseated snap0 power to see if that was the problem.,infoupd,1335872538
 HH70,A,Feed Installed By: Put VLT-180+ filter between the splitter and the power meter.,infoupd,1335904938
 HH120,A,Removed Nimas noise source and installed SLP-250+ filter,infoupd,1336048938
+HH65,A,Installed SLP-250+ on E pol,infoupd,1336056138
+HH51,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1436,6 +1440,8 @@ HH72,A,Spectre: N4P1N,infoupd,1335439820
 HH70,A,Spectre: N4P9N,infoupd,1335439822
 HH206,A,Spectre: N19P3E,infoupd,1335872538
 HH120,A,Removed Nimas noise source and installed SLP-250+ filter,infoupd,1336048940
+HH65,A,Installed SLP-250+ on N pol,infoupd,1336056140
+HH51,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1475,6 +1481,8 @@ HH42,A,Spectre: N4P2E,infoupd,1335439818
 HH41,A,Spectre: N4P10E,infoupd,1335439818
 HH206,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335872540
 HH103,A,Removed Nimas noise source and installed SLP-250+ filter,infoupd,1336048938
+HH66,A,Installed SLP-250+ on E pol,infoupd,1336056138
+HH52,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1554,7 +1562,9 @@ HH155,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH121,A,Removed Nimas noise source and installed SLP-250+ filter,infoupd,1336048938
 HH156,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH157,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH66,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH158,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH52,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH177,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 ND00,A,Door direction: E,,1280318418
 ND01,A,Door direction: NW,,1280318418
@@ -1636,6 +1646,7 @@ HH54,A,Spectre: N4P3E,infoupd,1335439818
 HH57,A,Feed heights: 4.407,infoupd,1335439818
 HH243,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1335872538
 N21,A,"Had taken out NCM to see if we could fix the WR-LEN.  We did not succeed, but we re-installed NCM15 which still acts like a switch for Arduino",infoupd,1336048938
+HH67,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH56,A,Spectre: N4P4N,infoupd,1318668140
 HH117,A,FEM turned back on 15 Sept 2020,apa-infoupd,1284234138
 HH224,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1320075740
@@ -1712,6 +1723,7 @@ HH57,A,Spectre: N4P11E,infoupd,1335439820
 HH180,A,post-PAM auto looks strange - lopsided at low freq 17 Sept,infoupd,1284486138
 HH180,A,post-PAM auto is low and flat 17 Sept,infoupd,1284486140
 HH70,A,Feed Installed By: Installed splitter and power meter on E pol.,infoupd,1335872538
+HH67,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH181,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH69,A,Spectre: N4P5E,infoupd,1318668138
 HH144,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
@@ -1776,7 +1788,9 @@ HH57,A,Spectre: N4P11N,infoupd,1335439822
 HH110,A,Ant 110 N has rising slope at hi freq and looks bad in 113 DN. 21 Sept.,apa-infoupd,1284756138
 HH57,A,Spectre: N4P11N,infoupd,1335872538
 HH182,A,"113 DN has E pol showing high niosy line (knwon FFT issue, I think)...",apa-infoupd,1284756138
+HH68,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH51,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
+HH36,A,Installed VLF-180+ on E pol,infoupd,1336056138
 HH53,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
 HH69,A,Spectre: N4P5N,infoupd,1318668140
 HH67,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
@@ -1826,6 +1840,8 @@ HH51,A,Spectra: N3P9E,infoupd,1335439818
 HH56,A,Spectre: N4P4N,infoupd,1335439820
 HH324,A,Feed heights: 4.400,infoupd,1335439818
 HH324,A,Feed heights: 4.400,infoupd,1335872538
+HH68,A,Installed SLP-250+ on N pol,infoupd,1336056140
+HH36,A,Installed VLS-180+ on N pol,infoupd,1336056140
 HH40,A,Spectre: N4P6E,infoupd,1318668138
 HH225,A,Spectre: N19P7N,infoupd,1320075740
 HH261,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1321741162
@@ -1853,7 +1869,9 @@ HH37,A,"post-PAM spectra of 18 Sept show nice E spectra; N looks PAM alive, not 
 HH37,A, ,infoupd,1285018940
 HH38,A,post-PAM spectra of 18 Sept show nice E spectra; N looks PAM alive not seeing sky,infoupd,1285018938
 HH38,A, ,infoupd,1285018940
+HH37,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH67,A, ,apa-infoupd,1285018940
+HH50,A,Installed VLF-180+ on E pol,infoupd,1336056138
 HH84,A, ,apa-infoupd,1285018940
 HH86,A, ,apa-infoupd,1285018940
 HH89,A, ,apa-infoupd,1285018940
@@ -1944,6 +1962,8 @@ HH52,A,Feed conduit fell out.,infoupd,1335439818
 HH69,A,Spectre: N4P5N,infoupd,1335439820
 HH324,A,Spectre: N4P12N,infoupd,1335439819
 HH324,A,Spectre: N4P12N,infoupd,1335872544
+HH37,A,Installed SLP-250+ on N pol,infoupd,1336056140
+HH50,A,Installed VLS-180+ on N pol,infoupd,1336056140
 HH55,A,Spectre: N4P7E,infoupd,1318668138
 HH226,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1320075740
 HH227,A,door closed 19/11/2021,infoupd,1321741158
@@ -1997,6 +2017,8 @@ HH165,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,12855
 HH166,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH185,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 RD17,A,MAC - 02:02:0a:01:01:d9,,1267095618
+HH38,A,Installed SLP-250+ on E pol,infoupd,1336056138
+HH70,A,Moved filter on power meter/SNAP splitter to in front of both,infoupd,1336056138
 HH186,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH187,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH45,A,heranow auto shows rising power at high freqs. 29 Sept.,infoupd,1285519338
@@ -2165,6 +2187,7 @@ HH52,A,Spectra: N3P10N,infoupd,1335439822
 HH40,A,Spectre: N4P6N,infoupd,1335439820
 HH81,A,Removed splitter/power meter on E pol.,infoupd,1335439818
 HH81,A,Removed splitter/power meter on E pol.,infoupd,1335872538
+HH38,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH27,A,Feed heights (NE/SE/SW/NW): something wrong with fiber,infoupd,1294504938
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
@@ -2287,6 +2310,7 @@ HH36,A,Spectra: N3P11E,infoupd,1335439818
 HH55,A,Spectre: N4P7E,infoupd,1335439818
 HH325,A,HEIGHT: 4.397,infoupd,1335439818
 HH325,A,HEIGHT: 4.397,infoupd,1335872538
+HH53,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH16,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1300214598
 HH73,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1300214598
 HH127,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1300214598
@@ -2403,3 +2427,4 @@ HH36,A,Spectra: N3P11N,infoupd,1335439820
 HH55,A,Spectre: N4P7N,infoupd,1335439820
 HH325,A,SPECTRE: N9P7E,infoupd,1335439820
 HH325,A,SPECTRE: N9P7E,infoupd,1335872540
+HH53,A,Installed SLP-250+ on N pol,infoupd,1336056140
