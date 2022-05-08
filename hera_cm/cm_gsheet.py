@@ -4,6 +4,8 @@ import requests
 from . import util
 from hera_mc import cm_utils
 from argparse import Namespace
+import os.path as ospath
+
 
 apriori_enum_header = 'Current apriori enum'
 hu_col = {'Ant': 0, 'Pol': 4, 'Feed': 1, 'FEM': 2, 'PAM': 4, 'NBP/PAMloc': 3,
@@ -124,8 +126,7 @@ class SheetData:
         for nn in csv.reader(_nodenotes):
             self.node_notes.append(nn)
 
-    def load_sheet(self, node_csv='none', tabs=None, check_headers=False,
-                   path='.', time_tag='_%y%m%d'):
+    def load_sheet(self, node_csv='none', tabs=None, check_headers=False, path='.'):
         """
         Get the googlesheet information from the internet (or locally for testing etc).
 
@@ -142,8 +143,6 @@ class SheetData:
             If True, it will make sure all of the headers agree with sheet_headers
         path : str
             Path to use if reading/writing csv files.
-        time_tag : str
-            If non-zero length string use as time_tag format for the output files (if node_csv=w).
         """
         ant_set = set()
         node_csv = node_csv[0].lower()
@@ -151,15 +150,10 @@ class SheetData:
             tabs = self.tabs
         elif isinstance(tabs, str):
             tabs = tabs.split(',')
-        if node_csv == 'w' and isinstance(time_tag, str) and len(time_tag):
-            from datetime import datetime
-            ttag = datetime.strftime(datetime.now(), time_tag)
-        else:
-            ttag = ""
         for tab in tabs:
             if node_csv == 'r':
                 csv_data = []
-                ofnc = f"{path}/{tab}.csv"
+                ofnc = ospath.join(path, f"{tab}.csv")
                 with open(ofnc, 'r') as fp:
                     for line in fp:
                         csv_data.append(line)
@@ -177,7 +171,7 @@ class SheetData:
                 csv_data = csv_tab.decode('utf-8').splitlines()
             csv_tab = csv.reader(csv_data)
             if node_csv == 'w':
-                ofnc = f"{path}/{tab}{ttag}.csv"
+                ofnc = ospath.join(path, f"{tab}.csv")
                 print(f"Node file: {ofnc}")
                 with open(ofnc, 'w') as fp:
                     fp.write('\n'.join(csv_data))
