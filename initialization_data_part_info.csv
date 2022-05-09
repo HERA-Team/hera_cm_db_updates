@@ -726,6 +726,7 @@ HH71,A,Spectre: N4P8E,infoupd,1335439818
 HH325,A,SPECTRE: N9P7N,infoupd,1335439822
 HH325,A,SPECTRE: N9P7N,infoupd,1335872542
 HH320,A,Installed SLP-250+ on E pol,infoupd,1336056138
+HH333,A,for outrigger,infoupd,1336120938
 HH67,A,Spectra: N3P3E,infoupd,1318668138
 HH37,A,Spectra: N3P5E,infoupd,1318668138
 HH53,A,Spectra: N3P7N,infoupd,1318668140
@@ -1380,6 +1381,7 @@ N03,A,Ground around node 3 pitbox is opening up.,infoupd,1335439818
 ND05,A,Door direction: NE,,1280318418
 N03,A,Ground around node 3 pitbox is opening up.,infoupd,1335872538
 HH320,A,Installed SLP-250+ on N pol,infoupd,1336056140
+HH333,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1336120940
 HH42,A,Spectre: N4P2E,infoupd,1318668138
 HH237,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1318862540
 HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1320075740
@@ -1413,6 +1415,7 @@ HH70,A,Feed Installed By: Put VLT-180+ filter between the splitter and the power
 HH120,A,Removed Nimas noise source and installed SLP-250+ filter,infoupd,1336048938
 HH65,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH51,A,Installed SLP-250+ on E pol,infoupd,1336056138
+HH333,A,for outrigger,infoupd,1336120942
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -2191,6 +2194,7 @@ HH38,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH227,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1336062438
 HH70,A,Removed power meter and reconnected antenna.,infoupd,1336113918
 HH70,A,Removed power meter and reconnected antenna.  Installed VLF-180+ filter on E,infoupd,1336117338
+HH329,A,For outrigger,infoupd,1336120938
 HH27,A,Feed heights (NE/SE/SW/NW): something wrong with fiber,infoupd,1294504938
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
@@ -2347,6 +2351,7 @@ SNPC000065,A,MAC - 00:24:5b:34:17:01,,1304938818
 SNPC000068,A,MAC - 00:22:8e:fc:17:01,,1304938818
 SNPC000069,A,MAC - 00:10:b5:22:17:01,,1304938818
 HH70,A,Installed VLF-180+ filter on E,infoupd,1336114038
+HH329,A,Feed heights (NE/SE/SW/NW): 4.410,infoupd,1336120940
 SNPC000070,A,MAC - 00:15:5d:f0:17:01,,1304938818
 SNPC000073,A,MAC - 00:07:f6:64:17:01,,1304938818
 SNPC000075,A,MAC - 00:39:37:24:17:01,,1304938818
@@ -2432,3 +2437,4 @@ HH55,A,Spectre: N4P7N,infoupd,1335439820
 HH325,A,SPECTRE: N9P7E,infoupd,1335439820
 HH325,A,SPECTRE: N9P7E,infoupd,1335872540
 HH53,A,Installed SLP-250+ on N pol,infoupd,1336056140
+HH329,A,For outrigger,infoupd,1336120942
