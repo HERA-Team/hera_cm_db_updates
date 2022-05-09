@@ -2190,6 +2190,7 @@ HH81,A,Removed splitter/power meter on E pol.,infoupd,1335872538
 HH38,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH227,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1336062438
 HH70,A,Removed power meter and reconnected antenna.,infoupd,1336113918
+HH70,A,Removed power meter and reconnected antenna.  Installed VLF-180+ filter on E,infoupd,1336117338
 HH27,A,Feed heights (NE/SE/SW/NW): something wrong with fiber,infoupd,1294504938
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
