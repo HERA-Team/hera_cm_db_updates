@@ -1453,6 +1453,7 @@ HH51,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH20,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1336315398
 HH55,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
 HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH8,A,Cannot talk to PAM to change attenuation,infoupd,1336318938
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1497,6 +1498,7 @@ HH52,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH21,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1336315398
 HH57,A,apriori_antenna status change: RF_ok > digital_ok,apa-infoupd,1336315398
 HH122,A,apriori_antenna status change: digital_maintenance > digital_ok,apa-infoupd,1336315398
+HH8,A,Cannot talk to PAM to change attenuation,infoupd,1336318940
 HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1583,6 +1585,7 @@ HH177,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH31,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1336315398
 HH65,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
 HH123,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH32,A,Wavy bandpass,infoupd,1336318938
 ND00,A,Door direction: E,,1280318418
 ND01,A,Door direction: NW,,1280318418
 ND02,A,Door direction: E,,1280318418
@@ -1812,6 +1815,7 @@ HH53,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
 HH32,A,apriori_antenna status change: dish_ok > RF_maintenance,apa-infoupd,1336315398
 HH70,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1336315398
 HH143,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH32,A,Wavy bandpass,infoupd,1336318940
 HH69,A,Spectre: N4P5N,infoupd,1318668140
 HH67,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
 HH225,A,Spectre: N19P7E,infoupd,1320075738
