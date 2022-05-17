@@ -6,7 +6,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 9,E,144,193,3,199,C66,e10,0,digital_ok,,,,,,,
 9,N,144,193,3,199,C66,n8,0,digital_ok,,,,,,,
 19,E,161,185,4,200,C74,e2,1,digital_ok,,,,,,,
-19,N,161,185,4,200,C74,n0,1,RF_maintenance,,,,,,,
+19,N,161,185,4,200,C74,n0,1,digital_ok,,,,,,,
 20,E,163,195,5,201,C74,e6,1,digital_ok,,east pol has 3 db pad between pam and snap,,,,,
 20,N,163,195,5,201,C74,n4,1,digital_ok,,,,,,,
 10,E,158,189,6,202,C74,e10,1,digital_ok,,,,,,,

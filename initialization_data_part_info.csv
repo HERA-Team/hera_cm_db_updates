@@ -1421,6 +1421,7 @@ HH10,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,133631539
 HH54,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
 HH102,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1336315398
 HH187,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH331,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1336851738
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1455,6 +1456,7 @@ HH55,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,13
 HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
 HH8,A,Cannot talk to PAM to change attenuation,infoupd,1336318938
 HH4,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336322598
+HH332,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1336844538
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1501,6 +1503,7 @@ HH57,A,apriori_antenna status change: RF_ok > digital_ok,apa-infoupd,1336315398
 HH122,A,apriori_antenna status change: digital_maintenance > digital_ok,apa-infoupd,1336315398
 HH8,A,Cannot talk to PAM to change attenuation,infoupd,1336318940
 HH18,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336322598
+HH19,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1336851798
 HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1589,6 +1592,7 @@ HH65,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,13
 HH123,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
 HH32,A,Wavy bandpass,infoupd,1336318938
 HH30,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336322598
+HH142,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336851798
 ND00,A,Door direction: E,,1280318418
 ND01,A,Door direction: NW,,1280318418
 ND02,A,Door direction: E,,1280318418
@@ -1874,6 +1878,7 @@ HH33,A,apriori_antenna status change: dish_ok > RF_maintenance,apa-infoupd,13363
 HH71,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
 HH144,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
 HH6,A,No data,infoupd,1336322540
+HH161,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336851798
 HH40,A,Spectre: N4P6E,infoupd,1318668138
 HH225,A,Spectre: N19P7N,infoupd,1320075740
 HH261,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1321741162
@@ -1920,6 +1925,7 @@ HH87,A,apriori_antenna status change: RF_maintenance -> RF_ok,apa-infoupd,128535
 HH130,A,apriori_antenna status change: RF_maintenance -> RF_ok,apa-infoupd,1285353738
 HH24,A, ,infoupd,1285353738
 HH24,A,Feed Heights: Ant 24 Z= 4.415,infoupd,1285353740
+HH336,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1336851738
 HH130,A,Feed heights (NE/SE/SW/NW): Ant 130 Z= 4.409,apa-infoupd,1285353740
 HH130,A, ,apa-infoupd,1285353742
 HH66,A,Feed heights (NE/SE/SW/NW): Ant 66 Z= 4.402,apa-infoupd,1285353740
@@ -2059,6 +2065,7 @@ HH70,A,Moved filter on power meter/SNAP splitter to in front of both,infoupd,133
 HH42,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
 HH85,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1336315398
 HH162,A,apriori_antenna status change: digital_maintenance > digital_ok,apa-infoupd,1336315398
+HH340,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1336851738
 HH186,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH187,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH45,A,heranow auto shows rising power at high freqs. 29 Sept.,infoupd,1285519338
@@ -2237,6 +2244,7 @@ HH7,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1336315398
 HH51,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
 HH101,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
 HH184,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH326,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1336851738
 HH27,A,Feed heights (NE/SE/SW/NW): something wrong with fiber,infoupd,1294504938
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
@@ -2397,6 +2405,7 @@ HH329,A,Feed heights (NE/SE/SW/NW): 4.410,infoupd,1336120940
 HH227,A,Spectre: N20P10E,infoupd,1336124538
 HH8,A,apriori_antenna status change: dish_ok > RF_maintenance,apa-infoupd,1336315398
 HH52,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1336315398
+HH327,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1336851738
 SNPC000070,A,MAC - 00:15:5d:f0:17:01,,1304938818
 SNPC000073,A,MAC - 00:07:f6:64:17:01,,1304938818
 SNPC000075,A,MAC - 00:39:37:24:17:01,,1304938818
