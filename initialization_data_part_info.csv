@@ -1457,6 +1457,7 @@ HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1
 HH8,A,Cannot talk to PAM to change attenuation,infoupd,1336318938
 HH4,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336322598
 HH332,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1336844538
+HH28,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336852218
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
