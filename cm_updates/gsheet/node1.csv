@@ -3,7 +3,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 18,N,148,217,1,209,C63,n0,0,RF_maintenance,,,,
 27,E,155,211,2,210,C63,e6,0,RF_maintenance,,,,
 27,N,155,211,2,210,C63,n4,0,RF_maintenance,,,,
-28,E,154,218,3,211,C63,e10,0,digital_ok,,,,
+28,E,154,218,3,211,C63,e10,0,RF_maintenance,,,,
 28,N,154,218,3,211,C63,n8,0,digital_ok,,,,
 29,E,152,219,4,212,C71,e2,1,digital_ok,,,,
 29,N,152,219,4,212,C71,n0,1,digital_ok,,,,

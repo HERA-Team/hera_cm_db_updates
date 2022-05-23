@@ -1427,6 +1427,7 @@ HH232,A,Spectre: N21P9E,infoupd,1337078538
 HH211,A,Spectre: N20P1E,infoupd,1337355918
 HH246,A,Spectre: N20P4E,infoupd,1337355918
 HH229,A,Spectre: N20P12E,infoupd,1337355918
+HH84,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1337377398
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1469,6 +1470,7 @@ HH232,A,Spectre: N21P9N,infoupd,1337078540
 HH211,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1337355920
 HH246,A,Spectre: N20P3N,infoupd,1337355920
 HH229,A,Spectre: N20P12N,infoupd,1337355920
+HH87,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1337377398
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1525,6 +1527,7 @@ HH211,A,Spectre: N20P1N,infoupd,1337355922
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH261,A,Spectre: N20P4E,infoupd,1337355918
 HH12,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH101,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1337377398
 HH13,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH14,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH23,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1907,6 +1910,7 @@ HH212,A,Spectre: N21P7E,infoupd,1337078538
 HH327,A,Spectre: N21P11E,infoupd,1337078538
 HH244,A,Spectre: N20P2N,infoupd,1337355920
 HH261,A,Spectre: N20P4N,infoupd,1337355922
+HH104,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1337377398
 HH40,A,Spectre: N4P6E,infoupd,1318668138
 HH225,A,Spectre: N19P7N,infoupd,1320075740
 HH261,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1321741162
@@ -1972,6 +1976,7 @@ HH14,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-info
 HH25,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-infoupd,1285515738
 HH245,A,Spectre: N20P3E,infoupd,1337355918
 HH228,A,Spectre: N20P11E,infoupd,1337355918
+HH120,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1337377398
 HH26,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-infoupd,1285515738
 HH39,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-infoupd,1285515738
 HH45,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1285515738
@@ -2104,6 +2109,7 @@ HH231,A,Spectre: N21P8E,infoupd,1337078538
 HH331,A,Spectre: N21P12E,infoupd,1337078538
 HH245,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1337355920
 HH228,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1337355920
+HH122,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1337377398
 HH186,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH187,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH45,A,heranow auto shows rising power at high freqs. 29 Sept.,infoupd,1285519338
