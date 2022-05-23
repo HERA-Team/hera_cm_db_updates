@@ -49,7 +49,7 @@ class UpdateConnect(upd_base.Update):
         """
         Gets the hookup data from the hera_mc database.
         """
-        db = mc.connect_to_mc_db()
+        db = mc.connect_to_mc_db(None)
         with db.sessionmaker() as session:
             self.active = cm_active.ActiveData(session=session)
             self.active.load_connections()

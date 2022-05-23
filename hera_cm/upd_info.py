@@ -34,7 +34,7 @@ class UpdateInfo(upd_base.Update):
 
     def load_active(self):
         """Load active data."""
-        db = mc.connect_to_mc_db()
+        db = mc.connect_to_mc_db(None)
         with db.sessionmaker() as session:
             self.active = cm_active.ActiveData(session=session)
             self.active.load_info()

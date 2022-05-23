@@ -49,7 +49,7 @@ class Update:
         self.chmod = chmod
         self.log_file = log_file
         self.at_date = cm_utils.get_astropytime(cdate, ctime)
-        db = mc.connect_to_mc_db()
+        db = mc.connect_to_mc_db(None)
         self.session = db.sessionmaker()
         self.active = cm_active.ActiveData(session=self.session)
         self.load_active(cdate=None)

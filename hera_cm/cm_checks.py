@@ -49,7 +49,7 @@ class Checks:
 
     def __init__(self, start_time=2458500, stop_time='now', day_step=1.0):
         """Initialize."""
-        db = mc.connect_to_mc_db()
+        db = mc.connect_to_mc_db(None)
         self.session = db.sessionmaker()
         self.active = cm_active.ActiveData(session=self.session)
         self.start = cm_utils.get_astropytime(start_time, float_format='jd')

@@ -3,7 +3,7 @@ from hera_mc import cm_active, mc
 
 
 def installed_stations(stype='H'):
-    db = mc.connect_to_mc_db()
+    db = mc.connect_to_mc_db(None)
     with db.sessionmaker() as session:
         ageo = cm_active.ActiveData(session=session)
         ageo.load_geo()
@@ -31,7 +31,7 @@ def installed_stations(stype='H'):
 
 
 def installed_parts(ptype='H'):
-    db = mc.connect_to_mc_db()
+    db = mc.connect_to_mc_db(None)
     with db.sessionmaker() as session:
         apart = cm_active.ActiveData(session=session)
         apart.load_parts()
