@@ -4,7 +4,7 @@
 """
 This class sets up to update the part information database.
 """
-from hera_mc import cm_utils, cm_active
+from hera_mc import mc, cm_utils, cm_active
 from . import util, upd_base, cm_gsheet
 import os.path
 import json
@@ -34,9 +34,11 @@ class UpdateInfo(upd_base.Update):
 
     def load_active(self):
         """Load active data."""
-        self.active = cm_active.ActiveData()
-        self.active.load_info()
-        self.active.load_apriori()
+        db = mc.connect_to_mc_db()
+        with db.sessionmaker() as session:
+            self.active = cm_active.ActiveData(session=session)
+            self.active.load_info()
+            self.active.load_apriori()
 
     def load_gnodes(self):
         """Load node notes tab of googlesheet."""

@@ -1,6 +1,6 @@
 """Various signal chain modification methods."""
 from hera_cm import util
-from hera_mc import cm_utils, cm_active, cm_handling
+from hera_mc import mc, cm_utils, cm_active, cm_handling
 import os
 
 current_revs = {'HH': 'A', 'HA': 'A', 'HB': 'A', 'A': 'H', 'FDV': 'V'}
@@ -49,7 +49,9 @@ class Update:
         self.chmod = chmod
         self.log_file = log_file
         self.at_date = cm_utils.get_astropytime(cdate, ctime)
-        self.active = cm_active.ActiveData()
+        db = mc.connect_to_mc_db()
+        self.session = db.sessionmaker()
+        self.active = cm_active.ActiveData(session=self.session)
         self.load_active(cdate=None)
         self.handle = cm_handling.Handling()
         if script_to_run is None:

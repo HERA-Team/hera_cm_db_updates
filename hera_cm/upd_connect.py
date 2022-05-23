@@ -6,7 +6,7 @@
 This class sets up to update the connections database.
 """
 import datetime
-from hera_mc import cm_active, cm_utils, cm_sysdef
+from hera_mc import mc, cm_active, cm_utils, cm_sysdef
 from hera_mc.geo_sysdef import region
 from hera_mc import cm_partconnect as CMPC
 from . import util, cm_gsheet, upd_base
@@ -49,8 +49,10 @@ class UpdateConnect(upd_base.Update):
         """
         Gets the hookup data from the hera_mc database.
         """
-        self.active = cm_active.ActiveData()
-        self.active.load_connections()
+        db = mc.connect_to_mc_db()
+        with db.sessionmaker() as session:
+            self.active = cm_active.ActiveData(session=session)
+            self.active.load_connections()
 
     def make_sheet_connections(self):
         """

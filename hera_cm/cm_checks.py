@@ -3,7 +3,7 @@
 # Licensed under the 2-clause BSD license.
 
 """Series of database checks."""
-from hera_mc import cm_utils, cm_active, cm_sysutils
+from hera_mc import mc, cm_utils, cm_active, cm_sysutils
 import redis
 from node_control import he_check
 
@@ -49,7 +49,9 @@ class Checks:
 
     def __init__(self, start_time=2458500, stop_time='now', day_step=1.0):
         """Initialize."""
-        self.active = cm_active.ActiveData()
+        db = mc.connect_to_mc_db()
+        self.session = db.sessionmaker()
+        self.active = cm_active.ActiveData(session=self.session)
         self.start = cm_utils.get_astropytime(start_time, float_format='jd')
         self.stop = cm_utils.get_astropytime(stop_time, float_format='jd')
         self.step = day_step
