@@ -53,7 +53,7 @@ class Update:
         self.session = db.sessionmaker()
         self.active = cm_active.ActiveData(session=self.session)
         self.load_active(cdate=None)
-        self.handle = cm_handling.Handling()
+        self.handle = cm_handling.Handling(session=self.session)
         if script_to_run is None:
             print("No script file started.  It'll probably error out.")
             self.script_to_run = None
