@@ -726,6 +726,8 @@ HH71,A,Spectre: N4P8E,infoupd,1335439818
 HH325,A,SPECTRE: N9P7N,infoupd,1335439822
 HH325,A,SPECTRE: N9P7N,infoupd,1335872542
 HH320,A,Installed SLP-250+ on E pol,infoupd,1336056138
+HH333,A,for outrigger,infoupd,1336120938
+HH9,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1336315398
 HH67,A,Spectra: N3P3E,infoupd,1318668138
 HH37,A,Spectra: N3P5E,infoupd,1318668138
 HH53,A,Spectra: N3P7N,infoupd,1318668140
@@ -1380,6 +1382,7 @@ N03,A,Ground around node 3 pitbox is opening up.,infoupd,1335439818
 ND05,A,Door direction: NE,,1280318418
 N03,A,Ground around node 3 pitbox is opening up.,infoupd,1335872538
 HH320,A,Installed SLP-250+ on N pol,infoupd,1336056140
+HH333,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1336120940
 HH42,A,Spectre: N4P2E,infoupd,1318668138
 HH237,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1318862540
 HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1320075740
@@ -1413,6 +1416,14 @@ HH70,A,Feed Installed By: Put VLT-180+ filter between the splitter and the power
 HH120,A,Removed Nimas noise source and installed SLP-250+ filter,infoupd,1336048938
 HH65,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH51,A,Installed SLP-250+ on E pol,infoupd,1336056138
+HH333,A,for outrigger,infoupd,1336120942
+HH10,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1336315398
+HH54,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH102,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1336315398
+HH187,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH331,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1336851738
+HH336,A,Spectre: N21P5E,infoupd,1337078538
+HH232,A,Spectre: N21P9E,infoupd,1337078538
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1442,6 +1453,16 @@ HH206,A,Spectre: N19P3E,infoupd,1335872538
 HH120,A,Removed Nimas noise source and installed SLP-250+ filter,infoupd,1336048940
 HH65,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH51,A,Installed SLP-250+ on N pol,infoupd,1336056140
+HH20,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1336315398
+HH55,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH8,A,Cannot talk to PAM to change attenuation,infoupd,1336318938
+HH4,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336322598
+HH332,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1336844538
+HH28,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336852218
+HH175,A,Spectre: N21P1E,infoupd,1337078538
+HH336,A,Spectre: N21P5N,infoupd,1337078540
+HH232,A,Spectre: N21P9N,infoupd,1337078540
 HH147,A,Feed heights (NE/SE/SW/NW): Z = 4.412,infoupd,1278931338
 HH148,A,Feed heights (NE/SE/SW/NW): Z = 4.407,infoupd,1278931338
 HH149,A,Feed heights (NE/SE/SW/NW): Z = 4.405,infoupd,1278931338
@@ -1483,7 +1504,16 @@ HH206,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335872540
 HH103,A,Removed Nimas noise source and installed SLP-250+ filter,infoupd,1336048938
 HH66,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH52,A,Installed SLP-250+ on E pol,infoupd,1336056138
+HH21,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1336315398
+HH57,A,apriori_antenna status change: RF_ok > digital_ok,apa-infoupd,1336315398
+HH122,A,apriori_antenna status change: digital_maintenance > digital_ok,apa-infoupd,1336315398
+HH8,A,Cannot talk to PAM to change attenuation,infoupd,1336318940
+HH18,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336322598
+HH19,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1336851798
+HH175,A,Spectre: N21P1N,infoupd,1337078540
+HH340,A,Spectre: N21P6E,infoupd,1337078538
 HH0,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH326,A,Spectre: N21P10E,infoupd,1337078538
 HH2,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH1,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH12,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1566,10 +1596,19 @@ HH66,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH158,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
 HH52,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH177,A,reported sync ok by dgorki Aug 7 ,infoupd,1281044538
+HH31,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1336315398
+HH65,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH123,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH32,A,Wavy bandpass,infoupd,1336318938
+HH30,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336322598
+HH142,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336851798
+HH195,A,Spectre: N21P2E,infoupd,1337078538
 ND00,A,Door direction: E,,1280318418
 ND01,A,Door direction: NW,,1280318418
 ND02,A,Door direction: E,,1280318418
 ND03,A,Door direction: SW,,1280318418
+HH340,A,Spectre: N21P6N,infoupd,1337078540
+HH326,A,Spectre: N21P10N,infoupd,1337078540
 ND08,A,Door direction: NE,,1280318418
 ND09,A,Door direction: E,,1280318418
 ND10,A,Door direction: SE,,1280318418
@@ -1792,6 +1831,12 @@ HH68,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH51,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
 HH36,A,Installed VLF-180+ on E pol,infoupd,1336056138
 HH53,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
+HH32,A,apriori_antenna status change: dish_ok > RF_maintenance,apa-infoupd,1336315398
+HH70,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1336315398
+HH143,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH32,A,Wavy bandpass,infoupd,1336318940
+HH6,A,No data,infoupd,1336322538
+HH195,A,Spectre: N21P2N,infoupd,1337078540
 HH69,A,Spectre: N4P5N,infoupd,1318668140
 HH67,A,Daily notebook on 113 shows bad data. Was dig_ok.,apa-infoupd,1284756138
 HH225,A,Spectre: N19P7E,infoupd,1320075738
@@ -1842,6 +1887,14 @@ HH324,A,Feed heights: 4.400,infoupd,1335439818
 HH324,A,Feed heights: 4.400,infoupd,1335872538
 HH68,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH36,A,Installed VLS-180+ on N pol,infoupd,1336056140
+HH33,A,apriori_antenna status change: dish_ok > RF_maintenance,apa-infoupd,1336315398
+HH71,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH144,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH6,A,No data,infoupd,1336322540
+HH161,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336851798
+HH214,A,Spectre: N21P3E,infoupd,1337078538
+HH212,A,Spectre: N21P7E,infoupd,1337078538
+HH327,A,Spectre: N21P11E,infoupd,1337078538
 HH40,A,Spectre: N4P6E,infoupd,1318668138
 HH225,A,Spectre: N19P7N,infoupd,1320075740
 HH261,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1321741162
@@ -1873,8 +1926,11 @@ HH37,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH67,A, ,apa-infoupd,1285018940
 HH50,A,Installed VLF-180+ on E pol,infoupd,1336056138
 HH84,A, ,apa-infoupd,1285018940
+HH36,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1336315398
 HH86,A, ,apa-infoupd,1285018940
+HH72,A,apriori_antenna status change: RF_ok > digital_ok,apa-infoupd,1336315398
 HH89,A, ,apa-infoupd,1285018940
+HH146,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
 HH89,A,N9A89 has unexpected bumps and wiggles in both pols. Moving from dig_ok to rf_maint. 24 Sept.,apa-infoupd,1285022298
 HH136,A,N12A136 N has unexpected wiggles low in the bandpass. Moving from RF_ok to RF_maint. 24 Sept.,infoupd,1285022538
 HH67,A,N3A67 N is low amplitude. moving from dig_maint to rf_maint. 24 Sept. ,infoupd,1285022538
@@ -1885,10 +1941,14 @@ HH87,A,apriori_antenna status change: RF_maintenance -> RF_ok,apa-infoupd,128535
 HH130,A,apriori_antenna status change: RF_maintenance -> RF_ok,apa-infoupd,1285353738
 HH24,A, ,infoupd,1285353738
 HH24,A,Feed Heights: Ant 24 Z= 4.415,infoupd,1285353740
+HH336,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1336851738
+HH214,A,Spectre: N21P3N,infoupd,1337078540
 HH130,A,Feed heights (NE/SE/SW/NW): Ant 130 Z= 4.409,apa-infoupd,1285353740
 HH130,A, ,apa-infoupd,1285353742
+HH212,A,Spectre: N21P7N,infoupd,1337078540
 HH66,A,Feed heights (NE/SE/SW/NW): Ant 66 Z= 4.402,apa-infoupd,1285353740
 HH66,A, ,apa-infoupd,1285353742
+HH327,A,Spectre: N21P11N,infoupd,1337078540
 HH130,A,N10A130 xyz positoned and spectra looks fine 28 Sept.,infoupd,1285357338
 HH66,A,N3A66 xyz positioned and spectra looks very fine 28 Sept.,infoupd,1285357338
 HH87,A,N8A86 xyz positioned and SNAP spectra looks fine 28 Sept.,infoupd,1285357338
@@ -1964,6 +2024,8 @@ HH324,A,Spectre: N4P12N,infoupd,1335439819
 HH324,A,Spectre: N4P12N,infoupd,1335872544
 HH37,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH50,A,Installed VLS-180+ on N pol,infoupd,1336056140
+HH37,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH84,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
 HH55,A,Spectre: N4P7E,infoupd,1318668138
 HH226,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1320075740
 HH227,A,door closed 19/11/2021,infoupd,1321741158
@@ -2019,6 +2081,13 @@ HH185,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,12855
 RD17,A,MAC - 02:02:0a:01:01:d9,,1267095618
 HH38,A,Installed SLP-250+ on E pol,infoupd,1336056138
 HH70,A,Moved filter on power meter/SNAP splitter to in front of both,infoupd,1336056138
+HH42,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH85,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1336315398
+HH162,A,apriori_antenna status change: digital_maintenance > digital_ok,apa-infoupd,1336315398
+HH340,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1336851738
+HH332,A,Spectre: N21P4E,infoupd,1337078538
+HH231,A,Spectre: N21P8E,infoupd,1337078538
+HH331,A,Spectre: N21P12E,infoupd,1337078538
 HH186,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH187,A,Moved from rk_ok to dig_ok based on heranow autos. 29 Sept,infoupd,1285519338
 HH45,A,heranow auto shows rising power at high freqs. 29 Sept.,infoupd,1285519338
@@ -2190,7 +2259,18 @@ HH81,A,Removed splitter/power meter on E pol.,infoupd,1335872538
 HH38,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH227,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1336062438
 HH70,A,Removed power meter and reconnected antenna.,infoupd,1336113918
+HH70,A,Removed power meter and reconnected antenna.  Installed VLF-180+ filter on E,infoupd,1336117338
+HH329,A,For outrigger,infoupd,1336120938
+HH240,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1336124538
+HH7,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1336315398
+HH51,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH101,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH184,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1336315398
+HH326,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1336851738
+HH332,A,Spectre: N21P4N,infoupd,1337078540
 HH27,A,Feed heights (NE/SE/SW/NW): something wrong with fiber,infoupd,1294504938
+HH231,A,Spectre: N21P8N,infoupd,1337078540
+HH331,A,Spectre: N21P12N,infoupd,1337078540
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
 WRA000098,A,MAC - 08:00:30:6e:cd:a4,,1296212418
@@ -2346,6 +2426,11 @@ SNPC000065,A,MAC - 00:24:5b:34:17:01,,1304938818
 SNPC000068,A,MAC - 00:22:8e:fc:17:01,,1304938818
 SNPC000069,A,MAC - 00:10:b5:22:17:01,,1304938818
 HH70,A,Installed VLF-180+ filter on E,infoupd,1336114038
+HH329,A,Feed heights (NE/SE/SW/NW): 4.410,infoupd,1336120940
+HH227,A,Spectre: N20P10E,infoupd,1336124538
+HH8,A,apriori_antenna status change: dish_ok > RF_maintenance,apa-infoupd,1336315398
+HH52,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1336315398
+HH327,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1336851738
 SNPC000070,A,MAC - 00:15:5d:f0:17:01,,1304938818
 SNPC000073,A,MAC - 00:07:f6:64:17:01,,1304938818
 SNPC000075,A,MAC - 00:39:37:24:17:01,,1304938818
@@ -2431,3 +2516,5 @@ HH55,A,Spectre: N4P7N,infoupd,1335439820
 HH325,A,SPECTRE: N9P7E,infoupd,1335439820
 HH325,A,SPECTRE: N9P7E,infoupd,1335872540
 HH53,A,Installed SLP-250+ on N pol,infoupd,1336056140
+HH329,A,For outrigger,infoupd,1336120942
+HH227,A,Spectre: N20P10N,infoupd,1336124540

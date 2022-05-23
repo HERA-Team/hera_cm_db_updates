@@ -38,7 +38,10 @@ for ifile in connupd_files:
     path_ifile = os.path.join(args.directory, ifile)
     fprm.write("rm -f {}\n".format(path_ifile))
     dstr = ifile.split('_')[0]
-    yr = int(dstr[:2])
+    try:
+        yr = int(dstr[:2])
+    except ValueError:
+        continue
     mn = int(dstr[2:4])
     dy = int(dstr[4:6])
     dt = datetime.datetime(year=yr, month=mn, day=dy)
