@@ -1,0 +1,42 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220523_connupd_1547" >> scripts.log 
+# Adding missing parts
+add_part.py -p FDV331 -r A -t feed -m FDV331 --date 2022/05/23 --time 15:42
+add_part.py -p FEM316 -r A -t front-end -m FEM316 --date 2022/05/23 --time 15:42
+add_part.py -p FDV315 -r A -t feed -m FDV315 --date 2022/05/23 --time 15:42
+add_part.py -p FDV265 -r A -t feed -m FDV265 --date 2022/05/23 --time 15:42
+add_part.py -p FDV318 -r A -t feed -m FDV318 --date 2022/05/23 --time 15:42
+add_part.py -p FEM306 -r A -t front-end -m FEM306 --date 2022/05/23 --time 15:42
+add_part.py -p FEM299 -r A -t front-end -m FEM299 --date 2022/05/23 --time 15:42
+add_part.py -p FDV323 -r A -t feed -m FDV323 --date 2022/05/23 --time 15:42
+add_part.py -p FDV332 -r A -t feed -m FDV332 --date 2022/05/23 --time 15:42
+add_part.py -p FEM331 -r A -t front-end -m FEM331 --date 2022/05/23 --time 15:42
+add_part.py -p FEM308 -r A -t front-end -m FEM308 --date 2022/05/23 --time 15:42
+add_part.py -p FEM309 -r A -t front-end -m FEM309 --date 2022/05/23 --time 15:42
+# Adding missing connections
+add_connection.py -u A326 --uprev H --upport focus -d FDV331 --dnrev A --dnport input --date 2022/05/23 --time 15:47
+add_connection.py -u FDV331 --uprev A --upport terminals -d FEM309 --dnrev A --dnport input --date 2022/05/23 --time 15:47
+add_connection.py -u FEM309 --uprev A --upport e -d NBP21 --dnrev A --dnport e10 --date 2022/05/23 --time 15:47
+add_connection.py -u FEM309 --uprev A --upport n -d NBP21 --dnrev A --dnport n10 --date 2022/05/23 --time 15:47
+add_connection.py -u A327 --uprev H --upport focus -d FDV318 --dnrev A --dnport input --date 2022/05/23 --time 15:47
+add_connection.py -u FDV318 --uprev A --upport terminals -d FEM306 --dnrev A --dnport input --date 2022/05/23 --time 15:47
+add_connection.py -u FEM306 --uprev A --upport e -d NBP21 --dnrev A --dnport e11 --date 2022/05/23 --time 15:47
+add_connection.py -u FEM306 --uprev A --upport n -d NBP21 --dnrev A --dnport n11 --date 2022/05/23 --time 15:47
+add_connection.py -u A331 --uprev H --upport focus -d FDV265 --dnrev A --dnport input --date 2022/05/23 --time 15:47
+add_connection.py -u FDV265 --uprev A --upport terminals -d FEM316 --dnrev A --dnport input --date 2022/05/23 --time 15:47
+add_connection.py -u FEM316 --uprev A --upport e -d NBP21 --dnrev A --dnport e12 --date 2022/05/23 --time 15:47
+add_connection.py -u FEM316 --uprev A --upport n -d NBP21 --dnrev A --dnport n12 --date 2022/05/23 --time 15:47
+add_connection.py -u A332 --uprev H --upport focus -d FDV323 --dnrev A --dnport input --date 2022/05/23 --time 15:47
+add_connection.py -u FDV323 --uprev A --upport terminals -d FEM308 --dnrev A --dnport input --date 2022/05/23 --time 15:47
+add_connection.py -u FEM308 --uprev A --upport e -d NBP21 --dnrev A --dnport e4 --date 2022/05/23 --time 15:47
+add_connection.py -u FEM308 --uprev A --upport n -d NBP21 --dnrev A --dnport n4 --date 2022/05/23 --time 15:47
+add_connection.py -u A336 --uprev H --upport focus -d FDV315 --dnrev A --dnport input --date 2022/05/23 --time 15:47
+add_connection.py -u FDV315 --uprev A --upport terminals -d FEM299 --dnrev A --dnport input --date 2022/05/23 --time 15:47
+add_connection.py -u FEM299 --uprev A --upport e -d NBP21 --dnrev A --dnport e5 --date 2022/05/23 --time 15:47
+add_connection.py -u FEM299 --uprev A --upport n -d NBP21 --dnrev A --dnport n5 --date 2022/05/23 --time 15:47
+add_connection.py -u A340 --uprev H --upport focus -d FDV332 --dnrev A --dnport input --date 2022/05/23 --time 15:47
+add_connection.py -u FDV332 --uprev A --upport terminals -d FEM331 --dnrev A --dnport input --date 2022/05/23 --time 15:47
+add_connection.py -u FEM331 --uprev A --upport e -d NBP21 --dnrev A --dnport e6 --date 2022/05/23 --time 15:47
+add_connection.py -u FEM331 --uprev A --upport n -d NBP21 --dnrev A --dnport n6 --date 2022/05/23 --time 15:47
+# Adding missing parts
