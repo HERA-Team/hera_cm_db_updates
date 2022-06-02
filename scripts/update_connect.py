@@ -20,7 +20,7 @@ if __name__ == '__main__':
     ap.add_argument('-n', '--node_csv', help="For testing: flag for read/write of gsheet (r/w/n)",
                     choices=['read', 'write', 'none', 'r', 'w', 'n'], default='n')
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
-    ap.add_argument('--enable-err', dest='enable_err', action='store_true',
+    ap.add_argument('--enable-err', dest='enable_err', action='store_false',
                     help='Enable erroring out for some errors')
     args = ap.parse_args()
     cron_script = 'conn_update.sh'
