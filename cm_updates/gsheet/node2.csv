@@ -1,4 +1,4 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed heights (NE/SE/SW/NW),Spectre,Feed Installed By,,
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,,,,,
 7,E,146,187,1,197,C66,e2,0,digital_ok,,,,,,,
 7,N,146,187,1,197,C66,n0,0,digital_ok,,,,,,,
 8,E,145,191,2,198,C66,e6,0,RF_maintenance,,Cannot talk to PAM to change attenuation,,,,,
