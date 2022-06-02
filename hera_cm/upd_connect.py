@@ -194,6 +194,7 @@ class UpdateConnect(upd_base.Update):
                     msg = "Error: {} not present ({}).".format(keyup, pol)
                     if self.disable_err:
                         print(msg)
+                        return False
                     else:
                         raise ValueError(msg)
             else:  # Make sure it is not there, then process
@@ -202,6 +203,7 @@ class UpdateConnect(upd_base.Update):
                     msg = "Error: {} already present ({}).".format(keyup, pol)
                     if self.disable_err:
                         print(msg)
+                        return False
                     else:
                         raise ValueError(msg)
         return True

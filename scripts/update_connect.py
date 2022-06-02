@@ -20,8 +20,8 @@ if __name__ == '__main__':
     ap.add_argument('-n', '--node_csv', help="For testing: flag for read/write of gsheet (r/w/n)",
                     choices=['read', 'write', 'none', 'r', 'w', 'n'], default='n')
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
-    ap.add_argument('--disable-err', dest='disable_err', action='store_true',
-                    help='Disable erroring out for some errors')
+    ap.add_argument('--enable-err', dest='enable_err', action='store_true',
+                    help='Enable erroring out for some errors')
     args = ap.parse_args()
     cron_script = 'conn_update.sh'
 else:
@@ -32,7 +32,7 @@ else:
 script_type = 'connupd'
 
 update = upd_connect.UpdateConnect(script_type=script_type, script_path=args.script_path,
-                                   disable_err=args.disable_err, verbose=args.verbose)
+                                   disable_err=args.enable_err, verbose=args.verbose)
 if args.archive_path.startswith('___'):
     import os.path
     args.archive_path = os.path.join(update.script_path, args.archive_path[3:])
