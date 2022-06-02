@@ -1,0 +1,7 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220530_infoupd_1742" >> scripts.log 
+add_part_info.py -p HH240 -r A -c 'Spectre: N19P9E' -l "infoupd" --date 2022/05/30 --time 17:42:00
+add_part_info.py -p HH240 -r A -c 'Spectre: N19P9N' -l "infoupd" --date 2022/05/30 --time 17:42:02
+add_part_info.py -p HH244 -r A -c 'Spectre: N20P2E' -l "infoupd" --date 2022/05/30 --time 17:42:00
+add_part_info.py -p HH229 -r A -c 'Feed heights (NE/SE/SW/NW): 4.398' -l "infoupd" --date 2022/05/30 --time 17:42:00
