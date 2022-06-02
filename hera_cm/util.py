@@ -7,6 +7,8 @@
 import datetime
 from argparse import Namespace
 
+from hera_mc.geo_sysdef import region
+
 
 def compare_lists(list1, list2, info=None, ignore_length=True):
     """
@@ -121,12 +123,9 @@ def gen_hpn(ptype, pnum, verbose=False):
         if ptype in ['ANT', 'ANTENNA']:
             return 'A{}'.format(int(pnum))
         if ptype in ['STATION']:
-            HA = [325, 326, 327, 330, 334, 338, 331, 335, 339, 342, 343, 344]
-            HB = [320, 321, 322, 323, 324, 328, 329, 333, 337, 332, 336, 340,
-                  341, 345, 346, 347, 348, 349]
-            if int(pnum) in HA:
+            if int(pnum) in region['heraringa']:
                 pre = 'HA'
-            elif int(pnum) in HB:
+            elif int(pnum) in region['heraringb']:
                 pre = 'HB'
             else:
                 pre = 'HH'
