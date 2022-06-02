@@ -188,7 +188,7 @@ class SheetData:
                     antnum = int(data[0])
                 except ValueError:
                     continue
-                hpn = util.gen_hpn('HH', antnum)
+                hpn = util.gen_hpn('station', antnum)
                 hkey = cm_utils.make_part_key(hpn, 'A')
                 ant_set.add(hkey)
                 self.ant_to_node[hkey] = tab
