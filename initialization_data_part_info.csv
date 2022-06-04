@@ -1437,6 +1437,7 @@ HB340,A,Spectre: N21P6N,infoupd,1338241342
 HA327,A,Spectre: N21P11N,infoupd,1338241342
 HB320,A,Spectra: N3P8E,apa-infoupd,1338241342
 HB322,A,Feed heights (NE/SE/SW/NW): 4.403,apa-infoupd,1338241338
+HH103,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1338388998
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1503,6 +1504,7 @@ HH127,A,Feed raised,infoupd,1279446138
 HB320,A,Installed SLP-250+ on N pol,apa-infoupd,1338241344
 HH130,A,"Central line too loose to be RF OK, door mesh closed",infoupd,1279446138
 HA325,A,HEIGHT: 4.397,apa-infoupd,1338241338
+HH122,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1338388998
 ND06,A,Door direction: SE,,1280318418
 HH54,A,Spectre: N4P3E,infoupd,1318668138
 HH223,A,Spectre: N19P5E,infoupd,1320075738
@@ -1562,6 +1564,7 @@ HB320,A,Spectra: N3P8N,apa-infoupd,1338241346
 HH68,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HA325,A,SPECTRE: N9P7E,apa-infoupd,1338241340
 HH37,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH123,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1338388998
 HH38,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH53,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH51,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -2015,6 +2018,7 @@ HB340,A,Spectre: N21P6E,infoupd,1338241338
 HA327,A,Spectre: N21P11E,infoupd,1338241338
 HB320,A,Installed SLP-250+ on E pol,apa-infoupd,1338241338
 HB324,A,Spectre: N4P12E,infoupd,1338241340
+HH84,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1338388998
 HH26,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-infoupd,1285515738
 HH39,A,apriori_antenna status change: digital_ok -> digital_maintenance,apa-infoupd,1285515738
 HH45,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1285515738
@@ -2342,6 +2346,7 @@ HB340,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1338241340
 HA327,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1338241340
 HB320,A,height: 4.405,apa-infoupd,1338241340
 HB324,A,Spectre: N4P12N,infoupd,1338241342
+HH101,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1338388998
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
 WRA000098,A,MAC - 08:00:30:6e:cd:a4,,1296212418
