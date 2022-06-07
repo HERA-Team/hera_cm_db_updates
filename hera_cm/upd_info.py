@@ -151,10 +151,9 @@ class UpdateInfo(upd_base.Update):
                 arcstat = self.active.apriori[key].status
             except KeyError:
                 print(f"{key} No existing apriori status.")
-                arcstat = ''
+                arcstat = 'None'
             if usestat != arcstat:
-                self.new_apriori[key] = {'info': []}
-                self.new_apriori[key]['ant'] = ant
+                self.new_apriori[key] = {'ant': ant}
                 self.new_apriori[key]['old_status'] = arcstat
                 self.new_apriori[key]['new_status'] = usestat
                 self.new_apriori[key]['cdate'] = self.cdate2
