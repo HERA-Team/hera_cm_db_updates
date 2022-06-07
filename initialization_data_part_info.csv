@@ -1441,6 +1441,7 @@ HH103,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1
 HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338666918
 HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338669798
 HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338673398
+HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338676998
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1511,6 +1512,7 @@ HH122,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1
 HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338666918
 HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338669798
 HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338673398
+HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338676998
 ND06,A,Door direction: SE,,1280318418
 HH54,A,Spectre: N4P3E,infoupd,1318668138
 HH223,A,Spectre: N19P5E,infoupd,1320075738
@@ -2358,6 +2360,7 @@ HH101,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1
 HH3,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338666918
 HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338669798
 HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338673398
+HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338676998
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
 WRA000098,A,MAC - 08:00:30:6e:cd:a4,,1296212418
