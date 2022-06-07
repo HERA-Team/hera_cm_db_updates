@@ -10,9 +10,7 @@ import os.path
 import json
 
 
-def _dict2msg(data, warning=False):
-    if warning:
-        return f"*************{data['ant']}:  {data['new_status']}*************"
+def _dict2msg(data):
     msg = f"-------------{data['ant']}: {data['cdate']}  {data['ctime']}\n"
     msg += f"\t{data['old_status']} --> {data['new_status']}\n"
     for info in data['info']:
@@ -89,11 +87,8 @@ class UpdateInfo(upd_base.Update):
                 else:
                     using = [data['old_status'], data['new_status']]
                 for this_status in n.notify:
-                    if 'warning!' in data:
-                        msg += _dict2msg(data, warning=True)
-                        used_antdt.append(antdt)
-                    elif this_status in using and antdt not in used_antdt:
-                        msg += _dict2msg(data, warning=False)
+                    if this_status in using and antdt not in used_antdt:
+                        msg += _dict2msg(data)
                         used_antdt.append(antdt)
             if msg != msg_header:
                 to_addr = [email]
