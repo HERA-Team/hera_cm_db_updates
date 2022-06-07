@@ -177,7 +177,7 @@ class UpdateInfo(upd_base.Update):
                 s = f"{arcstat} > {usestat}"
                 if self.verbose:
                     print(f"Updating {ant}:  {s}")
-                self.hera.update_apriori(ant, E, self.new_apriori[key]['cdate'],
+                self.hera.update_apriori(ant, usestat, self.new_apriori[key]['cdate'],
                                          self.new_apriori[key]['ctime'])
                 self.hera.add_part_info(ant, rev, f"{stmt_hdr} {s}",
                                         self.new_apriori[key]['cdate'],
