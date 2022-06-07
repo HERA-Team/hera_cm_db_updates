@@ -1442,6 +1442,7 @@ HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,133
 HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338669798
 HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338673398
 HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338676998
+HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338678558
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1513,6 +1514,7 @@ HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,13
 HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338669798
 HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338673398
 HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338676998
+HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338678558
 ND06,A,Door direction: SE,,1280318418
 HH54,A,Spectre: N4P3E,infoupd,1318668138
 HH223,A,Spectre: N19P5E,infoupd,1320075738
@@ -1576,6 +1578,7 @@ HH123,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1
 HH38,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH28,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338666918
 HH53,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338677838
 HH51,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH36,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH40,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1956,6 +1959,7 @@ HA331,A,Spectre: N21P12N,infoupd,1338241342
 HB324,A,Feed heights: 4.400,infoupd,1338241338
 HA325,A,SPECTRE: N9P7N,apa-infoupd,1338241342
 HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338666918
+HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338677838
 HH40,A,Spectre: N4P6E,infoupd,1318668138
 HH225,A,Spectre: N19P7N,infoupd,1320075740
 HH261,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1321741162
@@ -2361,6 +2365,8 @@ HH3,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,133
 HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338669798
 HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338673398
 HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338676998
+HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338677838
+HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338678558
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
 WRA000098,A,MAC - 08:00:30:6e:cd:a4,,1296212418
