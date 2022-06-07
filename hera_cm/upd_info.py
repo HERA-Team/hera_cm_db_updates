@@ -124,6 +124,8 @@ class UpdateInfo(upd_base.Update):
 
     def add_apriori(self):
         """Write out for apriori differences."""
+        status_enum = cm_active.partconn.get_apriori_antenna_status_enum()
+        print(status_enum)
         self.new_apriori = {}
         rev = 'A'
         stmt_hdr = "apriori_antenna status change:"
@@ -132,31 +134,32 @@ class UpdateInfo(upd_base.Update):
             ap_col = self.gsheet.header[self.gsheet.ant_to_node[key]].index('APriori')
             E = self.gsheet.data[key + '-E'][ap_col]
             N = self.gsheet.data[key + '-N'][ap_col]
+            if not len(E) and not len(N):
+                continue
             ant, rev = cm_utils.split_part_key(key)
+            self.new_apriori[key] = {'info': []}
             if E != N:
-                print("{}:  {} and {} should be the same.".format(key, E, N))
-                self.new_apriori[key] = {'info': []}
-                self.new_apriori[key]['ant'] = ant
-                self.new_apriori[key]['old_status'] = self.active.apriori[key].status
-                self.new_apriori[key]['new_status'] = f"!Warning! Pols don't match: {E} vs {N}"
-                self.new_apriori[key]['cdate'] = self.cdate2
-                self.new_apriori[key]['ctime'] = self.ctime2
-                continue
-            if len(E) == 0:
-                continue
+                if len(E) and len(N):
+                    usestat = min(status_enum.index(E), status_enum.index(N))
+                else:
+                    usestat = N if not len(E) else E
+                msg = (f"Warning.  {key}:  {E} and {N} should be the same.  Using {usestat}")
+                self.new_apriori[key]['warning'] = msg
+                print(msg)
+            else:
+                usestat = E
             try:
                 arcstat = self.active.apriori[key].status
             except KeyError:
-                print(f"Skipping apriori update for {key}.")
-                continue
-            if E != arcstat:
-                self.new_apriori[key] = {'info': []}
+                print(f"{key} No existing apriori status.")
+                arcstat = ''
+            if usestat != arcstat:
                 self.new_apriori[key]['ant'] = ant
-                self.new_apriori[key]['old_status'] = self.active.apriori[key].status
-                self.new_apriori[key]['new_status'] = E
+                self.new_apriori[key]['old_status'] = arcstat
+                self.new_apriori[key]['new_status'] = usestat
                 self.new_apriori[key]['cdate'] = self.cdate2
                 self.new_apriori[key]['ctime'] = self.ctime2
-                s = f"{self.new_apriori[key]['old_status']} > {self.new_apriori[key]['new_status']}"
+                s = f"{arcstat} > {usestat}"
                 if self.verbose:
                     print(f"Updating {ant}:  {s}")
                 self.hera.update_apriori(ant, E, self.new_apriori[key]['cdate'],
