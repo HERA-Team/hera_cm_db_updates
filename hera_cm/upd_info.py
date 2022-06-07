@@ -70,14 +70,11 @@ class UpdateInfo(upd_base.Update):
             one of 'either', 'old', 'new':  notify if status in old, new, either
         """
         from hera_mc import watch_dog
-        from os import remove
-        anotify = {}
-        if os.path.isfile(self.apriori_notify_file):
-            with open(self.apriori_notify_file, 'r') as fp:
-                anotify = json.load(fp)
-            remove(self.apriori_notify_file)
-        else:
+
+        anotify = self.handle_apriori_notification_file('read')
+        if not len(anotify):
             return
+        self.handle_apriori_notification_file('delete')
         self.load_gworkflow()
         from_addr = 'hera@lists.berkeley.edu'
         msg_header = 'Apriori system changes.\n------------------------------\n'
@@ -92,7 +89,7 @@ class UpdateInfo(upd_base.Update):
                 else:
                     using = [data['old_status'], data['new_status']]
                 for this_status in n.notify:
-                    if '!Warning!' in data['new_status']:
+                    if 'warning!' in data:
                         msg += _dict2msg(data, warning=True)
                         used_antdt.append(antdt)
                     elif this_status in using and antdt not in used_antdt:
@@ -103,6 +100,29 @@ class UpdateInfo(upd_base.Update):
                 watch_dog.send_email(msg_header.splitlines()[0], msg, to_addr,
                                      from_addr, skip_send=False)
 
+    def handle_apriori_notification_file(self, action='delete'):
+        """
+        Parameter
+        ---------
+        action : str, dict
+            If str, can be read or delete.  If dict, it writes file.
+        """
+        from os import remove
+
+        if isinstance(action, dict):
+            with open(self.apriori_notify_file, 'w') as fp:
+                json.dump(action, fp, indent=4)
+        elif isinstance(action, str):
+            if action == 'read':
+                if os.path.isfile(self.apriori_notify_file):
+                    with open(self.apriori_notify_file, 'r') as fp:
+                        return json.load(fp)
+                else:
+                    return {}
+            elif action == 'delete':
+                if os.path.isfile(self.apriori_notify_file):
+                    remove(self.apriori_notify_file)
+
     def log_apriori_notifications(self):
         """
         Log the found apriori updates to a file with update_info script.
@@ -111,21 +131,15 @@ class UpdateInfo(upd_base.Update):
         """
         if not len(self.new_apriori):
             return
-        try:
-            with open(self.apriori_notify_file, 'r') as fp:
-                full_notify = json.load(fp)
-        except FileNotFoundError:
-            full_notify = {}
+        full_notify = self.handle_apriori_notification_file('read')
         for k, v in self.new_apriori.items():
             new_key = f"{v['ant']}|{v['cdate']}|{v['ctime']}"
             full_notify[new_key] = v
-        with open(self.apriori_notify_file, 'w') as fp:
-            json.dump(full_notify, fp, indent=4)
+        self.handle_apriori_notification_file(full_notify)
 
     def add_apriori(self):
         """Write out for apriori differences."""
         status_enum = cm_active.partconn.get_apriori_antenna_status_enum()
-        print(status_enum)
         self.new_apriori = {}
         rev = 'A'
         stmt_hdr = "apriori_antenna status change:"
