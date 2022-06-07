@@ -137,15 +137,14 @@ class UpdateInfo(upd_base.Update):
             if not len(E) and not len(N):
                 continue
             ant, rev = cm_utils.split_part_key(key)
-            self.new_apriori[key] = {'info': []}
+            warn_msg = ''
             if E != N:
                 if len(E) and len(N):
-                    usestat = min(status_enum.index(E), status_enum.index(N))
+                    usestat = status_enum[min(status_enum.index(E), status_enum.index(N))]
                 else:
                     usestat = N if not len(E) else E
-                msg = (f"Warning.  {key}:  {E} and {N} should be the same.  Using {usestat}")
-                self.new_apriori[key]['warning'] = msg
-                print(msg)
+                warn_msg = (f"Warning.  {key}:  {E} and {N} should be the same.  Using {usestat}")
+                print(warn_msg)
             else:
                 usestat = E
             try:
@@ -154,11 +153,14 @@ class UpdateInfo(upd_base.Update):
                 print(f"{key} No existing apriori status.")
                 arcstat = ''
             if usestat != arcstat:
+                self.new_apriori[key] = {'info': []}
                 self.new_apriori[key]['ant'] = ant
                 self.new_apriori[key]['old_status'] = arcstat
                 self.new_apriori[key]['new_status'] = usestat
                 self.new_apriori[key]['cdate'] = self.cdate2
                 self.new_apriori[key]['ctime'] = self.ctime2
+                if len(warn_msg):
+                    self.new_apriori[key]['warning'] = warn_msg
                 s = f"{arcstat} > {usestat}"
                 if self.verbose:
                     print(f"Updating {ant}:  {s}")
