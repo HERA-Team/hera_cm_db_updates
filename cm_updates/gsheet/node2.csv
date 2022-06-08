@@ -19,8 +19,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,,,,,
 32,N,143,196,9,205,C79,n8,2,RF_maintenance,,Wavy bandpass,,,,,
 33,E,164,192,10,206,C81,e2,3,RF_maintenance,,,,,,,
 33,N,164,192,10,206,C81,n0,3,RF_maintenance,,,,,,,
-321,E,287,302,11,328,C81,e6,3,,,,4.408,N2P11E,,,https://drive.google.com/drive/folders/1bHiRKy2b-xxflyGtJwySjkze8-Pi6PNf?usp=sharing
-321,N,287,302,11,328,C81,n4,3,,,,,N2P11N,,,
+321,E,287,203,11,328,C81,e6,3,,,,4.408,N2P11E,,,https://drive.google.com/drive/folders/1bHiRKy2b-xxflyGtJwySjkze8-Pi6PNf?usp=sharing
+321,N,287,203,11,328,C81,n4,3,,,,,N2P11N,,,
 323,E,273,321,12,329,C81,e10,3,,,,4.407,N2P12E,,,https://drive.google.com/drive/folders/1bHiRKy2b-xxflyGtJwySjkze8-Pi6PNf?usp=sharing
 323,N,273,321,12,329,C81,n8,3,,,,,N2P12N,,,
 #END,,,,,,,,,,,,,,,,
