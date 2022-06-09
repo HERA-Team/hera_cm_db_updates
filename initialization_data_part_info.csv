@@ -2367,6 +2367,7 @@ HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,133
 HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338676998
 HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338677838
 HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338678558
+HH67,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338828198
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
 WRA000098,A,MAC - 08:00:30:6e:cd:a4,,1296212418
