@@ -1,0 +1,11 @@
+#! /bin/bash
+echo "220610_update_node_22" >> scripts.log 
+add_part.py -p PCH21 -r A -t pam-chassis -m PCH21 --date 2022/06/01 --time 10:00
+add_connection.py -u N22 --uprev A --upport ground -d ND22 --dnrev A --dnport ground --date 2022/06/01 --time 11:00
+add_connection.py -u PCH21 --uprev A --upport rack -d N22 --dnrev A --dnport bottom --date 2022/06/01 --time 11:00
+add_connection.py -u NCM17 --uprev A --upport rack -d N22 --dnrev A --dnport middle --date 2022/06/01 --time 11:00
+add_connection.py -u PAM320 --uprev A --upport slot -d PCH21 --dnrev A --dnport slot1 --date 2022/06/01 --time 11:00
+add_connection.py -u PAM321 --uprev A --upport slot -d PCH21 --dnrev A --dnport slot2 --date 2022/06/01 --time 11:00
+add_connection.py -u PAM322 --uprev A --upport slot -d PCH21 --dnrev A --dnport slot3 --date 2022/06/01 --time 11:00
+add_connection.py -u PAM323 --uprev A --upport slot -d PCH21 --dnrev A --dnport slot4 --date 2022/06/01 --time 11:00
+add_connection.py -u PAM324 --uprev A --upport slot -d PCH21 --dnrev A --dnport slot5 --date 2022/06/01 --time 11:00
