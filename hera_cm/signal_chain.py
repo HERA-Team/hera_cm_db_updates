@@ -266,7 +266,7 @@ class Update:
         else:
             check_date = cm_utils.get_astropytime(adate=cdate, atime=partadd_time)
         for p in part_to_add.values():
-            if p in None:
+            if p is None:
                 continue
             if not p[0].startswith('ND'):  # Because add_station already added it
                 if not self.exists('part', p[0], p[1], None, check_date=check_date):
