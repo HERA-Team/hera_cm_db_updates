@@ -51,6 +51,7 @@ no_prefix = ['Comments']
 gsheet['NodeNotes'] = "gid=906207981&single=true&output=csv"
 gsheet['README'] = "gid=1630961076&single=true&output=csv"
 gsheet['AprioriWorkflow'] = "gid=2096134790&single=true&output=csv"
+gsheet['NCMs'] = "gid=1671631905&single=true&output=csv"
 
 
 class SheetData:
@@ -111,20 +112,53 @@ class SheetData:
                             nent.notify.append(data[0])
 
     def load_node_notes(self):
-        self.node_notes = []
+        self.node_notes = self.load_entire_sheet('NodeNotes')
+
+    def load_entire_sheet(self, key):
+        sheet_info = []
         try:
-            xxx = requests.get(gsheet['NodeNotes'])
-        except:  # noqa
-            import sys
-            e = sys.exc_info()[0]
-            print(f"Error reading {gsheet['NodeNotes']}:  {e}")
+            xxx = requests.get(gsheet[key])
+        except Exception as e:
+            print(f"Error reading {key}:  {gsheet[key]}:  {e}")
             return
         csv_tab = b''
         for line in xxx:
             csv_tab += line
-        _nodenotes = csv_tab.decode('utf-8').splitlines()
-        for nn in csv.reader(_nodenotes):
-            self.node_notes.append(nn)
+        _info = csv_tab.decode('utf-8').splitlines()
+        for nn in csv.reader(_info):
+            sheet_info.append(nn)
+        return sheet_info
+
+    def load_ncm(self):
+        from argparse import Namespace
+        self.ncm = {}
+        ncmsheet = self.load_entire_sheet('NCMs')
+        indata = False
+        for row in ncmsheet:
+            if not indata and row[0] == 'NCM':
+                indata = True
+            elif indata:
+                if row[1] == '31':
+                    break
+                if row[0].startswith('Pre'):
+                    ncm = f"ncmP{int(row[1]):02d}"
+                else:
+                    ncm = f"ncm{int(row[1]):02d}"
+                if row[5].startswith('A'):
+                    wrsn = f"WR{row[5]}"
+                else:
+                    wrsn = row[5]
+                if len(row[11]):
+                    rdsn = f"arduino{row[11]}"
+                else:
+                    rdsn = ''
+                self.ncm[ncm] = Namespace(
+                                          wr=wrsn,
+                                          wrmac=row[7],
+                                          rd=rdsn,
+                                          rdmac=row[13],
+                                          notes=row[-1]
+                )
 
     def load_sheet(self, node_csv='none', tabs=None, check_headers=False, path='.'):
         """
