@@ -7,7 +7,7 @@ import argparse
 from tabulate import tabulate
 
 from node_control import hosts_ethers
-from hera_cm import cm_gsheet
+from hera_cm.cm_gsheet import SheetData
 
 ap = argparse.ArgumentParser()
 ap.add_argument('hosts', help="Name of hosts file.")
@@ -33,7 +33,7 @@ def he(key, ethers, hosts):
     return e, h
 
 
-ncms = cm_gsheet.SheetData()
+ncms = SheetData()
 ncms.load_ncm()
 
 hosts = hosts_ethers.HostsEthers(args.hosts)
