@@ -1,5 +1,4 @@
 #! /usr/bin/env python
-
 # -*- mode: python; coding: utf-8 -*-
 # Copyright 2022 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
@@ -35,7 +34,6 @@ def he(key, ethers, hosts):
 
 ncms = cm_gsheet.SheetData()
 ncms.load_ncm()
-
 
 hosts = hosts_ethers.HostsEthers(args.hosts)
 ethers = hosts_ethers.HostsEthers(args.ethers)

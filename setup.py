@@ -21,7 +21,8 @@ setup_args = {
                 'scripts/apriori_notification.py',
                 'scripts/update_hera_mc_db_repo.sh',
                 'scripts/checkcm.py',
-                'scripts/cat_nodes.py'],
+                'scripts/cat_nodes.py',
+                'scripts/cm_check_ncm.py'],
     'include_package_data': True,
     'install_requires': []
 }
