@@ -2,7 +2,6 @@
 import csv
 import requests
 from . import util
-from hera_mc import cm_utils
 from argparse import Namespace
 import os.path as ospath
 
@@ -130,7 +129,6 @@ class SheetData:
         return sheet_info
 
     def load_ncm(self):
-        from argparse import Namespace
         self.ncm = {}
         ncmsheet = self.load_entire_sheet('NCMs')
         indata = False
@@ -181,6 +179,7 @@ class SheetData:
         path : str
             Path to use if reading/writing csv files.
         """
+        from hera_mc import cm_utils
         ant_set = set()
         node_csv = node_csv[0].lower()
         if tabs is None or str(tabs) == 'all':
