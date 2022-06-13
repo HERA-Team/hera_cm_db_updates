@@ -7,8 +7,6 @@
 import datetime
 from argparse import Namespace
 
-from hera_mc.geo_sysdef import region
-
 
 def compare_lists(list1, list2, info=None, ignore_length=True):
     """
@@ -98,6 +96,7 @@ def gen_hpn(ptype, pnum, verbose=False):
     """
     From the sheet data (via ptype, pnum) etc it will generate a HERA Part Number
     """
+    from hera_mc.geo_sysdef import region
     ptype = ptype.upper()
     if isinstance(pnum, str):
         pnum = pnum.upper()
