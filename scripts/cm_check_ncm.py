@@ -10,16 +10,11 @@ from node_control import hosts_ethers
 from hera_cm.cm_gsheet import SheetData
 
 ap = argparse.ArgumentParser()
-ap.add_argument('hosts', help="Name of hosts file or 'etc' for system.")
-ap.add_argument('ethers', help="Name of ethers file.", nargs='?', default='')
+ap.add_argument('--hosts', help="Name of hosts file.", default='/etc/hosts')
+ap.add_argument('--ethers', help="Name of ethers file.", default='/etc/ethers')
 ap.add_argument('-c', '--check-mac', dest='check_mac', action='store_true',
                 help='Flag to indicate different mac addresses')
 args = ap.parse_args()
-
-if args.hosts == 'etc':
-    args.hosts = '/etc/hosts'
-    if not len(args.ethers):
-        args.ethers = '/etc/ethers'
 
 
 def he(key, ethers, hosts):
