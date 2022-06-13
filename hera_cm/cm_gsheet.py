@@ -141,22 +141,25 @@ class SheetData:
                 if row[1] == '31':
                     break
                 if row[0].startswith('Pre'):
-                    ncm = f"ncmP{int(row[1]):02d}"
+                    ncm = f"NCMP{int(row[1]):d}"
                 else:
-                    ncm = f"ncm{int(row[1]):02d}"
+                    ncm = f"NCM{int(row[1]):02d}"
                 if row[5].startswith('A'):
                     wrsn = f"WR{row[5]}"
                 else:
                     wrsn = row[5]
                 if len(row[11]):
                     rdsn = f"arduino{row[11]}"
+                    rdhpn = f"RD{row[11]}"
                 else:
                     rdsn = ''
+                    rdhpn = ''
                 self.ncm[ncm] = Namespace(
                                           wr=wrsn,
                                           wrmac=row[7],
                                           rd=rdsn,
                                           rdmac=row[13],
+                                          rdhpn=rdhpn,
                                           notes=row[-1]
                 )
 
