@@ -83,19 +83,9 @@ class SheetData:
         self.workflow = {}
         self.apriori_enum = []
         self.apriori_email = {}
-        try:
-            xxx = requests.get(gsheet['AprioriWorkflow'])
-        except:  # noqa
-            import sys
-            e = sys.exc_info()[0]
-            print(f"Error reading {gsheet['AprioriWorkflow']}:  {e}")
-            return
-        csv_tab = b''
-        for line in xxx:
-            csv_tab += line
-        csv_data = csv_tab.decode('utf-8').splitlines()
+        csv_data = self.load_entire_sheet('AprioriWorkflow')
         capture_enums = False
-        for data in csv.reader(csv_data):
+        for data in csv_data:
             self.workflow[data[0]] = data[1:]
             if data[0] == apriori_enum_header:
                 capture_enums = True
@@ -129,7 +119,7 @@ class SheetData:
             sheet_info.append(nn)
         return sheet_info
 
-    def load_ncm(self):
+    def load_ncm(self, ending_at='31'):
         self.ncm = {}
         ncmsheet = self.load_entire_sheet('NCMs')
         indata = False
@@ -137,7 +127,7 @@ class SheetData:
             if not indata and row[0] == 'NCM':
                 indata = True
             elif indata:
-                if row[1] == '31':
+                if row[1] == ending_at:
                     break
                 if row[0].startswith('Pre'):
                     ncm = f"NCMP{int(row[1]):d}"
@@ -195,25 +185,14 @@ class SheetData:
                     for line in fp:
                         csv_data.append(line)
             else:
-                try:
-                    xxx = requests.get(gsheet[tab])
-                except:  # noqa
-                    import sys
-                    e = sys.exc_info()[0]
-                    print(f"Error reading {gsheet[tab]}: {e}")
-                    return
-                csv_tab = b''
-                for line in xxx:
-                    csv_tab += line
-                csv_data = csv_tab.decode('utf-8').splitlines()
-            csv_tab = csv.reader(csv_data)
+                csv_data = self.load_entire_sheet(tab)
             if node_csv == 'w':
                 ofnc = ospath.join(path, f"{tab}.csv")
                 print(f"Node file: {ofnc}")
                 with open(ofnc, 'w') as fp:
                     fp.write('\n'.join(csv_data))
             self.node_to_ant[tab] = []
-            for data in csv_tab:
+            for data in csv_data:
                 if data[0].startswith('Ant'):  # This is the header line
                     self.header[tab] = ['Node'] + data
                     if check_headers:
@@ -234,8 +213,10 @@ class SheetData:
                 self.data[dkey] = [util.get_num(tab)] + data
             # Get the notes below the hookup table.
             node_pn = 'N{:02d}'.format(int(util.get_num(tab)))
-            for data in csv_tab:
-                if data[0].startswith("Note"):
+            self.node_to_equip[node_pn] = Namespace()
+            for data in csv_data:
+                key = data[0].strip().lower()
+                if key.startswith("note"):
                     note_part = data[0].split()
                     if len(note_part) > 1:
                         npkey = note_part[1]
@@ -243,4 +224,10 @@ class SheetData:
                         npkey = node_pn
                     self.notes.setdefault(npkey, [])
                     self.notes[npkey].append('-'.join([y for y in data[1:] if len(y) > 0]))
+                elif key in ['ncm', 'fps', 'pch']:
+                    try:
+                        val = f"{key.upper()}{int(data[1]):02d}"
+                    except ValueError:
+                        val = f"{key.upper()}{data[1].upper()}"
+                    setattr(self.node_to_equip[node_pn], key, val)
         self.ants = cm_utils.put_keys_in_order(list(ant_set), sort_order='NPR')
