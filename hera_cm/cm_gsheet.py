@@ -68,6 +68,7 @@ class SheetData:
         self.data = {}
         self.ant_to_node = {}
         self.node_to_ant = {}
+        self.node_to_equip = {}
         self.header = {}
         self.date = {}
         self.notes = {}
