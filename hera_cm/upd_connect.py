@@ -145,9 +145,9 @@ class UpdateConnect(upd_base.Update):
                         if self._status_OK(keyup, pol, [pam, snap, port]):
                             self._ugconn(keyup, pol, [pam, 'A', pol.lower()], [snap, 'A', port])
                     elif col == 'SNAP':  # snap-node, pam-pch, pch-node
+                        node = util.gen_hpn("Node", node_num)
                         # ... snap-node
                         snap = self.get_hpn_from_col('SNAP', gkey, header)
-                        node = util.gen_hpn("Node", node_num)
                         loc = "loc{}".format(self.gsheet.data[gkey][header.index('SNAPloc')])
                         if self._status_OK('-', pol, [snap, node, loc]):
                             keyup = cm_utils.make_part_key(snap, 'A')
@@ -158,17 +158,12 @@ class UpdateConnect(upd_base.Update):
                         # ... pam-pch
                         pam = self.get_hpn_from_col('PAM', gkey, header)
                         pku = 'SLOT'
-                        try:
-                            keyup = cm_utils.make_part_key(pam, 'A')
-                            pch = self.active.connections['up'][keyup][pku].downstream_part
-                        except KeyError:
-                            continue
+                        pch = self.gsheet.data.node_to_equip[node].pch
                         slot = '{}{}'.format('slot',
                                              self.gsheet.data[gkey][header.index('NBP/PAMloc')])
                         if self._status_OK('-', pol, [pam, pch, slot]):
                             self._ugconn(keyup, pku, [pam, 'A', 'slot'], [pch, 'A', slot])
                         # ... pch-node
-                        node = util.gen_hpn("Node", node_num)
                         if self._status_OK('-', pol, [pch, slot, node]):
                             keyup = cm_utils.make_part_key(pch, 'A')
                             pku = 'RACK'
