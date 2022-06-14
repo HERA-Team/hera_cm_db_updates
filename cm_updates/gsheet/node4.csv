@@ -27,7 +27,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 Date:,2019/11/18,,,,,,,,,,,,,
 NCM,21,,,,,,,,,,,,,
 FPS,5,,,,,,,,,,,,,
-PCH,,,,,,,,,,,,,,
+PCH,5,,,,,,,,,,,,,
 ,These need to be completed by the site crew,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,
 Note,2019Nov13,,MRD,"Twelve (12) 6ft (1.8m) blue CAT7 SSTP cables, originally intended just for NCM I2C sensors and Node ID, used for the rear of PAM chassis to the side panel connections.",,,,,,,,,,
