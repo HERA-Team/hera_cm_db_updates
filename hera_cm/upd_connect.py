@@ -166,7 +166,7 @@ class UpdateConnect(upd_base.Update):
         for dir, key in keys.items():
             self.gsheet.connections[dir].setdefault(key, {})
             if port[dir] in self.gsheet.connections[dir][key]:
-                raise ValueError(f"{port[dir]} already in {dir} for {conn}")
+                continue
             self.gsheet.connections[dir][key][port[dir]] = CMPC.Connections()
             self.gsheet.connections[dir][key][port[dir]].connection(
                 upstream_part=conn[0][0], up_part_rev=conn[0][1],
