@@ -105,7 +105,7 @@ class UpdateConnect(upd_base.Update):
                         self._create_sheet_conn([[fem, 'A', pol.lower()], [nbp, 'A', port]])
                         # Make fps-node
                         fps = self.gsheet.node_to_equip[node].fps
-                        self._create_sheet_conn([fps, 'A', 'rack'], [node, 'A', 'top'])
+                        self._create_sheet_conn([[fps, 'A', 'rack'], [node, 'A', 'top']])
                     elif col == 'NBP/PAMloc':  # nbp-pam
                         nbp = util.gen_hpn('NBP', node_num)
                         port = '{}{}'.format(pol,
