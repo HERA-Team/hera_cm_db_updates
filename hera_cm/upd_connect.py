@@ -158,7 +158,7 @@ class UpdateConnect(upd_base.Update):
                         # ... pam-pch
                         pam = self.get_hpn_from_col('PAM', gkey, header)
                         pku = 'SLOT'
-                        pch = self.gsheet.data.node_to_equip[node].pch
+                        pch = self.gsheet.node_to_equip[node].pch
                         slot = '{}{}'.format('slot',
                                              self.gsheet.data[gkey][header.index('NBP/PAMloc')])
                         if self._status_OK('-', pol, [pam, pch, slot]):
@@ -195,7 +195,7 @@ class UpdateConnect(upd_base.Update):
             else:  # Make sure it is not there, then process
                 if keyup in self.gsheet.connections['up']:
                     print(self.gsheet.connections['up'][keyup])
-                    msg = "Already present ({}).".format(keyup, pol)
+                    msg = "Already present ({} {}).".format(keyup, pol)
                     if self.disable_err:
                         print(msg)
                         return False
