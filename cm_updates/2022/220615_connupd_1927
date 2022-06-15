@@ -1,0 +1,20 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220615_connupd_1927" >> scripts.log 
+# Adding missing parts
+add_part.py -p FPS16 -r A -t fem-power-supply -m FPS16 --date 2022/06/15 --time 19:22
+# Adding missing connections
+add_connection.py -u FPS16 --uprev A --upport rack -d N14 --dnrev A --dnport top --date 2022/06/15 --time 19:27
+# Adding different connections
+stop_connection.py -u FPS05 --uprev A --upport rack -d N07 --dnrev A --dnport top --date 2022/06/15 --time 19:26
+stop_connection.py -u FPS06 --uprev A --upport rack -d N04 --dnrev A --dnport top --date 2022/06/15 --time 19:26
+stop_connection.py -u FPS20 --uprev A --upport rack -d N18 --dnrev A --dnport top --date 2022/06/15 --time 19:26
+stop_connection.py -u NCM18 --uprev A --upport rack -d N19 --dnrev A --dnport middle --date 2022/06/15 --time 19:26
+stop_connection.py -u FPS07 --uprev A --upport rack -d N05 --dnrev A --dnport top --date 2022/06/15 --time 19:26
+add_connection.py -u FPS05 --uprev A --upport rack -d N04 --dnrev A --dnport top --date 2022/06/15 --time 19:27
+add_connection.py -u FPS06 --uprev A --upport rack -d N05 --dnrev A --dnport top --date 2022/06/15 --time 19:27
+add_connection.py -u FPS20 --uprev A --upport rack -d N11 --dnrev A --dnport top --date 2022/06/15 --time 19:27
+add_connection.py -u NCM18 --uprev A --upport rack -d N11 --dnrev A --dnport middle --date 2022/06/15 --time 19:27
+add_connection.py -u FPS07 --uprev A --upport rack -d N07 --dnrev A --dnport top --date 2022/06/15 --time 19:27
+# Adding missing parts
+# Adding different parts
