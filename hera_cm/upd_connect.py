@@ -88,16 +88,13 @@ class UpdateConnect(upd_base.Update):
                         previous['Ant'] = ant
                         previous['Feed'] = feed
                         # ... station-antenna
-                        conn = [[sta, 'A', 'ground'], [ant, 'H', 'ground']]
-                        self._create_sheet_conn(conn)
+                        self._create_sheet_conn([[sta, 'A', 'ground'], [ant, 'H', 'ground']])
                         # ... antenna-feed
-                        conn = [[ant, 'H', 'focus'], [feed, 'A', 'input']]
-                        self._create_sheet_conn(conn)
+                        self._create_sheet_conn([[ant, 'H', 'focus'], [feed, 'A', 'input']])
                     elif col == 'Feed':  # Make feed-fem
                         feed = self.get_hpn_from_col('Feed', gkey, header)
                         fem = self.get_hpn_from_col('FEM', gkey, header)
-                        conn = [[feed, 'A', 'terminals'], [fem, 'A', 'input']]
-                        self._create_sheet_conn(conn)
+                        self._create_sheet_conn([[feed, 'A', 'terminals'], [fem, 'A', 'input']])
                     elif col == 'FEM':  # Make fem-nbp
                         fem = self.get_hpn_from_col('FEM', gkey, header)
                         nbp = util.gen_hpn('NBP', node_num)
@@ -105,14 +102,10 @@ class UpdateConnect(upd_base.Update):
                                              self.gsheet.data[gkey][header.index('NBP/PAMloc')])
                         if port is not None:
                             port = port.lower()
-                        conn = [[fem, 'A', pol.lower()], [nbp, 'A', port]]
-                        self._create_sheet_conn(conn)
+                        self._create_sheet_conn([[fem, 'A', pol.lower()], [nbp, 'A', port]])
                         # Make fps-node
-                        # fps = self.gsheet.node_to_equip[node].fps
-                        # if self._status_OK(None, pol, node, [fps, slot, node]):
-                        #     keyup = cm_utils.make_part_key(fps, 'A')
-                        #     pku = 'RACK'
-                        #     self._create_sheet_conn([fps, 'A', 'rack'], [node, 'A', 'top'])
+                        fps = self.gsheet.node_to_equip[node].fps
+                        self._create_sheet_conn([fps, 'A', 'rack'], [node, 'A', 'top'])
                     elif col == 'NBP/PAMloc':  # nbp-pam
                         nbp = util.gen_hpn('NBP', node_num)
                         port = '{}{}'.format(pol,
@@ -120,8 +113,7 @@ class UpdateConnect(upd_base.Update):
                         if port is not None:
                             port = port.lower()
                         pam = self.get_hpn_from_col('PAM', gkey, header)
-                        conn = [[nbp, 'A', port], [pam, 'A', pol.lower()]]
-                        self._create_sheet_conn(conn)
+                        self._create_sheet_conn([[nbp, 'A', port], [pam, 'A', pol.lower()]])
                     elif col == 'PAM':  # pam-snap
                         pam = self.get_hpn_from_col('PAM', gkey, header)
                         snap = self.get_hpn_from_col('SNAP', gkey, header)
@@ -138,24 +130,20 @@ class UpdateConnect(upd_base.Update):
                                     print(msg)
                                 else:
                                     raise ValueError(msg)
-                        conn = [[pam, 'A', pol.lower()], [snap, 'A', port]]
-                        self._create_sheet_conn(conn)
+                        self._create_sheet_conn([[pam, 'A', pol.lower()], [snap, 'A', port]])
                     elif col == 'SNAP':  # snap-node, pam-pch, pch-node
                         # ... snap-node
                         snap = self.get_hpn_from_col('SNAP', gkey, header)
                         loc = "loc{}".format(self.gsheet.data[gkey][header.index('SNAPloc')])
-                        conn = [[snap, 'A', 'rack'], [node, 'A', loc]]
-                        self._create_sheet_conn(conn)
+                        self._create_sheet_conn([[snap, 'A', 'rack'], [node, 'A', loc]])
                         # ... pam-pch
                         pam = self.get_hpn_from_col('PAM', gkey, header)
                         pch = self.gsheet.node_to_equip[node].pch
                         slot = '{}{}'.format('slot',
                                              self.gsheet.data[gkey][header.index('NBP/PAMloc')])
-                        conn = [[pam, 'A', 'slot'], [pch, 'A', slot]]
-                        self._create_sheet_conn(conn)
+                        self._create_sheet_conn([[pam, 'A', 'slot'], [pch, 'A', slot]])
                         # ... pch-node
-                        conn = [[pch, 'A', 'rack'], [node, 'A', 'bottom']]
-                        self._create_sheet_conn(conn)
+                        self._create_sheet_conn([[pch, 'A', 'rack'], [node, 'A', 'bottom']])
 
     def _create_sheet_conn(self, conn):
         if None in conn[0] or None in conn[1]:
