@@ -5,7 +5,8 @@ import os
 
 current_revs = {'HH': 'A', 'HA': 'A', 'HB': 'A', 'A': 'H', 'FDV': 'V'}
 part_types = {'FDV': 'feed', 'FEM': 'front-end', 'NBP': 'node-bulkhead',
-              'PAM': 'post-amp', 'SNP': 'snap'}
+              'PAM': 'post-amp', 'SNP': 'snap', 'FPS': 'fem-power-supply',
+              'PCH': 'pam-chassis', 'NCM': 'node-control-module'}
 
 
 def as_part(add_or_stop, p, cdate, ctime):
