@@ -1,0 +1,11 @@
+#! /bin/bash
+echo "/Users/ddeboer/Documents/ubase/Projects/HERA/ops/hera_cm_db_updates/220615_connupd_1138" >> scripts.log 
+# Adding partial connections
+add_connection.py -u PAM148 --uprev A --upport slot -d PCH21 --dnrev A --dnport slot6 --date 2022/06/15 --time 11:38
+add_connection.py -u PAM328 --uprev A --upport slot -d PCH14 --dnrev A --dnport slot11 --date 2022/06/15 --time 11:38
+# Adding different connections
+stop_connection.py -u PAM214 --uprev A --upport slot -d PCH13 --dnrev A --dnport slot6 --date 2022/06/15 --time 11:36
+stop_connection.py -u PAM190 --uprev A --upport slot -d PCH12 --dnrev A --dnport slot6 --date 2022/06/15 --time 11:36
+add_connection.py -u PAM214 --uprev A --upport slot -d PCH21 --dnrev A --dnport slot7 --date 2022/06/15 --time 11:38
+add_connection.py -u PAM190 --uprev A --upport slot -d PCH21 --dnrev A --dnport slot9 --date 2022/06/15 --time 11:38
+# Adding different parts
