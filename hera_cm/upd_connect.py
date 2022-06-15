@@ -65,6 +65,7 @@ class UpdateConnect(upd_base.Update):
             for pol in self.pols:
                 gkey = '{}-{}'.format(sant, pol)
                 node_num = self.gsheet.data[gkey][0]
+                node = util.gen_hpn("Node", node_num)
                 tab = self.gsheet.ant_to_node[sant]
                 header = self.gsheet.header[tab]
                 for i, col in enumerate(header):
@@ -114,6 +115,12 @@ class UpdateConnect(upd_base.Update):
                         keyup = cm_utils.make_part_key(fem, 'A')
                         if self._status_OK(keyup, pol, [fem, port]):
                             self._ugconn(keyup, pol, [fem, 'A', pol.lower()], [nbp, 'A', port])
+                        # Make fps-node
+                        # fps = self.gsheet.node_to_equip[node].fps
+                        # if self._status_OK('-', pol, [fps, slot, node]):
+                        #     keyup = cm_utils.make_part_key(fps, 'A')
+                        #     pku = 'RACK'
+                        #     self._ugconn(keyup, pku, [fps, 'A', 'rack'], [node, 'A', 'top'])
                     elif col == 'NBP/PAMloc':  # nbp-pam
                         nbp = util.gen_hpn('NBP', node_num)
                         port = '{}{}'.format(pol,
@@ -145,7 +152,6 @@ class UpdateConnect(upd_base.Update):
                         if self._status_OK(keyup, pol, [pam, snap, port]):
                             self._ugconn(keyup, pol, [pam, 'A', pol.lower()], [snap, 'A', port])
                     elif col == 'SNAP':  # snap-node, pam-pch, pch-node
-                        node = util.gen_hpn("Node", node_num)
                         # ... snap-node
                         snap = self.get_hpn_from_col('SNAP', gkey, header)
                         loc = "loc{}".format(self.gsheet.data[gkey][header.index('SNAPloc')])
