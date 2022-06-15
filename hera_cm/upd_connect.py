@@ -71,8 +71,6 @@ class UpdateConnect(upd_base.Update):
                 for i, col in enumerate(header):
                     if col not in cm_gsheet.hu_col.keys():
                         continue
-                    if self.gsheet.data[gkey][i] is None:
-                        continue
                     if col in ['Ant', 'Feed', 'SNAP'] and pol == self.pols[1]:
                         # Check that the lines needing same value, do have same value.
                         this = self.get_hpn_from_col(col, gkey, header)
@@ -91,18 +89,15 @@ class UpdateConnect(upd_base.Update):
                         previous['Feed'] = feed
                         # ... station-antenna
                         conn = [[sta, 'A', 'ground'], [ant, 'H', 'ground']]
-                        if self._status_OK(conn, pol, [ant]):
-                            self._create_sheet_conn(conn)
+                        self._create_sheet_conn(conn)
                         # ... antenna-feed
                         conn = [[ant, 'H', 'focus'], [feed, 'A', 'input']]
-                        if self._status_OK(conn, pol, [ant, feed]):
-                            self._create_sheet_conn(conn)
+                        self._create_sheet_conn(conn)
                     elif col == 'Feed':  # Make feed-fem
                         feed = self.get_hpn_from_col('Feed', gkey, header)
                         fem = self.get_hpn_from_col('FEM', gkey, header)
                         conn = [[feed, 'A', 'terminals'], [fem, 'A', 'input']]
-                        if self._status_OK(conn, pol, [feed, fem]):
-                            self._create_sheet_conn(conn)
+                        self._create_sheet_conn(conn)
                     elif col == 'FEM':  # Make fem-nbp
                         fem = self.get_hpn_from_col('FEM', gkey, header)
                         nbp = util.gen_hpn('NBP', node_num)
@@ -111,11 +106,10 @@ class UpdateConnect(upd_base.Update):
                         if port is not None:
                             port = port.lower()
                         conn = [[fem, 'A', pol.lower()], [nbp, 'A', port]]
-                        if self._status_OK(conn, pol, [fem, port]):
-                            self._create_sheet_conn(conn)
+                        self._create_sheet_conn(conn)
                         # Make fps-node
                         # fps = self.gsheet.node_to_equip[node].fps
-                        # if self._status_OK('-', pol, [fps, slot, node]):
+                        # if self._status_OK(None, pol, node, [fps, slot, node]):
                         #     keyup = cm_utils.make_part_key(fps, 'A')
                         #     pku = 'RACK'
                         #     self._create_sheet_conn([fps, 'A', 'rack'], [node, 'A', 'top'])
@@ -127,8 +121,7 @@ class UpdateConnect(upd_base.Update):
                             port = port.lower()
                         pam = self.get_hpn_from_col('PAM', gkey, header)
                         conn = [[nbp, 'A', port], [pam, 'A', pol.lower()]]
-                        if self._status_OK(None, [port, pam]):
-                            self._create_sheet_conn(conn)
+                        self._create_sheet_conn(conn)
                     elif col == 'PAM':  # pam-snap
                         pam = self.get_hpn_from_col('PAM', gkey, header)
                         snap = self.get_hpn_from_col('SNAP', gkey, header)
@@ -146,76 +139,40 @@ class UpdateConnect(upd_base.Update):
                                 else:
                                     raise ValueError(msg)
                         conn = [[pam, 'A', pol.lower()], [snap, 'A', port]]
-                        if self._status_OK(conn, pol, [pam, snap, port]):
-                            self._create_sheet_conn(conn)
+                        self._create_sheet_conn(conn)
                     elif col == 'SNAP':  # snap-node, pam-pch, pch-node
                         # ... snap-node
                         snap = self.get_hpn_from_col('SNAP', gkey, header)
                         loc = "loc{}".format(self.gsheet.data[gkey][header.index('SNAPloc')])
                         conn = [[snap, 'A', 'rack'], [node, 'A', loc]]
-                        if self._status_OK(None, pol, [snap, node, loc]):
-                            self._create_sheet_conn(conn)
+                        self._create_sheet_conn(conn)
                         # ... pam-pch
                         pam = self.get_hpn_from_col('PAM', gkey, header)
                         pch = self.gsheet.node_to_equip[node].pch
                         slot = '{}{}'.format('slot',
                                              self.gsheet.data[gkey][header.index('NBP/PAMloc')])
                         conn = [[pam, 'A', 'slot'], [pch, 'A', slot]]
-                        if self._status_OK(conn, pol, [pam, pch, slot]):
-                            self._create_sheet_conn(conn)
+                        self._create_sheet_conn(conn)
                         # ... pch-node
                         conn = [[pch, 'A', 'rack'], [node, 'A', 'bottom']]
-                        if self._status_OK(None, pol, [pch, slot, node]):
-                            self._create_sheet_conn(conn)
+                        self._create_sheet_conn(conn)
 
     def _create_sheet_conn(self, conn):
+        if None in conn[0] or None in conn[1]:
+            return
         keys = {'up': cm_utils.make_part_key(conn[0][0], conn[0][1]),
                 'down': cm_utils.make_part_key(conn[1][0], conn[1][1])}
         port = {'up': conn[0][2].upper(), 'down': conn[1][2].upper()}
         for dir, key in keys.items():
             self.gsheet.connections[dir].setdefault(key, {})
+            if port[dir] in self.gsheet.connections[dir][key]:
+                raise ValueError(f"{port[dir]} already in {dir} for {conn}")
             self.gsheet.connections[dir][key][port[dir]] = CMPC.Connections()
             self.gsheet.connections[dir][key][port[dir]].connection(
                 upstream_part=conn[0][0], up_part_rev=conn[0][1],
                 upstream_output_port=conn[0][2],
                 downstream_part=conn[1][0], down_part_rev=conn[1][1],
                 downstream_input_port=conn[1][2])
-
-    def _status_OK(self, conn, pol, list_to_check):
-        """
-        Checks to make sure that (1) the key is not there initially (E pol)
-        and it is there for N pol.
-        """
-        if None in list_to_check:
-            if self.verbose:
-                print(f'skipping {conn} {pol}', list_to_check)
-                self.skipping.append(conn)
-            return False
-        if conn is None:
-            return True
-        keys = {'up': cm_utils.make_part_key(conn[0][0], conn[0][1]),
-                'down': cm_utils.make_part_key(conn[1][0], conn[1][1])}
-        if pol == self.pols[1]:  # Make sure key already there
-            for dir, key in keys.items():
-                if key not in self.gsheet.connections[dir]:
-                    print(self.gsheet.connections[dir][key])
-                    msg = "{} not present ({}, {}).".format(key, pol, dir)
-                    if self.disable_err:
-                        print(msg)
-                        return False
-                    else:
-                        raise ValueError(msg)
-        else:  # Make sure it is not there, then process
-            for dir, key in keys.items():
-                if key in self.gsheet.connections[dir]:
-                    print(self.gsheet.connections[dir][key])
-                    msg = "Already present ({} {}, {}).".format(key, pol, dir)
-                    if self.disable_err:
-                        print(msg)
-                        return False
-                    else:
-                        raise ValueError(msg)
-        return True
 
     def add_rosetta(self):
         for t2u in ['missing', 'different']:

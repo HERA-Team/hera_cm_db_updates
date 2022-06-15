@@ -83,7 +83,7 @@ class SheetData:
         self.workflow = {}
         self.apriori_enum = []
         self.apriori_email = {}
-        csv_data = self.load_entire_sheet('AprioriWorkflow')
+        csv_data = self.load_sheet_from_web('AprioriWorkflow')
         capture_enums = False
         for data in csv_data:
             self.workflow[data[0]] = data[1:]
@@ -102,9 +102,25 @@ class SheetData:
                             nent.notify.append(data[0])
 
     def load_node_notes(self):
-        self.node_notes = self.load_entire_sheet('NodeNotes')
+        self.node_notes = self.load_sheet_from_web('NodeNotes')
 
-    def load_entire_sheet(self, key):
+    def csv_file(self, action, fn, data=None):
+        if action == 'write' and data is not None:
+            with open(fn, 'w') as fp:
+                csvfw = csv.writer(fp, delimiter=',')
+                csvfw.writerows(data)
+            return
+        elif action == 'read' and data is None:
+            data = []
+            with open(fn, 'r') as fp:
+                csvfr = csv.reader(fp, delimiter=',')
+                for row in csvfr:
+                    data.append(row)
+            return data
+        else:
+            print("Wrong csv arguments.")
+
+    def load_sheet_from_web(self, key):
         sheet_info = []
         try:
             xxx = requests.get(gsheet[key])
@@ -121,7 +137,7 @@ class SheetData:
 
     def load_ncm(self, ending_at='31'):
         self.ncm = {}
-        ncmsheet = self.load_entire_sheet('NCMs')
+        ncmsheet = self.load_sheet_from_web('NCMs')
         indata = False
         for row in ncmsheet:
             if not indata and row[0] == 'NCM':
@@ -179,18 +195,11 @@ class SheetData:
             tabs = tabs.split(',')
         for tab in tabs:
             if node_csv == 'r':
-                csv_data = []
-                ofnc = ospath.join(path, f"{tab}.csv")
-                with open(ofnc, 'r') as fp:
-                    for line in fp:
-                        csv_data.append(line)
+                csv_data = self.csv_file('read', ospath.join(path, f"{tab}.csv"))
             else:
-                csv_data = self.load_entire_sheet(tab)
+                csv_data = self.load_sheet_from_web(tab)
             if node_csv == 'w':
-                ofnc = ospath.join(path, f"{tab}.csv")
-                print(f"Node file: {ofnc}")
-                with open(ofnc, 'w') as fp:
-                    fp.write('\n'.join(csv_data))
+                self.csv_file('write', ospath.join(path, f"{tab}.csv"), csv_data)
             self.node_to_ant[tab] = []
             for data in csv_data:
                 if data[0].startswith('Ant'):  # This is the header line
