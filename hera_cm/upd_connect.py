@@ -83,8 +83,7 @@ class UpdateConnect(upd_base.Update):
                 self._create_sheet_conn([[wr, 'A', 'mnt'], [ncm, 'A', 'mnt1']])
             if len(rd):
                 self._create_sheet_conn([[rd, 'A', 'mnt'], [ncm, 'A', 'mnt2']])
-
-        # Make antenna-based connections
+        # Make ~antenna-based connections
         for sant in self.gsheet.ants + self.gsheet.other:
             previous = {}
             for pol in self.pols:
@@ -131,9 +130,6 @@ class UpdateConnect(upd_base.Update):
                         if port is not None:
                             port = port.lower()
                         self._create_sheet_conn([[fem, 'A', pol.lower()], [nbp, 'A', port]])
-                        # # Make fps-node
-                        # fps = self.gsheet.node_to_equip[node].fps
-                        # self._create_sheet_conn([[fps, 'A', 'rack'], [node, 'A', 'top']])
                     elif col == 'NBP/PAMloc':  # nbp-pam
                         nbp = util.gen_hpn('NBP', node_num)
                         port = '{}{}'.format(pol,
@@ -166,25 +162,10 @@ class UpdateConnect(upd_base.Update):
                         self._create_sheet_conn([[snap, 'A', 'rack'], [node, 'A', loc]])
                         # ... pam-pch
                         pam = self.get_hpn_from_col('PAM', gkey, header)
-                        # pch = self.gsheet.node_to_equip[node].pch
-                        # slot = '{}{}'.format('slot',
-                        #                      self.gsheet.data[gkey][header.index('NBP/PAMloc')])
-                        # self._create_sheet_conn([[pam, 'A', 'slot'], [pch, 'A', slot]])
-                        # # ... pch-node
-                        # self._create_sheet_conn([[pch, 'A', 'rack'], [node, 'A', 'bottom']])
-                        # # Make ncm-node
-                        # ncm = self.gsheet.node_to_equip[node].ncm
-                        # self._create_sheet_conn([[ncm, 'A', 'rack'], [node, 'A', 'middle']])
-                        # # Make node and node station
-                        # nsta = util.gen_hpn('node-station', node_num)
-                        # self._create_sheet_conn([[node, 'A', 'ground'], [nsta, 'A', 'ground']])
-                        # # Make white-rabbit and arduino (these and others get repeated many times.)
-                        # wr = self.gsheet.ncm[ncm].wr
-                        # rd = self.gsheet.ncm[ncm].rdhpn
-                        # if len(wr):
-                        #     self._create_sheet_conn([[wr, 'A', 'mnt'], [ncm, 'A', 'mnt1']])
-                        # if len(rd):
-                        #     self._create_sheet_conn([[rd, 'A', 'mnt'], [ncm, 'A', 'mnt2']])
+                        pch = self.gsheet.node_to_equip[node].pch
+                        slot = '{}{}'.format('slot',
+                                             self.gsheet.data[gkey][header.index('NBP/PAMloc')])
+                        self._create_sheet_conn([[pam, 'A', 'slot'], [pch, 'A', slot]])
 
     def _create_sheet_conn(self, conn):
         if None in conn[0] or None in conn[1]:
@@ -314,21 +295,21 @@ class UpdateConnect(upd_base.Update):
         print("Same:  {}".format(len(self.same)))
         print("Skipping:  {}".format(len(self.skipping)))
         print("Partial:  {}".format(len(self.partial)), end='   ')
-        if len(self.partial):
+        if len(self.partial) and len(self.partial) < 5:
             print("*****CHECK*****")
             for p in self.partial:
                 print("\t{}".format(p))
         else:
             print()
         print("Different:  {}".format(len(self.different)), end='   ')
-        if len(self.different):
+        if len(self.different) and len(self.different) < 5:
             print("*****CHECK*****")
             for d in self.different:
                 print("\t{}".format(d))
         else:
             print()
         print("Different_stop:  {}".format(len(self.different_stop)), end='   ')
-        if len(self.different_stop):
+        if len(self.different_stop) and len(self.different_stop) < 5:
             print("*****CHECK*****")
             for d in self.different_stop:
                 print("\t{}".format(d))
