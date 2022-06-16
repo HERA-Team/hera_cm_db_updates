@@ -53,6 +53,7 @@ class Update():
         if self.gsheet is None:
             self.gsheet = cm_gsheet.SheetData()
         self.gsheet.load_sheet(node_csv=node_csv, tabs=None, path=path)
+        self.gsheet.load_ncm()
 
     def load_gworkflow(self):
         if self.gsheet is None:

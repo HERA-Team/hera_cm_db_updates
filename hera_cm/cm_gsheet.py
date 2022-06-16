@@ -193,6 +193,7 @@ class SheetData:
             tabs = self.tabs
         elif isinstance(tabs, str):
             tabs = tabs.split(',')
+        missing_ant = 9999
         for tab in tabs:
             if node_csv == 'r':
                 csv_data = self.csv_file('read', ospath.join(path, f"{tab}.csv"))
@@ -212,7 +213,9 @@ class SheetData:
                 try:
                     antnum = int(data[0])
                 except ValueError:
-                    continue
+                    if data[1].upper() == 'E':
+                        missing_ant += 1
+                    antnum = missing_ant
                 hpn = util.gen_hpn('station', antnum)
                 hkey = cm_utils.make_part_key(hpn, 'A')
                 ant_set.add(hkey)
@@ -239,4 +242,11 @@ class SheetData:
                     except ValueError:
                         val = f"{key.upper()}{data[1].upper()}"
                     setattr(self.node_to_equip[node_pn], key, val)
-        self.ants = cm_utils.put_keys_in_order(list(ant_set), sort_order='NPR')
+        ants_full = cm_utils.put_keys_in_order(list(ant_set), sort_order='NPR')
+        self.ants = []
+        self.other = []
+        for aa in ants_full:
+            if len(aa) == 9:
+                self.other.append(aa)
+            else:
+                self.ants.append(aa)

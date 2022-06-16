@@ -60,7 +60,7 @@ class UpdateConnect(upd_base.Update):
         self.gsheet.connections is set up identically to self.active.connections
         """
         self.gsheet.connections = {'up': {}, 'down': {}}  # To mirror cm_active
-        for sant in self.gsheet.ants:
+        for sant in self.gsheet.ants + self.gsheet.other:
             previous = {}
             for pol in self.pols:
                 gkey = '{}-{}'.format(sant, pol)
@@ -83,7 +83,10 @@ class UpdateConnect(upd_base.Update):
                         continue
                     if col == 'Ant':  # Make station-antenna, antenna-feed
                         ant = self.get_hpn_from_col('Ant', gkey, header)
-                        sta = util.gen_hpn('station', int(ant[1:]))
+                        if ant is not None:
+                            sta = util.gen_hpn('station', int(ant[1:]))
+                        else:
+                            sta = None
                         feed = self.get_hpn_from_col('Feed', gkey, header)
                         previous['Ant'] = ant
                         previous['Feed'] = feed
@@ -106,9 +109,6 @@ class UpdateConnect(upd_base.Update):
                         # Make fps-node
                         fps = self.gsheet.node_to_equip[node].fps
                         self._create_sheet_conn([[fps, 'A', 'rack'], [node, 'A', 'top']])
-                        # Make ncm-node
-                        ncm = self.gsheet.node_to_equip[node].ncm
-                        self._create_sheet_conn([[ncm, 'A', 'rack'], [node, 'A', 'middle']])
                     elif col == 'NBP/PAMloc':  # nbp-pam
                         nbp = util.gen_hpn('NBP', node_num)
                         port = '{}{}'.format(pol,
@@ -147,6 +147,19 @@ class UpdateConnect(upd_base.Update):
                         self._create_sheet_conn([[pam, 'A', 'slot'], [pch, 'A', slot]])
                         # ... pch-node
                         self._create_sheet_conn([[pch, 'A', 'rack'], [node, 'A', 'bottom']])
+                        # Make ncm-node
+                        ncm = self.gsheet.node_to_equip[node].ncm
+                        self._create_sheet_conn([[ncm, 'A', 'rack'], [node, 'A', 'middle']])
+                        # Make node and node station
+                        nsta = util.gen_hpn('node-station', node_num)
+                        self._create_sheet_conn([[node, 'A', 'ground'], [nsta, 'A', 'ground']])
+                        # Make white-rabbit and arduino
+                        wr = self.gsheet.ncm[ncm].wr
+                        rd = self.gsheet.ncm[ncm].rdhpn
+                        if len(wr):
+                            self._create_sheet_conn([[wr, 'A', 'mnt'], [ncm, 'A', 'mnt1']])
+                        if len(rd):
+                            self._create_sheet_conn([[rd, 'A', 'mnt'], [ncm, 'A', 'mnt2']])
 
     def _create_sheet_conn(self, conn):
         if None in conn[0] or None in conn[1]:

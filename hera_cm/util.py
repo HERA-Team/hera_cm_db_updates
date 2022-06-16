@@ -126,6 +126,8 @@ def gen_hpn(ptype, pnum, verbose=False):
                 pre = 'HA'
             elif int(pnum) in region['heraringb']:
                 pre = 'HB'
+            elif int(pnum) > 9999:
+                pre = 'EE'
             else:
                 pre = 'HH'
             return '{}{}'.format(pre, int(pnum))
