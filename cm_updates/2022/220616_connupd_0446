@@ -1,0 +1,10 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220616_connupd_0446" >> scripts.log 
+# Adding missing parts
+add_part.py -p WRA000030 -r A -t white-rabbit -m WRA000030 --date 2022/06/16 --time 04:41
+add_part.py -p WR-LEN3P0 -r A -t white-rabbit -m WR-LEN3P0 --date 2022/06/16 --time 04:41
+# Adding missing connections
+add_connection.py -u WRA000030 --uprev A --upport mnt -d NCMP1 --dnrev A --dnport mnt1 --date 2022/06/16 --time 04:46
+add_connection.py -u WR-LEN3P0 --uprev A --upport mnt -d NCM14 --dnrev A --dnport mnt1 --date 2022/06/16 --time 04:46
+# Adding missing parts
