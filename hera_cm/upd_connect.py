@@ -153,7 +153,7 @@ class UpdateConnect(upd_base.Update):
                         # Make node and node station
                         nsta = util.gen_hpn('node-station', node_num)
                         self._create_sheet_conn([[node, 'A', 'ground'], [nsta, 'A', 'ground']])
-                        # Make white-rabbit and arduino
+                        # Make white-rabbit and arduino (these and others get repeated many times.)
                         wr = self.gsheet.ncm[ncm].wr
                         rd = self.gsheet.ncm[ncm].rdhpn
                         if len(wr):
@@ -250,7 +250,10 @@ class UpdateConnect(upd_base.Update):
         for part in self.missing_parts:
             self.update_counter += 1
             p = list(cm_utils.split_part_key(part))
-            this_part = p + [upd_base.signal_chain.part_types[part[:3]], p[0]]
+            try:
+                this_part = p + [upd_base.signal_chain.part_types[part[:3]], p[0]]
+            except KeyError:
+                this_part = p + [upd_base.signal_chain.part_types[part[:2]], p[0]]
             self.hera.update_part('add', this_part, cdate=cdate, ctime=ctime)
 
     def add_missing_connections(self):

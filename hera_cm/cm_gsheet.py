@@ -153,10 +153,11 @@ class SheetData:
                     wrsn = f"WR{row[5]}"
                 else:
                     wrsn = row[5]
-                if len(row[11]):
-                    rdsn = f"arduino{row[11]}"
-                    rdhpn = f"RD{row[11]}"
-                else:
+                try:
+                    r11 = int(row[11])
+                    rdsn = f"arduino{r11}"
+                    rdhpn = f"RD{r11:02d}"
+                except ValueError:
                     rdsn = ''
                     rdhpn = ''
                 self.ncm[ncm] = Namespace(
