@@ -19,15 +19,11 @@ if __name__ == '__main__':
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
     ap.add_argument('--enable-err', dest='enable_err', action='store_false',
                     help='Enable erroring out for some errors')
-    ap.add_argument('-a', '--action', help='what to do [cron, show]', choices=['cron', 'show', 's'],
-                    default='cron')
+    ap.add_argument('-s', '--show', help='show comparisons', action='store_true')
     ap.add_argument('--skip-stop', dest='skip_stop', default='H,W',
                     help="Don't add connections that start with these.")
     args = ap.parse_args()
-    if args.action == 'cron':
-        cron_script = 'conn_update.sh'
-    else:
-        cron_script = None
+    cron_script = 'conn_update.sh'
     args.skip_stop = args.skip_stop.split(',')
 else:
     args = argparse.Namespace(archive_path=None, script_path='./', node_csv='n', verbose=True)
@@ -51,12 +47,12 @@ update.add_missing_connections()
 update.add_partial_connections()
 update.add_different_connections()
 update.add_rosetta()
-if args.action.startswith('s'):
+if args.show:
     print(f"\n----------Showing comparison for {direction}")
     update.show_summary_of_compare()
 direction = 'active-gsheet'
 update.compare_connections('active-gsheet')
-if args.action.startswith('s'):
+if args.show):
     print(f"\n\n----------Showing comparison for {direction}")
     update.show_summary_of_compare()
 update.stop_missing_connections(skip=args.skip_stop)
