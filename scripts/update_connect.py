@@ -10,9 +10,6 @@ from hera_cm import upd_connect
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
-    ap.add_argument('-d', '--direction', choices=['active-gsheet', 'gsheet-active'],
-                    default='gsheet-active',
-                    help="Compare A vs B, missing means present in A and not B.")
     ap.add_argument('--script-path', dest='script_path', help="Path for active script",
                     default='default')
     ap.add_argument('--archive-path', dest='archive_path', help="Path for script archive.",
@@ -24,11 +21,14 @@ if __name__ == '__main__':
                     help='Enable erroring out for some errors')
     ap.add_argument('-a', '--action', help='what to do [cron, show]', choices=['cron', 'show', 's'],
                     default='cron')
+    ap.add_argument('--skip-stop', dest='skip_stop', default='H,W',
+                    help="Don't add connections that start with these.")
     args = ap.parse_args()
     if args.action == 'cron':
         cron_script = 'conn_update.sh'
     else:
         cron_script = None
+    args.skip_stop = args.skip_stop.split(',')
 else:
     args = argparse.Namespace(archive_path=None, script_path='./', node_csv='n', verbose=True)
     print(args)
@@ -44,15 +44,20 @@ if args.archive_path.startswith('___'):
 update.load_gsheet(node_csv=args.node_csv)
 update.load_active()
 update.make_sheet_connections()
-update.compare_connections(args.direction)
+direction = 'gsheet-active'
+update.compare_connections(direction)
 update.add_missing_parts()
 update.add_missing_connections()
 update.add_partial_connections()
 update.add_different_connections()
 update.add_rosetta()
-update.finish(cron_script=cron_script, archive_to=args.archive_path)
 if args.action.startswith('s'):
+    print(f"\n----------Showing comparison for {direction}")
     update.show_summary_of_compare()
-    print("Looking at active-gsheet comparison...")
-    update.compare_connections('active-gsheet')
+direction = 'active-gsheet'
+update.compare_connections('active-gsheet')
+if args.action.startswith('s'):
+    print(f"\n\n----------Showing comparison for {direction}")
     update.show_summary_of_compare()
+update.stop_missing_connections(skip=args.skip_stop)
+update.finish(cron_script=cron_script, archive_to=args.archive_path)

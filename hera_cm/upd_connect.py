@@ -264,6 +264,20 @@ class UpdateConnect(upd_base.Update):
             self.hera.no_op_comment('Adding missing connections')
             self._modify_connections(self.missing, 'add', self.cdate, self.ctime)
 
+    def stop_missing_connections(self, skip=[]):
+        stopping = []
+        for mss in self.missing:
+            use_it = True
+            for sk in skip:
+                if mss.startswith(sk):
+                    use_it = False
+                    break
+            if use_it:
+                stopping.append(mss)
+        if len(stopping):
+            self.hera.no_op_comment('Stopping missing connections')
+            self._modify_connections(stopping, 'stop', self.cdate, self.ctime)
+
     def add_partial_connections(self):
         if len(self.partial):
             self.hera.no_op_comment('Adding partial connections')

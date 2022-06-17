@@ -102,5 +102,5 @@ class Update():
             else:
                 os.remove(self.script)
 
-        if os.path.exists(cron_script):
+        if cron_script is not None and os.path.exists(cron_script):
             os.chmod(cron_script, 0o755)
