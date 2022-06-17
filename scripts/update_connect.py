@@ -22,8 +22,13 @@ if __name__ == '__main__':
     ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
     ap.add_argument('--enable-err', dest='enable_err', action='store_false',
                     help='Enable erroring out for some errors')
+    ap.add_argument('-a', '--action', help='what to do [cron, show]', choices=['cron', 'show', 's'],
+                    default='cron')
     args = ap.parse_args()
-    cron_script = 'conn_update.sh'
+    if args.action == 'cron':
+        cron_script = 'conn_update.sh'
+    else:
+        cron_script = None
 else:
     args = argparse.Namespace(archive_path=None, script_path='./', node_csv='n', verbose=True)
     print(args)
@@ -46,5 +51,8 @@ update.add_partial_connections()
 update.add_different_connections()
 update.add_rosetta()
 update.finish(cron_script=cron_script, archive_to=args.archive_path)
-if cron_script is None:
+if args.action.startswith('s'):
+    update.show_summary_of_compare()
+    print("Looking at active-gsheet comparison...")
+    update.compare_connections('active-gsheet')
     update.show_summary_of_compare()
