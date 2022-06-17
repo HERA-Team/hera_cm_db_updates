@@ -53,6 +53,14 @@ class UpdateConnect(upd_base.Update):
             self.active = cm_active.ActiveData(session=session)
             self.active.load_connections()
 
+    def _get_port(self, key, pol, hdr_item, tab):
+        if hdr_item:
+            pdes = self.gsheet.data[key][self.gsheet.header[tab].index(hdr_item)].lower()
+        else:
+            pdes = ''
+        port = '{}{}'.format(pol, pdes)
+        return port
+
     def make_sheet_connections(self):
         """
         Go through all of the sheet and make cm_partconnect.Connections for comparison.
@@ -125,35 +133,24 @@ class UpdateConnect(upd_base.Update):
                     elif col == 'FEM':  # Make fem-nbp
                         fem = self.get_hpn_from_col('FEM', gkey, header)
                         nbp = util.gen_hpn('NBP', node_num)
-                        port = '{}{}'.format(pol,
-                                             self.gsheet.data[gkey][header.index('NBP/PAMloc')])
-                        if port is not None:
-                            port = port.lower()
+                        port = self._get_port(key=gkey, pol=pol, hdr_item='NBP/PAMloc', tab=tab)
                         self._create_sheet_conn([[fem, 'A', pol.lower()], [nbp, 'A', port]])
                     elif col == 'NBP/PAMloc':  # nbp-pam
                         nbp = util.gen_hpn('NBP', node_num)
-                        port = '{}{}'.format(pol,
-                                             self.gsheet.data[gkey][header.index('NBP/PAMloc')])
-                        if port is not None:
-                            port = port.lower()
+                        port = self._get_port(key=gkey, pol=pol, hdr_item='NBP/PAMloc', tab=tab)
                         pam = self.get_hpn_from_col('PAM', gkey, header)
                         self._create_sheet_conn([[nbp, 'A', port], [pam, 'A', pol.lower()]])
                     elif col == 'PAM':  # pam-snap
                         pam = self.get_hpn_from_col('PAM', gkey, header)
                         snap = self.get_hpn_from_col('SNAP', gkey, header)
                         previous['SNAP'] = snap
-                        port = self.gsheet.data[gkey][header.index('Port')]
-                        if len(port) == 0:
-                            port = None
-                        if port is not None:
-                            port = port.lower()
-                            if port[0] != pol[0].lower():
-                                msg = "{} port ({}) and pol ({}) don't match".format(snap,
-                                                                                     port, pol)
-                                if self.disable_err:
-                                    print(msg)
-                                else:
-                                    raise ValueError(msg)
+                        port = self._get_port(key=gkey, pol='', hdr_item='Port', tab=tab)
+                        if port[0] != pol[0].lower():
+                            msg = "{} in {}: port ({}) and pol ({}) don't match".format(snap, node, port, pol)  # noqa
+                            if self.disable_err:
+                                print(msg)
+                            else:
+                                raise ValueError(msg)
                         self._create_sheet_conn([[pam, 'A', pol.lower()], [snap, 'A', port]])
                     elif col == 'SNAP':  # snap-node, pam-pch, pch-node
                         # ... snap-node
