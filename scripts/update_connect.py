@@ -20,6 +20,8 @@ if __name__ == '__main__':
     ap.add_argument('--enable-err', dest='enable_err', action='store_false',
                     help='Enable erroring out for some errors')
     ap.add_argument('-s', '--show', help='show comparisons', action='store_true')
+    ap.add_argument('-c', '--compare-part-side', dest='compare_part_side', default='up',
+                    help='Side to use in comparison.', choices=['up', 'down'])
     ap.add_argument('--skip-stop', dest='skip_stop', default='H,W',
                     help="Don't add connections that start with these.")
     args = ap.parse_args()
@@ -41,7 +43,7 @@ update.load_gsheet(node_csv=args.node_csv)
 update.load_active()
 update.make_sheet_connections()
 direction = 'gsheet-active'
-update.compare_connections(direction)
+update.compare_connections(direction=direction, part_side=args.compare_part_side)
 update.add_missing_parts()
 update.add_missing_connections()
 update.add_partial_connections()
@@ -51,7 +53,7 @@ if args.show:
     print(f"\n----------Showing comparison for {direction}")
     update.show_summary_of_compare()
 direction = 'active-gsheet'
-update.compare_connections('active-gsheet')
+update.compare_connections(direction=direction, part_side=args.compare_part_side)
 if args.show:
     print(f"\n\n----------Showing comparison for {direction}")
     update.show_summary_of_compare()

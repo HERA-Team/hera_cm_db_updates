@@ -199,39 +199,39 @@ class UpdateConnect(upd_base.Update):
                     with open('upd_connect.log', 'a') as fp:
                         print(f"Need to put {key} in active connections.", file=fp)
 
-    def compare_connections(self, direction='gsheet-active'):
+    def compare_connections(self, direction='gsheet-active', part_side='up'):
         """
         Step through all of the sheet Connections and make sure they are all there and the same.
         """
-        pside = 'up'
         self.compare_direction = direction
+        self.compare_part_side = part_side
         self.missing = {}
         self.partial = {}
         self.different = {}
         self.different_stop = {}
         self.same = {}
         if direction.startswith('g'):
-            A = self.gsheet.connections[pside]
-            B = self.active.connections[pside]
+            A = self.gsheet.connections[part_side]
+            B = self.active.connections[part_side]
         else:
-            A = self.active.connections[pside]
-            B = self.gsheet.connections[pside]
-        for gkey, gpts in A.items():
-            if gkey not in B.keys():
-                self.missing[gkey] = gpts
+            A = self.active.connections[part_side]
+            B = self.gsheet.connections[part_side]
+        for this_part, pside_connections in A.items():
+            if this_part not in B.keys():
+                self.missing[this_part] = pside_connections
                 continue
-            for p, c in gpts.items():
-                if p not in B[gkey].keys():
-                    self.partial.setdefault(gkey, {})
-                    self.partial[gkey][p] = c
-                elif B[gkey][p] == c:
-                    self.same.setdefault(gkey, {})
-                    self.same[gkey][p] = c
+            for port, conn in pside_connections.items():
+                if port not in B[this_part].keys():
+                    self.partial.setdefault(this_part, {})
+                    self.partial[this_part][port] = conn
+                elif B[this_part][port] == conn:
+                    self.same.setdefault(this_part, {})
+                    self.same[this_part][port] = conn
                 else:
-                    self.different.setdefault(gkey, {})
-                    self.different[gkey][p] = c
-                    self.different_stop.setdefault(gkey, {})
-                    self.different_stop[gkey][p] = B[gkey][p]
+                    self.different.setdefault(this_part, {})
+                    self.different[this_part][port] = conn
+                    self.different_stop.setdefault(this_part, {})
+                    self.different_stop[this_part][port] = B[this_part][port]
 
     def add_missing_parts(self):
         self.active.load_parts()
@@ -265,15 +265,15 @@ class UpdateConnect(upd_base.Update):
             self._modify_connections(self.missing, 'add', self.cdate, self.ctime)
 
     def stop_missing_connections(self, skip=[]):
-        stopping = []
-        for mss in self.missing:
+        stopping = {}
+        for missing_part, missing_connections in self.missing.items():
             use_it = True
             for sk in skip:
-                if mss.startswith(sk):
+                if missing_part.startswith(sk):
                     use_it = False
                     break
             if use_it:
-                stopping.append(mss)
+                stopping[missing_part] = missing_connections
         if len(stopping):
             self.hera.no_op_comment('Stopping missing connections')
             self._modify_connections(stopping, 'stop', self.cdate, self.ctime)
