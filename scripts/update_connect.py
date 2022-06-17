@@ -52,7 +52,7 @@ if args.show:
     update.show_summary_of_compare()
 direction = 'active-gsheet'
 update.compare_connections('active-gsheet')
-if args.show):
+if args.show:
     print(f"\n\n----------Showing comparison for {direction}")
     update.show_summary_of_compare()
 update.stop_missing_connections(skip=args.skip_stop)
