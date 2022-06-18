@@ -107,7 +107,8 @@ def gen_hpn(ptype, pnum, verbose=False):
         number_part = int(get_num(pnum))
     except ValueError:
         return None
-
+    if ptype in ['NBP/PAMloc', 'SNAPloc']:
+        return number_part
     if ptype in ['SNP', 'SNAP']:
         snpletter = 'C'
         try:
