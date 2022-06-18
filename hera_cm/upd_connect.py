@@ -8,7 +8,7 @@ This class sets up to update the connections database.
 import datetime
 from hera_mc import mc, cm_active, cm_utils, cm_sysdef
 from hera_mc import cm_partconnect as CMPC
-from . import util, cm_gsheet, upd_base
+from . import util, upd_base
 from argparse import Namespace
 
 cm_req = Namespace(hpn=cm_sysdef.hera_zone_prefixes, pol='all',
@@ -41,9 +41,6 @@ class UpdateConnect(upd_base.Update):
         self.finish()
         self.show_summary_of_compare()
 
-    def get_hpn_from_col(self, col, key, header):
-        return util.gen_hpn(col, self.gsheet.data[key][header.index(col)])
-
     def load_active(self):
         """
         Gets the hookup data from the hera_mc database.
@@ -53,12 +50,15 @@ class UpdateConnect(upd_base.Update):
             self.active = cm_active.ActiveData(session=session)
             self.active.load_connections()
 
-    def _get_port(self, key, pol, hdr_item, tab):
+    def get_hpn_from_col(self, col, antpol, header):
+        return util.gen_hpn(col, self.gsheet.data[antpol][header.index(col)])
+
+    def _get_port(self, antpol, tab, pre, hdr_item, post=''):
         if hdr_item:
-            pdes = self.gsheet.data[key][self.gsheet.header[tab].index(hdr_item)].lower()
+            pdes = self.gsheet.data[antpol][self.gsheet.header[tab].index(hdr_item)].lower()
         else:
             pdes = ''
-        port = '{}{}'.format(pol, pdes)
+        port = f'{pre}{pdes}{post}'
         return port
 
     def make_sheet_connections(self):
@@ -72,19 +72,14 @@ class UpdateConnect(upd_base.Update):
         for node in self.gsheet.tabs:
             node_num = int(node[4:])
             node = util.gen_hpn('Node', node_num)
-            # Make fps-node
             fps = self.gsheet.node_to_equip[node].fps
             self._create_sheet_conn([[fps, 'A', 'rack'], [node, 'A', 'top']])
-            # ... pch-node
             pch = self.gsheet.node_to_equip[node].pch
             self._create_sheet_conn([[pch, 'A', 'rack'], [node, 'A', 'bottom']])
-            # Make ncm-node
             ncm = self.gsheet.node_to_equip[node].ncm
             self._create_sheet_conn([[ncm, 'A', 'rack'], [node, 'A', 'middle']])
-            # Make node and node station
             nsta = util.gen_hpn('node-station', node_num)
             self._create_sheet_conn([[node, 'A', 'ground'], [nsta, 'A', 'ground']])
-            # Make white-rabbit and arduino
             wr = self.gsheet.ncm[ncm].wr
             rd = self.gsheet.ncm[ncm].rdhpn
             if len(wr):
@@ -93,76 +88,51 @@ class UpdateConnect(upd_base.Update):
                 self._create_sheet_conn([[rd, 'A', 'mnt'], [ncm, 'A', 'mnt2']])
         # Make ~antenna-based connections
         for sant in self.gsheet.ants + self.gsheet.other:
-            previous = {}
+            tab = self.gsheet.ant_to_node[sant]
+            header = self.gsheet.header[tab]
+            for col in ['Ant', 'Feed', 'SNAP']:
+                A = self.get_hpn_from_col(col, f"{sant}-{self.pol[0]}", header)
+                B = self.get_hpn_from_col(col, f"{sant}-{self.pol[1]}", header)
+                if A != B:
+                    if self.disable_err:
+                        print(f'Error, but proceeding: {A} != {B}')
+                    else:
+                        raise ValueError(f'{A} != {B}')
+            antpol = f"{sant}-E"
+            node_num = self.gsheet.data[antpol][0]
+            node = util.gen_hpn("Node", node_num)
+            fps = self.gsheet.node_to_equip[node].fps
+            ant = self.get_hpn_from_col('Ant', antpol, header)
+            sta = util.gen_hpn('station', ant)
+            nbp = util.gen_hpn('NBP', node_num)
+            pch = self.gsheet.node_to_equip[node].pch
+            fem = self.get_hpn_from_col('FEM', antpol, header)
+            feed = self.get_hpn_from_col('Feed', antpol, header)
+            pam = self.get_hpn_from_col('PAM', antpol, header)
+            snap = self.get_hpn_from_col('SNAP', antpol, header)
+            self._create_sheet_conn([[sta, 'A', 'ground'], [ant, 'H', 'ground']])
+            self._create_sheet_conn([[ant, 'H', 'focus'], [feed, 'A', 'input']])
+            self._create_sheet_conn([[feed, 'A', 'terminals'], [fem, 'A', 'input']])
+            port = self._get_port(antpol=antpol, tab=tab, pre='pwr', hdr_item='NBP/PAMloc')
+            self._create_sheet_conn([[fem, 'A', 'pwr'], [fps, 'A', port]])
             for pol in self.pols:
-                gkey = '{}-{}'.format(sant, pol)
-                node_num = self.gsheet.data[gkey][0]
-                node = util.gen_hpn("Node", node_num)
-                tab = self.gsheet.ant_to_node[sant]
-                header = self.gsheet.header[tab]
-                for i, col in enumerate(header):
-                    if col not in cm_gsheet.hu_col.keys():
-                        continue
-                    if col in ['Ant', 'Feed', 'SNAP'] and pol == self.pols[1]:
-                        # Check that the lines needing same value, do have same value.
-                        this = self.get_hpn_from_col(col, gkey, header)
-                        if this != previous[col]:
-                            msg = f'Error: {this} != {previous[col]}'
-                            if self.disable_err:
-                                print(msg)
-                            else:
-                                raise ValueError(msg)
-                        continue
-                    if col == 'Ant':  # Make station-antenna, antenna-feed
-                        ant = self.get_hpn_from_col('Ant', gkey, header)
-                        if ant is not None:
-                            sta = util.gen_hpn('station', int(ant[1:]))
-                        else:
-                            sta = None
-                        feed = self.get_hpn_from_col('Feed', gkey, header)
-                        previous['Ant'] = ant
-                        previous['Feed'] = feed
-                        # ... station-antenna
-                        self._create_sheet_conn([[sta, 'A', 'ground'], [ant, 'H', 'ground']])
-                        # ... antenna-feed
-                        self._create_sheet_conn([[ant, 'H', 'focus'], [feed, 'A', 'input']])
-                    elif col == 'Feed':  # Make feed-fem
-                        feed = self.get_hpn_from_col('Feed', gkey, header)
-                        fem = self.get_hpn_from_col('FEM', gkey, header)
-                        self._create_sheet_conn([[feed, 'A', 'terminals'], [fem, 'A', 'input']])
-                    elif col == 'FEM':  # Make fem-nbp
-                        fem = self.get_hpn_from_col('FEM', gkey, header)
-                        nbp = util.gen_hpn('NBP', node_num)
-                        port = self._get_port(key=gkey, pol=pol, hdr_item='NBP/PAMloc', tab=tab)
-                        self._create_sheet_conn([[fem, 'A', pol.lower()], [nbp, 'A', port]])
-                    elif col == 'NBP/PAMloc':  # nbp-pam
-                        nbp = util.gen_hpn('NBP', node_num)
-                        port = self._get_port(key=gkey, pol=pol, hdr_item='NBP/PAMloc', tab=tab)
-                        pam = self.get_hpn_from_col('PAM', gkey, header)
-                        self._create_sheet_conn([[nbp, 'A', port], [pam, 'A', pol.lower()]])
-                    elif col == 'PAM':  # pam-snap
-                        pam = self.get_hpn_from_col('PAM', gkey, header)
-                        snap = self.get_hpn_from_col('SNAP', gkey, header)
-                        previous['SNAP'] = snap
-                        port = self._get_port(key=gkey, pol='', hdr_item='Port', tab=tab)
-                        if port[0] != pol[0].lower():
-                            msg = "{} in {}: port ({}) and pol ({}) don't match".format(snap, node, port, pol)  # noqa
-                            if self.disable_err:
-                                print(msg)
-                            else:
-                                raise ValueError(msg)
-                        self._create_sheet_conn([[pam, 'A', pol.lower()], [snap, 'A', port]])
-                    elif col == 'SNAP':  # snap-node, pam-pch, pch-node
-                        # ... snap-node
-                        snap = self.get_hpn_from_col('SNAP', gkey, header)
-                        loc = "loc{}".format(self.gsheet.data[gkey][header.index('SNAPloc')])
-                        self._create_sheet_conn([[snap, 'A', 'rack'], [node, 'A', loc]])
-                        # ... pam-pch
-                        pam = self.get_hpn_from_col('PAM', gkey, header)
-                        pch = self.gsheet.node_to_equip[node].pch
-                        slot = '{}{}'.format('slot',
-                                             self.gsheet.data[gkey][header.index('NBP/PAMloc')])
-                        self._create_sheet_conn([[pam, 'A', 'slot'], [pch, 'A', slot]])
+                antpol = '{}-{}'.format(sant, pol)
+                port = self._get_port(antpol=antpol, tab=tab, pre=pol, hdr_item='NBP/PAMloc')
+                self._create_sheet_conn([[fem, 'A', pol.lower()], [nbp, 'A', port]])
+                port = self._get_port(antpol=antpol, tab=tab, pre=pol, hdr_item='NBP/PAMloc')
+                self._create_sheet_conn([[nbp, 'A', port], [pam, 'A', pol.lower()]])
+                port = self._get_port(antpol=antpol, tab=tab, pre='', hdr_item='Port')
+                if port[0] != pol[0].lower():
+                    msg = "{} in {}: port ({}) and pol ({}) don't match".format(snap, node, port, pol)  # noqa
+                    if self.disable_err:
+                        print(msg)
+                    else:
+                        raise ValueError(msg)
+                self._create_sheet_conn([[pam, 'A', pol.lower()], [snap, 'A', port]])
+                port = self._get_port(antpol=antpol, tab=tab, pre='loc', hdr_item='SNAPloc')
+                self._create_sheet_conn([[snap, 'A', 'rack'], [node, 'A', port]])
+                port = self._get_port(antpol=antpol, tab=tab, pre='slot', hdr_item='NBP/PAMloc')
+                self._create_sheet_conn([[pam, 'A', 'slot'], [pch, 'A', port]])
 
     def _create_sheet_conn(self, conn):
         if None in conn[0] or None in conn[1]:
