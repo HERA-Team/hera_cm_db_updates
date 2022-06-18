@@ -70,7 +70,7 @@ class UpdateConnect(upd_base.Update):
         self.gsheet.connections = {'up': {}, 'down': {}}  # To mirror cm_active
         # Make node-based connections
         for node in self.gsheet.tabs:
-            node_num = int(node[4:])
+            node_num = int(util.get_num(node))
             node = util.gen_hpn('Node', node_num)
             fps = self.gsheet.node_to_equip[node].fps
             self._create_sheet_conn([[fps, 'A', 'rack'], [node, 'A', 'top']])
@@ -86,13 +86,13 @@ class UpdateConnect(upd_base.Update):
                 self._create_sheet_conn([[wr, 'A', 'mnt'], [ncm, 'A', 'mnt1']])
             if len(rd):
                 self._create_sheet_conn([[rd, 'A', 'mnt'], [ncm, 'A', 'mnt2']])
-        # Make ~antenna-based connections
+        # Make antenna/antpol-based connections
         for sant in self.gsheet.ants + self.gsheet.other:
             tab = self.gsheet.ant_to_node[sant]
             header = self.gsheet.header[tab]
             for col in ['Ant', 'Feed', 'SNAP']:
-                A = self.get_hpn_from_col(col, f"{sant}-{self.pol[0]}", header)
-                B = self.get_hpn_from_col(col, f"{sant}-{self.pol[1]}", header)
+                A = self.get_hpn_from_col(col, f"{sant}-{self.pols[0]}", header)
+                B = self.get_hpn_from_col(col, f"{sant}-{self.pols[1]}", header)
                 if A != B:
                     if self.disable_err:
                         print(f'Error, but proceeding: {A} != {B}')

@@ -116,7 +116,7 @@ def gen_hpn(ptype, pnum, verbose=False):
             snpletter = pnum[0]
         return f'SNP{snpletter}{number_part:06d}'
     if ptype in ['PAM', 'FEM']:
-        return f'{ptype}{number_part:03d}'.format
+        return f'{ptype}{number_part:03d}'
     if ptype in ['NODE-STATION']:
         return f'ND{number_part:02d}'
     if ptype in ['NODE', 'ND']:
@@ -129,11 +129,11 @@ def gen_hpn(ptype, pnum, verbose=False):
         return f'A{number_part}'
     if ptype in ['STATION']:
         from hera_mc.geo_sysdef import region
-        if int(pnum) in region['heraringa']:
+        if number_part in region['heraringa']:
             pre = 'HA'
-        elif int(pnum) in region['heraringb']:
+        elif number_part in region['heraringb']:
             pre = 'HB'
-        elif int(pnum) > 9999:
+        elif number_part > 9999:
             pre = 'EE'
         else:
             pre = 'HH'
