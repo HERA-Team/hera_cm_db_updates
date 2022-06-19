@@ -27,19 +27,30 @@ class UpdateConnect(upd_base.Update):
         self.active = None
         self.skipping = []
         self.disable_err = disable_err
+        self.missing = {'all': {}, 'ports': {}}
+        self.different = {'A': {}, 'B': {}}
+        self.same = {}
+        self.included = {'add': [], 'stop': [], 'parts': []}
 
     def pipe(self, node_csv='n'):
         self.load_gsheet(node_csv)
         self.load_active()
         self.make_sheet_connections()
-        self.compare_connections()
-        self.add_missing_parts()
-        self.add_missing_connections()
-        self.add_partial_connections()
-        self.add_different_connections()
+        self.compare_connections('active-gsheet', 'up')
+        self.compare_connections('active-gsheet', 'down')
+        self.compare_connections('gsheet-active', 'up')
+        self.compare_connections('gsheet-active', 'down')
+        self.add_missing_parts('gsheet-active', 'up')
+        self.add_missing_parts('gsheet-active', 'down')
+        self.missing_connections('add', 'gsheet-active', 'up', ['H', 'W'])
+        self.missing_connections('add', 'gsheet-active', 'down', ['H', 'W'])
+        self.missing_connections('stop', 'active-gsheet', 'up', ['H', 'W'])
+        self.missing_connections('stop', 'active-gsheet', 'down', ['H', 'W'])
+        self.different_connections('gsheet-active', 'up', ['H', 'W'])
+        self.different_connections('gsheet-active', 'down', ['H', 'W'])
         self.add_rosetta()
         self.finish()
-        self.show_summary_of_compare()
+        #self.show_summary_of_compare()
 
     def load_active(self):
         """
@@ -175,11 +186,16 @@ class UpdateConnect(upd_base.Update):
         """
         self.compare_direction = direction
         self.compare_part_side = part_side
-        self.missing = {}
-        self.partial = {}
-        self.different = {}
-        self.different_stop = {}
-        self.same = {}
+        self.missing['all'].setdefault(direction, {})
+        self.missing['all'][direction].setdefault(part_side, {})
+        self.missing['ports'].setdefault(direction, {})
+        self.missing['ports'][direction].setdefault(part_side, {})
+        self.different['A'].setdefault(direction, {})
+        self.different['A'][direction].setdefault(part_side, {})
+        self.different['B'].setdefault(direction, {})
+        self.different['B'][direction].setdefault(part_side, {})
+        self.same.setdefault(direction, {})
+        self.same[direction].setdefault(part_side, {})
         if direction.startswith('g'):
             A = self.gsheet.connections[part_side]
             B = self.active.connections[part_side]
@@ -188,25 +204,26 @@ class UpdateConnect(upd_base.Update):
             B = self.gsheet.connections[part_side]
         for this_part, pside_connections in A.items():
             if this_part not in B.keys():
-                self.missing[this_part] = pside_connections
+                self.missing['all'][direction][part_side][this_part] = pside_connections
                 continue
             for port, conn in pside_connections.items():
                 if port not in B[this_part].keys():
-                    self.partial.setdefault(this_part, {})
-                    self.partial[this_part][port] = conn
+                    self.missing['ports'][direction][part_side].setdefault(this_part, {})
+                    self.missing['ports'][direction][part_side][this_part][port] = conn
                 elif B[this_part][port] == conn:
-                    self.same.setdefault(this_part, {})
-                    self.same[this_part][port] = conn
+                    self.same[direction][part_side].setdefault(this_part, {})
+                    self.same[direction][part_side][this_part][port] = conn
                 else:
-                    self.different.setdefault(this_part, {})
-                    self.different[this_part][port] = conn
-                    self.different_stop.setdefault(this_part, {})
-                    self.different_stop[this_part][port] = B[this_part][port]
+                    self.different['A'][direction][part_side].setdefault(this_part, {})
+                    self.different['A'][direction][part_side][this_part][port] = conn
+                    self.different['B'][direction][part_side].setdefault(this_part, {})
+                    self.different['B'][direction][part_side][this_part][port] = B[this_part][port]
 
-    def add_missing_parts(self):
-        self.active.load_parts()
+    def add_missing_parts(self, direction, part_side):
+        if self.active.parts is None:
+            self.active.load_parts()
         missing_parts = set()
-        for pc in self.missing.values():
+        for pc in self.missing['all'][direction][part_side].values():
             for conn in pc.values():
                 key = cm_utils.make_part_key(conn.upstream_part, conn.up_part_rev)
                 if key not in self.active.parts.keys():
@@ -221,6 +238,12 @@ class UpdateConnect(upd_base.Update):
             cdate = add_part_time_offset.strftime('%Y/%m/%d')
             ctime = add_part_time_offset.strftime('%H:%M')
         for part in self.missing_parts:
+            part_str = str(part)
+            if part_str in self.included['parts']:
+                print(f"{part} already added - skipping")
+                continue
+            else:
+                self.included['parts'].append(part_str)
             self.update_counter += 1
             p = list(cm_utils.split_part_key(part))
             try:
@@ -229,38 +252,53 @@ class UpdateConnect(upd_base.Update):
                 this_part = p + [upd_base.signal_chain.part_types[part[:2]], p[0]]
             self.hera.update_part('add', this_part, cdate=cdate, ctime=ctime)
 
-    def add_missing_connections(self):
-        if len(self.missing):
-            self.hera.no_op_comment('Adding missing connections')
-            self._modify_connections(self.missing, 'add', self.cdate, self.ctime)
+    def missing_connections(self, rtype, direction, part_side, skip=[]):
+        for mtype in ['all', 'ports']:
+            modifying = {}
+            for missing_part, missing_connections in self.missing[mtype][direction][part_side].items():  # noqa
+                if self.include_it(missing_part, missing_connections, rtype, skip):
+                    modifying[missing_part] = missing_connections
+            if len(modifying):
+                self.hera.no_op_comment(f'{rtype} missing_{mtype} connections')
+                self._modify_connections(modifying, rtype, self.cdate, self.ctime)
 
-    def stop_missing_connections(self, skip=[]):
-        stopping = {}
-        for missing_part, missing_connections in self.missing.items():
-            use_it = True
-            for sk in skip:
-                if missing_part.startswith(sk):
-                    use_it = False
-                    break
-            if use_it:
-                stopping[missing_part] = missing_connections
-        if len(stopping):
-            self.hera.no_op_comment('Stopping missing connections')
-            self._modify_connections(stopping, 'stop', self.cdate, self.ctime)
-
-    def add_partial_connections(self):
-        if len(self.partial):
-            self.hera.no_op_comment('Adding partial connections')
-            self._modify_connections(self.partial, 'add', self.cdate, self.ctime)
-
-    def add_different_connections(self):
-        if len(self.different):
-            self.hera.no_op_comment('Adding different connections')
+    def different_connections(self, direction, part_side, skip=[]):
+        add_diff = {}
+        for diff_part, diff_connections in self.different['A'][direction][part_side].items():
+            if self.include_it(diff_part, diff_connections, 'add', skip):
+                add_diff[diff_part] = diff_connections
+        stop_diff = {}
+        for diff_part, diff_connections in self.different['B'][direction][part_side].items():
+            if self.include_it(diff_part, diff_connections, 'stop', skip):
+                stop_diff[diff_part] = diff_connections
+        if len(stop_diff):
+            self.hera.no_op_comment('Stopping connections that differ')
             stop_conn_time_offset = self.now - datetime.timedelta(seconds=90)
             cdate = stop_conn_time_offset.strftime('%Y/%m/%d')
             ctime = stop_conn_time_offset.strftime('%H:%M')
-            self._modify_connections(self.different_stop, 'stop', cdate, ctime)
-            self._modify_connections(self.different, 'add', self.cdate, self.ctime)
+            self._modify_connections(stop_diff, 'stop', cdate, ctime)
+        if len(add_diff):
+            self.hera.no_op_comment('Adding connections that differ')
+            self._modify_connections(stop_diff, 'add', cdate, ctime)
+
+    def include_it(self, part, conns, rtype, skip):
+        for sk in skip:
+            if part.startswith(sk):
+                return False
+        for port, conn in conns.items():
+            for sk in skip:
+                if conn.upstream_part.startswith(sk) or conn.downstream_part.startswith(sk):
+                    return False
+            conn_str = str(conn)
+            for chk_type in ['add', 'stop']:
+                if conn_str in self.included[chk_type]:
+                    if chk_type == rtype:
+                        print(f"INFO: {chk_type}:{conn_str} already in {rtype} - skipping")
+                    else:
+                        print(f"WARNING!!! {chk_type}:{conn_str} already in {rtype} - skipping")
+                    return False
+        self.included[rtype].append(conn_str)
+        return True
 
     def _modify_connections(self, this_one, add_or_stop, cdate, ctime):
         for mod_conn in this_one.values():
@@ -270,29 +308,29 @@ class UpdateConnect(upd_base.Update):
                 dn = [conn.downstream_part, conn.down_part_rev, conn.downstream_input_port]
                 self.hera.update_connection(add_or_stop, up, dn, cdate=cdate, ctime=ctime)
 
-    def show_summary_of_compare(self):
-        print("\n---Summary---")
-        print("Missing:  {}".format(len(self.missing)))
-        print("Same:  {}".format(len(self.same)))
-        print("Skipping:  {}".format(len(self.skipping)))
-        print("Partial:  {}".format(len(self.partial)), end='   ')
-        if len(self.partial) and len(self.partial) < 5:
-            print("*****CHECK*****")
-            for p in self.partial:
-                print("\t{}".format(p))
-        else:
-            print()
-        print("Different:  {}".format(len(self.different)), end='   ')
-        if len(self.different) and len(self.different) < 5:
-            print("*****CHECK*****")
-            for d in self.different:
-                print("\t{}".format(d))
-        else:
-            print()
-        print("Different_stop:  {}".format(len(self.different_stop)), end='   ')
-        if len(self.different_stop) and len(self.different_stop) < 5:
-            print("*****CHECK*****")
-            for d in self.different_stop:
-                print("\t{}".format(d))
-        else:
-            print()
+    # def show_summary_of_compare(self):
+    #     print("\n---Summary---")
+    #     print("Missing:  {}".format(len(self.missing)))
+    #     print("Same:  {}".format(len(self.same)))
+    #     print("Skipping:  {}".format(len(self.skipping)))
+    #     print("Partial:  {}".format(len(self.partial)), end='   ')
+    #     if len(self.partial) and len(self.partial) < 5:
+    #         print("*****CHECK*****")
+    #         for p in self.partial:
+    #             print("\t{}".format(p))
+    #     else:
+    #         print()
+    #     print("Different:  {}".format(len(self.different)), end='   ')
+    #     if len(self.different) and len(self.different) < 5:
+    #         print("*****CHECK*****")
+    #         for d in self.different:
+    #             print("\t{}".format(d))
+    #     else:
+    #         print()
+    #     print("Different_stop:  {}".format(len(self.different_stop)), end='   ')
+    #     if len(self.different_stop) and len(self.different_stop) < 5:
+    #         print("*****CHECK*****")
+    #         for d in self.different_stop:
+    #             print("\t{}".format(d))
+    #     else:
+    #         print()
