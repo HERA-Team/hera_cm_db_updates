@@ -50,7 +50,7 @@ class UpdateConnect(upd_base.Update):
             self.active = cm_active.ActiveData(session=session)
             self.active.load_connections()
 
-    def get_from_col(self, rtype, col, antpol, node, pre):
+    def get_from_col(self, rtype, col, antpol, node, pre='', check=False):
         self.gsheet.data[antpol][self.gsheet.header[node].index(col)].lower()
         if col:
             v = self.gsheet.data[antpol][self.gsheet.header[node].index(col)]
@@ -59,7 +59,16 @@ class UpdateConnect(upd_base.Update):
         if rtype == 'hpn':
             return util.gen_hpn(col, v)
         if rtype == 'port':
-            return f'{pre}{v.lower()}'
+            port = f'{pre}{v.lower()}'
+            if check:
+                if port[0] != check[0].lower():
+                    par = [col, antpol, node]
+                    msg = f"{par}: port {port} and pol ({check}) don't match"
+                    if self.disable_err:
+                        print(msg)
+                    else:
+                        raise ValueError(msg)
+            return port
         raise ValueError(f"rtype {rtype} not valid.")
 
     def make_sheet_connections(self):
@@ -70,25 +79,25 @@ class UpdateConnect(upd_base.Update):
         """
         self.gsheet.connections = {'up': {}, 'down': {}}  # To mirror cm_active
         # Make connections
+        H = Namespace()
         for node in self.gsheet.tabs:
             # Node-based
             node_num = int(util.get_num(node))
-            nhpn = util.gen_hpn('Node', node_num)
-            nsta = util.gen_hpn('node-station', node_num)
-            fps = self.gsheet.node_to_equip[node].fps
-            pch = self.gsheet.node_to_equip[node].pch
-            ncm = self.gsheet.node_to_equip[node].ncm
-            wr = self.gsheet.ncm[ncm].wr
-            rd = self.gsheet.ncm[ncm].rdhpn
-            self._create_sheet_conn([[fps, 'A', 'rack'], [nhpn, 'A', 'top']])
-            self._create_sheet_conn([[pch, 'A', 'rack'], [nhpn, 'A', 'bottom']])
-            self._create_sheet_conn([[ncm, 'A', 'rack'], [nhpn, 'A', 'middle']])
-            self._create_sheet_conn([[nhpn, 'A', 'ground'], [nsta, 'A', 'ground']])
-            self._create_sheet_conn([[wr, 'A', 'mnt'], [ncm, 'A', 'mnt1']])
-            self._create_sheet_conn([[rd, 'A', 'mnt'], [ncm, 'A', 'mnt2']])
-            for sta in self.gsheet.node_to_ant[node]:
+            for part in ['Node', 'node-station', 'NBP']:
+                setattr(H, part.lower(), util.gen_hpn(part, node_num))
+            for part in ['fps', 'pch', 'ncm']:
+                setattr(H, part.lower(), getattr(self.gsheet.node_to_equip[H.node], part))
+            H.wr = self.gsheet.ncm[H.ncm].wr
+            H.rd = self.gsheet.ncm[H.ncm].rdhpn
+            for Up, Dn in zip([('fps', 'rack'), ('ncm', 'rack'), ('pch', 'rack'),
+                               ('node', 'ground'), ('wr', 'mnt'), ('rd', 'mnt')],
+                              [('node', 'top'), ('node', 'middle'), ('node', 'bottom'),
+                               ('node-station', 'ground'), ('ncm', 'mnt1'), ('ncm', 'mnt2')]):
+                self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
+            for station in self.gsheet.node_to_ant[node]:
                 # Ant-based
-                sant = f"{sta}:A"
+                sant = f"{station}:A"
+                H.station = station
                 for col in ['Ant', 'Feed', 'FEM', 'PAM', 'SNAP', 'NBP/PAMloc', 'SNAPloc']:
                     A = self.get_from_col('hpn', col, f"{sant}-{self.pols[0]}", node)
                     B = self.get_from_col('hpn', col, f"{sant}-{self.pols[1]}", node)
@@ -97,55 +106,52 @@ class UpdateConnect(upd_base.Update):
                             print(f'Error, but proceeding: {A} != {B}')
                         else:
                             raise ValueError(f'{A} != {B}')
-                antpol = f"{sant}-E"
-                ant = self.get_from_col('hpn', 'Ant', antpol, node)
-                nbp = util.gen_hpn('NBP', node_num)
-                fem = self.get_from_col('hpn', 'FEM', antpol, node)
-                feed = self.get_from_col('hpn', 'Feed', antpol, node)
-                pam = self.get_from_col('hpn', 'PAM', antpol, node)
-                snap = self.get_from_col('hpn', 'SNAP', antpol, node)
-                self._create_sheet_conn([[sta, 'A', 'ground'], [ant, 'H', 'ground']])
-                self._create_sheet_conn([[ant, 'H', 'focus'], [feed, 'A', 'input']])
-                self._create_sheet_conn([[feed, 'A', 'terminals'], [fem, 'A', 'input']])
-                port = self.get_from_col('port', 'NBP/PAMloc', antpol, node, 'pwr')
-                self._create_sheet_conn([[fem, 'A', 'pwr'], [fps, 'A', port]])
+                antpol = f"{sant}-E"  # pick E
+                for part in ['Ant', 'FEM', 'Feed', 'PAM', 'SNAP']:
+                    setattr(H, part.lower(), self.get_from_col('hpn', part, antpol, node))
+                pw = self.get_from_col('port', 'NBP/PAMloc', antpol, node, 'pwr')
+                pc = self.get_from_col('port', 'NBP/PAMloc', antpol, node, 'slot')
+                for Up, Dn in zip([('station', 'ground'), ('feed', 'terminals'),
+                                   ('ant', 'focus'), ('fem', 'pwr'), ('pam', 'slot')],
+                                  [('ant', 'ground'), ('fem', 'input'),
+                                   ('feed', 'input'), ('fps', pw), ('pch', pc)]):
+                    self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
                 for pol in self.pols:
                     # Antpol-based
                     antpol = '{}-{}'.format(sant, pol)
-                    port = self.get_from_col('port', 'NBP/PAMloc', antpol, node, pol)
-                    self._create_sheet_conn([[fem, 'A', pol.lower()], [nbp, 'A', port]])
-                    self._create_sheet_conn([[nbp, 'A', port], [pam, 'A', pol.lower()]])
-                    port = self.get_from_col('port', 'Port', antpol, node, '')
-                    if port[0] != pol[0].lower():
-                        msg = "{} in {}: port ({}) and pol ({}) don't match".format(snap, node, port, pol)  # noqa
-                        if self.disable_err:
-                            print(msg)
-                        else:
-                            raise ValueError(msg)
-                    self._create_sheet_conn([[pam, 'A', pol.lower()], [snap, 'A', port]])
-                    port = self.get_from_col('port', 'SNAPloc', antpol, node, 'loc')
-                    self._create_sheet_conn([[snap, 'A', 'rack'], [node, 'A', port]])
-                    port = self.get_from_col('port', 'NBP/PAMloc', antpol, node, 'slot')
-                    self._create_sheet_conn([[pam, 'A', 'slot'], [pch, 'A', port]])
+                    pl = pol.lower()
+                    bp = self.get_from_col('port', 'NBP/PAMloc', antpol, node, pol)
+                    sn = self.get_from_col('port', 'Port', antpol, node, '', check=pol)
+                    nd = self.get_from_col('port', 'SNAPloc', antpol, node, 'loc')
+                    for Up, Dn in zip([('fem', pl), ('nbp', bp), ('pam', pl),
+                                       ('snap', 'rack'), ('pam', 'slot')],
+                                      [('nbp', bp), ('pam', pl), ('snap', sn),
+                                       ('node', nd), ('pch', pc)]):
+                        self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
 
-    def _create_sheet_conn(self, conn):
-        if None in conn[0] or None in conn[1]:
+    def create_sheet_conn(self, H, Up_part, Up_port, Dn_part, Dn_port):
+        uprev = 'H' if Up_part.lower() == 'ant' else 'A'
+        dnrev = 'H' if Dn_part.lower() == 'ant' else 'A'
+        Up = [getattr(H, Up_part.lower()), uprev, Up_port]
+        Dn = [getattr(H, Dn_part.lower()), dnrev, Dn_port]
+
+        if None in Up or None in Dn:
             return
-        if not len(conn[0][0]) or not len(conn[1][0]):
+        if not len(Up[0]) or not len(Dn[0]):
             return
-        keys = {'up': cm_utils.make_part_key(conn[0][0], conn[0][1]),
-                'down': cm_utils.make_part_key(conn[1][0], conn[1][1])}
-        port = {'up': conn[0][2].upper(), 'down': conn[1][2].upper()}
+        keys = {'up': cm_utils.make_part_key(Up[0], Up[1]),
+                'down': cm_utils.make_part_key(Dn[0], Dn[1])}
+        port = {'up': Up[2].upper(), 'down': Dn[2].upper()}
         for dir, key in keys.items():
             self.gsheet.connections[dir].setdefault(key, {})
             if port[dir] in self.gsheet.connections[dir][key]:
                 continue
             self.gsheet.connections[dir][key][port[dir]] = CMPC.Connections()
             self.gsheet.connections[dir][key][port[dir]].connection(
-                upstream_part=conn[0][0], up_part_rev=conn[0][1],
-                upstream_output_port=conn[0][2],
-                downstream_part=conn[1][0], down_part_rev=conn[1][1],
-                downstream_input_port=conn[1][2])
+                upstream_part=Up[0], up_part_rev=Up[1],
+                upstream_output_port=Up[2],
+                downstream_part=Dn[0], down_part_rev=Dn[1],
+                downstream_input_port=Dn[2])
 
     def add_rosetta(self):
         for t2u in ['missing', 'different']:
