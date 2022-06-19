@@ -38,4 +38,5 @@ if args.archive_path.startswith('___'):
     import os.path
     args.archive_path = os.path.join(update.script_path, args.archive_path[3:])
 
-update.pipe(args.node_csv, args.skip_stop, args.show)
+update.pipe(args.node_csv, args.skip_stop, args.show,
+            cron_script=cron_script, archive_to=args.archive_path)
