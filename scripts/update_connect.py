@@ -20,8 +20,6 @@ if __name__ == '__main__':
     ap.add_argument('--enable-err', dest='enable_err', action='store_false',
                     help='Enable erroring out for some errors')
     ap.add_argument('-s', '--show', help='show comparisons', action='store_true')
-    ap.add_argument('-c', '--compare-part-side', dest='compare_part_side', default='up',
-                    help='Side to use in comparison.', choices=['up', 'down'])
     ap.add_argument('--skip-stop', dest='skip_stop', default='H,W',
                     help="Don't add connections that start with these.")
     args = ap.parse_args()
@@ -39,23 +37,5 @@ update = upd_connect.UpdateConnect(script_type=script_type, script_path=args.scr
 if args.archive_path.startswith('___'):
     import os.path
     args.archive_path = os.path.join(update.script_path, args.archive_path[3:])
-update.load_gsheet(node_csv=args.node_csv)
-update.load_active()
-update.make_sheet_connections()
-direction = 'gsheet-active'
-update.compare_connections(direction=direction, part_side=args.compare_part_side)
-update.add_missing_parts()
-update.add_missing_connections()
-update.add_partial_connections()
-update.add_different_connections()
-update.add_rosetta()
-if args.show:
-    print(f"\n----------Showing comparison for {direction}")
-    update.show_summary_of_compare()
-direction = 'active-gsheet'
-update.compare_connections(direction=direction, part_side=args.compare_part_side)
-if args.show:
-    print(f"\n\n----------Showing comparison for {direction}")
-    update.show_summary_of_compare()
-update.stop_missing_connections(skip=args.skip_stop)
-update.finish(cron_script=cron_script, archive_to=args.archive_path)
+
+update.pipe(args.node_csv, args.skip_stop, args.show)

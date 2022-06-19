@@ -32,25 +32,29 @@ class UpdateConnect(upd_base.Update):
         self.same = {}
         self.included = {'add': [], 'stop': [], 'parts': []}
 
-    def pipe(self, node_csv='n'):
+    def pipe(self, node_csv='n', skip=['H', 'W'], show=True):
         self.load_gsheet(node_csv)
         self.load_active()
         self.make_sheet_connections()
+        for direction in ['active-gsheet', 'gsheet-active']:
+            for part_side in ['up', 'down']:
+                self.compare_connections(direction, part_side)
+                # if show:
+                #     self.show_summary_of_compare(direction, part_side)
         self.compare_connections('active-gsheet', 'up')
         self.compare_connections('active-gsheet', 'down')
         self.compare_connections('gsheet-active', 'up')
         self.compare_connections('gsheet-active', 'down')
         self.add_missing_parts('gsheet-active', 'up')
         self.add_missing_parts('gsheet-active', 'down')
-        self.missing_connections('add', 'gsheet-active', 'up', ['H', 'W'])
-        self.missing_connections('add', 'gsheet-active', 'down', ['H', 'W'])
-        self.missing_connections('stop', 'active-gsheet', 'up', ['H', 'W'])
-        self.missing_connections('stop', 'active-gsheet', 'down', ['H', 'W'])
-        self.different_connections('gsheet-active', 'up', ['H', 'W'])
-        self.different_connections('gsheet-active', 'down', ['H', 'W'])
+        self.missing_connections('add', 'gsheet-active', 'up', skip)
+        self.missing_connections('add', 'gsheet-active', 'down', skip)
+        self.missing_connections('stop', 'active-gsheet', 'up', skip)
+        self.missing_connections('stop', 'active-gsheet', 'down', skip)
+        self.different_connections('gsheet-active', 'up', skip)
+        self.different_connections('gsheet-active', 'down', skip)
         self.add_rosetta()
         self.finish()
-        #self.show_summary_of_compare()
 
     def load_active(self):
         """
