@@ -32,6 +32,8 @@ def get_num(val):
     """
     Makes digits in alphanumeric string into a number as string
     """
+    if isinstance(val, (int, float)):
+        return str(val)
     return ''.join(c for c in val if c.isnumeric())
 
 
@@ -96,53 +98,50 @@ def gen_hpn(ptype, pnum, verbose=False):
     """
     From the sheet data (via ptype, pnum) etc it will generate a HERA Part Number
     """
-    from hera_mc.geo_sysdef import region
+    if pnum is None:
+        return None
     ptype = ptype.upper()
     if isinstance(pnum, str):
         pnum = pnum.upper()
     try:
-        if ptype in ['SNP', 'SNAP']:
-            snpletter = 'C'
-            try:
-                snpnum = int(pnum)
-            except ValueError:
-                snpletter = pnum[0]
-                snpnum = int(pnum[1:])
-            return 'SNP{}{:06d}'.format(snpletter, snpnum)
-        if ptype in ['PAM', 'FEM']:
-            return '{}{:03d}'.format(ptype, int(pnum))
-        if ptype in ['NODE-STATION']:
-            return 'ND{:02d}'.format(int(pnum))
-        if ptype in ['NODE', 'ND']:
-            return 'N{:02d}'.format(int(pnum))
-        if ptype in ['NBP']:
-            return 'NBP{:02d}'.format(int(pnum))
-        if ptype in ['FEED', 'FDV']:
-            return 'FDV{}'.format(int(pnum))
-        if ptype in ['ANT', 'ANTENNA']:
-            return 'A{}'.format(int(pnum))
-        if ptype in ['STATION']:
-            if int(pnum) in region['heraringa']:
-                pre = 'HA'
-            elif int(pnum) in region['heraringb']:
-                pre = 'HB'
-            elif int(pnum) > 9999:
-                pre = 'EE'
-            else:
-                pre = 'HH'
-            return '{}{}'.format(pre, int(pnum))
-        if ptype in ['FPS']:
-            return 'FPS{:02d}'.format(int(pnum))
-        if ptype in ['PCH']:
-            return 'PCH{:02d}'.format(int(pnum))
-        if ptype in ['NCM']:
-            return 'NCM{:02d}'.format(int(pnum))
+        number_part = int(get_num(pnum))
     except ValueError:
-        if verbose:
-            print("ValueError:  util.gen_hpn:  Invalid pnum '{}'".format(pnum))
         return None
-    except IndexError:
-        if verbose:
-            print("IndexError:  util.gen_hpn:  Invalid pnum '{}'".format(pnum))
-        return None
-    return '{}{}'.format(ptype, pnum)
+    if ptype in ['NBP/PAMloc', 'SNAPloc']:
+        return number_part
+    if ptype in ['SNP', 'SNAP']:
+        snpletter = 'C'
+        try:
+            _ = int(pnum)
+        except ValueError:
+            snpletter = pnum[0]
+        return f'SNP{snpletter}{number_part:06d}'
+    if ptype in ['PAM', 'FEM']:
+        return f'{ptype}{number_part:03d}'
+    if ptype in ['NODE-STATION']:
+        return f'ND{number_part:02d}'
+    if ptype in ['NODE', 'ND']:
+        return f'N{number_part:02d}'
+    if ptype in ['NBP']:
+        return f'NBP{number_part:02d}'
+    if ptype in ['FEED', 'FDV']:
+        return f'FDV{number_part}'
+    if ptype in ['ANT', 'ANTENNA']:
+        return f'A{number_part}'
+    if ptype in ['STATION']:
+        from hera_mc.geo_sysdef import region
+        if number_part in region['heraringa']:
+            pre = 'HA'
+        elif number_part in region['heraringb']:
+            pre = 'HB'
+        elif number_part > 9999:
+            pre = 'EE'
+        else:
+            pre = 'HH'
+        return f'{pre}{number_part}'
+    if ptype in ['FPS']:
+        return f'FPS{number_part:02d}'
+    if ptype in ['PCH']:
+        return f'PCH{number_part:02d}'
+    if ptype in ['NCM']:
+        return f'NCM{number_part:02d}'
