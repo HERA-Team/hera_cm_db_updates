@@ -111,9 +111,10 @@ class UpdateConnect(upd_base.Update):
                     setattr(H, part.lower(), self.get_from_col('hpn', part, antpol, node))
                 pw = self.get_from_col('port', 'NBP/PAMloc', antpol, node, 'pwr')
                 pc = self.get_from_col('port', 'NBP/PAMloc', antpol, node, 'slot')
-                for Up, Dn in zip([('station', 'ground'), ('feed', 'terminals'),
+                nd = self.get_from_col('port', 'SNAPloc', antpol, node, 'loc')
+                for Up, Dn in zip([('station', 'ground'), ('feed', 'terminals'), ('snap', 'rack'),
                                    ('ant', 'focus'), ('fem', 'pwr'), ('pam', 'slot')],
-                                  [('ant', 'ground'), ('fem', 'input'),
+                                  [('ant', 'ground'), ('fem', 'input'), ('node', nd),
                                    ('feed', 'input'), ('fps', pw), ('pch', pc)]):
                     self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
                 for pol in self.pols:
@@ -122,11 +123,8 @@ class UpdateConnect(upd_base.Update):
                     pl = pol.lower()
                     bp = self.get_from_col('port', 'NBP/PAMloc', antpol, node, pol)
                     sn = self.get_from_col('port', 'Port', antpol, node, '', check=pol)
-                    nd = self.get_from_col('port', 'SNAPloc', antpol, node, 'loc')
-                    for Up, Dn in zip([('fem', pl), ('nbp', bp), ('pam', pl),
-                                       ('snap', 'rack'), ('pam', 'slot')],
-                                      [('nbp', bp), ('pam', pl), ('snap', sn),
-                                       ('node', nd), ('pch', pc)]):
+                    for Up, Dn in zip([('fem', pl), ('nbp', bp), ('pam', pl)],
+                                      [('nbp', bp), ('pam', pl), ('snap', sn)]):
                         self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
 
     def create_sheet_conn(self, H, Up_part, Up_port, Dn_part, Dn_port):
