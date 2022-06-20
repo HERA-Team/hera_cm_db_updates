@@ -21,9 +21,15 @@ ap.add_argument('--enable-err', dest='enable_err', action='store_false',
 ap.add_argument('-s', '--show', help='show comparisons', action='store_true')
 ap.add_argument('--skip-stop', dest='skip_stop', default='H,W',
                 help="Don't add connections that start with these.")
+ap.add_argument('--alert', help="Email addresses for alerts.", default='ddeboer@berkeley.edu')
 args = ap.parse_args()
 cron_script = 'conn_update.sh'
 args.skip_stop = args.skip_stop.split(',')
+if '@' in args.alert:
+    args.alert = args.alert.split(',')
+else:
+    args.alert = None
+
 script_type = 'connupd'
 
 update = upd_connect.UpdateConnect(script_type=script_type, script_path=args.script_path,
@@ -32,4 +38,4 @@ if args.archive_path.startswith('___'):
     import os.path
     args.archive_path = os.path.join(update.script_path, args.archive_path[3:])
 update.pipe(args.node_csv, args.skip_stop, args.show,
-            cron_script=cron_script, archive_to=args.archive_path)
+            cron_script=cron_script, archive_to=args.archive_path, alert=args.alert)

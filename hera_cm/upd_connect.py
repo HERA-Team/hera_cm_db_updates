@@ -31,7 +31,8 @@ class UpdateConnect(upd_base.Update):
         self.same = {}
         self.included = {'add': [], 'stop': [], 'parts': []}
 
-    def pipe(self, node_csv='n', skip=['H', 'W'], show=True, cron_script='', archive_to=''):
+    def pipe(self, node_csv='n', skip=['H', 'W'], show=True,
+             cron_script='', archive_to='', alert=None):
         self.load_gsheet(node_csv)
         self.load_active()
         self.make_sheet_connections()
@@ -48,8 +49,7 @@ class UpdateConnect(upd_base.Update):
         self.missing_connections('stop', 'active-gsheet', 'down', skip)
         self.different_connections('gsheet-active', 'up', skip)
         self.different_connections('gsheet-active', 'down', skip)
-        self.add_rosetta()
-        self.finish(cron_script=cron_script, archive_to=archive_to)
+        self.finish(cron_script=cron_script, archive_to=archive_to, alert=alert)
 
     def load_active(self):
         """

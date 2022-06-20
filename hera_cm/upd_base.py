@@ -60,7 +60,7 @@ class Update():
             self.gsheet = cm_gsheet.SheetData()
         self.gsheet.load_workflow()
 
-    def finish(self, cron_script=None, archive_to=None):
+    def finish(self, cron_script=None, archive_to=None, alert=None):
         """
         Close out process.  If no updates, it deletes the script file.
         If both parameters are None, it just leaves things alone.
@@ -72,6 +72,8 @@ class Update():
             If no updates in script, then makes empty one.
         archive_to : str or None
             If str, moves the script file to that directory.  If not, deletes.
+        alert : list or None
+            If list, email addresses to alert if updates.
         """
         self.hera.done()
         if self.script is None or (cron_script is None and archive_to is None):
@@ -91,6 +93,12 @@ class Update():
                 if self.verbose:
                     print("Writing empty {}.".format(cron_script))
         else:
+            if alert is not None:
+                from hera_mc import watchdog
+                subj = f"Update connect: {self.script}"
+                with open(self.script, 'r') as fp:
+                    msg = ''.join(fp.readlines())
+                watchdog.send_email(subj, msg, to_addr=alert, from_addr="hera@lists.berkeley.edu")
             if archive_to is not None:
                 os.system('cp {} {}'.format(self.script, archive_to))
                 if self.verbose:
