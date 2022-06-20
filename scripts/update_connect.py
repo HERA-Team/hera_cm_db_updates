@@ -8,28 +8,22 @@
 import argparse
 from hera_cm import upd_connect
 
-if __name__ == '__main__':
-    ap = argparse.ArgumentParser()
-    ap.add_argument('--script-path', dest='script_path', help="Path for active script",
-                    default='default')
-    ap.add_argument('--archive-path', dest='archive_path', help="Path for script archive.",
-                    default='___cm_updates')
-    ap.add_argument('-n', '--node_csv', help="For testing: flag for read/write of gsheet (r/w/n)",
-                    choices=['read', 'write', 'none', 'r', 'w', 'n'], default='n')
-    ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
-    ap.add_argument('--enable-err', dest='enable_err', action='store_false',
-                    help='Enable erroring out for some errors')
-    ap.add_argument('-s', '--show', help='show comparisons', action='store_true')
-    ap.add_argument('--skip-stop', dest='skip_stop', default='H,W',
-                    help="Don't add connections that start with these.")
-    args = ap.parse_args()
-    cron_script = 'conn_update.sh'
-    args.skip_stop = args.skip_stop.split(',')
-else:
-    args = argparse.Namespace(archive_path=None, script_path='./', node_csv='n', verbose=True)
-    print(args)
-    cron_script = None
-
+ap = argparse.ArgumentParser()
+ap.add_argument('--script-path', dest='script_path', help="Path for active script",
+                default='default')
+ap.add_argument('--archive-path', dest='archive_path', help="Path for script archive.",
+                default='___cm_updates')
+ap.add_argument('-n', '--node_csv', help="For testing: flag for read/write of gsheet (r/w/n)",
+                choices=['read', 'write', 'none', 'r', 'w', 'n'], default='n')
+ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
+ap.add_argument('--enable-err', dest='enable_err', action='store_false',
+                help='Enable erroring out for some errors')
+ap.add_argument('-s', '--show', help='show comparisons', action='store_true')
+ap.add_argument('--skip-stop', dest='skip_stop', default='H,W',
+                help="Don't add connections that start with these.")
+args = ap.parse_args()
+cron_script = 'conn_update.sh'
+args.skip_stop = args.skip_stop.split(',')
 script_type = 'connupd'
 
 update = upd_connect.UpdateConnect(script_type=script_type, script_path=args.script_path,
@@ -37,6 +31,5 @@ update = upd_connect.UpdateConnect(script_type=script_type, script_path=args.scr
 if args.archive_path.startswith('___'):
     import os.path
     args.archive_path = os.path.join(update.script_path, args.archive_path[3:])
-
 update.pipe(args.node_csv, args.skip_stop, args.show,
             cron_script=cron_script, archive_to=args.archive_path)
