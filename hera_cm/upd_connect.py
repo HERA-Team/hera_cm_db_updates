@@ -25,7 +25,6 @@ class UpdateConnect(upd_base.Update):
                                             script_path=script_path,
                                             verbose=verbose)
         self.active = None
-        self.skipping = []
         self.disable_err = disable_err
         self.missing = {'all': {}, 'ports': {}}
         self.different = {'A': {}, 'B': {}}
@@ -39,12 +38,8 @@ class UpdateConnect(upd_base.Update):
         for direction in ['active-gsheet', 'gsheet-active']:
             for part_side in ['up', 'down']:
                 self.compare_connections(direction, part_side)
-                # if show:
-                #     self.show_summary_of_compare(direction, part_side)
-        self.compare_connections('active-gsheet', 'up')
-        self.compare_connections('active-gsheet', 'down')
-        self.compare_connections('gsheet-active', 'up')
-        self.compare_connections('gsheet-active', 'down')
+                if show:
+                    self.show_summary_of_compare(direction, part_side)
         self.add_missing_parts('gsheet-active', 'up')
         self.add_missing_parts('gsheet-active', 'down')
         self.missing_connections('add', 'gsheet-active', 'up', skip)
@@ -312,29 +307,15 @@ class UpdateConnect(upd_base.Update):
                 dn = [conn.downstream_part, conn.down_part_rev, conn.downstream_input_port]
                 self.hera.update_connection(add_or_stop, up, dn, cdate=cdate, ctime=ctime)
 
-    # def show_summary_of_compare(self):
-    #     print("\n---Summary---")
-    #     print("Missing:  {}".format(len(self.missing)))
-    #     print("Same:  {}".format(len(self.same)))
-    #     print("Skipping:  {}".format(len(self.skipping)))
-    #     print("Partial:  {}".format(len(self.partial)), end='   ')
-    #     if len(self.partial) and len(self.partial) < 5:
-    #         print("*****CHECK*****")
-    #         for p in self.partial:
-    #             print("\t{}".format(p))
-    #     else:
-    #         print()
-    #     print("Different:  {}".format(len(self.different)), end='   ')
-    #     if len(self.different) and len(self.different) < 5:
-    #         print("*****CHECK*****")
-    #         for d in self.different:
-    #             print("\t{}".format(d))
-    #     else:
-    #         print()
-    #     print("Different_stop:  {}".format(len(self.different_stop)), end='   ')
-    #     if len(self.different_stop) and len(self.different_stop) < 5:
-    #         print("*****CHECK*****")
-    #         for d in self.different_stop:
-    #             print("\t{}".format(d))
-    #     else:
-    #         print()
+    def show_summary_of_compare(self, direction, part_side):
+        from tabulate import tabulate
+        table = []
+        print(f"Summary:  {direction} {part_side}")
+        for rtype in ['all', 'ports']:
+            table.append(["Missing", rtype, len(self.missing[rtype][direction][part_side])])
+        for rtype in ['A', 'B']:
+            table.append(["Different", rtype, len(self.different[rtype][direction][part_side])])
+        table.append(["Same", "", len(self.same[direction][part_side])])
+        for rtype in ['add', 'stop']:
+            table.append(["Included", rtype, len(self.included[rtype])])
+        print(tabulate(table), '\n')
