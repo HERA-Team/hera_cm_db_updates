@@ -94,11 +94,11 @@ class Update():
                     print("Writing empty {}.".format(cron_script))
         else:
             if alert is not None:
-                from hera_mc import watchdog
+                from hera_mc import watch_dog
                 subj = f"Update connect: {self.script}"
                 with open(self.script, 'r') as fp:
                     msg = ''.join(fp.readlines())
-                watchdog.send_email(subj, msg, to_addr=alert, from_addr="hera@lists.berkeley.edu")
+                watch_dog.send_email(subj, msg, to_addr=alert, from_addr="hera@lists.berkeley.edu")
             if archive_to is not None:
                 os.system('cp {} {}'.format(self.script, archive_to))
                 if self.verbose:
