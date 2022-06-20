@@ -296,7 +296,7 @@ class UpdateConnect(upd_base.Update):
                     else:
                         print(f"WARNING!!! {chk_type}:{conn_str} already in {rtype} - skipping")
                     return False
-        self.included[rtype].append(conn_str)
+                self.included[chk_type].append(conn_str)
         return True
 
     def _modify_connections(self, this_one, add_or_stop, cdate, ctime):

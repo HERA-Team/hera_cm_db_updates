@@ -96,9 +96,13 @@ class Update():
             if alert is not None:
                 from hera_mc import watch_dog
                 subj = f"Update connect: {self.script}"
+                from_addr = "hera@lists.berkeley.edu"
                 with open(self.script, 'r') as fp:
                     msg = ''.join(fp.readlines())
-                watch_dog.send_email(subj, msg, to_addr=alert, from_addr="hera@lists.berkeley.edu")
+                try:
+                    watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)
+                except ConnectionRefusedError:
+                    print("No email sent - ConnectionRefusedError")
             if archive_to is not None:
                 os.system('cp {} {}'.format(self.script, archive_to))
                 if self.verbose:
