@@ -5,7 +5,6 @@
 """
 This class sets up to update the connections database.
 """
-import datetime
 from hera_mc import mc, cm_active, cm_utils, cm_sysdef
 from hera_mc import cm_partconnect as CMPC
 from . import util, upd_base
@@ -29,7 +28,7 @@ class UpdateConnect(upd_base.Update):
         self.missing = {'all': {}, 'ports': {}}
         self.different = {'A': {}, 'B': {}}
         self.same = {}
-        self.included = {'add': [], 'stop': [], 'parts': []}
+        self.included = {'connections': [], 'parts': []}
 
     def pipe(self, node_csv='n', skip=['H', 'W'], show=True,
              cron_script='', archive_to='', alert=None):
@@ -233,9 +232,7 @@ class UpdateConnect(upd_base.Update):
         self.missing_parts = list(missing_parts)
         if len(self.missing_parts):
             self.hera.no_op_comment('Adding missing parts')
-            add_part_time_offset = self.now - datetime.timedelta(seconds=300)
-            cdate = add_part_time_offset.strftime('%Y/%m/%d')
-            ctime = add_part_time_offset.strftime('%H:%M')
+            cdate, ctime = util.YMD_HM(self.cdatetime, -300.0)
         for part in self.missing_parts:
             part_str = str(part)
             if part_str in self.included['parts']:
@@ -255,7 +252,7 @@ class UpdateConnect(upd_base.Update):
         for mtype in ['all', 'ports']:
             modifying = {}
             for missing_part, missing_connections in self.missing[mtype][direction][part_side].items():  # noqa
-                if self.include_it(missing_part, missing_connections, rtype, skip):
+                if self.include_it(missing_part, missing_connections, skip):
                     modifying[missing_part] = missing_connections
             if len(modifying):
                 self.hera.no_op_comment(f'{rtype} missing_{mtype} connections')
@@ -264,23 +261,21 @@ class UpdateConnect(upd_base.Update):
     def different_connections(self, direction, part_side, skip=[]):
         add_diff = {}
         for diff_part, diff_connections in self.different['A'][direction][part_side].items():
-            if self.include_it(diff_part, diff_connections, 'add', skip):
+            if self.include_it(diff_part, diff_connections, skip):
                 add_diff[diff_part] = diff_connections
         stop_diff = {}
         for diff_part, diff_connections in self.different['B'][direction][part_side].items():
-            if self.include_it(diff_part, diff_connections, 'stop', skip):
+            if self.include_it(diff_part, diff_connections, skip):
                 stop_diff[diff_part] = diff_connections
-        if len(stop_diff):
-            self.hera.no_op_comment('Stopping connections that differ')
-            stop_conn_time_offset = self.now - datetime.timedelta(seconds=90)
-            cdate = stop_conn_time_offset.strftime('%Y/%m/%d')
-            ctime = stop_conn_time_offset.strftime('%H:%M')
-            self._modify_connections(stop_diff, 'stop', cdate, ctime)
         if len(add_diff):
             self.hera.no_op_comment('Adding connections that differ')
-            self._modify_connections(stop_diff, 'add', cdate, ctime)
+            self._modify_connections(stop_diff, 'add', self.cdate, self.ctime)
+        if len(stop_diff):
+            self.hera.no_op_comment('Stopping connections that differ')
+            cdate, ctime = util.YMD_HM(self.cdatetime, -90.0)
+            self._modify_connections(stop_diff, 'stop', cdate, ctime)
 
-    def include_it(self, part, conns, rtype, skip):
+    def include_it(self, part, conns, skip):
         for sk in skip:
             if part.startswith(sk):
                 return False
@@ -289,14 +284,10 @@ class UpdateConnect(upd_base.Update):
                 if conn.upstream_part.startswith(sk) or conn.downstream_part.startswith(sk):
                     return False
             conn_str = str(conn)
-            for chk_type in ['add', 'stop']:
-                if conn_str in self.included[chk_type]:
-                    if chk_type == rtype:
-                        print(f"INFO: {chk_type}:{conn_str} already in {rtype} - skipping")
-                    else:
-                        print(f"WARNING!!! {chk_type}:{conn_str} already in {rtype} - skipping")
-                    return False
-                self.included[chk_type].append(conn_str)
+            if conn_str in self.included['connections']:
+                print(f"INFO: {conn_str} already included - skipping")
+                return False
+            self.included['connections'].append(conn_str)
         return True
 
     def _modify_connections(self, this_one, add_or_stop, cdate, ctime):

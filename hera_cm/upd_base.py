@@ -5,7 +5,7 @@
 """This is the base class for the script generators."""
 import datetime
 import os
-from . import signal_chain, cm_gsheet
+from . import signal_chain, cm_gsheet, util
 
 
 class Update():
@@ -30,12 +30,8 @@ class Update():
         else:
             self.script_path = script_path
         self.verbose = verbose
-        self.now = datetime.datetime.now()
-        self.cdate = self.now.strftime('%Y/%m/%d')
-        self.ctime = self.now.strftime('%H:%M')
-        time_offset = self.now + datetime.timedelta(seconds=100)
-        self.cdate2 = time_offset.strftime('%Y/%m/%d')
-        self.ctime2 = time_offset.strftime('%H:%M')
+        self.cdatetime = datetime.datetime.now()
+        self.cdate, self.ctime = util.YMD_HM(self.cdatetime)
         if script_type is None:
             self.script = None
         else:
