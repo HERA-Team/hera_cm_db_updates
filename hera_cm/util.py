@@ -8,6 +8,11 @@ import datetime
 from argparse import Namespace
 
 
+def YMD_HM(dt, offset=0.0):
+    dt += datetime.timedelta(offset)
+    return dt.strftime('%Y/%m/%d'), dt.strftime('%H:%M')
+
+
 def compare_lists(list1, list2, info=None, ignore_length=True):
     """
     Make sure the lists agree.  If ignore_length, then check

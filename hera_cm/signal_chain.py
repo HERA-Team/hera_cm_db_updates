@@ -440,9 +440,7 @@ class Update:
         add_template : bool
             Boolean to include same info but as "add" to help in starting new
         """
-        stop_time = cm_utils.get_astropytime(adate=cdate, atime=ctime)
-        cdate = stop_time.datetime.strftime('%Y/%m/%d')
-        ctime = stop_time.datetime.strftime('%H:%M')
+        cdate, ctime = util.YMD_HM(cm_utils.get_astropytime(adate=cdate, atime=ctime))
         hpnr = cm_utils.make_part_key(hpn, rev)
         print("Stopping connections")
         for key, conn in self.active.connections['up'][hpnr].items():

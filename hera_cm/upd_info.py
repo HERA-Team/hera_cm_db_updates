@@ -165,8 +165,7 @@ class UpdateInfo(upd_base.Update):
                 self.new_apriori[key] = {'ant': ant}
                 self.new_apriori[key]['old_status'] = arcstat
                 self.new_apriori[key]['new_status'] = usestat
-                self.new_apriori[key]['cdate'] = self.cdate2
-                self.new_apriori[key]['ctime'] = self.ctime2
+                self.new_apriori[key]['cdate'], self.new_apriori[key]['ctime'] = util.YMD_HM(self.cdatetime, 100)  # noqa
                 if len(warn_msg):
                     self.new_apriori[key]['warning'] = warn_msg
                 s = f"{arcstat} > {usestat}"
