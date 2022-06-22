@@ -60,7 +60,6 @@ class UpdateConnect(upd_base.Update):
             self.active.load_connections()
 
     def get_from_col(self, rtype, col, antpol, node, pre='', check=False):
-        self.gsheet.data[antpol][self.gsheet.header[node].index(col)].lower()
         if col:
             v = self.gsheet.data[antpol][self.gsheet.header[node].index(col)]
         else:
@@ -307,6 +306,6 @@ class UpdateConnect(upd_base.Update):
         for rtype in ['A', 'B']:
             table.append(["Different", rtype, len(self.different[rtype][direction][part_side])])
         table.append(["Same", "", len(self.same[direction][part_side])])
-        for rtype in ['add', 'stop']:
+        for rtype in ['parts', 'connections']:
             table.append(["Included", rtype, len(self.included[rtype])])
         print(tabulate(table), '\n')
