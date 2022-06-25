@@ -254,7 +254,7 @@ class UpdateInfo(upd_base.Update):
         if key in self.active.info.keys():
             for note in self.active.info[key]:
                 note_time = cm_utils.get_astropytime(note.posting_gpstime, float_format='gps').datetime  # noqa
-                dt = self.now - note_time
+                dt = self.cdatetime - note_time
                 ddays = dt.days + dt.seconds / (3600.0 * 24)
                 if ddays < duplication_window and statement == note.comment:
                     if key.startswith('N'):
