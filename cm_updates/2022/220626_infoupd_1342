@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220626_infoupd_1342" >> scripts.log 
+add_part_info.py -p N07 -r A -c '6/26 Turned off node power, removed PAM chassis for reseating connections' -l "infoupd" --date 2022/06/26 --time 13:42:00
