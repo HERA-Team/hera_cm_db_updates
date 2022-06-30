@@ -231,7 +231,7 @@ class UpdateConnect(upd_base.Update):
         self.missing_parts = list(missing_parts)
         if len(self.missing_parts):
             self.hera.no_op_comment('Adding missing parts')
-            cdate, ctime = util.YMD_HM(self.cdatetime, -300.0)
+            cdate, ctime = util.YMD_HM(self.cdatetime, -1.0)
         for part in self.missing_parts:
             part_str = str(part)
             if part_str in self.included['parts']:
