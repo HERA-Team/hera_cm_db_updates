@@ -1445,6 +1445,7 @@ HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,13
 HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338678558
 N13,A,swapped PAMS in positions 1 and 2 (161 and 162),infoupd,1340462538
 HH71,A,pols are swapped,infoupd,1340466138
+N13,A,6/30: returned cables for ants 161 and 162 to their original positions,infoupd,1340638938
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -2373,6 +2374,7 @@ WRA000152,A,IP - 10.80.2.190,,1267095678
 N07,A,"6/26 Turned off node power, removed PAM chassis for reseating connections",infoupd,1340286138
 N07,A,6/28: reinstalled pam chassis,infoupd,1340462538
 HH55,A,pols are swapped,infoupd,1340466138
+N04,A,6/29: repositioned all antennas in node 4 to be off-center for feed positioning tests,infoupd,1340638938
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
 WRA000098,A,MAC - 08:00:30:6e:cd:a4,,1296212418
