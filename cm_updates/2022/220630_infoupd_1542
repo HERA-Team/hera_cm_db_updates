@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220630_infoupd_1542" >> scripts.log 
+add_part_info.py -p N04 -r A -c '6/29: repositioned all antennas in node 4 to be off-center for feed positioning tests' -l "infoupd" --date 2022/06/30 --time 15:42:00
+add_part_info.py -p N13 -r A -c '6/30: returned cables for ants 161 and 162 to their original positions' -l "infoupd" --date 2022/06/30 --time 15:42:00

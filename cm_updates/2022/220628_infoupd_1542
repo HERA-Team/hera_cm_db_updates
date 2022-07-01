@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220628_infoupd_1542" >> scripts.log 
+add_part_info.py -p HH55 -r A -c 'pols are swapped' -l "infoupd" --date 2022/06/28 --time 15:42:00
+add_part_info.py -p HH71 -r A -c 'pols are swapped' -l "infoupd" --date 2022/06/28 --time 15:42:00
