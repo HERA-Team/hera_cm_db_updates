@@ -5,7 +5,7 @@
 """
 This class sets up to update the connections database.
 """
-from hera_mc import mc, cm_active, cm_utils, cm_sysdef
+from hera_mc import cm_utils, cm_sysdef
 from hera_mc import cm_partconnect as CMPC
 from . import util, upd_base
 from argparse import Namespace
@@ -23,7 +23,6 @@ class UpdateConnect(upd_base.Update):
         super(UpdateConnect, self).__init__(script_type=script_type,
                                             script_path=script_path,
                                             verbose=verbose)
-        self.active = None
         self.disable_err = disable_err
         self.missing = {'all': {}, 'ports': {}}
         self.different = {'A': {}, 'B': {}}
@@ -50,15 +49,6 @@ class UpdateConnect(upd_base.Update):
         self.different_connections('gsheet-active', 'down', skip)
         self.finish(cron_script=cron_script, archive_to=archive_to, alert=alert)
 
-    def load_active(self):
-        """
-        Gets the hookup data from the hera_mc database.
-        """
-        db = mc.connect_to_mc_db(None)
-        with db.sessionmaker() as session:
-            self.active = cm_active.ActiveData(session=session)
-            self.active.load_connections()
-
     def get_from_col(self, rtype, col, antpol, node, pre='', check=False):
         if col:
             v = self.gsheet.data[antpol][self.gsheet.header[node].index(col)]
@@ -83,7 +73,7 @@ class UpdateConnect(upd_base.Update):
         """
         Go through all of the sheet and make cm_partconnect.Connections for comparison.
 
-        self.gsheet.connections is set up identically to self.active.connections
+        self.gsheet.connections is set up identically to self.hera.active.connections
         """
         self.gsheet.connections = {'up': {}, 'down': {}}  # To mirror cm_active
         # Make connections
@@ -169,7 +159,7 @@ class UpdateConnect(upd_base.Update):
                 if not key.startswith('SNP'):
                     continue
                 try:
-                    conn = self.active.connections[key]['up']['RACK']
+                    conn = self.hera.active.connections[key]['up']['RACK']
                     hname = "heraNode{}Snap{}".format(int(conn.downstream_part[1:]),
                                                       int(conn.downstream_input_port[-1]))
                     self.hera.add_part_rosetta(conn.upstream_part, hname, self.cdate, self.ctime)
@@ -195,9 +185,9 @@ class UpdateConnect(upd_base.Update):
         self.same[direction].setdefault(part_side, {})
         if direction.startswith('g'):
             A = self.gsheet.connections[part_side]
-            B = self.active.connections[part_side]
+            B = self.hera.active.connections[part_side]
         else:
-            A = self.active.connections[part_side]
+            A = self.hera.active.connections[part_side]
             B = self.gsheet.connections[part_side]
         for this_part, pside_connections in A.items():
             if this_part not in B.keys():
@@ -217,16 +207,16 @@ class UpdateConnect(upd_base.Update):
                     self.different['B'][direction][part_side][this_part][port] = B[this_part][port]
 
     def add_missing_parts(self, direction, part_side):
-        if self.active.parts is None:
-            self.active.load_parts()
+        if self.hera.active.parts is None:
+            self.hera.active.load_parts()
         missing_parts = set()
         for pc in self.missing['all'][direction][part_side].values():
             for conn in pc.values():
                 key = cm_utils.make_part_key(conn.upstream_part, conn.up_part_rev)
-                if key not in self.active.parts.keys():
+                if key not in self.hera.active.parts.keys():
                     missing_parts.add(key)
                 key = cm_utils.make_part_key(conn.downstream_part, conn.down_part_rev)
-                if key not in self.active.parts.keys():
+                if key not in self.hera.active.parts.keys():
                     missing_parts.add(key)
         self.missing_parts = list(missing_parts)
         if len(self.missing_parts):
@@ -309,3 +299,39 @@ class UpdateConnect(upd_base.Update):
         for rtype in ['parts', 'connections']:
             table.append(["Included", rtype, len(self.included[rtype])])
         print(tabulate(table), '\n')
+
+    def check_active(self):
+        from hera_mc import cm_partconnect as partconn
+        from hera_mc import mc
+        from copy import copy
+
+        gps_time = cm_utils.get_astropytime(self.cdatetime).gps
+        self.connections = {"up": {}, "down": {}}
+        check_keys = {"up": [], "down": []}
+
+        with mc.MCSessionWrapper() as session:
+            for cnn in session.query(partconn.Connections).filter(
+                (partconn.Connections.start_gpstime <= gps_time)
+                & (
+                    (partconn.Connections.stop_gpstime > gps_time)
+                    | (partconn.Connections.stop_gpstime == None)  # noqa
+                )
+            ):
+                chk = cm_utils.make_part_key(
+                    cnn.upstream_part, cnn.up_part_rev, cnn.upstream_output_port
+                )
+                if chk in check_keys["up"]:
+                    print("CHECK ERROR: Duplicate active port {}".format(chk))
+                check_keys["up"].append(chk)
+                chk = cm_utils.make_part_key(
+                    cnn.downstream_part, cnn.down_part_rev, cnn.downstream_input_port
+                )
+                if chk in check_keys["down"]:
+                    print("CHECK ERROR: Duplicate active port {}".format(chk))
+                check_keys["down"].append(chk)
+                key = cm_utils.make_part_key(cnn.upstream_part, cnn.up_part_rev)
+                self.connections["up"].setdefault(key, {})
+                self.connections["up"][key][cnn.upstream_output_port.upper()] = copy(cnn)
+                key = cm_utils.make_part_key(cnn.downstream_part, cnn.down_part_rev)
+                self.connections["down"].setdefault(key, {})
+                self.connections["down"][key][cnn.downstream_input_port.upper()] = copy(cnn)

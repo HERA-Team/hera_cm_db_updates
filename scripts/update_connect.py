@@ -22,6 +22,8 @@ ap.add_argument('-s', '--show', help='show comparisons', action='store_true')
 ap.add_argument('--skip-stop', dest='skip_stop', default='H,W',
                 help="Don't add connections that start with these.")
 ap.add_argument('--alert', help="Email addresses for alerts.", default='ddeboer@berkeley.edu')
+ap.add_argument('-c', '--check-active', dest='check_active', action='store_true',
+                help="Flag to read in all active to check for duplicates.")
 args = ap.parse_args()
 cron_script = 'conn_update.sh'
 args.skip_stop = args.skip_stop.split(',')
@@ -31,11 +33,18 @@ else:
     args.alert = None
 
 script_type = 'connupd'
+if args.check_active:
+    script_type = 'no_signal_chain'
+    script_path = None
 
 update = upd_connect.UpdateConnect(script_type=script_type, script_path=args.script_path,
                                    disable_err=args.enable_err, verbose=args.verbose)
 if args.archive_path.startswith('___'):
     import os.path
     args.archive_path = os.path.join(update.script_path, args.archive_path[3:])
-update.pipe(args.node_csv, args.skip_stop, args.show,
-            cron_script=cron_script, archive_to=args.archive_path, alert=args.alert)
+
+if args.check_active:
+    update.check_active()
+else:
+    update.pipe(args.node_csv, args.skip_stop, args.show,
+                cron_script=cron_script, archive_to=args.archive_path, alert=args.alert)

@@ -38,9 +38,10 @@ class Update():
             self.script = '{}_{}_{}'.format(self.cdate.replace('/', '')[2:], script_type,
                                             self.ctime.replace(':', ''))
             self.script = os.path.join(self.script_path, self.script)
-        self.hera = signal_chain.Update(script_to_run=self.script,
-                                        chmod=True, verbose=verbose,
-                                        cdate=self.cdate, ctime=self.ctime)
+        if script_type != 'no_signal_chain':
+            self.hera = signal_chain.Update(script_to_run=self.script,
+                                            chmod=True, verbose=verbose,
+                                            cdate=self.cdate, ctime=self.ctime)
         self.update_counter = 0
         self.gsheet = None
 
@@ -50,6 +51,9 @@ class Update():
             self.gsheet = cm_gsheet.SheetData()
         self.gsheet.load_sheet(node_csv=node_csv, tabs=None, path=path)
         self.gsheet.load_ncm()
+
+    def load_active(self):
+        self.hera.active.load_connections()
 
     def load_gworkflow(self):
         if self.gsheet is None:
