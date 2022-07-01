@@ -1,0 +1,23 @@
+#! /bin/bash
+echo "/Users/ddeboer/Documents/ubase/Projects/HERA/ops/hera_cm_db_updates/220701_connupd_1435" >> scripts.log 
+# add missing_all connections
+add_connection.py -u PAM162 --uprev A --upport slot -d PCH10 --dnrev A --dnport slot1 --date 2022/07/01 --time 14:35
+add_connection.py -u PAM162 --uprev A --upport e -d SNPC000035 --dnrev A --dnport e2 --date 2022/07/01 --time 14:35
+add_connection.py -u PAM162 --uprev A --upport n -d SNPC000035 --dnrev A --dnport n0 --date 2022/07/01 --time 14:35
+add_connection.py -u PAM161 --uprev A --upport slot -d PCH10 --dnrev A --dnport slot2 --date 2022/07/01 --time 14:35
+add_connection.py -u PAM161 --uprev A --upport e -d SNPC000035 --dnrev A --dnport e6 --date 2022/07/01 --time 14:35
+add_connection.py -u PAM161 --uprev A --upport n -d SNPC000035 --dnrev A --dnport n4 --date 2022/07/01 --time 14:35
+add_connection.py -u NBP13 --uprev A --upport E1 -d PAM162 --dnrev A --dnport e --date 2022/07/01 --time 14:35
+add_connection.py -u NBP13 --uprev A --upport N1 -d PAM162 --dnrev A --dnport n --date 2022/07/01 --time 14:35
+add_connection.py -u NBP13 --uprev A --upport E2 -d PAM161 --dnrev A --dnport e --date 2022/07/01 --time 14:35
+add_connection.py -u NBP13 --uprev A --upport N2 -d PAM161 --dnrev A --dnport n --date 2022/07/01 --time 14:35
+# add missing_ports connections
+add_connection.py -u FEM334 --uprev A --upport pwr -d FPS26 --dnrev A --dnport pwr8 --date 2022/07/01 --time 14:35
+add_connection.py -u FEM334 --uprev A --upport e -d NBP23 --dnrev A --dnport E8 --date 2022/07/01 --time 14:35
+add_connection.py -u FEM334 --uprev A --upport n -d NBP23 --dnrev A --dnport N8 --date 2022/07/01 --time 14:35
+# Adding connections that differ
+add_connection.py -u NBP22 --uprev A --upport e8 -d PAM123 --dnrev A --dnport e --date 2022/07/01 --time 14:35
+add_connection.py -u NBP22 --uprev A --upport n8 -d PAM123 --dnrev A --dnport n --date 2022/07/01 --time 14:35
+add_connection.py -u SNPC000124 --uprev A --upport rack -d N23 --dnrev A --dnport loc2 --date 2022/07/01 --time 14:35
+add_connection.py -u PAM339 --uprev A --upport slot -d PCH24 --dnrev A --dnport slot8 --date 2022/07/01 --time 14:35
+
