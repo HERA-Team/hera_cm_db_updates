@@ -39,14 +39,10 @@ class UpdateConnect(upd_base.Update):
                 self.compare_connections(direction, part_side)
                 if show:
                     self.show_summary_of_compare(direction, part_side)
-        self.add_missing_parts('gsheet-active', 'up')
-        self.add_missing_parts('gsheet-active', 'down')
-        self.missing_connections('add', 'gsheet-active', 'up', skip)
-        self.missing_connections('add', 'gsheet-active', 'down', skip)
-        self.missing_connections('stop', 'active-gsheet', 'up', skip)
-        self.missing_connections('stop', 'active-gsheet', 'down', skip)
-        self.different_connections('gsheet-active', 'up', skip)
-        self.different_connections('gsheet-active', 'down', skip)
+        self.add_missing_parts('gsheet-active')
+        self.missing_connections('add', 'gsheet-active', skip)
+        self.missing_connections('stop', 'active-gsheet', skip)
+        self.different_connections('gsheet-active', skip)
         self.finish(cron_script=cron_script, archive_to=archive_to, alert=alert)
 
     def get_from_col(self, rtype, col, antpol, node, pre='', check=False):
@@ -206,22 +202,23 @@ class UpdateConnect(upd_base.Update):
                     self.different['B'][direction][part_side].setdefault(this_part, {})
                     self.different['B'][direction][part_side][this_part][port] = B[this_part][port]
 
-    def add_missing_parts(self, direction, part_side):
+    def add_missing_parts(self, direction):
         if self.hera.active.parts is None:
             self.hera.active.load_parts()
         missing_parts = set()
-        for pc in self.missing['all'][direction][part_side].values():
-            for conn in pc.values():
-                key = cm_utils.make_part_key(conn.upstream_part, conn.up_part_rev)
-                if key not in self.hera.active.parts.keys():
-                    missing_parts.add(key)
-                key = cm_utils.make_part_key(conn.downstream_part, conn.down_part_rev)
-                if key not in self.hera.active.parts.keys():
-                    missing_parts.add(key)
+        for part_side in ['up', 'down']:
+            for pc in self.missing['all'][direction][part_side].values():
+                for conn in pc.values():
+                    key = cm_utils.make_part_key(conn.upstream_part, conn.up_part_rev)
+                    if key not in self.hera.active.parts.keys():
+                        missing_parts.add(key)
+                    key = cm_utils.make_part_key(conn.downstream_part, conn.down_part_rev)
+                    if key not in self.hera.active.parts.keys():
+                        missing_parts.add(key)
         self.missing_parts = list(missing_parts)
         if len(self.missing_parts):
             self.hera.no_op_comment('Adding missing parts')
-            cdate, ctime = util.YMD_HM(self.cdatetime, -1.0)
+            cdate, ctime = util.YMD_HM(self.cdatetime, -1.0 / 24.0)
         for part in self.missing_parts:
             part_str = str(part)
             if part_str in self.included['parts']:
@@ -237,31 +234,33 @@ class UpdateConnect(upd_base.Update):
                 this_part = p + [upd_base.signal_chain.part_types[part[:2]], p[0]]
             self.hera.update_part('add', this_part, cdate=cdate, ctime=ctime)
 
-    def missing_connections(self, rtype, direction, part_side, skip=[]):
+    def missing_connections(self, rtype, direction, skip=[]):
+        modifying = {}
         for mtype in ['all', 'ports']:
-            modifying = {}
-            for missing_part, missing_connections in self.missing[mtype][direction][part_side].items():  # noqa
-                if self.include_it(missing_part, missing_connections, skip):
-                    modifying[missing_part] = missing_connections
-            if len(modifying):
-                self.hera.no_op_comment(f'{rtype} missing_{mtype} connections')
-                self._modify_connections(modifying, rtype, self.cdate, self.ctime)
+            for part_side in ['up', 'down']:
+                for missing_part, missing_connections in self.missing[mtype][direction][part_side].items():  # noqa
+                    if self.include_it(missing_part, missing_connections, skip):
+                        modifying[missing_part] = missing_connections
+        for modify in modifying:
+            self.hera.no_op_comment(f'{rtype} missing_{mtype} connections')
+            self._modify_connections(modifying, rtype, self.cdate, self.ctime)
 
-    def different_connections(self, direction, part_side, skip=[]):
+    def different_connections(self, direction, skip=[]):
         add_diff = {}
-        for diff_part, diff_connections in self.different['A'][direction][part_side].items():
-            if self.include_it(diff_part, diff_connections, skip):
-                add_diff[diff_part] = diff_connections
         stop_diff = {}
-        for diff_part, diff_connections in self.different['B'][direction][part_side].items():
-            if self.include_it(diff_part, diff_connections, skip):
-                stop_diff[diff_part] = diff_connections
+        for part_side in ['up', 'down']:
+            for diff_part, diff_connections in self.different['A'][direction][part_side].items():
+                if self.include_it(diff_part, diff_connections, skip):
+                    add_diff[diff_part] = diff_connections
+            for diff_part, diff_connections in self.different['B'][direction][part_side].items():
+                if self.include_it(diff_part, diff_connections, skip):
+                    stop_diff[diff_part] = diff_connections
         if len(add_diff):
             self.hera.no_op_comment('Adding connections that differ')
             self._modify_connections(stop_diff, 'add', self.cdate, self.ctime)
         if len(stop_diff):
             self.hera.no_op_comment('Stopping connections that differ')
-            cdate, ctime = util.YMD_HM(self.cdatetime, -90.0)
+            cdate, ctime = util.YMD_HM(self.cdatetime, -1.0 / 24.0)
             self._modify_connections(stop_diff, 'stop', cdate, ctime)
 
     def include_it(self, part, conns, skip):
