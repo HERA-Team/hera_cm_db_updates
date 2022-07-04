@@ -17,6 +17,7 @@ cm_req = Namespace(hpn=cm_sysdef.hera_zone_prefixes, pol='all',
 class UpdateConnect(upd_base.Update):
     pols = ['E', 'N']
     NotFound = "Not Found"
+    part_side_dir = ['up', 'down']
 
     def __init__(self, script_type='connupd', script_path='default',
                  verbose=True, disable_err=False):
@@ -24,25 +25,18 @@ class UpdateConnect(upd_base.Update):
                                             script_path=script_path,
                                             verbose=verbose)
         self.disable_err = disable_err
-        self.missing = {'all': {}, 'ports': {}}
-        self.different = {'A': {}, 'B': {}}
-        self.same = {}
-        self.included = {'connections': [], 'parts': []}
+        self.sysinfo = {'gsheet': {'conn': {}, 'parts': set()},
+                        'active': {'conn': {}, 'parts': set()}}
 
-    def pipe(self, node_csv='n', skip=['H', 'W'], show=True,
-             cron_script='', archive_to='', alert=None):
+    def pipe(self, node_csv='n', skip_stop=['H', 'W'], show=True,
+             cron_script='conn', archive_to='', alert=None):
         self.load_gsheet(node_csv)
         self.load_active()
         self.make_sheet_connections()
-        for direction in ['active-gsheet', 'gsheet-active']:
-            for part_side in ['up', 'down']:
-                self.compare_connections(direction, part_side)
-                if show:
-                    self.show_summary_of_compare(direction, part_side)
-        self.add_missing_parts('gsheet-active')
-        self.missing_connections('add', 'gsheet-active', skip)
-        self.missing_connections('stop', 'active-gsheet', skip)
-        self.different_connections('gsheet-active', skip)
+        self.make_connection_dictionaries_and_compare()
+        self.modify_parts('add', 'gsheet_not_active')
+        self.modify_connections('add', 'gsheet_not_active', skip=[])
+        self.modify_connections('stop', 'active_not_gsheet', skip=skip_stop)
         self.finish(cron_script=cron_script, archive_to=archive_to, alert=alert)
 
     def get_from_col(self, rtype, col, antpol, node, pre='', check=False):
@@ -163,124 +157,71 @@ class UpdateConnect(upd_base.Update):
                     with open('upd_connect.log', 'a') as fp:
                         print(f"Need to put {key} in active connections.", file=fp)
 
-    def compare_connections(self, direction='gsheet-active', part_side='up'):
-        """
-        Step through all of the sheet Connections and make sure they are all there and the same.
-        """
-        self.compare_direction = direction
-        self.compare_part_side = part_side
-        self.missing['all'].setdefault(direction, {})
-        self.missing['all'][direction].setdefault(part_side, {})
-        self.missing['ports'].setdefault(direction, {})
-        self.missing['ports'][direction].setdefault(part_side, {})
-        self.different['A'].setdefault(direction, {})
-        self.different['A'][direction].setdefault(part_side, {})
-        self.different['B'].setdefault(direction, {})
-        self.different['B'][direction].setdefault(part_side, {})
-        self.same.setdefault(direction, {})
-        self.same[direction].setdefault(part_side, {})
-        if direction.startswith('g'):
-            A = self.gsheet.connections[part_side]
-            B = self.hera.active.connections[part_side]
-        else:
-            A = self.hera.active.connections[part_side]
-            B = self.gsheet.connections[part_side]
-        for this_part, pside_connections in A.items():
-            if this_part not in B.keys():
-                self.missing['all'][direction][part_side][this_part] = pside_connections
-                continue
-            for port, conn in pside_connections.items():
-                if port not in B[this_part].keys():
-                    self.missing['ports'][direction][part_side].setdefault(this_part, {})
-                    self.missing['ports'][direction][part_side][this_part][port] = conn
-                elif B[this_part][port] == conn:
-                    self.same[direction][part_side].setdefault(this_part, {})
-                    self.same[direction][part_side][this_part][port] = conn
-                else:
-                    self.different['A'][direction][part_side].setdefault(this_part, {})
-                    self.different['A'][direction][part_side][this_part][port] = conn
-                    self.different['B'][direction][part_side].setdefault(this_part, {})
-                    self.different['B'][direction][part_side][this_part][port] = B[this_part][port]
+    def make_connection_dictionaries_and_compare(self):
+        for sysinfo_type in ['gsheet', 'active']:
+            if sysinfo_type == 'gsheet':
+                use_sys = self.gsheet.connections
+            elif sysinfo_type == 'active':
+                use_sys = self.hera.active.connections
+            for part_side in self.part_side_dir:
+                for this_part, pside_conn in use_sys[part_side].items():
+                    for port, conn in pside_conn.items():
+                        self.sysinfo[sysinfo_type]['conn'][str(conn).upper()] = conn
+                        key = cm_utils.make_part_key(conn.upstream_part, conn.up_part_rev)
+                        self.sysinfo[sysinfo_type]['parts'].add(key)
+                        key = cm_utils.make_part_key(conn.downstream_part, conn.down_part_rev)
+                        self.sysinfo[sysinfo_type]['parts'].add(key)
+        self.diffs = {'gsheet_not_active': {}, 'active_not_gsheet': {}}
+        self.diffs['gsheet_not_active'] = {'conn': [], 'parts': []}
+        for key in self.sysinfo['gsheet']['conn']:
+            if key not in self.sysinfo['active']['conn'].keys():
+                self.diffs['gsheet_not_active']['conn'].append(key)
+        for part in self.sysinfo['gsheet']['parts']:
+            if part not in self.sysinfo['active']['parts']:
+                self.diffs['gsheet_not_active']['parts'].append(part)
 
-    def add_missing_parts(self, direction):
-        if self.hera.active.parts is None:
-            self.hera.active.load_parts()
-        missing_parts = set()
-        for part_side in ['up', 'down']:
-            for pc in self.missing['all'][direction][part_side].values():
-                for conn in pc.values():
-                    key = cm_utils.make_part_key(conn.upstream_part, conn.up_part_rev)
-                    if key not in self.hera.active.parts.keys():
-                        missing_parts.add(key)
-                    key = cm_utils.make_part_key(conn.downstream_part, conn.down_part_rev)
-                    if key not in self.hera.active.parts.keys():
-                        missing_parts.add(key)
-        self.missing_parts = list(missing_parts)
-        if len(self.missing_parts):
-            self.hera.no_op_comment('Adding missing parts')
-            cdate, ctime = util.YMD_HM(self.cdatetime, -1.0 / 24.0)
-        for part in self.missing_parts:
-            part_str = str(part)
-            if part_str in self.included['parts']:
-                print(f"{part} already added - skipping")
-                continue
-            else:
-                self.included['parts'].append(part_str)
+        self.diffs['active_not_gsheet'] = {'conn': [], 'parts': []}
+        for key in self.sysinfo['active']['conn']:
+            if key not in self.sysinfo['gsheet']['conn'].keys():
+                self.diffs['active_not_gsheet']['conn'].append(key)
+        for part in self.sysinfo['active']['parts']:
+            if part not in self.sysinfo['gsheet']['parts']:
+                self.diffs['active_not_gsheet']['parts'].append(part)
+
+    def modify_parts(self, add_or_stop='add', sysinfo='gsheet_not_active'):
+        if not len(self.diffs[sysinfo]['parts']):
+            if self.verbose:
+                print(f"No parts to {add_or_stop} for {sysinfo}")
+            return
+        self.hera.no_op_comment(f'{add_or_stop} parts for {sysinfo}')
+        cdate, ctime = util.YMD_HM(self.cdatetime, -1.0 / 24.0)
+        for part in self.diffs[sysinfo]['parts']:
             self.update_counter += 1
             p = list(cm_utils.split_part_key(part))
-            try:
-                this_part = p + [upd_base.signal_chain.part_types[part[:3]], p[0]]
-            except KeyError:
-                this_part = p + [upd_base.signal_chain.part_types[part[:2]], p[0]]
-            self.hera.update_part('add', this_part, cdate=cdate, ctime=ctime)
+            # try:
+            #     this_part = p + [upd_base.signal_chain.part_types[part[:3]], p[0]]
+            # except KeyError:
+            #     this_part = p + [upd_base.signal_chain.part_types[part[:2]], p[0]]
+            this_part = p + ['test', 'test2']
+            self.hera.update_part(add_or_stop, this_part, cdate=cdate, ctime=ctime)
 
-    def missing_connections(self, rtype, direction, skip=[]):
-        modifying = {}
-        for mtype in ['all', 'ports']:
-            for part_side in ['up', 'down']:
-                for missing_part, missing_connections in self.missing[mtype][direction][part_side].items():  # noqa
-                    if self.include_it(missing_part, missing_connections, skip):
-                        modifying[missing_part] = missing_connections
-        for modify in modifying:
-            self.hera.no_op_comment(f'{rtype} missing_{mtype} connections')
-            self._modify_connections(modifying, rtype, self.cdate, self.ctime)
-
-    def different_connections(self, direction, skip=[]):
-        add_diff = {}
-        stop_diff = {}
-        for part_side in ['up', 'down']:
-            for diff_part, diff_connections in self.different['A'][direction][part_side].items():
-                if self.include_it(diff_part, diff_connections, skip):
-                    add_diff[diff_part] = diff_connections
-            for diff_part, diff_connections in self.different['B'][direction][part_side].items():
-                if self.include_it(diff_part, diff_connections, skip):
-                    stop_diff[diff_part] = diff_connections
-        if len(add_diff):
-            self.hera.no_op_comment('Adding connections that differ')
-            self._modify_connections(stop_diff, 'add', self.cdate, self.ctime)
-        if len(stop_diff):
-            self.hera.no_op_comment('Stopping connections that differ')
-            cdate, ctime = util.YMD_HM(self.cdatetime, -1.0 / 24.0)
-            self._modify_connections(stop_diff, 'stop', cdate, ctime)
-
-    def include_it(self, part, conns, skip):
+    def include_it(self, conn, skip):
         for sk in skip:
-            if part.startswith(sk):
+            if conn.upstream_part.startswith(sk) or conn.downstream_part.startswith(sk):
                 return False
-        for port, conn in conns.items():
-            for sk in skip:
-                if conn.upstream_part.startswith(sk) or conn.downstream_part.startswith(sk):
-                    return False
-            conn_str = str(conn)
-            if conn_str in self.included['connections']:
-                print(f"INFO: {conn_str} already included - skipping")
-                return False
-            self.included['connections'].append(conn_str)
         return True
 
-    def _modify_connections(self, this_one, add_or_stop, cdate, ctime):
-        for mod_conn in this_one.values():
-            for conn in mod_conn.values():
+    def modify_connections(self, add_or_stop, sysinfo, skip=[]):
+        if not len(self.diffs[sysinfo]['conn']):
+            if self.verbose:
+                print(f"No connections to {add_or_stop} for {sysinfo}")
+            return
+        self.hera.no_op_comment(f'{add_or_stop} connections for {sysinfo}')
+        cdate, ctime = util.YMD_HM(self.cdatetime, 0.0)
+        this_one = sysinfo.split('_')[0]
+        for connkey in self.diffs[sysinfo]['conn']:
+            conn = self.sysinfo[this_one]['conn'][connkey]
+            if self.include_it(conn, skip):
                 self.update_counter += 1
                 up = [conn.upstream_part, conn.up_part_rev, conn.upstream_output_port]
                 dn = [conn.downstream_part, conn.down_part_rev, conn.downstream_input_port]
@@ -290,24 +231,17 @@ class UpdateConnect(upd_base.Update):
         from tabulate import tabulate
         table = []
         print(f"Summary:  {direction} {part_side}")
-        for rtype in ['all', 'ports']:
-            table.append(["Missing", rtype, len(self.missing[rtype][direction][part_side])])
-        for rtype in ['A', 'B']:
-            table.append(["Different", rtype, len(self.different[rtype][direction][part_side])])
-        table.append(["Same", "", len(self.same[direction][part_side])])
-        for rtype in ['parts', 'connections']:
-            table.append(["Included", rtype, len(self.included[rtype])])
         print(tabulate(table), '\n')
 
     def check_active(self):
         from hera_mc import cm_partconnect as partconn
         from hera_mc import mc
-        from copy import copy
 
         gps_time = cm_utils.get_astropytime(self.cdatetime).gps
-        self.connections = {"up": {}, "down": {}}
+        dupconn = {"up": {}, "down": {}}
         check_keys = {"up": [], "down": []}
 
+        duplicates = False
         with mc.MCSessionWrapper() as session:
             for cnn in session.query(partconn.Connections).filter(
                 (partconn.Connections.start_gpstime <= gps_time)
@@ -320,17 +254,27 @@ class UpdateConnect(upd_base.Update):
                     cnn.upstream_part, cnn.up_part_rev, cnn.upstream_output_port
                 )
                 if chk in check_keys["up"]:
-                    print("CHECK ERROR: Duplicate active port {}".format(chk))
+                    duplicates = True
+                dupconn['up'].setdefault(chk, [])
+                dupconn['up'][chk].append(str(cnn))
                 check_keys["up"].append(chk)
                 chk = cm_utils.make_part_key(
                     cnn.downstream_part, cnn.down_part_rev, cnn.downstream_input_port
                 )
                 if chk in check_keys["down"]:
-                    print("CHECK ERROR: Duplicate active port {}".format(chk))
+                    duplicates = True
+                dupconn['down'].setdefault(chk, [])
+                dupconn['down'][chk].append(str(cnn))
                 check_keys["down"].append(chk)
-                key = cm_utils.make_part_key(cnn.upstream_part, cnn.up_part_rev)
-                self.connections["up"].setdefault(key, {})
-                self.connections["up"][key][cnn.upstream_output_port.upper()] = copy(cnn)
-                key = cm_utils.make_part_key(cnn.downstream_part, cnn.down_part_rev)
-                self.connections["down"].setdefault(key, {})
-                self.connections["down"][key][cnn.downstream_input_port.upper()] = copy(cnn)
+
+        if duplicates:
+            print("----------------------------UP-----------------------")
+            for key, val in dupconn['up'].items():
+                if len(val) > 1:
+                    pval = [f"{x.strip('<').strip('>'):<40}" for x in val]
+                    print(f"{key:<20}  {' '.join(pval)}")
+            print("--------------------------DOWN-----------------------")
+            for key, val in dupconn['down'].items():
+                if len(val) > 1:
+                    pval = [f"{x.strip('<').strip('>'):<40}" for x in val]
+                    print(f"{key:<20}  {' '.join(pval)}")

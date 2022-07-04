@@ -20,7 +20,7 @@ ap.add_argument('--enable-err', dest='enable_err', action='store_false',
                 help='Enable erroring out for some errors')
 ap.add_argument('-s', '--show', help='show comparisons', action='store_true')
 ap.add_argument('--skip-stop', dest='skip_stop', default='H,W',
-                help="Don't add connections that start with these.")
+                help="Don't stop connections that start with these.")
 ap.add_argument('--alert', help="Email addresses for alerts.", default='ddeboer@berkeley.edu')
 ap.add_argument('-c', '--check-active', dest='check_active', action='store_true',
                 help="Flag to read in all active to check for duplicates.")
