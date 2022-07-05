@@ -123,7 +123,7 @@ def gen_hpn(ptype, pnum, verbose=False):
         return f'SNP{snpletter}{number_part:06d}'
     if ptype in ['PAM', 'FEM']:
         return f'{ptype}{number_part:03d}'
-    if ptype in ['NODE-STATION']:
+    if ptype in ['NODESTATION']:
         return f'ND{number_part:02d}'
     if ptype in ['NODE', 'ND']:
         return f'N{number_part:02d}'

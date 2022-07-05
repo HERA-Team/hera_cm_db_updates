@@ -13,6 +13,17 @@ from argparse import Namespace
 cm_req = Namespace(hpn=cm_sysdef.hera_zone_prefixes, pol='all',
                    at_date='now', exact_match=False, hookup_type=None)
 
+Namespace(fps='rack', ncm='rack', pch='rack',
+          node_fps='top', node_ncm='middle', node_pch='bottom',
+          nodestation='ground', )
+
+node_conn = {'fps_node': ('rack', 'top'),
+             'ncm_node': ('rack', 'middle'),
+             'pch_node': ('rack', 'bottom'),
+             'node_nodestation': ('ground', 'ground'),
+             'wr_ncm': ('mnt', 'mnt1'),
+             'rd_ncm': ('mnt', 'mnt2')}
+
 
 class UpdateConnect(upd_base.Update):
     pols = ['E', 'N']
@@ -71,7 +82,7 @@ class UpdateConnect(upd_base.Update):
         for node in self.gsheet.tabs:
             # Node-based
             node_num = int(util.get_num(node))
-            for part in ['Node', 'node-station', 'NBP']:
+            for part in ['node', 'nodestation', 'NBP']:
                 setattr(H, part.lower(), util.gen_hpn(part, node_num))
             for part in ['fps', 'pch', 'ncm']:
                 setattr(H, part.lower(), getattr(self.gsheet.node_to_equip[H.node], part))
@@ -80,7 +91,7 @@ class UpdateConnect(upd_base.Update):
             for Up, Dn in zip([('fps', 'rack'), ('ncm', 'rack'), ('pch', 'rack'),
                                ('node', 'ground'), ('wr', 'mnt'), ('rd', 'mnt')],
                               [('node', 'top'), ('node', 'middle'), ('node', 'bottom'),
-                               ('node-station', 'ground'), ('ncm', 'mnt1'), ('ncm', 'mnt2')]):
+                               ('nodestation', 'ground'), ('ncm', 'mnt1'), ('ncm', 'mnt2')]):
                 self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
             for station in self.gsheet.node_to_ant[node]:
                 # Ant-based
@@ -114,6 +125,8 @@ class UpdateConnect(upd_base.Update):
                     for Up, Dn in zip([('fem', pl), ('nbp', bp), ('pam', pl)],
                                       [('nbp', bp), ('pam', pl), ('snap', sn)]):
                         self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
+                if (node == 'node22' or node == 'node23') and H.pam in ['PAM123', 'PAM339']:
+                    print("UC118   ",H)
 
     def create_sheet_conn(self, H, Up_part, Up_port, Dn_part, Dn_port):
         uprev = 'H' if Up_part.lower() == 'ant' else 'A'
@@ -138,6 +151,11 @@ class UpdateConnect(upd_base.Update):
                 upstream_output_port=Up[2],
                 downstream_part=Dn[0], down_part_rev=Dn[1],
                 downstream_input_port=Dn[2])
+            if Up[0] in ['NBP22', 'NBP23']:
+                if Up[2].upper() == 'E8':
+                    print("UPDC142:  ",self.gsheet.connections[dir][key][port[dir]])
+            #if dir == 'down' and 'pam' in key.lower() and '8' in port['up']:
+            #    print("UPDC142:  ",self.gsheet.connections[dir][key][port[dir]])
 
     def add_rosetta(self):
         for t2u in ['missing', 'different']:
