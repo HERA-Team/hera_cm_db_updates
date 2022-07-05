@@ -169,6 +169,18 @@ class SheetData:
                                           notes=row[-1]
                 )
 
+    def check_found_antennas(self):
+        chkfa = set(self.found_antennas)
+        cntfa = {}
+        for ant in chkfa:
+            cntfa[ant] = 0
+            for cha in self.found_antennas:
+                if cha == ant:
+                    cntfa[ant] += 1
+        for ant, cnt in cntfa.items():
+            if cnt != 2:
+                print(f"Ant {ant} has {cnt} entries.")
+
     def load_sheet(self, node_csv='none', tabs=None, check_headers=False, path='.'):
         """
         Get the googlesheet information from the internet (or locally for testing etc).
@@ -195,6 +207,7 @@ class SheetData:
         elif isinstance(tabs, str):
             tabs = tabs.split(',')
         missing_ant = 9999
+        self.found_antennas = []
         for tab in tabs:
             if node_csv == 'r':
                 csv_data = self.csv_file('read', ospath.join(path, f"{tab}.csv"))
@@ -217,6 +230,7 @@ class SheetData:
                     if data[1].upper() == 'E':
                         missing_ant += 1
                     antnum = missing_ant
+                self.found_antennas.append(antnum)
                 hpn = util.gen_hpn('station', antnum)
                 hkey = cm_utils.make_part_key(hpn, 'A')
                 ant_set.add(hkey)
