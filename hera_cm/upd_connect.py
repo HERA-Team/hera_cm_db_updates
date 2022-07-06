@@ -144,7 +144,7 @@ class UpdateConnect(upd_base.Update):
             return
         keys = {'up': cm_utils.make_part_key(Up[0], Up[1]),
                 'down': cm_utils.make_part_key(Dn[0], Dn[1])}
-        port = {'up': Up[2].upper(), 'down': Dn[2].upper()}
+        port = {'up': Up[2].lower(), 'down': Dn[2].lower()}
         for dir, key in keys.items():
             self.gsheet.connections[dir].setdefault(key, {})
             if port[dir] in self.gsheet.connections[dir][key]:
