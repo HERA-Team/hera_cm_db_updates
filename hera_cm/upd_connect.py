@@ -13,12 +13,29 @@ from argparse import Namespace
 cm_req = Namespace(hpn=cm_sysdef.hera_zone_prefixes, pol='all',
                    at_date='now', exact_match=False, hookup_type=None)
 
-node_connections = {'fps_node': ('rack', 'top'),
-                    'ncm_node': ('rack', 'middle'),
-                    'pch_node': ('rack', 'bottom'),
-                    'node_nodestation': ('ground', 'ground'),
-                    'wr_ncm': ('mnt', 'mnt1'),
-                    'rd_ncm': ('mnt', 'mnt2')}
+
+def node_based():
+    return {('node', 'ground'): ('nodestation', 'ground'),
+            ('fps', 'rack'): ('node', 'top'),
+            ('ncm', 'rack'): ('node', 'middle'),
+            ('pch', 'rack'): ('node', 'bottom'),
+            ('wr', 'mnt'): ('ncm', 'mnt1'),
+            ('rd', 'mnt'): ('ncm', 'mnt2')}
+
+
+def ant_based(nd, pw, pc):
+    return {('station', 'ground'): ('ant', 'ground'),
+            ('ant', 'focus'): ('feed', 'input'),
+            ('feed', 'terminals'): ('fem', 'input'),
+            ('fem', 'pwr'): ('fps', pw),
+            ('pam', 'slot'): ('pch', pc),
+            ('snap', 'rack'): ('node', nd)}
+
+
+def antpol_based(pl, bp, sn):
+    return {('fem', pl): ('nbp', bp),
+            ('nbp', bp): ('pam', pl),
+            ('pam', pl): ('snap', sn)}
 
 
 class UpdateConnect(upd_base.Update):
@@ -85,9 +102,8 @@ class UpdateConnect(upd_base.Update):
                 setattr(H, part.lower(), getattr(self.gsheet.node_to_equip[H.node], part))
             H.wr = self.gsheet.ncm[H.ncm].wr
             H.rd = self.gsheet.ncm[H.ncm].rdhpn
-            for part_pair, ports in node_connections.items():
-                parts = part_pair.split('_')
-                self.create_sheet_conn(H, parts[0], ports[0], parts[1], ports[1])
+            for Up, Dn in node_based().items():
+                self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
             for station in self.gsheet.node_to_ant[node]:
                 # Ant-based
                 sant = f"{station}:A"
@@ -106,19 +122,14 @@ class UpdateConnect(upd_base.Update):
                 pw = self.get_from_col('port', 'NBP/PAMloc', antpol, node, 'pwr')
                 pc = self.get_from_col('port', 'NBP/PAMloc', antpol, node, 'slot')
                 nd = self.get_from_col('port', 'SNAPloc', antpol, node, 'loc')
-                for Up, Dn in zip([('station', 'ground'), ('feed', 'terminals'), ('snap', 'rack'),
-                                   ('ant', 'focus'), ('fem', 'pwr'), ('pam', 'slot')],
-                                  [('ant', 'ground'), ('fem', 'input'), ('node', nd),
-                                   ('feed', 'input'), ('fps', pw), ('pch', pc)]):
+                for Up, Dn in ant_based(nd, pw, pc)().items():
                     self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
                 for pol in self.pols:
                     # Antpol-based
                     antpol = '{}-{}'.format(sant, pol)
-                    pl = pol.lower()
                     bp = self.get_from_col('port', 'NBP/PAMloc', antpol, node, pol)
                     sn = self.get_from_col('port', 'Port', antpol, node, '', check=pol)
-                    for Up, Dn in zip([('fem', pl), ('nbp', bp), ('pam', pl)],
-                                      [('nbp', bp), ('pam', pl), ('snap', sn)]):
+                    for Up, Dn in antpol_based(pol.lower(), bp, sn).items():
                         self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
 
     def create_sheet_conn(self, H, Up_part, Up_port, Dn_part, Dn_port):
