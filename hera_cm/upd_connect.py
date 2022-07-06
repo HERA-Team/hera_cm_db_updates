@@ -122,7 +122,7 @@ class UpdateConnect(upd_base.Update):
                 pw = self.get_from_col('port', 'NBP/PAMloc', antpol, node, 'pwr')
                 pc = self.get_from_col('port', 'NBP/PAMloc', antpol, node, 'slot')
                 nd = self.get_from_col('port', 'SNAPloc', antpol, node, 'loc')
-                for Up, Dn in ant_based(nd, pw, pc)().items():
+                for Up, Dn in ant_based(nd, pw, pc).items():
                     self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
                 for pol in self.pols:
                     # Antpol-based
