@@ -212,14 +212,11 @@ class UpdateConnect(upd_base.Update):
             return
         self.hera.no_op_comment(f'{add_or_stop} parts for {sysinfo}')
         cdate, ctime = util.YMD_HM(self.cdatetime, -1.0 / 24.0)
-        for part in self.diffs[sysinfo]['parts']:
+        for prev in self.diffs[sysinfo]['parts']:
             self.update_counter += 1
-            p = list(cm_utils.split_part_key(part))
-            # try:
-            #     this_part = p + [upd_base.signal_chain.part_types[part[:3]], p[0]]
-            # except KeyError:
-            #     this_part = p + [upd_base.signal_chain.part_types[part[:2]], p[0]]
-            this_part = p + ['test', 'test2']
+            part, rev = cm_utils.split_part_key(prev)
+            pref = part.strip(util.get_num(part))
+            this_part = [part, rev, upd_base.signal_chain.part_types[pref], part]
             self.hera.update_part(add_or_stop, this_part, cdate=cdate, ctime=ctime)
 
     def include_it(self, conn, skip):
