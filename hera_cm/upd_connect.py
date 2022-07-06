@@ -282,6 +282,7 @@ class UpdateConnect(upd_base.Update):
                 check_keys["down"].append(chk)
 
         if duplicates:
+            print("Showing duplicates:")
             print("----------------------------UP-----------------------")
             for key, val in dupconn['up'].items():
                 if len(val) > 1:
