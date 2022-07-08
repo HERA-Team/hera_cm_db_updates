@@ -1,0 +1,10 @@
+#! /bin/bash
+echo "/Users/ddeboer/Documents/ubase/Projects/HERA/ops/hera_cm_db_updates/220707_connupd_1213" >> scripts.log 
+# add parts for gsheet_not_active
+add_part.py -p FEM366 -r A -t front-end -m FEM366 --date 2022/06/07 --time 11:13
+# add connections for gsheet_not_active
+add_connection.py -u FDV325 --uprev A --upport terminals -d FEM366 --dnrev A --dnport input --date 2022/06/07 --time 12:13
+add_connection.py -u FEM366 --uprev A --upport pwr -d FPS25 --dnrev A --dnport pwr12 --date 2022/06/07 --time 12:13
+add_connection.py -u FEM366 --uprev A --upport e -d NBP22 --dnrev A --dnport E12 --date 2022/06/07 --time 12:13
+add_connection.py -u FEM366 --uprev A --upport n -d NBP22 --dnrev A --dnport N12 --date 2022/06/07 --time 12:13
+# stop connections for active_not_gsheet
