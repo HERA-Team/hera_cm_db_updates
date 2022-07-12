@@ -114,7 +114,7 @@ class Update():
             with open(self.script, 'r') as fp:
                 msg = ''.join(fp.readlines())
             logtime = int(time.time() * 10000)
-            for i, line in enumerate(msg):
+            for i, line in enumerate(msg.split('\n')):
                 key = f"{logtime}{i:04d}"
                 self.r.hset('cm_period_log', key, line)
             if alert is not None:
