@@ -5,6 +5,8 @@
 """This is the base class for the script generators."""
 import datetime
 import os
+import redis
+import time
 from . import signal_chain, cm_gsheet, util
 
 
@@ -44,6 +46,7 @@ class Update():
                                             cdate=self.cdate, ctime=self.ctime)
         self.update_counter = 0
         self.gsheet = None
+        self.r = redis.Redis('redishost', decode_responses=True)
 
     def load_gsheet(self, node_csv='none', tabs=None, path='.'):
         """Get the googlesheet information from the internet."""
@@ -59,6 +62,21 @@ class Update():
         if self.gsheet is None:
             self.gsheet = cm_gsheet.SheetData()
         self.gsheet.load_workflow()
+
+    def process_log(self, alert='ddeboer@berkeley.edu'):
+        from hera_mc import watch_dog
+        dlog = self.r.hgetall('cm_period_log')
+        lines = []
+        for key in sorted(dlog.keys()):
+            if dlog[key] not in lines:
+                lines.append(dlog[key])
+        msg = '\n'.join(lines)
+        subj = f"Daily log {datetime.datetime.now().isoformat(timespec='minutes')}"
+        from_addr = "hera@lists.berkeley.edu"
+        try:
+            watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)
+        except ConnectionRefusedError:
+            print("No email sent - ConnectionRefusedError")
 
     def finish(self, cron_script=None, archive_to=None, alert=None):
         """
@@ -93,12 +111,16 @@ class Update():
                 if self.verbose:
                     print("Writing empty {}.".format(cron_script))
         else:
+            with open(self.script, 'r') as fp:
+                msg = ''.join(fp.readlines())
+            logtime = int(time.time() * 10000)
+            for i, line in enumerate(msg):
+                key = f"{logtime}{i:04d}"
+                self.r.hset('cm_period_log', key, line)
             if alert is not None:
                 from hera_mc import watch_dog
                 subj = f"Update connect: {self.script}"
                 from_addr = "hera@lists.berkeley.edu"
-                with open(self.script, 'r') as fp:
-                    msg = ''.join(fp.readlines())
                 try:
                     watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)
                 except ConnectionRefusedError:
