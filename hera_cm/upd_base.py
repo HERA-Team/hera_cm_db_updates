@@ -67,16 +67,25 @@ class Update():
         from hera_mc import watch_dog
         dlog = self.r.hgetall('cm_period_log')
         lines = []
+        reduced = []
         for key in sorted(dlog.keys()):
-            if dlog[key] not in lines:
-                lines.append(dlog[key])
-        msg = '\n'.join(lines)
-        subj = f"Daily log {datetime.datetime.now().isoformat(timespec='minutes')}"
-        from_addr = "hera@lists.berkeley.edu"
-        try:
-            watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)
-        except ConnectionRefusedError:
-            print("No email sent - ConnectionRefusedError")
+            this_line = dlog[key]
+            this_line_reduced = util.reduce_line(this_line)
+            print("LINE: ",this_line)
+            print("REDU: ",this_line_reduced)
+            if this_line_reduced is None:
+                continue
+            if this_line_reduced not in reduced:
+                reduced.append(this_line_reduced)
+                lines.append(this_line)
+                print("adding")
+        # msg = '\n'.join(lines)
+        # subj = f"Daily log {datetime.datetime.now().isoformat(timespec='minutes')}"
+        # from_addr = "hera@lists.berkeley.edu"
+        # try:
+        #     watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)
+        # except ConnectionRefusedError:
+        #     print("No email sent - ConnectionRefusedError")
 
     def finish(self, cron_script=None, archive_to=None, alert=None):
         """

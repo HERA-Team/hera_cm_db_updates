@@ -8,6 +8,14 @@ import datetime
 from argparse import Namespace
 
 
+def reduce_line(line):
+    if line.startswith('#') or 'bash' in line:
+        return None
+    if 'date' in line and 'time' in line:
+        return line.split('--date')[0].strip()
+    return None
+
+
 def YMD_HM(dt, offset=0.0):
     dt += datetime.timedelta(offset)
     return dt.strftime('%Y/%m/%d'), dt.strftime('%H:%M')
