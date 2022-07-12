@@ -7,7 +7,8 @@ current_revs = {'HH': 'A', 'HA': 'A', 'HB': 'A', 'A': 'H', 'FDV': 'V'}
 part_types = {'FDV': 'feed', 'FEM': 'front-end', 'NBP': 'node-bulkhead',
               'PAM': 'post-amp', 'SNP': 'snap', 'FPS': 'fem-power-supply',
               'PCH': 'pam-chassis', 'NCM': 'node-control-module',
-              'WR': 'white-rabbit', 'RD': 'arduino'}
+              'WR': 'white-rabbit', 'RD': 'arduino', 'HH': 'station',
+              'HA': 'station', 'HB:': 'station', 'A': 'antenna'}
 
 
 def as_part(add_or_stop, p, cdate, ctime):
