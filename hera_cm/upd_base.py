@@ -79,9 +79,10 @@ class Update():
                 reduced.append(this_line_reduced)
                 lines.append(this_line)
                 print("adding")
-        # msg = '\n'.join(lines)
-        # subj = f"Daily log {datetime.datetime.now().isoformat(timespec='minutes')}"
-        # from_addr = "hera@lists.berkeley.edu"
+        msg = '\n'.join(lines)
+        print("MSG:  \n",msg)
+        subj = f"Daily log {datetime.datetime.now().isoformat(timespec='minutes')}"
+        from_addr = "hera@lists.berkeley.edu"
         # try:
         #     watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)
         # except ConnectionRefusedError:
