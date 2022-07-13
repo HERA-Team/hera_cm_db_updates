@@ -1446,6 +1446,7 @@ HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,13
 N13,A,swapped PAMS in positions 1 and 2 (161 and 162),infoupd,1340462538
 HH71,A,pols are swapped,infoupd,1340466138
 N13,A,6/30: returned cables for ants 161 and 162 to their original positions,infoupd,1340638938
+HH98,A,"98E no sky: 7/1/22 replaced fiber, feed height = 4.403",infoupd,1341690138
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1518,6 +1519,7 @@ HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1
 HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338673398
 HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338676998
 HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338678558
+HH99,A,116N no sky: 6/30/22 replace fiber,infoupd,1341690138
 ND06,A,Door direction: SE,,1280318418
 HH54,A,Spectre: N4P3E,infoupd,1318668138
 HH223,A,Spectre: N19P5E,infoupd,1320075738
@@ -1583,6 +1585,7 @@ HH28,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,13
 HH53,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH4,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338677838
 HH51,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH117,A,both pols: polished on 6/30/22 because no spectrum analyzer output. Spliced fiber and this fixed the problem.,infoupd,1341690138
 HH36,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH40,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH41,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1963,6 +1966,7 @@ HB324,A,Feed heights: 4.400,infoupd,1338241338
 HA325,A,SPECTRE: N9P7N,apa-infoupd,1338241342
 HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338666918
 HH18,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1338677838
+HH137,A,"N pol had no sky: 6/30/22 replaced fiber, replaced FEM",infoupd,1341690138
 HH40,A,Spectre: N4P6E,infoupd,1318668138
 HH225,A,Spectre: N19P7N,infoupd,1320075740
 HH261,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1321741162
@@ -2375,6 +2379,7 @@ N07,A,"6/26 Turned off node power, removed PAM chassis for reseating connections
 N07,A,6/28: reinstalled pam chassis,infoupd,1340462538
 HH55,A,pols are swapped,infoupd,1340466138
 N04,A,6/29: repositioned all antennas in node 4 to be off-center for feed positioning tests,infoupd,1340638938
+HH100,A,"7/1/22: replaced fiber (foudn 2 fiber breaks), replaced FEM. Feed height = 4.407",infoupd,1341690138
 WRA000157,A,MAC - 08:00:30:6e:b8:f5,,1296212418
 WRA000099,A,MAC - 08:00:30:6e:a7:8b,,1296212418
 WRA000098,A,MAC - 08:00:30:6e:cd:a4,,1296212418
