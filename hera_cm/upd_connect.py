@@ -204,6 +204,7 @@ class UpdateConnect(upd_base.Update):
         for part in self.sysinfo['active']['parts']:
             if part not in self.sysinfo['gsheet']['parts']:
                 self.diffs['active_not_gsheet']['parts'].append(part)
+        print("UC207\n",self.diffs)
 
     def modify_parts(self, add_or_stop='add', sysinfo='gsheet_not_active'):
         if not len(self.diffs[sysinfo]['parts']):
