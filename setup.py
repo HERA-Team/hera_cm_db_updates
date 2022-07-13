@@ -22,7 +22,8 @@ setup_args = {
                 'scripts/update_hera_mc_db_repo.sh',
                 'scripts/checkcm.py',
                 'scripts/cat_nodes.py',
-                'scripts/cm_check_ncm.py'],
+                'scripts/cm_check_ncm.py',
+                'scripts/process_update_log'],
     'include_package_data': True,
     'install_requires': []
 }
