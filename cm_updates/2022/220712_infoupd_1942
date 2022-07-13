@@ -1,0 +1,8 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220712_infoupd_1942" >> scripts.log 
+add_part_info.py -p HH100 -r A -c '7/1/22: replaced fiber (foudn 2 fiber breaks), replaced FEM. Feed height = 4.407' -l "infoupd" --date 2022/07/12 --time 19:42:00
+add_part_info.py -p HH98 -r A -c '98E no sky: 7/1/22 replaced fiber, feed height = 4.403' -l "infoupd" --date 2022/07/12 --time 19:42:00
+add_part_info.py -p HH99 -r A -c '116N no sky: 6/30/22 replace fiber' -l "infoupd" --date 2022/07/12 --time 19:42:00
+add_part_info.py -p HH117 -r A -c 'both pols: polished on 6/30/22 because no spectrum analyzer output. Spliced fiber and this fixed the problem.' -l "infoupd" --date 2022/07/12 --time 19:42:00
+add_part_info.py -p HH137 -r A -c 'N pol had no sky: 6/30/22 replaced fiber, replaced FEM' -l "infoupd" --date 2022/07/12 --time 19:42:00
