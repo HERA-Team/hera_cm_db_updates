@@ -76,6 +76,8 @@ class Update():
             if this_line_reduced is not None and this_line_reduced not in reduced:
                 reduced.append(this_line_reduced)
                 lines.append(this_line)
+        if not len(lines):
+            return
         msg = '\n'.join(lines)
         subj = f"Daily log {datetime.datetime.now().isoformat(timespec='minutes')}"
         from_addr = "hera@lists.berkeley.edu"
@@ -83,7 +85,7 @@ class Update():
             watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)
         except ConnectionRefusedError:
             print("No email sent - ConnectionRefusedError")
-        # self.r.delete('cm_period_log')
+        self.r.delete('cm_period_log')
 
     def finish(self, cron_script=None, archive_to=None, alert=None):
         """
