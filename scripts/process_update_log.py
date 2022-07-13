@@ -18,8 +18,10 @@ else:
     args.alert = None
 script_type = 'no_signal_chain'
 script_path = None
+disable_err = True
+verbose = False
 
 if args.alert is not None:
-    update = upd_connect.UpdateConnect(script_type=script_type, script_path=args.script_path,
-                                       disable_err=args.enable_err, verbose=args.verbose)
+    update = upd_connect.UpdateConnect(script_type=script_type, script_path=script_path,
+                                       disable_err=disable_err, verbose=verbose)
     update.process_log(args.alert)
