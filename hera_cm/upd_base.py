@@ -72,13 +72,10 @@ class Update():
         reduced = []
         for key in sorted(dlog.keys()):
             this_line = dlog[key]
-            this_line_reduced = util.reduce_line(this_line)
-            if this_line_reduced is None:
-                continue
-            if this_line_reduced not in reduced:
+            this_line_reduced = util.reduce_log_line(this_line)
+            if this_line_reduced is not None and this_line_reduced not in reduced:
                 reduced.append(this_line_reduced)
                 lines.append(this_line)
-                print("adding")
         msg = '\n'.join(lines)
         subj = f"Daily log {datetime.datetime.now().isoformat(timespec='minutes')}"
         from_addr = "hera@lists.berkeley.edu"

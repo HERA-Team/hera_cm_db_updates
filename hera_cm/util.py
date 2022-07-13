@@ -8,7 +8,7 @@ import datetime
 from argparse import Namespace
 
 
-def reduce_line(line):
+def reduce_log_line(line):
     if line.startswith('#') or 'bash' in line:
         return None
     if 'date' in line and 'time' in line:
