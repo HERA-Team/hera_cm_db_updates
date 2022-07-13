@@ -64,6 +64,8 @@ class Update():
         self.gsheet.load_workflow()
 
     def process_log(self, alert='ddeboer@berkeley.edu'):
+        if alert is None:
+            return
         from hera_mc import watch_dog
         dlog = self.r.hgetall('cm_period_log')
         lines = []
@@ -80,10 +82,11 @@ class Update():
         msg = '\n'.join(lines)
         subj = f"Daily log {datetime.datetime.now().isoformat(timespec='minutes')}"
         from_addr = "hera@lists.berkeley.edu"
-        # try:
-        #     watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)
-        # except ConnectionRefusedError:
-        #     print("No email sent - ConnectionRefusedError")
+        try:
+            watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)
+        except ConnectionRefusedError:
+            print("No email sent - ConnectionRefusedError")
+        # self.r.delete('cm_period_log')
 
     def finish(self, cron_script=None, archive_to=None, alert=None):
         """
