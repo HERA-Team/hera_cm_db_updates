@@ -35,7 +35,6 @@ else:
 script_type = 'connupd'
 if args.check_active:
     script_type = 'no_signal_chain'
-    args.script_path = None
 
 update = upd_connect.UpdateConnect(script_type=script_type, script_path=args.script_path,
                                    disable_err=args.enable_err, verbose=args.verbose)
