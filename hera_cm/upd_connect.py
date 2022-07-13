@@ -204,7 +204,6 @@ class UpdateConnect(upd_base.Update):
         for part in self.sysinfo['active']['parts']:
             if part not in self.sysinfo['gsheet']['parts']:
                 self.diffs['active_not_gsheet']['parts'].append(part)
-        print("UC207\n",self.diffs)
 
     def modify_parts(self, add_or_stop='add', sysinfo='gsheet_not_active'):
         if not len(self.diffs[sysinfo]['parts']):
@@ -217,7 +216,8 @@ class UpdateConnect(upd_base.Update):
             self.update_counter += 1
             part, rev = cm_utils.split_part_key(prev)
             pref = part.strip(util.get_num(part))
-            this_part = [part, rev, upd_base.signal_chain.part_types[pref], part]
+            t_part = upd_base.signal_chain.get_part_type(pref)
+            this_part = [part, rev, t_part, part]
             self.hera.update_part(add_or_stop, this_part, cdate=cdate, ctime=ctime)
 
     def include_it(self, conn, skip):

@@ -11,6 +11,13 @@ part_types = {'FDV': 'feed', 'FEM': 'front-end', 'NBP': 'node-bulkhead',
               'HA': 'station', 'HB:': 'station', 'A': 'antenna'}
 
 
+def get_part_type(prefix):
+    for ppre, ptyp in part_types.items():
+        if prefix.startswith(ppre):
+            return ptyp
+    raise ValueError(f"{prefix} not found in part types")
+
+
 def as_part(add_or_stop, p, cdate, ctime):
     """Return a string to use hera_mc script to add or stop a part."""
     s = '{}_part.py -p {} -r {} '.format(
