@@ -17,7 +17,7 @@ if '@' in args.alert:
 else:
     args.alert = None
 script_type = 'no_signal_chain'
-script_path = None
+script_path = '.'
 disable_err = True
 verbose = False
 
