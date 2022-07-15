@@ -1,0 +1,18 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220713_infoupd_1842" >> scripts.log 
+add_part_info.py -p HH100 -r A -c 'both pols: No sky, 07/01/22 found 2 fibre breaks, replace fibre and 100N is back' -l "infoupd" --date 2022/07/13 --time 18:42:00
+add_part_info.py -p HH100 -r A -c 'Fibre switching suggested FEM issue, replaced to FEM347, both pols okay. feed height=4.407m' -l "infoupd" --date 2022/07/13 --time 18:42:02
+add_part_info.py -p HH119 -r A -c '119E no sky, fibre switching showed that the fibre from 119Es FEM to node is broken' -l "infoupd" --date 2022/07/13 --time 18:42:00
+add_part_info.py -p HH119 -r A -c '07/01/22 replace fibre, feed height=4.407m' -l "infoupd" --date 2022/07/13 --time 18:42:02
+add_part_info.py -p HH138 -r A -c 'both pols good before 06/28/22, but 138E became no sky since 06/29/22' -l "infoupd" --date 2022/07/13 --time 18:42:00
+add_part_info.py -p HH138 -r A -c 'fibre switching test suggested a PAM issue, though no spare PAM available' -l "infoupd" --date 2022/07/13 --time 18:42:02
+add_part_info.py -p HH98 -r A -c '98E no sky: 07/01/22 replaced fiber, feed height = 4.403' -l "infoupd" --date 2022/07/13 --time 18:42:00
+add_part_info.py -p HH99 -r A -c 'Discovered twisted fibre on the ground, although the spectrum looks roughly okay' -l "infoupd" --date 2022/07/13 --time 18:42:00
+add_part_info.py -p HH99 -r A -c 'the crew spliced the fibre anyway, potential improvement in bandpass shape to check?' -l "infoupd" --date 2022/07/13 --time 18:42:02
+add_part_info.py -p HH116 -r A -c 'fibre was broken on the ground next to the node box' -l "infoupd" --date 2022/07/13 --time 18:42:00
+add_part_info.py -p HH116 -r A -c 'both pols: polished on 06/30/22 through fibre splicing, feed height = 4.403m after raising' -l "infoupd" --date 2022/07/13 --time 18:42:02
+add_part_info.py -p HH117 -r A -c 'fibre was broken on the ground next to the node box' -l "infoupd" --date 2022/07/13 --time 18:42:00
+add_part_info.py -p HH117 -r A -c 'both pols: polished on 06/30/22 through fibre splicing, feed height = 4.409m after raising' -l "infoupd" --date 2022/07/13 --time 18:42:02
+add_part_info.py -p HH137 -r A -c 'Both pols had no sky: 06/30/22 replaced fiber still no sky, 07/01/22 replaced FEM to FEM349, only 137E had spectrum' -l "infoupd" --date 2022/07/13 --time 18:42:00
+add_part_info.py -p HH137 -r A -c '137N no sky after replacing fibre and FEM, suspect to still have fibre issue (we did fibre switching test and its not a PAM problem)' -l "infoupd" --date 2022/07/13 --time 18:42:02
