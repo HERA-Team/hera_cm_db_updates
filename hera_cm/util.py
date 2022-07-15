@@ -72,8 +72,7 @@ command_args = {'add_part_info': [['-p', '--hpn',
                 }
 
 
-arglist = ['hpn', 'hptype', 'comment', 'uppart', 'upport', 'dnpart', 'dnport',
-           'status', 'date', 'time']
+arglist = ['hpn', 'hptype', 'comment', 'uppart', 'upport', 'dnpart', 'dnport', 'status']
 
 
 def parse_log_line(line):
@@ -85,22 +84,27 @@ def parse_log_line(line):
         cargs = command_args[command]
     except KeyError:
         return line + '\n'
+    show_text = {}
     for ca in cargs:
         cnttyp = [type(x) for x in ca]
         if cnttyp.count(str) == 1:
             ap.add_argument(ca[0], **ca[1])
+            show_text[ca[0].strip('-')] = ca[1]['help']
         elif cnttyp.count(str) == 2:
             ap.add_argument(ca[0], ca[1], **ca[2])
+            show_text[ca[1].strip('-')] = ca[2]['help']
     cm_utils.add_date_time_args(ap)
     try:
         linarg = list(csv.reader([line.replace("'", '"')], delimiter=' '))
-        argdict = vars(ap.parse_args(linarg[0][1:]))
+        args = ap.parse_args(linarg[0][1:])
+        argdict = vars(args)
     except:  # noqa
         return line + '\n'
-    ret = f"-- {' '.join(command.split('_'))}\n"
+    ret = f"-- {' '.join(command.split('_'))} -- {argdict['date']} {argdict['time']}\n"
     for key in arglist:
         if key in argdict and argdict[key] is not None:
-            ret += f"\t{key}:  {argdict[key]}\n"
+            show = show_text[key]
+            ret += f"\t{show}:  {argdict[key]}\n"
     return ret
 
 
