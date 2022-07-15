@@ -96,8 +96,7 @@ def parse_log_line(line):
     cm_utils.add_date_time_args(ap)
     try:
         linarg = list(csv.reader([line.replace("'", '"')], delimiter=' '))
-        args = ap.parse_args(linarg[0][1:])
-        argdict = vars(args)
+        argdict = vars(ap.parse_args(linarg[0][1:]))
     except:  # noqa
         return line + '\n'
     ret = f"-- {' '.join(command.split('_'))} -- {argdict['date']} {argdict['time']}\n"
