@@ -79,7 +79,7 @@ class Update():
         if not len(lines):
             return
         subj = f"Daily log {datetime.datetime.now().isoformat(timespec='minutes')}"
-        msg = subj + '\n'
+        msg = subj + '\n\n'
         for this_line in lines:
             msg += util.parse_log_line(this_line)
         from_addr = "hera@lists.berkeley.edu"
