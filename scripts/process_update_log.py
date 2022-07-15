@@ -9,7 +9,7 @@ import argparse
 from hera_cm import upd_connect
 
 ap = argparse.ArgumentParser()
-ap.add_argument('--alert', help="Email addresses for alerts.", default='ddeboer@berkeley.edu')
+ap.add_argument('--alert', help="Email addresses for alerts.", default='heraops@reionization.org')
 args = ap.parse_args()
 
 if '@' in args.alert:

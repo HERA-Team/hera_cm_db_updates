@@ -1,11 +1,11 @@
 # -*- mode: python; coding: utf-8 -*-
-# Copyright 2019 the HERA Collaboration
+# Copyright 2022 the HERA Collaboration
 # Licensed under the 2-clause BSD license.
 
 """
 """
 import datetime
-from argparse import Namespace
+import argparse
 
 
 def reduce_log_line(line):
@@ -14,6 +14,94 @@ def reduce_log_line(line):
     if 'date' in line and 'time' in line:
         return line.split('--date')[0].strip()
     return None
+
+
+command_args = {'add_part_info': [['-p', '--hpn',
+                                   {'help': "HERA part number", 'default': None}],
+                                  ['-r', '--rev',
+                                   {'help': "Revision of part", 'default': "last"}],
+                                  ['-c', '--comment',
+                                   {'help': "Comment on part", 'default': None}],
+                                  ['-l', '--reference',
+                                   {'help': "Library filename", 'default': None}]],
+                'add_part': [['-p', '--hpn',
+                              {'help': "HERA part number", 'default': None}],
+                             ['-r', '--rev',
+                              {'help': "Revision of part", 'default': "last"}],
+                             ['-t', '--hptype',
+                              {'help': "HERA part type", 'default': None}],
+                             ['-m', '--mfg',
+                              {'help': "Manufacturers number for part", 'default': None}]
+                             ],
+                'stop_part': [['-p', '--hpn',
+                               {'help': "HERA part number", 'default': None}],
+                              ['-r', '--rev',
+                               {'help': "Revision of part", 'default': "last"}]
+                              ],
+                'add_connection': [['-u', '--uppart',
+                                    {'help': "Upstream part number", 'default': None}],
+                                   ['--uprev',
+                                    {'help': "Upstream part revision", 'default': None}],
+                                   ['--upport',
+                                    {'help': "Upstream output port", 'default': None}],
+                                   ['-d', '--dnpart',
+                                    {'help': "Downstream part number", 'default': None}],
+                                   ['--dnrev',
+                                    {'help': "Downstream part revision", 'default': None}],
+                                   ['--dnport',
+                                    {'help': "Downstream input port", 'default': None}],
+                                   ],
+                'stop_connection': [['-u', '--uppart',
+                                     {'help': "Upstream part number", 'default': None}],
+                                    ['--uprev',
+                                     {'help': "Upstream part revision", 'default': None}],
+                                    ['--upport',
+                                     {'help': "Upstream output port", 'default': None}],
+                                    ['-d', '--dnpart',
+                                     {'help': "Downstream part number", 'default': None}],
+                                    ['--dnrev',
+                                     {'help': "Downstream part revision", 'default': None}],
+                                    ['--dnport',
+                                     {'help': "Downstream input port", 'default': None}],
+                                    ],
+                'update_apriori': [['-p', '--hpn',
+                                    {'help': "HERA part number", 'default': None}],
+                                   ['-s', '--status',
+                                    {'help': "New apriori status", 'default': "last"}]
+                                   ]
+                }
+
+
+arglist = ['hpn', 'hptype', 'comment', 'uppart', 'upport', 'dnpart', 'dnport',
+           'status', 'date', 'time']
+
+
+def parse_log_line(line):
+    from hera_mc import cm_utils
+    import csv
+    ap = argparse.ArgumentParser()
+    command = line.split()[0].split('.')[0]
+    try:
+        cargs = command_args[command]
+    except KeyError:
+        return line + '\n'
+    for ca in cargs:
+        cnttyp = [type(x) for x in ca]
+        if cnttyp.count(str) == 1:
+            ap.add_argument(ca[0], **ca[1])
+        elif cnttyp.count(str) == 2:
+            ap.add_argument(ca[0], ca[1], **ca[2])
+    cm_utils.add_date_time_args(ap)
+    try:
+        linarg = list(csv.reader([line.replace("'", '"')], delimiter=' '))
+        argdict = vars(ap.parse_args(linarg[0][1:]))
+    except:  # noqa
+        return line + '\n'
+    ret = f"-- {' '.join(command.split('_'))}\n"
+    for key in arglist:
+        if key in argdict and argdict[key] is not None:
+            ret += f"\t{key}:  {argdict[key]}\n"
+    return ret
 
 
 def YMD_HM(dt, offset=0.0):
@@ -77,7 +165,7 @@ def parse_command_payload(col):
     if prefix is not None:
         edate = entry
         entry = prefix
-    return Namespace(isstmt=isstmt, entry=entry, date=edate)
+    return argparse.Namespace(isstmt=isstmt, entry=entry, date=edate)
 
 
 def get_unique_pkey(hpn, rev, pdate, ptime, old_timers):

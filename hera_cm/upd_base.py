@@ -63,7 +63,7 @@ class Update():
             self.gsheet = cm_gsheet.SheetData()
         self.gsheet.load_workflow()
 
-    def process_log(self, alert='ddeboer@berkeley.edu'):
+    def process_log(self, alert=None):
         if alert is None:
             return
         from hera_mc import watch_dog
@@ -78,8 +78,10 @@ class Update():
                 lines.append(this_line)
         if not len(lines):
             return
-        msg = '\n'.join(lines)
         subj = f"Daily log {datetime.datetime.now().isoformat(timespec='minutes')}"
+        msg = subj + '\n'
+        for this_line in lines:
+            msg += util.parse_log_line(this_line)
         from_addr = "hera@lists.berkeley.edu"
         try:
             watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)
