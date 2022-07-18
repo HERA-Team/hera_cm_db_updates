@@ -1452,6 +1452,8 @@ HH98,A,"98E no sky: 07/01/22 replaced fiber, feed height = 4.403",infoupd,134177
 HH117,A,fibre was broken on the ground next to the node box,infoupd,1341772938
 HH137,A,"Both pols had no sky: 06/30/22 replaced fiber still no sky, 07/01/22 replaced FEM to FEM349, only 137E had spectrum",infoupd,1341772938
 HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350830538
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350834138
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350834138
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -2645,3 +2647,4 @@ HH325,A,SPECTRE: N9P7E,infoupd,1335872540
 HH53,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH329,A,For outrigger,infoupd,1336120942
 HH227,A,Spectre: N20P10N,infoupd,1336124540
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350834138
