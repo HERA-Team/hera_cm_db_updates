@@ -1451,6 +1451,7 @@ HH100,A,"Fibre switching suggested FEM issue, replaced to FEM347, both pols okay
 HH98,A,"98E no sky: 07/01/22 replaced fiber, feed height = 4.403",infoupd,1341772938
 HH117,A,fibre was broken on the ground next to the node box,infoupd,1341772938
 HH137,A,"Both pols had no sky: 06/30/22 replaced fiber still no sky, 07/01/22 replaced FEM to FEM349, only 137E had spectrum",infoupd,1341772938
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350830538
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1526,6 +1527,7 @@ HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1
 HH99,A,116N no sky: 6/30/22 replace fiber,infoupd,1341690138
 HH119,A,"119E no sky, fibre switching showed that the fibre from 119Es FEM to node is broken",infoupd,1341772938
 HH99,A,"Discovered twisted fibre on the ground, although the spectrum looks roughly okay",infoupd,1341772938
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350830538
 ND06,A,Door direction: SE,,1280318418
 HH54,A,Spectre: N4P3E,infoupd,1318668138
 HH223,A,Spectre: N19P5E,infoupd,1320075738
@@ -1600,6 +1602,7 @@ ND07,A,Door direction: N,,1280318418
 HH99,A,"the crew spliced the fibre anyway, potential improvement in bandpass shape to check?",infoupd,1341772940
 HH117,A,"both pols: polished on 06/30/22 through fibre splicing, feed height = 4.409m after raising",infoupd,1341772940
 HH137,A,"137N no sky after replacing fibre and FEM, suspect to still have fibre issue (we did fibre switching test and its not a PAM problem)",infoupd,1341772940
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350830538
 HH54,A,Spectre: N4P3N,infoupd,1318668140
 HH56,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH223,A,Spectre: N19P5N,infoupd,1320075740

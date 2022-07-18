@@ -1,10 +1,10 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed heights (NE/SE/SW/NW),,Feed Installed By
 45,E,56,102,1,113,C58,E2,0,digital_ok,,,,,
-45,N,56,102,1,113,C58,N0,0,RF_maintenance,,,,,
+45,N,56,102,1,113,C58,N0,0,digital_ok,,,,,
 46,E,57,110,2,114,C58,E6,0,digital_ok,,,,,
 46,N,57,110,2,114,C58,N4,0,digital_ok,,,,,
-73,E,60,122,3,115,C58,E10,0,RF_maintenance,,,,,
-73,N,60,122,3,115,C58,N8,0,RF_maintenance,,,,,
+73,E,60,122,3,115,C58,E10,0,digital_ok,,,,,
+73,N,60,122,3,115,C58,N8,0,digital_ok,,,,,
 59,E,66,103,4,116,C50,E2,1,RF_maintenance,,,,,
 59,N,66,103,4,116,C50,N0,1,RF_maintenance,,,,,
 58,E,67,118,5,117,C50,E6,1,digital_ok,,,,,
