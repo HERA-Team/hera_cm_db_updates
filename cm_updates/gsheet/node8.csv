@@ -6,8 +6,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
 86,E,37,56,3,12,C23,e10,0,RF_maintenance,,
 86,N,37,56,3,12,C23,n8,0,RF_maintenance,,
 120,E,42,62,4,13,C44,e2,1,RF_maintenance,,Removed Nima's noise source and installed SLP-250+ filter
-120,N,42,62,4,13,C44,n0,1,digital_ok,,Removed Nima's noise source and installed SLP-250+ filter
-104,E,10,61,5,14,C44,e6,1,digital_ok,,
+120,N,42,62,4,13,C44,n0,1,RF_maintenance,,Removed Nima's noise source and installed SLP-250+ filter
+104,E,10,61,5,14,C44,e6,1,RF_maintenance,,
 104,N,10,61,5,14,C44,n4,1,RF_maintenance,,
 103,E,41,34,6,15,C44,e10,1,digital_ok,,Removed Nima's noise source and installed SLP-250+ filter
 103,N,41,34,6,15,C44,n8,1,digital_ok,,
@@ -22,7 +22,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
 123,E,45,65,11,20,C56,e6,3,digital_ok,,
 123,N,45,65,11,20,C56,n4,3,digital_ok,,
 121,E,43,63,12,208,C56,e10,3,digital_ok,,Removed Nima's noise source and installed SLP-250+ filter
-121,N,43,63,12,208,C56,n8,3,RF_maintenance,,
+121,N,43,63,12,208,C56,n8,3,digital_ok,,
 #END,,,,,,,,,,,
 Date:,2019/11/01,,,,,,,,,,
 NCM,1,,,,,,,,,,

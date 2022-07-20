@@ -1451,6 +1451,9 @@ HH100,A,"Fibre switching suggested FEM issue, replaced to FEM347, both pols okay
 HH98,A,"98E no sky: 07/01/22 replaced fiber, feed height = 4.403",infoupd,1341772938
 HH117,A,fibre was broken on the ground next to the node box,infoupd,1341772938
 HH137,A,"Both pols had no sky: 06/30/22 replaced fiber still no sky, 07/01/22 replaced FEM to FEM349, only 137E had spectrum",infoupd,1341772938
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350830538
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350834138
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350834138
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -1526,6 +1529,7 @@ HH121,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1
 HH99,A,116N no sky: 6/30/22 replace fiber,infoupd,1341690138
 HH119,A,"119E no sky, fibre switching showed that the fibre from 119Es FEM to node is broken",infoupd,1341772938
 HH99,A,"Discovered twisted fibre on the ground, although the spectrum looks roughly okay",infoupd,1341772938
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350830538
 ND06,A,Door direction: SE,,1280318418
 HH54,A,Spectre: N4P3E,infoupd,1318668138
 HH223,A,Spectre: N19P5E,infoupd,1320075738
@@ -1600,6 +1604,7 @@ ND07,A,Door direction: N,,1280318418
 HH99,A,"the crew spliced the fibre anyway, potential improvement in bandpass shape to check?",infoupd,1341772940
 HH117,A,"both pols: polished on 06/30/22 through fibre splicing, feed height = 4.409m after raising",infoupd,1341772940
 HH137,A,"137N no sky after replacing fibre and FEM, suspect to still have fibre issue (we did fibre switching test and its not a PAM problem)",infoupd,1341772940
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350830538
 HH54,A,Spectre: N4P3N,infoupd,1318668140
 HH56,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH223,A,Spectre: N19P5N,infoupd,1320075740
@@ -2642,3 +2647,148 @@ HH325,A,SPECTRE: N9P7E,infoupd,1335872540
 HH53,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH329,A,For outrigger,infoupd,1336120942
 HH227,A,Spectre: N20P10N,infoupd,1336124540
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350834138
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350837738
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350837738
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350837738
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350841338
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350841338
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350841338
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350844938
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350844938
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350844938
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350848538
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350848538
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350848538
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350852138
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350852138
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350852138
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350855738
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350855738
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350855738
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350859338
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350859338
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350859338
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350862938
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350862938
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350862938
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350866538
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350866538
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350866538
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350870138
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350870138
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350870138
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350873738
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350873738
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350873738
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350877338
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350877338
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350877338
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350880938
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350880938
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350880938
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350884538
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350884538
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350884538
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350888138
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350888138
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350888138
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350891738
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350891738
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350891738
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350895338
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350895338
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350895338
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350898938
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350898938
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350898938
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350902538
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350902538
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350902538
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350906138
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350906138
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350906138
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350909738
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350909738
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350909738
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350913338
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350913338
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350913338
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350916938
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350916938
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350916938
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350920538
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350920538
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350920538
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350924138
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350924138
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350924138
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350927738
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350927738
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350927738
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350931338
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350931338
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350931338
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350934938
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350934938
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350934938
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350938538
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350938538
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350938538
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350942138
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350942138
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350942138
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350945738
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350945738
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350945738
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350949338
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350949338
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350949338
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350952938
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350952938
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350952938
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350956538
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350956538
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350956538
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350960138
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350960138
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350960138
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350963738
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350963738
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350963738
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350967338
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350967338
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350967338
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350970938
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350970938
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350970938
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350974538
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350974538
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350974538
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350978138
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350978138
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350978138
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350981738
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350981738
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350981738
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350985338
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350985338
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350985338
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350988938
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350988938
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350988938
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350992538
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350992538
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350992538
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350996138
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350996138
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350996138
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350999738
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350999738
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350999738
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351003338
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351003338
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351003338
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351006938
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351006938
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351006938
