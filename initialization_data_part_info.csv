@@ -2845,3 +2845,6 @@ HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,13
 HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351068138
 HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351068138
 HH93,A,FEM141 declared bad and replaced with FEM351,infoupd,1342428140
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351071738
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351071738
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351071738
