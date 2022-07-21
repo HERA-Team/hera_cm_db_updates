@@ -1454,6 +1454,7 @@ HH137,A,"Both pols had no sky: 06/30/22 replaced fiber still no sky, 07/01/22 re
 HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350830538
 HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350834138
 HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1350834138
+HH93,A,FEM141 declared bad and replaced with FEM351,infoupd,1342428138
 HH42,A,Spectre: N4P2N,infoupd,1318668140
 HH237,A,Spectre: N18P12N,infoupd,1318862542
 HH207,A,Spectre: N19P4N,infoupd,1320075742
@@ -2840,3 +2841,7 @@ HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1
 HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351064538
 HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351064538
 HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351064538
+HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351068138
+HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351068138
+HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1351068138
+HH93,A,FEM141 declared bad and replaced with FEM351,infoupd,1342428140
