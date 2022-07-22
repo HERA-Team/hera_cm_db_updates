@@ -18,7 +18,6 @@ setup_args = {
     'packages': ['hera_cm'],
     'scripts': ['scripts/update_info.py',
                 'scripts/update_connect.py',
-                'scripts/apriori_notification.py',
                 'scripts/update_hera_mc_db_repo.sh',
                 'scripts/checkcm.py',
                 'scripts/cat_nodes.py',
