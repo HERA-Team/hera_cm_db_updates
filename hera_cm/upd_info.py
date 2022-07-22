@@ -6,17 +6,6 @@ This class sets up to update the part information database.
 """
 from hera_mc import mc, cm_utils, cm_active
 from . import util, upd_base, cm_gsheet
-import os.path
-import json
-
-
-def _dict2msg(data):
-    msg = f"-------------{data['ant']}: {data['cdate']}  {data['ctime']}\n"
-    msg += f"\t{data['old_status']} --> {data['new_status']}\n"
-    for info in data['info']:
-        msg += f"\t{info}\n"
-    msg += '\n'
-    return msg
 
 
 class UpdateInfo(upd_base.Update):
@@ -28,7 +17,6 @@ class UpdateInfo(upd_base.Update):
                                          script_path=script_path,
                                          verbose=verbose)
         self.new_apriori = {}
-        self.apriori_notify_file = os.path.join(self.script_path, 'apriori_notify.txt')
 
     def load_active(self):
         """Load active data."""
@@ -57,80 +45,6 @@ class UpdateInfo(upd_base.Update):
         for key, val in lnn.items():
             if len(val):
                 self.node_notes[key] = val
-
-    def process_apriori_notification(self, notify_type='new'):
-        """
-        Processes the log apriori updates and send email digest.
-
-        Parameters
-        ----------
-        notify_type : str
-            one of 'either', 'old', 'new':  notify if status in old, new, either
-        """
-        from hera_mc import watch_dog
-
-        anotify = self.handle_apriori_notification_file('read')
-        if not len(anotify):
-            return
-        self.handle_apriori_notification_file('delete')
-        self.load_gworkflow()
-        from_addr = 'hera@lists.berkeley.edu'
-        msg_header = 'Apriori system changes.\n------------------------------\n'
-        for email, n in self.gsheet.apriori_email.items():
-            msg = "{}".format(msg_header)
-            used_antdt = []
-            for antdt, data in anotify.items():
-                if notify_type == 'old':
-                    using = [data['old_status']]
-                elif notify_type == 'new':
-                    using = [data['new_status']]
-                else:
-                    using = [data['old_status'], data['new_status']]
-                for this_status in n.notify:
-                    if this_status in using and antdt not in used_antdt:
-                        msg += _dict2msg(data)
-                        used_antdt.append(antdt)
-            if msg != msg_header:
-                to_addr = [email]
-                watch_dog.send_email(msg_header.splitlines()[0], msg, to_addr,
-                                     from_addr, skip_send=False)
-
-    def handle_apriori_notification_file(self, action='delete'):
-        """
-        Parameter
-        ---------
-        action : str, dict
-            If str, can be read or delete.  If dict, it writes file.
-        """
-        from os import remove
-
-        if isinstance(action, dict):
-            with open(self.apriori_notify_file, 'w') as fp:
-                json.dump(action, fp, indent=4)
-        elif isinstance(action, str):
-            if action == 'read':
-                if os.path.isfile(self.apriori_notify_file):
-                    with open(self.apriori_notify_file, 'r') as fp:
-                        return json.load(fp)
-                else:
-                    return {}
-            elif action == 'delete':
-                if os.path.isfile(self.apriori_notify_file):
-                    remove(self.apriori_notify_file)
-
-    def log_apriori_notifications(self):
-        """
-        Log the found apriori updates to a file with update_info script.
-
-        Gets processed and distributed per "process_apriori_notification".
-        """
-        if not len(self.new_apriori):
-            return
-        full_notify = self.handle_apriori_notification_file('read')
-        for k, v in self.new_apriori.items():
-            new_key = f"{v['ant']}|{v['cdate']}|{v['ctime']}"
-            full_notify[new_key] = v
-        self.handle_apriori_notification_file(full_notify)
 
     def add_apriori(self):
         """Write out for apriori differences."""
