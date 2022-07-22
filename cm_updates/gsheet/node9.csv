@@ -11,8 +11,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,HEIGH
 108,N,22,33,5,39,C11,n4,1,digital_ok,,,,
 91,E,18,35,6,40,C11,e10,1,digital_ok,,,,
 91,N,18,35,6,40,C11,n8,1,digital_ok,,,,
-325,E,276,,7,325,C13,e2,2,dish_ok,,,4.397,N9P7E
-325,N,276,,7,325,C13,n0,2,dish_ok,,,,N9P7N
+325,E,276,,7,325,C13,e2,2,dish_ok,,,,
+325,N,276,,7,325,C13,n0,2,dish_ok,,,,
 124,E,24,32,8,41,C13,e6,2,digital_ok,,,,
 124,N,24,32,8,41,C13,n4,2,digital_ok,,,,
 89,E,16,44,9,23,C13,e10,2,RF_maintenance,,,,
