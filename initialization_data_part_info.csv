@@ -287,6 +287,7 @@ HH11,A,Tension N:W:E (lbs): 335:340:400,,1248696019
 HH11,A,Eye-bolt N:W:E (m): 6.48:6.41:6.33,,1248696020
 HH11,A,RF PWR N: -7.4,,1244462423
 HH11,A,Goodness N: OK?,,1244462424
+HH93,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342979298
 HH12,A,FEM I2C: y,,1244462418
 HH12,A,PAM I2C: y,,1244462419
 HH12,A,RF PWR E: -3.2,,1244462420
@@ -346,6 +347,7 @@ HH25,A,Tension N:W:E (lbs): 370:345:375,,1248696019
 HH25,A,Eye-bolt N:W:E (m): 6.50:6.28:6.23,,1248696020
 HH25,A,RF PWR N: -4.5,,1244462423
 HH25,A,Goodness N: OK?,,1244462424
+HH130,A,apriori_antenna status change: digital_maintenance > digital_ok,apa-infoupd,1342979298
 HH26,A,FEM I2C: n,,1244462418
 HH26,A,PAM I2C: y,,1244462419
 HH26,A,RF PWR E: -0.3,,1244462420
