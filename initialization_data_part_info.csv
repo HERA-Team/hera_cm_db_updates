@@ -316,6 +316,7 @@ HH14,A,Feed Height (m): 4.407,,1248696018
 HH14,A,Tension N:W:E (lbs): 425:365:395,,1248696019
 HH14,A,Eye-bolt N:W:E (m): 6.25:6.24:6.22,,1248696020
 HH14,A,RF PWR N: -14.2,,1244462422
+HH43,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1343072898
 HH14,A,Goodness N: Check!,,1244462423
 HH14,A,Maybe damaged fibre?,,1244462424
 HH23,A,FEM I2C: y,,1244462418
@@ -358,6 +359,7 @@ HH26,A,Tension N:W:E (lbs): 305:455:300,,1248696019
 HH26,A,Eye-bolt N:W:E (m): 6.43:6.17:6.40,,1248696020
 HH26,A,RF PWR N: -4.7,,1244462423
 HH26,A,Goodness N: OK?,,1244462424
+HH44,A,apriori_antenna status change: digital_ok > digital_maintenance,apa-infoupd,1343072898
 HH39,A,FEM I2C: y,,1244462418
 HH39,A,PAM I2C: y,,1244462419
 HH39,A,RF PWR E: -1.7,,1244462420
@@ -720,6 +722,7 @@ N12,A,"no plastic inside node, very dusty inside, bottom temperature sensor has 
 N21,A,"Removed NCM to put in node 4, no plastic inside node, all temperature sensors not taking data",infoupd,1330594938
 N04,A,"WR endpoint is not functioning properly (works as a switch, but not for timing) -- swapped it (NCM4) with the one in node 21 (NCM21), plastic detatched and inside of node very dusty, temperature sensor 1 has broken plastic coating (not a big deal), bottom temperature sensor has no data",infoupd,1330789338
 HH222,A,door closed 25/10/2021,infoupd,1334860938
+HH58,A,apriori_antenna status change: digital_ok > digital_maintenance,apa-infoupd,1343072898
 HH224,A,Spectre: N19P6E,infoupd,1335439818
 HH243,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1335439820
 HH37,A,Spectra: N3P5E,infoupd,1335439818
@@ -845,6 +848,7 @@ HH223,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1319892138
 HH36,A,SNAPloc: 3,infoupd,1264203738
 HH205,A,Spectre: N19P2E,infoupd,1320075738
 HH50,A,SNAPloc: 3,infoupd,1264203738
+HH59,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1343072898
 HH40,A,SNAPloc: 1,infoupd,1264203738
 HH206,A,door closed 08/11/21,infoupd,1320489738
 HH41,A,SNAPloc: 3,infoupd,1264203738
@@ -934,6 +938,7 @@ HH225,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1319892138
 HH92,A,SNAPloc: 0,infoupd,1264203738
 HH205,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1320075740
 HH93,A,SNAPloc: 0,infoupd,1264203738
+HH74,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1343072898
 HH94,A,SNAPloc: 0,infoupd,1264203738
 HH207,A,door closed 08/11/2021,infoupd,1320489738
 HH109,A,SNAPloc: 1,infoupd,1264203738
@@ -1019,6 +1024,7 @@ HH242,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1319892138
 HH155,A,Preliminary specrta looks fine,infoupd,1265132538
 HH205,A,Spectre: N19P2N,infoupd,1320075742
 HH156,A,Preliminary specrta looks fine,infoupd,1265132538
+HH75,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1343072898
 HH157,A,Preliminary specrta looks fine,infoupd,1265132538
 HH223,A,door closed 08/11/2021,infoupd,1320489738
 HH158,A,Preliminary specrta looks fine,infoupd,1265132538
@@ -1369,6 +1375,7 @@ HH35,A,Spectre: N6P3N,infoupd,1329144140
 HH49,A,door closed 18/02/22,infoupd,1329230538
 HH114,A,Spectre: N11P9E,infoupd,1329576140
 N16,A,no temperature sensors,infoupd,1330411338
+HB322,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1343072898
 HH153,A,Feed heights (NE/SE/SW/NW): 4.410,infoupd,1332070938
 HH79,A,Spectre: N11P10N,infoupd,1332517340
 HH152,A,Spectre: N16P7N,infoupd,1332520940
