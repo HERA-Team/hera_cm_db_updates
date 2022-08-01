@@ -1,0 +1,17 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220728_infoupd_1942" >> scripts.log 
+update_apriori.py -p HH43 -s digital_maintenance --date 2022/07/28 --time 19:48
+add_part_info.py -p HH43 -r A -c 'apriori_antenna status change: RF_maintenance > digital_maintenance' -l "apa-infoupd" --date 2022/07/28 --time 19:48
+update_apriori.py -p HH44 -s digital_maintenance --date 2022/07/28 --time 19:48
+add_part_info.py -p HH44 -r A -c 'apriori_antenna status change: digital_ok > digital_maintenance' -l "apa-infoupd" --date 2022/07/28 --time 19:48
+update_apriori.py -p HH58 -s digital_maintenance --date 2022/07/28 --time 19:48
+add_part_info.py -p HH58 -r A -c 'apriori_antenna status change: digital_ok > digital_maintenance' -l "apa-infoupd" --date 2022/07/28 --time 19:48
+update_apriori.py -p HH59 -s digital_maintenance --date 2022/07/28 --time 19:48
+add_part_info.py -p HH59 -r A -c 'apriori_antenna status change: RF_maintenance > digital_maintenance' -l "apa-infoupd" --date 2022/07/28 --time 19:48
+update_apriori.py -p HH74 -s digital_maintenance --date 2022/07/28 --time 19:48
+add_part_info.py -p HH74 -r A -c 'apriori_antenna status change: RF_maintenance > digital_maintenance' -l "apa-infoupd" --date 2022/07/28 --time 19:48
+update_apriori.py -p HH75 -s digital_maintenance --date 2022/07/28 --time 19:48
+add_part_info.py -p HH75 -r A -c 'apriori_antenna status change: RF_maintenance > digital_maintenance' -l "apa-infoupd" --date 2022/07/28 --time 19:48
+update_apriori.py -p HB322 -s digital_maintenance --date 2022/07/28 --time 19:48
+add_part_info.py -p HB322 -r A -c 'apriori_antenna status change: RF_maintenance > digital_maintenance' -l "apa-infoupd" --date 2022/07/28 --time 19:48
