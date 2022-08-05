@@ -907,6 +907,7 @@ HH94,A,Josh noted time variability over a few nights.,infoupd,1334860938
 HH138,A,SNAPloc: 1,infoupd,1264203738
 HH222,A,Feed heights (NE/SE/SW/NW): 4.413,infoupd,1334860942
 HH98,A,SNAPloc: 2,infoupd,1264203738
+HH98,A,apriori_antenna status change: digital_maintenance > digital_ok,apa-infoupd,1343778498
 HH99,A,SNAPloc: 2,infoupd,1264203738
 HH116,A,SNAPloc: 2,infoupd,1264203738
 HH117,A,SNAPloc: 3,infoupd,1264203738
@@ -995,6 +996,7 @@ HH200,A,East channel has low power feed not raised,infoupd,1334860938
 HH180,A,SNAPloc: 3,infoupd,1264236138
 HH222,A,Spectre: N18P9N,infoupd,1334860944
 HH181,A,SNAPloc: 3,infoupd,1264236138
+HH100,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343778498
 HH182,A,SNAPloc: 0,infoupd,1264236138
 HH183,A,SNAPloc: 1,infoupd,1264236138
 HH2,A,ADC is broken!,infoupd,1264264938
@@ -1062,6 +1064,7 @@ HH104,A,Feed down as of 31 Jan 2020,infoupd,1265132538
 HH120,A,east pol has 6 dB pad between PAM and SNAP,infoupd,1330890140
 HH120,A, ,infoupd,1265132538
 HH122,A,Feed down as of 31 Jan 2020,infoupd,1265132538
+HH116,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343778498
 HH106,A,Late Jan 2020 post-PAM spectra show N pol about half the amplitude of E pol. 31Jan2020 Measured center of feed as differing from center of hub by 2-3 cm. Z= [ 4.424 4.423] from hub (spec is 4.428-4.448),infoupd,1265132538
 WRA000758,A,MAC - 08:00:30:b7:11:d0,added,1330768818
 HH183,A,Preliminary post-PAM spectra looks fine,infoupd,1265143338
@@ -1384,6 +1387,7 @@ HH79,A,Spectre: N11P10N,infoupd,1332517340
 HH152,A,Spectre: N16P7N,infoupd,1332520940
 HH201,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1334860942
 HH239,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1334860942
+HH135,A,apriori_antenna status change: digital_ok > digital_maintenance,apa-infoupd,1343778498
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 HH224,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
 HH243,A,Spectre: N19P12N,infoupd,1335439822
@@ -1414,6 +1418,7 @@ HH95,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1332517338
 HH153,A,Spectre: N16P8E,infoupd,1332520938
 HH201,A,Spectre: N18P2N,infoupd,1334860944
 HH239,A,Spectre: N18P10N,infoupd,1334860944
+HH136,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1343778498
 HH120,A,Removed 3dB pad on E pol and 6 dB pad on N pol.,ddb,1335696138
 HH81,A,Removed splitter/power meter on E pol,ddb,1335798738
 HH190,A,Feed conduit fell out,infoupd,1335439818
@@ -1481,6 +1486,7 @@ HH95,A,Spectre: N11P11E,infoupd,1332517340
 HH153,A,Spectre: N16P8N,infoupd,1332520940
 HH202,A,door closed 25/10/2021,infoupd,1334860938
 HH238,A,door closd 25/10/2021,infoupd,1334860938
+HH138,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1343778498
 HH120,A,Hooked up ports 1/2 of Nimas noise generator onto E/N,ddb,1335696738
 HH70,A,Hooked in signal from splitter (shared with noise meter) on E pol,ddb,1335798738
 HH204,A,North channel low,infoupd,1335439818
@@ -1554,6 +1560,7 @@ HH95,A,Spectre: N11P11N,infoupd,1332517342
 HH154,A,Spectre: N16P9E,infoupd,1332520938
 HH202,A,Spectre: N18P3E,infoupd,1334860940
 HH238,A,Spectre: N18P11E,infoupd,1334860940
+HH155,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1343778498
 HH103,A,Hooked up port 3 of Nimas noise generator onto E,ddb,1335696738
 HH205,A,Spectre: N19P2E,infoupd,1335439818
 HH225,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1335439820
@@ -1637,6 +1644,7 @@ HH202,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1334860942
 HH73,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH238,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1334860942
 HH75,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH156,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343778498
 HH81,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH82,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH83,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1739,6 +1747,7 @@ HH202,A,Spectre: N18P3N,infoupd,1334860944
 HH136,A,SNAP specta OK 10 sept,apa-infoupd,1283802138
 HH238,A,Spectre: N18P11N,infoupd,1334860944
 HH92,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805738
+HH157,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343778498
 HH93,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805738
 HH94,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805738
 HH128,A,Looks fine in 59100 notebook,apa-infoupd,1283805738
@@ -1798,6 +1807,7 @@ HH203,A,East channel has low power feed not raised,infoupd,1334860938
 HH94,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
 HH237,A,door closed 25/10/2021,infoupd,1334860938
 HH109,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
+HH158,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343778498
 HH110,A,"Nice post-PAM autos 17 Sept, but SNAP spectra looks wonky",infoupd,1284403338
 HH110,A,OK post-PAM autos 17 Sept,infoupd,1284403340
 HH111,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
