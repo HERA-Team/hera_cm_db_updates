@@ -893,6 +893,7 @@ HH31,A,east pol has a 6 dB pad between PAM and SNAP,infoupd,1330890138
 HH75,A,SNAPloc: 3,infoupd,1264203738
 HH96,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1331541738
 HH76,A,SNAPloc: 3,infoupd,1264203738
+HH3,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343774898
 HH81,A,SNAPloc: 0,infoupd,1264203738
 HH127,A,https://github.com/HERA-Team/HERA_Commissioning/issues/666,infoupd,1331664138
 HH82,A,SNAPloc: 0,infoupd,1264203738
