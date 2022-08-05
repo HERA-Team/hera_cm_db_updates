@@ -389,6 +389,7 @@ HH91,A,Goodness E: NA,,1249041618
 HH91,A,Awaiting cabling and lifting,,1249041619
 HH91,A,Danny Aug 2-5: no fiber,,1249041620
 HH91,A,Goodness N: NA,,1249041621
+HH85,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343771298
 HH105,A,Goodness E: ?,,1249041618
 HH105,A,Not checked (node 9 off the network),,1249041619
 HH105,A,Danny Aug 2-5: ok,,1249041620
@@ -723,6 +724,7 @@ N21,A,"Removed NCM to put in node 4, no plastic inside node, all temperature sen
 N04,A,"WR endpoint is not functioning properly (works as a switch, but not for timing) -- swapped it (NCM4) with the one in node 21 (NCM21), plastic detatched and inside of node very dusty, temperature sensor 1 has broken plastic coating (not a big deal), bottom temperature sensor has no data",infoupd,1330789338
 HH222,A,door closed 25/10/2021,infoupd,1334860938
 HH58,A,apriori_antenna status change: digital_ok > digital_maintenance,apa-infoupd,1343072898
+HH86,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343771298
 HH224,A,Spectre: N19P6E,infoupd,1335439818
 HH243,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1335439820
 HH37,A,Spectra: N3P5E,infoupd,1335439818
