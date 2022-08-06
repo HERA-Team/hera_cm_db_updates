@@ -909,6 +909,7 @@ HH222,A,Feed heights (NE/SE/SW/NW): 4.413,infoupd,1334860942
 HH98,A,SNAPloc: 2,infoupd,1264203738
 HH98,A,apriori_antenna status change: digital_maintenance > digital_ok,apa-infoupd,1343778498
 HH99,A,SNAPloc: 2,infoupd,1264203738
+HH92,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1343839698
 HH116,A,SNAPloc: 2,infoupd,1264203738
 HH117,A,SNAPloc: 3,infoupd,1264203738
 HH118,A,SNAPloc: 3,infoupd,1264203738
@@ -998,6 +999,7 @@ HH222,A,Spectre: N18P9N,infoupd,1334860944
 HH181,A,SNAPloc: 3,infoupd,1264236138
 HH100,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343778498
 HH182,A,SNAPloc: 0,infoupd,1264236138
+HH94,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343839698
 HH183,A,SNAPloc: 1,infoupd,1264236138
 HH2,A,ADC is broken!,infoupd,1264264938
 HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495338
@@ -1090,6 +1092,7 @@ HH158,A,Final spectre looks fine,infoupd,1265467338
 HH158,A,Feed heights (NE/SE/SW/NW): z distance = 4.411,infoupd,1265467340
 HH239,A,door closed 25/10/2021,infoupd,1334860938
 HH177,A,Final spectra looks fine,infoupd,1265467338
+HH112,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343839698
 HH179,A,Final spectre looks fine,infoupd,1265467338
 HH109,A,Door is open,infoupd,1265575338
 HH178,A,No final check spectra - Preliminary specrta looks fine,infoupd,1265575338
@@ -1388,6 +1391,7 @@ HH152,A,Spectre: N16P7N,infoupd,1332520940
 HH201,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1334860942
 HH239,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1334860942
 HH135,A,apriori_antenna status change: digital_ok > digital_maintenance,apa-infoupd,1343778498
+HH127,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343839698
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 HH224,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
 HH243,A,Spectre: N19P12N,infoupd,1335439822
