@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220805_infoupd_2242" >> scripts.log 
+update_apriori.py -p HH3 -s digital_ok --date 2022/08/05 --time 22:48
+add_part_info.py -p HH3 -r A -c 'apriori_antenna status change: RF_maintenance > digital_ok' -l "apa-infoupd" --date 2022/08/05 --time 22:48

@@ -1,0 +1,23 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220805_infoupd_2342" >> scripts.log 
+update_apriori.py -p HH98 -s digital_ok --date 2022/08/05 --time 23:48
+add_part_info.py -p HH98 -r A -c 'apriori_antenna status change: digital_maintenance > digital_ok' -l "apa-infoupd" --date 2022/08/05 --time 23:48
+update_apriori.py -p HH100 -s digital_ok --date 2022/08/05 --time 23:48
+add_part_info.py -p HH100 -r A -c 'apriori_antenna status change: RF_maintenance > digital_ok' -l "apa-infoupd" --date 2022/08/05 --time 23:48
+update_apriori.py -p HH116 -s digital_ok --date 2022/08/05 --time 23:48
+add_part_info.py -p HH116 -r A -c 'apriori_antenna status change: RF_maintenance > digital_ok' -l "apa-infoupd" --date 2022/08/05 --time 23:48
+update_apriori.py -p HH135 -s digital_maintenance --date 2022/08/05 --time 23:48
+add_part_info.py -p HH135 -r A -c 'apriori_antenna status change: digital_ok > digital_maintenance' -l "apa-infoupd" --date 2022/08/05 --time 23:48
+update_apriori.py -p HH136 -s digital_maintenance --date 2022/08/05 --time 23:48
+add_part_info.py -p HH136 -r A -c 'apriori_antenna status change: RF_maintenance > digital_maintenance' -l "apa-infoupd" --date 2022/08/05 --time 23:48
+update_apriori.py -p HH138 -s RF_maintenance --date 2022/08/05 --time 23:48
+add_part_info.py -p HH138 -r A -c 'apriori_antenna status change: digital_ok > RF_maintenance' -l "apa-infoupd" --date 2022/08/05 --time 23:48
+update_apriori.py -p HH155 -s digital_maintenance --date 2022/08/05 --time 23:48
+add_part_info.py -p HH155 -r A -c 'apriori_antenna status change: RF_maintenance > digital_maintenance' -l "apa-infoupd" --date 2022/08/05 --time 23:48
+update_apriori.py -p HH156 -s digital_ok --date 2022/08/05 --time 23:48
+add_part_info.py -p HH156 -r A -c 'apriori_antenna status change: RF_maintenance > digital_ok' -l "apa-infoupd" --date 2022/08/05 --time 23:48
+update_apriori.py -p HH157 -s digital_ok --date 2022/08/05 --time 23:48
+add_part_info.py -p HH157 -r A -c 'apriori_antenna status change: RF_maintenance > digital_ok' -l "apa-infoupd" --date 2022/08/05 --time 23:48
+update_apriori.py -p HH158 -s digital_ok --date 2022/08/05 --time 23:48
+add_part_info.py -p HH158 -r A -c 'apriori_antenna status change: RF_maintenance > digital_ok' -l "apa-infoupd" --date 2022/08/05 --time 23:48
