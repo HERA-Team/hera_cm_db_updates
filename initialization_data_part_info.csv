@@ -911,6 +911,7 @@ HH98,A,apriori_antenna status change: digital_maintenance > digital_ok,apa-infou
 HH99,A,SNAPloc: 2,infoupd,1264203738
 HH92,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1343839698
 HH116,A,SNAPloc: 2,infoupd,1264203738
+HH38,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1344192498
 HH117,A,SNAPloc: 3,infoupd,1264203738
 HH118,A,SNAPloc: 3,infoupd,1264203738
 HH137,A,SNAPloc: 3,infoupd,1264203738
@@ -1001,6 +1002,7 @@ HH100,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1
 HH182,A,SNAPloc: 0,infoupd,1264236138
 HH94,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343839698
 HH183,A,SNAPloc: 1,infoupd,1264236138
+HH50,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1344192498
 HH2,A,ADC is broken!,infoupd,1264264938
 HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495338
 HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495338
@@ -1094,6 +1096,7 @@ HH239,A,door closed 25/10/2021,infoupd,1334860938
 HH177,A,Final spectra looks fine,infoupd,1265467338
 HH112,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343839698
 HH179,A,Final spectre looks fine,infoupd,1265467338
+HH57,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1344192498
 HH109,A,Door is open,infoupd,1265575338
 HH178,A,No final check spectra - Preliminary specrta looks fine,infoupd,1265575338
 HH66,A,loose central line,infoupd,1265575338
@@ -1392,6 +1395,7 @@ HH201,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1334860942
 HH239,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1334860942
 HH135,A,apriori_antenna status change: digital_ok > digital_maintenance,apa-infoupd,1343778498
 HH127,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343839698
+HH67,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1344192498
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 HH224,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
 HH243,A,Spectre: N19P12N,infoupd,1335439822
@@ -1423,6 +1427,7 @@ HH153,A,Spectre: N16P8E,infoupd,1332520938
 HH201,A,Spectre: N18P2N,infoupd,1334860944
 HH239,A,Spectre: N18P10N,infoupd,1334860944
 HH136,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1343778498
+HH145,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1344192498
 HH120,A,Removed 3dB pad on E pol and 6 dB pad on N pol.,ddb,1335696138
 HH81,A,Removed splitter/power meter on E pol,ddb,1335798738
 HH190,A,Feed conduit fell out,infoupd,1335439818
