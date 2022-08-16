@@ -396,6 +396,7 @@ HH105,A,Goodness E: ?,,1249041618
 HH105,A,Not checked (node 9 off the network),,1249041619
 HH105,A,Danny Aug 2-5: ok,,1249041620
 HH105,A,Goodness N: ?,,1249041621
+HH71,A,"RY,F?,TY,WY",infoupd,1344699738
 HH106,A,Goodness E: Bad,,1249041618
 HH106,A,Dead FEM/PAM channel?,,1249041619
 HH106,A,Danny Aug 2-5: ok,,1249041620
@@ -729,6 +730,7 @@ HH222,A,door closed 25/10/2021,infoupd,1334860938
 HH58,A,apriori_antenna status change: digital_ok > digital_maintenance,apa-infoupd,1343072898
 HH86,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343771298
 HH40,A,"RY,FY,TY,WN  Cladding out",infoupd,1344696138
+HH70,A,"RY,F?,TY,WY",infoupd,1344699738
 HH224,A,Spectre: N19P6E,infoupd,1335439818
 HH243,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1335439820
 HH37,A,Spectra: N3P5E,infoupd,1335439818
@@ -922,6 +924,7 @@ HH27,A,RN,infoupd,1344696138
 HH118,A,SNAPloc: 3,infoupd,1264203738
 HH55,A,"RY,FY,TY,WN",infoupd,1344696138
 HH137,A,SNAPloc: 3,infoupd,1264203738
+HH73,A,"RY,FY,TY,WN",infoupd,1344699738
 HH84,A,SNAPloc: 3,infoupd,1264203738
 HH85,A,SNAPloc: 0,infoupd,1264203738
 HH86,A,SNAPloc: 0,infoupd,1264203738
@@ -1014,6 +1017,7 @@ HH2,A,ADC is broken!,infoupd,1264264938
 HH28,A,"RY,FY,TY,WN",infoupd,1344696138
 HH41,A,"RY,FY,TY,WN",infoupd,1344696138
 HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495338
+HH74,A,"RY,FY,TN,WN",infoupd,1344699738
 HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495338
 HH146,A,"SMA and CAT7 cables too short, won't connect feed to node.",infoupd,1264495338
 HH110,A,Was seen as not raised 29 Jan 2020,infoupd,1264948938
@@ -1122,6 +1126,7 @@ HH181,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1265708538
 HH182,A,Feed heights (NE/SE/SW/NW): Z distance =4.415,infoupd,1265708538
 ND04,A,Door direction: NW,,1280318418
 HH57,A,"RY,F?,TY,WN",infoupd,1344696138
+HH75,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344699738
 HH160,A,Final post-PAM spectra looks fine,infoupd,1265726538
 HH50,A,Spectra: N3P12N,infoupd,1318668140
 HH161,A,Final check for 161N has an unexpected dip @ ~70 MHz,infoupd,1265726538
@@ -1410,6 +1415,7 @@ HH127,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1
 HH67,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1344192498
 HH6,A,RN Cables too short,infoupd,1344696138
 HH45,A,"RN,F?,TY,W?",infoupd,1344696138
+EE10005,A,"Is this HH76?  76 feed on the hub, no FEM, has feed pins",infoupd,1344699738
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 HH224,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
 HH243,A,Spectre: N19P12N,infoupd,1335439822
@@ -1444,6 +1450,7 @@ HH136,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-
 HH145,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1344192498
 HH3,A,"RY,FY,TY,WY",infoupd,1344696138
 HH46,A,"RY,FY,TY,WN",infoupd,1344696138
+HH77,A,"History: RY,FB,TY,WY",infoupd,1344699738
 HH120,A,Removed 3dB pad on E pol and 6 dB pad on N pol.,ddb,1335696138
 HH81,A,Removed splitter/power meter on E pol,ddb,1335798738
 HH190,A,Feed conduit fell out,infoupd,1335439818
@@ -1514,6 +1521,7 @@ HH238,A,door closd 25/10/2021,infoupd,1334860938
 HH138,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1343778498
 HH4,A,"RY,FY,TY,WY",infoupd,1344696138
 HH59,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
+HH64,A,"History: RY,FB,TY,WY",infoupd,1344699738
 HH120,A,Hooked up ports 1/2 of Nimas noise generator onto E/N,ddb,1335696738
 HH70,A,Hooked in signal from splitter (shared with noise meter) on E pol,ddb,1335798738
 HH204,A,North channel low,infoupd,1335439818
@@ -1590,6 +1598,7 @@ HH238,A,Spectre: N18P11E,infoupd,1334860940
 HH155,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1343778498
 HH5,A,"RY,FY,TY,WN Fiber has bare spots",infoupd,1344696138
 HH58,A,"RY,FY,TY,WN",infoupd,1344696138
+HH78,A,"History: RY,FB,TY,WY",infoupd,1344699738
 HH103,A,Hooked up port 3 of Nimas noise generator onto E,ddb,1335696738
 HH205,A,Spectre: N19P2E,infoupd,1335439818
 HH225,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1335439820
@@ -1679,6 +1688,7 @@ HH15,A,"RY, FY, TY, WN",infoupd,1344696138
 HH82,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH44,A,"RY,FY,TY,WN",infoupd,1344696138
 HH83,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH81,A,"RY,F?,T?,WY   Torn dish",infoupd,1344699738
 HH100,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH119,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH98,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1784,6 +1794,7 @@ HH16,A,"RY, FY, TY, WN",infoupd,1344696138
 HH94,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805738
 HH60,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH128,A,Looks fine in 59100 notebook,apa-infoupd,1283805738
+HH82,A,"RY,F?,T?,WY   Kinked above RJ45",infoupd,1344699738
 HH129,A,"See nice autos in 59100 notebook, but no z height",apa-infoupd,1283805738
 HH108,A,"nice autos in the 49100 notebook, but in heranow 10Sept2221 Sitetime it looks like 108 is not seeing sky",apa-infoupd,1283805738
 HH122,A,122e is very high and flat in the SNAP spectra 10 Sept 23:32 site time,apa-infoupd,1283809338
@@ -2574,6 +2585,7 @@ N15,A,Snap 0 being is not working tonight -- removed from yaml,infoupd,133486093
 HH86,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,infoupd,1299526938
 HH37,A,"RY,F?,TY,WY",infoupd,1344696138
 HH123,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
+HH79,A,"History: RY,FB,TY,WY",infoupd,1344699738
 HH125,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
 HH0,A,Gratuitous change to test email system.,apa-infoupd,1299555738
 HH2,A,apriori_antenna status change: RF_maintenance > dish_ok,apa-infoupd,1299606198
@@ -2679,6 +2691,7 @@ HH237,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347
 HH78,A,Spectre: N6P12E,infoupd,1329144138
 HH221,A,Feed heights (NE/SE/SW/NW): 4.413,infoupd,1334860942
 HH38,A,"RY,F?,TY,WY",infoupd,1344696138
+HH95,A,"History: RN,FB  Has FEM",infoupd,1344699738
 HH27,A,Antenna is not raised and entire door sector is out.,infoupd,1317994938
 HH41,A,Cables running down from feed are not secured to tether rope.,infoupd,1317994938
 HH108,A,History: The 108 marker fell off of the north pole.,infoupd,1317994938
@@ -2721,11 +2734,16 @@ HH53,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH329,A,For outrigger,infoupd,1336120942
 HH227,A,Spectre: N20P10N,infoupd,1336124540
 HH53,A,"RY,F?,TY,WY - RJ45 tilted",infoupd,1344696138
+HH65,A,"RY,FB,TY,WY",infoupd,1344699738
 HH51,A,"RY,F?,TY,WY",infoupd,1344696138
+HH66,A,"RY,F?,TY,WY",infoupd,1344699738
 HH52,A,"RY,F?,TY,WN Conduit on hub",infoupd,1344696138
+HH67,A,"RY,F?,TY,WY",infoupd,1344699738
 HH93,A,FEM141 declared bad and replaced with FEM351,infoupd,1342428140
 HH36,A,"RY,FY,TY,WN",infoupd,1344696138
+HH68,A,"RY,FY,TY,WN Spring on dish",infoupd,1344699738
 HH50,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
+HH69,A,"RY,F?,TY,WY",infoupd,1344699738
 HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342561698
 HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342561698
 HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342561698

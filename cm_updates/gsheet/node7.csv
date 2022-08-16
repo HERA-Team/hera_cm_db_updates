@@ -1,7 +1,7 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
-81,E,26,17,1,53,C19,e2,0,digital_ok,,Removed splitter/power meter on E pol.
+81,E,26,17,1,53,C19,e2,0,digital_ok,,"RY,F?,T?,WY   Torn dish"
 81,N,26,17,1,53,C19,n0,0,digital_ok,,
-82,E,27,51,2,54,C19,e6,0,RF_maintenance,,
+82,E,27,51,2,54,C19,e6,0,RF_maintenance,,"RY,F?,T?,WY   Kinked above RJ45"
 82,N,27,51,2,54,C19,n4,0,RF_maintenance,,
 83,E,48,37,3,58,C19,e10,0,digital_ok,,
 83,N,48,37,3,58,C19,n8,0,digital_ok,,
