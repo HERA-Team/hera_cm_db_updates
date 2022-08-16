@@ -317,6 +317,7 @@ HH14,A,Tension N:W:E (lbs): 425:365:395,,1248696019
 HH14,A,Eye-bolt N:W:E (m): 6.25:6.24:6.22,,1248696020
 HH14,A,RF PWR N: -14.2,,1244462422
 HH43,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1343072898
+HH42,A,"RY,FY,TY,WN",infoupd,1344696138
 HH14,A,Goodness N: Check!,,1244462423
 HH14,A,Maybe damaged fibre?,,1244462424
 HH23,A,FEM I2C: y,,1244462418
@@ -390,6 +391,7 @@ HH91,A,Awaiting cabling and lifting,,1249041619
 HH91,A,Danny Aug 2-5: no fiber,,1249041620
 HH91,A,Goodness N: NA,,1249041621
 HH85,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343771298
+HH54,A,"RY,FY,TY,WN",infoupd,1344696138
 HH105,A,Goodness E: ?,,1249041618
 HH105,A,Not checked (node 9 off the network),,1249041619
 HH105,A,Danny Aug 2-5: ok,,1249041620
@@ -532,6 +534,7 @@ N20,A,"humidity sensor broken (port 1, temperature measurement is working)",info
 HH123,A,height raised from 4.041m to 4.406m 10/31/19,,1256644818
 N20,A,"humidity sensor broken (port 1, temperature measurement on temperature-humidity sensor is still working)",infoupd,1330767738
 HH88,A,height raised from 4.205m to 4.418m 10/31/19,,1256644818
+HH56,A,"RY,FY,TY,WN",infoupd,1344696138
 HH126,A,height raised from 4.15m to 4.446m 10/31/19,,1256644818
 PAM042,A,"Seems to be broken, so swapped slots with PAM041",,1249898418
 N03,A,Has full set of air curtains.  Fan pipe has extra bends into ground.,,1257678018
@@ -725,6 +728,7 @@ N04,A,"WR endpoint is not functioning properly (works as a switch, but not for t
 HH222,A,door closed 25/10/2021,infoupd,1334860938
 HH58,A,apriori_antenna status change: digital_ok > digital_maintenance,apa-infoupd,1343072898
 HH86,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343771298
+HH40,A,"RY,FY,TY,WN  Cladding out",infoupd,1344696138
 HH224,A,Spectre: N19P6E,infoupd,1335439818
 HH243,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1335439820
 HH37,A,Spectra: N3P5E,infoupd,1335439818
@@ -777,6 +781,7 @@ SNPC000086,A,IP - 10.80.40.111,,1304938828
 HH206,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1319892138
 HH243,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1319895738
 HH204,A,North channel low,infoupd,1320075738
+HH18,A,"RY, FY, TY, WN",infoupd,1344696138
 HH205,A,door closed 08/11/2021,infoupd,1320489738
 HH227,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1320507738
 HH240,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1320568938
@@ -913,7 +918,9 @@ HH92,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,13
 HH116,A,SNAPloc: 2,infoupd,1264203738
 HH38,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1344192498
 HH117,A,SNAPloc: 3,infoupd,1264203738
+HH27,A,RN,infoupd,1344696138
 HH118,A,SNAPloc: 3,infoupd,1264203738
+HH55,A,"RY,FY,TY,WN",infoupd,1344696138
 HH137,A,SNAPloc: 3,infoupd,1264203738
 HH84,A,SNAPloc: 3,infoupd,1264203738
 HH85,A,SNAPloc: 0,infoupd,1264203738
@@ -1004,6 +1011,8 @@ HH94,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,13
 HH183,A,SNAPloc: 1,infoupd,1264236138
 HH50,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1344192498
 HH2,A,ADC is broken!,infoupd,1264264938
+HH28,A,"RY,FY,TY,WN",infoupd,1344696138
+HH41,A,"RY,FY,TY,WN",infoupd,1344696138
 HH139,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495338
 HH159,A,SMA and CAT7 cables too short to connect feed to node,infoupd,1264495338
 HH146,A,"SMA and CAT7 cables too short, won't connect feed to node.",infoupd,1264495338
@@ -1099,6 +1108,7 @@ HH179,A,Final spectre looks fine,infoupd,1265467338
 HH57,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1344192498
 HH109,A,Door is open,infoupd,1265575338
 HH178,A,No final check spectra - Preliminary specrta looks fine,infoupd,1265575338
+HH29,A,"RY,FY,TY,WN",infoupd,1344696138
 HH66,A,loose central line,infoupd,1265575338
 HH86,A,loose central line,infoupd,1265575338
 HH87,A,loose central line,infoupd,1265575338
@@ -1111,6 +1121,7 @@ HH162,A,Feed heights (NE/SE/SW/NW): Z distance = 4.411,infoupd,1265708538
 HH181,A,Feed heights (NE/SE/SW/NW): Z distance = 4.410,infoupd,1265708538
 HH182,A,Feed heights (NE/SE/SW/NW): Z distance =4.415,infoupd,1265708538
 ND04,A,Door direction: NW,,1280318418
+HH57,A,"RY,F?,TY,WN",infoupd,1344696138
 HH160,A,Final post-PAM spectra looks fine,infoupd,1265726538
 HH50,A,Spectra: N3P12N,infoupd,1318668140
 HH161,A,Final check for 161N has an unexpected dip @ ~70 MHz,infoupd,1265726538
@@ -1201,6 +1212,7 @@ HH201,A,Spectre: N18P2E,infoupd,1334860940
 HH125,A,10Mar2020 z = 4.405,infoupd,1267897338
 HH239,A,Spectre: N18P10E,infoupd,1334860940
 HH88,A,11 March 2020 Z= 4.400,infoupd,1267965738
+HH30,A,"RY,FB,TY,WN",infoupd,1344696138
 HH72,A,Spectre: N4P1E,infoupd,1318668138
 HH91,A,11 March 2020 Z=4.411,infoupd,1267965738
 HH238,A,Spectre: N18P11N,infoupd,1318862542
@@ -1396,6 +1408,8 @@ HH239,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1334860942
 HH135,A,apriori_antenna status change: digital_ok > digital_maintenance,apa-infoupd,1343778498
 HH127,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343839698
 HH67,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1344192498
+HH6,A,RN Cables too short,infoupd,1344696138
+HH45,A,"RN,F?,TY,W?",infoupd,1344696138
 HH146,A,"SMA and CAT7 cables too short, wont connect feed to node.",infoupd,1272303738
 HH224,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
 HH243,A,Spectre: N19P12N,infoupd,1335439822
@@ -1428,6 +1442,8 @@ HH201,A,Spectre: N18P2N,infoupd,1334860944
 HH239,A,Spectre: N18P10N,infoupd,1334860944
 HH136,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1343778498
 HH145,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1344192498
+HH3,A,"RY,FY,TY,WY",infoupd,1344696138
+HH46,A,"RY,FY,TY,WN",infoupd,1344696138
 HH120,A,Removed 3dB pad on E pol and 6 dB pad on N pol.,ddb,1335696138
 HH81,A,Removed splitter/power meter on E pol,ddb,1335798738
 HH190,A,Feed conduit fell out,infoupd,1335439818
@@ -1496,6 +1512,8 @@ HH153,A,Spectre: N16P8N,infoupd,1332520940
 HH202,A,door closed 25/10/2021,infoupd,1334860938
 HH238,A,door closd 25/10/2021,infoupd,1334860938
 HH138,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1343778498
+HH4,A,"RY,FY,TY,WY",infoupd,1344696138
+HH59,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH120,A,Hooked up ports 1/2 of Nimas noise generator onto E/N,ddb,1335696738
 HH70,A,Hooked in signal from splitter (shared with noise meter) on E pol,ddb,1335798738
 HH204,A,North channel low,infoupd,1335439818
@@ -1570,6 +1588,8 @@ HH154,A,Spectre: N16P9E,infoupd,1332520938
 HH202,A,Spectre: N18P3E,infoupd,1334860940
 HH238,A,Spectre: N18P11E,infoupd,1334860940
 HH155,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1343778498
+HH5,A,"RY,FY,TY,WN Fiber has bare spots",infoupd,1344696138
+HH58,A,"RY,FY,TY,WN",infoupd,1344696138
 HH103,A,Hooked up port 3 of Nimas noise generator onto E,ddb,1335696738
 HH205,A,Spectre: N19P2E,infoupd,1335439818
 HH225,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1335439820
@@ -1655,7 +1675,9 @@ HH238,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1334860942
 HH75,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH156,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343778498
 HH81,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH15,A,"RY, FY, TY, WN",infoupd,1344696138
 HH82,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH44,A,"RY,FY,TY,WN",infoupd,1344696138
 HH83,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH100,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH119,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1758,7 +1780,9 @@ HH238,A,Spectre: N18P11N,infoupd,1334860944
 HH92,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805738
 HH157,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1343778498
 HH93,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805738
+HH16,A,"RY, FY, TY, WN",infoupd,1344696138
 HH94,A,Not seeing sky in 59100 notebook,apa-infoupd,1283805738
+HH60,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH128,A,Looks fine in 59100 notebook,apa-infoupd,1283805738
 HH129,A,"See nice autos in 59100 notebook, but no z height",apa-infoupd,1283805738
 HH108,A,"nice autos in the 49100 notebook, but in heranow 10Sept2221 Sitetime it looks like 108 is not seeing sky",apa-infoupd,1283805738
@@ -1820,7 +1844,9 @@ HH158,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1
 HH110,A,"Nice post-PAM autos 17 Sept, but SNAP spectra looks wonky",infoupd,1284403338
 HH110,A,OK post-PAM autos 17 Sept,infoupd,1284403340
 HH111,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
+HH17,A,"RY, FY, TY, WN",infoupd,1344696138
 HH112,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
+HH43,A,"RY,FY,TY,WN",infoupd,1344696138
 HH127,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
 HH129,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284403338
 HH45,A,post-PAM spectre looks fine 17 sept,infoupd,1284403338
@@ -1883,7 +1909,9 @@ HH219,A,door closed 25/10/2021,infoupd,1334860938
 HH185,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284486138
 HH237,A,Spectre: N18P12E,infoupd,1334860940
 HH186,A,Nice post-PAM autos 17 Sept,infoupd,1284486138
+HH7,A,"RY,FB,TY,WN",infoupd,1344696138
 HH84,A,Nice post-PAM auto 17 Sept,apa-infoupd,1284486138
+HH22,A,"History: RY,FB,TY,WY Conduit 1 ft below feed",infoupd,1344696138
 HH87,A,Nice post-PAM auto 17 Sept,infoupd,1284486138
 HH12,A,Post-PAM spectra of 18 Sept show both pols looking dead,infoupd,1284493338
 HH23,A,Post-PAM spectra of 18 Sept show both pols low amplitude and showing correct atuo shape,infoupd,1284493338
@@ -1978,6 +2006,8 @@ HH48,A,Spectre: N6P7N,infoupd,1329144140
 HH192,A,Spectre: N16P5E,infoupd,1332517338
 HH219,A,Spectre: N18P5E,infoupd,1334860940
 HH237,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1334860942
+HH8,A,"RY,FB,TY,WN",infoupd,1344696138
+HH34,A,"History: RY,FB,TY,WY",infoupd,1344696138
 HH87,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH201,A,Spectre: N19P3N,infoupd,1335439822
 HH241,A,Spectre: N19P10E,infoupd,1335439818
@@ -2019,6 +2049,8 @@ HH49,A,Spectre: N6P8E,infoupd,1329144138
 HH154,A,Feed heights (NE/SE/SW/NW): 4.400,infoupd,1332517338
 HH219,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1334860942
 HH237,A,Spectre: N18P12N,infoupd,1334860944
+HH9,A,"RY,FB,TY,WN",infoupd,1344696138
+HH35,A,"History: RY,FB,TY,WY",infoupd,1344696138
 HH101,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH207,A,Spectre: N19P4E,infoupd,1335439818
 HH241,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1335439820
@@ -2139,6 +2171,8 @@ HH223,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347
 HH49,A,Spectre: N6P8N,infoupd,1329144140
 HH219,A,Spectre: N18P5N,infoupd,1334860944
 HH321,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1334860938
+HH19,A,"RY,FB,TY,WN",infoupd,1344696138
+HH47,A,"History: RY,FB,TY,WY",infoupd,1344696138
 RD16,A,IP - 10.80.2.216,,1267095678
 HH122,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1335439820
@@ -2159,6 +2193,8 @@ HH224,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347
 HH62,A,Spectre: N6P9E,infoupd,1329144138
 HH220,A,door closed 25/10/2021,infoupd,1334860938
 HH321,A,Spectre: N2P11E,infoupd,1334860940
+HH20,A,"RY,FB,TY,WN",infoupd,1344696138
+HH61,A,"History: RY,FB,TY,WY",infoupd,1344696138
 HH84,A,Installed VLF-180+ onto  both pols,ddb,1335697338
 HH207,A,Spectre: N19P4N,infoupd,1335439822
 HH242,A,Spectre: N19P11E,infoupd,1335439818
@@ -2247,6 +2283,8 @@ WRA000090,A,MAC - 08:00:30:b1:e9:92,,1267095618
 WRA000101,A,MAC - 08:00:30:6e:d7:5e,,1267095618
 WRA000102,A,MAC - 08:00:30:6e:d7:5d,,1267095618
 WRA000102,A,IP - 10.80.2.188,,1267095678
+HH21,A,"RY,FB,TY,WN",infoupd,1344696138
+HH48,A,"History: RY,FB,TY,WY",infoupd,1344696138
 HH51,A,apriori_antenna status change: digital_ok -> RF_maintenance,apa-infoupd,1285947738
 WRA000028,A,IP - 10.80.2.137,,1267095678
 HH51,A,59128 51n is not seeing sky - moved from dig_ok to rf_maint,infoupd,1285951338
@@ -2365,6 +2403,8 @@ HH148,A,Broken fibre report by Thaki on 10/13/20,apa-infoupd,1286642538
 HH63,A,Spectre: N6P10E,infoupd,1329144138
 HH220,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1334860942
 HH323,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1334860938
+HH31,A,"RY,FB,TY,WN",infoupd,1344696138
+HH49,A,"History: RY,FB,TY,WY",infoupd,1344696138
 HH71,A,Spectre: N4P8N,infoupd,1318668140
 HH241,A,Spectre: N19P10E,infoupd,1320075738
 HH228,A,Spectre: N20P11N,infoupd,1321741162
@@ -2373,6 +2413,8 @@ HH63,A,Spectre: N6P10N,infoupd,1329144140
 WRA000087,A,IP - 10.80.2.134,,1267095678
 HH220,A,Spectre: N18P7N,infoupd,1334860944
 HH323,A,Spectre: N2P12E,infoupd,1334860940
+HH32,A,"RY,FB,TY,WN",infoupd,1344696138
+HH62,A,"History: RY,FB,TY,WY",infoupd,1344696138
 HH123,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH223,A,Spectre: N19P5E,infoupd,1335439818
 HH242,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
@@ -2512,7 +2554,9 @@ HH221,A,door closed 25/10/2021,infoupd,1334860938
 HH94,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
 HH323,A,Spectre: N2P12N,infoupd,1334860942
 HH156,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
+HH33,A,"RY,FB,TY,WN",infoupd,1344696138
 HH158,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
+HH63,A,"History: RY,FB,TY,WY",infoupd,1344696138
 HH143,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
 HH70,A,Spectre: N4P9N,infoupd,1318668140
 HH166,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
@@ -2528,6 +2572,7 @@ HH221,A,Spectre: N18P8E,infoupd,1334860940
 HH98,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
 N15,A,Snap 0 being is not working tonight -- removed from yaml,infoupd,1334860938
 HH86,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,infoupd,1299526938
+HH37,A,"RY,F?,TY,WY",infoupd,1344696138
 HH123,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
 HH125,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
 HH0,A,Gratuitous change to test email system.,apa-infoupd,1299555738
@@ -2633,6 +2678,7 @@ HH229,A,Spectre: N20P12N,infoupd,1321741162
 HH237,A,apriori_antenna status change: not_connected > RF_ok,apa-infoupd,1322347398
 HH78,A,Spectre: N6P12E,infoupd,1329144138
 HH221,A,Feed heights (NE/SE/SW/NW): 4.413,infoupd,1334860942
+HH38,A,"RY,F?,TY,WY",infoupd,1344696138
 HH27,A,Antenna is not raised and entire door sector is out.,infoupd,1317994938
 HH41,A,Cables running down from feed are not secured to tether rope.,infoupd,1317994938
 HH108,A,History: The 108 marker fell off of the north pole.,infoupd,1317994938
@@ -2674,7 +2720,12 @@ HH325,A,SPECTRE: N9P7E,infoupd,1335872540
 HH53,A,Installed SLP-250+ on N pol,infoupd,1336056140
 HH329,A,For outrigger,infoupd,1336120942
 HH227,A,Spectre: N20P10N,infoupd,1336124540
+HH53,A,"RY,F?,TY,WY - RJ45 tilted",infoupd,1344696138
+HH51,A,"RY,F?,TY,WY",infoupd,1344696138
+HH52,A,"RY,F?,TY,WN Conduit on hub",infoupd,1344696138
 HH93,A,FEM141 declared bad and replaced with FEM351,infoupd,1342428140
+HH36,A,"RY,FY,TY,WN",infoupd,1344696138
+HH50,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342561698
 HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342561698
 HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342561698
