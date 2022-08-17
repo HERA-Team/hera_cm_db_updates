@@ -1,0 +1,21 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220816_infoupd_1542" >> scripts.log 
+add_part_info.py -p HH79 -r A -c 'History: RY,FB,TY,WY' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH95 -r A -c 'History: RN,FB  Has FEM' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH65 -r A -c 'RY,FB,TY,WY' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH66 -r A -c 'RY,F?,TY,WY' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH67 -r A -c 'RY,F?,TY,WY' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH68 -r A -c 'RY,FY,TY,WN Spring on dish' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH69 -r A -c 'RY,F?,TY,WY' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH71 -r A -c 'RY,F?,TY,WY' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH70 -r A -c 'RY,F?,TY,WY' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH73 -r A -c 'RY,FY,TY,WN' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH74 -r A -c 'RY,FY,TN,WN' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH75 -r A -c 'RY,FY,TY,WN Conduit on hub' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p EE10005 -r A -c 'Is this HH76?  76 feed on the hub, no FEM, has feed pins' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH77 -r A -c 'History: RY,FB,TY,WY' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH64 -r A -c 'History: RY,FB,TY,WY' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH78 -r A -c 'History: RY,FB,TY,WY' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH81 -r A -c 'RY,F?,T?,WY   Torn dish' -l "infoupd" --date 2022/08/16 --time 15:42:00
+add_part_info.py -p HH82 -r A -c 'RY,F?,T?,WY   Kinked above RJ45' -l "infoupd" --date 2022/08/16 --time 15:42:00
