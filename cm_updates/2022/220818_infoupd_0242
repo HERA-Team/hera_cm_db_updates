@@ -1,0 +1,33 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220818_infoupd_0242" >> scripts.log 
+add_part_info.py -p N00 -r A -c 'FEMv2.1 - has charge pumps but with a mitigation circuit designed by Polycom' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N01 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N02 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N03 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N04 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N05 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N06 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N07 -r A -c 'FEMv2.2 - has charge-pumps with a mitigation circuit designed by Cambridge' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N08 -r A -c 'FEMv2.2 - has charge-pumps with a mitigation circuit designed by Cambridge' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N09 -r A -c 'FEMv2.2 - has charge-pumps with a mitigation circuit designed by Cambridge' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N10 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N11 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N12 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N13 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N14 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N15 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N16 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N17 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N18 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N19 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N20 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N21 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N22 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N23 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N24 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N25 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N26 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N27 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N28 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
+add_part_info.py -p N29 -r A -c 'FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels' -l "infoupd" --date 2022/08/18 --time 02:42:00
