@@ -1,0 +1,17 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220829_complete_for_220824_connupd" >> scripts.log 
+
+stop_connection.py -u FDV222 --uprev A --upport terminals -d FEM269 --dnrev A --dnport input --date 2022/08/24 --time 13:30
+stop_connection.py -u FEM269 --uprev A --upport e -d NBP16 --dnrev A --dnport e3 --date 2022/08/24 --time 13:30
+stop_connection.py -u FEM269 --uprev A --upport n -d NBP16 --dnrev A --dnport n3 --date 2022/08/24 --time 13:30
+stop_connection.py -u FEM269 --uprev A --upport pwr -d FPS22 --dnrev A --dnport pwr3 --date 2022/08/24 --time 13:30
+add_connection.py -u FDV276 --uprev A --upport terminals -d FEM269 --dnrev A --dnport input --date 2022/08/24 --time 13:35
+add_connection.py -u FEM269 --uprev A --upport pwr -d FPS02 --dnrev A --dnport pwr7 --date 2022/08/24 --time 13:35
+add_connection.py -u FEM269 --uprev A --upport e -d NBP09 --dnrev A --dnport e7 --date 2022/08/24 --time 13:35
+add_connection.py -u FEM269 --uprev A --upport n -d NBP09 --dnrev A --dnport n7 --date 2022/08/24 --time 13:35
+
+
+
+
+
