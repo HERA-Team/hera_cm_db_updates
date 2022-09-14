@@ -2218,6 +2218,7 @@ HH47,A,"History: RY,FB,TY,WY",infoupd,1344696138
 N04,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N01,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N27,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
+HH134,A,cables too short,infoupd,1347219738
 RD16,A,IP - 10.80.2.216,,1267095678
 HH122,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1335439820
