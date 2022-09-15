@@ -5,7 +5,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 115,N,247,282,2,246,C59,n4,0,,,,,,,
 133,E,239,242,3,,C59,e10,0,,,,,,,
 133,N,239,242,3,,C59,n8,0,,,,,,,
-134,E,242,,4,,C93,e2,1,,,cables too short,,,,
+134,E,242,,4,,C93,e2,1,,,,,,,
 134,N,242,,4,,C93,n0,1,,,,,,,
 97,E,246,233,5,,C93,e6,1,,,,,,,https://drive.google.com/drive/folders/1pPAj9NdAfIqrWvhkdCNFzy2ChZyX06ed?usp=sharing
 97,N,246,233,5,,C93,n4,1,,,,,,,
