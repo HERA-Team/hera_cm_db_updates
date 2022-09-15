@@ -2219,6 +2219,7 @@ N04,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 N01,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N27,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 HH134,A,cables too short,infoupd,1347219738
+N02,A,Updated the WR firmware,infoupd,1347280938
 RD16,A,IP - 10.80.2.216,,1267095678
 HH122,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1335439820
@@ -2244,6 +2245,7 @@ HH61,A,"History: RY,FB,TY,WY",infoupd,1344696138
 N05,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N02,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N28,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
+N04,A,Updated the WR firmware,infoupd,1347280938
 HH84,A,Installed VLF-180+ onto  both pols,ddb,1335697338
 HH207,A,Spectre: N19P4N,infoupd,1335439822
 HH242,A,Spectre: N19P11E,infoupd,1335439818
@@ -2459,6 +2461,7 @@ HH31,A,"RY,FB,TY,WN",infoupd,1344696138
 HH49,A,"History: RY,FB,TY,WY",infoupd,1344696138
 N07,A,FEMv2.2 - has charge-pumps with a mitigation circuit designed by Cambridge,infoupd,1344825738
 N04,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
+N06,A,Updated the WR firmware,infoupd,1347280938
 HH71,A,Spectre: N4P8N,infoupd,1318668140
 HH241,A,Spectre: N19P10E,infoupd,1320075738
 HH228,A,Spectre: N20P11N,infoupd,1321741162
@@ -2471,6 +2474,7 @@ HH32,A,"RY,FB,TY,WN",infoupd,1344696138
 HH62,A,"History: RY,FB,TY,WY",infoupd,1344696138
 N08,A,FEMv2.2 - has charge-pumps with a mitigation circuit designed by Cambridge,infoupd,1344825738
 N05,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
+N07,A,Added the additional foam runners on the PAMs,infoupd,1347280938
 HH123,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH223,A,Spectre: N19P5E,infoupd,1335439818
 HH242,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
@@ -2646,6 +2650,7 @@ HH0,A,Testing the full automation,apa-infoupd,1299634940
 HH2,A,Another test of apriori mis-match warning,apa-infoupd,1299634938
 HH0,A,apriori_antenna status change: dish_ok > RF_maintenance,apa-infoupd,1299645798
 N07,A,PAMv2 - supplied by 8V rails. High power consumption producing ~+25dBm P1dB at output,infoupd,1344826758
+N08,A,Added the additional foam runners on the PAMs,infoupd,1347280938
 HH81,A,Hooked in signal from splitter (shared with noise meter) on E pol,ddb,1335697938
 HH223,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1335439820
 HH242,A,Spectre: N19P11N,infoupd,1335439822
@@ -2774,6 +2779,7 @@ N04,A,"WR endpoint is not functioning properly (works as a switch, but not for t
 N21,A,Removed NCM to put in node 4,infoupd,1318524138
 N15,A,Snap 0 being is not working tonight -- removed from yaml,infoupd,1318527738
 N08,A,PAMv2 - supplied by 8V rails. High power consumption producing ~+25dBm P1dB at output,infoupd,1344826758
+N09,A,Added the additional foam runners on the PAMs,infoupd,1347280938
 HH223,A,Spectre: N19P5N,infoupd,1335439822
 HH243,A,Spectre: N19P12E,infoupd,1335439818
 HH68,A,Spectra: N3P4N,infoupd,1335439820
@@ -2788,6 +2794,7 @@ HH53,A,"RY,F?,TY,WY - RJ45 tilted",infoupd,1344696138
 HH65,A,"RY,FB,TY,WY",infoupd,1344699738
 N12,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N09,A,PAMv2 - supplied by 8V rails. High power consumption producing ~+25dBm P1dB at output,infoupd,1344826758
+N10,A,Updated the WR firmware,infoupd,1347280938
 HH51,A,"RY,F?,TY,WY",infoupd,1344696138
 HH66,A,"RY,F?,TY,WY",infoupd,1344699738
 N13,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
