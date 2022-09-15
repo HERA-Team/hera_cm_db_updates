@@ -1,0 +1,10 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220915_infoupd_1242" >> scripts.log 
+add_part_info.py -p N02 -r A -c 'Updated the WR firmware' -l "infoupd" --date 2022/09/15 --time 12:42:00
+add_part_info.py -p N04 -r A -c 'Updated the WR firmware' -l "infoupd" --date 2022/09/15 --time 12:42:00
+add_part_info.py -p N06 -r A -c 'Updated the WR firmware' -l "infoupd" --date 2022/09/15 --time 12:42:00
+add_part_info.py -p N07 -r A -c 'Added the additional foam runners on the PAMs' -l "infoupd" --date 2022/09/15 --time 12:42:00
+add_part_info.py -p N08 -r A -c 'Added the additional foam runners on the PAMs' -l "infoupd" --date 2022/09/15 --time 12:42:00
+add_part_info.py -p N09 -r A -c 'Added the additional foam runners on the PAMs' -l "infoupd" --date 2022/09/15 --time 12:42:00
+add_part_info.py -p N10 -r A -c 'Updated the WR firmware' -l "infoupd" --date 2022/09/15 --time 12:42:00

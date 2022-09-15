@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220914_infoupd_1942" >> scripts.log 
+add_part_info.py -p HH134 -r A -c 'cables too short' -l "infoupd" --date 2022/09/14 --time 19:42:00
