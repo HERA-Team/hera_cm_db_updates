@@ -1,0 +1,28 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220916_connupd_1635" >> scripts.log 
+# add parts for gsheet_not_active
+add_part.py -p PAM359 -r A -t post-amp -m PAM359 --date 2022/09/16 --time 15:35
+add_part.py -p PAM361 -r A -t post-amp -m PAM361 --date 2022/09/16 --time 15:35
+# add connections for gsheet_not_active
+add_connection.py -u NBP05 --uprev A --upport E9 -d PAM359 --dnrev A --dnport e --date 2022/09/16 --time 16:35
+add_connection.py -u NBP05 --uprev A --upport N9 -d PAM359 --dnrev A --dnport n --date 2022/09/16 --time 16:35
+add_connection.py -u NBP05 --uprev A --upport E12 -d PAM361 --dnrev A --dnport e --date 2022/09/16 --time 16:35
+add_connection.py -u NBP05 --uprev A --upport N12 -d PAM361 --dnrev A --dnport n --date 2022/09/16 --time 16:35
+add_connection.py -u PAM359 --uprev A --upport slot -d PCH06 --dnrev A --dnport slot9 --date 2022/09/16 --time 16:35
+add_connection.py -u PAM359 --uprev A --upport e -d SNPC000032 --dnrev A --dnport e10 --date 2022/09/16 --time 16:35
+add_connection.py -u PAM359 --uprev A --upport n -d SNPC000032 --dnrev A --dnport n8 --date 2022/09/16 --time 16:35
+add_connection.py -u PAM361 --uprev A --upport slot -d PCH06 --dnrev A --dnport slot12 --date 2022/09/16 --time 16:35
+add_connection.py -u PAM361 --uprev A --upport e -d SNPC000018 --dnrev A --dnport e10 --date 2022/09/16 --time 16:35
+add_connection.py -u PAM361 --uprev A --upport n -d SNPC000018 --dnrev A --dnport n8 --date 2022/09/16 --time 16:35
+# stop connections for active_not_gsheet
+stop_connection.py -u PAM132 --uprev A --upport slot -d PCH06 --dnrev A --dnport slot12 --date 2022/09/16 --time 16:35
+stop_connection.py -u PAM132 --uprev A --upport e -d SNPC000018 --dnrev A --dnport e10 --date 2022/09/16 --time 16:35
+stop_connection.py -u PAM132 --uprev A --upport n -d SNPC000018 --dnrev A --dnport n8 --date 2022/09/16 --time 16:35
+stop_connection.py -u NBP05 --uprev A --upport e9 -d PAM121 --dnrev A --dnport e --date 2022/09/16 --time 16:35
+stop_connection.py -u NBP05 --uprev A --upport n9 -d PAM121 --dnrev A --dnport n --date 2022/09/16 --time 16:35
+stop_connection.py -u NBP05 --uprev A --upport e12 -d PAM132 --dnrev A --dnport e --date 2022/09/16 --time 16:35
+stop_connection.py -u NBP05 --uprev A --upport n12 -d PAM132 --dnrev A --dnport n --date 2022/09/16 --time 16:35
+stop_connection.py -u PAM121 --uprev A --upport n -d SNPC000032 --dnrev A --dnport n8 --date 2022/09/16 --time 16:35
+stop_connection.py -u PAM121 --uprev A --upport e -d SNPC000032 --dnrev A --dnport e10 --date 2022/09/16 --time 16:35
+stop_connection.py -u PAM121 --uprev A --upport slot -d PCH06 --dnrev A --dnport slot9 --date 2022/09/16 --time 16:35
