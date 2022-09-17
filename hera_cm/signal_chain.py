@@ -657,10 +657,11 @@ class Update:
         """
         if not len(note.strip()):
             return
+        note = note.replace("'", "").replace('"', "")
         if ref is None:
             ref = ''
         else:
-            ref = '-l "{}" '.format(ref)
+            ref = '-l "{}" '.format(ref.replace("'" "").replace('"', ""))
         self.fp.write("add_part_info.py -p {} -r {} -c '{}' {}--date {} --time {}\n"
                       .format(hpn, rev, note, ref, cdate, ctime))
 
