@@ -1,0 +1,6 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220917_infoupd_1006" >> scripts.log 
+add_part_info.py -p N02 -r A -c 'PAMs removed for retrofit.  NCM removed again.' -l "infoupd" --date 2022/09/17 --time 10:06:00
+add_part_info.py -p N10 -r A -c 'PAMs removed for retrofit. Many optical fibers were loose upon PAM removal' -l "infoupd" --date 2022/09/17 --time 10:06:00
+add_part_info.py -p N11 -r A -c 'PAMs removed (yesterday) for retrofit' -l "infoupd" --date 2022/09/17 --time 10:06:00
