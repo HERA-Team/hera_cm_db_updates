@@ -1,0 +1,12 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220917_connupd_0635" >> scripts.log 
+# add parts for gsheet_not_active
+add_part.py -p PAM360 -r A -t post-amp -m PAM360 --date 2022/09/17 --time 05:35
+# add connections for gsheet_not_active
+add_connection.py -u NBP18 --uprev A --upport E4 -d PAM360 --dnrev A --dnport e --date 2022/09/17 --time 06:35
+add_connection.py -u NBP18 --uprev A --upport N4 -d PAM360 --dnrev A --dnport n --date 2022/09/17 --time 06:35
+add_connection.py -u PAM360 --uprev A --upport slot -d PCH15 --dnrev A --dnport slot4 --date 2022/09/17 --time 06:35
+add_connection.py -u PAM360 --uprev A --upport e -d SNPC000114 --dnrev A --dnport e2 --date 2022/09/17 --time 06:35
+add_connection.py -u PAM360 --uprev A --upport n -d SNPC000114 --dnrev A --dnport n0 --date 2022/09/17 --time 06:35
+# stop connections for active_not_gsheet
