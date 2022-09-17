@@ -661,7 +661,7 @@ class Update:
         if ref is None:
             ref = ''
         else:
-            ref = '-l "{}" '.format(ref.replace("'" "").replace('"', ""))
+            ref = '-l "{}" '.format(ref.replace("'", "").replace('"', ""))
         self.fp.write("add_part_info.py -p {} -r {} -c '{}' {}--date {} --time {}\n"
                       .format(hpn, rev, note, ref, cdate, ctime))
 
