@@ -408,6 +408,7 @@ HH107,A,Not checked (node 9 off the network). Was re-done since E passband was s
 HH107,A,Danny Aug 2-5: ok,,1249041620
 HH107,A,Goodness N: ?,,1249041621
 HH107,A,Not checked (node 9 off the network). It was fine before.,,1249041622
+N06,A,PAMs removed for retrofit,infoupd,1347424938
 HH108,A,Goodness E: ?,,1249041618
 HH108,A,It was fine before. Not checked (node 9 off the network). Had to be re-lifted due to a broken eye bolt in one of the poles (related to removal of the springs? -> it broke twice!),,1249041619
 HH108,A,Danny Aug 2-5: ok,,1249041620
@@ -735,6 +736,7 @@ HH40,A,"RY,FY,TY,WN  Cladding out",infoupd,1344696138
 HH70,A,"RY,F?,TY,WY",infoupd,1344699738
 N18,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N15,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
+N09,A,Door fixed by crew,infoupd,1347424938
 HH224,A,Spectre: N19P6E,infoupd,1335439818
 HH243,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1335439820
 HH37,A,Spectra: N3P5E,infoupd,1335439818
@@ -1032,6 +1034,7 @@ HH110,A,Was seen as not raised 29 Jan 2021,infoupd,1264948940
 HH127,A,Was seen as not raised 29 Jan 2021,infoupd,1264948938
 HH127,A,Was seen as not raised 29 Jan 2022,infoupd,1264948940
 HH24,A,No central line for this feed,infoupd,1265056938
+N10,A,Danny jiggled plugs enough to make work.,infoupd,1347424938
 HH65,A,65E looks dead,infoupd,1265056938
 HH42,A,43E looks dead,infoupd,1265056938
 HH55,A,55N looks dead,infoupd,1265056938
@@ -1614,6 +1617,7 @@ HH58,A,"RY,FY,TY,WN",infoupd,1344696138
 HH78,A,"History: RY,FB,TY,WY",infoupd,1344699738
 N24,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N20,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
+N10,A,"Power off on PAM/FEM inside, but doesnt seem to turn on -- NCM relays bad?",infoupd,1347352938
 HH103,A,Hooked up port 3 of Nimas noise generator onto E,ddb,1335696738
 HH205,A,Spectre: N19P2E,infoupd,1335439818
 HH225,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1335439820
@@ -1709,6 +1713,7 @@ N25,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 HH119,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 N21,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 HH98,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+N12,A,NCM removed for update,infoupd,1347352938
 HH99,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH117,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH118,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1817,6 +1822,7 @@ N26,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 HH108,A,"nice autos in the 49100 notebook, but in heranow 10Sept2221 Sitetime it looks like 108 is not seeing sky",apa-infoupd,1283805738
 N22,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 HH122,A,122e is very high and flat in the SNAP spectra 10 Sept 23:32 site time,apa-infoupd,1283809338
+N16,A,NCM removed for update,infoupd,1347352938
 HH46,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
 HH58,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
 HH59,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
@@ -1884,6 +1890,7 @@ N27,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 HH45,A,post-PAM spectre looks fine 17 sept,infoupd,1284403338
 N23,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 HH59,A,59E has rising tail in 17 spet post-pam spectre,infoupd,1284403338
+N17,A,NCM moved to node 18,infoupd,1347352938
 HH155,A,low post-PAM auto 17 Sept,infoupd,1284482538
 HH156,A,Nice post-PAM auto 17 Sept,infoupd,1284482538
 HH156,A,low post-PAM auto 17 Sept,infoupd,1284482540
@@ -1954,6 +1961,7 @@ N28,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 HH38,A,post-PAM spectra of 18 Sept show nice E spectra; N looks dead,apa-infoupd,1284493338
 N24,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 HH41,A,Looks fine in 18 Sept post-PAM sprectra,infoupd,1284493338
+N18,A,NCM removed last night.  NCM from 17 moved here.,infoupd,1347352938
 HH42,A,42 E looks dead and spiky in 18 Sept post-PAM spectre,infoupd,1284493338
 HH42,A,42 N looks ok (not great) in 18 Sept post-PAM spectre,infoupd,1284493340
 HH56,A,Looks fine in 18 Sept post_PAM spectre,infoupd,1284493338
@@ -2047,6 +2055,7 @@ HH34,A,"History: RY,FB,TY,WY",infoupd,1344696138
 N02,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N29,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N25,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
+N19,A,NCM removed for update,infoupd,1347352938
 HH87,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH201,A,Spectre: N19P3N,infoupd,1335439822
 HH241,A,Spectre: N19P10E,infoupd,1335439818
@@ -2817,6 +2826,7 @@ HH50,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH69,A,"RY,F?,TY,WY",infoupd,1344699738
 N16,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N13,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
+N05,A,PAMs removed for retrofit,infoupd,1347424938
 HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342561698
 HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342561698
 HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342561698
