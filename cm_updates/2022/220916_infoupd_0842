@@ -1,0 +1,12 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220916_infoupd_0842" >> scripts.log 
+add_part_info.py -p N03 -r A -c 'PAMs removed for retrofit' -l "infoupd" --date 2022/09/16 --time 08:42:00
+add_part_info.py -p N04 -r A -c 'PAMs removed for retrofit. Power was off for PAM/FEM inside.' -l "infoupd" --date 2022/09/16 --time 08:42:00
+add_part_info.py -p N09 -r A -c 'Door broken' -l "infoupd" --date 2022/09/16 --time 08:42:00
+add_part_info.py -p N10 -r A -c 'Power off on PAM/FEM inside, but doesnt seem to turn on -- NCM relays bad?' -l "infoupd" --date 2022/09/16 --time 08:42:00
+add_part_info.py -p N12 -r A -c 'NCM removed for update' -l "infoupd" --date 2022/09/16 --time 08:42:00
+add_part_info.py -p N16 -r A -c 'NCM removed for update' -l "infoupd" --date 2022/09/16 --time 08:42:00
+add_part_info.py -p N17 -r A -c 'NCM moved to node 18' -l "infoupd" --date 2022/09/16 --time 08:42:00
+add_part_info.py -p N18 -r A -c 'NCM removed last night.  NCM from 17 moved here.' -l "infoupd" --date 2022/09/16 --time 08:42:00
+add_part_info.py -p N19 -r A -c 'NCM removed for update' -l "infoupd" --date 2022/09/16 --time 08:42:00
