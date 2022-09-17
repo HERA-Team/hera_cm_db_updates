@@ -3,10 +3,12 @@ source ~/.bashrc
 echo "/home/obs/src/hera_cm_db_updates/220915_connupd_1235" >> scripts.log 
 # add parts for gsheet_not_active
 add_part.py -p SNPC000114 -r A -t snap -m SNPC000114 --date 2022/09/15 --time 11:35
+# stop connections for active_not_gsheet
+stop_connection.py -u SNPC000065 --uprev A --upport rack -d N18 --dnrev A --dnport loc1 --date 2022/09/15 --time 12:30
+stop_connection.py -u PAM237 --uprev A --upport e -d SNPC000065 --dnrev A --dnport e6 --date 2022/09/15 --time 12:30
+stop_connection.py -u PAM237 --uprev A --upport n -d SNPC000065 --dnrev A --dnport n4 --date 2022/09/15 --time 12:30
 # add connections for gsheet_not_active
 add_connection.py -u SNPC000114 --uprev A --upport rack -d N18 --dnrev A --dnport loc1 --date 2022/09/15 --time 12:35
 add_connection.py -u PAM237 --uprev A --upport e -d SNPC000114 --dnrev A --dnport e6 --date 2022/09/15 --time 12:35
 add_connection.py -u PAM237 --uprev A --upport n -d SNPC000114 --dnrev A --dnport n4 --date 2022/09/15 --time 12:35
-# stop connections for active_not_gsheet
-stop_connection.py -u PAM237 --uprev A --upport e -d SNPC000065 --dnrev A --dnport e6 --date 2022/09/15 --time 12:35
-stop_connection.py -u PAM237 --uprev A --upport n -d SNPC000065 --dnrev A --dnport n4 --date 2022/09/15 --time 12:35
+
