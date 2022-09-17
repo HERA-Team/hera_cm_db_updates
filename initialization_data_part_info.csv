@@ -2102,6 +2102,8 @@ HH35,A,"History: RY,FB,TY,WY",infoupd,1344696138
 N03,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N00,A,PAMv2 - supplied by 8V rails. High power consumption producing ~+25dBm P1dB at output,infoupd,1344826758
 N26,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
+N02,A,PAMs removed for retrofit.  NCM removed again.,infoupd,1347444378
+N01,A,PAMs removed for retrofit.,infoupd,1347446538
 HH101,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH207,A,Spectre: N19P4E,infoupd,1335439818
 HH241,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1335439820
@@ -2229,6 +2231,7 @@ N01,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+
 N27,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 HH134,A,cables too short,infoupd,1347219738
 N02,A,Updated the WR firmware,infoupd,1347280938
+N10,A,PAMs removed for retrofit. Many optical fibers were loose upon PAM removal,infoupd,1347444378
 RD16,A,IP - 10.80.2.216,,1267095678
 HH122,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1335439820
@@ -2255,6 +2258,7 @@ N05,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 N02,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N28,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N04,A,Updated the WR firmware,infoupd,1347280938
+N11,A,PAMs removed (yesterday) for retrofit,infoupd,1347444378
 HH84,A,Installed VLF-180+ onto  both pols,ddb,1335697338
 HH207,A,Spectre: N19P4N,infoupd,1335439822
 HH242,A,Spectre: N19P11E,infoupd,1335439818
