@@ -2102,6 +2102,10 @@ HH35,A,"History: RY,FB,TY,WY",infoupd,1344696138
 N03,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N00,A,PAMv2 - supplied by 8V rails. High power consumption producing ~+25dBm P1dB at output,infoupd,1344826758
 N26,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
+N02,A,PAMs removed for retrofit.  NCM removed again.,infoupd,1347444378
+N01,A,PAMs removed for retrofit.,infoupd,1347446538
+N02,A,NCM re-removed and re-updated.  Seems to work.,infoupd,1347457338
+N11,A,NCM removed for update,infoupd,1347464538
 HH101,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH207,A,Spectre: N19P4E,infoupd,1335439818
 HH241,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1335439820
@@ -2229,6 +2233,8 @@ N01,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+
 N27,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 HH134,A,cables too short,infoupd,1347219738
 N02,A,Updated the WR firmware,infoupd,1347280938
+N10,A,PAMs removed for retrofit. Many optical fibers were loose upon PAM removal,infoupd,1347444378
+N02,A,SNAP3 1PPS connection is somewhat flaky at NCM,infoupd,1347457340
 RD16,A,IP - 10.80.2.216,,1267095678
 HH122,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH207,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1335439820
@@ -2255,6 +2261,9 @@ N05,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 N02,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N28,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N04,A,Updated the WR firmware,infoupd,1347280938
+N11,A,PAMs removed (yesterday) for retrofit,infoupd,1347444378
+N12,A,PAMs removed for retrofit,infoupd,1347457338
+N14,A,PAMS removed for retrofit,infoupd,1347464538
 HH84,A,Installed VLF-180+ onto  both pols,ddb,1335697338
 HH207,A,Spectre: N19P4N,infoupd,1335439822
 HH242,A,Spectre: N19P11E,infoupd,1335439818
@@ -2471,6 +2480,8 @@ HH49,A,"History: RY,FB,TY,WY",infoupd,1344696138
 N07,A,FEMv2.2 - has charge-pumps with a mitigation circuit designed by Cambridge,infoupd,1344825738
 N04,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N06,A,Updated the WR firmware,infoupd,1347280938
+N13,A,PAMs removed for retrofit,infoupd,1347457338
+N15,A,PAMS removed for retrofit,infoupd,1347464538
 HH71,A,Spectre: N4P8N,infoupd,1318668140
 HH241,A,Spectre: N19P10E,infoupd,1320075738
 HH228,A,Spectre: N20P11N,infoupd,1321741162
@@ -2484,6 +2495,7 @@ HH62,A,"History: RY,FB,TY,WY",infoupd,1344696138
 N08,A,FEMv2.2 - has charge-pumps with a mitigation circuit designed by Cambridge,infoupd,1344825738
 N05,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N07,A,Added the additional foam runners on the PAMs,infoupd,1347280938
+N15,A,NCM removed for update,infoupd,1347464540
 HH123,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH223,A,Spectre: N19P5E,infoupd,1335439818
 HH242,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
