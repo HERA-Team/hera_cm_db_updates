@@ -2672,6 +2672,7 @@ HH2,A,Another test of apriori mis-match warning,apa-infoupd,1299634938
 HH0,A,apriori_antenna status change: dish_ok > RF_maintenance,apa-infoupd,1299645798
 N07,A,PAMv2 - supplied by 8V rails. High power consumption producing ~+25dBm P1dB at output,infoupd,1344826758
 N08,A,Added the additional foam runners on the PAMs,infoupd,1347280938
+N16,A,PAMs removed for retrofit.,infoupd,1347536538
 HH81,A,Hooked in signal from splitter (shared with noise meter) on E pol,ddb,1335697938
 HH223,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1335439820
 HH242,A,Spectre: N19P11N,infoupd,1335439822
@@ -2801,6 +2802,7 @@ N21,A,Removed NCM to put in node 4,infoupd,1318524138
 N15,A,Snap 0 being is not working tonight -- removed from yaml,infoupd,1318527738
 N08,A,PAMv2 - supplied by 8V rails. High power consumption producing ~+25dBm P1dB at output,infoupd,1344826758
 N09,A,Added the additional foam runners on the PAMs,infoupd,1347280938
+N18,A,PAMs removed for retrofit.,infoupd,1347536538
 HH223,A,Spectre: N19P5N,infoupd,1335439822
 HH243,A,Spectre: N19P12E,infoupd,1335439818
 HH68,A,Spectra: N3P4N,infoupd,1335439820
@@ -2816,24 +2818,28 @@ HH65,A,"RY,FB,TY,WY",infoupd,1344699738
 N12,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N09,A,PAMv2 - supplied by 8V rails. High power consumption producing ~+25dBm P1dB at output,infoupd,1344826758
 N10,A,Updated the WR firmware,infoupd,1347280938
+N18,A,Original NCM returned,infoupd,1347536540
 HH51,A,"RY,F?,TY,WY",infoupd,1344696138
 HH66,A,"RY,F?,TY,WY",infoupd,1344699738
 N13,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N10,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N08,A,Removed chokes from node cables,infoupd,1347291738
 N03,A,PAMs removed for retrofit,infoupd,1347352938
+N19,A,PAMs removed for retrofit.,infoupd,1347536538
 HH52,A,"RY,F?,TY,WN Conduit on hub",infoupd,1344696138
 HH67,A,"RY,F?,TY,WY",infoupd,1344699738
 N14,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N11,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N09,A,Removed chokes from node cables,infoupd,1347291738
 N04,A,PAMs removed for retrofit. Power was off for PAM/FEM inside.,infoupd,1347352938
+N20,A,PAMs removed for retrofit.,infoupd,1347536538
 HH93,A,FEM141 declared bad and replaced with FEM351,infoupd,1342428140
 HH36,A,"RY,FY,TY,WN",infoupd,1344696138
 HH68,A,"RY,FY,TY,WN Spring on dish",infoupd,1344699738
 N15,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N12,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N09,A,Door broken,infoupd,1347352938
+N21,A,NCM removed for update.,infoupd,1347536538
 HH50,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH69,A,"RY,F?,TY,WY",infoupd,1344699738
 N16,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
