@@ -8,12 +8,10 @@ import datetime
 import argparse
 
 
-def reduce_log_line(line):
-    if line.startswith('#') or 'bash' in line:
-        return None
+def include_this_line_in_log(line):
     if 'date' in line and 'time' in line:
-        return line.split('--date')[0].strip()
-    return None
+        return True
+    return False
 
 
 command_args = {'add_part_info': [['-p', '--hpn',

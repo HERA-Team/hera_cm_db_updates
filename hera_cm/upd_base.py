@@ -69,12 +69,9 @@ class Update():
         from hera_mc import watch_dog
         dlog = self.r.hgetall('cm_period_log')
         lines = []
-        reduced = []
         for key in sorted(dlog.keys()):
             this_line = dlog[key]
-            this_line_reduced = util.reduce_log_line(this_line)
-            if this_line_reduced is not None and this_line_reduced not in reduced:
-                reduced.append(this_line_reduced)
+            if util.include_this_line_in_log(this_line):
                 lines.append(this_line)
         if not len(lines):
             return
