@@ -14,94 +14,33 @@ def include_this_line_in_log(line):
     return False
 
 
-command_args = {'add_part_info': [['-p', '--hpn',
-                                   {'help': "HERA part number", 'default': None}],
-                                  ['-r', '--rev',
-                                   {'help': "Revision of part", 'default': "last"}],
-                                  ['-c', '--comment',
-                                   {'help': "Comment on part", 'default': None}],
-                                  ['-l', '--reference',
-                                   {'help': "Library filename", 'default': None}]],
-                'add_part': [['-p', '--hpn',
-                              {'help': "HERA part number", 'default': None}],
-                             ['-r', '--rev',
-                              {'help': "Revision of part", 'default': "last"}],
-                             ['-t', '--hptype',
-                              {'help': "HERA part type", 'default': None}],
-                             ['-m', '--mfg',
-                              {'help': "Manufacturers number for part", 'default': None}]
-                             ],
-                'stop_part': [['-p', '--hpn',
-                               {'help': "HERA part number", 'default': None}],
-                              ['-r', '--rev',
-                               {'help': "Revision of part", 'default': "last"}]
-                              ],
-                'add_connection': [['-u', '--uppart',
-                                    {'help': "Upstream part number", 'default': None}],
-                                   ['--uprev',
-                                    {'help': "Upstream part revision", 'default': None}],
-                                   ['--upport',
-                                    {'help': "Upstream output port", 'default': None}],
-                                   ['-d', '--dnpart',
-                                    {'help': "Downstream part number", 'default': None}],
-                                   ['--dnrev',
-                                    {'help': "Downstream part revision", 'default': None}],
-                                   ['--dnport',
-                                    {'help': "Downstream input port", 'default': None}],
-                                   ],
-                'stop_connection': [['-u', '--uppart',
-                                     {'help': "Upstream part number", 'default': None}],
-                                    ['--uprev',
-                                     {'help': "Upstream part revision", 'default': None}],
-                                    ['--upport',
-                                     {'help': "Upstream output port", 'default': None}],
-                                    ['-d', '--dnpart',
-                                     {'help': "Downstream part number", 'default': None}],
-                                    ['--dnrev',
-                                     {'help': "Downstream part revision", 'default': None}],
-                                    ['--dnport',
-                                     {'help': "Downstream input port", 'default': None}],
-                                    ],
-                'update_apriori': [['-p', '--hpn',
-                                    {'help': "HERA part number", 'default': None}],
-                                   ['-s', '--status',
-                                    {'help': "New apriori status", 'default': "last"}]
-                                   ]
-                }
-
-
-arglist = ['hpn', 'hptype', 'comment', 'uppart', 'upport', 'dnpart', 'dnport', 'status']
-
-
-def parse_log_line(line):
+def parse_log_line(line,
+                   arglist=['hpn', 'hptype', 'comment',
+                            'uppart', 'upport',
+                            'dnpart', 'dnport', 'status']):
+    """
+    Parse an input line to produce a log output.  To add, include the argparse
+    in the script_info.py file and include desired options to arglist above.
+    """
+    from . import script_info
     from hera_mc import cm_utils
-    import csv
-    ap = argparse.ArgumentParser()
+
     command = line.split()[0].split('.')[0]
     try:
-        cargs = command_args[command]
-    except KeyError:
+        parser = getattr(script_info, command)()
+    except AttributeError:
         return line + '\n'
-    show_text = {}
-    for ca in cargs:
-        cnttyp = [type(x) for x in ca]
-        if cnttyp.count(str) == 1:
-            ap.add_argument(ca[0], **ca[1])
-            show_text[ca[0].strip('-')] = ca[1]['help']
-        elif cnttyp.count(str) == 2:
-            ap.add_argument(ca[0], ca[1], **ca[2])
-            show_text[ca[1].strip('-')] = ca[2]['help']
-    cm_utils.add_date_time_args(ap)
-    try:
-        linarg = list(csv.reader([line.replace("'", '"')], delimiter=' '))
-        argdict = vars(ap.parse_args(linarg[0][1:]))
-    except:  # noqa
-        return line + '\n'
-    ret = f"-- {' '.join(command.split('_'))} -- {argdict['date']} {argdict['time']}\n"
-    for key in arglist:
-        if key in argdict and argdict[key] is not None:
-            show = show_text[key]
-            ret += f"\t{show}:  {argdict[key]}\n"
+    args = parser.parse_args(line.split()[1:])
+    helpdict = {}
+    for action in parser._actions:
+        helpdict[action.dest] = action.help
+    dt = cm_utils.get_astropytime(args.date, args.time)
+
+    ret = f"-- {' '.join(command.split('_'))} -- {dt.datetime.isoformat(timespec='seconds')}\n"
+    for atr, hlp in helpdict.items():
+        if atr in arglist:
+            param = getattr(args, atr)
+            ret += f"\t{helpdict[atr]}:  {param}\n"
     return ret
 
 
