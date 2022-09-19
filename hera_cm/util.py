@@ -44,9 +44,12 @@ def parse_log_line(line,
     return ret
 
 
-def YMD_HM(dt, offset=0.0):
+def YMD_HM(dt, offset=0.0, add_second=False):
     dt += datetime.timedelta(offset)
-    return dt.strftime('%Y/%m/%d'), dt.strftime('%H:%M')
+    if add_second:
+        return dt.strftime('%Y/%m/%d'), dt.strftime('%H:%M:%S')
+    else:
+        return dt.strftime('%Y/%m/%d'), dt.strftime('%H:%M')
 
 
 def compare_lists(list1, list2, info=None, ignore_length=True):
