@@ -1,30 +1,30 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments
-81,E,26,17,1,53,C19,e2,0,digital_ok,,"RY,F?,T?,WY   Torn dish"
-81,N,26,17,1,53,C19,n0,0,digital_ok,,
-82,E,27,51,2,54,C19,e6,0,RF_maintenance,,"RY,F?,T?,WY   Kinked above RJ45"
-82,N,27,51,2,54,C19,n4,0,RF_maintenance,,
-83,E,48,37,3,58,C19,e10,0,digital_ok,,
-83,N,48,37,3,58,C19,n8,0,digital_ok,,
-100,E,30,48,4,56,C21,e2,1,digital_ok,,"both pols: No sky, 07/01/22 found 2 fibre breaks, replace fibre and 100N is back"
-100,N,30,48,4,56,C21,n0,1,digital_ok,,"Fibre switching suggested FEM issue, replaced to FEM347, both pols okay. feed height=4.407m"
-119,E,34,13,5,57,C21,e6,1,RF_maintenance,,"119E no sky, fibre switching showed that the fibre from 119E's FEM to node is broken"
-119,N,34,13,5,57,C21,n4,1,RF_maintenance,,"07/01/22 replace fibre, feed height=4.407m"
-138,E,47,47,6,55,C21,e10,1,RF_maintenance,,"both pols good before 06/28/22, but 138E became no sky since 06/29/22"
-138,N,47,47,6,55,C21,n8,1,RF_maintenance,,"fibre switching test suggested a PAM issue, though no spare PAM available"
-98,E,28,50,7,59,C30,e2,2,digital_ok,,"98E no sky: 07/01/22 replaced fiber, feed height = 4.403"
-98,N,28,50,7,59,C30,n0,2,digital_ok,,
-99,E,29,52,8,60,C30,e6,2,digital_ok,,"Discovered twisted fibre on the ground, although the spectrum looks roughly okay"
-99,N,29,52,8,60,C30,n4,2,digital_ok,,"the crew spliced the fibre anyway, potential improvement in bandpass shape to check?"
-116,E,31,14,9,61,C30,e10,2,digital_ok,,fibre was broken on the ground next to the node box
-116,N,31,14,9,61,C30,n8,2,digital_ok,,"both pols: polished on 06/30/22 through fibre splicing, feed height = 4.403m after raising"
-117,E,32,15,10,62,C73,e2,3,digital_ok,,fibre was broken on the ground next to the node box
-117,N,32,15,10,62,C73,n0,3,digital_ok,,"both pols: polished on 06/30/22 through fibre splicing, feed height = 4.409m after raising"
-118,E,33,53,11,63,C73,e6,3,digital_ok,,
-118,N,33,53,11,63,C73,n4,3,digital_ok,,
-137,E,49,49,12,49,C73,e10,3,RF_maintenance,,"Both pols had no sky: 06/30/22 replaced fiber still no sky, 07/01/22 replaced FEM to FEM349, only 137E had spectrum"
-137,N,49,49,12,49,C73,n8,3,RF_maintenance,,"137N no sky after replacing fibre and FEM, suspect to still have fibre issue (we did fibre switching test and it's not a PAM problem)"
-#END,,,,,,,,,,,
-Date:,2019/11/11,2022/03/03,,,,,,,,,
-NCM,P2,,,,,,,,,,
-FPS,7,,,,,,,,,,
-PCH,4,,,,,,,,,,
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,,,H6C,H6Ccheck
+81,E,26,17,1,53,C19,e2,0,digital_ok,,,,,,
+81,N,26,17,1,53,C19,n0,0,digital_ok,,,,,,
+82,E,27,51,2,54,C19,e6,0,RF_maintenance,,,,,,
+82,N,27,51,2,54,C19,n4,0,RF_maintenance,,,,,,
+83,E,48,37,3,58,C19,e10,0,digital_ok,,,,,,
+83,N,48,37,3,58,C19,n8,0,digital_ok,,,,,,
+100,E,30,48,4,56,C21,e2,1,digital_ok,,,,,,
+100,N,30,48,4,56,C21,n0,1,digital_ok,,,,,,
+119,E,34,13,5,57,C21,e6,1,RF_maintenance,,,,,,
+119,N,34,13,5,57,C21,n4,1,RF_maintenance,,,,,,
+138,E,47,47,6,55,C21,e10,1,RF_maintenance,,,,,,
+138,N,47,47,6,55,C21,n8,1,RF_maintenance,,,,,,
+98,E,28,50,7,59,C30,e2,2,digital_ok,,,,,,
+98,N,28,50,7,59,C30,n0,2,digital_ok,,,,,,
+99,E,29,52,8,60,C30,e6,2,digital_ok,,,,,,
+99,N,29,52,8,60,C30,n4,2,digital_ok,,,,,,
+116,E,31,14,9,61,C30,e10,2,digital_ok,,,,,,
+116,N,31,14,9,61,C30,n8,2,digital_ok,,,,,,
+117,E,32,15,10,62,C73,e2,3,digital_ok,,,,,,
+117,N,32,15,10,62,C73,n0,3,digital_ok,,,,,,
+118,E,33,53,11,63,C73,e6,3,digital_ok,,,,,,
+118,N,33,53,11,63,C73,n4,3,digital_ok,,,,,,
+137,E,49,49,12,49,C73,e10,3,RF_maintenance,,,,,,
+137,N,49,49,12,49,C73,n8,3,RF_maintenance,,,,,,
+#END,,,,,,,,,,,,,,,
+Date:,2019/11/11,2022/03/03,,,,,,,,,,,,,
+NCM,P2,,,,,,,,,,,,,,
+FPS,7,,,,,,,,,,,,,,
+PCH,4,,,,,,,,,,,,,,

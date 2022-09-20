@@ -1,4 +1,4 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed heights (NE/SE/SW/NW),Spectre,,
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed heights (NE/SE/SW/NW),Spectre,H6C,H6Ccheck
 151,E,252,274,1,281,C12,e2,0,,,,,,,
 151,N,252,274,1,281,C12,n0,0,,,,,,,
 171,E,133,279,2,282,C12,e6,0,,,,,,,
@@ -9,7 +9,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 173,N,214,275,4,,C90,n0,1,,,,,,,
 192,E,251,270,5,285,C90,e6,1,,,,,,,
 192,N,251,270,5,285,C90,n4,1,,,,,,,
-193,E,229,280,6,286,C90,e10,1,,,,,,,https://drive.google.com/drive/folders/1RtfR57eXmwgv4KPACAonbXGcxmg4gzo7?usp=sharing
+193,E,229,280,6,286,C90,e10,1,,,,,,,
 193,N,229,280,6,286,C90,n8,1,,,,,,,
 152,E,213,276,7,287,C101,e2,2,,,,,,,
 152,N,213,276,7,287,C101,n0,2,,,,,,,
