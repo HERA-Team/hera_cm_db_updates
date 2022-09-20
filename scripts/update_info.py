@@ -26,6 +26,7 @@ if __name__ == '__main__':
     ap.add_argument('--look_only', help='Flag to only look at data.', action='store_true')
     ap.add_argument('--archive_gsheet', help='Path to move gsheet archive',
                     default='___cm_updates/gsheet')
+    ap.add_argument('--h6c', help="Alert list for H6C workflow", default=None)
     args = ap.parse_args()
 else:
     args = argparse.Namespace(archive_path=None, script_path='default', node_csv='r', verbose=True,

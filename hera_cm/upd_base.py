@@ -127,7 +127,7 @@ class Update():
                 self.r.hset('cm_period_log', key, line)
             if alert is not None:
                 from hera_mc import watch_dog
-                subj = f"Update connect: {self.script}"
+                subj = f"Update: {self.script}"
                 from_addr = "hera@lists.berkeley.edu"
                 try:
                     watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)

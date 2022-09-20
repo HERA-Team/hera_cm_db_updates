@@ -100,8 +100,12 @@ class UpdateConnect(upd_base.Update):
                 setattr(H, part.lower(), util.gen_hpn(part, node_num))
             for part in ['fps', 'pch', 'ncm']:
                 setattr(H, part.lower(), getattr(self.gsheet.node_to_equip[H.node], part))
-            H.wr = self.gsheet.ncm[H.ncm].wr
-            H.rd = self.gsheet.ncm[H.ncm].rdhpn
+            try:
+                H.wr = self.gsheet.ncm[H.ncm].wr
+                H.rd = self.gsheet.ncm[H.ncm].rdhpn
+            except KeyError:
+                H.wr = None
+                H.rd = None
             for Up, Dn in node_based().items():
                 self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
             for station in self.gsheet.node_to_ant[node]:

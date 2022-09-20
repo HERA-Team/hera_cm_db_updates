@@ -216,8 +216,10 @@ class SheetData:
             if node_csv == 'w':
                 self.csv_file('write', ospath.join(path, f"{tab}.csv"), csv_data)
             self.node_to_ant[tab] = []
+            header_found = False
             for data in csv_data:
                 if data[0].startswith('Ant'):  # This is the header line
+                    header_found = True
                     self.header[tab] = ['Node'] + data
                     if check_headers:
                         util.compare_lists(sheet_headers, data, info=tab)
@@ -238,6 +240,8 @@ class SheetData:
                 self.node_to_ant[tab].append(hpn)
                 dkey = '{}-{}'.format(hkey, data[1].upper())
                 self.data[dkey] = [util.get_num(tab)] + data
+            if not header_found:
+                print(f"WARNING: Header was not located for {tab}")
             # Get the notes below the hookup table.
             node_pn = 'N{:02d}'.format(int(util.get_num(tab)))
             self.node_to_equip[node_pn] = Namespace()
@@ -251,7 +255,7 @@ class SheetData:
                         npkey = node_pn
                     self.notes.setdefault(npkey, [])
                     self.notes[npkey].append('-'.join([y for y in data[1:] if len(y) > 0]))
-                elif key in ['ncm', 'fps', 'pch']:
+                elif key in ['ncm', 'fps', 'pch', 'wrs']:
                     try:
                         val = f"{key.upper()}{int(data[1]):02d}"
                     except ValueError:
