@@ -174,6 +174,7 @@ class UpdateInfo(upd_base.Update):
             script_lines = ''.join(fp.readlines())
         lines = []
         for this_line in script_lines:
+            print(this_line)
             if 'h6c' in this_line.lower():
                 lines.append(this_line)
         if not len(lines):
