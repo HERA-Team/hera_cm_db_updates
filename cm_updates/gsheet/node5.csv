@@ -21,7 +21,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 75,N,62,115,10,122,C18,N0,3,digital_maintenance,,,,,,
 322,E,328,312,11,327,C18,E6,3,digital_maintenance,,,,,,
 322,N,328,312,11,327,C18,N4,3,digital_maintenance,,,,,,
-,E,,,12,361,C18,E10,3,digital_maintenance,,,,,,
+,E,,,12,361,C18,E10,3,digital_maintenance,,FEM Switch error -DCJ,,,,
 ,N,,,12,361,C18,N8,3,digital_maintenance,,,,,,
 #END,,,,,,,,,,,,,,,
 Note,2019Nov13,,,,,,,,,,,,,,

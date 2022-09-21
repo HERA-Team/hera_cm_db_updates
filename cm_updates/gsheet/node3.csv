@@ -21,7 +21,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,heigh
 52,N,94,134,10,134,C54,N0,3,RF_maintenance,,,,,,
 36,E,93,132,11,135,C54,E6,3,RF_maintenance,,,,,,
 36,N,93,132,11,135,C54,N4,3,RF_maintenance,,,,,,
-50,E,85,107,12,136,C54,E10,3,RF_maintenance,,,,,,
+50,E,85,107,12,136,C54,E10,3,RF_maintenance,,FEM Switch error -DCJ,,,,
 50,N,85,107,12,136,C54,N8,3,RF_maintenance,,,,,,
 #END,,,,,,,,,,,,,,,
 Date:,2019/10/03,,,,,,,,,,,,,,
