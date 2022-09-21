@@ -1624,6 +1624,7 @@ N24,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 N20,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N10,A,"Power off on PAM/FEM inside, but doesnt seem to turn on -- NCM relays bad?",infoupd,1347352938
 HH129,A,FEM Switch error -DCJ,infoupd,1347784938
+HH60,A,"History: C32 not aligning, replaced with C111",infoupd,1347795738
 HH103,A,Hooked up port 3 of Nimas noise generator onto E,ddb,1335696738
 HH205,A,Spectre: N19P2E,infoupd,1335439818
 HH225,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1335439820
@@ -1723,6 +1724,7 @@ N12,A,NCM removed for update,infoupd,1347352938
 HH99,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH182,A,FEM Switch error -DCJ,infoupd,1347784938
 HH117,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+N05,A,replaced S2 (C32 -> C111) tests ok,infoupd,1347795738
 HH118,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH85,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH101,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
