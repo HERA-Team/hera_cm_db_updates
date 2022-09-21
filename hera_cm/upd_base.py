@@ -66,7 +66,6 @@ class Update():
     def process_log(self, alert=None):
         if alert is None:
             return
-        from hera_mc import watch_dog
         dlog = self.r.hgetall('cm_period_log')
         lines = []
         for key in sorted(dlog.keys()):
@@ -79,11 +78,7 @@ class Update():
         msg = subj + '\n\n'
         for this_line in lines:
             msg += util.parse_log_line(this_line)
-        from_addr = "hera@lists.berkeley.edu"
-        try:
-            watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)
-        except ConnectionRefusedError:
-            print("No email sent - ConnectionRefusedError")
+        self.alert_email(subj=subj, msg=msg, to_addr=alert)
         self.r.delete('cm_period_log')
 
     def finish(self, cron_script=None, archive_to=None, alert=None):
@@ -126,13 +121,7 @@ class Update():
                 key = f"{logtime}{i:04d}"
                 self.r.hset('cm_period_log', key, line)
             if alert is not None:
-                from hera_mc import watch_dog
-                subj = f"Update: {self.script}"
-                from_addr = "hera@lists.berkeley.edu"
-                try:
-                    watch_dog.send_email(subj, msg, to_addr=alert, from_addr=from_addr)
-                except ConnectionRefusedError:
-                    print("No email sent - ConnectionRefusedError")
+                self.alert_email(subj=f"Update: {self.script}", msg=msg, to=alert)
             if archive_to is not None:
                 os.system('cp {} {}'.format(self.script, archive_to))
                 if self.verbose:
@@ -146,3 +135,10 @@ class Update():
 
         if cron_script is not None and os.path.exists(cron_script):
             os.chmod(cron_script, 0o755)
+
+    def alert_email(self, subj, msg, to_addr, from_addr='hera@lists.berkeley.edu'):
+        from hera_mc import watch_dog
+        try:
+            watch_dog.send_email(subj, msg, to_addr=to_addr, from_addr=from_addr)
+        except ConnectionRefusedError:
+            print("No email sent - ConnectionRefusedError")

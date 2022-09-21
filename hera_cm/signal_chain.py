@@ -662,7 +662,7 @@ class Update:
             ref = ''
         else:
             ref = '-l "{}" '.format(ref.replace("'", "").replace('"', ""))
-        self.fp.write("add_part_info.py -p {} -r {} -c '{}' {}--date {} --time {}\n"
+        self.fp.write('add_part_info.py -p {} -r {} -c "{}" {}--date {} --time {}\n'
                       .format(hpn, rev, note, ref, cdate, ctime))
 
     def replace(self, old, new, cdate, ctime='13:00'):
