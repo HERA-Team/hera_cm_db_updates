@@ -1623,6 +1623,7 @@ HH78,A,"History: RY,FB,TY,WY",infoupd,1344699738
 N24,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N20,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N10,A,"Power off on PAM/FEM inside, but doesnt seem to turn on -- NCM relays bad?",infoupd,1347352938
+HH129,A,FEM Switch error -DCJ,infoupd,1347784938
 HH103,A,Hooked up port 3 of Nimas noise generator onto E,ddb,1335696738
 HH205,A,Spectre: N19P2E,infoupd,1335439818
 HH225,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1335439820
@@ -1720,6 +1721,7 @@ N21,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+
 HH98,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 N12,A,NCM removed for update,infoupd,1347352938
 HH99,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+HH182,A,FEM Switch error -DCJ,infoupd,1347784938
 HH117,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH118,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH85,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1829,6 +1831,7 @@ N22,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+
 HH122,A,122e is very high and flat in the SNAP spectra 10 Sept 23:32 site time,apa-infoupd,1283809338
 N16,A,NCM removed for update,infoupd,1347352938
 HH46,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
+EE10001,A,FEM Switch error -DCJ,infoupd,1347784938
 HH58,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
 HH59,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
 HH100,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
@@ -1900,6 +1903,7 @@ HH155,A,low post-PAM auto 17 Sept,infoupd,1284482538
 HH156,A,Nice post-PAM auto 17 Sept,infoupd,1284482538
 HH156,A,low post-PAM auto 17 Sept,infoupd,1284482540
 HH157,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284482538
+HH143,A,FEM Switch error -DCJ,infoupd,1347784938
 HH116,A,116 autos look dead in post-PAM auto 17 Sept,infoupd,1284482538
 HH137,A,137 autos look dead in post-PAM auto 17 Sept,infoupd,1284482538
 HH101,A,Nice post-PAM auto 17 Sept,infoupd,1284482538
@@ -1970,6 +1974,7 @@ N18,A,NCM removed last night.  NCM from 17 moved here.,infoupd,1347352938
 HH42,A,42 E looks dead and spiky in 18 Sept post-PAM spectre,infoupd,1284493338
 HH42,A,42 N looks ok (not great) in 18 Sept post-PAM spectre,infoupd,1284493340
 HH56,A,Looks fine in 18 Sept post_PAM spectre,infoupd,1284493338
+HH146,A,FEM Switch error -DCJ,infoupd,1347784938
 HH71,A,71E looks atypical in 18 Sept post-PAM sprectra,infoupd,1284493338
 HH71,A,71N looks fine in 18 Sept post-PAM sprectra,infoupd,1284493340
 HH43,A,43 E looks dead  in 18 Sept post-PAM spectre,infoupd,1284493338
@@ -2061,6 +2066,7 @@ N02,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 N29,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N25,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N19,A,NCM removed for update,infoupd,1347352938
+HH148,A,FEM Switch error -DCJ,infoupd,1347784938
 HH87,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH201,A,Spectre: N19P3N,infoupd,1335439822
 HH241,A,Spectre: N19P10E,infoupd,1335439818
@@ -2111,6 +2117,7 @@ N02,A,PAMs removed for retrofit.  NCM removed again.,infoupd,1347444378
 N01,A,PAMs removed for retrofit.,infoupd,1347446538
 N02,A,NCM re-removed and re-updated.  Seems to work.,infoupd,1347457338
 N11,A,NCM removed for update,infoupd,1347464538
+HH100,A,FEM Switch error -DCJ,infoupd,1347784938
 HH101,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH207,A,Spectre: N19P4E,infoupd,1335439818
 HH241,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1335439820
@@ -2269,6 +2276,7 @@ N04,A,Updated the WR firmware,infoupd,1347280938
 N11,A,PAMs removed (yesterday) for retrofit,infoupd,1347444378
 N12,A,PAMs removed for retrofit,infoupd,1347457338
 N14,A,PAMS removed for retrofit,infoupd,1347464538
+HH99,A,FEM Switch error -DCJ,infoupd,1347784938
 HH84,A,Installed VLF-180+ onto  both pols,ddb,1335697338
 HH207,A,Spectre: N19P4N,infoupd,1335439822
 HH242,A,Spectre: N19P11E,infoupd,1335439818
@@ -2487,6 +2495,7 @@ N04,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+
 N06,A,Updated the WR firmware,infoupd,1347280938
 N13,A,PAMs removed for retrofit,infoupd,1347457338
 N15,A,PAMS removed for retrofit,infoupd,1347464538
+HH137,A,FEM Switch error -DCJ,infoupd,1347784938
 HH71,A,Spectre: N4P8N,infoupd,1318668140
 HH241,A,Spectre: N19P10E,infoupd,1320075738
 HH228,A,Spectre: N20P11N,infoupd,1321741162
