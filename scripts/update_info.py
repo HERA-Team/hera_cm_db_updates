@@ -60,5 +60,5 @@ update.add_node_notes(duplication_window=args.duplication_window,
 if args.look_only:
     update.view_info()
 else:
-    update.finish(cron_script=cron_script, archive_to=args.archive_path, alert=None)
     update.process_h6c(args.h6c)
+    update.finish(cron_script=cron_script, archive_to=args.archive_path, alert=None)
