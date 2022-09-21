@@ -121,7 +121,7 @@ class Update():
                 key = f"{logtime}{i:04d}"
                 self.r.hset('cm_period_log', key, line)
             if alert is not None:
-                self.alert_email(subj=f"Update: {self.script}", msg=msg, to=alert)
+                self.alert_email(subj=f"Update: {self.script}", msg=msg, to_addr=alert)
             if archive_to is not None:
                 os.system('cp {} {}'.format(self.script, archive_to))
                 if self.verbose:

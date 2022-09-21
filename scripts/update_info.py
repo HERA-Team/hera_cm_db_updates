@@ -39,6 +39,8 @@ if args.look_only:
 else:
     script_type = 'infoupd'
     cron_script = 'info_update.sh'
+if args.h6c is not None:
+    args.h6c = args.h6c.split(',')
 
 update = upd_info.UpdateInfo(script_type=script_type,
                              script_path=args.script_path,
@@ -49,13 +51,16 @@ if args.archive_gsheet.startswith('___'):
     args.archive_gsheet = path.join(update.script_path, args.archive_gsheet[3:])
 update.load_gsheet(node_csv=args.node_csv, path=args.archive_gsheet)
 update.load_active()
-update.load_gnodes()
+update.load_node_notes()
 update.add_apriori()
 update.add_sheet_notes(duplication_window=args.duplication_window,
                        view_duplicate=args.view_duplicate)
-update.add_gnodes(duplication_window=args.duplication_window,
-                  view_duplicate=args.view_duplicate)
+update.add_node_notes(duplication_window=args.duplication_window,
+                      view_duplicate=args.view_duplicate)
+alert = None
+if isinstance(args.h6c, list) and update.trigger_entry:
+    alert = args.h6c
 if args.look_only:
     update.view_info()
 else:
-    update.finish(cron_script=cron_script, archive_to=args.archive_path, alert=None)
+    update.finish(cron_script=cron_script, archive_to=args.archive_path, alert=alert)

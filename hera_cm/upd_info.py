@@ -17,6 +17,7 @@ class UpdateInfo(upd_base.Update):
                                          script_path=script_path,
                                          verbose=verbose)
         self.new_apriori = {}
+        self.trigger_entry = False
 
     def load_active(self):
         """Load active data."""
@@ -26,7 +27,7 @@ class UpdateInfo(upd_base.Update):
             self.active.load_info()
             self.active.load_apriori()
 
-    def load_gnodes(self):
+    def load_node_notes(self):
         """Load node notes tab of googlesheet."""
         if self.gsheet is None:
             self.gsheet = cm_gsheet.SheetData()
@@ -92,7 +93,10 @@ class UpdateInfo(upd_base.Update):
                                         self.new_apriori[key]['ctime'], ref=refout)
                 self.update_counter += 1
 
-    def add_gnodes(self, rev='A', duplication_window=90.0, view_duplicate=0.0):
+    def add_node_notes(self, rev='A', duplication_window=90.0, view_duplicate=0.0):
+        """
+        Add notes from the node comment sheet.
+        """
         primary_keys = []
         for node, notes in self.node_notes.items():
             ndkey = cm_utils.make_part_key(node, rev)
@@ -143,6 +147,9 @@ class UpdateInfo(upd_base.Update):
                     prefix = ''
                 else:
                     prefix = '{}: '.format(col)
+                    # Check if the prefix is "special"
+                    if col.lower().startswith('h6c'):
+                        self.trigger_entry = True
                 statement = '{}{}'.format(prefix, col_data)
                 if "'" in statement:
                     statement = statement.replace("'", "")
