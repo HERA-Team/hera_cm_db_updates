@@ -147,9 +147,6 @@ class UpdateInfo(upd_base.Update):
                     prefix = ''
                 else:
                     prefix = '{}: '.format(col)
-                    # Check if the prefix is "special"
-                    if col.lower().startswith('h6c'):
-                        self.trigger_entry = True
                 statement = '{}{}'.format(prefix, col_data)
                 if "'" in statement:
                     statement = statement.replace("'", "")
@@ -169,6 +166,24 @@ class UpdateInfo(upd_base.Update):
                     self.hera.add_part_info(ant, rev, statement, pdate, ptime, ref=refout)
                     self.update_counter += 1
                     primary_keys.append(pkey)
+
+    def process_h6c(self, alert=None):
+        if alert is None:
+            return
+        with open(self.script, 'r') as fp:
+            script_lines = ''.join(fp.readlines())
+        lines = []
+        for this_line in script_lines:
+            if 'h6c' in this_line.lower():
+                lines.append(this_line)
+        if not len(lines):
+            return
+        from datetime import datetime
+        subj = f"H6C Action: {datetime.now().isoformat(timespec='minutes')}"
+        msg = subj + '\n\n'
+        for this_line in lines:
+            msg += util.parse_log_line(this_line)
+        self.alert_email(subj=subj, msg=msg, to_addr=alert)
 
     def is_duplicate(self, key, statement, duplication_window, view_duplicate=0.0):
         """Check if duplicate."""

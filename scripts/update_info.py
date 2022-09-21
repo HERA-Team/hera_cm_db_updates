@@ -57,10 +57,8 @@ update.add_sheet_notes(duplication_window=args.duplication_window,
                        view_duplicate=args.view_duplicate)
 update.add_node_notes(duplication_window=args.duplication_window,
                       view_duplicate=args.view_duplicate)
-alert = None
-if isinstance(args.h6c, list) and update.trigger_entry:
-    alert = args.h6c
 if args.look_only:
     update.view_info()
 else:
-    update.finish(cron_script=cron_script, archive_to=args.archive_path, alert=alert)
+    update.finish(cron_script=cron_script, archive_to=args.archive_path, alert=None)
+    update.process_h6c(args.h6c)
