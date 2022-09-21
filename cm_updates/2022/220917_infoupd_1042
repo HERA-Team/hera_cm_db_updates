@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220917_infoupd_1042" >> scripts.log 
+add_part_info.py -p N01 -r A -c 'PAMs removed for retrofit.' -l "infoupd" --date 2022/09/17 --time 10:42:00

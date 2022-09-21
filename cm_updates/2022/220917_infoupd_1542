@@ -1,0 +1,7 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220917_infoupd_1542" >> scripts.log 
+add_part_info.py -p N11 -r A -c 'NCM removed for update' -l "infoupd" --date 2022/09/17 --time 15:42:00
+add_part_info.py -p N14 -r A -c 'PAMS removed for retrofit' -l "infoupd" --date 2022/09/17 --time 15:42:00
+add_part_info.py -p N15 -r A -c 'PAMS removed for retrofit' -l "infoupd" --date 2022/09/17 --time 15:42:00
+add_part_info.py -p N15 -r A -c 'NCM removed for update' -l "infoupd" --date 2022/09/17 --time 15:42:02

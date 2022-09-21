@@ -1,0 +1,7 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220917_infoupd_1342" >> scripts.log 
+add_part_info.py -p N02 -r A -c 'NCM re-removed and re-updated.  Seems to work.' -l "infoupd" --date 2022/09/17 --time 13:42:00
+add_part_info.py -p N02 -r A -c 'SNAP3 1PPS connection is somewhat flaky at NCM' -l "infoupd" --date 2022/09/17 --time 13:42:02
+add_part_info.py -p N12 -r A -c 'PAMs removed for retrofit' -l "infoupd" --date 2022/09/17 --time 13:42:00
+add_part_info.py -p N13 -r A -c 'PAMs removed for retrofit' -l "infoupd" --date 2022/09/17 --time 13:42:00

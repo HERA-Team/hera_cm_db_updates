@@ -1,0 +1,15 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220921_infoupd_0642" >> scripts.log 
+add_part_info.py -p HH6 -r A -c 'FEM Switch Error -DCJ' -l "infoupd" --date 2022/09/21 --time 06:42:00
+add_part_info.py -p HH8 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 06:42:00
+add_part_info.py -p HB321 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 06:42:00
+add_part_info.py -p HH50 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 06:42:00
+add_part_info.py -p HH72 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 06:42:00
+add_part_info.py -p HH40 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 06:42:00
+add_part_info.py -p HH71 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 06:42:00
+add_part_info.py -p EE10005 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 06:42:00
+add_part_info.py -p HH22 -r A -c 'History: FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 06:42:00
+add_part_info.py -p HH34 -r A -c 'History: FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 06:42:00
+add_part_info.py -p HH49 -r A -c 'History: FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 06:42:00
+add_part_info.py -p HH64 -r A -c 'History: FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 06:42:00

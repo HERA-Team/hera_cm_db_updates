@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220920_infoupd_1242" >> scripts.log 
+add_part_info.py -p N18 -r A -c 'Replaced S3 (C68 -> C119) Turns on and stays on!' -l "infoupd" --date 2022/09/20 --time 12:42:00

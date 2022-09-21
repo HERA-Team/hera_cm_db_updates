@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220918_infoupd_1542" >> scripts.log 
+add_part_info.py -p N02 -r A -c 'Not WR locking again' -l "infoupd" --date 2022/09/18 --time 15:42:00
+add_part_info.py -p N18 -r A -c 'NCM reboots when SNAP 3 is turned on.' -l "infoupd" --date 2022/09/18 --time 15:42:00

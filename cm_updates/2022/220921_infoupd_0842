@@ -1,0 +1,12 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220921_infoupd_0842" >> scripts.log 
+add_part_info.py -p HH129 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 08:42:00
+add_part_info.py -p HH182 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 08:42:00
+add_part_info.py -p EE10001 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 08:42:00
+add_part_info.py -p HH143 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 08:42:00
+add_part_info.py -p HH146 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 08:42:00
+add_part_info.py -p HH148 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 08:42:00
+add_part_info.py -p HH100 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 08:42:00
+add_part_info.py -p HH99 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 08:42:00
+add_part_info.py -p HH137 -r A -c 'FEM Switch error -DCJ' -l "infoupd" --date 2022/09/21 --time 08:42:00

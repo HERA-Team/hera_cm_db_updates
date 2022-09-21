@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220921_infoupd_2010" >> scripts.log 
+add_part_info.py -p HH176 -r A -c "H6C: test this thing" -l "infoupd" --date 2022/09/21 --time 20:10:00

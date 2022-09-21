@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220921_infoupd_1142" >> scripts.log 
+add_part_info.py -p HH60 -r A -c 'History: C32 not aligning, replaced with C111' -l "infoupd" --date 2022/09/21 --time 11:42:00
+add_part_info.py -p N05 -r A -c 'replaced S2 (C32 -> C111) tests ok' -l "infoupd" --date 2022/09/21 --time 11:42:00
