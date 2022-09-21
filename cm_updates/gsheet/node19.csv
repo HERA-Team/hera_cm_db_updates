@@ -1,4 +1,4 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Spectre,Feed heights (NE/SE/SW/NW),H6C,H6Ccheck
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,,Feed heights (NE/SE/SW/NW),H6C,H6Ccheck
 204,E,197,,1,,C78,e2,0,RF_maintenance,,,,,,
 204,N,197,,1,,C78,n0,0,RF_maintenance,,,,,,
 205,E,211,224,2,222,C78,e6,0,RF_ok,,,,,,
@@ -29,7 +29,3 @@ NCM,18,,,,,,,,,,,,,,
 FPS,17,,,,,,,,,,,,,,
 PCH,16,,,,,,,,,,,,,,
 ,These need to be completed by the site crew,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,
-Note,2019Nov11,,MRD,,"Node Enclosure now stores 1 bag of 20 LMR195 coax cables, 1 bag of 50 RG402 coax cables, 2 long C13/C14 power cables, 1 short C13/C14 power cable, 5 blue CAT7 RJ45s (for NCM), 4 of D-Sub37 cables, 4 of D-Sub9 cables",,,,,,,,,,
-Note,2019Nov11,,MRD,,"for other Nodes, storing pile of D-Sub37 cables",,,,,,,,,,
-Note,2019Nov11,,MRD,,due to come online 2020mar21,,,,,,,,,,
