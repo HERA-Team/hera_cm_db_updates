@@ -85,8 +85,6 @@ class Update():
         self.alert_email(subj=subj, msg=msg, to_addr=to_addr)
 
     def alert_email(self, subj, msg, to_addr, from_addr='hera@lists.berkeley.edu'):
-        print(f"emailing {to_addr}")
-        print(msg)
         from hera_mc import watch_dog
         try:
             watch_dog.send_email(subj, msg, to_addr=to_addr, from_addr=from_addr)
