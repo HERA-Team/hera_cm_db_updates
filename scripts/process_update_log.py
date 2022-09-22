@@ -24,4 +24,4 @@ verbose = False
 if args.alert is not None:
     update = upd_connect.UpdateConnect(script_type=script_type, script_path=script_path,
                                        disable_err=disable_err, verbose=verbose)
-    update.process_log(args.alert)
+    update.process_redis_cm_period_log(args.alert)
