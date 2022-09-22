@@ -418,6 +418,7 @@ HH124,A,Goodness E: Bad,,1249041618
 HH124,A,Dead FEM/PAM channel?,,1249041619
 HH124,A,Danny Aug 2-5: swapped PAM 42 with 41 which was slot in pam slot #3 (just to the right of this pam),,1249041620
 HH124,A,Goodness N: OK,,1249041621
+PAM278,A,Conductive gasket foam installed.,infoman,1347796818
 HH125,A,Goodness E: OK,,1249041618
 HH125,A,Goodness N: OK,,1249041619
 HH126,A,Goodness E: OK,,1249041618
@@ -739,6 +740,10 @@ N18,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 N15,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N09,A,Door fixed by crew,infoupd,1347424938
 HH22,A,History: FEM Switch error -DCJ,infoupd,1347777738
+PAM254,A,Conductive gasket foam installed.,infoman,1347796818
+PAM011,A,Conductive gasket foam installed.,infoman,1347796818
+PAM025,A,Conductive gasket foam installed.,infoman,1347796818
+PAM102,A,Conductive gasket foam installed.,infoman,1347796818
 HH224,A,Spectre: N19P6E,infoupd,1335439818
 HH243,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1335439820
 HH37,A,Spectra: N3P5E,infoupd,1335439818
@@ -1470,6 +1475,11 @@ HH77,A,"History: RY,FB,TY,WY",infoupd,1344699738
 N22,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N18,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 HH64,A,History: FEM Switch error -DCJ,infoupd,1347777738
+PAM290,A,Conductive gasket foam installed.,infoman,1347796818
+PAM012,A,Conductive gasket foam installed.,infoman,1347796818
+PAM062,A,Conductive gasket foam installed.,infoman,1347796818
+PAM030,A,Conductive gasket foam installed.,infoman,1347796818
+PAM256,A,Conductive gasket foam installed.,infoman,1347796818
 HH120,A,Removed 3dB pad on E pol and 6 dB pad on N pol.,ddb,1335696138
 HH81,A,Removed splitter/power meter on E pol,ddb,1335798738
 HH190,A,Feed conduit fell out,infoupd,1335439818
@@ -1543,6 +1553,11 @@ HH59,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH64,A,"History: RY,FB,TY,WY",infoupd,1344699738
 N23,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N19,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
+PAM297,A,Conductive gasket foam installed.,infoman,1347796818
+PAM013,A,Conductive gasket foam installed.,infoman,1347796818
+PAM026,A,Conductive gasket foam installed.,infoman,1347796818
+PAM103,A,Conductive gasket foam installed.,infoman,1347796818
+PAM292,A,Conductive gasket foam installed.,infoman,1347796818
 HH120,A,Hooked up ports 1/2 of Nimas noise generator onto E/N,ddb,1335696738
 HH70,A,Hooked in signal from splitter (shared with noise meter) on E pol,ddb,1335798738
 HH204,A,North channel low,infoupd,1335439818
@@ -1625,6 +1640,10 @@ N20,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+
 N10,A,"Power off on PAM/FEM inside, but doesnt seem to turn on -- NCM relays bad?",infoupd,1347352938
 HH129,A,FEM Switch error -DCJ,infoupd,1347784938
 HH60,A,"History: C32 not aligning, replaced with C111",infoupd,1347795738
+NCM14,A,Update WR-LEN firmware.,infoman,1347796818
+PAM335,A,Conductive gasket foam installed.,infoman,1347796818
+PAM014,A,Conductive gasket foam installed.,infoman,1347796818
+PAM063,A,Conductive gasket foam installed.,infoman,1347796818
 HH103,A,Hooked up port 3 of Nimas noise generator onto E,ddb,1335696738
 HH205,A,Spectre: N19P2E,infoupd,1335439818
 HH225,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1335439820
@@ -1726,8 +1745,11 @@ HH182,A,FEM Switch error -DCJ,infoupd,1347784938
 HH117,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 N05,A,replaced S2 (C32 -> C111) tests ok,infoupd,1347795738
 HH118,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+NCM21,A,Update WR-LEN firmware.,infoman,1347796818
 HH85,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+PAM348,A,Conductive gasket foam installed.,infoman,1347796818
 HH101,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+PAM015,A,Conductive gasket foam installed.,infoman,1347796818
 HH102,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH103,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH104,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1835,10 +1857,15 @@ N16,A,NCM removed for update,infoupd,1347352938
 HH46,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
 EE10001,A,FEM Switch error -DCJ,infoupd,1347784938
 HH58,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
+NCM06,A,Update WR-LEN firmware.,infoman,1347796818
 HH59,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
+PAM044,A,Conductive gasket foam installed.,infoman,1347796818
 HH100,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
+PAM052,A,Conductive gasket foam installed.,infoman,1347796818
 HH119,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
+PAM036,A,Conductive gasket foam installed.,infoman,1347796818
 HH98,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
+PAM050,A,Conductive gasket foam installed.,infoman,1347796818
 HH99,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
 HH117,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
 HH118,A,"No I2C from PAM or FEM, Spectra consistent with PAM on but FEMs off/disconnected",apa-infoupd,1283985738
@@ -1907,11 +1934,15 @@ HH156,A,low post-PAM auto 17 Sept,infoupd,1284482540
 HH157,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284482538
 HH143,A,FEM Switch error -DCJ,infoupd,1347784938
 HH116,A,116 autos look dead in post-PAM auto 17 Sept,infoupd,1284482538
+NCM16,A,Update WR-LEN firmware.,infoman,1347796818
 HH137,A,137 autos look dead in post-PAM auto 17 Sept,infoupd,1284482538
+PAM043,A,Conductive gasket foam installed.,infoman,1347796818
 HH101,A,Nice post-PAM auto 17 Sept,infoupd,1284482538
 HH101,A,101N looks dead in post-PAM auto  17 Sept,infoupd,1284482540
 HH102,A,Nice post-PAM auto 17 Sept,infoupd,1284482538
+PAM056,A,Conductive gasket foam installed.,infoman,1347796818
 HH103,A,Nice post-PAM auto 17 Sept,infoupd,1284482538
+PAM027,A,Conductive gasket foam installed.,infoman,1347796818
 HH122,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284482538
 HH123,A,Auto is just a low hump in post-PAM autos 17 Sept,infoupd,1284482538
 HH123,A,Nice post-PAM autos 17 Sept,infoupd,1284482540
@@ -1984,13 +2015,19 @@ HH43,A,43 N looks fine in 18 Sept post-PAM spectre,infoupd,1284493340
 HH2,A,2E looks fine 18 Sept,infoupd,1284496938
 HH2,A,2N still looks wonky in SNAP spectra 18 Sept,infoupd,1284496940
 HH11,A,sbcd 18 sept due to heranow autos and SNAP spectra,apa-infoupd,1284496938
+NCM07,A,Update WR-LEN firmware.,infoman,1347796818
 HH13,A,sbcd 18 sept due to heranow autos and SNAP spectra,apa-infoupd,1284496938
+PAM037,A,Conductive gasket foam installed.,infoman,1347796818
 HH67,A,"SNAP autos look low, flat, spiky ,as does all of N3 18 Sept",infoupd,1284496938
+PAM010,A,Conductive gasket foam installed.,infoman,1347796818
 HH72,A,72E looks fine in 18 Sept SNAP sprectra,apa-infoupd,1284496938
 HH72,A,72N looks fine in 18 Sept SNAP sprectra,apa-infoupd,1284496940
 HH46,A,fine SNAP spectra on 18-Sept,apa-infoupd,1284496938
+PAM049,A,Conductive gasket foam installed.,infoman,1347796818
 HH60,A,SNAP spectra look bad  18 sept; N5S2 last data is from March,apa-infoupd,1284496938
+PAM279,A,Conductive gasket foam installed.,infoman,1347796818
 HH83,A,SNAP auto looks fine 18 Sept,apa-infoupd,1284496938
+PAM299,A,Conductive gasket foam installed.,infoman,1347796818
 HH110,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284500538
 HH156,A,Nice SNAP auto 18 Sept,apa-infoupd,1284500538
 HH182,A,Nice SNAP auto 18 Sept,apa-infoupd,1284500538
@@ -2069,6 +2106,12 @@ N29,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 N25,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N19,A,NCM removed for update,infoupd,1347352938
 HH148,A,FEM Switch error -DCJ,infoupd,1347784938
+NCM11,A,Update WR-LEN firmware.,infoman,1347796818
+PAM051,A,Conductive gasket foam installed.,infoman,1347796818
+PAM057,A,Conductive gasket foam installed.,infoman,1347796818
+PAM108,A,Conductive gasket foam installed.,infoman,1347796818
+PAM255,A,Conductive gasket foam installed.,infoman,1347796818
+PAM328,A,Conductive gasket foam installed.,infoman,1347796818
 HH87,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH201,A,Spectre: N19P3N,infoupd,1335439822
 HH241,A,Spectre: N19P10E,infoupd,1335439818
@@ -2120,6 +2163,7 @@ N01,A,PAMs removed for retrofit.,infoupd,1347446538
 N02,A,NCM re-removed and re-updated.  Seems to work.,infoupd,1347457338
 N11,A,NCM removed for update,infoupd,1347464538
 HH100,A,FEM Switch error -DCJ,infoupd,1347784938
+NCM18,A,Update WR-LEN firmware.,infoman,1347796818
 HH101,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH207,A,Spectre: N19P4E,infoupd,1335439818
 HH241,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1335439820
@@ -2498,6 +2542,9 @@ N06,A,Updated the WR firmware,infoupd,1347280938
 N13,A,PAMs removed for retrofit,infoupd,1347457338
 N15,A,PAMS removed for retrofit,infoupd,1347464538
 HH137,A,FEM Switch error -DCJ,infoupd,1347784938
+NCM12,A,Update WR-LEN firmware.,infoman,1347796818
+PAM038,A,Conductive gasket foam installed.,infoman,1347796818
+PAM046,A,Conductive gasket foam installed.,infoman,1347796818
 HH71,A,Spectre: N4P8N,infoupd,1318668140
 HH241,A,Spectre: N19P10E,infoupd,1320075738
 HH228,A,Spectre: N20P11N,infoupd,1321741162
@@ -2512,6 +2559,11 @@ N08,A,FEMv2.2 - has charge-pumps with a mitigation circuit designed by Cambridge
 N05,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N07,A,Added the additional foam runners on the PAMs,infoupd,1347280938
 N15,A,NCM removed for update,infoupd,1347464540
+NCM20,A,Update WR-LEN firmware.,infoman,1347796818
+PAM039,A,Conductive gasket foam installed.,infoman,1347796818
+PAM045,A,Conductive gasket foam installed.,infoman,1347796818
+PAM109,A,Conductive gasket foam installed.,infoman,1347796818
+PAM291,A,Conductive gasket foam installed.,infoman,1347796818
 HH123,A,Installed VLF-180+ onto both pols,ddb,1335697338
 HH223,A,Spectre: N19P5E,infoupd,1335439818
 HH242,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1335439820
@@ -2692,6 +2744,9 @@ N16,A,PAMs removed for retrofit.,infoupd,1347536538
 N02,A,Not WR locking again,infoupd,1347550938
 N18,A,Replaced S3 (C68 -> C119) Turns on and stays on!,infoupd,1347712938
 HH6,A,FEM Switch Error -DCJ,infoupd,1347777738
+NCM04,A,Update WR-LEN firmware.,infoman,1347796818
+PAM053,A,Conductive gasket foam installed.,infoman,1347796818
+PAM058,A,Conductive gasket foam installed.,infoman,1347796818
 HH81,A,Hooked in signal from splitter (shared with noise meter) on E pol,ddb,1335697938
 HH223,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1335439820
 HH242,A,Spectre: N19P11N,infoupd,1335439822
@@ -2824,6 +2879,11 @@ N09,A,Added the additional foam runners on the PAMs,infoupd,1347280938
 N18,A,PAMs removed for retrofit.,infoupd,1347536538
 N18,A,NCM reboots when SNAP 3 is turned on.,infoupd,1347550938
 HH8,A,FEM Switch error -DCJ,infoupd,1347777738
+NCM22,A,Update WR-LEN firmware.,infoman,1347796818
+PAM035,A,Conductive gasket foam installed.,infoman,1347796818
+PAM022,A,Conductive gasket foam installed.,infoman,1347796818
+PAM110,A,Conductive gasket foam installed.,infoman,1347796818
+PAM298,A,Conductive gasket foam installed.,infoman,1347796818
 HH223,A,Spectre: N19P5N,infoupd,1335439822
 HH243,A,Spectre: N19P12E,infoupd,1335439818
 HH68,A,Spectra: N3P4N,infoupd,1335439820
@@ -2841,6 +2901,45 @@ N09,A,PAMv2 - supplied by 8V rails. High power consumption producing ~+25dBm P1d
 N10,A,Updated the WR firmware,infoupd,1347280938
 N18,A,Original NCM returned,infoupd,1347536540
 HB321,A,FEM Switch error -DCJ,infoupd,1347777738
+NCM09,A,Update WR-LEN firmware.,infoman,1347796818
+PAM040,A,Conductive gasket foam installed.,infoman,1347796818
+PAM059,A,Conductive gasket foam installed.,infoman,1347796818
+PAM111,A,Conductive gasket foam installed.,infoman,1347796818
+PAM336,A,Conductive gasket foam installed.,infoman,1347796818
+PAM337,A,Conductive gasket foam installed.,infoman,1347796818
+PAM338,A,Conductive gasket foam installed.,infoman,1347796818
+PAM325,A,Conductive gasket foam installed.,infoman,1347796818
+PAM307,A,Conductive gasket foam installed.,infoman,1347796818
+PAM306,A,Conductive gasket foam installed.,infoman,1347796818
+PAM257,A,Conductive gasket foam installed.,infoman,1347796818
+PAM327,A,Conductive gasket foam installed.,infoman,1347796818
+PAM267,A,Conductive gasket foam installed.,infoman,1347796818
+PAM118,A,Conductive gasket foam installed.,infoman,1347796818
+PAM123,A,Conductive gasket foam installed.,infoman,1347796818
+PAM140,A,Conductive gasket foam installed.,infoman,1347796818
+PAM156,A,Conductive gasket foam installed.,infoman,1347796818
+PAM161,A,Conductive gasket foam installed.,infoman,1347796818
+PAM167,A,Conductive gasket foam installed.,infoman,1347796818
+PAM173,A,Conductive gasket foam installed.,infoman,1347796818
+PAM127,A,Conductive gasket foam installed.,infoman,1347796818
+PAM172,A,Conductive gasket foam installed.,infoman,1347796818
+PAM356,A,Conductive gasket foam installed.,infoman,1347796818
+PAM148,A,Conductive gasket foam installed.,infoman,1347796818
+PAM187,A,Conductive gasket foam installed.,infoman,1347796818
+PAM192,A,Conductive gasket foam installed.,infoman,1347796818
+PAM213,A,Conductive gasket foam installed.,infoman,1347796818
+PAM218,A,Conductive gasket foam installed.,infoman,1347796818
+PAM199,A,Conductive gasket foam installed.,infoman,1347796818
+PAM204,A,Conductive gasket foam installed.,infoman,1347796818
+PAM019,A,Conductive gasket foam installed.,infoman,1347796818
+PAM193,A,Conductive gasket foam installed.,infoman,1347796818
+PAM329,A,Conductive gasket foam installed.,infoman,1347796818
+PAM144,A,Conductive gasket foam installed.,infoman,1347796818
+PAM222,A,Conductive gasket foam installed.,infoman,1347796818
+PAM145,A,Conductive gasket foam installed.,infoman,1347796818
+PAM223,A,Conductive gasket foam installed.,infoman,1347796818
+PAM345,A,Conductive gasket foam installed.,infoman,1347796818
+PAM277,A,Conductive gasket foam installed.,infoman,1347796818
 HH51,A,"RY,F?,TY,WY",infoupd,1344696138
 HH66,A,"RY,F?,TY,WY",infoupd,1344699738
 N13,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
@@ -2849,6 +2948,84 @@ N08,A,Removed chokes from node cables,infoupd,1347291738
 N03,A,PAMs removed for retrofit,infoupd,1347352938
 N19,A,PAMs removed for retrofit.,infoupd,1347536538
 HH50,A,FEM Switch error -DCJ,infoupd,1347777738
+PAM047,A,Conductive gasket foam installed.,infoman,1347796818
+PAM054,A,Conductive gasket foam installed.,infoman,1347796818
+PAM023,A,Conductive gasket foam installed.,infoman,1347796818
+PAM028,A,Conductive gasket foam installed.,infoman,1347796818
+PAM354,A,Conductive gasket foam installed.,infoman,1347796818
+PAM346,A,Conductive gasket foam installed.,infoman,1347796818
+PAM351,A,Conductive gasket foam installed.,infoman,1347796818
+PAM339,A,Conductive gasket foam installed.,infoman,1347796818
+PAM302,A,Conductive gasket foam installed.,infoman,1347796818
+PAM303,A,Conductive gasket foam installed.,infoman,1347796818
+PAM265,A,Conductive gasket foam installed.,infoman,1347796818
+PAM342,A,Conductive gasket foam installed.,infoman,1347796818
+PAM326,A,Conductive gasket foam installed.,infoman,1347796818
+PAM119,A,Conductive gasket foam installed.,infoman,1347796818
+PAM126,A,Conductive gasket foam installed.,infoman,1347796818
+PAM146,A,Conductive gasket foam installed.,infoman,1347796818
+PAM157,A,Conductive gasket foam installed.,infoman,1347796818
+PAM163,A,Conductive gasket foam installed.,infoman,1347796818
+PAM168,A,Conductive gasket foam installed.,infoman,1347796818
+PAM174,A,Conductive gasket foam installed.,infoman,1347796818
+PAM135,A,Conductive gasket foam installed.,infoman,1347796818
+PAM175,A,Conductive gasket foam installed.,infoman,1347796818
+PAM018,A,Conductive gasket foam installed.,infoman,1347796818
+PAM149,A,Conductive gasket foam installed.,infoman,1347796818
+PAM188,A,Conductive gasket foam installed.,infoman,1347796818
+PAM209,A,Conductive gasket foam installed.,infoman,1347796818
+PAM214,A,Conductive gasket foam installed.,infoman,1347796818
+PAM219,A,Conductive gasket foam installed.,infoman,1347796818
+PAM200,A,Conductive gasket foam installed.,infoman,1347796818
+PAM205,A,Conductive gasket foam installed.,infoman,1347796818
+PAM129,A,Conductive gasket foam installed.,infoman,1347796818
+PAM233,A,Conductive gasket foam installed.,infoman,1347796818
+PAM344,A,Conductive gasket foam installed.,infoman,1347796818
+PAM151,A,Conductive gasket foam installed.,infoman,1347796818
+PAM261,A,Conductive gasket foam installed.,infoman,1347796818
+PAM152,A,Conductive gasket foam installed.,infoman,1347796818
+PAM262,A,Conductive gasket foam installed.,infoman,1347796818
+PAM281,A,Conductive gasket foam installed.,infoman,1347796818
+PAM132,A,Conductive gasket foam installed.,infoman,1347796818
+PAM180,A,Conductive gasket foam installed.,infoman,1347796818
+PAM196,A,Conductive gasket foam installed.,infoman,1347796818
+PAM236,A,Conductive gasket foam installed.,infoman,1347796818
+PAM224,A,Conductive gasket foam installed.,infoman,1347796818
+PAM263,A,Conductive gasket foam installed.,infoman,1347796818
+PAM270,A,Conductive gasket foam installed.,infoman,1347796818
+PAM246,A,Conductive gasket foam installed.,infoman,1347796818
+PAM282,A,Conductive gasket foam installed.,infoman,1347796818
+PAM323,A,Conductive gasket foam installed.,infoman,1347796818
+PAM359,A,Conductive gasket foam installed.,infoman,1347796818
+PAM360,A,Conductive gasket foam installed.,infoman,1347796818
+PAM349,A,Conductive gasket foam installed.,infoman,1347796818
+PAM364,A,Conductive gasket foam installed.,infoman,1347796818
+PAM133,A,Conductive gasket foam installed.,infoman,1347796818
+PAM181,A,Conductive gasket foam installed.,infoman,1347796818
+PAM237,A,Conductive gasket foam installed.,infoman,1347796818
+PAM225,A,Conductive gasket foam installed.,infoman,1347796818
+PAM264,A,Conductive gasket foam installed.,infoman,1347796818
+PAM271,A,Conductive gasket foam installed.,infoman,1347796818
+PAM247,A,Conductive gasket foam installed.,infoman,1347796818
+PAM283,A,Conductive gasket foam installed.,infoman,1347796818
+PAM182,A,Conductive gasket foam installed.,infoman,1347796818
+PAM238,A,Conductive gasket foam installed.,infoman,1347796818
+PAM226,A,Conductive gasket foam installed.,infoman,1347796818
+PAM248,A,Conductive gasket foam installed.,infoman,1347796818
+PAM284,A,Conductive gasket foam installed.,infoman,1347796818
+PAM308,A,Conductive gasket foam installed.,infoman,1347796818
+PAM322,A,Conductive gasket foam installed.,infoman,1347796818
+PAM361,A,Conductive gasket foam installed.,infoman,1347796818
+PAM367,A,Conductive gasket foam installed.,infoman,1347796818
+PAM239,A,Conductive gasket foam installed.,infoman,1347796818
+PAM227,A,Conductive gasket foam installed.,infoman,1347796818
+PAM273,A,Conductive gasket foam installed.,infoman,1347796818
+PAM249,A,Conductive gasket foam installed.,infoman,1347796818
+PAM285,A,Conductive gasket foam installed.,infoman,1347796818
+PAM305,A,Conductive gasket foam installed.,infoman,1347796818
+PAM309,A,Conductive gasket foam installed.,infoman,1347796818
+PAM320,A,Conductive gasket foam installed.,infoman,1347796818
+PAM363,A,Conductive gasket foam installed.,infoman,1347796818
 HH52,A,"RY,F?,TY,WN Conduit on hub",infoupd,1344696138
 HH67,A,"RY,F?,TY,WY",infoupd,1344699738
 N14,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
@@ -2857,6 +3034,47 @@ N09,A,Removed chokes from node cables,infoupd,1347291738
 N04,A,PAMs removed for retrofit. Power was off for PAM/FEM inside.,infoupd,1347352938
 N20,A,PAMs removed for retrofit.,infoupd,1347536538
 HH72,A,FEM Switch error -DCJ,infoupd,1347777738
+PAM048,A,Conductive gasket foam installed.,infoman,1347796818
+PAM042,A,Conductive gasket foam installed.,infoman,1347796818
+PAM060,A,Conductive gasket foam installed.,infoman,1347796818
+PAM101,A,Conductive gasket foam installed.,infoman,1347796818
+PAM031,A,Conductive gasket foam installed.,infoman,1347796818
+PAM032,A,Conductive gasket foam installed.,infoman,1347796818
+PAM033,A,Conductive gasket foam installed.,infoman,1347796818
+PAM350,A,Conductive gasket foam installed.,infoman,1347796818
+PAM340,A,Conductive gasket foam installed.,infoman,1347796818
+PAM341,A,Conductive gasket foam installed.,infoman,1347796818
+PAM266,A,Conductive gasket foam installed.,infoman,1347796818
+PAM355,A,Conductive gasket foam installed.,infoman,1347796818
+PAM343,A,Conductive gasket foam installed.,infoman,1347796818
+PAM120,A,Conductive gasket foam installed.,infoman,1347796818
+PAM134,A,Conductive gasket foam installed.,infoman,1347796818
+PAM153,A,Conductive gasket foam installed.,infoman,1347796818
+PAM158,A,Conductive gasket foam installed.,infoman,1347796818
+PAM164,A,Conductive gasket foam installed.,infoman,1347796818
+PAM169,A,Conductive gasket foam installed.,infoman,1347796818
+PAM162,A,Conductive gasket foam installed.,infoman,1347796818
+PAM137,A,Conductive gasket foam installed.,infoman,1347796818
+PAM259,A,Conductive gasket foam installed.,infoman,1347796818
+PAM128,A,Conductive gasket foam installed.,infoman,1347796818
+PAM176,A,Conductive gasket foam installed.,infoman,1347796818
+PAM189,A,Conductive gasket foam installed.,infoman,1347796818
+PAM210,A,Conductive gasket foam installed.,infoman,1347796818
+PAM215,A,Conductive gasket foam installed.,infoman,1347796818
+PAM220,A,Conductive gasket foam installed.,infoman,1347796818
+PAM201,A,Conductive gasket foam installed.,infoman,1347796818
+PAM206,A,Conductive gasket foam installed.,infoman,1347796818
+PAM143,A,Conductive gasket foam installed.,infoman,1347796818
+PAM221,A,Conductive gasket foam installed.,infoman,1347796818
+PAM020,A,Conductive gasket foam installed.,infoman,1347796818
+PAM178,A,Conductive gasket foam installed.,infoman,1347796818
+PAM352,A,Conductive gasket foam installed.,infoman,1347796818
+PAM179,A,Conductive gasket foam installed.,infoman,1347796818
+PAM269,A,Conductive gasket foam installed.,infoman,1347796818
+PAM365,A,Conductive gasket foam installed.,infoman,1347796818
+PAM272,A,Conductive gasket foam installed.,infoman,1347796818
+PAM183,A,Conductive gasket foam installed.,infoman,1347796818
+PAM184,A,Conductive gasket foam installed.,infoman,1347796818
 HH93,A,FEM141 declared bad and replaced with FEM351,infoupd,1342428140
 HH36,A,"RY,FY,TY,WN",infoupd,1344696138
 HH68,A,"RY,FY,TY,WN Spring on dish",infoupd,1344699738
@@ -2865,12 +3083,122 @@ N12,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+
 N09,A,Door broken,infoupd,1347352938
 N21,A,NCM removed for update.,infoupd,1347536538
 HH40,A,FEM Switch error -DCJ,infoupd,1347777738
+PAM244,A,Conductive gasket foam installed.,infoman,1347796818
+PAM041,A,Conductive gasket foam installed.,infoman,1347796818
+PAM024,A,Conductive gasket foam installed.,infoman,1347796818
+PAM112,A,Conductive gasket foam installed.,infoman,1347796818
+PAM104,A,Conductive gasket foam installed.,infoman,1347796818
+PAM105,A,Conductive gasket foam installed.,infoman,1347796818
+PAM106,A,Conductive gasket foam installed.,infoman,1347796818
+PAM107,A,Conductive gasket foam installed.,infoman,1347796818
+PAM357,A,Conductive gasket foam installed.,infoman,1347796818
+PAM362,A,Conductive gasket foam installed.,infoman,1347796818
+PAM268,A,Conductive gasket foam installed.,infoman,1347796818
+PAM116,A,Conductive gasket foam installed.,infoman,1347796818
+PAM016,A,Conductive gasket foam installed.,infoman,1347796818
+PAM121,A,Conductive gasket foam installed.,infoman,1347796818
+PAM136,A,Conductive gasket foam installed.,infoman,1347796818
+PAM154,A,Conductive gasket foam installed.,infoman,1347796818
+PAM159,A,Conductive gasket foam installed.,infoman,1347796818
+PAM165,A,Conductive gasket foam installed.,infoman,1347796818
+PAM170,A,Conductive gasket foam installed.,infoman,1347796818
+PAM017,A,Conductive gasket foam installed.,infoman,1347796818
+PAM141,A,Conductive gasket foam installed.,infoman,1347796818
+PAM311,A,Conductive gasket foam installed.,infoman,1347796818
+PAM138,A,Conductive gasket foam installed.,infoman,1347796818
+PAM185,A,Conductive gasket foam installed.,infoman,1347796818
+PAM190,A,Conductive gasket foam installed.,infoman,1347796818
+PAM211,A,Conductive gasket foam installed.,infoman,1347796818
+PAM216,A,Conductive gasket foam installed.,infoman,1347796818
+PAM197,A,Conductive gasket foam installed.,infoman,1347796818
+PAM202,A,Conductive gasket foam installed.,infoman,1347796818
+PAM207,A,Conductive gasket foam installed.,infoman,1347796818
+PAM150,A,Conductive gasket foam installed.,infoman,1347796818
+PAM260,A,Conductive gasket foam installed.,infoman,1347796818
+PAM125,A,Conductive gasket foam installed.,infoman,1347796818
+PAM194,A,Conductive gasket foam installed.,infoman,1347796818
+PAM021,A,Conductive gasket foam installed.,infoman,1347796818
+PAM195,A,Conductive gasket foam installed.,infoman,1347796818
+PAM245,A,Conductive gasket foam installed.,infoman,1347796818
+PAM240,A,Conductive gasket foam installed.,infoman,1347796818
 HH50,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH69,A,"RY,F?,TY,WY",infoupd,1344699738
 N16,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
 N13,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N05,A,PAMs removed for retrofit,infoupd,1347424938
 HH71,A,FEM Switch error -DCJ,infoupd,1347777738
+PAM232,A,Conductive gasket foam installed.,infoman,1347796818
+PAM055,A,Conductive gasket foam installed.,infoman,1347796818
+PAM061,A,Conductive gasket foam installed.,infoman,1347796818
+PAM029,A,Conductive gasket foam installed.,infoman,1347796818
+PAM280,A,Conductive gasket foam installed.,infoman,1347796818
+PAM300,A,Conductive gasket foam installed.,infoman,1347796818
+PAM301,A,Conductive gasket foam installed.,infoman,1347796818
+PAM113,A,Conductive gasket foam installed.,infoman,1347796818
+PAM114,A,Conductive gasket foam installed.,infoman,1347796818
+PAM115,A,Conductive gasket foam installed.,infoman,1347796818
+PAM304,A,Conductive gasket foam installed.,infoman,1347796818
+PAM258,A,Conductive gasket foam installed.,infoman,1347796818
+PAM117,A,Conductive gasket foam installed.,infoman,1347796818
+PAM122,A,Conductive gasket foam installed.,infoman,1347796818
+PAM139,A,Conductive gasket foam installed.,infoman,1347796818
+PAM155,A,Conductive gasket foam installed.,infoman,1347796818
+PAM160,A,Conductive gasket foam installed.,infoman,1347796818
+PAM166,A,Conductive gasket foam installed.,infoman,1347796818
+PAM171,A,Conductive gasket foam installed.,infoman,1347796818
+PAM124,A,Conductive gasket foam installed.,infoman,1347796818
+PAM147,A,Conductive gasket foam installed.,infoman,1347796818
+PAM330,A,Conductive gasket foam installed.,infoman,1347796818
+PAM142,A,Conductive gasket foam installed.,infoman,1347796818
+PAM186,A,Conductive gasket foam installed.,infoman,1347796818
+PAM191,A,Conductive gasket foam installed.,infoman,1347796818
+PAM212,A,Conductive gasket foam installed.,infoman,1347796818
+PAM217,A,Conductive gasket foam installed.,infoman,1347796818
+PAM198,A,Conductive gasket foam installed.,infoman,1347796818
+PAM203,A,Conductive gasket foam installed.,infoman,1347796818
+PAM208,A,Conductive gasket foam installed.,infoman,1347796818
+PAM177,A,Conductive gasket foam installed.,infoman,1347796818
+PAM313,A,Conductive gasket foam installed.,infoman,1347796818
 HH45,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342561698
 HH73,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342561698
 HH121,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1342561698
+PAM130,A,Conductive gasket foam installed.,infoman,1347796818
+PAM234,A,Conductive gasket foam installed.,infoman,1347796818
+PAM131,A,Conductive gasket foam installed.,infoman,1347796818
+PAM235,A,Conductive gasket foam installed.,infoman,1347796818
+PAM228,A,Conductive gasket foam installed.,infoman,1347796818
+PAM274,A,Conductive gasket foam installed.,infoman,1347796818
+PAM250,A,Conductive gasket foam installed.,infoman,1347796818
+PAM286,A,Conductive gasket foam installed.,infoman,1347796818
+PAM312,A,Conductive gasket foam installed.,infoman,1347796818
+PAM310,A,Conductive gasket foam installed.,infoman,1347796818
+PAM293,A,Conductive gasket foam installed.,infoman,1347796818
+PAM321,A,Conductive gasket foam installed.,infoman,1347796818
+PAM353,A,Conductive gasket foam installed.,infoman,1347796818
+PAM241,A,Conductive gasket foam installed.,infoman,1347796818
+PAM229,A,Conductive gasket foam installed.,infoman,1347796818
+PAM275,A,Conductive gasket foam installed.,infoman,1347796818
+PAM251,A,Conductive gasket foam installed.,infoman,1347796818
+PAM287,A,Conductive gasket foam installed.,infoman,1347796818
+PAM314,A,Conductive gasket foam installed.,infoman,1347796818
+PAM294,A,Conductive gasket foam installed.,infoman,1347796818
+PAM331,A,Conductive gasket foam installed.,infoman,1347796818
+PAM324,A,Conductive gasket foam installed.,infoman,1347796818
+PAM332,A,Conductive gasket foam installed.,infoman,1347796818
+PAM358,A,Conductive gasket foam installed.,infoman,1347796818
+PAM242,A,Conductive gasket foam installed.,infoman,1347796818
+PAM230,A,Conductive gasket foam installed.,infoman,1347796818
+PAM276,A,Conductive gasket foam installed.,infoman,1347796818
+PAM252,A,Conductive gasket foam installed.,infoman,1347796818
+PAM288,A,Conductive gasket foam installed.,infoman,1347796818
+PAM315,A,Conductive gasket foam installed.,infoman,1347796818
+PAM295,A,Conductive gasket foam installed.,infoman,1347796818
+PAM333,A,Conductive gasket foam installed.,infoman,1347796818
+PAM243,A,Conductive gasket foam installed.,infoman,1347796818
+PAM231,A,Conductive gasket foam installed.,infoman,1347796818
+PAM253,A,Conductive gasket foam installed.,infoman,1347796818
+PAM289,A,Conductive gasket foam installed.,infoman,1347796818
+PAM316,A,Conductive gasket foam installed.,infoman,1347796818
+PAM296,A,Conductive gasket foam installed.,infoman,1347796818
+PAM334,A,Conductive gasket foam installed.,infoman,1347796818
+PAM347,A,Conductive gasket foam installed.,infoman,1347796818
