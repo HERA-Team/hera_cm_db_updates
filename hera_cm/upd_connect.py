@@ -103,11 +103,15 @@ class UpdateConnect(upd_base.Update):
             try:
                 H.wr = self.gsheet.ncm[H.ncm].wr
                 H.rd = self.gsheet.ncm[H.ncm].rdhpn
+                skip_ncm = False
             except KeyError:
                 print(f"Missing NCM:  {node_num}")
                 H.wr = None
                 H.rd = None
+                skip_ncm = True
             for Up, Dn in node_based().items():
+                if skip_ncm and Up[0] == 'ncm' or Dn[0] == 'ncm':
+                    continue
                 self.create_sheet_conn(H, Up[0], Up[1], Dn[0], Dn[1])
             for station in self.gsheet.node_to_ant[node]:
                 # Ant-based
