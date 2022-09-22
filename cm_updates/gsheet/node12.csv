@@ -1,5 +1,5 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed heights (NE/SE/SW/NW),Feed Installed By,H6C,H6Ccheck
-176,E,101,160,1,149,49,e2,0,digital_ok,,,,,broadcast system,
+176,E,101,160,1,149,49,e2,0,digital_ok,,,,,,
 176,N,101,160,1,149,49,n0,0,digital_ok,,,,,,
 177,E,102,159,2,150,49,e6,0,digital_ok,,,,,,
 177,N,102,159,2,150,49,n4,0,digital_ok,,,,,,
