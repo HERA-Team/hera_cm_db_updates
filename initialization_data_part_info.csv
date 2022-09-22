@@ -1625,6 +1625,7 @@ N20,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+
 N10,A,"Power off on PAM/FEM inside, but doesnt seem to turn on -- NCM relays bad?",infoupd,1347352938
 HH129,A,FEM Switch error -DCJ,infoupd,1347784938
 HH60,A,"History: C32 not aligning, replaced with C111",infoupd,1347795738
+HH176,A,H6C: broadcast system,infoupd,1347864138
 HH103,A,Hooked up port 3 of Nimas noise generator onto E,ddb,1335696738
 HH205,A,Spectre: N19P2E,infoupd,1335439818
 HH225,A,Feed heights (NE/SE/SW/NW): 4.412,infoupd,1335439820
