@@ -59,9 +59,9 @@ class UpdateConnect(upd_base.Update):
         self.make_sheet_connections()
         self.gsheet.check_found_antennas()
         self.make_connection_dictionaries_and_compare()
+        self.modify_connections('stop', 'active_not_gsheet', skip=skip_stop)
         self.modify_parts('add', 'gsheet_not_active')
         self.modify_connections('add', 'gsheet_not_active', skip=[])
-        self.modify_connections('stop', 'active_not_gsheet', skip=skip_stop)
         self.finish(cron_script=cron_script, archive_to=archive_to, alert=alert)
 
     def get_from_col(self, rtype, col, antpol, node, pre='', check=False):
@@ -104,6 +104,7 @@ class UpdateConnect(upd_base.Update):
                 H.wr = self.gsheet.ncm[H.ncm].wr
                 H.rd = self.gsheet.ncm[H.ncm].rdhpn
             except KeyError:
+                print(f"Missing NCM:  {node_num}")
                 H.wr = None
                 H.rd = None
             for Up, Dn in node_based().items():
@@ -215,7 +216,10 @@ class UpdateConnect(upd_base.Update):
                 print(f"No parts to {add_or_stop} for {sysinfo}")
             return
         self.hera.no_op_comment(f'{add_or_stop} parts for {sysinfo}')
-        cdate, ctime = util.YMD_HM(self.cdatetime, -1.0 / 24.0)
+        if add_or_stop == 'add':
+            cdate, ctime = util.YMD_HM(self.cdatetime, -0.5 / 24.0)
+        else:
+            cdate, ctime = util.YMD_HM(self.cdatetime, -0.6 / 24.0)
         for prev in self.diffs[sysinfo]['parts']:
             self.update_counter += 1
             part, rev = cm_utils.split_part_key(prev)
@@ -238,6 +242,10 @@ class UpdateConnect(upd_base.Update):
         self.hera.no_op_comment(f'{add_or_stop} connections for {sysinfo}')
         cdate, ctime = util.YMD_HM(self.cdatetime, 0.0)
         this_one = sysinfo.split('_')[0]
+        if add_or_stop == 'add':
+            cdate, ctime = util.YMD_HM(self.cdatetime, 0.0)
+        else:
+            cdate, ctime = util.YMD_HM(self.cdatetime, -0.1 / 24.0)
         for connkey in self.diffs[sysinfo]['conn']:
             conn = self.sysinfo[this_one]['conn'][connkey]
             if self.include_it(conn, skip):
