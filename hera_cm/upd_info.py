@@ -176,7 +176,6 @@ class UpdateInfo(upd_base.Update):
         lines = []
         for this_line in script_lines:
             if 'h6c' in this_line.lower():
-                print("*******",this_line)
                 lines.append(this_line)
         self.distribute_log('H6C Updates:', lines, alert, log_entry_prefix='Action')
 
