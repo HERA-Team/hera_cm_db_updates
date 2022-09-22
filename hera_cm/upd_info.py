@@ -168,9 +168,9 @@ class UpdateInfo(upd_base.Update):
                     primary_keys.append(pkey)
 
     def process_h6c(self, alert=None):
-        print(alert)
         if alert is None:
             return
+        print(self.script)
         with open(self.script, 'r') as fp:
             script_lines = ''.join(fp.readlines())
         lines = []
