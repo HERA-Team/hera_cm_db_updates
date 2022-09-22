@@ -75,13 +75,13 @@ class Update():
         self.distribute_log('Daily log', lines, alert)
         self.r.delete('cm_period_log')
 
-    def distribute_log(self, prefix, lines, to_addr):
+    def distribute_log(self, prefix, lines, to_addr, log_entry_prefix=None):
         if not len(lines):
             return
         subj = f"{prefix} {datetime.datetime.now().isoformat(timespec='minutes')}"
         msg = subj + '\n\n'
         for this_line in lines:
-            msg += util.parse_log_line(this_line)
+            msg += util.parse_log_line(this_line, prefix=log_entry_prefix)
         self.alert_email(subj=subj, msg=msg, to_addr=to_addr)
 
     def alert_email(self, subj, msg, to_addr, from_addr='hera@lists.berkeley.edu'):
@@ -125,9 +125,10 @@ class Update():
                     print("Writing empty {}.".format(cron_script))
         else:
             with open(self.script, 'r') as fp:
-                msg = ''.join(fp.readlines())
+                script_lines = fp.readlines()
+            msg = ''.join(script_lines)
             logtime = int(time.time() * 10000)
-            for i, line in enumerate(msg.split('\n')):
+            for i, line in enumerate(script_lines):
                 key = f"{logtime}{i:04d}"
                 self.r.hset('cm_period_log', key, line)
             if alert is not None:

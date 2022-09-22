@@ -172,12 +172,12 @@ class UpdateInfo(upd_base.Update):
             return
         self.hera.fp.close()
         with open(self.script, 'r') as fp:
-            script_lines = ''.join(fp.readlines())
+            script_lines = fp.readlines()
         lines = []
         for this_line in script_lines:
-            if 'h6c' in this_line.lower():
+            if 'h6c:' in this_line.lower():
                 lines.append(this_line)
-        self.distribute_log('H6C Action:', lines, alert)
+        self.distribute_log('H6C Action:', lines, alert, log_entry_prefix='H6C Action')
 
     def is_duplicate(self, key, statement, duplication_window, view_duplicate=0.0):
         """Check if duplicate."""

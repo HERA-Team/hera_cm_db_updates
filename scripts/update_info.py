@@ -31,12 +31,8 @@ else:
     args = argparse.Namespace(archive_path=None, script_path='default', node_csv='r', verbose=True,
                               duplication_window=70.0, view_duplicate=10.0, look_only=False)
 
-if args.look_only:
-    script_type = None
-    cron_script = None
-else:
-    script_type = 'infoupd'
-    cron_script = 'info_update.sh'
+script_type = 'infoupd'
+cron_script = 'info_update.sh'
 if args.h6c is not None:
     args.h6c = args.h6c.split(',')
 
@@ -47,6 +43,7 @@ if args.archive_path.startswith('___'):
     args.archive_path = path.join(update.script_path, args.archive_path[3:])
 if args.archive_gsheet.startswith('___'):
     args.archive_gsheet = path.join(update.script_path, args.archive_gsheet[3:])
+
 update.load_gsheet(node_csv=args.node_csv, path=args.archive_gsheet)
 update.load_active()
 update.load_node_notes()

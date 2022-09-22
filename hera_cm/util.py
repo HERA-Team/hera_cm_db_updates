@@ -6,6 +6,7 @@
 """
 import datetime
 import argparse
+import csv
 
 
 def include_this_line_in_log(line):
@@ -17,7 +18,8 @@ def include_this_line_in_log(line):
 def parse_log_line(line,
                    arglist=['hpn', 'hptype', 'comment',
                             'uppart', 'upport',
-                            'dnpart', 'dnport', 'status']):
+                            'dnpart', 'dnport', 'status'],
+                   prefix=None):
     """
     Parse an input line to produce a log output.  To add, include the argparse
     in the script_info.py file and include desired options to arglist above.
@@ -25,18 +27,23 @@ def parse_log_line(line,
     from . import script_info
     from hera_mc import cm_utils
 
-    command = line.split()[0].split('.')[0]
+    argv = list(csv.reader([line], delimiter=' '))[0]
+    command = argv[0].split('.')[0]
+
     try:
         parser = getattr(script_info, command)()
     except AttributeError:
         return line + '\n'
-    args = parser.parse_args(line.split()[1:])
+
+    args = parser.parse_args(argv[1:])
     helpdict = {}
     for action in parser._actions:
         helpdict[action.dest] = action.help
     dt = cm_utils.get_astropytime(args.date, args.time)
 
-    ret = f"-- {' '.join(command.split('_'))} -- {dt.datetime.isoformat(timespec='seconds')}\n"
+    if prefix is None:
+        prefix = ' '.join(command.split('_'))
+    ret = f"-- {prefix} -- {dt.datetime.isoformat(timespec='seconds')}\n"
     for atr, hlp in helpdict.items():
         if atr in arglist:
             param = getattr(args, atr)
