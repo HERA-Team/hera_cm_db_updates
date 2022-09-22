@@ -177,7 +177,7 @@ class UpdateInfo(upd_base.Update):
         for this_line in script_lines:
             if 'h6c:' in this_line.lower():
                 lines.append(this_line)
-        self.distribute_log('H6C Action:', lines, alert, log_entry_prefix='H6C Action')
+        self.distribute_log('H6C Updates:', lines, alert, log_entry_prefix='Action')
 
     def is_duplicate(self, key, statement, duplication_window, view_duplicate=0.0):
         """Check if duplicate."""
