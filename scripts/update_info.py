@@ -23,7 +23,6 @@ if __name__ == '__main__':
                     help="Number of days to use for duplicate comments.", default=180.0)
     ap.add_argument('--view_duplicate', type=float,
                     help='In verbose, only show duplicates after this many days', default=0.0)
-    ap.add_argument('--look_only', help='Flag to only look at data.', action='store_true')
     ap.add_argument('--archive_gsheet', help='Path to move gsheet archive',
                     default='___cm_updates/gsheet')
     ap.add_argument('--h6c', help="Alert list for H6C workflow", default=None)
@@ -31,7 +30,6 @@ if __name__ == '__main__':
 else:
     args = argparse.Namespace(archive_path=None, script_path='default', node_csv='r', verbose=True,
                               duplication_window=70.0, view_duplicate=10.0, look_only=False)
-    print(args)
 
 if args.look_only:
     script_type = None
@@ -57,8 +55,5 @@ update.add_sheet_notes(duplication_window=args.duplication_window,
                        view_duplicate=args.view_duplicate)
 update.add_node_notes(duplication_window=args.duplication_window,
                       view_duplicate=args.view_duplicate)
-if args.look_only:
-    update.view_info()
-else:
-    update.process_h6c(args.h6c)
-    update.finish(cron_script=cron_script, archive_to=args.archive_path, alert=None)
+update.process_h6c(args.h6c)
+update.finish(cron_script=cron_script, archive_to=args.archive_path, alert=None)

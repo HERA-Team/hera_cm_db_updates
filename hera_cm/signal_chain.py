@@ -64,6 +64,12 @@ class Update:
         self.active = cm_active.ActiveData(session=self.session)
         self.load_active(cdate=None)
         self.handle = cm_handling.Handling(session=self.session)
+        self.script_setup(script_to_run)
+
+    def script_setup(self, script_to_run):
+        """
+        Open and setup the generated script, if script_to_run is set.
+        """
         if script_to_run is None:
             print("No script file started.  It'll probably error out.")
             self.script_to_run = None
@@ -729,11 +735,12 @@ class Update:
             dnpart = [val.downstream_part, val.down_part_rev, val.downstream_input_port]
             self.update_connection('add', uppart, dnpart, cdate, ctime)
 
-    def done(self):
+    def script_teardown(self):
         """Finish."""
         if self.script_to_run is None:
             return
-        self.fp.close()
+        if not self.fp.closed:
+            self.fp.close()
         if self.verbose:
             print("----------------------DONE-----------------------")
         if not self.chmod:

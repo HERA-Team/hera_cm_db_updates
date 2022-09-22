@@ -63,7 +63,7 @@ class Update():
             self.gsheet = cm_gsheet.SheetData()
         self.gsheet.load_workflow()
 
-    def process_log(self, alert=None):
+    def process_redis_cm_period_log(self, alert=None):
         if alert is None:
             return
         dlog = self.r.hgetall('cm_period_log')
@@ -72,14 +72,24 @@ class Update():
             this_line = dlog[key]
             if util.include_this_line_in_log(this_line):
                 lines.append(this_line)
+        self.distribute_log('Daily log', lines, alert)
+        self.r.delete('cm_period_log')
+
+    def distribute_log(self, prefix, lines, to_addr):
         if not len(lines):
             return
-        subj = f"Daily log {datetime.datetime.now().isoformat(timespec='minutes')}"
+        subj = f"{prefix} {datetime.datetime.now().isoformat(timespec='minutes')}"
         msg = subj + '\n\n'
         for this_line in lines:
             msg += util.parse_log_line(this_line)
-        self.alert_email(subj=subj, msg=msg, to_addr=alert)
-        self.r.delete('cm_period_log')
+        self.alert_email(subj=subj, msg=msg, to_addr=to_addr)
+
+    def alert_email(self, subj, msg, to_addr, from_addr='hera@lists.berkeley.edu'):
+        from hera_mc import watch_dog
+        try:
+            watch_dog.send_email(subj, msg, to_addr=to_addr, from_addr=from_addr)
+        except ConnectionRefusedError:
+            print("No email sent - ConnectionRefusedError")
 
     def finish(self, cron_script=None, archive_to=None, alert=None):
         """
@@ -96,7 +106,7 @@ class Update():
         alert : list or None
             If list, email addresses to alert if updates.
         """
-        self.hera.done()
+        self.hera.script_teardown()
         if self.script is None or (cron_script is None and archive_to is None):
             return
         if cron_script is not None:
@@ -135,10 +145,3 @@ class Update():
 
         if cron_script is not None and os.path.exists(cron_script):
             os.chmod(cron_script, 0o755)
-
-    def alert_email(self, subj, msg, to_addr, from_addr='hera@lists.berkeley.edu'):
-        from hera_mc import watch_dog
-        try:
-            watch_dog.send_email(subj, msg, to_addr=to_addr, from_addr=from_addr)
-        except ConnectionRefusedError:
-            print("No email sent - ConnectionRefusedError")

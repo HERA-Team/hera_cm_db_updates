@@ -170,22 +170,14 @@ class UpdateInfo(upd_base.Update):
     def process_h6c(self, alert=None):
         if alert is None:
             return
-        print(self.script)
+        self.hera.fp.close()
         with open(self.script, 'r') as fp:
             script_lines = ''.join(fp.readlines())
         lines = []
         for this_line in script_lines:
-            print(this_line)
             if 'h6c' in this_line.lower():
                 lines.append(this_line)
-        if not len(lines):
-            return
-        from datetime import datetime
-        subj = f"H6C Action: {datetime.now().isoformat(timespec='minutes')}"
-        msg = subj + '\n\n'
-        for this_line in lines:
-            msg += util.parse_log_line(this_line)
-        self.alert_email(subj=subj, msg=msg, to_addr=alert)
+        self.distribute_log('H6C Action:', lines, alert)
 
     def is_duplicate(self, key, statement, duplication_window, view_duplicate=0.0):
         """Check if duplicate."""
@@ -204,18 +196,3 @@ class UpdateInfo(upd_base.Update):
                               .format(key, node, statement, ddays))
                     return True
         return False
-
-    def view_info(self):
-        """View it."""
-        if len(self.new_apriori.keys()):
-            print("New Apriori")
-            for x, info in sorted(self.new_apriori.items()):
-                print("{}:  {}".format(x, info))
-        else:
-            print("No new apriori")
-        if len(self.new_notes.keys()):
-            print("New Notes")
-            for x, info in sorted(self.new_notes.items()):
-                print("{}:  {}".format(x, info))
-        else:
-            print("No new notes")
