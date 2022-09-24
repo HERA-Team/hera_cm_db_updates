@@ -25,7 +25,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,,Comments
 39,N,14,42,12,33,A20,n8,3,RF_maintenance,, ,
 #END,,,,,,,,,,,,
 Date:,2019/09/17,,,,,,,,,,,
-NCM,P1,,,,,,,,,,,
+NCM,,,,,,,,,,,,
 FPS,1,,,,,,,,,,,
 PCH,1,,,,,,,,,,,
 WR port,1-2,switch-port,,,,,,,,,,
