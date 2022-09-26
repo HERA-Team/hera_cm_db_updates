@@ -340,3 +340,5 @@ class UpdateConnect(upd_base.Update):
                 if len(val) > 1:
                     pval = [f"{x.strip('<').strip('>'):<40}" for x in val]
                     print(f"{key:<20}  {' '.join(pval)}")
+        else:
+            print("No duplicates found.")

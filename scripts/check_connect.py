@@ -9,7 +9,7 @@ import argparse
 from hera_cm import upd_connect
 
 ap = argparse.ArgumentParser()
-ap.add_argument('-f', '--find_parts', help="If set, find the parts (csv list).", default=None)
+ap.add_argument('-p', '--parts_to_find', help="If set, find the parts (csv list).", default=None)
 ap.add_argument('-n', '--node_csv', help="For testing: flag for read/write of gsheet (r/w/n)",
                 choices=['read', 'write', 'none', 'r', 'w', 'n'], default='n')
 ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
@@ -23,6 +23,6 @@ update.check_active()
 
 update.load_gsheet(args.node_csv)
 update.make_sheet_connections()
-if args.find_parts is not None:
-    args.find_parts = args.find_parts.split(',')
-    update.find_parts(args.find_parts, show=True)
+if args.parts_to_find is not None:
+    args.parts_to_find = args.parts_to_find.split(',')
+    update.find_parts(args.parts_to_find, show=True)
