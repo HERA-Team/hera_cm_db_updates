@@ -93,9 +93,10 @@ class UpdateConnect(upd_base.Update):
         self.gsheet.connections = {'up': {}, 'down': {}}  # To mirror cm_active
         # Make connections
         H = Namespace()
-        self.sheet_parts = {}
+        self.gsheet_parts = {}
         for node in self.gsheet.tabs:
-            self.sheet_parts[node] = set()
+            self._this_nodenum = int(node[4:])
+            self.gsheet_parts[self._this_nodenum] = set()
             # Node-based
             node_num = int(util.get_num(node))
             for part in ['node', 'nodestation', 'NBP']:
@@ -157,7 +158,7 @@ class UpdateConnect(upd_base.Update):
                 'down': cm_utils.make_part_key(Dn[0], Dn[1])}
         port = {'up': Up[2].lower(), 'down': Dn[2].lower()}
         for dir, key in keys.items():
-            self.sheet_parts.add(key)
+            self.gsheet_parts[self._this_nodenum].add(key)
             self.gsheet.connections[dir].setdefault(key, {})
             if port[dir] in self.gsheet.connections[dir][key]:
                 continue
@@ -167,6 +168,32 @@ class UpdateConnect(upd_base.Update):
                 upstream_output_port=Up[2],
                 downstream_part=Dn[0], down_part_rev=Dn[1],
                 downstream_input_port=Dn[2])
+
+    def find_parts(self, hpn, rev='A', show=False):
+        self.found_parts = {}
+        self._found_some_parts = False
+        for this_hpn in hpn:
+            self.found_parts[this_hpn] = []
+            hpnrev = cm_utils.make_part_key(this_hpn, rev)
+            for node, parts in self.gsheet_parts.items():
+                if hpnrev in parts:
+                    self._found_some_parts = True
+                    self.found_parts[this_hpn].append(node)
+        if show:
+            self.show_found_parts()
+
+    def show_found_parts(self):
+        if not self._found_some_parts:
+            print(f"No parts were found for {', '.join(list(self.found_parts.keys()))}")
+        tbl = []
+        for part, node in self.found_parts.items():
+            if len(node):
+                tbl.append([part, ', '.join([str(x) for x in sorted(node)])])
+            else:
+                tbl.append([part, 'none'])
+        print()
+        print(cm_utils.general_table_handler(['Part', 'Nodes'], tbl, 'table'))
+        print()
 
     def add_rosetta(self):
         for t2u in ['missing', 'different']:
