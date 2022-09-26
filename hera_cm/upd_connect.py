@@ -93,7 +93,9 @@ class UpdateConnect(upd_base.Update):
         self.gsheet.connections = {'up': {}, 'down': {}}  # To mirror cm_active
         # Make connections
         H = Namespace()
+        self.sheet_parts = {}
         for node in self.gsheet.tabs:
+            self.sheet_parts[node] = set()
             # Node-based
             node_num = int(util.get_num(node))
             for part in ['node', 'nodestation', 'NBP']:
@@ -155,6 +157,7 @@ class UpdateConnect(upd_base.Update):
                 'down': cm_utils.make_part_key(Dn[0], Dn[1])}
         port = {'up': Up[2].lower(), 'down': Dn[2].lower()}
         for dir, key in keys.items():
+            self.sheet_parts.add(key)
             self.gsheet.connections[dir].setdefault(key, {})
             if port[dir] in self.gsheet.connections[dir][key]:
                 continue
