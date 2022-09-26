@@ -7,6 +7,7 @@ import datetime
 import os
 import redis
 import time
+import socket
 from . import signal_chain, cm_gsheet, util
 
 
@@ -33,6 +34,10 @@ class Update():
             self.script_path = script_path
         self.verbose = verbose
         self.cdatetime = datetime.datetime.now()
+        hostname = socket.gethostname()
+        if hostname != 'qmaster':
+            tz = float(input(f"Host is {hostname} -- need a timezone"))
+            self.cdatetime += datetime.timedelta(hours=tz)
         self.cdate, self.ctime = util.YMD_HM(self.cdatetime)
         if script_type is None:
             self.script = None
