@@ -19,13 +19,21 @@ def parse_log_line(line,
                    arglist=['hpn', 'hptype', 'comment',
                             'uppart', 'upport',
                             'dnpart', 'dnport', 'status'],
-                   prefix=None):
+                   prefix=None, **kwargs):
     """
     Parse an input line to produce a log output.  To add, include the argparse
     in the script_info.py file and include desired options to arglist above.
     """
     from . import script_info
     from hera_mc import cm_utils
+
+    entry_type = {'add_connection': 'short',
+                  'stop_connection': 'short',
+                  'add_part': 'short',
+                  'stop_part': 'short',
+                  'add_part_info': 'short',
+                  'other': 'short'}
+    entry_type.update(kwargs)
 
     argv = list(csv.reader([line], delimiter=' '))[0]
     command = argv[0].split('.')[0]
@@ -43,11 +51,26 @@ def parse_log_line(line,
 
     if prefix is None:
         prefix = ' '.join(command.split('_'))
-    ret = f"-- {prefix} -- {dt.datetime.isoformat(timespec='seconds')}\n"
-    for atr, hlp in helpdict.items():
-        if atr in arglist:
-            param = getattr(args, atr)
-            ret += f"\t{helpdict[atr]}:  {param}\n"
+
+    if command in entry_type:
+        use_etype = command
+    else:
+        use_etype = 'other'
+    if entry_type[use_etype] == 'short':
+        ret = f'{prefix}: '
+        for atr, hlp in helpdict.items():
+            if atr in arglist:
+                param = getattr(args, atr)
+                ret += f"  {helpdict[atr]}={param}"
+        ret += f"  {dt.datetime.isoformat(timespec='seconds')}\n"
+    elif entry_type[use_etype] == 'long':
+        ret = f"-- {prefix} -- {dt.datetime.isoformat(timespec='seconds')}\n"
+        for atr, hlp in helpdict.items():
+            if atr in arglist:
+                param = getattr(args, atr)
+                ret += f"\t{helpdict[atr]}:  {param}\n"
+    else:
+        ret = line
     return ret
 
 
