@@ -2940,6 +2940,12 @@ PAM145,A,Conductive gasket foam installed.,infoman,1347796818
 PAM223,A,Conductive gasket foam installed.,infoman,1347796818
 PAM345,A,Conductive gasket foam installed.,infoman,1347796818
 PAM277,A,Conductive gasket foam installed.,infoman,1347796818
+PAM303,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM190,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM137,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM260,A,Failed Danny's PAM test setup on site.,,1348048818
+NCM09,A,Removed from system for failure during site visit.,,1348048818
+NCM24,A,Removed from system for failure during site visit.,,1348048818
 HH51,A,"RY,F?,TY,WY",infoupd,1344696138
 HH66,A,"RY,F?,TY,WY",infoupd,1344699738
 N13,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
@@ -3075,6 +3081,12 @@ PAM365,A,Conductive gasket foam installed.,infoman,1347796818
 PAM272,A,Conductive gasket foam installed.,infoman,1347796818
 PAM183,A,Conductive gasket foam installed.,infoman,1347796818
 PAM184,A,Conductive gasket foam installed.,infoman,1347796818
+PAM111,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM271,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM166,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM212,A,Failed Danny's PAM test setup on site.,,1348048818
+NCM68,A,Removed from system for failure during site visit.,,1348048818
+NCM65,A,Removed from system for failure during site visit.,,1348048818
 HH93,A,FEM141 declared bad and replaced with FEM351,infoupd,1342428140
 HH36,A,"RY,FY,TY,WN",infoupd,1344696138
 HH68,A,"RY,FY,TY,WN Spring on dish",infoupd,1344699738
@@ -3121,6 +3133,11 @@ PAM021,A,Conductive gasket foam installed.,infoman,1347796818
 PAM195,A,Conductive gasket foam installed.,infoman,1347796818
 PAM245,A,Conductive gasket foam installed.,infoman,1347796818
 PAM240,A,Conductive gasket foam installed.,infoman,1347796818
+PAM132,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM101,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM280,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM031,A,Failed Danny's PAM test setup on site.,,1348048818
+NCM32,A,Removed from system for failure during site visit.,,1348048818
 HH50,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH69,A,"RY,F?,TY,WY",infoupd,1344699738
 N16,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
@@ -3202,3 +3219,8 @@ PAM316,A,Conductive gasket foam installed.,infoman,1347796818
 PAM296,A,Conductive gasket foam installed.,infoman,1347796818
 PAM334,A,Conductive gasket foam installed.,infoman,1347796818
 PAM347,A,Conductive gasket foam installed.,infoman,1347796818
+PAM121,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM203,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM055,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM209,A,Failed Danny's PAM test setup on site.,,1348048818
+PAM266,A,Failed Danny's PAM test setup on site.,,1348048818
