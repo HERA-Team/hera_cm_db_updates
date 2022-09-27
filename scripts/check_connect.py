@@ -13,13 +13,15 @@ ap.add_argument('-p', '--parts_to_find', help="If set, find the parts (csv list)
 ap.add_argument('-n', '--node_csv', help="For testing: flag for read/write of gsheet (r/w/n)",
                 choices=['read', 'write', 'none', 'r', 'w', 'n'], default='n')
 ap.add_argument('-v', '--verbose', help="Turn verbosity on.", action='store_true')
+ap.add_argument('-s', '--duplicate_check', help='Skip the duplicate check.', action='store_false')
 args = ap.parse_args()
 
 update = upd_connect.UpdateConnect(script_type='no_signal_chain', script_path='.',
                                    disable_err=True, verbose=args.verbose)
 
-print("Checking duplicate active parts...")
-update.check_active()
+if args.duplicate_check:
+    print("Checking duplicate active parts...")
+    update.check_active()
 
 update.load_gsheet(args.node_csv)
 update.make_sheet_connections()
