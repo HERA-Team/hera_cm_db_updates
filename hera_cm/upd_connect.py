@@ -174,7 +174,10 @@ class UpdateConnect(upd_base.Update):
         self._found_some_parts = False
         for this_hpn in hpn:
             self.found_parts[this_hpn] = []
-            hpnrev = cm_utils.make_part_key(this_hpn, rev)
+            if ':' not in this_hpn:
+                hpnrev = cm_utils.make_part_key(this_hpn, rev)
+            else:
+                hpnrev = this_hpn
             for node, parts in self.gsheet_parts.items():
                 if hpnrev in parts:
                     self._found_some_parts = True
