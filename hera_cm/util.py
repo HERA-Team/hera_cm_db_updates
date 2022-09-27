@@ -60,8 +60,12 @@ def parse_log_line(line,
         ret = f'{prefix}: '
         for atr, hlp in helpdict.items():
             if atr in arglist:
+                if atr in ['comment', 'status']:
+                    delim = '"'
+                else:
+                    delim = ''
                 param = getattr(args, atr)
-                ret += f"  {helpdict[atr]}={param}"
+                ret += f"  {helpdict[atr]}={delim}{param}{delim}"
         ret += f"  {dt.datetime.isoformat(timespec='seconds')}\n"
     elif entry_type[use_etype] == 'long':
         ret = f"-- {prefix} -- {dt.datetime.isoformat(timespec='seconds')}\n"
