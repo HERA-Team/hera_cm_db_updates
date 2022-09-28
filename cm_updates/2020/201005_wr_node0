@@ -1,7 +1,0 @@
-#! /bin/bash
-echo "./201005_wr_node0.py" >> scripts.log 
-add_part.py -p WRlen4p0 -r A -t white-rabbit -m S8.313 --date 2020/03/01 --time 10:00
-add_part.py -p NCMP1 -r A -t node-control-module -m NCM-PreP1 --date 2020/03/01 --time 10:00
-add_connection.py -u WRlen4p0 --uprev A --upport mnt -d NCMP1 --dnrev A --dnport mnt1 --date 2020/03/01 --time 11:00
-add_part_info.py -p WRlen4p0 -r A -c 'MAC - 08:00:30:50:e8:17' --date 2020/03/01 --time 11:00
-add_part_info.py -p WRlen4p0 -r A -c 'IP - 10.80.2.138' --date 2020/03/01 --time 11:01

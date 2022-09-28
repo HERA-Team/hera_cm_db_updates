@@ -1,4 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "211109_infoupd_1542" >> scripts.log 
-add_part_info.py -p HH227 -r A -c 'Feed heights (NE/SE/SW/NW): 4.406' -l "infoupd" --date 2021/11/09 --time 15:42:00

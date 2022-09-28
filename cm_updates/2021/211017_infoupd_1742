@@ -1,4 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "211017_infoupd_1742" >> scripts.log 
-add_part_info.py -p N15 -r A -c 'Snap 0 being is not working tonight -- removed from yaml' -l "infoupd" --date 2021/10/17 --time 17:42:00

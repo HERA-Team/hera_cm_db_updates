@@ -1,7 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "200924_infoupd_2242" >> scripts.log 
-add_part_info.py -p HH136 -r A -c 'N12A136 N has unexpected wiggles low in the bandpass. Moving from RF_ok to RF_maint. 24 Sept.' -l "infoupd" --date 2020/09/24 --time 22:42:00
-add_part_info.py -p HH67 -r A -c 'N3A67 N is low amplitude. moving from dig_maint to rf_maint. 24 Sept. ' -l "infoupd" --date 2020/09/24 --time 22:42:00
-add_part_info.py -p HH84 -r A -c 'N8A84 E is low amplitude. Moving from RF_ok to RF_maint. 24 Sept. ' -l "infoupd" --date 2020/09/24 --time 22:42:00
-add_part_info.py -p HH86 -r A -c 'N8A86 N shows unexpected bump around 200 MHz. Moving from RF_ok to RF_maint. 24 Sept. ' -l "infoupd" --date 2020/09/24 --time 22:42:00

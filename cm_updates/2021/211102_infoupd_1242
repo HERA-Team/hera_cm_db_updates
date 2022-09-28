@@ -1,7 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "211102_infoupd_1242" >> scripts.log 
-add_part_info.py -p HH206 -r A -c 'Feed heights (NE/SE/SW/NW): 4.404' -l "infoupd" --date 2021/11/02 --time 12:42:00
-add_part_info.py -p HH223 -r A -c 'Feed heights (NE/SE/SW/NW): 4.405' -l "infoupd" --date 2021/11/02 --time 12:42:00
-add_part_info.py -p HH225 -r A -c 'Feed heights (NE/SE/SW/NW): 4.412' -l "infoupd" --date 2021/11/02 --time 12:42:00
-add_part_info.py -p HH242 -r A -c 'Feed heights (NE/SE/SW/NW): 4.404' -l "infoupd" --date 2021/11/02 --time 12:42:00

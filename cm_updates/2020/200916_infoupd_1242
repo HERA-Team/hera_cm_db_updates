@@ -1,5 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "200916_infoupd_1242" >> scripts.log 
-update_apriori.py -p HH16 -s RF_ok --date 2020/09/16 --time 12:42
-update_apriori.py -p HH17 -s RF_ok --date 2020/09/16 --time 12:42

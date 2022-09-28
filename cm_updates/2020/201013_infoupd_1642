@@ -1,6 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "201013_infoupd_1642" >> scripts.log 
-update_apriori.py -p HH148 -s RF_maintenance --date 2020/10/13 --time 16:43
-add_part_info.py -p HH148 -r A -c 'apriori_antenna status change: digital_ok -> RF_maintenance' -l "apa-infoupd" --date 2020/10/13 --time 16:43
-add_part_info.py -p HH148 -r A -c 'Broken fibre report by Thaki on 10/13/20' -l "apa-infoupd" --date 2020/10/13 --time 16:42:00

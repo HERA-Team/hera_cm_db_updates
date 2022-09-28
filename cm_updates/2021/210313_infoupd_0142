@@ -1,8 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "210313_infoupd_0142" >> scripts.log 
-update_apriori.py -p HH0 -s dish_ok --date 2021/03/13 --time 01:43
-add_part_info.py -p HH0 -r A -c 'apriori_antenna status change: RF_maintenance > dish_ok' -l "apa-infoupd" --date 2021/03/13 --time 01:43
-add_part_info.py -p HH0 -r A -c 'Another test of apriori notification.' -l "apa-infoupd" --date 2021/03/13 --time 01:42:00
-add_part_info.py -p HH0 -r A -c 'Testing the full automation' -l "apa-infoupd" --date 2021/03/13 --time 01:42:02
-add_part_info.py -p HH2 -r A -c 'Another test of apriori mis-match warning' -l "apa-infoupd" --date 2021/03/13 --time 01:42:00

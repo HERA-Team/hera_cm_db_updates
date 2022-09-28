@@ -1,8 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "210316_infoupd_1942" >> scripts.log 
-add_part_info.py -p HH93 -r A -c 'Looks dead in post-PAM spectre 17 Sept' -l "infoupd" --date 2021/03/16 --time 19:42:00
-add_part_info.py -p HH93 -r A -c 'Looks dead in post-PAM spectre 17 Sept' -l "infoupd" --date 2021/03/16 --time 19:42:02
-add_part_info.py -p HH45 -r A -c 'post-PAM spectre looks fine 17 sept' -l "infoupd" --date 2021/03/16 --time 19:42:00
-add_part_info.py -p HH59 -r A -c '59E has rising tail in 17 spet post-pam spectre' -l "infoupd" --date 2021/03/16 --time 19:42:00
-add_part_info.py -p HH59 -r A -c '59E has rising tail in 17 spet post-pam spectre' -l "infoupd" --date 2021/03/16 --time 19:42:02

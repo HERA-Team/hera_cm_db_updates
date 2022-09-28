@@ -1,5 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "211025_infoupd_1642" >> scripts.log 
-add_part_info.py -p HH238 -r A -c 'door closd 25/10/2021' -l "infoupd" --date 2021/10/25 --time 16:42:00
-add_part_info.py -p HH237 -r A -c 'door closed 25/10/2021' -l "infoupd" --date 2021/10/25 --time 16:42:00

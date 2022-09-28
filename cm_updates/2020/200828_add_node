@@ -1,4 +1,0 @@
-#! /bin/bash
-echo "./200828_add_node.py" >> scripts.log 
-add_station.py ND28 --sernum H0030-2601.2#22 --date 2020/08/01 --time 10:00
-add_part.py -p N28 -r A -t node -m H0030-2601.2#22 --date 2020/08/01 --time 10:00

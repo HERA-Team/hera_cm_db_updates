@@ -1,6 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "211011_infoupd_1342" >> scripts.log 
-add_part_info.py -p HH27 -r A -c 'Antenna is not raised and entire door sector is out.' -l "infoupd" --date 2021/10/11 --time 13:42:00
-add_part_info.py -p HH41 -r A -c 'Cables running down from feed are not secured to tether rope.' -l "infoupd" --date 2021/10/11 --time 13:42:00
-add_part_info.py -p HH108 -r A -c 'History: The 108 marker fell off of the north pole.' -l "infoupd" --date 2021/10/11 --time 13:42:00

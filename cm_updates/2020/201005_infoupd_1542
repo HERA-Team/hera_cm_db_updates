@@ -1,6 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "201005_infoupd_1542" >> scripts.log 
-update_apriori.py -p HH51 -s RF_maintenance --date 2020/10/05 --time 15:42
-add_part_info.py -p HH51 -r A -c 'apriori_antenna status change: digital_ok -> RF_maintenance' -l "apa-infoupd" --date 2020/10/05 --time 15:42
-add_part_info.py -p HH51 -r A -c '59128 51n is not seeing sky - moved from dig_ok to rf_maint' -l "apa-infoupd" --date 2020/10/05 --time 15:42:00

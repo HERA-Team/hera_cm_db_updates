@@ -1,8 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "200825_infoupd_1742" >> scripts.log 
-update_apriori.py -p HH12 -s RF_maintenance --date 2020/08/25 --time 17:42
-update_apriori.py -p HH13 -s RF_maintenance --date 2020/08/25 --time 17:42
-update_apriori.py -p HH23 -s RF_maintenance --date 2020/08/25 --time 17:42
-update_apriori.py -p HH83 -s RF_maintenance --date 2020/08/25 --time 17:42
-add_part_info.py -p HH11 -r A -c 'sbcd 25 aug due to heranow autos' -l "infoupd" --date 2020/08/25 --time 17:42:00

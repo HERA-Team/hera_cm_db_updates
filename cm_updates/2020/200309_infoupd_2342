@@ -1,3 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "200309_infoupd_2342" >> scripts.log 

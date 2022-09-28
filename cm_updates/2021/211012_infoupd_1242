@@ -1,9 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "211012_infoupd_1242" >> scripts.log 
-add_part_info.py -p HH1 -r A -c 'Spectra:' -l "infoupd" --date 2021/10/12 --time 12:42:00
-add_part_info.py -p HH13 -r A -c 'Spectra:' -l "infoupd" --date 2021/10/12 --time 12:42:00
-add_part_info.py -p HH24 -r A -c 'Spectra:' -l "infoupd" --date 2021/10/12 --time 12:42:00
-add_part_info.py -p HH25 -r A -c 'Spectra:' -l "infoupd" --date 2021/10/12 --time 12:42:00
-add_part_info.py -p HH26 -r A -c 'Spectra:' -l "infoupd" --date 2021/10/12 --time 12:42:00
-add_part_info.py -p HH39 -r A -c 'Spectra:' -l "infoupd" --date 2021/10/12 --time 12:42:00

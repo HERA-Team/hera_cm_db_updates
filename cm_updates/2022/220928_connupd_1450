@@ -1,0 +1,22 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220928_connupd_1450" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u NBP08 --uprev A --upport e1 -d PAM010 --dnrev A --dnport e --date 2022/09/28 --time 14:44
+stop_connection.py -u NBP08 --uprev A --upport n1 -d PAM010 --dnrev A --dnport n --date 2022/09/28 --time 14:44
+stop_connection.py -u PAM010 --uprev A --upport slot -d PCH03 --dnrev A --dnport slot1 --date 2022/09/28 --time 14:44
+stop_connection.py -u PAM010 --uprev A --upport e -d SNPC000023 --dnrev A --dnport e2 --date 2022/09/28 --time 14:44
+stop_connection.py -u PAM010 --uprev A --upport n -d SNPC000023 --dnrev A --dnport n0 --date 2022/09/28 --time 14:44
+# add parts for gsheet_not_active
+add_part.py -p PAM293 -r A -t post-amp -m PAM293 --date 2022/09/28 --time 14:20
+# add connections for gsheet_not_active
+add_connection.py -u NBP22 --uprev A --upport E9 -d PAM010 --dnrev A --dnport e --date 2022/09/28 --time 14:50
+add_connection.py -u NBP22 --uprev A --upport N9 -d PAM010 --dnrev A --dnport n --date 2022/09/28 --time 14:50
+add_connection.py -u PAM010 --uprev A --upport slot -d PCH21 --dnrev A --dnport slot9 --date 2022/09/28 --time 14:50
+add_connection.py -u PAM010 --uprev A --upport e -d SNPC000126 --dnrev A --dnport e10 --date 2022/09/28 --time 14:50
+add_connection.py -u PAM010 --uprev A --upport n -d SNPC000126 --dnrev A --dnport n8 --date 2022/09/28 --time 14:50
+add_connection.py -u PAM293 --uprev A --upport slot -d PCH03 --dnrev A --dnport slot1 --date 2022/09/28 --time 14:50
+add_connection.py -u PAM293 --uprev A --upport e -d SNPC000023 --dnrev A --dnport e2 --date 2022/09/28 --time 14:50
+add_connection.py -u PAM293 --uprev A --upport n -d SNPC000023 --dnrev A --dnport n0 --date 2022/09/28 --time 14:50
+add_connection.py -u NBP08 --uprev A --upport E1 -d PAM293 --dnrev A --dnport e --date 2022/09/28 --time 14:50
+add_connection.py -u NBP08 --uprev A --upport N1 -d PAM293 --dnrev A --dnport n --date 2022/09/28 --time 14:50

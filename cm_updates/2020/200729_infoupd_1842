@@ -1,4 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "200729_infoupd_1842" >> scripts.log 
-add_part_info.py -p HH146 -r A -c 'SMA and CAT7 cables too short, wont connect feed to node.' -l "infoupd" --date 2020/07/29 --time 18:42:00

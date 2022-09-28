@@ -1,4 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "210112_infoupd_1642" >> scripts.log 
-add_part_info.py -p HH27 -r A -c 'Feed heights (NE/SE/SW/NW): something wrong with fiber' -l "infoupd" --date 2021/01/12 --time 16:42:00

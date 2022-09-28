@@ -1,4 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "201005_infoupd_1642" >> scripts.log 
-add_part_info.py -p HH51 -r A -c '59128 51n is not seeing sky - moved from dig_ok to rf_maint' -l "infoupd" --date 2020/10/05 --time 16:42:00

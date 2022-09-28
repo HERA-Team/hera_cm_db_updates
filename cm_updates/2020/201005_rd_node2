@@ -1,7 +1,0 @@
-#! /bin/bash
-echo "./201005_rd_node2.py" >> scripts.log 
-add_part.py -p RD02 -r A -t arduino -m RD02 --date 2020/03/01 --time 10:00
-add_part.py -p NCMP1 -r A -t node-control-module -m NCM-ProP1 --date 2020/03/01 --time 10:00
-add_connection.py -u RD02 --uprev A --upport mnt -d NCMP1 --dnrev A --dnport mnt2 --date 2020/03/01 --time 11:00
-add_part_info.py -p RD02 -r A -c 'MAC - 02:02:0a:01:01:ca' --date 2020/03/01 --time 11:00
-add_part_info.py -p RD02 -r A -c 'IP - 10.80.2.202' --date 2020/03/01 --time 11:01

@@ -1,5 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "210316_infoupd_1842" >> scripts.log 
-add_part_info.py -p HH74 -r A -c '74E and N look dead 17 sept in post-PAM spectre' -l "infoupd" --date 2021/03/16 --time 18:42:00
-add_part_info.py -p HH74 -r A -c '74E and N look dead 17 sept in post-PAM spectre' -l "infoupd" --date 2021/03/16 --time 18:42:02

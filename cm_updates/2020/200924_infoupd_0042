@@ -1,4 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "200924_infoupd_0042" >> scripts.log 
-add_part_info.py -p HH123 -r A -c 'SNAP autos look like no sky; moved from rf_ok to rf_maint' -l "infoupd" --date 2020/09/24 --time 00:42:00

@@ -1,4 +1,0 @@
-#! /bin/bash
-echo "./211019_ncm_moves.py" >> scripts.log 
-stop_connection.py -u NCM04 --uprev A --upport rack -d N04 --dnrev A --dnport middle --date 2021/10/16 --time 10:00
-add_connection.py -u NCM21 --uprev A --upport rack -d N04 --dnrev A --dnport middle --date 2021/10/16 --time 11:00

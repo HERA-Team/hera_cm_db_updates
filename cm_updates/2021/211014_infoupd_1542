@@ -1,8 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "211014_infoupd_1542" >> scripts.log 
-add_part_info.py -p HH18 -r A -c 'Josh noted time variability over a few nights.' -l "infoupd" --date 2021/10/14 --time 15:42:00
-add_part_info.py -p HH94 -r A -c 'Josh noted time variability over a few nights.' -l "infoupd" --date 2021/10/14 --time 15:42:00
-add_part_info.py -p HH136 -r A -c 'Josh noted time variability over a few nights.' -l "infoupd" --date 2021/10/14 --time 15:42:00
-add_part_info.py -p HH179 -r A -c 'Josh noted time variability over a few nights.' -l "infoupd" --date 2021/10/14 --time 15:42:00
-add_part_info.py -p HH99 -r A -c 'Josh noted time variability over a few nights.' -l "infoupd" --date 2021/10/14 --time 15:42:00

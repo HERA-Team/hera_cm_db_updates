@@ -1,2 +1,0 @@
-update connections set downstream_input_port='mnt1' where downstream_part like 'NCM%' and upstream_part like 'WR%';
-update connections set downstream_input_port='mnt2' where downstream_part like 'NCM%' and upstream_part like 'RD%';

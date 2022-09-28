@@ -1,8 +1,0 @@
-#! /bin/bash
-source ~/.bashrc
-echo "200825_infoupd_1958" >> scripts.log 
-update_apriori.py -p HH2 -s RF_maintenance --date 2020/08/25 --time 19:58
-update_apriori.py -p HH110 -s RF_maintenance --date 2020/08/25 --time 19:58
-update_apriori.py -p HH111 -s RF_maintenance --date 2020/08/25 --time 19:58
-update_apriori.py -p HH112 -s RF_maintenance --date 2020/08/25 --time 19:58
-update_apriori.py -p HH185 -s RF_maintenance --date 2020/08/25 --time 19:58
