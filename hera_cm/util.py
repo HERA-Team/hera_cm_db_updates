@@ -9,10 +9,14 @@ import argparse
 import csv
 
 
-def include_this_line_in_log(line):
-    if 'date' in line and 'time' in line:
-        return True
-    return False
+def include_this_line_in_log(line, included):
+    if '--date' not in line:
+        return False
+    trunc_line = line.split('--date')[0]
+    for included_line in included:
+        if included_line.startswith(trunc_line):
+            return False
+    return True
 
 
 def parse_log_line(line,

@@ -75,7 +75,7 @@ class Update():
         lines = []
         for key in sorted(dlog.keys()):
             this_line = dlog[key]
-            if util.include_this_line_in_log(this_line):
+            if util.include_this_line_in_log(this_line, lines):
                 lines.append(this_line)
         self.distribute_log('Daily log', lines, alert)
         self.r.delete('cm_period_log')
