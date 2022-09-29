@@ -23,7 +23,8 @@ setup_args = {
                 'scripts/cat_nodes.py',
                 'scripts/cm_check_ncm.py',
                 'scripts/process_update_log.py',
-                'scripts/check_connect.py'],
+                'scripts/check_connect.py',
+                'scripts/wr_track_phase_alert.py'],
     'include_package_data': True,
     'install_requires': []
 }
