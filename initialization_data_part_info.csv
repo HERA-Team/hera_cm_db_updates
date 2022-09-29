@@ -2946,6 +2946,7 @@ PAM137,A,Failed Danny's PAM test setup on site.,,1348048818
 PAM260,A,Failed Danny's PAM test setup on site.,,1348048818
 NCM09,A,Removed from system for failure during site visit.,,1348048818
 NCM24,A,Removed from system for failure during site visit.,,1348048818
+HH176,A,H6C: Feed Height Before: 4.410Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348494140
 HH51,A,"RY,F?,TY,WY",infoupd,1344696138
 HH66,A,"RY,F?,TY,WY",infoupd,1344699738
 N13,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
@@ -3138,6 +3139,7 @@ PAM101,A,Failed Danny's PAM test setup on site.,,1348048818
 PAM280,A,Failed Danny's PAM test setup on site.,,1348048818
 PAM031,A,Failed Danny's PAM test setup on site.,,1348048818
 NCM32,A,Removed from system for failure during site visit.,,1348048818
+HH176,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1348494138
 HH50,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH69,A,"RY,F?,TY,WY",infoupd,1344699738
 N16,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
