@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220930_infoupd_0942" >> scripts.log 
+add_part_info.py -p HH177 -r A -c "H6C: Feed Height Before: 4.399Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/09/30 --time 09:42:00

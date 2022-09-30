@@ -1,0 +1,12 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/220930_infoupd_0742" >> scripts.log 
+add_part_info.py -p HH177 -r A -c "Feed heights (NE/SE/SW/NW): 4.407" -l "infoupd" --date 2022/09/30 --time 07:42:00
+add_part_info.py -p HH177 -r A -c "H6C: Feed Height Before: 4.399Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/09/30 --time 07:42:02
+add_part_info.py -p HH178 -r A -c "Feed heights (NE/SE/SW/NW): 4.407" -l "infoupd" --date 2022/09/30 --time 07:42:00
+add_part_info.py -p HH178 -r A -c "H6C: Feed Height Before: 4.405Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/09/30 --time 07:42:02
+add_part_info.py -p HH179 -r A -c "Feed heights (NE/SE/SW/NW): 4.41" -l "infoupd" --date 2022/09/30 --time 07:42:00
+add_part_info.py -p HH179 -r A -c "H6C: Feed Height Before: 4.407Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/09/30 --time 07:42:02
+add_part_info.py -p HH135 -r A -c "H6C: Feed Height Before: 4.410Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/09/30 --time 07:42:00
+add_part_info.py -p HH158 -r A -c "Feed heights (NE/SE/SW/NW): 4.408" -l "infoupd" --date 2022/09/30 --time 07:42:00
+add_part_info.py -p HH158 -r A -c "H6C: Feed Height Before: 4.408Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/09/30 --time 07:42:02
