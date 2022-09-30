@@ -21,6 +21,7 @@ new_lines_replace = ['Sticker Targets'
 def preproc_h6c(line, newlines=new_lines_replace):
     for rnl in newlines:
         line = line.replace(rnl, '\n' + rnl)
+    return line
 
 
 def include_this_line_in_log(line, included):
