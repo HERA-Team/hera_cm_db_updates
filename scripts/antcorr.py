@@ -4,17 +4,6 @@ import argparse
 import tabulate
 
 
-if __name__ == '__main__':
-    ap = argparse.ArgumentParser()
-    apah = ap.add_mutually_exclusive_group()
-    apah.add_argument('-a', '--antno', 'antenna number', default=None)
-    apah.add_argument('-h', '--hostname', 'hostname', default=None)
-    args = ap.parse_args()
-
-    if args.antno is None and args.hostname is None:
-        print("Must chose one of antno or hostname.")
-
-
 class AntCorr:
     def __init__(self):
         self.r = redis.Redis('redishost', decode_responses=True)
@@ -45,3 +34,27 @@ class AntCorr:
 #print(snap_ants['heraNode16Snap0'])
 #print(map_snap_ant['heraNode16Snap0'])
 #print(map_ant_snap['151']['e']['host'])
+
+    def corr_2_ant_host(self, corrs):
+        headers = ['Corr Index', 'Ant', 'Host']
+        table_data = []
+        for corrno in corrs:
+            hostname = self.snap_corr(int(corrno))
+            corr = self.snap_corr[hostname]
+            ants = self.map_snap_ant[hostname]
+            ind = corr.index(int(corrno))
+            table_data.append([corr, ants[ind], hostname)
+        print(tabulate.tabulate(table_data, headers=headers))
+
+if __name__ == '__main__':
+    ap = argparse.ArgumentParser()
+    apah = ap.add_mutually_exclusive_group()
+    apah.add_argument('-a', '--antno', help='antenna numbers', default=None)
+    apah.add_argument('-s', '--snap_hostname', help='hostnames of SNAP', default=None)
+    apah.add_argument('-c', '--corr_input', help="Correlator inputs")
+    args = ap.parse_args()
+
+    ac = AntCorr()
+    if args.antno is not None:
+        args.antno = args.antno.split(',')
+        ac.ant_2_host_corr(args.antno)
