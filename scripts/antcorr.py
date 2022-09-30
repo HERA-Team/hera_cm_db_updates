@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
 
 class AntCorr:
-    def __init__(self, antno, hostname):
+    def __init__(self):
         self.r = redis.Redis('redishost', decode_responses=True)
         snap_ants_str = self.r.hgetall('corr:snap_ants')
         self.snap_ants = {}
@@ -28,7 +28,7 @@ class AntCorr:
             for a in [antpols[i] for i in [0, 2, 4]]:
                 if a is not None:
                     a = a[2: -2]
-                self.map_snap_ant.append(a)
+                self.map_snap_ant[snaphost].append(a)
         self.map_ant_snap = json.loads(self.r.hget('corr:map', 'ant_to_snap'))
 
     def ant_2_host_corr(self):
