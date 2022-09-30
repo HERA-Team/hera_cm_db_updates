@@ -1,6 +1,7 @@
 import redis
 import json
 import argparse
+import tabulate
 
 
 if __name__ == '__main__':
@@ -31,12 +32,16 @@ class AntCorr:
                 self.map_snap_ant[snaphost].append(a)
         self.map_ant_snap = json.loads(self.r.hget('corr:map', 'ant_to_snap'))
 
-    def ant_2_host_corr(self, antno):
-        hostname = self.map_ant_snap[antno]['e']['host']
-        ants = self.map_snap_ant[hostname]
-        corr = self.snap_corr[hostname]
-        ind = ants.index(antno)
-        print(hostname, ants[ind], corr[ind])
+    def ant_2_host_corr(self, antnos):
+        headers = ['Ant', 'Host', 'Corr Index']
+        table_data = []
+        for antno in antnos:
+            hostname = self.map_ant_snap[antno]['e']['host']
+            ants = self.map_snap_ant[hostname]
+            corr = self.snap_corr[hostname]
+            ind = ants.index(antno)
+            table_data.append([antno, hostname, corr[ind])
+        print(tabulate.tabulate(table_data, headers=headers)
 #print(snap_ants['heraNode16Snap0'])
 #print(map_snap_ant['heraNode16Snap0'])
 #print(map_ant_snap['151']['e']['host'])
