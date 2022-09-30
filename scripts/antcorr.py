@@ -40,7 +40,7 @@ class AntCorr:
             ants = self.map_snap_ant[hostname]
             corr = self.snap_corr[hostname]
             ind = ants.index(antno)
-            table_data.append([antno, hostname, corr[ind])
+            table_data.append([antno, hostname, corr[ind]])
         print(tabulate.tabulate(table_data, headers=headers))
 #print(snap_ants['heraNode16Snap0'])
 #print(map_snap_ant['heraNode16Snap0'])
