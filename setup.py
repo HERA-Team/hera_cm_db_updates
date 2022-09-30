@@ -24,7 +24,8 @@ setup_args = {
                 'scripts/cm_check_ncm.py',
                 'scripts/process_update_log.py',
                 'scripts/check_connect.py',
-                'scripts/wr_track_phase_alert.py'],
+                'scripts/wr_track_phase_alert.py',
+                'scripts/antcorr.py'],
     'include_package_data': True,
     'install_requires': []
 }

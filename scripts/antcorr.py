@@ -1,17 +1,38 @@
 import redis
 import json
+import argparse
 
-r = redis.Redis('redishost', decode_responses=True)
 
-snap_ants_str = r.hgetall('corr:snap_ants')
+if __name__ == '__main__':
+    ap = argparse.ArgumentParser()
+    apah = ap.add_mutually_exclusive_group()
+    apah.add_argument('-a', '--antno', 'antenna number', default=None)
+    apah.add_argument('-h', '--hostname', 'hostname', default=None)
+    args = ap.parse_args()
 
-snap_ants = {}
-for snaphost, indlist in snap_ants_str.items():
-    snap_ants[snaphost] = json.loads(indlist)
-print(snap_ants['heraNode16Snap0'])
+    if args.antno is None and args.hostname is None:
+        print("Must chose one of antno or hostname.")
 
-map_snap_ant = json.loads(r.hget('corr:map', 'snap_to_ant'))
-print(map_snap_ant['heraNode16Snap0'])
 
-map_ant_snap = json.loads(r.hget('corr:map', 'ant_to_snap'))
-print(map_ant_snap['151']['e']['host'])
+class AntCorr:
+    def __init__(self, antno, hostname):
+        self.r = redis.Redis('redishost', decode_responses=True)
+        snap_ants_str = self.r.hgetall('corr:snap_ants')
+        self.snap_ants = {}
+        for snaphost, indlist in snap_ants_str.items():
+            self.snap_ants[snaphost] = json.loads(indlist)
+        map_snap_ant_str = json.loads(self.r.hget('corr:map', 'snap_to_ant'))
+        self.map_snap_ant = {}
+        for snaphost, antpols in map_snap_ant_str.items():
+            self.map_snap_ant[snaphost] = []
+            for a in [antpols[i] for i in [0, 2, 4]]:
+                if a is not None:
+                    a = a[2: -2]
+                self.map_snap_ant.append(a)
+        self.map_ant_snap = json.loads(self.r.hget('corr:map', 'ant_to_snap'))
+
+    def ant_2_host_corr(self):
+        hostname = self.map_snap_ant[self.antcorr]['e']['host']
+#print(snap_ants['heraNode16Snap0'])
+#print(map_snap_ant['heraNode16Snap0'])
+#print(map_ant_snap['151']['e']['host'])
