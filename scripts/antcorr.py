@@ -35,7 +35,7 @@ class AntCorr:
         hostname = self.map_ant_snap[antno]['e']['host']
         ants = self.map_snap_ant[hostname]
         corr = self.snap_corr[hostname]
-        ind = ants.find(antno)
+        ind = ants.index(antno)
         print(hostname, ants[ind], corr[ind])
 #print(snap_ants['heraNode16Snap0'])
 #print(map_snap_ant['heraNode16Snap0'])
