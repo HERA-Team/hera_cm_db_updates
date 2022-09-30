@@ -46,6 +46,15 @@ class AntCorr:
             table_data.append([corr, ants[ind], hostname])
         print(tabulate.tabulate(table_data, headers=headers))
 
+    def host_2_ant_corr(self, hosts):
+        headers = ['Host', 'Antennas', 'Corr Indices']
+        table_data = []
+        for hostname in hosts:
+            ants = self.map_snap_ant[hostname]
+            corr = self.snap_corr[hostname]
+            table_data.append([hostname, ', '.join(ants), ', '.join([str(x) for x in corr])])
+        print(tabulate.tabulate(table_data, headers=headers))
+
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
