@@ -67,7 +67,7 @@ if __name__ == '__main__':
     ac = AntCorr()
     if args.ants is not None:
         args.ants = args.ants.split(',')
-        ac.ant_2_host_corr(args.ants)
+        ac.ant_2_snap_corr(args.ants)
     if args.snaps is not None:
         args.snaps = args.snaps.split(',')
         ac.snap_2_ant_corr(args.snaps)
