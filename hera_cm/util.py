@@ -8,7 +8,8 @@ import datetime
 import argparse
 import csv
 
-new_lines_replace = ['Sticker Targets'
+new_lines_replace = ['Feed Height Before',
+                     'Sticker Targets',
                      'Stiffener Braces',
                      'Carey Caps',
                      'Protected Fiber',
