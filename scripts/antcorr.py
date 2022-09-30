@@ -37,15 +37,14 @@ class AntCorr:
         headers = ['Corr Index', 'Ant', 'Snap']
         table_data = []
         for corrno in corr_indices:
-            corrnint = int(corrno)
             fnd_snap = None
             for snap, corrinds in self.snap_corr.items():
-                if corrnint in corrinds:
+                if corrno in corrinds:
                     if fnd_snap is not None:
                         raise ValueError(f"Found {corrno} in multiple snaps: {fnd_snap}, {snap}")
                     fnd_snap = snap + ''
-                    fnd_corr = corrnint + 0
-                    ind = corrinds.index(corrnint)
+                    fnd_corr = corrno + 0
+                    ind = corrinds.index(corrno)
                     fnd_ant = self.map_snap_ant[fnd_snap][ind]
             table_data.append([fnd_corr, fnd_ant, fnd_snap])
         print(tabulate.tabulate(table_data, headers=headers))
@@ -66,7 +65,7 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('-a', '--ants', help='csv antenna numbers', default=None)
     ap.add_argument('-s', '--snaps', help='csv hostnames of SNAP', default=None)
-    ap.add_argument('-c', '--corr', help='csv correlator inputs')
+    ap.add_argument('-c', '--corrs', help='csv correlator inputs')
     args = ap.parse_args()
 
     ac = AntCorr()
@@ -76,3 +75,6 @@ if __name__ == '__main__':
     if args.snaps is not None:
         args.snaps = args.snaps.split(',')
         ac.snap_2_ant_corr(args.snaps)
+    if args.corrs is not None:
+        args.corrs = [int(x) for x in args.corrs.split(',')]
+        ac.corr_2_ant_snap(args.corrs)
