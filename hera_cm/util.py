@@ -75,7 +75,7 @@ def parse_log_line(line,
         use_etype = command
         # Temporary "H6C" processing:
         if command == 'add_part_info' and args.comment.lower().startswith('h6c'):
-            use_etype = 'long'
+            entry_type[use_etype] = 'long'
             args.comment = preproc_h6c(args.comment)
     else:
         use_etype = 'other'
