@@ -8,6 +8,20 @@ import datetime
 import argparse
 import csv
 
+new_lines_replace = ['Sticker Targets'
+                     'Stiffener Braces',
+                     'Carey Caps',
+                     'Protected Fiber',
+                     'Cable Conduit',
+                     'Spiral Wrap',
+                     'D Shackle Cable',
+                     'Cables Labelled']
+
+
+def preproc_h6c(line, newlines=new_lines_replace):
+    for rnl in newlines:
+        line = line.replace(rnl, '\n' + rnl)
+
 
 def include_this_line_in_log(line, included):
     if '--date' not in line:
@@ -58,6 +72,10 @@ def parse_log_line(line,
 
     if command in entry_type:
         use_etype = command
+        # Temporary "H6C" processing:
+        if command == 'add_part_info' and args.comment.lower().startswith('h6c'):
+            use_etype = 'long'
+            args.comment = preproc_h6c(args.comment)
     else:
         use_etype = 'other'
     if entry_type[use_etype] == 'short':
