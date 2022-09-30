@@ -31,7 +31,7 @@ class AntCorr:
             corrs = self.snap_corr[snap]
             table_data.append([antno, snap, corrs[ants.index(antno)]])
         print(tabulate.tabulate(table_data, headers=headers))
-        print()
+        print('\n')
 
     def corr_2_ant_snap(self, corr_indices):
         headers = ['Corr Index', 'Ant', 'Snap']
@@ -48,7 +48,7 @@ class AntCorr:
                     fnd_ant = self.map_snap_ant[fnd_snap][ind]
             table_data.append([fnd_corr, fnd_ant, fnd_snap])
         print(tabulate.tabulate(table_data, headers=headers))
-        print()
+        print('\n')
 
     def snap_2_ant_corr(self, snap_hostnames):
         headers = ['Snap', 'Antennas', 'Corr Indices']
@@ -58,7 +58,7 @@ class AntCorr:
             corrs = ', '.join([str(x) for x in self.snap_corr[snap]])
             table_data.append([snap, ants, corrs])
         print(tabulate.tabulate(table_data, headers=headers))
-        print()
+        print('\n')
 
 
 if __name__ == '__main__':
