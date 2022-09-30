@@ -21,50 +21,52 @@ class AntCorr:
                 self.map_snap_ant[snaphost].append(a)
         self.map_ant_snap = json.loads(self.r.hget('corr:map', 'ant_to_snap'))
 
-    def ant_2_host_corr(self, antnos):
-        headers = ['Ant', 'Host', 'Corr Index']
+    def ant_2_snap_corr(self, antenna_numbers):
+        headers = ['Ant', 'Snap', 'Corr Index']
         table_data = []
-        for antno in antnos:
-            hostname = self.map_ant_snap[antno]['e']['host']
-            ants = self.map_snap_ant[hostname]
-            corr = self.snap_corr[hostname]
-            ind = ants.index(antno)
-            table_data.append([antno, hostname, corr[ind]])
+        for antno in antenna_numbers:
+            snap = self.map_ant_snap[antno]['e']['host']
+            ants = self.map_snap_ant[snap]
+            corrs = self.snap_corr[snap]
+            table_data.append([antno, snap, corrs[ants.index(antno)]])
         print(tabulate.tabulate(table_data, headers=headers))
-#print(snap_ants['heraNode16Snap0'])
-#print(map_snap_ant['heraNode16Snap0'])
-#print(map_ant_snap['151']['e']['host'])
+        print()
 
-    def corr_2_ant_host(self, corrs):
-        headers = ['Corr Index', 'Ant', 'Host']
+    def corr_2_ant_snap(self, corr_indices):
+        headers = ['Corr Index', 'Ant', 'Snap']
         table_data = []
-        for corrno in corrs:
-            hostname = self.snap_corr(int(corrno))
-            corr = self.snap_corr[hostname]
-            ants = self.map_snap_ant[hostname]
-            ind = corr.index(int(corrno))
-            table_data.append([corr, ants[ind], hostname])
+        print("NOT WORKING")
+        for corrno in corr_indices:
+            snap = self.snap_corr(int(corrno))
+            corrs = self.snap_corr[snap]
+            ants = self.map_snap_ant[snap]
+            ind = corrs.index(int(corrno))
+            table_data.append([corrs, ants[ind], snap])
         print(tabulate.tabulate(table_data, headers=headers))
+        print()
 
-    def host_2_ant_corr(self, hosts):
-        headers = ['Host', 'Antennas', 'Corr Indices']
+    def snap_2_ant_corr(self, snap_hostnames):
+        headers = ['Snap', 'Antennas', 'Corr Indices']
         table_data = []
-        for hostname in hosts:
-            ants = self.map_snap_ant[hostname]
-            corr = self.snap_corr[hostname]
-            table_data.append([hostname, ', '.join([str(x) for x in ants]), ', '.join([str(x) for x in corr])])
+        for snap in snap_hostnames:
+            ants = ', '.join([str(x) for x in self.map_snap_ant[snap]])
+            corrs = ', '.join([str(x) for x in self.snap_corr[snap]])
+            table_data.append([snap, ants, corrs)
         print(tabulate.tabulate(table_data, headers=headers))
+        print()
 
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
-    apah = ap.add_mutually_exclusive_group()
-    apah.add_argument('-a', '--antno', help='antenna numbers', default=None)
-    apah.add_argument('-s', '--snap_hostname', help='hostnames of SNAP', default=None)
-    apah.add_argument('-c', '--corr_input', help="Correlator inputs")
+    ap.add_argument('-a', '--ants', help='csv antenna numbers', default=None)
+    ap.add_argument('-s', '--snaps', help='csv hostnames of SNAP', default=None)
+    ap.add_argument('-c', '--corr', help='csv correlator inputs')
     args = ap.parse_args()
 
     ac = AntCorr()
-    if args.antno is not None:
-        args.antno = args.antno.split(',')
-        ac.ant_2_host_corr(args.antno)
+    if args.ants is not None:
+        args.ants = args.ants.split(',')
+        ac.ant_2_host_corr(args.ants)
+    if args.snaps is not None:
+        args.snaps = args.snaps.split(',')
+        ac.snap_2_ant_corr(args.snaps)
