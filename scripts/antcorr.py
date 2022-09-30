@@ -51,7 +51,7 @@ class AntCorr:
         for snap in snap_hostnames:
             ants = ', '.join([str(x) for x in self.map_snap_ant[snap]])
             corrs = ', '.join([str(x) for x in self.snap_corr[snap]])
-            table_data.append([snap, ants, corrs)
+            table_data.append([snap, ants, corrs])
         print(tabulate.tabulate(table_data, headers=headers))
         print()
 
