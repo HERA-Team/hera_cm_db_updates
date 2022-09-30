@@ -32,7 +32,7 @@ class AntCorr:
         self.map_ant_snap = json.loads(self.r.hget('corr:map', 'ant_to_snap'))
 
     def ant_2_host_corr(self, antno):
-        hostname = self.map_snap_ant[antno]['e']['host']
+        hostname = self.map_ant_snap[antno]['e']['host']
         ants = self.map_snap_ant[hostname]
         corr = self.snap_corr[hostname]
         print(hostname, ants, corr)
