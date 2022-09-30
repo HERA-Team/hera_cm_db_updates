@@ -36,13 +36,18 @@ class AntCorr:
     def corr_2_ant_snap(self, corr_indices):
         headers = ['Corr Index', 'Ant', 'Snap']
         table_data = []
-        print("NOT WORKING")
         for corrno in corr_indices:
-            snap = self.snap_corr(int(corrno))
-            corrs = self.snap_corr[snap]
-            ants = self.map_snap_ant[snap]
-            ind = corrs.index(int(corrno))
-            table_data.append([corrs, ants[ind], snap])
+            corrnint = int(corrno)
+            fnd_snap = None
+            for snap, corrinds in self.snap_corr.items():
+                if corrnint in corrinds:
+                    if fnd_snap is not None:
+                        raise ValueError(f"Found {corrno} in multiple snaps: {fnd_snap}, {snap}")
+                    fnd_snap = snap + ''
+                    fnd_corr = corrnint + 0
+                    ind = corrinds.index(corrnint)
+                    fnd_ant = self.map_snap_ant[fnd_snap][ind]
+            table_data.append([fnd_corr, fnd_ant, fnd_snap])
         print(tabulate.tabulate(table_data, headers=headers))
         print()
 
