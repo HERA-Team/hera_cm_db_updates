@@ -52,7 +52,7 @@ class AntCorr:
         for hostname in hosts:
             ants = self.map_snap_ant[hostname]
             corr = self.snap_corr[hostname]
-            table_data.append([hostname, ', '.join(ants), ', '.join([str(x) for x in corr])])
+            table_data.append([hostname, ', '.join([str(x) for x in ants]), ', '.join([str(x) for x in corr])])
         print(tabulate.tabulate(table_data, headers=headers))
 
 
