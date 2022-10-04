@@ -1,0 +1,21 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221004_infoupd_1342" >> scripts.log 
+add_part_info.py -p HH161 -r A -c "Feed heights (NE/SE/SW/NW): 4.409" -l "infoupd" --date 2022/10/04 --time 13:42:00
+add_part_info.py -p HH161 -r A -c "H6C: Feed Height Before: 4.409Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/04 --time 13:42:02
+add_part_info.py -p HH162 -r A -c "Feed heights (NE/SE/SW/NW): 4.403" -l "infoupd" --date 2022/10/04 --time 13:42:00
+add_part_info.py -p HH162 -r A -c "H6C: Feed Height Before: 4.402Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/04 --time 13:42:02
+add_part_info.py -p HH182 -r A -c "Feed heights (NE/SE/SW/NW): 4.411" -l "infoupd" --date 2022/10/04 --time 13:42:00
+add_part_info.py -p HH182 -r A -c "H6C: Feed Height Before: 4.410Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/04 --time 13:42:02
+add_part_info.py -p HH183 -r A -c "Feed heights (NE/SE/SW/NW): 4.409" -l "infoupd" --date 2022/10/04 --time 13:42:00
+add_part_info.py -p HH183 -r A -c "H6C: Feed Height Before: 4.407Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/04 --time 13:42:02
+add_part_info.py -p HH140 -r A -c "Feed heights (NE/SE/SW/NW): 4.405" -l "infoupd" --date 2022/10/04 --time 13:42:00
+add_part_info.py -p HH140 -r A -c "H6C: Feed Height Before: 4.401Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/04 --time 13:42:02
+add_part_info.py -p HH141 -r A -c "Feed heights (NE/SE/SW/NW): 4.407" -l "infoupd" --date 2022/10/04 --time 13:42:00
+add_part_info.py -p HH141 -r A -c "H6C: Feed Height Before: 4.399Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/04 --time 13:42:02
+add_part_info.py -p HH160 -r A -c "Feed heights (NE/SE/SW/NW): 4.407" -l "infoupd" --date 2022/10/04 --time 13:42:00
+add_part_info.py -p HH160 -r A -c "H6C: Feed Height Before: 4.405Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/04 --time 13:42:02
+add_part_info.py -p HH180 -r A -c "Feed heights (NE/SE/SW/NW): 4.409" -l "infoupd" --date 2022/10/04 --time 13:42:00
+add_part_info.py -p HH180 -r A -c "H6C: Feed Height Before: 4.402Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/04 --time 13:42:02
+add_part_info.py -p HH181 -r A -c "Feed heights (NE/SE/SW/NW): 4.411" -l "infoupd" --date 2022/10/04 --time 13:42:00
+add_part_info.py -p HH181 -r A -c "H6C: Feed Height Before: 4.409Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/04 --time 13:42:02
