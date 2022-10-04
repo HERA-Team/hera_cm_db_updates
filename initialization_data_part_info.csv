@@ -2954,6 +2954,10 @@ HH135,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1348562538
 HH136,A,H6C: Feed Height Before: 4.403Sticker Targets: Prsent AlreadyStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Already Present,infoupd,1348562540
 HH156,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1348562538
 HH157,A,H6C: Feed Height Before: 4.399Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348562540
+HH161,A,H6C: Feed Height Before: 4.409Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348926140
+HH162,A,H6C: Feed Height Before: 4.402Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348926140
+HH182,A,H6C: Feed Height Before: 4.410Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348926140
+HH183,A,H6C: Feed Height Before: 4.407Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348926140
 HH51,A,"RY,F?,TY,WY",infoupd,1344696138
 HH66,A,"RY,F?,TY,WY",infoupd,1344699738
 N13,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
@@ -3101,6 +3105,14 @@ HH158,A,H6C: Feed Height Before: 4.408Sticker Targets: InstalledStiffener Braces
 HH135,A,H6C: Feed Height Before: 4.401Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: Already PresentD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348562540
 HH155,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1348562538
 HH156,A,H6C: Feed Height Before: 4.407Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348562540
+HH161,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1348926138
+HH162,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1348926138
+HH182,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1348926138
+HH183,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1348926138
+HH140,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1348926138
+HH140,A,H6C: Feed Height Before: 4.401Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348926140
+HH141,A,H6C: Feed Height Before: 4.399Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348926140
+HH160,A,H6C: Feed Height Before: 4.405Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348926140
 HH93,A,FEM141 declared bad and replaced with FEM351,infoupd,1342428140
 HH36,A,"RY,FY,TY,WN",infoupd,1344696138
 HH68,A,"RY,FY,TY,WN Spring on dish",infoupd,1344699738
@@ -3159,6 +3171,10 @@ HH135,A,H6C: Feed Height Before: 4.410Sticker Targets: InstalledStiffener Braces
 HH136,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1348562538
 HH155,A,H6C: Feed Height Before: 4.409Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: Already presentD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348562540
 HH157,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1348562538
+HH141,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1348926138
+HH160,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1348926138
+HH180,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1348926138
+HH181,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1348926138
 HH50,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH69,A,"RY,F?,TY,WY",infoupd,1344699738
 N16,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
@@ -3245,3 +3261,5 @@ PAM203,A,Failed Danny's PAM test setup on site.,,1348048818
 PAM055,A,Failed Danny's PAM test setup on site.,,1348048818
 PAM209,A,Failed Danny's PAM test setup on site.,,1348048818
 PAM266,A,Failed Danny's PAM test setup on site.,,1348048818
+HH180,A,H6C: Feed Height Before: 4.402Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348926140
+HH181,A,H6C: Feed Height Before: 4.409Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: InstalledSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,infoupd,1348926140
