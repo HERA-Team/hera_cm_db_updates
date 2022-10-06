@@ -24,7 +24,6 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 146,E,,,12,184,38,e10,3,digital_ok,,,,,,
 146,N,,,12,184,38,n8,3,digital_ok,,,,,,
 #END,,,,,,,,,,,,,,,
-Date,,,,,,,,,,,,,,,
 NCM,10,,,,,,,,,,,,,,
 FPS,16,,,,,,,,,,,,,,
 PCH,11,,,,,,,,,,,,,,
