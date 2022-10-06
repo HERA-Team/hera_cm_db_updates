@@ -157,8 +157,11 @@ class UpdateInfo(upd_base.Update):
                     refout = 'infoupd'
                     if antrev_key in self.new_apriori.keys():
                         refout = 'apa-infoupd'
-                        if statement not in self.new_apriori[antrev_key]['info']:
-                            self.new_apriori[antrev_key]['info'].append(statement)
+                        print("UI160: Checking apa-infoupd")
+                        print(antrev_key)
+                        print(self.new_apriori[antrev_key].keys())
+                        #if statement not in self.new_apriori[antrev_key]['info']:
+                        #    self.new_apriori[antrev_key]['info'].append(statement)
                     self.new_notes.setdefault(antrev_key, [])
                     self.new_notes[antrev_key].append(statement)
                     if self.verbose:
