@@ -1,0 +1,8 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221006_infoupd_2112" >> scripts.log 
+update_apriori.py -p HH70 -s digital_ok --date 2022/10/04 --time 21:18
+add_part_info.py -p HH70 -r A -c "apriori_antenna status change: RF_maintenance > digital_ok" -l "apa-infoupd" --date 2022/10/04 --time 21:18
+add_part_info.py -p HH135 -r A -c "H6C: Feed Height Before: 4.401Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: Already PresentD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/05 --time 17:12:00
+add_part_info.py -p HH70 -r A -c "Antennas 70 and 71 were swapped in the sheet" -l "apa-infoupd" --date 2022/10/06 --time 21:12:00
+add_part_info.py -p HH71 -r A -c "Antennas 71 and 70 were swapped in the sheet" -l "infoupd" --date 2022/10/06 --time 21:12:00
