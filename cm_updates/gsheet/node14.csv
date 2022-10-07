@@ -15,7 +15,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 163,N,110,173,7,179,28,n0,2,digital_ok,,,,,,
 164,E,106,174,8,180,28,e6,2,digital_ok,,,4.411,,Feed Height Before: 4.399Sticker Targets: Present AlreadyStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed,
 164,N,106,174,8,180,28,n4,2,digital_ok,,,,,,
-143,E,139,175,9,295,28,e10,2,digital_ok,,FEM Switch error -DCJ,4.409,,"""Feed Height Before: 4.401Sticker Targets: Present AlreadyStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: Already PresentD Shackle Cable Tie: InstalledCables Labelled: Completed""",
+143,E,139,175,9,295,28,e10,2,digital_ok,,FEM Switch error -DCJ,4.409,,Feed Height Before: 4.401Sticker Targets: Present AlreadyStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: Already PresentD Shackle Cable Tie: InstalledCables Labelled: Completed,
 143,N,139,175,9,295,28,n8,2,digital_ok,,,,,,
 144,E,127,179,10,182,38,e2,3,digital_ok,,,4.408,,Feed Height Before: 4.402Sticker Targets: Present AlreadyStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: Already PresentD Shackle Cable Tie: InstalledCables Labelled: Completed,
 144,N,127,179,10,182,38,n0,3,digital_ok,,,,,,
