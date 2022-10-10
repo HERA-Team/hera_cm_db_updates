@@ -26,9 +26,14 @@ with mc.MCSessionWrapper() as session:
                     except KeyError:
                         note.node = '-x-'
                     data[f"{note.posting_gpstime}{part}"] = copy(note)
-
+        by_node = {}
         for out in sorted(data.keys()):
-            popart = data[out].hpn.split(':')[0]
+            node = data[out].node
+            by_node.setdefault(node, [])
+            popart = data[out].hpn.split(':')[0][2:]
             aptime = cm_utils.get_astropytime(data[out].posting_gpstime, float_format='gps')
             potime = aptime.datetime.strftime("%Y-%m-%d")
-            print(f"{popart}    {data[out].node}   {potime}")
+            print(f"{popart:3s}    {node}   {potime}")
+            by_node.append(f"{popart}:{aptime.datetime.strftime("%m-%d")})
+        for node, ants in by_node.items():
+            print(f"{node} -- {', '.join(ants)}")
