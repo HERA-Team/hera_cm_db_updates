@@ -35,5 +35,6 @@ with mc.MCSessionWrapper() as session:
             potime = aptime.datetime.strftime("%Y-%m-%d")
             print(f"{popart:3s}    {node}   {potime}")
             by_node[node].append(f'{popart}:{aptime.datetime.strftime("%m-%d")}')
+        print("\n")
         for node, ants in by_node.items():
             print(f"{node} -- {', '.join(ants)}")
