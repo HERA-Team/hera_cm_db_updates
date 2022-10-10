@@ -151,7 +151,7 @@ class UpdateInfo(upd_base.Update):
                 if "'" in statement:
                     statement = statement.replace("'", "")
                 statement = statement.strip()
-                if len(statement) == 0:
+                if len(statement) == 0 or statement.startswith(':::'):
                     continue
                 if not self.is_duplicate(antrev_key, statement, duplication_window, view_duplicate):
                     refout = 'infoupd'
@@ -160,8 +160,9 @@ class UpdateInfo(upd_base.Update):
                         print("UI160: Checking apa-infoupd")
                         print(antrev_key)
                         print(self.new_apriori[antrev_key].keys())
-                        #if statement not in self.new_apriori[antrev_key]['info']:
-                        #    self.new_apriori[antrev_key]['info'].append(statement)
+                        # -- ddb comment out in 10/2022 -- not sure what it was/is for
+                        # if statement not in self.new_apriori[antrev_key]['info']:
+                        #     self.new_apriori[antrev_key]['info'].append(statement)
                     self.new_notes.setdefault(antrev_key, [])
                     self.new_notes[antrev_key].append(statement)
                     if self.verbose:
