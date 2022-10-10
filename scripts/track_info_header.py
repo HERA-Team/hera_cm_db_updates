@@ -34,6 +34,6 @@ with mc.MCSessionWrapper() as session:
             aptime = cm_utils.get_astropytime(data[out].posting_gpstime, float_format='gps')
             potime = aptime.datetime.strftime("%Y-%m-%d")
             print(f"{popart:3s}    {node}   {potime}")
-            by_node.append(f'{popart}:{aptime.datetime.strftime("%m-%d")}')
+            by_node[node].append(f'{popart}:{aptime.datetime.strftime("%m-%d")}')
         for node, ants in by_node.items():
             print(f"{node} -- {', '.join(ants)}")
