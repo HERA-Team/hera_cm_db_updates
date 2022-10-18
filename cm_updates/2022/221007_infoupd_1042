@@ -1,0 +1,17 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221007_infoupd_1042" >> scripts.log 
+add_part_info.py -p HH165 -r A -c "Feed Heights: 4.407" -l "infoupd" --date 2022/10/07 --time 10:42:00
+add_part_info.py -p HH165 -r A -c "H6C: Feed Height Before: 4.401Sticker Targets: Present AlreadyStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: Already PresentD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/07 --time 10:42:02
+add_part_info.py -p HH184 -r A -c "Feed Heights: 4.410" -l "infoupd" --date 2022/10/07 --time 10:42:00
+add_part_info.py -p HH184 -r A -c "H6C: Feed Height Before: 4.409Sticker Targets: InstalledStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: Already PresentD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/07 --time 10:42:02
+add_part_info.py -p HH185 -r A -c "Feed Heights: 4.408" -l "infoupd" --date 2022/10/07 --time 10:42:00
+add_part_info.py -p HH185 -r A -c "H6C: Feed Height Before: 4.411Sticker Targets: Present AlreadyStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: Already PresentD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/07 --time 10:42:02
+add_part_info.py -p HH163 -r A -c "Feed Heights: 4.409" -l "infoupd" --date 2022/10/07 --time 10:42:00
+add_part_info.py -p HH163 -r A -c "H6C: Feed Height Before: 4.407Sticker Targets: Present AlreadyStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/07 --time 10:42:02
+add_part_info.py -p HH164 -r A -c "Feed Heights: 4.411" -l "infoupd" --date 2022/10/07 --time 10:42:00
+add_part_info.py -p HH164 -r A -c "H6C: Feed Height Before: 4.399Sticker Targets: Present AlreadyStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: InstalledD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/07 --time 10:42:02
+add_part_info.py -p HH143 -r A -c "Feed Heights: 4.409" -l "infoupd" --date 2022/10/07 --time 10:42:00
+add_part_info.py -p HH143 -r A -c "H6C: Feed Height Before: 4.401Sticker Targets: Present AlreadyStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: Already PresentD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/07 --time 10:42:02
+add_part_info.py -p HH144 -r A -c "Feed Heights: 4.408" -l "infoupd" --date 2022/10/07 --time 10:42:00
+add_part_info.py -p HH144 -r A -c "H6C: Feed Height Before: 4.402Sticker Targets: Present AlreadyStiffener Braces: Present AlreadyCarey Caps: Present AlreadyProtected Fiber: InstalledCable Conduit: Already PresentSpiral Wrap: Already PresentD Shackle Cable Tie: InstalledCables Labelled: Completed" -l "infoupd" --date 2022/10/07 --time 10:42:02
