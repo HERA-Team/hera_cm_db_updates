@@ -50,7 +50,6 @@ def snap_config(old_config_file, new_config_file='snap_config.out', ant_limit=20
     total_ants = 0
     phase_switch_index = 1
     hostname_order = []
-    snp = cm_hookup.get_hookup('SNP')
     print("Generating new config.")
     for node in use_nodes:
         for sloc in range(4):
