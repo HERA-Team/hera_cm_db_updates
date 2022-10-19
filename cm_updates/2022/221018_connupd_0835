@@ -1,0 +1,27 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221018_connupd_0835" >> scripts.log 
+# stop connections for active_not_gsheet
+# add parts for gsheet_not_active
+add_part.py -p FDV124 -r A -t feed -m FDV124 --date 2022/10/18 --time 08:05
+add_part.py -p FEM358 -r A -t front-end -m FEM358 --date 2022/10/18 --time 08:05
+add_part.py -p FEM300 -r A -t front-end -m FEM300 --date 2022/10/18 --time 08:05
+add_part.py -p FEM303 -r A -t front-end -m FEM303 --date 2022/10/18 --time 08:05
+add_part.py -p FDV116 -r A -t feed -m FDV116 --date 2022/10/18 --time 08:05
+add_part.py -p FDV135 -r A -t feed -m FDV135 --date 2022/10/18 --time 08:05
+# add connections for gsheet_not_active
+add_connection.py -u A139 --uprev H --upport focus -d FDV124 --dnrev A --dnport input --date 2022/10/18 --time 08:35
+add_connection.py -u FDV124 --uprev A --upport terminals -d FEM300 --dnrev A --dnport input --date 2022/10/18 --time 08:35
+add_connection.py -u FEM300 --uprev A --upport pwr -d FPS11 --dnrev A --dnport pwr5 --date 2022/10/18 --time 08:35
+add_connection.py -u FEM300 --uprev A --upport e -d NBP13 --dnrev A --dnport E5 --date 2022/10/18 --time 08:35
+add_connection.py -u FEM300 --uprev A --upport n -d NBP13 --dnrev A --dnport N5 --date 2022/10/18 --time 08:35
+add_connection.py -u A159 --uprev H --upport focus -d FDV116 --dnrev A --dnport input --date 2022/10/18 --time 08:35
+add_connection.py -u FDV116 --uprev A --upport terminals -d FEM358 --dnrev A --dnport input --date 2022/10/18 --time 08:35
+add_connection.py -u FEM358 --uprev A --upport pwr -d FPS11 --dnrev A --dnport pwr6 --date 2022/10/18 --time 08:35
+add_connection.py -u FEM358 --uprev A --upport e -d NBP13 --dnrev A --dnport E6 --date 2022/10/18 --time 08:35
+add_connection.py -u FEM358 --uprev A --upport n -d NBP13 --dnrev A --dnport N6 --date 2022/10/18 --time 08:35
+add_connection.py -u A146 --uprev H --upport focus -d FDV135 --dnrev A --dnport input --date 2022/10/18 --time 08:35
+add_connection.py -u FDV135 --uprev A --upport terminals -d FEM303 --dnrev A --dnport input --date 2022/10/18 --time 08:35
+add_connection.py -u FEM303 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr12 --date 2022/10/18 --time 08:35
+add_connection.py -u FEM303 --uprev A --upport e -d NBP14 --dnrev A --dnport E12 --date 2022/10/18 --time 08:35
+add_connection.py -u FEM303 --uprev A --upport n -d NBP14 --dnrev A --dnport N12 --date 2022/10/18 --time 08:35
