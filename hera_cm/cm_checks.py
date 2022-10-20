@@ -3,10 +3,11 @@
 # Licensed under the 2-clause BSD license.
 
 """Series of database checks."""
-from hera_mc import mc, cm_utils, cm_active, cm_sysutils, cm_hookup
+from hera_mc import mc, cm_utils, cm_active, cm_sysutils, cm_hookup, geo_handling
 import redis
 from node_control import he_check
 import yaml
+import matplotlib.pyplot as plt
 
 
 def _getkeys(this_dict, these_keys, defv):
@@ -21,28 +22,27 @@ def _getkeys(this_dict, these_keys, defv):
 
 def get_snap_connections(verbose=False):
     hostinfo = {}
-    snaps = cm_hookup.get_hookup('SNP')
-    for this_snap in snaps:
-        for inp in snaps[this_snap].hookup:
-            if len(snaps[this_snap].hookup[inp]):
-                ant = snaps[this_snap].hookup[inp][0].upstream_part
-                if ant.startswith('H'):
-                    node_num = int(snaps[this_snap].hookup[inp][-1].downstream_part[1:])
-                    loc_num = int(snaps[this_snap].hookup[inp][-1].downstream_input_port[3:])
-                    hostname = f"heraNode{node_num}Snap{loc_num}"
-                    hostinfo.setdefault(hostname, {'sn': this_snap.split(':')[0], 'all': [], 'cnt': 0})
-                    if ant not in hostinfo[hostname]['all']:
-                        hostinfo[hostname]['all'].append(ant)
-                        hostinfo[hostname]['cnt'] += 1
-                    hostinfo[hostname].setdefault(ant[:2], [])
-                    if ant not in hostinfo[hostname][ant[:2]]:
-                        hostinfo[hostname][ant[:2]].append(ant)
+    hookup = cm_hookup.get_hookup('H')
+    for ant in hookup:
+        for port in hookup[ant].hookup:
+            if len(hookup[ant].hookup[port]) == 7:
+                snap_sn = hookup[ant].hookup[port][-1].upstream_part
+                node_num = int(hookup[ant].hookup[port][-1].downstream_part[1:])
+                loc_num = int(hookup[ant].hookup[port][-1].downstream_input_port[3:])
+                hostname = f"heraNode{node_num}Snap{loc_num}"
+                hostinfo.setdefault(hostname, {'sn': snap_sn, 'all': [], 'cnt': 0})
+                if ant not in hostinfo[hostname]['all']:
+                    hostinfo[hostname]['all'].append(ant)
+                    hostinfo[hostname]['cnt'] += 1
+                hostinfo[hostname].setdefault(ant[:2], [])
+                if ant not in hostinfo[hostname][ant[:2]]:
+                    hostinfo[hostname][ant[:2]].append(ant)
     return hostinfo
 
 
 def snap_config(old_config_file, new_config_file='snap_config.out', ant_limit=208,
                 use_nodes=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,22,23],
-                min_connected=3, ignore_outriggers=True,
+                min_connected=2, ignore_outriggers=True,
                 skip_hosts=['heraNode24Snap0'],  # just put one in not used to remind
                 start_block='fengines:', end_block='# Data is sent assuming a total'):
     key2use = 'HH' if ignore_outriggers else 'all'
@@ -54,6 +54,7 @@ def snap_config(old_config_file, new_config_file='snap_config.out', ant_limit=20
     total_ants = 0
     phase_switch_index = 1
     hostname_order = []
+    ant_list = []
     print("Generating new config.")
     for node in use_nodes:
         for sloc in range(4):
@@ -75,9 +76,11 @@ def snap_config(old_config_file, new_config_file='snap_config.out', ant_limit=20
                 if antno < ant_limit:
                     ant_per_host = len(snap_conn[hostname]['all'])
                     if ant_per_host > 3:
-                        print(snap_conn[hostname]['all'])
+                        print(f"Warning:  more than 3 antennas:  {snap_conn[hostname]['all']}")
+                        continue
+                    for ant in snap_conn[hostname]['all']:
+                        ant_list.append(ant.split(':')[0])
                     total_ants += ant_per_host
-                    print(total_ants, antno, len(snap_conn[hostname]['all']), antno < ant_limit)
                     hostname_order.append(hostname)
                     sc['fengines'].setdefault(hostname, {'ants': [], 'phase_switch_index': []})
                     sc['fengines'][hostname]['ants'] = f"[{','.join([str(i) for i in this_set])}]"
@@ -113,6 +116,20 @@ def snap_config(old_config_file, new_config_file='snap_config.out', ant_limit=20
                 if not in_fengine_block:
                     print(line.strip(), file=fpout)
     print(f"{len(hostname_order)} snaps and {total_ants} antennas.")
+    with mc.MCSessionWrapper() as session:
+        geo = geo_handling.Handling(session)
+        loc = geo.get_location(ant_list, 'now')
+        x = []
+        y = []
+        for this_loc in loc:
+            x.append(this_loc.easting)
+            y.append(this_loc.northing)
+        #plt.plot(x, y, 'o')
+        geo.set_graph(True)
+        geo.plot_all_stations()
+        geo.plot_stations(loc, xgraph='E', ygraph='N', label='none',
+                          marker_color='k', marker_shape='o', marker_size=4)
+    return ant_list
 
 def _notsame(a, b, **kwargs):
     params = {'ignore_case': True, 'ignore_no_data': 1}
