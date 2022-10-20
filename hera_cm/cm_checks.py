@@ -20,28 +20,32 @@ def _getkeys(this_dict, these_keys, defv):
     return fndkeys
 
 def get_snap_connections(verbose=False):
-    snpd = {}
+    hostinfo = {}
     snaps = cm_hookup.get_hookup('SNP')
     for this_snap in snaps:
-        hostname = None
-        ctr = 0
         for inp in snaps[this_snap].hookup:
             if len(snaps[this_snap].hookup[inp]):
-                ctr += 1
-                node_num = int(snaps[this_snap].hookup[inp][-1].downstream_part[1:])
-                loc_num = int(snaps[this_snap].hookup[inp][-1].downstream_input_port[3:])
-                hostname = f"heraNode{node_num}Snap{loc_num}"
-        if hostname is not None:
-            if verbose:
-                print(f"{hostname}:  {int(ctr / 2)} antennas ({this_snap})")
-            snpd[hostname] = ctr / 2
-    return snpd
+                ant = snaps[this_snap].hookup[inp][0].upstream_part
+                if ant.startswith('H'):
+                    node_num = int(snaps[this_snap].hookup[inp][-1].downstream_part[1:])
+                    loc_num = int(snaps[this_snap].hookup[inp][-1].downstream_input_port[3:])
+                    hostname = f"heraNode{node_num}Snap{loc_num}"
+                    hostinfo.setdefault(hostname, {'sn': this_snap.split(':')[0], 'all': [], 'cnt': 0})
+                    if ant not in hostinfo[hostname]['all']:
+                        hostinfo[hostname]['all'].append(ant)
+                        hostinfo[hostname]['cnt'] += 1
+                    hostinfo[hostname].setdefault(ant[:2], [])
+                    if ant not in hostinfo[hostname][ant[:2]]:
+                        hostinfo[hostname][ant[:2]].append(ant)
+    return hostinfo
 
 
 def snap_config(old_config_file, new_config_file='snap_config.out', ant_limit=208,
                 use_nodes=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,22,23],
+                min_connected=3, ignore_outriggers=True,
                 skip_hosts=['heraNode24Snap0'],  # just put one in not used to remind
                 start_block='fengines:', end_block='# Data is sent assuming a total'):
+    key2use = 'HH' if ignore_outriggers else 'all'
     snap_conn = get_snap_connections()
     print(f"Reading old config file {old_config_file}")
     with open(old_config_file, 'r') as fp:
@@ -62,24 +66,34 @@ def snap_config(old_config_file, new_config_file='snap_config.out', ant_limit=20
                 continue
             if hostname not in sc['fengines']:
                 print(f"\tFYI: {hostname} wasn't enabled in {old_config_file}")
-            this_set = []
-            for ctr in range(3):
-                this_set.append(antno)
-                antno += 1
-            if antno < ant_limit:
-                total_ants += len(this_set)
-                hostname_order.append(hostname)
-                sc['fengines'].setdefault(hostname, {'ants': [], 'phase_switch_index': []})
-                sc['fengines'][hostname]['ants'] = f"[{','.join([str(i) for i in this_set])}]"
+            antconn = len(snap_conn[hostname][key2use])
+            if antconn >= min_connected:
                 this_set = []
-                for ctr in range(6):
-                    this_set.append(phase_switch_index)
-                    phase_switch_index += 1
-                    if phase_switch_index > 24:
-                        phase_switch_index = 1
-                sc['fengines'][hostname]['phase_switch_index'] = f"[{','.join([str(i) for i in this_set])}]"
+                for ctr in range(3):
+                    this_set.append(antno)
+                    antno += 1
+                if antno < ant_limit:
+                    ant_per_host = len(snap_conn[hostname]['all'])
+                    if ant_per_host > 3:
+                        print(snap_conn[hostname]['all'])
+                    total_ants += ant_per_host
+                    print(total_ants, antno, len(snap_conn[hostname]['all']), antno < ant_limit)
+                    hostname_order.append(hostname)
+                    sc['fengines'].setdefault(hostname, {'ants': [], 'phase_switch_index': []})
+                    sc['fengines'][hostname]['ants'] = f"[{','.join([str(i) for i in this_set])}]"
+                    this_set = []
+                    for ctr in range(6):
+                        this_set.append(phase_switch_index)
+                        phase_switch_index += 1
+                        if phase_switch_index > 24:
+                            phase_switch_index = 1
+                    sc['fengines'][hostname]['phase_switch_index'] = f"[{','.join([str(i) for i in this_set])}]"
             else:
+                print(f"Skipping {hostname} due to {min_connected} < {antconn}")
+            if antno >= ant_limit:
                 break
+        if antno >= ant_limit:
+            break
     print(f"Writing new config file {new_config_file}")
     with open(old_config_file, 'r') as fpin:
         with open(new_config_file, 'w') as fpout:
@@ -87,7 +101,7 @@ def snap_config(old_config_file, new_config_file='snap_config.out', ant_limit=20
             for line in fpin:
                 if line.startswith(start_block):
                     in_fengine_block = True
-                    print('fengines:', file=fpout)
+                    print('#\nfengines:', file=fpout)
                     for hostname in hostname_order:
                         print(f"    {hostname}:", file=fpout)
                         for fld in ['ants', 'phase_switch_index']:
@@ -99,6 +113,7 @@ def snap_config(old_config_file, new_config_file='snap_config.out', ant_limit=20
                 if not in_fengine_block:
                     print(line.strip(), file=fpout)
     print(f"{len(hostname_order)} snaps and {total_ants} antennas.")
+
 def _notsame(a, b, **kwargs):
     params = {'ignore_case': True, 'ignore_no_data': 1}
     for key, val in kwargs.items():
