@@ -3198,6 +3198,8 @@ HH146,A,Feed Heights: 4.406,infoupd,1350117738
 HH149,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1350211338
 HH150,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1350211338
 HH170,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1350211338
+HH179,A,FEM 155 replaced with 301,infoupd,1350286938
+HH179,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1350286940
 HH50,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH69,A,"RY,F?,TY,WY",infoupd,1344699738
 N16,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
@@ -3308,3 +3310,4 @@ HH146,A,H6C: Feed Height Before: New Connection Sticker Targets: Installed Stiff
 HH149,A,H6C: Feed Height Before: 4.401 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1350211340
 HH150,A,H6C: Feed Height Before: 4.399 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1350211340
 HH170,A,H6C: Feed Height Before: 4.402 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1350211340
+HH179,A,H6C: Feed Height Before: 4.398 Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Already Present Spiral Wrap: Present Already D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1350286942
