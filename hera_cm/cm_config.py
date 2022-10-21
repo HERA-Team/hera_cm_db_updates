@@ -27,11 +27,15 @@ def get_snap_connections(verbose=False):
                     hostinfo[hostname][ant[:2]].append(ant)
     return hostinfo
 
-
+# def snap_config(old_config_file, new_config_file='snap_config.out',
+#                 ant_limit=208, use_nodes=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,18,19,20],
+#                 min_connected=2, ignore_outriggers=True,
+#                 include_hosts=['heraNode12Snap1'], skip_hosts=['heraNode12Snap0'],
+#                 start_block='fengines:', end_block='# Data is sent assuming a total'):
 def snap_config(old_config_file, new_config_file='snap_config.out',
-                ant_limit=208, use_nodes=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,18,19,20],
-                min_connected=2, ignore_outriggers=True,
-                include_hosts=['heraNode12Snap1'], skip_hosts=['heraNode12Snap0'],
+                ant_limit=232, use_nodes=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20],
+                min_connected=1, ignore_outriggers=False,
+                include_hosts=[], skip_hosts=[],
                 start_block='fengines:', end_block='# Data is sent assuming a total'):
     snap_conn = get_snap_connections()
 
