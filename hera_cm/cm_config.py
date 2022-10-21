@@ -67,7 +67,7 @@ class Configuration:
             self.sc = yaml.load(fp, Loader=yaml.Loader)
 
     def get_hostnames_to_use(self,
-                             compile_limit=232,
+                             compile_limit,
                              use_nodes=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20],
                              min_connected=1, ignore_outriggers=False,
                              include_hosts=[], skip_hosts=[]):
