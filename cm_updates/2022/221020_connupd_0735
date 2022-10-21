@@ -1,0 +1,15 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221020_connupd_0735" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u FEM155 --uprev A --upport pwr -d FPS10 --dnrev A --dnport pwr4 --date 2022/10/20 --time 07:29
+stop_connection.py -u FEM155 --uprev A --upport e -d NBP12 --dnrev A --dnport e4 --date 2022/10/20 --time 07:29
+stop_connection.py -u FEM155 --uprev A --upport n -d NBP12 --dnrev A --dnport n4 --date 2022/10/20 --time 07:29
+stop_connection.py -u FDV104 --uprev A --upport terminals -d FEM155 --dnrev A --dnport input --date 2022/10/20 --time 07:29
+# add parts for gsheet_not_active
+add_part.py -p FEM301 -r A -t front-end -m FEM301 --date 2022/10/20 --time 07:05
+# add connections for gsheet_not_active
+add_connection.py -u FDV104 --uprev A --upport terminals -d FEM301 --dnrev A --dnport input --date 2022/10/20 --time 07:35
+add_connection.py -u FEM301 --uprev A --upport pwr -d FPS10 --dnrev A --dnport pwr4 --date 2022/10/20 --time 07:35
+add_connection.py -u FEM301 --uprev A --upport e -d NBP12 --dnrev A --dnport E4 --date 2022/10/20 --time 07:35
+add_connection.py -u FEM301 --uprev A --upport n -d NBP12 --dnrev A --dnport N4 --date 2022/10/20 --time 07:35

@@ -1,0 +1,7 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221020_infoupd_0942" >> scripts.log 
+add_part_info.py -p HH167 -r A -c "Feed heights (NE/SE/SW/NW): 4.409" -l "infoupd" --date 2022/10/20 --time 09:42:00
+add_part_info.py -p HH167 -r A -c "H6C: Feed Height Before: 4.410 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed" -l "infoupd" --date 2022/10/20 --time 09:42:02
+add_part_info.py -p HH191 -r A -c "Feed heights (NE/SE/SW/NW): 4.409" -l "infoupd" --date 2022/10/20 --time 09:42:00
+add_part_info.py -p HH191 -r A -c "H6C: Feed Height Before: 4.401 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Present already Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed" -l "infoupd" --date 2022/10/20 --time 09:42:02
