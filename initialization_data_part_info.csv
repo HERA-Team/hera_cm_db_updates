@@ -3201,6 +3201,9 @@ HH170,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1350211338
 HH179,A,FEM 155 replaced with 301,infoupd,1350286938
 HH179,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1350286940
 HH167,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1350294138
+HH155,A,H6Ccheck: No sky in E -DCJ,apa-infoupd,1350499338
+HH156,A,H6Ccheck: No Sky in E -DCJ,apa-infoupd,1350499338
+HH46,A,No sky in N per ACS -DCJ,apa-infoupd,1350499338
 HH50,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344696138
 HH69,A,"RY,F?,TY,WY",infoupd,1344699738
 N16,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or N channels,infoupd,1344825738
@@ -3315,3 +3318,19 @@ HH179,A,H6C: Feed Height Before: 4.398 Sticker Targets: Already Present Stiffene
 HH191,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1350294138
 HH167,A,H6C: Feed Height Before: 4.410 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1350294140
 HH191,A,H6C: Feed Height Before: 4.401 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Present already Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1350294140
+HH43,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350499698
+HH46,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1350499698
+HH58,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350499698
+HH60,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350499698
+HH73,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1350499698
+HH75,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350499698
+HH155,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350499698
+HH156,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1350499698
+HH179,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1350499698
+HH179,A,H6Ccheck: Still showing no-sky power. Reported in issue 780. -DCJ,apa-infoupd,1350499338
+HH73,A,no sky per antenna classification summary -DCJ,apa-infoupd,1350499338
+HH58,A,no sky per antenna classification summary -DCJ,apa-infoupd,1350499338
+HH60,A,no sky per antenna classification summary -DCJ,apa-infoupd,1350499338
+HH43,A,no sky in E per ACS -DCJ,apa-infoupd,1350499338
+HH74,A,no sky per antenna classification summary -DCJ,infoupd,1350499338
+HH75,A,No sky in N per ACS  -DCJ,apa-infoupd,1350499338
