@@ -3334,3 +3334,22 @@ HH60,A,no sky per antenna classification summary -DCJ,apa-infoupd,1350499338
 HH43,A,no sky in E per ACS -DCJ,apa-infoupd,1350499338
 HH74,A,no sky per antenna classification summary -DCJ,infoupd,1350499338
 HH75,A,No sky in N per ACS  -DCJ,apa-infoupd,1350499338
+HH44,A,apriori_antenna status change: digital_maintenance > digital_ok,apa-infoupd,1350506898
+HH59,A,apriori_antenna status change: digital_maintenance > digital_ok,apa-infoupd,1350506898
+HH74,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350506898
+HH135,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350506898
+HH136,A,apriori_antenna status change: digital_maintenance > digital_ok,apa-infoupd,1350506898
+HH201,A,apriori_antenna status change: RF_ok > RF_maintenance,apa-infoupd,1350506898
+HH202,A,apriori_antenna status change: RF_ok > digital_ok,apa-infoupd,1350506898
+HH219,A,apriori_antenna status change: RF_ok > RF_maintenance,apa-infoupd,1350506898
+HH220,A,apriori_antenna status change: RF_ok > RF_maintenance,apa-infoupd,1350506898
+HH179,A,H6Ccheck: no-sky power after fem 301 Reported in issue 780. -DCJ,infoupd,1350506538
+HH135,A,H6Ccheck: No sky in N -DCJ,apa-infoupd,1350506538
+HH135,A,H6Ccheck: looks ok -dcj,apa-infoupd,1350506540
+HH200,A,"one bad pol, one too high! -DCJ",infoupd,1350506538
+HH201,A,power too high -DCJ,apa-infoupd,1350506538
+HH203,A,"power too low, no sky -DCJ",infoupd,1350506538
+HH219,A,power too high -DCJ,apa-infoupd,1350506538
+HH220,A,power too high -DCJ,apa-infoupd,1350506538
+HH59,A,no evidence of digital issue -DCJ,apa-infoupd,1350506538
+HH44,A,"spectra a little odd, but no evidence of digital issue -DCJ",apa-infoupd,1350506538
