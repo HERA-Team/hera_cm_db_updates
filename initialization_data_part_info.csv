@@ -3353,3 +3353,8 @@ HH219,A,power too high -DCJ,apa-infoupd,1350506538
 HH220,A,power too high -DCJ,apa-infoupd,1350506538
 HH59,A,no evidence of digital issue -DCJ,apa-infoupd,1350506538
 HH44,A,"spectra a little odd, but no evidence of digital issue -DCJ",apa-infoupd,1350506538
+HH147,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1350657738
+HH147,A,H6C: Feed Height Before: 4.409 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1350657740
+HH84,A,FEM 54 replaced with 305,infoupd,1350657738
+HH84,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1350657740
+HH84,A,H6C: Feed Height Before: 4.399 Sticker Targets: Present Already Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1350657742
