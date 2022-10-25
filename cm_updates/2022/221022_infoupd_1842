@@ -1,0 +1,31 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221022_infoupd_1842" >> scripts.log 
+update_apriori.py -p HH43 -s RF_maintenance --date 2022/10/22 --time 18:48
+add_part_info.py -p HH43 -r A -c "apriori_antenna status change: digital_maintenance > RF_maintenance" -l "apa-infoupd" --date 2022/10/22 --time 18:48
+update_apriori.py -p HH46 -s RF_maintenance --date 2022/10/22 --time 18:48
+add_part_info.py -p HH46 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2022/10/22 --time 18:48
+update_apriori.py -p HH58 -s RF_maintenance --date 2022/10/22 --time 18:48
+add_part_info.py -p HH58 -r A -c "apriori_antenna status change: digital_maintenance > RF_maintenance" -l "apa-infoupd" --date 2022/10/22 --time 18:48
+update_apriori.py -p HH60 -s RF_maintenance --date 2022/10/22 --time 18:48
+add_part_info.py -p HH60 -r A -c "apriori_antenna status change: digital_maintenance > RF_maintenance" -l "apa-infoupd" --date 2022/10/22 --time 18:48
+update_apriori.py -p HH73 -s RF_maintenance --date 2022/10/22 --time 18:48
+add_part_info.py -p HH73 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2022/10/22 --time 18:48
+update_apriori.py -p HH75 -s RF_maintenance --date 2022/10/22 --time 18:48
+add_part_info.py -p HH75 -r A -c "apriori_antenna status change: digital_maintenance > RF_maintenance" -l "apa-infoupd" --date 2022/10/22 --time 18:48
+update_apriori.py -p HH155 -s RF_maintenance --date 2022/10/22 --time 18:48
+add_part_info.py -p HH155 -r A -c "apriori_antenna status change: digital_maintenance > RF_maintenance" -l "apa-infoupd" --date 2022/10/22 --time 18:48
+update_apriori.py -p HH156 -s RF_maintenance --date 2022/10/22 --time 18:48
+add_part_info.py -p HH156 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2022/10/22 --time 18:48
+update_apriori.py -p HH179 -s RF_maintenance --date 2022/10/22 --time 18:48
+add_part_info.py -p HH179 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2022/10/22 --time 18:48
+add_part_info.py -p HH179 -r A -c "H6Ccheck: Still showing no-sky power. Reported in issue 780. -DCJ" -l "apa-infoupd" --date 2022/10/22 --time 18:42:00
+add_part_info.py -p HH155 -r A -c "H6Ccheck: No sky in E -DCJ" -l "apa-infoupd" --date 2022/10/22 --time 18:42:00
+add_part_info.py -p HH156 -r A -c "H6Ccheck: No Sky in E -DCJ" -l "apa-infoupd" --date 2022/10/22 --time 18:42:00
+add_part_info.py -p HH46 -r A -c "No sky in N per ACS -DCJ" -l "apa-infoupd" --date 2022/10/22 --time 18:42:00
+add_part_info.py -p HH73 -r A -c "no sky per antenna classification summary -DCJ" -l "apa-infoupd" --date 2022/10/22 --time 18:42:00
+add_part_info.py -p HH58 -r A -c "no sky per antenna classification summary -DCJ" -l "apa-infoupd" --date 2022/10/22 --time 18:42:00
+add_part_info.py -p HH60 -r A -c "no sky per antenna classification summary -DCJ" -l "apa-infoupd" --date 2022/10/22 --time 18:42:00
+add_part_info.py -p HH43 -r A -c "no sky in E per ACS -DCJ" -l "apa-infoupd" --date 2022/10/22 --time 18:42:00
+add_part_info.py -p HH74 -r A -c "no sky per antenna classification summary -DCJ" -l "infoupd" --date 2022/10/22 --time 18:42:00
+add_part_info.py -p HH75 -r A -c "No sky in N per ACS  -DCJ" -l "apa-infoupd" --date 2022/10/22 --time 18:42:00
