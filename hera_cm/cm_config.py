@@ -146,7 +146,7 @@ class Configuration:
             self.fengines[this_host] = {'ants': ret_str(ant_set), 'phase_switch_index': ret_str(phase_set)}
    
     def write_yaml(self, start_block='fengines:', end_block='# Data is sent assuming a total'):
-        wtime = datetime.strftime(datetime.now(), '%y%m%d%H%M')
+        wtime = datetime.strftime(datetime.now(), '%y%m%d')
         self.new_config_file = f"{self.old_config_file.split('.')[0]}_{self.compile_limit}_{wtime}.yaml"
         print(f"Writing new config file {self.new_config_file}")
         with open(self.old_config_file, 'r') as fpin:
@@ -172,7 +172,7 @@ class Configuration:
                         in_fengine_block = False
                         print('#', file=fpout)
                     if not in_fengine_block:
-                        print(line, file=fpout)
+                        print(line.rstrip(), file=fpout)
         print(f"{len(self.hosts_to_use)} snaps and {self.total_ants} antennas.")
         print(f"Highest index {self.max_antno}")
         with mc.MCSessionWrapper() as session:
