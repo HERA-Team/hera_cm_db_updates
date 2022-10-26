@@ -172,7 +172,7 @@ class Configuration:
                         in_fengine_block = False
                         print('#', file=fpout)
                     if not in_fengine_block:
-                        print(line.strip(), file=fpout)
+                        print(line, file=fpout)
         print(f"{len(self.hosts_to_use)} snaps and {self.total_ants} antennas.")
         print(f"Highest index {self.max_antno}")
         with mc.MCSessionWrapper() as session:
