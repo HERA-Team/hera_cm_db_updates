@@ -1,0 +1,8 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221101_infoupd_1642" >> scripts.log 
+add_part_info.py -p HH186 -r A -c "swap due to high chisq" -l "infoupd" --date 2022/11/01 --time 16:42:00
+add_part_info.py -p HH186 -r A -c "Feed Heights: 4.408" -l "infoupd" --date 2022/11/01 --time 16:42:02
+add_part_info.py -p HH185 -r A -c "swap due to high chisq" -l "infoupd" --date 2022/11/01 --time 16:42:00
+add_part_info.py -p HH185 -r A -c "Feed Heights: 4.400" -l "infoupd" --date 2022/11/01 --time 16:42:02
+add_part_info.py -p HH185 -r A -c "H6C: Feed Height Before: 4.400 Sticker Targets: Present Already Stiffener Braces: Installed Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed" -l "infoupd" --date 2022/11/01 --time 16:42:04
