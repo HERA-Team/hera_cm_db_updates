@@ -3373,3 +3373,8 @@ HH104,A,H6C: Feed Height Before: 4.396 Sticker Targets: Already Present Stiffene
 HH103,A,FEM 364 stated on the checksheet,infoupd,1351341738
 HH103,A,Feed heights (NE/SE/SW/NW): 4.400,infoupd,1351341740
 HH103,A,H6C: Feed Height Before: Broken fiber Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Already Present Spiral Wrap: Present Already D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1351341742
+HH186,A,swap due to high chisq,infoupd,1351356138
+HH186,A,Feed Heights: 4.408,infoupd,1351356140
+HH185,A,swap due to high chisq,infoupd,1351356138
+HH185,A,Feed Heights: 4.400,infoupd,1351356140
+HH185,A,H6C: Feed Height Before: 4.400 Sticker Targets: Present Already Stiffener Braces: Installed Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1351356142
