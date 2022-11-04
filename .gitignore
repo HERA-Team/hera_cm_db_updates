@@ -6,3 +6,5 @@ conn_update.sh
 *.pyc
 cm_updates/scripts.log
 cm_table_file_hash.json
+build
+hera_cm_db_updates.egg-info
