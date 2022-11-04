@@ -3392,3 +3392,6 @@ HH75,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1351525338
 HH75,A,H6C: Feed Height Before: 4.407 Sticker Targets: Present Already Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1351525340
 HH46,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1351615338
 HH46,A,H6C: Feed Height Before: 4.399 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1351615340
+HH76,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1351619298
+HH76,A,Feed heights (NE/SE/SW/NW): 4.409,apa-infoupd,1351618938
+HH76,A,H6C: Feed Height Before: New connection Sticker Targets: Installed Stiffener Braces: Installed Carey Caps: Installed Protected Fiber: Installed Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,apa-infoupd,1351618940
