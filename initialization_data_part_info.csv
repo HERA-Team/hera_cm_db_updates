@@ -3395,3 +3395,6 @@ HH46,A,H6C: Feed Height Before: 4.399 Sticker Targets: Installed Stiffener Brace
 HH76,A,apriori_antenna status change: RF_maintenance > digital_maintenance,apa-infoupd,1351619298
 HH76,A,Feed heights (NE/SE/SW/NW): 4.409,apa-infoupd,1351618938
 HH76,A,H6C: Feed Height Before: New connection Sticker Targets: Installed Stiffener Braces: Installed Carey Caps: Installed Protected Fiber: Installed Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,apa-infoupd,1351618940
+HH84,A,FEM305 replaced with FEM 376,infoupd,1351867338
+HH84,A,Feed heights (NE/SE/SW/NW): 4.413,infoupd,1351867340
+HH84,A,H6C: Feed Height Before: 4.407 Sticker Targets: Present Already Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1351867342
