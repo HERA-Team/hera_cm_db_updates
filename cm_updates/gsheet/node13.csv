@@ -19,7 +19,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 142,N,121,374,9,169,15,n8,2,digital_ok,,,,,,
 160,E,118,172,10,170,47,e2,3,digital_ok,,,4.407,Polished (see db),,
 160,N,118,172,10,170,47,n0,3,digital_ok,,,,,,
-180,E,119,176,11,171,47,e6,3,RF_maintenance,,,4.409,Polished (see db),,
+180,E,119,176,11,171,47,e6,3,RF_maintenance,,,4.406,Polished (see db),Feed Height Before: 4.409 Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Already Present Spiral Wrap: Present Already D Shackle Cable Tie: Already Present Cables Labelled: Completed,
 180,N,119,176,11,171,47,n4,3,RF_maintenance,,,,,,
 181,E,120,169,12,172,47,e10,3,digital_ok,,,4.411,Polished (see db),,
 181,N,120,169,12,172,47,n8,3,digital_ok,,,,,,
