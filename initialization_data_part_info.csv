@@ -3437,3 +3437,10 @@ HH19,A,Feed height: 4.407,infoupd,1352709738
 HH19,A,H6C: Feed Height Before: 4.405 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1352709740
 HH10,A,Feed height: 4.408,infoupd,1352709738
 HH10,A,H6C: Feed Height Before: 4.409 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1352709740
+HH182,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1352738898
+HH162,A,autos reasonable -dcj,infoupd,1352738538
+HH182,A,looks ok now -dcj,apa-infoupd,1352738538
+HH183,A,autos reasonable -dcj,infoupd,1352738538
+HH140,A,autos reasonable -dcj,infoupd,1352738538
+HH142,A,autos reasonable -dcj,infoupd,1352738538
+HH180,A,N pol still dead -dcj,infoupd,1352738538
