@@ -3445,3 +3445,17 @@ HH140,A,autos reasonable -dcj,infoupd,1352738538
 HH142,A,autos reasonable -dcj,infoupd,1352738538
 HH180,A,N pol still dead -dcj,infoupd,1352738538
 HH155,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1352749698
+HH184,A,FEM 180 replaced with FEM 369,infoupd,1352814138
+HH184,A,Feed Heights: 4.402,infoupd,1352814140
+HH184,A,H6C: Feed Height Before: 4.410 Sticker Targets: Present Already  Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Present Already D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1352814142
+HH47,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1352814138
+HH47,A,H6C: Feed Height Before: 4.396 Sticker Targets: Present Already  Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Present Already D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1352814140
+HH61,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1352814138
+HH61,A,H6C: Feed Height Before: 4.407 Sticker Targets: Present Already  Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Present Already D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1352814140
+HH48,A,FEM 288 changed to FEM 324,infoupd,1352814138
+HH48,A,Feed heights (NE/SE/SW/NW): 4.41,infoupd,1352814140
+HH48,A,H6C: Feed Height Before: 4.401 Sticker Targets: Present Already  Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Present Already D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1352814142
+HH49,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1352814138
+HH49,A,H6C: Feed Height Before: 4.401 Sticker Targets: Present Already  Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Present Already D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1352814140
+HH62,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1352814138
+HH62,A,H6C: Feed Height Before: 4.399 Sticker Targets: Present Already  Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Present Already D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1352814140
