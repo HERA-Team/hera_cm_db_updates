@@ -1,0 +1,13 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221117_infoupd_0842" >> scripts.log 
+add_part_info.py -p HH7 -r A -c "Feed height: 4.408" -l "infoupd" --date 2022/11/17 --time 08:42:00
+add_part_info.py -p HH7 -r A -c "H6C: Feed Height Before: 4.410 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2022/11/17 --time 08:42:02
+add_part_info.py -p HH8 -r A -c "Feed height: 4.407" -l "infoupd" --date 2022/11/17 --time 08:42:00
+add_part_info.py -p HH8 -r A -c "H6C: Feed Height Before: 4.412 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2022/11/17 --time 08:42:02
+add_part_info.py -p HH9 -r A -c "Feed height: 4.406" -l "infoupd" --date 2022/11/17 --time 08:42:00
+add_part_info.py -p HH9 -r A -c "H6C: Feed Height Before: 4.408 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2022/11/17 --time 08:42:02
+add_part_info.py -p HH19 -r A -c "Feed height: 4.407" -l "infoupd" --date 2022/11/17 --time 08:42:00
+add_part_info.py -p HH19 -r A -c "H6C: Feed Height Before: 4.405 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2022/11/17 --time 08:42:02
+add_part_info.py -p HH10 -r A -c "Feed height: 4.408" -l "infoupd" --date 2022/11/17 --time 08:42:00
+add_part_info.py -p HH10 -r A -c "H6C: Feed Height Before: 4.409 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2022/11/17 --time 08:42:02

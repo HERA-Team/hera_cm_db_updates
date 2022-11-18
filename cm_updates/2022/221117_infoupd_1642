@@ -1,0 +1,11 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221117_infoupd_1642" >> scripts.log 
+update_apriori.py -p HH182 -s digital_ok --date 2022/11/17 --time 16:48
+add_part_info.py -p HH182 -r A -c "apriori_antenna status change: RF_maintenance > digital_ok" -l "apa-infoupd" --date 2022/11/17 --time 16:48
+add_part_info.py -p HH162 -r A -c "autos reasonable -dcj" -l "infoupd" --date 2022/11/17 --time 16:42:00
+add_part_info.py -p HH182 -r A -c "looks ok now -dcj" -l "apa-infoupd" --date 2022/11/17 --time 16:42:00
+add_part_info.py -p HH183 -r A -c "autos reasonable -dcj" -l "infoupd" --date 2022/11/17 --time 16:42:00
+add_part_info.py -p HH140 -r A -c "autos reasonable -dcj" -l "infoupd" --date 2022/11/17 --time 16:42:00
+add_part_info.py -p HH142 -r A -c "autos reasonable -dcj" -l "infoupd" --date 2022/11/17 --time 16:42:00
+add_part_info.py -p HH180 -r A -c "N pol still dead -dcj" -l "infoupd" --date 2022/11/17 --time 16:42:00
