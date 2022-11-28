@@ -3489,3 +3489,8 @@ HH148,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1
 HH149,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1353520098
 HH150,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1353520098
 HH168,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1353520098
+HH59,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1353700098
+HH84,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1353700098
+HH108,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1353700098
+HH117,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1353700098
+HH155,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1353700098
