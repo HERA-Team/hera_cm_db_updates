@@ -1,0 +1,17 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221123_connupd_1035" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u FEM103 --uprev A --upport pwr -d FPS06 --dnrev A --dnport pwr4 --date 2022/11/23 --time 10:29
+stop_connection.py -u FEM103 --uprev A --upport e -d NBP05 --dnrev A --dnport e4 --date 2022/11/23 --time 10:29
+stop_connection.py -u FEM103 --uprev A --upport n -d NBP05 --dnrev A --dnport n4 --date 2022/11/23 --time 10:29
+stop_connection.py -u FDV66 --uprev A --upport terminals -d FEM103 --dnrev A --dnport input --date 2022/11/23 --time 10:29
+stop_connection.py -u FEM334 --uprev A --upport pwr -d FPS26 --dnrev A --dnport pwr8 --date 2022/11/23 --time 10:27
+stop_connection.py -u FEM334 --uprev A --upport e -d NBP23 --dnrev A --dnport E8 --date 2022/11/23 --time 10:27
+stop_connection.py -u FEM334 --uprev A --upport n -d NBP23 --dnrev A --dnport N8 --date 2022/11/23 --time 10:27
+stop_connection.py -u FDV218 --uprev A --upport terminals -d FEM334 --dnrev A --dnport input --date 2022/11/23 --time 10:27
+# add connections for gsheet_not_active
+add_connection.py -u FDV66 --uprev A --upport terminals -d FEM334 --dnrev A --dnport input --date 2022/11/23 --time 10:35
+add_connection.py -u FEM334 --uprev A --upport pwr -d FPS06 --dnrev A --dnport pwr4 --date 2022/11/23 --time 10:35
+add_connection.py -u FEM334 --uprev A --upport e -d NBP05 --dnrev A --dnport E4 --date 2022/11/23 --time 10:35
+add_connection.py -u FEM334 --uprev A --upport n -d NBP05 --dnrev A --dnport N4 --date 2022/11/23 --time 10:35
