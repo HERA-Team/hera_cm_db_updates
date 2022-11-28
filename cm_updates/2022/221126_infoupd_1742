@@ -1,0 +1,11 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221126_infoupd_1742" >> scripts.log 
+update_apriori.py -p HH148 -s digital_ok --date 2022/11/26 --time 17:48
+add_part_info.py -p HH148 -r A -c "apriori_antenna status change: RF_maintenance > digital_ok" -l "apa-infoupd" --date 2022/11/26 --time 17:48
+update_apriori.py -p HH149 -s digital_ok --date 2022/11/26 --time 17:48
+add_part_info.py -p HH149 -r A -c "apriori_antenna status change: RF_maintenance > digital_ok" -l "apa-infoupd" --date 2022/11/26 --time 17:48
+update_apriori.py -p HH150 -s digital_ok --date 2022/11/26 --time 17:48
+add_part_info.py -p HH150 -r A -c "apriori_antenna status change: RF_maintenance > digital_ok" -l "apa-infoupd" --date 2022/11/26 --time 17:48
+update_apriori.py -p HH168 -s digital_ok --date 2022/11/26 --time 17:48
+add_part_info.py -p HH168 -r A -c "apriori_antenna status change: RF_maintenance > digital_ok" -l "apa-infoupd" --date 2022/11/26 --time 17:48
