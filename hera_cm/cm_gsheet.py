@@ -269,3 +269,61 @@ class SheetData:
                 self.other.append(aa)
             else:
                 self.ants.append(aa)
+
+class ArchiveGsheet:
+    allowed_to_find = {'ant': 'Ant', 'feed': 'Feed', 'fem': 'FEM', 'nbp/pamloc': 'NBP/PAMloc', 'nbp': 'NBP/PAMloc', 'pamloc': 'NBP/PAMloc',
+                       'pam': 'PAM', 'snap': 'SNAP', 'ncm': 'Ant:NCM', 'fps': 'Ant:FPS', 'PCH': 'Ant:PCH'}
+    def __init__(self):
+        import pandas
+        self.node = {}
+        for node in range(24):
+            self.node[node] = pandas.read_csv(f"node{node}.csv")
+
+    def find(self, **kwargs):
+        from tabulate import tabulate
+        per_ant_hdr = ['Node', 'Ant', 'Pol', 'Feed', 'NBP/PAMloc', 'PAM', 'SNAP', 'Port', 'SNAPloc', 'APriori']
+        per_ant_rows = []
+        per_node_hdr = ['Node', 'Part Name', 'Part Number']
+        per_node_rows = []
+        for pname, tmp_pval in kwargs.items():
+            if pname.lower() not in self.allowed_to_find:
+                print(f"Skipping {pname.lower()}")
+                continue
+            loc = self.allowed_to_find[pname.lower()]
+            col = loc.split(':')[0]
+            rowloc = loc.split(':')[1] if ':' in loc else None
+            try:
+                pval = int(tmp_pval)
+            except ValueError:
+                pval = tmp_pval
+            for this_node, these_conn in self.node.items():
+                if rowloc is None:  # this is a per_ant part
+                    for i, data in enumerate(these_conn[col]):
+                        try:
+                            cdat = int(data)
+                        except ValueError:
+                            cdat = data
+                        if cdat == pval:
+                            this_row = [this_node]
+                            for cval in per_ant_hdr[1:]:
+                                _xx = these_conn[cval][i]
+                                try:
+                                    use_xx = int(_xx)
+                                except ValueError:
+                                    use_xx = _xx
+                                this_row.append(use_xx)
+                            per_ant_rows.append(this_row)
+                else:  # this is a per_node part
+                    for i, data in enumerate(these_conn[col]):
+                        if data == rowloc:
+                            try:
+                                check_val = int(these_conn['Pol'][i])
+                            except ValueError:
+                                check_val = -99
+                            if pval == check_val:
+                                per_node_rows.append([this_node, rowloc, these_conn['Pol'][i]])
+        if len(per_ant_rows):
+            print(tabulate(per_ant_rows, headers=per_ant_hdr))
+        if len(per_node_rows):
+            print()
+            print(tabulate(per_node_rows, headers=per_node_hdr))
