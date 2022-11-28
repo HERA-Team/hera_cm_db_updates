@@ -27,7 +27,8 @@ setup_args = {
                 'scripts/wr_track_phase_alert.py',
                 'scripts/antcorr.py',
                 'scripts/track_info_header.py',
-                'scripts/config_gen.py'],
+                'scripts/config_gen.py',
+                'scripts/cm_gsheet_arcsearch.py'],
     'include_package_data': True,
     'install_requires': []
 }
