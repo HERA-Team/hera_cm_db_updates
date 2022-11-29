@@ -301,7 +301,6 @@ class ArchiveGsheet:
                 pval = int(tmp_pval)
             except ValueError:
                 pval = tmp_pval
-            print(pname, pval)
             for this_node, these_conn in self.node.items():
                 if rowloc is None:  # this is a per_ant part
                     for i, data in enumerate(these_conn[col]):
