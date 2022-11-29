@@ -273,11 +273,16 @@ class SheetData:
 class ArchiveGsheet:
     allowed_to_find = {'ant': 'Ant', 'feed': 'Feed', 'fem': 'FEM', 'nbp/pamloc': 'NBP/PAMloc', 'nbp': 'NBP/PAMloc', 'pamloc': 'NBP/PAMloc',
                        'pam': 'PAM', 'snap': 'SNAP', 'ncm': 'Ant:NCM', 'fps': 'Ant:FPS', 'PCH': 'Ant:PCH'}
-    def __init__(self):
+    def __init__(self, base_path=None):
         import pandas
+        from hera_mc.mc import get_cm_csv_path
+        if base_path is None:
+            self.base_path = ospath(get_cm_csv_path, 'cm_updates/gsheet')
+        else:
+            self.base_path = base_path
         self.node = {}
         for node in range(24):
-            self.node[node] = pandas.read_csv(f"node{node}.csv")
+            self.node[node] = pandas.read_csv(ospath(base_path, f"node{node}.csv"))
 
     def find(self, **kwargs):
         from tabulate import tabulate
