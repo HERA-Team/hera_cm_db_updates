@@ -282,7 +282,7 @@ class ArchiveGsheet:
             self.base_path = base_path
         self.node = {}
         for node in range(24):
-            self.node[node] = pandas.read_csv(ospath.join(base_path, f"node{node}.csv"))
+            self.node[node] = pandas.read_csv(ospath.join(self.base_path, f"node{node}.csv"))
 
     def find(self, **kwargs):
         from tabulate import tabulate
