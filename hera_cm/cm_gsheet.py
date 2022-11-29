@@ -277,7 +277,7 @@ class ArchiveGsheet:
         import pandas
         from hera_mc.mc import get_cm_csv_path
         if base_path is None:
-            self.base_path = ospath(get_cm_csv_path, 'cm_updates/gsheet')
+            self.base_path = ospath(get_cm_csv_path(), 'cm_updates/gsheet')
         else:
             self.base_path = base_path
         self.node = {}
