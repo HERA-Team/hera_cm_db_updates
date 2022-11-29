@@ -33,7 +33,7 @@ class WRView():
             self.wrstat[node]['datetime'] = datetime.fromisoformat(self.wrstat[node]['timestamp'])  # noqa
             self.wrstat[node]['age'] = (self.stat_now - self.wrstat[node]['datetime']).seconds
 
-    def track_alert(self, agelimit=3600, email=[], add_to_redis='track_phase_nodes'):
+    def track_alert(self, agelimit=1800, email=[], add_to_redis='track_phase_nodes'):
         self.bad_nodes = []
         self.good_nodes = []
         for node in self.nodes:
