@@ -3494,3 +3494,15 @@ HH84,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,13
 HH108,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1353700098
 HH117,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1353700098
 HH155,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1353700098
+HH151,A,apriori_antenna status change: not_connected > digital_ok,apa-infoupd,1353800898
+HH152,A,apriori_antenna status change: not_connected > digital_ok,apa-infoupd,1353800898
+HH153,A,apriori_antenna status change: not_connected > digital_ok,apa-infoupd,1353800898
+HH154,A,apriori_antenna status change: not_connected > digital_ok,apa-infoupd,1353800898
+HH171,A,apriori_antenna status change: not_connected > digital_ok,apa-infoupd,1353800898
+HH172,A,apriori_antenna status change: not_connected > digital_ok,apa-infoupd,1353800898
+HH173,A,apriori_antenna status change: not_connected > digital_ok,apa-infoupd,1353800898
+HH174,A,apriori_antenna status change: not_connected > digital_maintenance,apa-infoupd,1353800898
+HH192,A,apriori_antenna status change: not_connected > digital_ok,apa-infoupd,1353800898
+HH193,A,apriori_antenna status change: not_connected > digital_ok,apa-infoupd,1353800898
+HH194,A,apriori_antenna status change: not_connected > digital_maintenance,apa-infoupd,1353800898
+HH213,A,apriori_antenna status change: not_connected > digital_maintenance,apa-infoupd,1353800898
