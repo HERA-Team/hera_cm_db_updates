@@ -1,0 +1,21 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221130_connupd_0935" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u FDV135 --uprev A --upport terminals -d FEM303 --dnrev A --dnport input --date 2022/11/30 --time 09:29
+stop_connection.py -u FEM303 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr12 --date 2022/11/30 --time 09:29
+stop_connection.py -u FEM303 --uprev A --upport e -d NBP14 --dnrev A --dnport E12 --date 2022/11/30 --time 09:29
+stop_connection.py -u FEM303 --uprev A --upport n -d NBP14 --dnrev A --dnport N12 --date 2022/11/30 --time 09:29
+stop_connection.py -u FDV98 --uprev A --upport terminals -d FEM155 --dnrev A --dnport input --date 2022/11/30 --time 09:29
+stop_connection.py -u FEM155 --uprev A --upport pwr -d FPS10 --dnrev A --dnport pwr10 --date 2022/11/30 --time 09:29
+stop_connection.py -u FEM155 --uprev A --upport e -d NBP12 --dnrev A --dnport E10 --date 2022/11/30 --time 09:29
+stop_connection.py -u FEM155 --uprev A --upport n -d NBP12 --dnrev A --dnport N10 --date 2022/11/30 --time 09:29
+# add connections for gsheet_not_active
+add_connection.py -u FDV98 --uprev A --upport terminals -d FEM336 --dnrev A --dnport input --date 2022/11/30 --time 09:35
+add_connection.py -u FEM336 --uprev A --upport pwr -d FPS10 --dnrev A --dnport pwr10 --date 2022/11/30 --time 09:35
+add_connection.py -u FEM336 --uprev A --upport e -d NBP12 --dnrev A --dnport E10 --date 2022/11/30 --time 09:35
+add_connection.py -u FEM336 --uprev A --upport n -d NBP12 --dnrev A --dnport N10 --date 2022/11/30 --time 09:35
+add_connection.py -u FDV135 --uprev A --upport terminals -d FEM337 --dnrev A --dnport input --date 2022/11/30 --time 09:35
+add_connection.py -u FEM337 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr12 --date 2022/11/30 --time 09:35
+add_connection.py -u FEM337 --uprev A --upport e -d NBP14 --dnrev A --dnport E12 --date 2022/11/30 --time 09:35
+add_connection.py -u FEM337 --uprev A --upport n -d NBP14 --dnrev A --dnport N12 --date 2022/11/30 --time 09:35
