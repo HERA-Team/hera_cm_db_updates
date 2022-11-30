@@ -286,7 +286,7 @@ class ArchiveGsheet:
 
     def find(self, **kwargs):
         from tabulate import tabulate
-        per_ant_hdr = ['Node', 'Ant', 'Pol', 'Feed', 'NBP/PAMloc', 'PAM', 'SNAP', 'Port', 'SNAPloc', 'APriori']
+        per_ant_hdr = ['Node', 'Ant', 'Pol', 'Feed', 'FEM', 'NBP/PAMloc', 'PAM', 'SNAP', 'Port', 'SNAPloc', 'APriori']
         per_ant_rows = []
         per_node_hdr = ['Node', 'Part Name', 'Part Number']
         per_node_rows = []
