@@ -3506,3 +3506,13 @@ HH192,A,apriori_antenna status change: not_connected > digital_ok,apa-infoupd,13
 HH193,A,apriori_antenna status change: not_connected > digital_ok,apa-infoupd,1353800898
 HH194,A,apriori_antenna status change: not_connected > digital_maintenance,apa-infoupd,1353800898
 HH213,A,apriori_antenna status change: not_connected > digital_maintenance,apa-infoupd,1353800898
+HH97,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1353836538
+HH97,A,H6C: Feed Height Before: 4.399 Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Installed Spiral Wrap: Present Already D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1353836540
+HH114,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1353836538
+HH114,A,H6C: Feed Height Before: 4.397 Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Installed Spiral Wrap: Present Already D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1353836540
+HH113,A,Feed heights (NE/SE/SW/NW): 4.406,infoupd,1353836538
+HH113,A,H6C: Feed Height Before: 4.409 Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Installed Spiral Wrap: Present Already D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1353836540
+HH156,A,Replaced FEM 155 with FEM 336,infoupd,1353836538
+HH146,A,FEM 303 Replaced with FEM 337,infoupd,1353836538
+HH190,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1353836538
+HH190,A,H6C: Feed Height Before: 4.407 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1353836540

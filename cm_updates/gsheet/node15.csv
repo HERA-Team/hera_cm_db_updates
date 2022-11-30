@@ -19,7 +19,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 170,N,136,201,9,193,116,n8,2,digital_ok,,,,,,
 189,E,141,213,10,194,76,e2,3,digital_ok,,,,,,
 189,N,141,213,10,194,76,n0,3,digital_ok,,,,,,
-190,E,137,200,11,195,76,e6,3,digital_ok,,,,,,
+190,E,137,200,11,195,76,e6,3,digital_ok,,,4.408,,Feed Height Before: 4.407 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,
 190,N,137,200,11,195,76,n4,3,digital_ok,,,,,,
 191,E,131,197,12,196,76,e10,3,digital_ok,,,4.409,,Feed Height Before: 4.401 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Present already Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,
 191,N,131,197,12,196,76,n8,3,digital_ok,,,,,,
