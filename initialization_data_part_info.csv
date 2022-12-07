@@ -3517,3 +3517,7 @@ HH146,A,FEM 303 Replaced with FEM 337,infoupd,1353836538
 HH190,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1353836538
 HH190,A,H6C: Feed Height Before: 4.407 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1353836540
 HH142,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1354034898
+N05,A,(NCM3) Updated WR firmware.  Relay failed on power up (copious smoke) so replaced.,infoupd,1354423338
+N07,A,(NCMP2) Updated WR firmware,infoupd,1354423338
+N09,A,(NCM2) Updated WR firmware.  Removed chokes on NCM/PAM/FEM power lines.,infoupd,1354423338
+N14,A,(NCM10) Updated WR firmware.  Removed a birds nest on top of the node vent.,infoupd,1354423338
