@@ -3472,6 +3472,8 @@ HH186,A,H6C: Feed Height Before: 4.402 Sticker Targets: Present Already  Stiffen
 HH185,A,Feed Heights: 4.410,infoupd,1353235338
 HH185,A,H6C: Feed Height Before: 4.407 Sticker Targets: Present Already Stiffener Braces: Installed Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1353235340
 HH187,A,Feed Heights: 4.409,infoupd,1353235338
+N09,A,Power cycled once and now the arduino is accessible.,infoupd,1354462938
+N14,A,Power cycled twice and now it is accessible.,infoupd,1354462938
 HH187,A,H6C: Feed Height Before: 4.403 Sticker Targets: Present Already Stiffener Braces: Installed Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Present Already Cables Labelled: Completed,infoupd,1353235340
 HH59,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1353235338
 HH59,A,FEM 103 replaced with FEM 334,infoupd,1353235340
@@ -3525,3 +3527,6 @@ N14,A,(NCM10) Updated WR firmware.  Removed a birds nest on top of the node vent
 HH133,A,Feed heights (NE/SE/SW/NW): 4.4,infoupd,1354444938
 HH133,A,H6C: Feed Height Before: 0 Sticker Targets: Installed now Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Installed Spiral Wrap: Present Already D Shackle Cable Tie: Installed now Cables Labelled: Completed,infoupd,1354444940
 HH133,A,Feed heights (NE/SE/SW/NW): 4.4,infoupd,1354444942
+N16,A,3 of 4 link lights are on for the SNAPs -- checking fiber,infoupd,1354462938
+N19,A,2 of 4 link lights are on for the SNAPs -- checking fiber,infoupd,1354462938
+N20,A,0 of 4 link lights are on for the SNAPs -- checking fiber,infoupd,1354462938
