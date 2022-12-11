@@ -1,0 +1,7 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221207_infoupd_0442" >> scripts.log 
+add_part_info.py -p N05 -r A -c "(NCM3) Updated WR firmware.  Relay failed on power up (copious smoke) so replaced." -l "infoupd" --date 2022/12/07 --time 04:42:00
+add_part_info.py -p N07 -r A -c "(NCMP2) Updated WR firmware" -l "infoupd" --date 2022/12/07 --time 04:42:00
+add_part_info.py -p N09 -r A -c "(NCM2) Updated WR firmware.  Removed chokes on NCM/PAM/FEM power lines." -l "infoupd" --date 2022/12/07 --time 04:42:00
+add_part_info.py -p N14 -r A -c "(NCM10) Updated WR firmware.  Removed a birds nest on top of the node vent." -l "infoupd" --date 2022/12/07 --time 04:42:00

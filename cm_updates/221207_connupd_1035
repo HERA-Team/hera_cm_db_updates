@@ -1,0 +1,21 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221207_connupd_1035" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u FEM242 --uprev A --upport pwr -d FPS18 --dnrev A --dnport pwr3 --date 2022/12/07 --time 10:29
+stop_connection.py -u FEM242 --uprev A --upport e -d NBP11 --dnrev A --dnport e3 --date 2022/12/07 --time 10:29
+stop_connection.py -u FEM242 --uprev A --upport n -d NBP11 --dnrev A --dnport n3 --date 2022/12/07 --time 10:29
+stop_connection.py -u FDV271 --uprev A --upport terminals -d FEM243 --dnrev A --dnport input --date 2022/12/07 --time 10:29
+stop_connection.py -u FEM243 --uprev A --upport e -d NBP11 --dnrev A --dnport e12 --date 2022/12/07 --time 10:29
+stop_connection.py -u FEM243 --uprev A --upport n -d NBP11 --dnrev A --dnport n12 --date 2022/12/07 --time 10:29
+stop_connection.py -u FEM243 --uprev A --upport pwr -d FPS18 --dnrev A --dnport pwr12 --date 2022/12/07 --time 10:29
+stop_connection.py -u FDV239 --uprev A --upport terminals -d FEM242 --dnrev A --dnport input --date 2022/12/07 --time 10:29
+# add connections for gsheet_not_active
+add_connection.py -u FDV239 --uprev A --upport terminals -d FEM340 --dnrev A --dnport input --date 2022/12/07 --time 10:35
+add_connection.py -u FEM340 --uprev A --upport pwr -d FPS18 --dnrev A --dnport pwr3 --date 2022/12/07 --time 10:35
+add_connection.py -u FEM340 --uprev A --upport e -d NBP11 --dnrev A --dnport E3 --date 2022/12/07 --time 10:35
+add_connection.py -u FEM340 --uprev A --upport n -d NBP11 --dnrev A --dnport N3 --date 2022/12/07 --time 10:35
+add_connection.py -u FDV271 --uprev A --upport terminals -d FEM343 --dnrev A --dnport input --date 2022/12/07 --time 10:35
+add_connection.py -u FEM343 --uprev A --upport pwr -d FPS18 --dnrev A --dnport pwr12 --date 2022/12/07 --time 10:35
+add_connection.py -u FEM343 --uprev A --upport e -d NBP11 --dnrev A --dnport E12 --date 2022/12/07 --time 10:35
+add_connection.py -u FEM343 --uprev A --upport n -d NBP11 --dnrev A --dnport N12 --date 2022/12/07 --time 10:35
