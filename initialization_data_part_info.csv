@@ -3537,3 +3537,6 @@ HH80,A,Yellow FEM cover installed.,infoupd,1354718538
 HH80,A,Feed heights (NE/SE/SW/NW): 4.404,infoupd,1354718540
 N19,A,2 of 4 link lights are on for the SNAPs -- checking fiber.,infoupd,1354718538
 N20,A,(NCM15) WR-Len firmware updated,infoupd,1354718538
+N16,A,Replaced bad SNAP (snap3) to get all four link lights,infoupd,1354876938
+N19,A,"Replaced transceiver at switch in container - which fixed one link from SNAP.  Swapped to spare fiber, which fixed last link from SNAPs",infoupd,1354876938
+N20,A,"Swapped f/o T/R at node, which fixed all four SNAP link lights",infoupd,1354876938
