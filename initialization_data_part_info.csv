@@ -943,6 +943,7 @@ N19,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 HH85,A,SNAPloc: 0,infoupd,1264203738
 N16,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 HH86,A,SNAPloc: 0,infoupd,1264203738
+WRA000028,A,Update WR firmware,,1354276818
 HH87,A,SNAPloc: 2,infoupd,1264203738
 HH101,A,SNAPloc: 2,infoupd,1264203738
 HH102,A,SNAPloc: 0,infoupd,1264203738
@@ -1145,6 +1146,7 @@ HH182,A,Feed heights (NE/SE/SW/NW): Z distance =4.415,infoupd,1265708538
 ND04,A,Door direction: NW,,1280318418
 HH57,A,"RY,F?,TY,WN",infoupd,1344696138
 HH75,A,"RY,FY,TY,WN Conduit on hub",infoupd,1344699738
+WRA000084,A,Update WR firmware,,1354276818
 HH160,A,Final post-PAM spectra looks fine,infoupd,1265726538
 HH50,A,Spectra: N3P12N,infoupd,1318668140
 HH161,A,Final check for 161N has an unexpected dip @ ~70 MHz,infoupd,1265726538
@@ -1751,6 +1753,7 @@ PAM348,A,Conductive gasket foam installed.,infoman,1347796818
 HH101,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 PAM015,A,Conductive gasket foam installed.,infoman,1347796818
 HH102,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
+WRA000083,A,Update WR firmware,,1354363218
 HH103,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH104,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
 HH122,A,reported sync ok by dgorki Aug 7 ,infoupd,1281040938
@@ -1944,6 +1947,7 @@ PAM056,A,Conductive gasket foam installed.,infoman,1347796818
 HH103,A,Nice post-PAM auto 17 Sept,infoupd,1284482538
 PAM027,A,Conductive gasket foam installed.,infoman,1347796818
 HH122,A,Nice post-PAM autos 17 Sept,apa-infoupd,1284482538
+WRA000097,A,Update WR firmware,,1354363218
 HH123,A,Auto is just a low hump in post-PAM autos 17 Sept,infoupd,1284482538
 HH123,A,Nice post-PAM autos 17 Sept,infoupd,1284482540
 HH89,A,Nice post-PAM autos 17 Sept,infoupd,1284482538
@@ -2708,6 +2712,7 @@ HH158,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1
 HH63,A,"History: RY,FB,TY,WY",infoupd,1344696138
 N09,A,FEMv2.2 - has charge-pumps with a mitigation circuit designed by Cambridge,infoupd,1344825738
 N06,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
+WRA000085,A,Update WR firmware,,1354449618
 HH143,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
 HH70,A,Spectre: N4P9N,infoupd,1318668140
 HH166,A,https://github.com/HERA-Team/HERA_Commissioning/issues/660,apa-infoupd,1299526938
@@ -3527,9 +3532,14 @@ N14,A,(NCM10) Updated WR firmware.  Removed a birds nest on top of the node vent
 HH133,A,Feed heights (NE/SE/SW/NW): 4.4,infoupd,1354444938
 HH133,A,H6C: Feed Height Before: 0 Sticker Targets: Installed now Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Installed Spiral Wrap: Present Already D Shackle Cable Tie: Installed now Cables Labelled: Completed,infoupd,1354444940
 HH133,A,Feed heights (NE/SE/SW/NW): 4.4,infoupd,1354444942
+NCMP2,A,Update WR firmware,,1354276818
 N16,A,3 of 4 link lights are on for the SNAPs -- checking fiber,infoupd,1354462938
 N19,A,2 of 4 link lights are on for the SNAPs -- checking fiber,infoupd,1354462938
 N20,A,0 of 4 link lights are on for the SNAPs -- checking fiber,infoupd,1354462938
+NCM3,A,Update WR firmware,,1354276818
+NCM2,A,Update WR firmware,,1354363218
+NCM10,A,Update WR firmware,,1354363218
+NCM15,A,Update WR firmware,,1354449618
 HH131,A,Yellow FEM covers installed.,infoupd,1354718538
 HH131,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1354718540
 HH133,A,Yellow FEM covers installed,infoupd,1354718538
