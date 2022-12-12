@@ -1,0 +1,6 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221212_infoupd_1042" >> scripts.log 
+add_part_info.py -p N16 -r A -c "Replaced bad SNAP (snap3) to get all four link lights" -l "infoupd" --date 2022/12/12 --time 10:42:00
+add_part_info.py -p N19 -r A -c "Replaced transceiver at switch in container - which fixed one link from SNAP.  Swapped to spare fiber, which fixed last link from SNAPs" -l "infoupd" --date 2022/12/12 --time 10:42:00
+add_part_info.py -p N20 -r A -c "Swapped f/o T/R at node, which fixed all four SNAP link lights" -l "infoupd" --date 2022/12/12 --time 10:42:00
