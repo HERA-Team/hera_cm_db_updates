@@ -3550,3 +3550,8 @@ N20,A,(NCM15) WR-Len firmware updated,infoupd,1354718538
 N16,A,Replaced bad SNAP (snap3) to get all four link lights,infoupd,1354876938
 N19,A,"Replaced transceiver at switch in container - which fixed one link from SNAP.  Swapped to spare fiber, which fixed last link from SNAPs",infoupd,1354876938
 N20,A,"Swapped f/o T/R at node, which fixed all four SNAP link lights",infoupd,1354876938
+HH51,A,apriori_antenna status change: digital_ok > dish_maintenance,apa-infoupd,1354963698
+HH68,A,apriori_antenna status change: digital_ok > dish_maintenance,apa-infoupd,1354963698
+HH68,A,has a broken fiber,apa-infoupd,1354963338
+HB320,A,has a broken fiber,infoupd,1354963338
+HH51,A,replace the fem,apa-infoupd,1354963338
