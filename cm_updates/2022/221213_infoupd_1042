@@ -1,0 +1,10 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/221213_infoupd_1042" >> scripts.log 
+update_apriori.py -p HH51 -s dish_maintenance --date 2022/12/13 --time 10:48
+add_part_info.py -p HH51 -r A -c "apriori_antenna status change: digital_ok > dish_maintenance" -l "apa-infoupd" --date 2022/12/13 --time 10:48
+update_apriori.py -p HH68 -s dish_maintenance --date 2022/12/13 --time 10:48
+add_part_info.py -p HH68 -r A -c "apriori_antenna status change: digital_ok > dish_maintenance" -l "apa-infoupd" --date 2022/12/13 --time 10:48
+add_part_info.py -p HH68 -r A -c "has a broken fiber" -l "apa-infoupd" --date 2022/12/13 --time 10:42:00
+add_part_info.py -p HB320 -r A -c "has a broken fiber" -l "infoupd" --date 2022/12/13 --time 10:42:00
+add_part_info.py -p HH51 -r A -c "replace the fem" -l "apa-infoupd" --date 2022/12/13 --time 10:42:00
