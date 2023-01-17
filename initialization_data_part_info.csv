@@ -3555,3 +3555,5 @@ HH68,A,apriori_antenna status change: digital_ok > dish_maintenance,apa-infoupd,
 HH68,A,has a broken fiber,apa-infoupd,1354963338
 HB320,A,has a broken fiber,infoupd,1354963338
 HH51,A,replace the fem,apa-infoupd,1354963338
+HH93,A,FEM141 declared bad and replaced with FEM351,infoupd,1357983738
+HH93,A,FEM141 declared bad and replaced with FEM351,infoupd,1357983740
