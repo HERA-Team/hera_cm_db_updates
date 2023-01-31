@@ -1,0 +1,12 @@
+#! /bin/bash
+#source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230130_connupd_C" >> scripts.log 
+
+add_part.py -p FEM378 -r A -t front-end -m FEM378 --date 2023/01/27 --time 07:05
+
+# add connections for gsheet_not_active
+add_connection.py -u FDV112 --uprev A --upport terminals -d FEM378 --dnrev A --dnport input --date 2023/01/27 --time 08:35
+add_connection.py -u FEM378 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr3 --date 2023/01/27 --time 08:35
+add_connection.py -u FEM378 --uprev A --upport e -d NBP14 --dnrev A --dnport E3 --date 2023/01/27 --time 08:35
+add_connection.py -u FEM378 --uprev A --upport n -d NBP14 --dnrev A --dnport N3 --date 2023/01/27 --time 08:35
+
