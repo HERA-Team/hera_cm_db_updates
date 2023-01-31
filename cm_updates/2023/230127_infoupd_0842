@@ -1,0 +1,11 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230127_infoupd_0842" >> scripts.log 
+add_part_info.py -p HH185 -r A -c "swapt the old FEM with a new one" -l "infoupd" --date 2023/01/27 --time 08:42:00
+add_part_info.py -p HH185 -r A -c "Feed Heights: 4.407" -l "infoupd" --date 2023/01/27 --time 08:42:02
+add_part_info.py -p HH185 -r A -c "H6C: Feed Height Before: 4.410 Sticker Targets: Present Already Stiffener Braces: Installed Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed" -l "infoupd" --date 2023/01/27 --time 08:42:04
+add_part_info.py -p HH187 -r A -c "Feed Heights: 4.408" -l "infoupd" --date 2023/01/27 --time 08:42:00
+add_part_info.py -p HH187 -r A -c "H6C: Feed Height Before: 4.408 Sticker Targets: Present Already Stiffener Braces: Installed Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Present Already Cables Labelled: Completed" -l "infoupd" --date 2023/01/27 --time 08:42:02
+add_part_info.py -p HH146 -r A -c "Replaced old FEm with a new one" -l "infoupd" --date 2023/01/27 --time 08:42:00
+add_part_info.py -p HH146 -r A -c "Feed Heights: 4.401" -l "infoupd" --date 2023/01/27 --time 08:42:02
+add_part_info.py -p HH146 -r A -c "H6C: Feed Height Before: 4.406 Sticker Targets: Installed Stiffener Braces: Installed Carey Caps: Installed Protected Fiber: Installed Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2023/01/27 --time 08:42:04
