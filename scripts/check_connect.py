@@ -23,8 +23,8 @@ if not args.skip_duplicate_check:
     print("Checking duplicate active parts...")
     update.check_active()
 
-update.load_gsheet(args.node_csv)
-update.make_sheet_connections()
 if args.parts_to_find is not None:
+    update.load_gsheet(args.node_csv)
+    update.make_sheet_connections()
     args.parts_to_find = args.parts_to_find.split(',')
     update.find_parts(args.parts_to_find, show=True)
