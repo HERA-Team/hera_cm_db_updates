@@ -1,0 +1,14 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230201_connupd_2035" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u SNPC000027 --uprev A --upport rack -d N17 --dnrev A --dnport loc3 --date 2023/02/01 --time 20:29
+# add connections for gsheet_not_active
+add_connection.py -u NCM14 --uprev A --upport rack -d N21 --dnrev A --dnport middle --date 2023/02/01 --time 20:35
+add_connection.py -u PAM314 --uprev A --upport e -d SNPC000027 --dnrev A --dnport e2 --date 2023/02/01 --time 20:35
+add_connection.py -u PAM314 --uprev A --upport n -d SNPC000027 --dnrev A --dnport n0 --date 2023/02/01 --time 20:35
+add_connection.py -u SNPC000027 --uprev A --upport rack -d N21 --dnrev A --dnport loc3 --date 2023/02/01 --time 20:35
+add_connection.py -u PAM315 --uprev A --upport e -d SNPC000027 --dnrev A --dnport e6 --date 2023/02/01 --time 20:35
+add_connection.py -u PAM315 --uprev A --upport n -d SNPC000027 --dnrev A --dnport n4 --date 2023/02/01 --time 20:35
+add_connection.py -u PAM316 --uprev A --upport e -d SNPC000027 --dnrev A --dnport e10 --date 2023/02/01 --time 20:35
+add_connection.py -u PAM316 --uprev A --upport n -d SNPC000027 --dnrev A --dnport n8 --date 2023/02/01 --time 20:35
