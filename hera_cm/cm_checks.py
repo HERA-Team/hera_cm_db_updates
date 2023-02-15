@@ -7,7 +7,6 @@ from hera_mc import mc, cm_utils, cm_active, cm_sysutils, cm_hookup, geo_handlin
 import redis
 from node_control import he_check
 import yaml
-import matplotlib.pyplot as plt
 
 
 def _getkeys(this_dict, these_keys, defv):
@@ -124,7 +123,6 @@ def snap_config(old_config_file, new_config_file='snap_config.out', ant_limit=20
         for this_loc in loc:
             x.append(this_loc.easting)
             y.append(this_loc.northing)
-        #plt.plot(x, y, 'o')
         geo.set_graph(True)
         geo.plot_all_stations()
         geo.plot_stations(loc, xgraph='E', ygraph='N', label='none',
