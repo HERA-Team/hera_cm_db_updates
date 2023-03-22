@@ -1,0 +1,29 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230314_connupd_0935" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u FDV228 --uprev A --upport terminals -d FEM278 --dnrev A --dnport input --date 2023/03/14 --time 09:29
+stop_connection.py -u FDV214 --uprev A --upport terminals -d FEM275 --dnrev A --dnport input --date 2023/03/14 --time 09:29
+stop_connection.py -u FEM278 --uprev A --upport e -d NBP16 --dnrev A --dnport e12 --date 2023/03/14 --time 09:29
+stop_connection.py -u FEM278 --uprev A --upport n -d NBP16 --dnrev A --dnport n12 --date 2023/03/14 --time 09:29
+stop_connection.py -u FEM278 --uprev A --upport pwr -d FPS12 --dnrev A --dnport pwr12 --date 2023/03/14 --time 09:29
+stop_connection.py -u FEM275 --uprev A --upport e -d NBP16 --dnrev A --dnport e4 --date 2023/03/14 --time 09:29
+stop_connection.py -u FEM275 --uprev A --upport n -d NBP16 --dnrev A --dnport n4 --date 2023/03/14 --time 09:29
+stop_connection.py -u FEM275 --uprev A --upport pwr -d FPS12 --dnrev A --dnport pwr4 --date 2023/03/14 --time 09:29
+# add parts for gsheet_not_active
+add_part.py -p FEM307 -r A -t front-end -m FEM307 --date 2023/03/14 --time 09:05
+add_part.py -p FEM237 -r A -t front-end -m FEM237 --date 2023/03/14 --time 09:05
+add_part.py -p FEM243 -r A -t front-end -m FEM243 --date 2023/03/14 --time 09:05
+# add connections for gsheet_not_active
+add_connection.py -u FDV222 --uprev A --upport terminals -d FEM307 --dnrev A --dnport input --date 2023/03/14 --time 09:35
+add_connection.py -u FEM307 --uprev A --upport pwr -d FPS12 --dnrev A --dnport pwr3 --date 2023/03/14 --time 09:35
+add_connection.py -u FEM307 --uprev A --upport e -d NBP16 --dnrev A --dnport E3 --date 2023/03/14 --time 09:35
+add_connection.py -u FEM307 --uprev A --upport n -d NBP16 --dnrev A --dnport N3 --date 2023/03/14 --time 09:35
+add_connection.py -u FDV214 --uprev A --upport terminals -d FEM243 --dnrev A --dnport input --date 2023/03/14 --time 09:35
+add_connection.py -u FEM243 --uprev A --upport pwr -d FPS12 --dnrev A --dnport pwr4 --date 2023/03/14 --time 09:35
+add_connection.py -u FEM243 --uprev A --upport e -d NBP16 --dnrev A --dnport E4 --date 2023/03/14 --time 09:35
+add_connection.py -u FEM243 --uprev A --upport n -d NBP16 --dnrev A --dnport N4 --date 2023/03/14 --time 09:35
+add_connection.py -u FDV228 --uprev A --upport terminals -d FEM237 --dnrev A --dnport input --date 2023/03/14 --time 09:35
+add_connection.py -u FEM237 --uprev A --upport pwr -d FPS12 --dnrev A --dnport pwr12 --date 2023/03/14 --time 09:35
+add_connection.py -u FEM237 --uprev A --upport e -d NBP16 --dnrev A --dnport E12 --date 2023/03/14 --time 09:35
+add_connection.py -u FEM237 --uprev A --upport n -d NBP16 --dnrev A --dnport N12 --date 2023/03/14 --time 09:35
