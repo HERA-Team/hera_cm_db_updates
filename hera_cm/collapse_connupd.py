@@ -16,7 +16,8 @@ class CollapseConn:
         for f in sorted(files):
             if 'connupd' in f:
                 parts = f.split('_')
-                dt = datetime.strftime(f"{parts[0]}T{parts[2]}", '%y%m%dT%H%m')
+                dtstr = f"{parts[0]}T{parts[2]}"
+                dt = datetime.datetime.strptime(dtstr, '%y%m%dT%H%M')
                 self.connupd_files[dt] = f
 
 # fprm = open('rm_connupd', 'w')
