@@ -1,0 +1,7 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230320_infoupd_1742" >> scripts.log 
+add_part_info.py -p HH129 -r A -c "FEM Switch error -DCJ" -l "infoupd" --date 2023/03/20 --time 17:42:00
+add_part_info.py -p HH100 -r A -c "FEM Switch error -DCJ" -l "infoupd" --date 2023/03/20 --time 17:42:00
+add_part_info.py -p HH99 -r A -c "FEM Switch error -DCJ" -l "infoupd" --date 2023/03/20 --time 17:42:00
+add_part_info.py -p HH137 -r A -c "FEM Switch error -DCJ" -l "infoupd" --date 2023/03/20 --time 17:42:00
