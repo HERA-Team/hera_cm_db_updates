@@ -12,7 +12,7 @@ import argparse
 class CollapseConn:
     def __init__(self):
         self.connupd_files = {}
-        files = os.listdir(args.directory)
+        files = os.listdir()
         for f in sorted(files):
             if 'connupd' in f:
                 parts = f.split('_')
