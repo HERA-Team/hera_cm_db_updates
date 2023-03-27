@@ -10,9 +10,9 @@ import argparse
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
-    ap.add_argument('-d', '--directory', help="Search directory", default='2020')
+    ap.add_argument('-d', '--directory', help="Search directory", default='2023')
     ap.add_argument('-s', '--search-after', dest='search_after', help="Search after YYMMDD",
-                    default='200101')
+                    default='230301')
     ap.add_argument('-k', '--keywords', help='Keywords to use only once.', default='echo,source')
     args = ap.parse_args()
 else:
