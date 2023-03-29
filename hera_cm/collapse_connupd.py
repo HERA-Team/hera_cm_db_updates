@@ -39,9 +39,15 @@ class CollapseConn:
                             if targ not in ['date', 'time'] and isinstance(getattr(arg, targ), str):
                                 key.append(getattr(arg, targ))
                         key = ','.join(sorted(key))
-                        self.cmds[cmd].setdefault(key, [])
-                        self.cmds[cmd][key].append(line.strip())
-
+                        self.cmds[cmd].setdefault(key, {})
+                        vdate = getattr(arg, 'date')
+                        vtime = getattr(arg, 'time')
+                        datekey = datetime.datetime.strptime(f"{vdate}T{vtime}", "%Y/%m/%dT%H:%M")
+                        self.cmds[cmd][key][datekey] =  line.strip()
+    def get_cmds(self, cmds=['add_part', 'stop_connection', 'add_connection']):
+        now = datetime.datetime.now()
+        fn = f"{now.strftime('%Y%m%d')}_connupd_{now.strftime('%H%M')}"
+        print(fn)
 # fprm = open('rm_connupd', 'w')
 
 # connupd_data = []
