@@ -7,6 +7,7 @@ Writes the file 'cat_connupd.txt'
 import os
 import datetime
 import argparse
+from hera_cm import util, script_info
 
 
 class CollapseConn:
@@ -19,6 +20,27 @@ class CollapseConn:
                 dtstr = f"{parts[0]}T{parts[2]}"
                 dt = datetime.datetime.strptime(dtstr, '%y%m%dT%H%M')
                 self.connupd_files[dt] = f
+
+    def read_files(self):
+        self.other = set()
+        self.cmds = {}
+        for ufile in self.connupd_files.values():
+            with open(ufile, 'r') as fp:
+                for line in fp:
+                    if line.startswith('#') or line.startswith('source') or line.startswith('echo'):
+                        self.other.add(line.strip())
+                    else:
+                        cmd, arg = util.parse_log_line(line, return_cmd_args=True)
+                        self.cmds.setdefault(cmd, {})
+                        arglist = script_info.get_arglist(arg)
+                        key = []
+                        for targ in arglist:
+                            val = getattr(arg, targ)
+                            if targ not in ['date', 'time'] and isinstance(getattr(arg, targ), str):
+                                key.append(getattr(arg, targ))
+                        key = ','.join(sorted(key))
+                        self.cmds[cmd].setdefault(key, [])
+                        self.cmds[cmd][key].append(line.strip())
 
 # fprm = open('rm_connupd', 'w')
 
