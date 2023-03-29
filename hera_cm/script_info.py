@@ -2,6 +2,14 @@ import argparse
 from hera_mc import cm_utils
 
 
+def get_arglist(args):
+    arglist = []
+    for arg in dir(args):
+        if not arg.startswith('_'):
+            arglist.append(arg)
+    return arglist
+
+
 def add_part_info():
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--hpn", help="HERA part number", default=None)
