@@ -39,7 +39,9 @@ def parse_log_line(line,
                    arglist=['hpn', 'hptype', 'comment',
                             'uppart', 'upport',
                             'dnpart', 'dnport', 'status'],
-                   prefix=None, **kwargs):
+                   prefix=None,
+                   return_cmd_args = False,
+                   **kwargs):
     """
     Parse an input line to produce a log output.  To add, include the argparse
     in the script_info.py file and include desired options to arglist above.
@@ -64,6 +66,8 @@ def parse_log_line(line,
         return line + '\n'
 
     args = parser.parse_args(argv[1:])
+    if return_cmd_args:
+        return command, args
     helpdict = {}
     for action in parser._actions:
         helpdict[action.dest] = action.help
