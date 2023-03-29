@@ -1,0 +1,6 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230329_infoupd_0842" >> scripts.log 
+add_part_info.py -p HH177 -r A -c "Feed heights (NE/SE/SW/NW): 4.407" -l "infoupd" --date 2023/03/29 --time 08:42:00
+add_part_info.py -p HH178 -r A -c "Feed heights (NE/SE/SW/NW): 4.407" -l "infoupd" --date 2023/03/29 --time 08:42:00
+add_part_info.py -p HH158 -r A -c "Feed heights (NE/SE/SW/NW): 4.408" -l "infoupd" --date 2023/03/29 --time 08:42:00

@@ -1,0 +1,22 @@
+#! /bin/bash
+source ~/.bashrc
+echo cc230329_connupd_2052 >> scripts.log
+# add_part
+add_part.py -p FEM155 -r A -t front-end -m FEM155 --date 2023/03/27 --time 05:05
+# stop_connection
+stop_connection.py -u FEM213 --uprev A --upport pwr -d FPS13 --dnrev A --dnport pwr10 --date 2023/03/27 --time 05:29
+stop_connection.py -u FEM213 --uprev A --upport e -d NBP15 --dnrev A --dnport e10 --date 2023/03/27 --time 05:29
+stop_connection.py -u FEM213 --uprev A --upport n -d NBP15 --dnrev A --dnport n10 --date 2023/03/27 --time 05:29
+stop_connection.py -u FDV141 --uprev A --upport terminals -d FEM213 --dnrev A --dnport input --date 2023/03/27 --time 05:29
+stop_connection.py -u FEM212 --uprev A --upport e -d NBP01 --dnrev A --dnport e7 --date 2023/03/27 --time 06:29
+stop_connection.py -u FEM212 --uprev A --upport n -d NBP01 --dnrev A --dnport n7 --date 2023/03/27 --time 06:29
+stop_connection.py -u FEM212 --uprev A --upport pwr -d FPS15 --dnrev A --dnport pwr7 --date 2023/03/27 --time 06:29
+stop_connection.py -u FDV156 --uprev A --upport terminals -d FEM212 --dnrev A --dnport input --date 2023/03/27 --time 06:29
+# add_connection
+add_connection.py -u FEM155 --uprev A --upport pwr -d FPS13 --dnrev A --dnport pwr6 --date 2023/03/27 --time 05:35
+add_connection.py -u FEM155 --uprev A --upport e -d NBP15 --dnrev A --dnport E6 --date 2023/03/27 --time 05:35
+add_connection.py -u FEM155 --uprev A --upport n -d NBP15 --dnrev A --dnport N6 --date 2023/03/27 --time 05:35
+add_connection.py -u FDV141 --uprev A --upport terminals -d FEM212 --dnrev A --dnport input --date 2023/03/27 --time 05:35
+add_connection.py -u FEM212 --uprev A --upport pwr -d FPS13 --dnrev A --dnport pwr10 --date 2023/03/27 --time 05:35
+add_connection.py -u FEM212 --uprev A --upport e -d NBP15 --dnrev A --dnport E10 --date 2023/03/27 --time 05:35
+add_connection.py -u FEM212 --uprev A --upport n -d NBP15 --dnrev A --dnport N10 --date 2023/03/27 --time 05:35
