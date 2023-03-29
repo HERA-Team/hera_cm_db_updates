@@ -2,7 +2,7 @@
 """
 Pulls the connupd information out of the add_part_conn script files.
 
-Writes the file 'cat_connupd.txt'
+Writes the file 'cc_yymmdd_connupd_hhmm'
 """
 import os
 import datetime
@@ -57,4 +57,4 @@ class CollapseConn:
                 print(f"# {cmd}", file=fp)
                 for entry in self.cmds[cmd]:
                     early = min(self.cmds[cmd][entry])
-                    print(f"{cmd}.py {self.cmds[cmd][entry][early]}", file=fp)
+                    print(f"{self.cmds[cmd][entry][early]}", file=fp)

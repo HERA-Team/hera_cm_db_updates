@@ -28,7 +28,8 @@ setup_args = {
                 'scripts/antcorr.py',
                 'scripts/track_info_header.py',
                 'scripts/config_gen.py',
-                'scripts/cm_gsheet_arcsearch.py'],
+                'scripts/cm_gsheet_arcsearch.py',
+                'scripts/collapse_connupd.py'],
     'include_package_data': True,
     'install_requires': []
 }
