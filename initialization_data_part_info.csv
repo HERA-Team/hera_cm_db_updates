@@ -3679,3 +3679,13 @@ HH60,A,no sky per antenna classification summary -DCJ,infoupd,1366054938
 HH43,A,no sky in E per ACS -DCJ,infoupd,1366054938
 HH74,A,no sky per antenna classification summary -DCJ,infoupd,1366054938
 HH75,A,No sky in N per ACS  -DCJ,infoupd,1366054938
+HH179,A,H6Ccheck: no-sky power after fem 301 Reported in issue 780. -DCJ,infoupd,1366062138
+HH135,A,H6Ccheck: No sky in N -DCJ,infoupd,1366062138
+HH135,A,H6Ccheck: looks ok -dcj,infoupd,1366062140
+HH200,A,"one bad pol, one too high! -DCJ",infoupd,1366062138
+HH201,A,power too high -DCJ,infoupd,1366062138
+HH203,A,"power too low, no sky -DCJ",infoupd,1366062138
+HH219,A,power too high -DCJ,infoupd,1366062138
+HH220,A,power too high -DCJ,infoupd,1366062138
+HH59,A,no evidence of digital issue -DCJ,infoupd,1366062138
+HH44,A,"spectra a little odd, but no evidence of digital issue -DCJ",infoupd,1366062138
