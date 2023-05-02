@@ -607,7 +607,6 @@ HH80,1214481618,,not_connected
 HH40,1188475218,1214481618.0,passed_checks
 HH46,1000000000,1214481618.0,not_connected
 HH61,1214481618,,not_connected
-HH62,1214481618,,not_connected
 HH63,1214481618,,not_connected
 HH64,1214481618,,not_connected
 HH23,1188475218,1214481618.0,passed_checks
@@ -1598,6 +1597,8 @@ HH142,1354034898,,RF_maintenance
 HH51,1354963698,,dish_maintenance
 HH246,1359712098,,dish_maintenance
 HH143,1360457298,,RF_maintenance
+HH62,1214481618,1367084898.0,not_connected
+HH62,1367084898,,digital_ok
 HH116,1265582538,1343778498.0,RF_maintenance
 HH116,1343778498,,digital_ok
 HH127,1343839698,,digital_ok
