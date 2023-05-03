@@ -3722,3 +3722,5 @@ HH75,A,H6C: Feed Height Before: 4.407 Sticker Targets: Present Already Stiffener
 HH62,A,apriori_antenna status change: not_connected > digital_ok,apa-infoupd,1367084898
 HH46,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1367170938
 HH46,A,H6C: Feed Height Before: 4.399 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1367170940
+HH76,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1367174538
+HH76,A,H6C: Feed Height Before: New connection Sticker Targets: Installed Stiffener Braces: Installed Carey Caps: Installed Protected Fiber: Installed Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,infoupd,1367174540
