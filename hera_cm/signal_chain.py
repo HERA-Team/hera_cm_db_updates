@@ -1,5 +1,5 @@
 """Various signal chain modification methods."""
-from hera_cm import util
+from hera_cm import upd_util
 from hera_mc import mc, cm_utils, cm_active, cm_handling
 import os
 
