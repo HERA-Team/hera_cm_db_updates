@@ -5,7 +5,7 @@
 This class sets up to update the part information database.
 """
 from . import mc, cm_utils, cm_active
-from . import upd_util, upd_base, cm_gsheet_ata
+from . import util, upd_base, cm_gsheet
 
 
 class UpdateInfo(upd_base.Update):
