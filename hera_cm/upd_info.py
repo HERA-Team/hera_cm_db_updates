@@ -133,7 +133,7 @@ class UpdateInfo(upd_base.Update):
             pdate = self.cdate + ''
             ptime = self.ctime + ''
             for i, col in enumerate(self.gsheet.header[tab]):
-                if col in cm_gsheet.hu_col.keys() or not len(col) or col == 'APriori':
+                if col in cm_gsheet.hu_col.keys() or col == 'APriori':
                     continue
                 try:
                     col_data = self.gsheet.data[sheet_key][i]
@@ -143,7 +143,7 @@ class UpdateInfo(upd_base.Update):
                     continue
                 pkey, pdate, ptime = util.get_unique_pkey(ant, rev, pdate, ptime, primary_keys)
                 # ##Get prefix for entry
-                if col in cm_gsheet.no_prefix:
+                if col in cm_gsheet.no_prefix or not len(col):
                     prefix = ''
                 else:
                     prefix = '{}: '.format(col)
@@ -157,9 +157,6 @@ class UpdateInfo(upd_base.Update):
                     refout = 'infoupd'
                     if antrev_key in self.new_apriori.keys():
                         refout = 'apa-infoupd'
-                        print("UI160: Checking apa-infoupd")
-                        print(antrev_key)
-                        print(self.new_apriori[antrev_key].keys())
                         # -- ddb comment out in 10/2022 -- not sure what it was/is for
                         # if statement not in self.new_apriori[antrev_key]['info']:
                         #     self.new_apriori[antrev_key]['info'].append(statement)
