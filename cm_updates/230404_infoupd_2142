@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230404_infoupd_2142" >> scripts.log 
+add_part_info.py -p HH70 -r A -c "Antennas 70 and 71 were swapped in the sheet" -l "infoupd" --date 2023/04/04 --time 21:42:00
+add_part_info.py -p HH71 -r A -c "Antennas 71 and 70 were swapped in the sheet" -l "infoupd" --date 2023/04/04 --time 21:42:00

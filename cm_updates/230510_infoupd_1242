@@ -1,0 +1,13 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230510_infoupd_1242" >> scripts.log 
+add_part_info.py -p HH20 -r A -c "Feed height: 4.409" -l "infoupd" --date 2023/05/10 --time 12:42:00
+add_part_info.py -p HH20 -r A -c "H6C: Feed Height Before: 4.404 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2023/05/10 --time 12:42:02
+add_part_info.py -p HH21 -r A -c "Feed height: 4.405" -l "infoupd" --date 2023/05/10 --time 12:42:00
+add_part_info.py -p HH21 -r A -c "H6C: Feed Height Before: 4.412 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2023/05/10 --time 12:42:02
+add_part_info.py -p HH31 -r A -c "Feed height: 4.408" -l "infoupd" --date 2023/05/10 --time 12:42:00
+add_part_info.py -p HH31 -r A -c "H6C: Feed Height Before: 4.411 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2023/05/10 --time 12:42:02
+add_part_info.py -p HH32 -r A -c "Feed height: 4.408" -l "infoupd" --date 2023/05/10 --time 12:42:00
+add_part_info.py -p HH32 -r A -c "H6C: Feed Height Before: 4.401 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2023/05/10 --time 12:42:02
+add_part_info.py -p HH33 -r A -c "Feed height: 4.408" -l "infoupd" --date 2023/05/10 --time 12:42:00
+add_part_info.py -p HH33 -r A -c "H6C: Feed Height Before: 4.406 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2023/05/10 --time 12:42:02

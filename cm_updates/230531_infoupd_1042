@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230531_infoupd_1042" >> scripts.log 
+add_part_info.py -p HH7 -r A -c "Optical power into PAM:" -l "infoupd" --date 2023/05/31 --time 10:42:00

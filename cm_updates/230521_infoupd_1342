@@ -1,0 +1,8 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230521_infoupd_1342" >> scripts.log 
+add_part_info.py -p HH60 -r A -c "FEM 108 replaced with FEM 342" -l "infoupd" --date 2023/05/21 --time 13:42:00
+add_part_info.py -p HH34 -r A -c "Feed heights (NE/SE/SW/NW): 4.406" -l "infoupd" --date 2023/05/21 --time 13:42:00
+add_part_info.py -p HH34 -r A -c "H6C: Feed Height Before: 4.405 Sticker Targets: Present Already  Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Present Already D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2023/05/21 --time 13:42:02
+add_part_info.py -p HH35 -r A -c "Feed heights (NE/SE/SW/NW): 4.409" -l "infoupd" --date 2023/05/21 --time 13:42:00
+add_part_info.py -p HH35 -r A -c "H6C: Feed Height Before: 4.409 Sticker Targets: Present Already  Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed  Spiral Wrap: Present Already D Shackle Cable Tie: Installed Cables Labelled: Completed" -l "infoupd" --date 2023/05/21 --time 13:42:02

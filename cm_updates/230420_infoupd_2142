@@ -1,0 +1,13 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230420_infoupd_2142" >> scripts.log 
+add_part_info.py -p HH179 -r A -c "H6Ccheck: no-sky power after fem 301 Reported in issue 780. -DCJ" -l "infoupd" --date 2023/04/20 --time 21:42:00
+add_part_info.py -p HH135 -r A -c "H6Ccheck: No sky in N -DCJ" -l "infoupd" --date 2023/04/20 --time 21:42:00
+add_part_info.py -p HH135 -r A -c "H6Ccheck: looks ok -dcj" -l "infoupd" --date 2023/04/20 --time 21:42:02
+add_part_info.py -p HH200 -r A -c "one bad pol, one too high! -DCJ" -l "infoupd" --date 2023/04/20 --time 21:42:00
+add_part_info.py -p HH201 -r A -c "power too high -DCJ" -l "infoupd" --date 2023/04/20 --time 21:42:00
+add_part_info.py -p HH203 -r A -c "power too low, no sky -DCJ" -l "infoupd" --date 2023/04/20 --time 21:42:00
+add_part_info.py -p HH219 -r A -c "power too high -DCJ" -l "infoupd" --date 2023/04/20 --time 21:42:00
+add_part_info.py -p HH220 -r A -c "power too high -DCJ" -l "infoupd" --date 2023/04/20 --time 21:42:00
+add_part_info.py -p HH59 -r A -c "no evidence of digital issue -DCJ" -l "infoupd" --date 2023/04/20 --time 21:42:00
+add_part_info.py -p HH44 -r A -c "spectra a little odd, but no evidence of digital issue -DCJ" -l "infoupd" --date 2023/04/20 --time 21:42:00
