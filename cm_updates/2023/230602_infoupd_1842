@@ -1,0 +1,16 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230602_infoupd_1842" >> scripts.log 
+add_part_info.py -p HH22 -r A -c "FEM Switch error -DCJ" -l "infoupd" --date 2023/06/02 --time 18:42:00
+add_part_info.py -p HH34 -r A -c "FEM Switch error -DCJ" -l "infoupd" --date 2023/06/02 --time 18:42:00
+add_part_info.py -p HH35 -r A -c "RY,FB,TY,WY" -l "infoupd" --date 2023/06/02 --time 18:42:00
+add_part_info.py -p HH47 -r A -c "RY,FB,TY,WY" -l "infoupd" --date 2023/06/02 --time 18:42:00
+add_part_info.py -p HH61 -r A -c "RY,FB,TY,WY" -l "infoupd" --date 2023/06/02 --time 18:42:00
+add_part_info.py -p HH61 -r A -c "https://drive.google.com/drive/folders/1zdhBvVhl2aK6HCv_5cjMVo2cgNB8KWfd?usp=sharing" -l "infoupd" --date 2023/06/02 --time 18:42:02
+add_part_info.py -p HH77 -r A -c "RY,FB,TY,WY" -l "infoupd" --date 2023/06/02 --time 18:42:00
+add_part_info.py -p HH48 -r A -c "RY,FB,TY,WY" -l "infoupd" --date 2023/06/02 --time 18:42:00
+add_part_info.py -p HH49 -r A -c "FEM Switch error -DCJ" -l "infoupd" --date 2023/06/02 --time 18:42:00
+add_part_info.py -p HH62 -r A -c "RY,FB,TY,WY" -l "infoupd" --date 2023/06/02 --time 18:42:00
+add_part_info.py -p HH63 -r A -c "RY,FB,TY,WY" -l "infoupd" --date 2023/06/02 --time 18:42:00
+add_part_info.py -p HH64 -r A -c "FEM Switch error -DCJ" -l "infoupd" --date 2023/06/02 --time 18:42:00
+add_part_info.py -p HH78 -r A -c "RY,FB,TY,WY" -l "infoupd" --date 2023/06/02 --time 18:42:00
