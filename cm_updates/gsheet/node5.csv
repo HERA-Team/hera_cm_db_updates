@@ -9,7 +9,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed 
 59,N,66,334,4,116,C50,N0,1,RF_maintenance,,FEM 103 replaced with FEM 334,,,,
 58,E,67,118,5,117,C50,E6,1,RF_maintenance,,no sky per antenna classification summary -DCJ,4.407,,Feed Height Before: 4.411 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,
 58,N,67,118,5,117,C50,N4,1,RF_maintenance,,,,,,
-44,E,59,109,6,118,C50,E10,1,digital_ok,,"spectra a little odd, but no evidence of digital issue -DCJ",4.411,,Feed Height Before: 4.401 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,
+44,E,59,109,6,118,C50,E10,1,digital_ok,,Bad connection at feedthrough was fixed on 6/2/23,4.411,,Feed Height Before: 4.401 Sticker Targets: Installed Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,
 44,N,59,109,6,118,C50,N8,1,digital_ok,,,,,,
 60,E,64,342,7,119,C111,E2,2,RF_maintenance,,no sky per antenna classification summary -DCJ,4.408,,Feed Height Before: 4.399 Sticker Targets: Present Already Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Already Present Spiral Wrap: Installed D Shackle Cable Tie: Installed Cables Labelled: Completed,
 60,N,64,342,7,119,C111,N0,2,RF_maintenance,,FEM 108 replaced with FEM 342,,,,

@@ -3819,3 +3819,12 @@ HH62,A,"RY,FB,TY,WY",infoupd,1369766538
 HH63,A,"RY,FB,TY,WY",infoupd,1369766538
 HH64,A,FEM Switch error -DCJ,infoupd,1369766538
 HH78,A,"RY,FB,TY,WY",infoupd,1369766538
+HH84,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369770498
+HH66,A,Loose connection fixed 6/2/23,infoupd,1369770138
+HH68,A,Replaced feedthrough 6/2/23,infoupd,1369770138
+HH37,A,Replaced feedthrough 6/2/23,infoupd,1369770138
+HH51,A,dish door warps upwards,infoupd,1369770138
+HH44,A,Bad connection at feedthrough was fixed on 6/2/23,infoupd,1369770138
+HH62,A,Connection issue fixed on 6/2/23,infoupd,1369770138
+HH104,A,Crew should fix tension in anchor rope 6/2/23,infoupd,1369770138
+HH84,A,Broken feedthrough replaced 6/2/23,apa-infoupd,1369770138
