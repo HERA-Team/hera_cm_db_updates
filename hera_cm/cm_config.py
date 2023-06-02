@@ -3,7 +3,7 @@
 # Licensed under the 2-clause BSD license.
 
 """Series of configuration utilities."""
-from hera_mc import mc, cm_hookup, geo_handling
+from . import cm, cm_hookup, geo_handling
 import yaml
 import matplotlib.pyplot as plt
 from datetime import datetime
@@ -175,7 +175,7 @@ class Configuration:
                         print(line.rstrip(), file=fpout)
         print(f"{len(self.hosts_to_use)} snaps and {self.total_ants} antennas.")
         print(f"Highest index {self.max_antno}")
-        with mc.MCSessionWrapper() as session:
+        with cm.MCSessionWrapper() as session:
             geo = geo_handling.Handling(session)
             loc = geo.get_location(self.ant_list, 'now')
             geo.set_graph(True)
