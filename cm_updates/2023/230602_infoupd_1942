@@ -1,0 +1,13 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230602_infoupd_1942" >> scripts.log 
+update_apriori.py -p HH84 -s RF_ok --date 2023/06/02 --time 19:48
+add_part_info.py -p HH84 -r A -c "apriori_antenna status change: RF_maintenance > RF_ok" -l "apa-infoupd" --date 2023/06/02 --time 19:48
+add_part_info.py -p HH66 -r A -c "Loose connection fixed 6/2/23" -l "infoupd" --date 2023/06/02 --time 19:42:00
+add_part_info.py -p HH68 -r A -c "Replaced feedthrough 6/2/23" -l "infoupd" --date 2023/06/02 --time 19:42:00
+add_part_info.py -p HH37 -r A -c "Replaced feedthrough 6/2/23" -l "infoupd" --date 2023/06/02 --time 19:42:00
+add_part_info.py -p HH51 -r A -c "dish door warps upwards" -l "infoupd" --date 2023/06/02 --time 19:42:00
+add_part_info.py -p HH44 -r A -c "Bad connection at feedthrough was fixed on 6/2/23" -l "infoupd" --date 2023/06/02 --time 19:42:00
+add_part_info.py -p HH62 -r A -c "Connection issue fixed on 6/2/23" -l "infoupd" --date 2023/06/02 --time 19:42:00
+add_part_info.py -p HH104 -r A -c "Crew should fix tension in anchor rope 6/2/23" -l "infoupd" --date 2023/06/02 --time 19:42:00
+add_part_info.py -p HH84 -r A -c "Broken feedthrough replaced 6/2/23" -l "apa-infoupd" --date 2023/06/02 --time 19:42:00
