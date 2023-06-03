@@ -36,7 +36,7 @@ class Update():
         self.cdatetime = datetime.datetime.now()
         hostname = socket.gethostname()
         if hostname != 'qmaster':
-            tz = float(input(f"Host is {hostname} -- need a timezone (PST=-8): "))
+            tz = float(input(f"Host is {hostname} -- need a timezone (PST=-8/PDT=-7): "))
             self.cdatetime -= datetime.timedelta(hours=tz)
         self.cdate, self.ctime = util.YMD_HM(self.cdatetime)
         if script_type is None:
