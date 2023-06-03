@@ -33,8 +33,8 @@ else:
 
 script_type = 'infoupd'
 cron_script = 'info_update.sh'
-if args.h6c is not None:
-    args.h6c = args.h6c.split(',')
+# if args.h6c is not None:
+#     args.h6c = args.h6c.split(',')
 
 update = upd_info.UpdateInfo(script_type=script_type,
                              script_path=args.script_path,
