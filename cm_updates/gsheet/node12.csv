@@ -1,27 +1,27 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,History,Comments,Feed heights (NE/SE/SW/NW),:::,H6C,H6Ccheck
-176,E,101,160,1,149,49,e2,0,digital_ok,,,4.411,Polished (see db),,
+176,E,101,160,1,149,49,e2,0,digital_ok,,,,,,
 176,N,101,160,1,149,49,n0,0,digital_ok,,,,,,
-177,E,102,159,2,150,49,e6,0,digital_ok,,,4.407,Polished (see db),,
+177,E,102,159,2,150,49,e6,0,digital_ok,,,,,,
 177,N,102,159,2,150,49,n4,0,digital_ok,,,,,,
-178,E,103,149,3,151,49,e10,0,digital_ok,,,4.407,Polished (see db),,
+178,E,103,149,3,151,49,e10,0,digital_ok,,,,,,
 178,N,103,149,3,151,49,n8,0,digital_ok,,,,,,
-179,E,104,301,4,152,60,e2,1,RF_maintenance,,FEM 155 replaced with 301,4.407,Polished (see db),Feed Height Before: 4.398 Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Already Present Spiral Wrap: Present Already D Shackle Cable Tie: Already Present Cables Labelled: Completed,no-sky power after fem 301 Reported in issue 780. -DCJ
+179,E,104,301,4,152,60,e2,1,RF_maintenance,,,,,,
 179,N,104,301,4,152,60,n0,1,RF_maintenance,,,,,,
 329,E,274,320,5,153,60,e6,1,dish_maintenance,,,,,,
 329,N,274,320,5,153,60,n4,1,dish_maintenance,,,,,,
 333,E,281,330,6,154,60,e10,1,dish_maintenance,,,,,,
 333,N,281,330,6,154,60,n8,1,dish_maintenance,,,,,,
-135,E,96,150,7,155,20,e2,2,RF_maintenance,,,4.403,Polished (see db),,No sky in N -DCJ
-135,N,96,150,7,155,20,n0,2,RF_maintenance,,,,,,looks ok -dcj
-136,E,82,151,8,156,20,e6,2,digital_ok,,,4.405,Polished (see db),,
+135,E,96,150,7,155,20,e2,2,RF_maintenance,,,,,,
+135,N,96,150,7,155,20,n0,2,RF_maintenance,,,,,,
+136,E,82,151,8,156,20,e6,2,digital_ok,,,,,,
 136,N,82,151,8,156,20,n4,2,digital_ok,,,,,,
-155,E,97,152,9,157,20,e10,2,RF_maintenance,,,4.407,Polished (see db),Feed Height Before: 4.411 Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Already Present Spiral Wrap: Present Already D Shackle Cable Tie: Already Present Cables Labelled: Completed,No sky in E -DCJ
+155,E,97,152,9,157,20,e10,2,RF_maintenance,,,,,,
 155,N,97,152,9,157,20,n8,2,RF_maintenance,,,,,,
-156,E,98,336,10,158,17,e2,3,RF_maintenance,,Replaced FEM 155 with FEM 336,4.411,Polished (see db),Feed Height Before: 4.405 Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Already Present Spiral Wrap: Present Already D Shackle Cable Tie: Already Present Cables Labelled: Completed,No Sky in E -DCJ
+156,E,98,336,10,158,17,e2,3,RF_maintenance,,,,,,
 156,N,98,336,10,158,17,n0,3,RF_maintenance,,,,,,
-157,E,99,161,11,159,17,e6,3,digital_ok,,,4.406,Polished (see db),,
+157,E,99,161,11,159,17,e6,3,digital_ok,,,,,,
 157,N,99,161,11,159,17,n4,3,digital_ok,,,,,,
-158,E,100,162,12,160,17,e10,3,digital_ok,,,4.408,Polished (see db),,
+158,E,100,162,12,160,17,e10,3,digital_ok,,,,,,
 158,N,100,162,12,160,17,n8,3,digital_ok,,,,,,
 #END,,,,,,,,,,,,,,,
 NCM,7,,,,,,,,,,,,,,
