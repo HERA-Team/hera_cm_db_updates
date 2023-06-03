@@ -25,7 +25,7 @@ if __name__ == '__main__':
                     help='In verbose, only show duplicates after this many days', default=0.0)
     ap.add_argument('--archive_gsheet', help='Path to move gsheet archive',
                     default='___cm_updates/gsheet')
-    ap.add_argument('--h6c', help="Alert list for H6C workflow", default=None)
+    # ap.add_argument('--h6c', help="Alert list for H6C workflow", default=None)
     args = ap.parse_args()
 else:
     args = argparse.Namespace(archive_path=None, script_path='default', node_csv='r', verbose=True,
@@ -52,5 +52,5 @@ update.add_sheet_notes(duplication_window=args.duplication_window,
                        view_duplicate=args.view_duplicate)
 update.add_node_notes(duplication_window=args.duplication_window,
                       view_duplicate=args.view_duplicate)
-update.process_h6c(args.h6c)
+# update.process_h6c(args.h6c)
 update.finish(cron_script=cron_script, archive_to=args.archive_path, alert=None)
