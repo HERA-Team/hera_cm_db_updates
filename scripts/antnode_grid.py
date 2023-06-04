@@ -5,8 +5,19 @@ import argparse
 
 
 ap = argparse.ArgumentParser()
-ap.add_argument('-a', '--antenna', help="List of antennas to highnmclr", default='')
-ap.add_argument('--highlight-color', dest='highlight_color', help="Color to use to highlight above", default='r')
+ap.add_argument('-a', '--antenna', help="List of antennas to highlight", default='')
 args = ap.parse_args()
-args.antenna = args.antenna.split(',')
-ant_node_grid.grid(args.antenna, args.highlight_color)
+
+data = {}
+if len(args.antenna):
+    data['antennas'] = {}
+    for ant in args.antenna.split(','):
+        data['antennas'][int(ant)] = 'r'
+
+grid = ant_node_grid.Grid(data)
+print("Making...")
+grid.make()
+if False:
+    print("\nChecking...")
+    grid.check()
+ant_node_grid.plt.show()
