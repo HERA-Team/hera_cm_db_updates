@@ -1,0 +1,26 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230604_infoupd_1114" >> scripts.log 
+add_part_info.py -p HH135 -r A -c "one dish patch detached on one edge and flipped over" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p HH141 -r A -c "Feed ropes very loose, feed is wiggling" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p HH185 -r A -c "feed is tilted, photo is available" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p HH143 -r A -c "feed on hub" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p HH204 -r A -c "feed not tied down vertically, but with yellow caps" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p HH54 -r A -c "door warped, feed hanging ~1m above the hub, some of the bottom PVC pipes are broken" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p HH56 -r A -c "door is off" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p HH81 -r A -c "dish falling apart, with mesh detached on edges and flipped over" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N01 -r A -c "All SNAP link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N03 -r A -c "All SNAP link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N04 -r A -c "All SNAP link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N05 -r A -c "All SNAP link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N06 -r A -c "All SNAP link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N07 -r A -c "All SNAP, but SNAP1, link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N08 -r A -c "All SNAP link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N09 -r A -c "All SNAP link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N10 -r A -c "All SNAP link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N12 -r A -c "All SNAP link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N13 -r A -c "All SNAP link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N14 -r A -c "All SNAP link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N18 -r A -c "All SNAP, but SNAP1, link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N19 -r A -c "All SNAP link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
+add_part_info.py -p N20 -r A -c "All SNAP, but SNAP2, link lights are green" -l "infoupd" --date 2023/06/04 --time 11:14:00
