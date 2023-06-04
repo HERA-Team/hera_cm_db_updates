@@ -29,7 +29,8 @@ setup_args = {
                 'scripts/track_info_header.py',
                 'scripts/config_gen.py',
                 'scripts/cm_gsheet_arcsearch.py',
-                'scripts/collapse_connupd.py'],
+                'scripts/collapse_connupd.py',
+                'scripts/antnode_grid.py'],
     'include_package_data': True,
     'install_requires': []
 }
