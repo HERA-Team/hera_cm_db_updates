@@ -3323,6 +3323,7 @@ HH179,A,H6C: Feed Height Before: 4.398 Sticker Targets: Already Present Stiffene
 HH191,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1350294138
 HH167,A,H6C: Feed Height Before: 4.410 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1350294140
 HH191,A,H6C: Feed Height Before: 4.401 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Present already Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1350294140
+HH83,A,door is poking up and cables are very loose,infoupd,1369941318
 HH43,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350499698
 HH46,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1350499698
 HH58,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350499698
@@ -4263,3 +4264,4 @@ HH126,A,FEM Power?: Yes,infoupd,1369938078
 HH126,A,FEM Power?: Yes,infoupd,1369938080
 HH125,A,FEM Power?: Yes,infoupd,1369938078
 HH125,A,FEM Power?: Yes,infoupd,1369938080
+HH38,A,Door is open,infoupd,1369941318
