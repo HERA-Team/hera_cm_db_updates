@@ -1,0 +1,5 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230604_infoupd_1915" >> scripts.log 
+add_part_info.py -p HH38 -r A -c "Door is open" -l "infoupd" --date 2023/06/04 --time 19:15:00
+add_part_info.py -p HH83 -r A -c "door is poking up and cables are very loose" -l "infoupd" --date 2023/06/04 --time 19:15:00
