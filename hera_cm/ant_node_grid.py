@@ -47,7 +47,7 @@ class Grid:
                         antenna = '!H---'
                     else:
                         ant_from_nbp = hu_from_nbp[0].upstream_part
-                        if ant_from_nbp[0] != 'H':  #This is probably ok, bug in hera_mc
+                        if ant_from_nbp[0] != 'H':  # This likely just means not connected.
                             # print("WARNING - found non-antenna")
                             # print(f"\tTrying {this_node}-{this_port}")
                             # print(f"\tFound {ant_from_nbp}")
@@ -68,12 +68,12 @@ class Grid:
                             print(f"\tTrying {this_node}-{this_port}")
                             print(f"\tFound {node_from_ant}-{port_from_ant}")
                             antenna = f"!N{antenna[2:]}"
-                        # if not (port_from_ant == this_port):  #This is probably ok, bug in hera_mc
+                        if not (port_from_ant == this_port):  # This likely just means not connected.
                             # print("WARNING - ports don't match!")
                             # print(f"\tAntenna {antenna}")
                             # print(f"\tTrying {this_node}-{this_port}")
                             # print(f"\tFound {node_from_ant}-{port_from_ant}")
-                            # antenna = f"!P{antenna[2:]}"
+                            antenna = '!P---'
                     this_color = self.background
                     if this_antenna in self.antennas:
                         this_color = self.antennas[this_antenna]
