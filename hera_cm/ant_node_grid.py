@@ -93,6 +93,7 @@ class Grid:
         plt.axis([0.2, 13, 0, 22.8])
     
     def check(self, color='r'):
+        """This is probably not needed, likely relates to bug in hera_mc"""
         for antenna, inputs in self.antenna_tracker.items():
             if len(inputs) > 1:
                 print("WARNING - found multiple ports for antenna!")
