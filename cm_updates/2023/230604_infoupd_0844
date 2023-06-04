@@ -1,0 +1,8 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230604_infoupd_0844" >> scripts.log 
+add_part_info.py -p N01 -r A -c "Power cycled NCM, which fixed the NCM." -l "infoupd" --date 2023/06/03 --time 14:44:00
+add_part_info.py -p N07 -r A -c "The power light on the front of the PAM chassis is on, however none of the PAMs are powered -- some issue with chassis power supply." -l "infoupd" --date 2023/06/04 --time 08:44:00
+add_part_info.py -p N15 -r A -c "No link light on the WR switch" -l "infoupd" --date 2023/06/04 --time 08:44:00
+add_part_info.py -p N18 -r A -c "Power cycled the NCM to hopefullly reform the WR endpoint." -l "infoupd" --date 2023/06/04 --time 08:44:00
+add_part_info.py -p N20 -r A -c "Power cycled NCM, which fixed the NCM." -l "infoupd" --date 2023/06/03 --time 14:45:00
