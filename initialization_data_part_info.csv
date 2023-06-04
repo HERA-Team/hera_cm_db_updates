@@ -3629,6 +3629,7 @@ HH137,A,FEM Switch error -DCJ,infoupd,1363369338
 HH176,A,Feed heights (NE/SE/SW/NW): 4.411,infoupd,1364049738
 HH177,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1364114538
 HH178,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1364114538
+HH117,A,FEM Power?: No,infoupd,1369938078
 HH158,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1364114538
 HH135,A,Feed heights (NE/SE/SW/NW): 4.403,infoupd,1364118138
 HH136,A,Feed heights (NE/SE/SW/NW): 4.405,infoupd,1364118138
@@ -3835,6 +3836,7 @@ N03,A,All SNAP link lights are green,infoupd,1369912458
 N04,A,All SNAP link lights are green,infoupd,1369912458
 N05,A,All SNAP link lights are green,infoupd,1369912458
 N06,A,All SNAP link lights are green,infoupd,1369912458
+HH145,A,FEM Power?: Yes,infoupd,1369938078
 N08,A,All SNAP link lights are green,infoupd,1369912458
 N09,A,All SNAP link lights are green,infoupd,1369912458
 N10,A,All SNAP link lights are green,infoupd,1369912458
@@ -3844,3 +3846,420 @@ N14,A,All SNAP link lights are green,infoupd,1369912458
 N18,A,"All SNAP, but SNAP1, link lights are green",infoupd,1369912458
 N19,A,All SNAP link lights are green,infoupd,1369912458
 N20,A,"All SNAP, but SNAP2, link lights are green",infoupd,1369912458
+HH16,A,apriori_antenna status change: digital_ok > RF_ok,apa-infoupd,1369938438
+HH18,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
+HH27,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
+HH28,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
+HH29,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH54,A,apriori_antenna status change: digital_ok > dish_maintenance,apa-infoupd,1369938438
+HH56,A,apriori_antenna status change: digital_ok > dish_maintenance,apa-infoupd,1369938438
+HH59,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
+HH60,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
+HH68,A,apriori_antenna status change: dish_maintenance > RF_ok,apa-infoupd,1369938438
+HH81,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH83,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH93,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH94,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH104,A,apriori_antenna status change: RF_maintenance > dish_maintenance,apa-infoupd,1369938438
+HH109,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH111,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH118,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH124,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH127,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH142,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
+HH160,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH166,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH180,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
+HH182,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1369938438
+HH184,A,apriori_antenna status change: digital_ok > dish_maintenance,apa-infoupd,1369938438
+HH207,A,apriori_antenna status change: RF_ok > RF_maintenance,apa-infoupd,1369938438
+HH211,A,apriori_antenna status change: RF_ok > RF_maintenance,apa-infoupd,1369938438
+HH225,A,apriori_antenna status change: RF_ok > RF_maintenance,apa-infoupd,1369938438
+HH245,A,apriori_antenna status change: RF_ok > RF_maintenance,apa-infoupd,1369938438
+HH261,A,apriori_antenna status change: RF_ok > RF_maintenance,apa-infoupd,1369938438
+HH262,A,apriori_antenna status change: dish_maintenance > RF_maintenance,apa-infoupd,1369938438
+HH18,A,"The optical cable is taped before splitting into the node for E and N. E: loose optical cable into node, tighthened.",apa-infoupd,1369938078
+HH18,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH18,A,"N: loose optical cable into node, tightened",apa-infoupd,1369938082
+HH18,A,FEM Power?: Yes,apa-infoupd,1369938084
+HH18,A,Optical Power (into PAM): N: 5.15 dBm,apa-infoupd,1369938086
+HH27,A,"The optical cable is taped before splitting into the node for E and N. E: loose optical cable into node, tighthened.",apa-infoupd,1369938078
+HH27,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH27,A,Optical Power (into node): E: -1.35 dBm,apa-infoupd,1369938082
+HH27,A,Optical Power (into PAM): E: -8.1 dBm,apa-infoupd,1369938084
+HH27,A,"N: loose optical cable into node, tightened",apa-infoupd,1369938086
+HH27,A,FEM Power?: Yes,apa-infoupd,1369938088
+HH28,A,"The optical cable is taped before splitting into the node for E and N. E: loose optical cable into node, tighthened. There is tape before the E connection. Changing optical cable feedthrough fixed the optical power.",apa-infoupd,1369938078
+HH28,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH28,A,Optical Power (into node): E: 5.95 dBm,apa-infoupd,1369938082
+HH28,A,Optical Power (into PAM): E: 5.85 dBm,apa-infoupd,1369938084
+HH28,A,"N: loose optical cable into node, tightened",apa-infoupd,1369938086
+HH28,A,FEM Power?: Yes,apa-infoupd,1369938088
+HH29,A,"The optical cable is taped before splitting into the node for E and N. E: loose optical cable into node, tighthened.",apa-infoupd,1369938078
+HH29,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH29,A,Optical Power (into node): E: Null,apa-infoupd,1369938082
+HH29,A,Optical Power (into PAM): E: Null,apa-infoupd,1369938084
+HH29,A,"N: loose optical cable into node, tightened",apa-infoupd,1369938086
+HH29,A,FEM Power?: Yes,apa-infoupd,1369938088
+HH29,A,Optical Power (into node): N: Null,apa-infoupd,1369938090
+HH29,A,Optical Power (into PAM): N: Null,apa-infoupd,1369938092
+HH30,A,"E: loose optical cable into node, tightened",infoupd,1369938078
+HH30,A,FEM Power?: Yes,infoupd,1369938080
+HH30,A,"N: loose optical cable into node, tightened",infoupd,1369938082
+HH30,A,FEM Power?: Yes,infoupd,1369938084
+HH6,A,"No power and no antenna plugged in. E: loose optical cable into node, tighthened",infoupd,1369938078
+HH6,A,FEM Power?: No,infoupd,1369938080
+HH6,A,"N: loose optical cable into node, tightened",infoupd,1369938082
+HH6,A,FEM Power?: No,infoupd,1369938084
+HH3,A,Made up FEM number to complete hookup,infoupd,1369938078
+HH3,A,FEM Power?: Yes,infoupd,1369938080
+HH3,A,FEM Power?: Yes,infoupd,1369938082
+HH4,A,FEM Power?: Yes,infoupd,1369938078
+HH4,A,FEM Power?: Yes,infoupd,1369938080
+HH5,A,FEM Power?: Yes,infoupd,1369938078
+HH5,A,FEM Power?: Yes,infoupd,1369938080
+HH15,A,FEM Power?: Yes,infoupd,1369938078
+HH15,A,FEM Power?: Yes,infoupd,1369938080
+HH16,A,E: fixed by resitting the optical feedthrough connectors. The optical connector going into the node has red tape.,apa-infoupd,1369938078
+HH16,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH16,A,Optical Power (into node): E: 6.25 dBm,apa-infoupd,1369938082
+HH16,A,Optical Power (into PAM): E: 4.75 dBm,apa-infoupd,1369938084
+HH16,A,FEM Power?: Yes,apa-infoupd,1369938086
+HH17,A,FEM Power?: Yes,infoupd,1369938078
+HH17,A,FEM Power?: Yes,infoupd,1369938080
+HH92,A,No raincap on feed. Need to lower feed (6/2/23),infoupd,1369938078
+HH92,A,Optical Power at 1310nm (into node): E: -49.3,infoupd,1369938080
+HH92,A,Optical Power at 1310nm (into PAM): E: -49.7,infoupd,1369938082
+HH93,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH93,A,Optical Power at 1310nm (into node): E: --55.05,apa-infoupd,1369938080
+HH37,A,FEM Power?: Yes,infoupd,1369938078
+HH93,A,Optical Power at 1310nm (into PAM): E: -55.2,apa-infoupd,1369938082
+HH93,A,Optical Power at 1310nm (into node): N: null,apa-infoupd,1369938084
+HH93,A,Optical Power at 1310nm (into PAM): N: null,apa-infoupd,1369938086
+HH94,A,E: no power coming into node.,apa-infoupd,1369938078
+HH94,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH94,A,Optical Power at 1310nm (into node): E: -57,apa-infoupd,1369938082
+HH94,A,Optical Power at 1310nm (into PAM): E: null,apa-infoupd,1369938084
+HH94,A,N:  low power before feed through (1dBm) and even lower going into PAM (-4dBm),apa-infoupd,1369938086
+HH94,A,FEM Power?: Yes,apa-infoupd,1369938088
+HH94,A,Optical Power at 1310nm (into node): N: 1.2,apa-infoupd,1369938090
+HH94,A,Optical Power at 1310nm (into PAM): N: -3.9,apa-infoupd,1369938092
+HH109,A,E: Negative dBm power going into PAM,apa-infoupd,1369938078
+HH109,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH109,A,Optical Power at 1310nm (into node): E: -1.15,apa-infoupd,1369938082
+HH109,A,Optical Power at 1310nm (into PAM): E: -12.35,apa-infoupd,1369938084
+HH109,A,N: Negative dBm power going into PAM,apa-infoupd,1369938086
+HH109,A,Optical Power at 1310nm (into node): N: -4.35,apa-infoupd,1369938088
+HH109,A,Optical Power at 1310nm (into PAM): N: -5.25,apa-infoupd,1369938090
+HH111,A,N: PAM power input OK,apa-infoupd,1369938078
+HH111,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH111,A,Optical Power at 1310nm (into PAM): N: 4.0,apa-infoupd,1369938082
+HH127,A,E: No power coming from antenna.,apa-infoupd,1369938078
+HH127,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH127,A,Optical Power at 1310nm (into node): E: null,apa-infoupd,1369938082
+HH127,A,Optical Power at 1310nm (into PAM): E: null,apa-infoupd,1369938084
+HH176,A,"E: 1E optical cable outside was loose, tightened it",infoupd,1369938078
+HH176,A,FEM Power?: Yes,infoupd,1369938080
+HH177,A,FEM Power?: Yes,infoupd,1369938078
+HH178,A,FEM Power?: Yes,infoupd,1369938078
+HH179,A,"I2C cable was unplugged, plugged back in (6/3/23)",infoupd,1369938078
+HH179,A,FEM Power?: Yes,infoupd,1369938080
+HB329,A,"I2C cable was unplugged, plugged back in (6/3/23)",infoupd,1369938078
+HB329,A,FEM Power?: Yes,infoupd,1369938080
+HB333,A,FEM Power?: Yes,infoupd,1369938078
+HH135,A,FEM Power?: Yes,infoupd,1369938078
+HH136,A,"Visually inspected the dish and feed, looks fine (6/3/23)",infoupd,1369938078
+HH136,A,FEM Power?: Yes,infoupd,1369938080
+HH136,A,Optical Power at 1310nm (into node): E: null,infoupd,1369938082
+HH136,A,Optical Power at 1310nm (into PAM): E: null,infoupd,1369938084
+HH155,A,"Visually inspected the dish and feed, looks fine (6/3/23)",infoupd,1369938078
+HH155,A,FEM Power?: Yes,infoupd,1369938080
+HH155,A,Optical Power at 1310nm (into node): E: null,infoupd,1369938082
+HH155,A,Optical Power at 1310nm (into PAM): E: null,infoupd,1369938084
+HH156,A,N: Replaced feedthrough (6/4/23),infoupd,1369938078
+HH156,A,FEM Power?: Yes,infoupd,1369938080
+HH156,A,Optical Power at 1310nm (into node): N: 6.50,infoupd,1369938082
+HH156,A,Optical Power at 1310nm (into PAM): N: 6.05,infoupd,1369938084
+HH157,A,FEM Power?: Yes,infoupd,1369938078
+HH158,A,FEM Power?: Yes,infoupd,1369938078
+HH161,A,FEM Power?: Yes,infoupd,1369938078
+HH161,A,FEM Power?: Yes,infoupd,1369938080
+HH162,A,FEM Power?: Yes,infoupd,1369938078
+HH162,A,FEM Power?: Yes,infoupd,1369938080
+HH182,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH182,A,Mouse chewed through fibre (06/03/2023),apa-infoupd,1369938080
+HH182,A,FEM Power?: Yes,apa-infoupd,1369938082
+HH183,A,FEM Power?: Yes,infoupd,1369938078
+HH183,A,FEM Power?: Yes,infoupd,1369938080
+HH139,A,FEM Power?: Yes,infoupd,1369938078
+HH139,A,FEM Power?: Yes,infoupd,1369938080
+HH159,A,FEM Power?: Yes,infoupd,1369938078
+HH159,A,FEM Power?: Yes,infoupd,1369938080
+HH140,A,FEM Power?: Yes,infoupd,1369938078
+HH140,A,FEM Power?: Yes,infoupd,1369938080
+HH141,A,FEM Power?: Yes,infoupd,1369938078
+HH141,A,FEM Power?: Yes,infoupd,1369938080
+HH142,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH142,A,Feedthrough replaced (06/03/2023),apa-infoupd,1369938080
+HH142,A,FEM Power?: Yes,apa-infoupd,1369938082
+HH142,A,Optical Power at 1310nm (into node): 5.8,apa-infoupd,1369938084
+HH142,A,Optical Power at 1310nm (into PAM): 5.75,apa-infoupd,1369938086
+HH160,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH160,A,Optical Power at 1310nm (into node): null,apa-infoupd,1369938080
+HH160,A,Optical Power at 1310nm (into PAM): null,apa-infoupd,1369938082
+HH160,A,FEM Power?: Yes,apa-infoupd,1369938084
+HH180,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH180,A,Feedthrough replaced (06/03/2023),apa-infoupd,1369938080
+HH180,A,FEM Power?: Yes,apa-infoupd,1369938082
+HH180,A,Optical Power at 1310nm (into node): 5.8,apa-infoupd,1369938084
+HH180,A,Optical Power at 1310nm (into PAM): 6.05,apa-infoupd,1369938086
+HH181,A,FEM Power?: Yes,infoupd,1369938078
+HH181,A,FEM Power?: Yes,infoupd,1369938080
+HH165,A,FEM Power?: Yes,infoupd,1369938078
+HH185,A,FEM Power?: Yes,infoupd,1369938078
+HH166,A,Power coming from FEM is unusually low (6/4/23),apa-infoupd,1369938078
+HH166,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH166,A,Optical Power at 1310nm (into node): E: -3.45,apa-infoupd,1369938082
+HH166,A,Optical Power at 1310nm (into PAM): E: -7.20,apa-infoupd,1369938084
+HH186,A,FEM Power?: Yes,infoupd,1369938078
+HH184,A,E: no optical power coming to node.,apa-infoupd,1369938078
+HH184,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH184,A,bottom mesh stepped on and sank on the south (6/4/23),apa-infoupd,1369938082
+HH187,A,FEM Power?: Yes,infoupd,1369938078
+HH163,A,FEM Power?: Yes,infoupd,1369938078
+HH164,A,FEM Power?: Yes,infoupd,1369938078
+HH144,A,Snap 3 is tilted (6/4/23),infoupd,1369938078
+HH144,A,FEM Power?: Yes,infoupd,1369938080
+HH143,A,E: unusually high drop in power across the feedthrough. TBC (6/4/23),infoupd,1369938078
+HH143,A,FEM Power?: Yes,infoupd,1369938080
+HH143,A,Optical Power at 1310nm (into node): E: -4.85,infoupd,1369938082
+HH143,A,Optical Power at 1310nm (into PAM): E: -9.35,infoupd,1369938084
+HH143,A,Feed on hub (6/4/23),infoupd,1369938086
+HH143,A,Optical Power at 1310nm (into node): N: null,infoupd,1369938088
+HH143,A,Optical Power at 1310nm (into PAM): N: null,infoupd,1369938090
+HH146,A,FEM Power?: Yes,infoupd,1369938078
+HH200,A,FEM Power?: Yes,infoupd,1369938078
+HH200,A,Optical Power at 1310nm (into PAM): 1.7,infoupd,1369938080
+HH201,A,FEM Power?: Yes,infoupd,1369938078
+HH202,A,FEM Power?: Yes,infoupd,1369938078
+HH203,A,FEM Power?: Yes,infoupd,1369938078
+HH219,A,FEM Power?: Yes,infoupd,1369938078
+EE10001,A,FEM Power?: Yes,infoupd,1369938078
+HH220,A,FEM Power?: Yes,infoupd,1369938078
+HH221,A,FEM Power?: Yes,infoupd,1369938078
+HH222,A,FEM Power?: Yes,infoupd,1369938078
+HH239,A,FEM Power?: Yes,infoupd,1369938078
+HH238,A,FEM Power?: Yes,infoupd,1369938078
+HH237,A,FEM Power?: Yes,infoupd,1369938078
+HH204,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938078
+HH204,A,Optical Power at 1310nm (into PAM): 4.5,infoupd,1369938080
+HH204,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938082
+HH204,A,Optical Power at 1310nm (into PAM): 5.9,infoupd,1369938084
+HH205,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938078
+HH205,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938080
+HH206,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938078
+HH206,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938080
+HH207,A,FEM Power?: Yes? Lights are simultaneously green and red.,apa-infoupd,1369938078
+HH207,A,Optical Power at 1310nm (into node): null,apa-infoupd,1369938080
+HH207,A,Optical Power at 1310nm (into PAM): null,apa-infoupd,1369938082
+HH207,A,FEM Power?: Yes? Lights are simultaneously green and red.,apa-infoupd,1369938084
+HH223,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938078
+HH223,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938080
+HH224,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938078
+HH224,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938080
+HH225,A,FEM Power?: Yes? Lights are simultaneously green and red.,apa-infoupd,1369938078
+HH225,A,FEM Power?: Yes? Lights are simultaneously green and red.,apa-infoupd,1369938080
+HH225,A,Optical Power at 1310nm (into PAM): 5.2,apa-infoupd,1369938082
+HH226,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938078
+HH226,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938080
+HH240,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938078
+HH240,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938080
+HH241,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938078
+HH241,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938080
+HH242,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938078
+HH242,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938080
+HH243,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938078
+HH243,A,FEM Power?: Yes? Lights are simultaneously green and red.,infoupd,1369938080
+HH211,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH211,A,N: Optical cable chewed off (6/4/23),apa-infoupd,1369938080
+HH244,A,E: Optical cable chewed off (6/4/23),infoupd,1369938078
+HH244,A,FEM Power?: Yes,infoupd,1369938080
+HH245,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH245,A,N: Optical cable chewed off (6/4/23),apa-infoupd,1369938080
+HH246,A,E: Optical cable chewed off (6/4/23),infoupd,1369938078
+HH246,A,FEM Power?: Yes,infoupd,1369938080
+HH246,A,N: Optical cable chewed off (6/4/23),infoupd,1369938082
+HH261,A,E: Optical cable chewed off (6/4/23),apa-infoupd,1369938078
+HH261,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH261,A,N: Optical cable chewed off (6/4/23),apa-infoupd,1369938082
+HH262,A,Wavy band shape. Feed might not be level + anchor has a lot of slack.,apa-infoupd,1369938078
+HH262,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH208,A,Snap 2 not connected to switch (6/4/23),infoupd,1369938078
+HH208,A,FEM Power?: Yes,infoupd,1369938080
+HH209,A,FEM Power?: Yes,infoupd,1369938078
+HH210,A,FEM Power?: Yes,infoupd,1369938078
+HH227,A,FEM Power?: Yes,infoupd,1369938078
+HH228,A,FEM Power?: Yes,infoupd,1369938078
+HH229,A,FEM Power?: Yes,infoupd,1369938078
+HH65,A,FEM Power?: Yes,infoupd,1369938078
+HH65,A,FEM Power?: Yes,infoupd,1369938080
+HH66,A,FEM Power?: Yes,infoupd,1369938078
+HH66,A,Optical Power at 1310nm (into PAM): E: 5.2,infoupd,1369938080
+HH66,A,N: Loose connection fixed 6/2/23,infoupd,1369938082
+HH66,A,FEM Power?: Yes,infoupd,1369938084
+HH66,A,Optical Power at 1310nm (into node): N: 6.5,infoupd,1369938086
+HH66,A,Optical Power at 1310nm (into PAM): N: 6.1,infoupd,1369938088
+HH67,A,FEM Power?: Yes,infoupd,1369938078
+HH67,A,FEM Power?: Yes,infoupd,1369938080
+HH68,A,E: Replaced feedthrough 6/2/23,apa-infoupd,1369938078
+HH68,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH68,A,Optical Power at 1310nm (into node): E: 3.9,apa-infoupd,1369938082
+HH68,A,Optical Power at 1310nm (into PAM): E: 3.8,apa-infoupd,1369938084
+HH68,A,FEM Power?: Yes,apa-infoupd,1369938086
+HH68,A,Optical Power at 1310nm (into PAM): N: 2.3,apa-infoupd,1369938088
+HH37,A,Optical Power at 1310nm (into PAM): E: 6.35,infoupd,1369938080
+HH37,A,N: Replaced feedthrough 6/2/23,infoupd,1369938082
+HH37,A,FEM Power?: Yes,infoupd,1369938084
+HH37,A,Optical Power at 1310nm (into node): N: 6.05,infoupd,1369938086
+HH37,A,Optical Power at 1310nm (into PAM): N: 4.95,infoupd,1369938088
+HH38,A,FEM Power?: Yes,infoupd,1369938078
+HH38,A,FEM Power?: Yes,infoupd,1369938080
+HH53,A,FEM Power?: Yes,infoupd,1369938078
+HH53,A,FEM Power?: Yes,infoupd,1369938080
+HB320,A,FEM Power?: Yes,infoupd,1369938078
+HB320,A,FEM Power?: Yes,infoupd,1369938080
+HH51,A,FEM Power?: Yes,infoupd,1369938078
+HH51,A,FEM Power?: Yes,infoupd,1369938080
+HH52,A,FEM Power?: Yes,infoupd,1369938078
+HH52,A,FEM Power?: Yes,infoupd,1369938080
+HH36,A,FEM Power?: Yes,infoupd,1369938078
+HH36,A,FEM Power?: Yes,infoupd,1369938080
+HH50,A,FEM Power?: Yes,infoupd,1369938078
+HH50,A,FEM Power?: Yes,infoupd,1369938080
+HH72,A,FEM Power?: Yes,infoupd,1369938078
+HH72,A,FEM Power?: Yes,infoupd,1369938080
+HH42,A,FEM Power?: Yes,infoupd,1369938078
+HH42,A,FEM Power?: Yes,infoupd,1369938080
+HH54,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH54,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH56,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH56,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH69,A,FEM Power?: Yes,infoupd,1369938078
+HH69,A,FEM Power?: Yes,infoupd,1369938080
+HH40,A,FEM Power?: Yes,infoupd,1369938078
+HH40,A,FEM Power?: Yes,infoupd,1369938080
+HH55,A,FEM Power?: Yes,infoupd,1369938078
+HH55,A,FEM Power?: Yes,infoupd,1369938080
+HH55,A,Optical Power at 1310nm (into PAM): N: 4.1,infoupd,1369938082
+HH70,A,FEM Power?: Yes,infoupd,1369938078
+HH70,A,FEM Power?: Yes,infoupd,1369938080
+HH71,A,FEM Power?: Yes,infoupd,1369938078
+HH71,A,FEM Power?: Yes,infoupd,1369938080
+HH41,A,FEM Power?: Yes,infoupd,1369938078
+HH41,A,FEM Power?: Yes,infoupd,1369938080
+HH57,A,FEM Power?: Yes,infoupd,1369938078
+HH57,A,FEM Power?: Yes,infoupd,1369938080
+HB324,A,FEM Power?: Yes,infoupd,1369938078
+HB324,A,FEM Power?: Yes,infoupd,1369938080
+HH45,A,FEM Power?: Yes,infoupd,1369938078
+HH45,A,FEM Power?: Yes,infoupd,1369938080
+HH46,A,FEM Power?: Yes,infoupd,1369938078
+HH46,A,FEM Power?: Yes,infoupd,1369938080
+HH73,A,FEM Power?: Yes,infoupd,1369938078
+HH73,A,FEM Power?: Yes,infoupd,1369938080
+HH59,A,"E: Connection issue at feed through, OK now (6/2/23)",apa-infoupd,1369938078
+HH59,A,FEM Power?: Yes,apa-infoupd,1369938080
+HH59,A,Optical Power at 1310nm (into node): E: 5.9,apa-infoupd,1369938082
+HH59,A,Optical Power at 1310nm (into PAM): E: 5.3,apa-infoupd,1369938084
+HH58,A,FEM dead (red light); no optical power coming into node (6/3/23),infoupd,1369938078
+HH58,A,FEM Power?: No,infoupd,1369938080
+HH58,A,Optical Power at 1310nm (into node): E: 0,infoupd,1369938082
+HH58,A,Optical Power at 1310nm (into PAM): E: 0,infoupd,1369938084
+HH58,A,Optical Power at 1310nm (into node): N: 0,infoupd,1369938086
+HH58,A,Optical Power at 1310nm (into PAM): N: 0,infoupd,1369938088
+HH44,A,E: Bad connection at feedthrough was fixed on 6/2/23,infoupd,1369938078
+HH44,A,FEM Power?: Yes,infoupd,1369938080
+HH60,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH60,A,Optical Power at 1310nm (into PAM): 4.25,apa-infoupd,1369938080
+HH43,A,FEM Power?: Yes,infoupd,1369938078
+HH74,A,FEM Power?: Yes,infoupd,1369938078
+HH75,A,FEM Power?: Yes,infoupd,1369938078
+HB322,A,FEM Power?: Yes,infoupd,1369938078
+HH76,A,FEM Power?: Yes,infoupd,1369938078
+HH22,A,FEM Power?: Yes,infoupd,1369938078
+HH22,A,FEM Power?: Yes,infoupd,1369938080
+HH34,A,FEM Power?: Yes,infoupd,1369938078
+HH34,A,FEM Power?: Yes,infoupd,1369938080
+HH35,A,FEM Power?: Yes,infoupd,1369938078
+HH35,A,FEM Power?: Yes,infoupd,1369938080
+HH47,A,FEM Power?: Yes,infoupd,1369938078
+HH47,A,FEM Power?: Yes,infoupd,1369938080
+HH61,A,FEM Power?: Yes,infoupd,1369938078
+HH61,A,FEM Power?: Yes,infoupd,1369938080
+HH77,A,FEM Power?: Yes,infoupd,1369938078
+HH77,A,FEM Power?: Yes,infoupd,1369938080
+HH48,A,FEM Power?: Yes,infoupd,1369938078
+HH48,A,FEM Power?: Yes,infoupd,1369938080
+HH49,A,FEM Power?: Yes,infoupd,1369938078
+HH49,A,FEM Power?: Yes,infoupd,1369938080
+HH62,A,FEM Power?: Yes,infoupd,1369938078
+HH62,A,N: Connection issue fixed on 6/2/23,infoupd,1369938080
+HH62,A,FEM Power?: Yes,infoupd,1369938082
+HH62,A,Optical Power at 1310nm (into node): N: 6.20,infoupd,1369938084
+HH62,A,Optical Power at 1310nm (into PAM): N: 6.10,infoupd,1369938086
+HH63,A,FEM Power?: Yes,infoupd,1369938078
+HH63,A,FEM Power?: Yes,infoupd,1369938080
+HH64,A,FEM Power?: Yes,infoupd,1369938078
+HH64,A,FEM Power?: Yes,infoupd,1369938080
+HH78,A,FEM Power?: Yes,infoupd,1369938078
+HH78,A,FEM Power?: Yes,infoupd,1369938080
+HH81,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH81,A,Optical Power at 1310nm (into PAM): E: 3.7,apa-infoupd,1369938080
+HH81,A,No power in N pol (6/2/23),apa-infoupd,1369938082
+HH81,A,Optical Power at 1310nm (into node): N: 0,apa-infoupd,1369938084
+HH81,A,Optical Power at 1310nm (into PAM): N: 0,apa-infoupd,1369938086
+HH82,A,FEM Power?: Yes,infoupd,1369938078
+HH82,A,Optical Power at 1310nm (into PAM): E: 5.55,infoupd,1369938080
+HH82,A,Optical Power at 1310nm (into PAM): N: 4.45,infoupd,1369938082
+HH83,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH83,A,Optical Power at 1310nm (into PAM): E: 5.5,apa-infoupd,1369938080
+HH83,A,Optical Power at 1310nm (into PAM): N: 5.3,apa-infoupd,1369938082
+HH118,A,Need to check RF power (6/2/23),apa-infoupd,1369938078
+HH118,A,Optical Power at 1310nm (into PAM): E: 3.30,apa-infoupd,1369938080
+HH118,A,Optical Power at 1310nm (into PAM): N: 5.45,apa-infoupd,1369938082
+HH137,A,Need to check RF power (6/2/23),infoupd,1369938078
+HH137,A,Optical Power at 1310nm (into PAM): E: 5.00,infoupd,1369938080
+HH137,A,Optical Power at 1310nm (into PAM): N: 4.60,infoupd,1369938082
+HH104,A,Not enough tension in feed anchor (6/2/23),apa-infoupd,1369938078
+HH84,A,N: Changed the feedthrough (6/2/23),infoupd,1369938078
+HH84,A,FEM Power?: Yes,infoupd,1369938080
+HH84,A,Optical Power at 1310nm (into node): N: 6.15,infoupd,1369938082
+HH84,A,Optical Power at 1310nm (into PAM): N: 5.8,infoupd,1369938084
+HH107,A,FEM Power?: Yes,infoupd,1369938078
+HH107,A,FEM Power?: Yes,infoupd,1369938080
+HH90,A,FEM Power?: Yes,infoupd,1369938078
+HH90,A,FEM Power?: Yes,infoupd,1369938080
+HH88,A,FEM Power?: Yes,infoupd,1369938078
+HH88,A,FEM Power?: Yes,infoupd,1369938080
+HH105,A,FEM Power?: Yes,infoupd,1369938078
+HH105,A,FEM Power?: Yes,infoupd,1369938080
+HH108,A,FEM Power?: Yes and now (half green half red),infoupd,1369938078
+HH108,A,FEM Power?: Yes and now (half green half red),infoupd,1369938080
+HH91,A,FEM Power?: Yes and now (half green half red),infoupd,1369938078
+HH91,A,FEM Power?: Yes and now (half green half red),infoupd,1369938080
+HA325,A,FEM Power?: Yes,infoupd,1369938078
+HA325,A,FEM Power?: Yes,infoupd,1369938080
+HH124,A,FEM Power?: Yes,apa-infoupd,1369938078
+HH124,A,Optical Power at 1310nm (into node): none,apa-infoupd,1369938080
+HH124,A,Optical Power at 1310nm (into PAM): none,apa-infoupd,1369938082
+HH124,A,FEM Power?: Yes,apa-infoupd,1369938084
+HH124,A,Optical Power at 1310nm (into node): 4.2,apa-infoupd,1369938086
+HH124,A,Optical Power at 1310nm (into PAM): 2.9,apa-infoupd,1369938088
+HH89,A,FEM Power?: Yes,infoupd,1369938078
+HH89,A,FEM Power?: Yes,infoupd,1369938080
+HH106,A,FEM Power?: Yes,infoupd,1369938078
+HH106,A,FEM Power?: Yes,infoupd,1369938080
+HH126,A,FEM Power?: Yes,infoupd,1369938078
+HH126,A,FEM Power?: Yes,infoupd,1369938080
+HH125,A,FEM Power?: Yes,infoupd,1369938078
+HH125,A,FEM Power?: Yes,infoupd,1369938080
