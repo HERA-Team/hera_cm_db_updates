@@ -1,0 +1,454 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230604_infoupd_1821" >> scripts.log 
+update_apriori.py -p HH16 -s RF_ok --date 2023/06/04 --time 18:27
+add_part_info.py -p HH16 -r A -c "apriori_antenna status change: digital_ok > RF_ok" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH18 -s RF_ok --date 2023/06/04 --time 18:27
+add_part_info.py -p HH18 -r A -c "apriori_antenna status change: RF_maintenance > RF_ok" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH27 -s RF_ok --date 2023/06/04 --time 18:27
+add_part_info.py -p HH27 -r A -c "apriori_antenna status change: RF_maintenance > RF_ok" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH28 -s RF_ok --date 2023/06/04 --time 18:27
+add_part_info.py -p HH28 -r A -c "apriori_antenna status change: RF_maintenance > RF_ok" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH29 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH29 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH54 -s dish_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH54 -r A -c "apriori_antenna status change: digital_ok > dish_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH56 -s dish_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH56 -r A -c "apriori_antenna status change: digital_ok > dish_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH59 -s RF_ok --date 2023/06/04 --time 18:27
+add_part_info.py -p HH59 -r A -c "apriori_antenna status change: RF_maintenance > RF_ok" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH60 -s RF_ok --date 2023/06/04 --time 18:27
+add_part_info.py -p HH60 -r A -c "apriori_antenna status change: RF_maintenance > RF_ok" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH68 -s RF_ok --date 2023/06/04 --time 18:27
+add_part_info.py -p HH68 -r A -c "apriori_antenna status change: dish_maintenance > RF_ok" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH81 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH81 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH83 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH83 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH93 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH93 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH94 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH94 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH104 -s dish_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH104 -r A -c "apriori_antenna status change: RF_maintenance > dish_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH109 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH109 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH111 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH111 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH118 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH118 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH124 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH124 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH127 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH127 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH142 -s RF_ok --date 2023/06/04 --time 18:27
+add_part_info.py -p HH142 -r A -c "apriori_antenna status change: RF_maintenance > RF_ok" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH160 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH160 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH166 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH166 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH180 -s RF_ok --date 2023/06/04 --time 18:27
+add_part_info.py -p HH180 -r A -c "apriori_antenna status change: RF_maintenance > RF_ok" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH182 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH182 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH184 -s dish_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH184 -r A -c "apriori_antenna status change: digital_ok > dish_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH207 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH207 -r A -c "apriori_antenna status change: RF_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH211 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH211 -r A -c "apriori_antenna status change: RF_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH225 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH225 -r A -c "apriori_antenna status change: RF_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH245 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH245 -r A -c "apriori_antenna status change: RF_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH261 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH261 -r A -c "apriori_antenna status change: RF_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+update_apriori.py -p HH262 -s RF_maintenance --date 2023/06/04 --time 18:27
+add_part_info.py -p HH262 -r A -c "apriori_antenna status change: dish_maintenance > RF_maintenance" -l "apa-infoupd" --date 2023/06/04 --time 18:27
+add_part_info.py -p HH18 -r A -c "The optical cable is taped before splitting into the node for E and N. E: loose optical cable into node, tighthened." -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH18 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH18 -r A -c "N: loose optical cable into node, tightened" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH18 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH18 -r A -c "Optical Power (into PAM): N: 5.15 dBm" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH27 -r A -c "The optical cable is taped before splitting into the node for E and N. E: loose optical cable into node, tighthened." -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH27 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH27 -r A -c "Optical Power (into node): E: -1.35 dBm" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH27 -r A -c "Optical Power (into PAM): E: -8.1 dBm" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH27 -r A -c "N: loose optical cable into node, tightened" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH27 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:10
+add_part_info.py -p HH28 -r A -c "The optical cable is taped before splitting into the node for E and N. E: loose optical cable into node, tighthened. There is tape before the E connection. Changing optical cable feedthrough fixed the optical power." -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH28 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH28 -r A -c "Optical Power (into node): E: 5.95 dBm" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH28 -r A -c "Optical Power (into PAM): E: 5.85 dBm" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH28 -r A -c "N: loose optical cable into node, tightened" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH28 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:10
+add_part_info.py -p HH29 -r A -c "The optical cable is taped before splitting into the node for E and N. E: loose optical cable into node, tighthened." -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH29 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH29 -r A -c "Optical Power (into node): E: Null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH29 -r A -c "Optical Power (into PAM): E: Null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH29 -r A -c "N: loose optical cable into node, tightened" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH29 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:10
+add_part_info.py -p HH29 -r A -c "Optical Power (into node): N: Null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:12
+add_part_info.py -p HH29 -r A -c "Optical Power (into PAM): N: Null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:14
+add_part_info.py -p HH30 -r A -c "E: loose optical cable into node, tightened" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH30 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH30 -r A -c "N: loose optical cable into node, tightened" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH30 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH6 -r A -c "No power and no antenna plugged in. E: loose optical cable into node, tighthened" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH6 -r A -c "FEM Power?: No" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH6 -r A -c "N: loose optical cable into node, tightened" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH6 -r A -c "FEM Power?: No" -l "infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH3 -r A -c "Made up FEM number to complete hookup" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH3 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH3 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH4 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH4 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH5 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH5 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH15 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH15 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH16 -r A -c "E: fixed by resitting the optical feedthrough connectors. The optical connector going into the node has red tape." -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH16 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH16 -r A -c "Optical Power (into node): E: 6.25 dBm" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH16 -r A -c "Optical Power (into PAM): E: 4.75 dBm" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH16 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH17 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH17 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH92 -r A -c "No raincap on feed. Need to lower feed (6/2/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH92 -r A -c "Optical Power at 1310nm (into node): E: -49.3" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH92 -r A -c "Optical Power at 1310nm (into PAM): E: -49.7" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH93 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH93 -r A -c "Optical Power at 1310nm (into node): E: --55.05" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH93 -r A -c "Optical Power at 1310nm (into PAM): E: -55.2" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH93 -r A -c "Optical Power at 1310nm (into node): N: null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH93 -r A -c "Optical Power at 1310nm (into PAM): N: null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH94 -r A -c "E: no power coming into node." -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH94 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH94 -r A -c "Optical Power at 1310nm (into node): E: -57" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH94 -r A -c "Optical Power at 1310nm (into PAM): E: null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH94 -r A -c "N:  low power before feed through (1dBm) and even lower going into PAM (-4dBm)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH94 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:10
+add_part_info.py -p HH94 -r A -c "Optical Power at 1310nm (into node): N: 1.2" -l "apa-infoupd" --date 2023/06/04 --time 18:21:12
+add_part_info.py -p HH94 -r A -c "Optical Power at 1310nm (into PAM): N: -3.9" -l "apa-infoupd" --date 2023/06/04 --time 18:21:14
+add_part_info.py -p HH109 -r A -c "E: Negative dBm power going into PAM" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH109 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH109 -r A -c "Optical Power at 1310nm (into node): E: -1.15" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH109 -r A -c "Optical Power at 1310nm (into PAM): E: -12.35" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH109 -r A -c "N: Negative dBm power going into PAM" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH109 -r A -c "Optical Power at 1310nm (into node): N: -4.35" -l "apa-infoupd" --date 2023/06/04 --time 18:21:10
+add_part_info.py -p HH109 -r A -c "Optical Power at 1310nm (into PAM): N: -5.25" -l "apa-infoupd" --date 2023/06/04 --time 18:21:12
+add_part_info.py -p HH111 -r A -c "N: PAM power input OK" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH111 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH111 -r A -c "Optical Power at 1310nm (into PAM): N: 4.0" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH127 -r A -c "E: No power coming from antenna." -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH127 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH127 -r A -c "Optical Power at 1310nm (into node): E: null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH127 -r A -c "Optical Power at 1310nm (into PAM): E: null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH176 -r A -c "E: 1E optical cable outside was loose, tightened it" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH176 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH177 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH178 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH179 -r A -c "I2C cable was unplugged, plugged back in (6/3/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH179 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HB329 -r A -c "I2C cable was unplugged, plugged back in (6/3/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HB329 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HB333 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH135 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH136 -r A -c "Visually inspected the dish and feed, looks fine (6/3/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH136 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH136 -r A -c "Optical Power at 1310nm (into node): E: null" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH136 -r A -c "Optical Power at 1310nm (into PAM): E: null" -l "infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH155 -r A -c "Visually inspected the dish and feed, looks fine (6/3/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH155 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH155 -r A -c "Optical Power at 1310nm (into node): E: null" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH155 -r A -c "Optical Power at 1310nm (into PAM): E: null" -l "infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH156 -r A -c "N: Replaced feedthrough (6/4/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH156 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH156 -r A -c "Optical Power at 1310nm (into node): N: 6.50" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH156 -r A -c "Optical Power at 1310nm (into PAM): N: 6.05" -l "infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH157 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH158 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH161 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH161 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH162 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH162 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH182 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH182 -r A -c "Mouse chewed through fibre (06/03/2023)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH182 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH183 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH183 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH139 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH139 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH159 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH159 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH140 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH140 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH141 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH141 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH142 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH142 -r A -c "Feedthrough replaced (06/03/2023)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH142 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH142 -r A -c "Optical Power at 1310nm (into node): 5.8" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH142 -r A -c "Optical Power at 1310nm (into PAM): 5.75" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH160 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH160 -r A -c "Optical Power at 1310nm (into node): null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH160 -r A -c "Optical Power at 1310nm (into PAM): null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH160 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH180 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH180 -r A -c "Feedthrough replaced (06/03/2023)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH180 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH180 -r A -c "Optical Power at 1310nm (into node): 5.8" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH180 -r A -c "Optical Power at 1310nm (into PAM): 6.05" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH181 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH181 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH165 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH185 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH166 -r A -c "Power coming from FEM is unusually low (6/4/23)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH166 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH166 -r A -c "Optical Power at 1310nm (into node): E: -3.45" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH166 -r A -c "Optical Power at 1310nm (into PAM): E: -7.20" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH186 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH184 -r A -c "E: no optical power coming to node." -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH184 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH184 -r A -c "bottom mesh stepped on and sank on the south (6/4/23)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH187 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH163 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH164 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH145 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH144 -r A -c "Snap 3 is tilted (6/4/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH144 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH143 -r A -c "E: unusually high drop in power across the feedthrough. TBC (6/4/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH143 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH143 -r A -c "Optical Power at 1310nm (into node): E: -4.85" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH143 -r A -c "Optical Power at 1310nm (into PAM): E: -9.35" -l "infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH143 -r A -c "Feed on hub (6/4/23)" -l "infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH143 -r A -c "Optical Power at 1310nm (into node): N: null" -l "infoupd" --date 2023/06/04 --time 18:21:10
+add_part_info.py -p HH143 -r A -c "Optical Power at 1310nm (into PAM): N: null" -l "infoupd" --date 2023/06/04 --time 18:21:12
+add_part_info.py -p HH146 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH200 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH200 -r A -c "Optical Power at 1310nm (into PAM): 1.7" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH201 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH202 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH203 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH219 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p EE10001 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH220 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH221 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH222 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH239 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH238 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH237 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH204 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH204 -r A -c "Optical Power at 1310nm (into PAM): 4.5" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH204 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH204 -r A -c "Optical Power at 1310nm (into PAM): 5.9" -l "infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH205 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH205 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH206 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH206 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH207 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH207 -r A -c "Optical Power at 1310nm (into node): null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH207 -r A -c "Optical Power at 1310nm (into PAM): null" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH207 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH223 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH223 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH224 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH224 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH225 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH225 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH225 -r A -c "Optical Power at 1310nm (into PAM): 5.2" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH226 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH226 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH240 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH240 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH241 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH241 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH242 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH242 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH243 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH243 -r A -c "FEM Power?: Yes? Lights are simultaneously green and red." -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH211 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH211 -r A -c "N: Optical cable chewed off (6/4/23)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH244 -r A -c "E: Optical cable chewed off (6/4/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH244 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH245 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH245 -r A -c "N: Optical cable chewed off (6/4/23)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH246 -r A -c "E: Optical cable chewed off (6/4/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH246 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH246 -r A -c "N: Optical cable chewed off (6/4/23)" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH261 -r A -c "E: Optical cable chewed off (6/4/23)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH261 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH261 -r A -c "N: Optical cable chewed off (6/4/23)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH262 -r A -c "Wavy band shape. Feed might not be level + anchor has a lot of slack." -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH262 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH208 -r A -c "Snap 2 not connected to switch (6/4/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH208 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH209 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH210 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH227 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH228 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH229 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH65 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH65 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH66 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH66 -r A -c "Optical Power at 1310nm (into PAM): E: 5.2" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH66 -r A -c "N: Loose connection fixed 6/2/23" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH66 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH66 -r A -c "Optical Power at 1310nm (into node): N: 6.5" -l "infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH66 -r A -c "Optical Power at 1310nm (into PAM): N: 6.1" -l "infoupd" --date 2023/06/04 --time 18:21:10
+add_part_info.py -p HH67 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH67 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH68 -r A -c "E: Replaced feedthrough 6/2/23" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH68 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH68 -r A -c "Optical Power at 1310nm (into node): E: 3.9" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH68 -r A -c "Optical Power at 1310nm (into PAM): E: 3.8" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH68 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH68 -r A -c "Optical Power at 1310nm (into PAM): N: 2.3" -l "apa-infoupd" --date 2023/06/04 --time 18:21:10
+add_part_info.py -p HH37 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH37 -r A -c "Optical Power at 1310nm (into PAM): E: 6.35" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH37 -r A -c "N: Replaced feedthrough 6/2/23" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH37 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH37 -r A -c "Optical Power at 1310nm (into node): N: 6.05" -l "infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH37 -r A -c "Optical Power at 1310nm (into PAM): N: 4.95" -l "infoupd" --date 2023/06/04 --time 18:21:10
+add_part_info.py -p HH38 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH38 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH53 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH53 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HB320 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HB320 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH51 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH51 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH52 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH52 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH36 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH36 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH50 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH50 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH72 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH72 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH42 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH42 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH54 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH54 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH56 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH56 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH69 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH69 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH40 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH40 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH55 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH55 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH55 -r A -c "Optical Power at 1310nm (into PAM): N: 4.1" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH70 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH70 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH71 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH71 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH41 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH41 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH57 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH57 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HB324 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HB324 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH45 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH45 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH46 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH46 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH73 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH73 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH59 -r A -c "E: Connection issue at feed through, OK now (6/2/23)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH59 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH59 -r A -c "Optical Power at 1310nm (into node): E: 5.9" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH59 -r A -c "Optical Power at 1310nm (into PAM): E: 5.3" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH58 -r A -c "FEM dead (red light); no optical power coming into node (6/3/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH58 -r A -c "FEM Power?: No" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH58 -r A -c "Optical Power at 1310nm (into node): E: 0" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH58 -r A -c "Optical Power at 1310nm (into PAM): E: 0" -l "infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH58 -r A -c "Optical Power at 1310nm (into node): N: 0" -l "infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH58 -r A -c "Optical Power at 1310nm (into PAM): N: 0" -l "infoupd" --date 2023/06/04 --time 18:21:10
+add_part_info.py -p HH44 -r A -c "E: Bad connection at feedthrough was fixed on 6/2/23" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH44 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH60 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH60 -r A -c "Optical Power at 1310nm (into PAM): 4.25" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH43 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH74 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH75 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HB322 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH76 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH22 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH22 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH34 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH34 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH35 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH35 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH47 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH47 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH61 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH61 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH77 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH77 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH48 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH48 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH49 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH49 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH62 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH62 -r A -c "N: Connection issue fixed on 6/2/23" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH62 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH62 -r A -c "Optical Power at 1310nm (into node): N: 6.20" -l "infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH62 -r A -c "Optical Power at 1310nm (into PAM): N: 6.10" -l "infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH63 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH63 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH64 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH64 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH78 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH78 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH81 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH81 -r A -c "Optical Power at 1310nm (into PAM): E: 3.7" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH81 -r A -c "No power in N pol (6/2/23)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH81 -r A -c "Optical Power at 1310nm (into node): N: 0" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH81 -r A -c "Optical Power at 1310nm (into PAM): N: 0" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH82 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH82 -r A -c "Optical Power at 1310nm (into PAM): E: 5.55" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH82 -r A -c "Optical Power at 1310nm (into PAM): N: 4.45" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH83 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH83 -r A -c "Optical Power at 1310nm (into PAM): E: 5.5" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH83 -r A -c "Optical Power at 1310nm (into PAM): N: 5.3" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH117 -r A -c "FEM Power?: No" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH118 -r A -c "Need to check RF power (6/2/23)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH118 -r A -c "Optical Power at 1310nm (into PAM): E: 3.30" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH118 -r A -c "Optical Power at 1310nm (into PAM): N: 5.45" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH137 -r A -c "Need to check RF power (6/2/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH137 -r A -c "Optical Power at 1310nm (into PAM): E: 5.00" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH137 -r A -c "Optical Power at 1310nm (into PAM): N: 4.60" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH104 -r A -c "Not enough tension in feed anchor (6/2/23)" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH84 -r A -c "N: Changed the feedthrough (6/2/23)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH84 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH84 -r A -c "Optical Power at 1310nm (into node): N: 6.15" -l "infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH84 -r A -c "Optical Power at 1310nm (into PAM): N: 5.8" -l "infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH107 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH107 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH90 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH90 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH88 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH88 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH105 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH105 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH108 -r A -c "FEM Power?: Yes and now (half green half red)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH108 -r A -c "FEM Power?: Yes and now (half green half red)" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH91 -r A -c "FEM Power?: Yes and now (half green half red)" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH91 -r A -c "FEM Power?: Yes and now (half green half red)" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HA325 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HA325 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH124 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH124 -r A -c "Optical Power at 1310nm (into node): none" -l "apa-infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH124 -r A -c "Optical Power at 1310nm (into PAM): none" -l "apa-infoupd" --date 2023/06/04 --time 18:21:04
+add_part_info.py -p HH124 -r A -c "FEM Power?: Yes" -l "apa-infoupd" --date 2023/06/04 --time 18:21:06
+add_part_info.py -p HH124 -r A -c "Optical Power at 1310nm (into node): 4.2" -l "apa-infoupd" --date 2023/06/04 --time 18:21:08
+add_part_info.py -p HH124 -r A -c "Optical Power at 1310nm (into PAM): 2.9" -l "apa-infoupd" --date 2023/06/04 --time 18:21:10
+add_part_info.py -p HH89 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH89 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH106 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH106 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH126 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH126 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
+add_part_info.py -p HH125 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:00
+add_part_info.py -p HH125 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/04 --time 18:21:02
