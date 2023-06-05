@@ -102,16 +102,22 @@ class UpdateConnect(upd_base.Update):
             for part in ['node', 'nodestation', 'NBP']:
                 setattr(H, part.lower(), util.gen_hpn(part, node_num))
             for part in ['fps', 'pch', 'ncm']:
-                setattr(H, part.lower(), getattr(self.gsheet.node_to_equip[H.node], part))
-            try:
-                H.wr = self.gsheet.ncm[H.ncm].wr
-                H.rd = self.gsheet.ncm[H.ncm].rdhpn
-                skip_ncm = False
-            except KeyError:
-                print(f"Missing NCM:  {node_num}")
-                H.wr = None
-                H.rd = None
-                skip_ncm = True
+                pn = getattr(self.gsheet.node_to_equip[H.node], part)
+                if len(pn):
+                    setattr(H, part.lower(), pn)
+                else:
+                    setattr(H, part.lower(), None)
+                    print(f"Missing {part} from {node}")
+            skip_ncm = True
+            if H.ncm is not None:
+                try:
+                    H.wr = self.gsheet.ncm[H.ncm].wr
+                    H.rd = self.gsheet.ncm[H.ncm].rdhpn
+                    skip_ncm = False
+                except KeyError:
+                    print(f"Missing NCM:  {node_num}")
+                    H.wr = None
+                    H.rd = None
             for Up, Dn in node_based().items():
                 if skip_ncm and Up[0] == 'ncm' or Dn[0] == 'ncm':
                     continue

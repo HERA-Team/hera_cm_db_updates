@@ -258,10 +258,13 @@ class SheetData:
                     self.notes.setdefault(npkey, [])
                     self.notes[npkey].append('-'.join([y for y in data[1:] if len(y) > 0]))
                 elif key in ['ncm', 'fps', 'pch', 'wrs']:
-                    try:
-                        val = f"{key.upper()}{int(data[1]):02d}"
-                    except ValueError:
-                        val = f"{key.upper()}{data[1].upper()}"
+                    if not len(data[1]):
+                        val = ''
+                    else:
+                        try:
+                            val = f"{key.upper()}{int(data[1]):02d}"
+                        except ValueError:
+                            val = f"{key.upper()}{data[1].upper()}"
                     setattr(self.node_to_equip[node_pn], key, val)
         ants_full = cm_utils.put_keys_in_order(list(ant_set), sort_order='NPR')
         self.ants = []
