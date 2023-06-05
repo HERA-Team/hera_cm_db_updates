@@ -234,6 +234,8 @@ class SheetData:
                     antnum = missing_ant
                 self.found_antennas.append(antnum)
                 hpn = util.gen_hpn('station', antnum)
+                if antnum > 350:
+                    print(f"antenna>350:  {tab} {antnum}")
                 hkey = cm_utils.make_part_key(hpn, 'A')
                 ant_set.add(hkey)
                 self.ant_to_node[hkey] = tab
