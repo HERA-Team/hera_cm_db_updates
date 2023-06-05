@@ -3822,7 +3822,6 @@ N07,A,"The power light on the front of the PAM chassis is on, however none of th
 N15,A,No link light on the WR switch,infoupd,1369903458
 N18,A,Power cycled the NCM to hopefullly reform the WR endpoint.,infoupd,1369903458
 N20,A,"Power cycled NCM, which fixed the NCM.",infoupd,1369838718
-N01,A,"Power cycled NCM, which fixed the NCM.",infoupd,1369903458
 N20,A,"Power cycled NCM, which fixed the NCM.",infoupd,1369903458
 HH135,A,one dish patch detached on one edge and flipped over,infoupd,1369912458
 HH141,A,"Feed ropes very loose, feed is wiggling",infoupd,1369912458
