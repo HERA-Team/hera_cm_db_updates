@@ -1858,7 +1858,6 @@ N22,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+
 HH122,A,122e is very high and flat in the SNAP spectra 10 Sept 23:32 site time,apa-infoupd,1283809338
 N16,A,NCM removed for update,infoupd,1347352938
 HH46,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
-EE10001,A,FEM Switch error -DCJ,infoupd,1347784938
 HH58,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
 NCM06,A,Update WR-LEN firmware.,infoman,1347796818
 HH59,A,bad auto in 59103 live autos; FEM in ant,apa-infoupd,1283816538
@@ -4044,7 +4043,6 @@ HH201,A,FEM Power?: Yes,infoupd,1369938078
 HH202,A,FEM Power?: Yes,infoupd,1369938078
 HH203,A,FEM Power?: Yes,infoupd,1369938078
 HH219,A,FEM Power?: Yes,infoupd,1369938078
-EE10001,A,FEM Power?: Yes,infoupd,1369938078
 HH220,A,FEM Power?: Yes,infoupd,1369938078
 HH221,A,FEM Power?: Yes,infoupd,1369938078
 HH222,A,FEM Power?: Yes,infoupd,1369938078
