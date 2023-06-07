@@ -3332,6 +3332,7 @@ N18,A,wr1 port5,infoupd,1370185998
 HH66,A,Optical Power (into node): N: 6.5,infoupd,1370187740
 HH62,A,Optical Power (into node): N: 6.20,infoupd,1370187738
 HH124,A,Optical Power (into PAM): none,infoupd,1370187740
+HH92,A,Optical Power (into PAM): E: -49.7,infoupd,1370191340
 HH43,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350499698
 HH46,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1350499698
 HH58,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350499698
@@ -3354,6 +3355,9 @@ N19,A,Fiber 9/10 are broken - using 3/4,infoupd,1370185998
 HH66,A,Optical Power (into PAM): N: 6.1,infoupd,1370187742
 HH62,A,Optical Power (into PAM): N: 6.10,infoupd,1370187740
 HH124,A,Optical Power (into node): N: 4.2,infoupd,1370187742
+HH93,A,Optical Power (into node): E: --55.05,infoupd,1370191338
+HH136,A,Optical Power (into node): E: null,infoupd,1370191338
+HH143,A,Optical Power (into PAM): E: -9.35,infoupd,1370191340
 HH43,A,no sky in E per ACS -DCJ,apa-infoupd,1350499338
 HH74,A,no sky per antenna classification summary -DCJ,infoupd,1350499338
 HH75,A,No sky in N per ACS  -DCJ,apa-infoupd,1350499338
@@ -3563,6 +3567,9 @@ N19,A,wr0 port4,infoupd,1370186000
 HH68,A,Optical Power (into node): E: 3.9,infoupd,1370187738
 HH81,A,Optical Power (into PAM): E: 3.7,infoupd,1370187738
 HH124,A,Optical Power (into PAM): N: 2.9,infoupd,1370187744
+HH93,A,Optical Power (into PAM): E: -55.2,infoupd,1370191340
+HH136,A,Optical Power (into PAM): E: null,infoupd,1370191340
+HH143,A,Optical Power (into node): N: null,infoupd,1370191342
 NCM3,A,Update WR firmware,,1354276818
 HH142,A,Optical Power at 1310nm (into node): N: 5.8,infoupd,1370150118
 N02,A,arista0 port 14,infoupd,1370150118
@@ -3572,6 +3579,9 @@ N06,A,wr1 port8,infoupd,1370185998
 N20,A,wr0 port5,infoupd,1370185998
 HH68,A,Optical Power (into PAM): E: 3.8,infoupd,1370187740
 HH81,A,Optical Power (into node): N: 0,infoupd,1370187740
+HH93,A,Optical Power (into node): N: null,infoupd,1370191342
+HH155,A,Optical Power (into node): E: null,infoupd,1370191338
+HH143,A,Optical Power (into PAM): N: null,infoupd,1370191344
 NCM2,A,Update WR firmware,,1354363218
 HH142,A,Optical Power at 1310nm (into PAM): N: 5.75,infoupd,1370150120
 N03,A,arista0 port 2,infoupd,1370150118
@@ -3581,6 +3591,9 @@ N07,A,wr1 port9,infoupd,1370185998
 N21,A,wr1 port6,infoupd,1370185998
 HH68,A,Optical Power (into PAM): N: 2.3,infoupd,1370187742
 HH81,A,Optical Power (into PAM): N: 0,infoupd,1370187742
+HH93,A,Optical Power (into PAM): N: null,infoupd,1370191344
+HH155,A,Optical Power (into PAM): E: null,infoupd,1370191340
+HH200,A,Optical Power (into PAM): 1.7,infoupd,1370191338
 NCM10,A,Update WR firmware,,1354363218
 HH160,A,Optical Power at 1310nm (into node): E: null,infoupd,1370150118
 N04,A,arista0 port 3,infoupd,1370150118
@@ -3590,6 +3603,9 @@ N08,A,wr1 port10,infoupd,1370185998
 N22,A,arista1 port 1,infoupd,1370185998
 HH37,A,Optical Power (into PAM): E: 6.35,infoupd,1370187738
 HH82,A,Optical Power (into PAM): E: 5.55,infoupd,1370187738
+HH94,A,Optical Power (into node): E: -57,infoupd,1370191338
+HH156,A,Optical Power (into node): N: 6.50,infoupd,1370191338
+HH204,A,Optical Power (into PAM): E: 4.5,infoupd,1370191338
 NCM15,A,Update WR firmware,,1354449618
 HH160,A,Optical Power at 1310nm (into PAM): E: null,infoupd,1370150120
 N05,A,arista0 port 10,infoupd,1370150118
@@ -3599,6 +3615,9 @@ N09,A,wr1 port11,infoupd,1370185998
 N22,A,wr0 port9,infoupd,1370186000
 HH37,A,Optical Power (into node): N: 6.05,infoupd,1370187740
 HH82,A,Optical Power (into PAM): N: 4.45,infoupd,1370187740
+HH94,A,Optical Power (into PAM): E: null,infoupd,1370191340
+HH156,A,Optical Power (into PAM): N: 6.05,infoupd,1370191340
+HH204,A,Optical Power (into PAM): N: 5.9,infoupd,1370191340
 HH131,A,Yellow FEM covers installed.,infoupd,1354718538
 HH131,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1354718540
 HH133,A,Yellow FEM covers installed,infoupd,1354718538
@@ -3733,6 +3752,9 @@ N10,A,wr1 port12,infoupd,1370185998
 N23,A,wr1 port17,infoupd,1370185998
 HH37,A,Optical Power (into PAM): N: 4.95,infoupd,1370187742
 HH83,A,Optical Power (into PAM): E: 5.5,infoupd,1370187738
+HH94,A,Optical Power (into node): N: 1.2,infoupd,1370191342
+HH142,A,Optical Power (into node): N: 5.8,infoupd,1370191338
+HH207,A,Optical Power (into node): N: null,infoupd,1370191338
 HH180,A,Optical Power at 1310nm (into PAM): N: 6.05,infoupd,1370150120
 N07,A,arista0 port 6,infoupd,1370150118
 HH241,A,FEM Power?: No,infoupd,1370185998
@@ -3775,6 +3797,9 @@ HH120,A,Feed heights (NE/SE/SW/NW): 4.402,infoupd,1366897340
 HH120,A,H6C: Feed Height Before: Broken fiber Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Already Present Spiral Wrap: Present Already D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1366897342
 HH104,A,Feed heights (NE/SE/SW/NW): 4.410,infoupd,1366897338
 HH104,A,H6C: Feed Height Before: 4.396 Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Already Present Spiral Wrap: Present Already D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1366897340
+HH94,A,Optical Power (into PAM): N: -3.9,infoupd,1370191344
+HH142,A,Optical Power (into PAM): N: 5.75,infoupd,1370191340
+HH207,A,Optical Power (into PAM): N: null,infoupd,1370191340
 HH103,A,FEM 364 stated on the checksheet,infoupd,1366897338
 HH103,A,Feed heights (NE/SE/SW/NW): 4.400,infoupd,1366897340
 HH103,A,H6C: Feed Height Before: Broken fiber Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Already Present Spiral Wrap: Present Already D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1366897342
@@ -3899,7 +3924,10 @@ N18,A,Power cycled the NCM to hopefullly reform the WR endpoint.,infoupd,1369903
 N20,A,"Power cycled NCM, which fixed the NCM.",infoupd,1369838718
 HH59,A,Optical Power (into node): E: 5.9,infoupd,1370187738
 HH118,A,Optical Power (into PAM): E: 3.30,infoupd,1370187738
+HH109,A,Optical Power (into node): E: -1.15,infoupd,1370191338
 N20,A,"Power cycled NCM, which fixed the NCM.",infoupd,1369903458
+HH160,A,Optical Power (into node): E: null,infoupd,1370191338
+HH225,A,Optical Power (into PAM): N: 5.2,infoupd,1370191338
 HH135,A,one dish patch detached on one edge and flipped over,infoupd,1369912458
 HH141,A,"Feed ropes very loose, feed is wiggling",infoupd,1369912458
 HH185,A,"feed is tilted, photo is available",infoupd,1369912458
@@ -3929,12 +3957,16 @@ HH243,A,FEM Power?: No,infoupd,1370185998
 N13,A,wr1 port15,infoupd,1370185998
 HH59,A,Optical Power (into PAM): E: 5.3,infoupd,1370187740
 HH118,A,Optical Power (into PAM): N: 5.45,infoupd,1370187740
+HH109,A,Optical Power (into PAM): E: -12.35,infoupd,1370191340
+HH160,A,Optical Power (into PAM): E: null,infoupd,1370191340
 HH204,A,Optical Power at 1310nm (into PAM): N: 5.9,infoupd,1370150120
 N10,A,arista0 port 4,infoupd,1370150118
 HH232,A,Ticket: Feed conduit feel out and is hanging on the cables.,infoupd,1370185998
 N14,A,wr1 port16,infoupd,1370185998
 HH58,A,Optical Power (into node): E: 0,infoupd,1370187738
 HH137,A,Optical Power (into PAM): E: 5.00,infoupd,1370187738
+HH109,A,Optical Power (into node): N: -4.35,infoupd,1370191342
+HH180,A,Optical Power (into node): N: 5.8,infoupd,1370191338
 HH16,A,apriori_antenna status change: digital_ok > RF_ok,apa-infoupd,1369938438
 HH18,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
 HH27,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
@@ -4357,18 +4389,24 @@ N00,A,arista0 port 1,infoupd,1370185998
 N15,A,arista0 port 5,infoupd,1370185998
 HH58,A,Optical Power (into PAM): E: 0,infoupd,1370187740
 HH137,A,Optical Power (into PAM): N: 4.60,infoupd,1370187740
+HH109,A,Optical Power (into PAM): N: -5.25,infoupd,1370191344
+HH180,A,Optical Power (into PAM): N: 6.05,infoupd,1370191340
 HH207,A,Optical Power at 1310nm (into PAM): N: null,infoupd,1370150120
 N12,A,arista0 port 11,infoupd,1370150118
 N00,A,wr1 port2,infoupd,1370186000
 N15,A,wr0 port8,infoupd,1370186000
 HH58,A,Optical Power (into node): N: 0,infoupd,1370187742
 HH84,A,Optical Power (into node): N: 6.15,infoupd,1370187738
+HH111,A,Optical Power (into PAM): N: 4.0,infoupd,1370191338
+HH166,A,Optical Power (into node): E: -3.45,infoupd,1370191338
 HH225,A,Optical Power at 1310nm (into PAM): N: 5.2,infoupd,1370150118
 N13,A,arista0 port 7,infoupd,1370150118
 N01,A,wr1 port3,infoupd,1370185998
 N16,A,wr0 port2,infoupd,1370185998
 HH58,A,Optical Power (into PAM): N: 0,infoupd,1370187744
 HH84,A,Optical Power (into PAM): N: 5.8,infoupd,1370187740
+HH127,A,Optical Power (into node): E: null,infoupd,1370191338
+HH166,A,Optical Power (into PAM): E: -7.20,infoupd,1370191340
 HH38,A,Door is open,infoupd,1369941318
 HH51,A,apriori_antenna status change: dish_maintenance > digital_ok,apa-infoupd,1370150478
 HH60,A,Optical Power at 1310nm (into PAM): N: 4.25,infoupd,1370150118
@@ -4379,3 +4417,6 @@ N17,A,wr0 port6,infoupd,1370185998
 HH66,A,Optical Power (into PAM): E: 5.2,infoupd,1370187738
 HH60,A,Optical Power (into PAM): N: 4.25,infoupd,1370187738
 HH124,A,Optical Power (into node): none,infoupd,1370187738
+HH92,A,Optical Power (into node): E: -49.3,infoupd,1370191338
+HH127,A,Optical Power (into PAM): E: null,infoupd,1370191340
+HH143,A,Optical Power (into node): E: -4.85,infoupd,1370191338

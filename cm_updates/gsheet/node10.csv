@@ -1,29 +1,29 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Optical Power at 1310nm (into node),Optical Power at 1310nm (into PAM)
-92,E,84,138,1,363,C14,E2,0,RF_maintenance,No raincap on feed. Need to lower feed (6/2/23),,E: -49.3,E: -49.7
-92,N,84,138,1,363,C14,N0,0,RF_maintenance,,,,
-93,E,79,351,2,138,C14,E6,0,RF_maintenance,,Yes,E: --55.05,E: -55.2
-93,N,79,351,2,138,C14,N4,0,RF_maintenance,,,N: null,N: null
-94,E,78,147,3,139,C14,E10,0,RF_maintenance,E: no power coming into node.,Yes,E: -57,E: null
-94,N,78,147,3,139,C14,N8,0,RF_maintenance,N:  low power before feed through (1dBm) and even lower going into PAM (-4dBm),Yes,N: 1.2,N: -3.9
-109,E,89,371,4,140,C16,E2,1,RF_maintenance,E: Negative dBm power going into PAM,Yes,E: -1.15,E: -12.35
-109,N,89,371,4,140,C16,N0,1,RF_maintenance,N: Negative dBm power going into PAM,,N: -4.35,N: -5.25
-110,E,68,362,5,141,C16,E6,1,RF_maintenance,,,,
-110,N,68,362,5,141,C16,N4,1,RF_maintenance,,,,
-111,E,83,142,6,142,C16,E10,1,RF_maintenance,,,,
-111,N,83,142,6,142,C16,N8,1,RF_maintenance,N: PAM power input OK,Yes,,N: 4.0
-112,E,81,144,7,143,C42,E2,2,digital_ok,,,,
-112,N,81,144,7,143,C42,N0,2,digital_ok,,,,
-127,E,69,139,8,144,C42,E6,2,RF_maintenance,E: No power coming from antenna.,Yes,E: null,E: null
-127,N,69,139,8,144,C42,N4,2,RF_maintenance,,,,
-128,E,70,137,9,145,C42,E10,2,digital_ok,,,,
-128,N,70,137,9,145,C42,N8,2,digital_ok,,,,
-129,E,74,143,10,146,C45,E2,3,digital_ok,,,,
-129,N,74,143,10,146,C45,N0,3,digital_ok,,,,
-130,E,80,146,11,147,C45,E6,3,digital_ok,,,,
-130,N,80,146,11,147,C45,N4,3,digital_ok,,,,
-328,E,290,235,12,326,C45,E10,3,, ,,,
-328,N,290,235,12,326,C45,N8,3,,,,,
-#END,,,,,,,,,,,,,
-NCM,6,,,,,,,,,,,,
-FPS,8,,,,,,,,,,,,
-PCH,8,,,,,,,,,,,,
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Optical Power (into node),Optical Power (into PAM),Optical Power (at FEM),Optical Power (through fiber),RF Power
+92,E,84,138,1,363,C14,E2,0,RF_maintenance,No raincap on feed. Need to lower feed (6/2/23),,E: -49.3,E: -49.7,,,
+92,N,84,138,1,363,C14,N0,0,RF_maintenance,,,,,,,
+93,E,79,351,2,138,C14,E6,0,RF_maintenance,,Yes,E: --55.05,E: -55.2,,,
+93,N,79,351,2,138,C14,N4,0,RF_maintenance,,,N: null,N: null,,,
+94,E,78,147,3,139,C14,E10,0,RF_maintenance,E: no power coming into node.,Yes,E: -57,E: null,,,
+94,N,78,147,3,139,C14,N8,0,RF_maintenance,N:  low power before feed through (1dBm) and even lower going into PAM (-4dBm),Yes,N: 1.2,N: -3.9,,,
+109,E,89,371,4,140,C16,E2,1,RF_maintenance,E: Negative dBm power going into PAM,Yes,E: -1.15,E: -12.35,,,
+109,N,89,371,4,140,C16,N0,1,RF_maintenance,N: Negative dBm power going into PAM,,N: -4.35,N: -5.25,,,
+110,E,68,362,5,141,C16,E6,1,RF_maintenance,,,,,,,
+110,N,68,362,5,141,C16,N4,1,RF_maintenance,,,,,,,
+111,E,83,142,6,142,C16,E10,1,RF_maintenance,,,,,,,
+111,N,83,142,6,142,C16,N8,1,RF_maintenance,N: PAM power input OK,Yes,,N: 4.0,,,
+112,E,81,144,7,143,C42,E2,2,digital_ok,,,,,,,
+112,N,81,144,7,143,C42,N0,2,digital_ok,,,,,,,
+127,E,69,139,8,144,C42,E6,2,RF_maintenance,E: No power coming from antenna.,Yes,E: null,E: null,,,
+127,N,69,139,8,144,C42,N4,2,RF_maintenance,,,,,,,
+128,E,70,137,9,145,C42,E10,2,digital_ok,,,,,,,
+128,N,70,137,9,145,C42,N8,2,digital_ok,,,,,,,
+129,E,74,143,10,146,C45,E2,3,digital_ok,,,,,,,
+129,N,74,143,10,146,C45,N0,3,digital_ok,,,,,,,
+130,E,80,146,11,147,C45,E6,3,digital_ok,,,,,,,
+130,N,80,146,11,147,C45,N4,3,digital_ok,,,,,,,
+328,E,290,235,12,326,C45,E10,3,, ,,,,,,
+328,N,290,235,12,326,C45,N8,3,,,,,,,,
+#END,,,,,,,,,,,,,,,,
+NCM,6,,,,,,,,,,,,,,,
+FPS,8,,,,,,,,,,,,,,,
+PCH,8,,,,,,,,,,,,,,,
