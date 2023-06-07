@@ -32,7 +32,7 @@ class Grid:
         print()
 
     def _proc_colors(self, data):
-        self.colormap = plt.cm.turbo
+        self.colormap = plt.cm.rainbow
         minval = 10000.0
         maxval = -100000.0
         for clrs in ['antennas', 'inputs']:
@@ -103,7 +103,7 @@ class Grid:
                     if antenna[0] == '!':
                         this_color = self._special_color(antenna[1])
                     plt.plot(this_port, this_node, ',', color=this_color)
-                    plt.text(this_port - self._xoffset(antenna), this_node - 0.25, antenna[2:], color=this_color)
+                    plt.text(this_port - self._xoffset(antenna), this_node - 0.25, antenna[2:], color=this_color, weight='extra bold')
         fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm))
         plt.xlabel('Node port')
         plt.ylabel('Node')
@@ -123,7 +123,7 @@ class Grid:
                 print(f"\tInputs {', '.join(inputs)}")
                 for this_input in inputs:
                     this_node, this_port = int(this_input.split('-')[0]), int(this_input.split('-')[1])
-                    plt.text(this_port - self._xoffset(antenna)+0.03, this_node - 0.25, antenna[2:], color=color)
+                    plt.text(this_port - self._xoffset(antenna)+0.03, this_node - 0.25, antenna[2:], color=color, weight='extra bold')
 
     def _special_color(self, val):
         if val == 'H':  # Didn't find a hookup
