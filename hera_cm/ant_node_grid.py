@@ -1,6 +1,8 @@
 #! /usr/bin/env python
 from hera_mc import cm_hookup, mc
 import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib import colors
 import yaml
 
 
@@ -13,6 +15,7 @@ class Grid:
         if isinstance(data, str):
             with open(data, 'r') as fp:
                 data = yaml.safe_load(fp)
+        data = self._proc_colors(data)
         self.antennas = {}
         self.inputs = {}
         self.nodes = nodes
@@ -28,8 +31,26 @@ class Grid:
             print(component, end='')
         print()
 
-    def make(self):
-        plt.figure(figsize=(9.75,6.5))
+    def _proc_colors(self, data):
+        self.colormap = plt.cm.rainbow
+        minval = 10000.0
+        maxval = -100000.0
+        for clrs in ['antennas', 'inputs']:
+            if clrs in data:
+                for ant, clr in data[clrs].items():
+                    if isinstance(clr, float):
+                        if clr < minval:
+                            minval = clr
+                        elif clr > maxval:
+                            maxval = clr
+                self.norm = colors.Normalize(vmin=0.9*minval, vmax=1.1*maxval)
+                for ant, clr in data[clrs].items():
+                    data[clrs][ant] = self.colormap(self.norm(clr))
+        
+        return data
+
+    def make(self, title='Node Input/Antenna Map'):
+        fig = plt.figure(figsize=(9.75,6.5))
         with mc.MCSessionWrapper(session=None) as session:
             hookup = cm_hookup.Hookup(session)
             ant_hudict = hookup.get_hookup(hpn='H')
@@ -82,10 +103,11 @@ class Grid:
                     if antenna[0] == '!':
                         this_color = self._special_color(antenna[1])
                     plt.plot(this_port, this_node, ',', color=this_color)
-                    plt.text(this_port - self._xoffset(antenna), this_node - 0.25, antenna[2:], color=this_color)
+                    plt.text(this_port - self._xoffset(antenna), this_node - 0.25, antenna[2:], color=this_color, weight='extra bold')
+        fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm))
         plt.xlabel('Node port')
         plt.ylabel('Node')
-        plt.title('Node Input/Antenna Map')
+        plt.title(title)
         plt.xticks(self.ports, [str(x) for x in self.ports])
         plt.yticks(self.nodes, [str(x) for x in self.nodes])
         for x in [3.5, 6.5, 9.5]:
@@ -101,7 +123,7 @@ class Grid:
                 print(f"\tInputs {', '.join(inputs)}")
                 for this_input in inputs:
                     this_node, this_port = int(this_input.split('-')[0]), int(this_input.split('-')[1])
-                    plt.text(this_port - self._xoffset(antenna)+0.03, this_node - 0.25, antenna[2:], color=color)
+                    plt.text(this_port - self._xoffset(antenna)+0.03, this_node - 0.25, antenna[2:], color=color, weight='extra bold')
 
     def _special_color(self, val):
         if val == 'H':  # Didn't find a hookup
