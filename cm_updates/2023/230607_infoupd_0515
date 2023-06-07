@@ -1,0 +1,47 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230607_infoupd_0515" >> scripts.log 
+update_apriori.py -p HH51 -s digital_ok --date 2023/06/07 --time 05:21
+add_part_info.py -p HH51 -r A -c "apriori_antenna status change: dish_maintenance > digital_ok" -l "apa-infoupd" --date 2023/06/07 --time 05:21
+update_apriori.py -p HH56 -s digital_ok --date 2023/06/07 --time 05:21
+add_part_info.py -p HH56 -r A -c "apriori_antenna status change: dish_maintenance > digital_ok" -l "apa-infoupd" --date 2023/06/07 --time 05:21
+update_apriori.py -p HB320 -s digital_ok --date 2023/06/07 --time 05:21
+add_part_info.py -p HB320 -r A -c "apriori_antenna status change: dish_maintenance > digital_ok" -l "apa-infoupd" --date 2023/06/07 --time 05:21
+update_apriori.py -p HA325 -s digital_ok --date 2023/06/07 --time 05:21
+add_part_info.py -p HA325 -r A -c "apriori_antenna status change: dish_ok > digital_ok" -l "apa-infoupd" --date 2023/06/07 --time 05:21
+add_part_info.py -p HH142 -r A -c "Optical Power at 1310nm (into node): N: 5.8" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p HH142 -r A -c "Optical Power at 1310nm (into PAM): N: 5.75" -l "infoupd" --date 2023/06/07 --time 05:15:02
+add_part_info.py -p HH160 -r A -c "Optical Power at 1310nm (into node): E: null" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p HH160 -r A -c "Optical Power at 1310nm (into PAM): E: null" -l "infoupd" --date 2023/06/07 --time 05:15:02
+add_part_info.py -p HH180 -r A -c "Optical Power at 1310nm (into node): N: 5.8" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p HH180 -r A -c "Optical Power at 1310nm (into PAM): N: 6.05" -l "infoupd" --date 2023/06/07 --time 05:15:02
+add_part_info.py -p EE10001 -r A -c "FEM Power?: No" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p HH204 -r A -c "Optical Power at 1310nm (into PAM): E: 4.5" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p HH204 -r A -c "Optical Power at 1310nm (into PAM): N: 5.9" -l "infoupd" --date 2023/06/07 --time 05:15:02
+add_part_info.py -p HH207 -r A -c "Optical Power at 1310nm (into node): N: null" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p HH207 -r A -c "Optical Power at 1310nm (into PAM): N: null" -l "infoupd" --date 2023/06/07 --time 05:15:02
+add_part_info.py -p HH225 -r A -c "Optical Power at 1310nm (into PAM): N: 5.2" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p HH60 -r A -c "Optical Power at 1310nm (into PAM): N: 4.25" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p HH124 -r A -c "Optical Power at 1310nm (into node): N: 4.2" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p HH124 -r A -c "Optical Power at 1310nm (into PAM): N: 2.9" -l "infoupd" --date 2023/06/07 --time 05:15:02
+add_part_info.py -p N01 -r A -c "arista0 port 13" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N02 -r A -c "arista0 port 14" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N03 -r A -c "arista0 port 2" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N04 -r A -c "arista0 port 3" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N05 -r A -c "arista0 port 10" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N06 -r A -c "arista0 port 16" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N07 -r A -c "arista0 port 6" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N08 -r A -c "arista0 port 8" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N09 -r A -c "arista0 port 12" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N10 -r A -c "arista0 port 4" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N11 -r A -c "arista1 port 4" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N12 -r A -c "arista0 port 11" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N13 -r A -c "arista0 port 7" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N14 -r A -c "arista0 port 9" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N15 -r A -c "arista1 port 5" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N16 -r A -c "arista1 port 5" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N17 -r A -c "arista1 port10" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N18 -r A -c "arista1 port 12" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N19 -r A -c "arista1 port 13" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N20 -r A -c "arista1 port 14" -l "infoupd" --date 2023/06/07 --time 05:15:00
+add_part_info.py -p N21 -r A -c "arista1 port 6" -l "infoupd" --date 2023/06/07 --time 05:15:00
