@@ -33,19 +33,24 @@ class Grid:
 
     def _proc_colors(self, data):
         self.colormap = plt.cm.rainbow
+        self.add_colorbar = False
         minval = 10000.0
         maxval = -100000.0
+        found_ants = []
         for clrs in ['antennas', 'inputs']:
             if clrs in data:
                 for ant, clr in data[clrs].items():
                     if isinstance(clr, float):
+                        found_ants.append(ant)
                         if clr < minval:
                             minval = clr
                         elif clr > maxval:
                             maxval = clr
-                self.norm = colors.Normalize(vmin=0.9*minval, vmax=1.1*maxval)
-                for ant, clr in data[clrs].items():
-                    data[clrs][ant] = self.colormap(self.norm(clr))
+                if len(found_ants):
+                    self.add_colorbar = True
+                    self.norm = colors.Normalize(vmin=0.9*minval, vmax=1.1*maxval)
+                    for ant in found_ants:
+                        data[clrs][ant] = self.colormap(self.norm(data[clrs][ant]))
         
         return data
 
@@ -104,7 +109,8 @@ class Grid:
                         this_color = self._special_color(antenna[1])
                     plt.plot(this_port, this_node, ',', color=this_color)
                     plt.text(this_port - self._xoffset(antenna), this_node - 0.25, antenna[2:], color=this_color, weight='extra bold')
-        fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm))
+        if self.add_colorbar:
+            fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm))
         plt.xlabel('Node port')
         plt.ylabel('Node')
         plt.title(title)
