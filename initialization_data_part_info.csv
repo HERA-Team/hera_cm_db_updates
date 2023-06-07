@@ -3326,6 +3326,9 @@ HH83,A,door is poking up and cables are very loose,infoupd,1369941318
 HH56,A,apriori_antenna status change: dish_maintenance > digital_ok,apa-infoupd,1370150478
 HH124,A,Optical Power at 1310nm (into node): N: 4.2,infoupd,1370150118
 N15,A,arista1 port 5,infoupd,1370150118
+HH205,A,FEM Power?: Yes,infoupd,1370185998
+N03,A,wr0 port3,infoupd,1370185998
+N18,A,wr1 port5,infoupd,1370185998
 HH43,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350499698
 HH46,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1350499698
 HH58,A,apriori_antenna status change: digital_maintenance > RF_maintenance,apa-infoupd,1350499698
@@ -3342,6 +3345,9 @@ HH60,A,no sky per antenna classification summary -DCJ,apa-infoupd,1350499338
 HB320,A,apriori_antenna status change: dish_maintenance > digital_ok,apa-infoupd,1370150478
 HH124,A,Optical Power at 1310nm (into PAM): N: 2.9,infoupd,1370150120
 N16,A,arista1 port 5,infoupd,1370150118
+HH206,A,FEM Power?: Yes,infoupd,1370185998
+N04,A,wr0 port7,infoupd,1370185998
+N19,A,Fiber 9/10 are broken - using 3/4,infoupd,1370185998
 HH43,A,no sky in E per ACS -DCJ,apa-infoupd,1350499338
 HH74,A,no sky per antenna classification summary -DCJ,infoupd,1350499338
 HH75,A,No sky in N per ACS  -DCJ,apa-infoupd,1350499338
@@ -3545,22 +3551,37 @@ N20,A,0 of 4 link lights are on for the SNAPs -- checking fiber,infoupd,13544629
 HA325,A,apriori_antenna status change: dish_ok > digital_ok,apa-infoupd,1370150478
 N01,A,arista0 port 13,infoupd,1370150118
 N17,A,arista1 port10,infoupd,1370150118
+HH207,A,FEM Power?: Yes,infoupd,1370185998
+N05,A,wr1 port7,infoupd,1370185998
+N19,A,wr0 port4,infoupd,1370186000
 NCM3,A,Update WR firmware,,1354276818
 HH142,A,Optical Power at 1310nm (into node): N: 5.8,infoupd,1370150118
 N02,A,arista0 port 14,infoupd,1370150118
 N18,A,arista1 port 12,infoupd,1370150118
+HH223,A,FEM Power?: Yes,infoupd,1370185998
+N06,A,wr1 port8,infoupd,1370185998
+N20,A,wr0 port5,infoupd,1370185998
 NCM2,A,Update WR firmware,,1354363218
 HH142,A,Optical Power at 1310nm (into PAM): N: 5.75,infoupd,1370150120
 N03,A,arista0 port 2,infoupd,1370150118
 N19,A,arista1 port 13,infoupd,1370150118
+HH224,A,FEM Power?: Yes,infoupd,1370185998
+N07,A,wr1 port9,infoupd,1370185998
+N21,A,wr1 port6,infoupd,1370185998
 NCM10,A,Update WR firmware,,1354363218
 HH160,A,Optical Power at 1310nm (into node): E: null,infoupd,1370150118
 N04,A,arista0 port 3,infoupd,1370150118
 N20,A,arista1 port 14,infoupd,1370150118
+HH225,A,FEM Power?: No,infoupd,1370185998
+N08,A,wr1 port10,infoupd,1370185998
+N22,A,arista1 port 1,infoupd,1370185998
 NCM15,A,Update WR firmware,,1354449618
 HH160,A,Optical Power at 1310nm (into PAM): E: null,infoupd,1370150120
 N05,A,arista0 port 10,infoupd,1370150118
 N21,A,arista1 port 6,infoupd,1370150118
+HH226,A,FEM Power?: No,infoupd,1370185998
+N09,A,wr1 port11,infoupd,1370185998
+N22,A,wr0 port9,infoupd,1370186000
 HH131,A,Yellow FEM covers installed.,infoupd,1354718538
 HH131,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1354718540
 HH133,A,Yellow FEM covers installed,infoupd,1354718538
@@ -3690,8 +3711,13 @@ HH179,A,Feed heights (NE/SE/SW/NW): 4.407,infoupd,1365842540
 HH179,A,H6C: Feed Height Before: 4.398 Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Already Present Spiral Wrap: Present Already D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1365842542
 HH180,A,Optical Power at 1310nm (into node): N: 5.8,infoupd,1370150118
 N06,A,arista0 port 16,infoupd,1370150118
+HH240,A,FEM Power?: No,infoupd,1370185998
+N10,A,wr1 port12,infoupd,1370185998
+N23,A,wr1 port17,infoupd,1370185998
 HH180,A,Optical Power at 1310nm (into PAM): N: 6.05,infoupd,1370150120
 N07,A,arista0 port 6,infoupd,1370150118
+HH241,A,FEM Power?: No,infoupd,1370185998
+N11,A,wr1 port13,infoupd,1370185998
 HH167,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1365885738
 HH167,A,H6C: Feed Height Before: 4.410 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Present Already Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1365885740
 HH191,A,Feed heights (NE/SE/SW/NW): 4.409,infoupd,1365885738
@@ -3834,6 +3860,8 @@ HH190,A,Feed heights (NE/SE/SW/NW): 4.408,infoupd,1369392138
 HH190,A,H6C: Feed Height Before: 4.407 Sticker Targets: Already Present Stiffener Braces: Present Already Carey Caps: Present Already Protected Fiber: Installed Cable Conduit: Installed Spiral Wrap: Installed D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1369392140
 EE10001,A,FEM Power?: No,infoupd,1370150118
 N08,A,arista0 port 8,infoupd,1370150118
+HH242,A,FEM Power?: No,infoupd,1370185998
+N12,A,wr1 port14,infoupd,1370185998
 HH84,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369770498
 HH66,A,Loose connection fixed 6/2/23,infoupd,1369770138
 HH68,A,Replaced feedthrough 6/2/23,infoupd,1369770138
@@ -3874,8 +3902,12 @@ N19,A,All SNAP link lights are green,infoupd,1369912458
 N20,A,"All SNAP, but SNAP2, link lights are green",infoupd,1369912458
 HH204,A,Optical Power at 1310nm (into PAM): E: 4.5,infoupd,1370150118
 N09,A,arista0 port 12,infoupd,1370150118
+HH243,A,FEM Power?: No,infoupd,1370185998
+N13,A,wr1 port15,infoupd,1370185998
 HH204,A,Optical Power at 1310nm (into PAM): N: 5.9,infoupd,1370150120
 N10,A,arista0 port 4,infoupd,1370150118
+HH232,A,Ticket: Feed conduit feel out and is hanging on the cables.,infoupd,1370185998
+N14,A,wr1 port16,infoupd,1370185998
 HH16,A,apriori_antenna status change: digital_ok > RF_ok,apa-infoupd,1369938438
 HH18,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
 HH27,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
@@ -4294,11 +4326,20 @@ HH125,A,FEM Power?: Yes,infoupd,1369938078
 HH125,A,FEM Power?: Yes,infoupd,1369938080
 HH207,A,Optical Power at 1310nm (into node): N: null,infoupd,1370150118
 N11,A,arista1 port 4,infoupd,1370150118
+N00,A,arista0 port 1,infoupd,1370185998
+N15,A,arista0 port 5,infoupd,1370185998
 HH207,A,Optical Power at 1310nm (into PAM): N: null,infoupd,1370150120
 N12,A,arista0 port 11,infoupd,1370150118
+N00,A,wr1 port2,infoupd,1370186000
+N15,A,wr0 port8,infoupd,1370186000
 HH225,A,Optical Power at 1310nm (into PAM): N: 5.2,infoupd,1370150118
 N13,A,arista0 port 7,infoupd,1370150118
+N01,A,wr1 port3,infoupd,1370185998
+N16,A,wr0 port2,infoupd,1370185998
 HH38,A,Door is open,infoupd,1369941318
 HH51,A,apriori_antenna status change: dish_maintenance > digital_ok,apa-infoupd,1370150478
 HH60,A,Optical Power at 1310nm (into PAM): N: 4.25,infoupd,1370150118
 N14,A,arista0 port 9,infoupd,1370150118
+HH204,A,FEM Power?: Yes,infoupd,1370185998
+N02,A,wr1 port4,infoupd,1370185998
+N17,A,wr0 port6,infoupd,1370185998
