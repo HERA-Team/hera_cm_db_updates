@@ -3359,6 +3359,14 @@ HH93,A,Optical Power (into node): E: --55.05,infoupd,1370191338
 HH136,A,Optical Power (into node): E: null,infoupd,1370191338
 HH143,A,Optical Power (into PAM): E: -9.35,infoupd,1370191340
 HH27,A,Changed feedthrough (06/07/2023),infoupd,1370198538
+HH92,A,FEM Power?: Yes,infoupd,1370202138
+HH109,A,Optical Power (into node): -0.85,infoupd,1370202140
+HB329,A,Optical Power (through fiber): null,infoupd,1370202144
+HH160,A,Optical Power (at FEM): 5.5,infoupd,1370202142
+HH143,A,Optical Power (into node): null,infoupd,1370202144
+HH225,A,RF Power: -30.65,infoupd,1370202138
+HH81,A,RF Power: -25.4,infoupd,1370202138
+HH118,A,RF Power: -10.1,infoupd,1370202138
 HH43,A,no sky in E per ACS -DCJ,apa-infoupd,1350499338
 HH74,A,no sky per antenna classification summary -DCJ,infoupd,1350499338
 HH75,A,No sky in N per ACS  -DCJ,apa-infoupd,1350499338
@@ -3572,6 +3580,14 @@ HH93,A,Optical Power (into PAM): E: -55.2,infoupd,1370191340
 HH136,A,Optical Power (into PAM): E: null,infoupd,1370191340
 HH143,A,Optical Power (into node): N: null,infoupd,1370191342
 HH27,A,Optical Power (into node): -1.5,infoupd,1370198540
+HH92,A,Optical Power (at FEM): -51.5,infoupd,1370202140
+HH109,A,Optical Power (into PAM): -1.05,infoupd,1370202142
+HB329,A,Optical Power (into node): null,infoupd,1370202146
+HH160,A,Optical Power (through fiber): null,infoupd,1370202144
+HH143,A,Optical Power (into PAM): null,infoupd,1370202146
+HH66,A,Fiber was reseated at PAM input (06/07/2023),infoupd,1370202138
+HH81,A,Optical Power (into node): null,infoupd,1370202140
+HH118,A,RF Power: -8,infoupd,1370202140
 NCM3,A,Update WR firmware,,1354276818
 HH142,A,Optical Power at 1310nm (into node): N: 5.8,infoupd,1370150118
 N02,A,arista0 port 14,infoupd,1370150118
@@ -3585,6 +3601,14 @@ HH93,A,Optical Power (into node): N: null,infoupd,1370191342
 HH155,A,Optical Power (into node): E: null,infoupd,1370191338
 HH143,A,Optical Power (into PAM): N: null,infoupd,1370191344
 HH27,A,Optical Power (into PAM): -2,infoupd,1370198542
+HH92,A,Optical Power (through fiber): null,infoupd,1370202142
+HH109,A,Optical Power (at FEM): 5.05,infoupd,1370202144
+HB329,A,Optical Power (into PAM): null,infoupd,1370202148
+HH180,A,RF Power: -29.76,infoupd,1370202138
+HH143,A,Optical Power (at FEM): 4.3,infoupd,1370202148
+HH66,A,Optical Power (into PAM): 5.5,infoupd,1370202140
+HH81,A,Optical Power (into PAM): null,infoupd,1370202142
+HH137,A,RF Power: -22.1,infoupd,1370202138
 NCM2,A,Update WR firmware,,1354363218
 HH142,A,Optical Power at 1310nm (into PAM): N: 5.75,infoupd,1370150120
 N03,A,arista0 port 2,infoupd,1370150118
@@ -3598,6 +3622,14 @@ HH93,A,Optical Power (into PAM): N: null,infoupd,1370191344
 HH155,A,Optical Power (into PAM): E: null,infoupd,1370191340
 HH200,A,Optical Power (into PAM): 1.7,infoupd,1370191338
 HH27,A,Optical Power (at FEM): 5.8,infoupd,1370198544
+HH93,A,Optical Power (at FEM): 6.25,infoupd,1370202138
+HH109,A,Optical Power (through fiber): -26.5,infoupd,1370202146
+HB329,A,Optical Power (at FEM): 6.2,infoupd,1370202150
+HH166,A,Changed feedthrough; fiber at node input only works in certain orientations (06/07/2023),infoupd,1370202138
+HH143,A,Optical Power (through fiber): null,infoupd,1370202150
+HH37,A,Optical Power (into PAM): 4.65,infoupd,1370202138
+HH81,A,Optical Power (at FEM): 5.8,infoupd,1370202144
+HH137,A,RF Power: -27.1,infoupd,1370202140
 NCM10,A,Update WR firmware,,1354363218
 HH160,A,Optical Power at 1310nm (into node): E: null,infoupd,1370150118
 N04,A,arista0 port 3,infoupd,1370150118
@@ -3611,6 +3643,14 @@ HH94,A,Optical Power (into node): E: -57,infoupd,1370191338
 HH156,A,Optical Power (into node): N: 6.50,infoupd,1370191338
 HH204,A,Optical Power (into PAM): E: 4.5,infoupd,1370191338
 HH27,A,Optical Power (through fiber): -34.5,infoupd,1370198546
+HH93,A,Optical Power (through fiber): null,infoupd,1370202140
+HH109,A,Cables bent by rain cap,infoupd,1370202148
+HB329,A,Optical Power (through fiber): null,infoupd,1370202152
+HH166,A,Optical Power (into node): -3.7,infoupd,1370202140
+HH200,A,Replaced feedthrough,infoupd,1370202138
+HH37,A,RF Power: -30.8,infoupd,1370202140
+HH81,A,Optical Power (through fiber): null,infoupd,1370202146
+HH124,A,Optical Power (into node): null,infoupd,1370202138
 NCM15,A,Update WR firmware,,1354449618
 HH160,A,Optical Power at 1310nm (into PAM): E: null,infoupd,1370150120
 N05,A,arista0 port 10,infoupd,1370150118
@@ -3624,6 +3664,14 @@ HH94,A,Optical Power (into PAM): E: null,infoupd,1370191340
 HH156,A,Optical Power (into PAM): N: 6.05,infoupd,1370191340
 HH204,A,Optical Power (into PAM): N: 5.9,infoupd,1370191340
 HH27,A,FEM -> node cables had swapped pols; this was fixed (06/07/2023),infoupd,1370198548
+HH93,A,Optical Power (at FEM): 5.3,infoupd,1370202142
+HH109,A,Optical Power (into node): null,infoupd,1370202150
+HH136,A,Optical Power (into node): null,infoupd,1370202138
+HH166,A,Optical Power (into PAM): -4.4,infoupd,1370202142
+HH200,A,Optical Power (into node): 5.75,infoupd,1370202140
+HH55,A,RF Power: -6.43,infoupd,1370202138
+HH82,A,RF Power: -20.5,infoupd,1370202138
+HH124,A,Optical Power (into PAM): null,infoupd,1370202140
 HH131,A,Yellow FEM covers installed.,infoupd,1354718538
 HH131,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1354718540
 HH133,A,Yellow FEM covers installed,infoupd,1354718538
@@ -3762,6 +3810,14 @@ HH94,A,Optical Power (into node): N: 1.2,infoupd,1370191342
 HH142,A,Optical Power (into node): N: 5.8,infoupd,1370191338
 HH207,A,Optical Power (into node): N: null,infoupd,1370191338
 HH27,A,Optical Power (into node): 3.2,infoupd,1370198550
+HH93,A,Optical Power (through fiber): null,infoupd,1370202144
+HH109,A,Optical Power (at FEM): 5.25,infoupd,1370202152
+HH136,A,Optical Power (into PAM): null,infoupd,1370202140
+HH166,A,Optical Power (at FEM): 5.4,infoupd,1370202144
+HH200,A,Optical Power (into PAM): 5.55,infoupd,1370202142
+HH55,A,RF Power: -26.14,infoupd,1370202140
+HH82,A,RF Power: -26.4,infoupd,1370202140
+HH124,A,Optical Power (at FEM): null,infoupd,1370202142
 HH180,A,Optical Power at 1310nm (into PAM): N: 6.05,infoupd,1370150120
 N07,A,arista0 port 6,infoupd,1370150118
 HH241,A,FEM Power?: No,infoupd,1370185998
@@ -3808,6 +3864,14 @@ HH94,A,Optical Power (into PAM): N: -3.9,infoupd,1370191344
 HH142,A,Optical Power (into PAM): N: 5.75,infoupd,1370191340
 HH207,A,Optical Power (into PAM): N: null,infoupd,1370191340
 HH27,A,Optical Power (into PAM): 2.9,infoupd,1370198552
+HH94,A,Optical Power (at FEM): -54.5,infoupd,1370202138
+HH109,A,Optical Power (through fiber): -28.9,infoupd,1370202154
+HH136,A,Optical Power (at FEM): 6,infoupd,1370202142
+HH166,A,Optical Power (through fiber): null,infoupd,1370202146
+HH200,A,Optical Power (at FEM): 5.7,infoupd,1370202144
+HH58,A,Optical Power (into node): null,infoupd,1370202138
+HH83,A,RF Power: -18.9,infoupd,1370202138
+HH124,A,Optical Power (through fiber): null,infoupd,1370202144
 HH103,A,FEM 364 stated on the checksheet,infoupd,1366897338
 HH103,A,Feed heights (NE/SE/SW/NW): 4.400,infoupd,1366897340
 HH103,A,H6C: Feed Height Before: Broken fiber Sticker Targets: Already Present Stiffener Braces: Present Already  Carey Caps: Present Already Protected Fiber: Present Already  Cable Conduit: Already Present Spiral Wrap: Present Already D Shackle Cable Tie: Already Present Cables Labelled: Completed,infoupd,1366897342
@@ -3937,6 +4001,8 @@ N20,A,"Power cycled NCM, which fixed the NCM.",infoupd,1369903458
 HH160,A,Optical Power (into node): E: null,infoupd,1370191338
 HH225,A,Optical Power (into PAM): N: 5.2,infoupd,1370191338
 HH27,A,Optical Power (at FEM): 4,infoupd,1370198554
+HH94,A,Optical Power (through fiber): -25.5,infoupd,1370202140
+HH111,A,RF Power: -6.9,infoupd,1370202138
 HH135,A,one dish patch detached on one edge and flipped over,infoupd,1369912458
 HH141,A,"Feed ropes very loose, feed is wiggling",infoupd,1369912458
 HH185,A,"feed is tilted, photo is available",infoupd,1369912458
@@ -3951,6 +4017,11 @@ N04,A,All SNAP link lights are green,infoupd,1369912458
 N05,A,All SNAP link lights are green,infoupd,1369912458
 N06,A,All SNAP link lights are green,infoupd,1369912458
 HH145,A,FEM Power?: Yes,infoupd,1369938078
+HH136,A,Optical Power (through fiber): null,infoupd,1370202144
+HH184,A,Optical Power (into node): null,infoupd,1370202138
+HH200,A,Optical Power (through fiber): -25.6,infoupd,1370202146
+HH58,A,Optical Power (into PAM): null,infoupd,1370202140
+HH83,A,RF Power: -25.5,infoupd,1370202140
 N08,A,All SNAP link lights are green,infoupd,1369912458
 N09,A,All SNAP link lights are green,infoupd,1369912458
 N10,A,All SNAP link lights are green,infoupd,1369912458
@@ -3969,6 +4040,13 @@ HH118,A,Optical Power (into PAM): N: 5.45,infoupd,1370187740
 HH109,A,Optical Power (into PAM): E: -12.35,infoupd,1370191340
 HH160,A,Optical Power (into PAM): E: null,infoupd,1370191340
 HH27,A,Optical Power (through fiber): -27.6,infoupd,1370198556
+HH94,A,Optical fiber at node should be re-spliced (power varies substantially with small changes in cable geometry),infoupd,1370202142
+HH127,A,Optical Power (at FEM): 6.8,infoupd,1370202138
+HH155,A,Optical Power (into node): null,infoupd,1370202138
+HH184,A,Optical Power (into PAM): null,infoupd,1370202140
+HH204,A,RF Power: -21.6,infoupd,1370202138
+HH58,A,Optical Power (through fiber): null,infoupd,1370202142
+HH117,A,FEM Power?: Yes,infoupd,1370202138
 HH204,A,Optical Power at 1310nm (into PAM): N: 5.9,infoupd,1370150120
 N10,A,arista0 port 4,infoupd,1370150118
 HH232,A,Ticket: Feed conduit feel out and is hanging on the cables.,infoupd,1370185998
@@ -3978,6 +4056,13 @@ HH137,A,Optical Power (into PAM): E: 5.00,infoupd,1370187738
 HH109,A,Optical Power (into node): N: -4.35,infoupd,1370191342
 HH180,A,Optical Power (into node): N: 5.8,infoupd,1370191338
 HH29,A,Optical Power (at FEM): 6,infoupd,1370198538
+HH94,A,Optical Power (into node): -1.6,infoupd,1370202144
+HH127,A,Optical Power (through fiber): null,infoupd,1370202140
+HH155,A,Optical Power (into PAM): null,infoupd,1370202140
+HH184,A,Optical Power (at FEM): 6,infoupd,1370202142
+HH204,A,RF Power: -24.15,infoupd,1370202140
+HH58,A,Optical Power (into node): null,infoupd,1370202144
+HH117,A,Optical Power (into node): -23.9,infoupd,1370202140
 HH16,A,apriori_antenna status change: digital_ok > RF_ok,apa-infoupd,1369938438
 HH18,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
 HH27,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
@@ -4403,6 +4488,13 @@ HH137,A,Optical Power (into PAM): N: 4.60,infoupd,1370187740
 HH109,A,Optical Power (into PAM): N: -5.25,infoupd,1370191344
 HH180,A,Optical Power (into PAM): N: 6.05,infoupd,1370191340
 HH29,A,Optical Power (through fiber): null,infoupd,1370198540
+HH94,A,Optical Power (into PAM): -3.9,infoupd,1370202146
+HH127,A,Optical Power (through fiber): -25.9,infoupd,1370202142
+HH155,A,Optical Power (at FEM): 5.95,infoupd,1370202142
+HH184,A,Optical Power (through fiber): null,infoupd,1370202144
+HH207,A,Optical Power (into node): null,infoupd,1370202138
+HH58,A,Optical Power (into PAM): null,infoupd,1370202146
+HH117,A,Optical Power (into PAM): null,infoupd,1370202142
 HH207,A,Optical Power at 1310nm (into PAM): N: null,infoupd,1370150120
 N12,A,arista0 port 11,infoupd,1370150118
 N00,A,wr1 port2,infoupd,1370186000
@@ -4412,6 +4504,13 @@ HH84,A,Optical Power (into node): N: 6.15,infoupd,1370187738
 HH111,A,Optical Power (into PAM): N: 4.0,infoupd,1370191338
 HH166,A,Optical Power (into node): E: -3.45,infoupd,1370191338
 HH29,A,Optical Power (at FEM): 5.9,infoupd,1370198542
+HH94,A,Optical Power (at FEM): 5.15,infoupd,1370202148
+HB329,A,Optical Power (into node): null,infoupd,1370202138
+HH155,A,Optical Power (through fiber): null,infoupd,1370202144
+HH143,A,Optical Power (into node): 6,infoupd,1370202138
+HH207,A,Optical Power (into PAM): null,infoupd,1370202140
+HH58,A,Optical Power (through fiber): null,infoupd,1370202148
+HH117,A,Optical Power (at FEM): 4.95,infoupd,1370202144
 HH225,A,Optical Power at 1310nm (into PAM): N: 5.2,infoupd,1370150118
 N13,A,arista0 port 7,infoupd,1370150118
 N01,A,wr1 port3,infoupd,1370185998
@@ -4421,6 +4520,13 @@ HH84,A,Optical Power (into PAM): N: 5.8,infoupd,1370187740
 HH127,A,Optical Power (into node): E: null,infoupd,1370191338
 HH166,A,Optical Power (into PAM): E: -7.20,infoupd,1370191340
 HH29,A,Optical Power (through fiber): null,infoupd,1370198544
+HH94,A,Optical Power (through fiber): -27.9,infoupd,1370202150
+HB329,A,Optical Power (into PAM): null,infoupd,1370202140
+HH160,A,Optical Power (into node): null,infoupd,1370202138
+HH143,A,Optical Power (at FEM): 6.05,infoupd,1370202140
+HH207,A,Optical Power (at FEM): 4.8,infoupd,1370202142
+HH60,A,Potential problem with SNAP,infoupd,1370202138
+HH117,A,Optical Power (through fiber): null,infoupd,1370202146
 HH38,A,Door is open,infoupd,1369941318
 HH51,A,apriori_antenna status change: dish_maintenance > digital_ok,apa-infoupd,1370150478
 HH60,A,Optical Power at 1310nm (into PAM): N: 4.25,infoupd,1370150118
@@ -4434,3 +4540,10 @@ HH124,A,Optical Power (into node): none,infoupd,1370187738
 HH92,A,Optical Power (into node): E: -49.3,infoupd,1370191338
 HH127,A,Optical Power (into PAM): E: null,infoupd,1370191340
 HH143,A,Optical Power (into node): E: -4.85,infoupd,1370191338
+HH109,A,Feedthrough changed (06/07/2023),infoupd,1370202138
+HB329,A,Optical Power (at FEM): -14.8,infoupd,1370202142
+HH160,A,Optical Power (into PAM): null,infoupd,1370202140
+HH143,A,Optical Power (through fiber): -45.45,infoupd,1370202142
+HH207,A,Optical Power (through fiber): null,infoupd,1370202144
+HH60,A,RF Power: -4.7,infoupd,1370202140
+HH117,A,FEM Power?: Yes,infoupd,1370202148

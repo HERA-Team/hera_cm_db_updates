@@ -1,5 +1,5 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Optical Power (into node),Optical Power (into PAM),Optical Power (at FEM),Optical Power (through fiber),RF Power
-200,E,194,251,1,233,A22,e2,0,RF_maintenance,,Yes,,1.7,,,
+200,E,194,251,1,233,A22,e2,0,RF_maintenance,Replaced feedthrough,Yes,5.75,5.55,5.7,-25.6,
 200,N,194,251,1,233,A22,n0,0,RF_maintenance,,,,,,,
 201,E,159,247,2,234,A22,e6,0,RF_maintenance,,Yes,,,,,
 201,N,159,247,2,234,A22,n4,0,RF_maintenance,,,,,,,

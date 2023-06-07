@@ -1,10 +1,10 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Optical Power (into node),Optical Power (into PAM),Optical Power (at FEM),Optical Power (through fiber),RF Power
-81,E,26,17,1,53,C19,e2,0,RF_maintenance,"dish falling apart, with mesh detached on edges and flipped over",Yes,,E: 3.7,,,
-81,N,26,17,1,53,C19,n0,0,RF_maintenance,No power in N pol (6/2/23),,N: 0,N: 0,,,
-82,E,27,51,2,54,C19,e6,0,RF_maintenance,,Yes,,E: 5.55,,,
-82,N,27,51,2,54,C19,n4,0,RF_maintenance,,,,N: 4.45,,,
-83,E,48,37,3,58,C19,e10,0,RF_maintenance,door is poking up and cables are very loose,Yes,,E: 5.5,,,
-83,N,48,37,3,58,C19,n8,0,RF_maintenance,,,,N: 5.3,,,
+81,E,26,17,1,53,C19,e2,0,RF_maintenance,"dish falling apart, with mesh detached on edges and flipped over",Yes,,E: 3.7,,,-25.4
+81,N,26,17,1,53,C19,n0,0,RF_maintenance,No power in N pol (6/2/23),,null,null,5.8,null,
+82,E,27,51,2,54,C19,e6,0,RF_maintenance,,Yes,,E: 5.55,,,-20.5
+82,N,27,51,2,54,C19,n4,0,RF_maintenance,,,,N: 4.45,,,-26.4
+83,E,48,37,3,58,C19,e10,0,RF_maintenance,door is poking up and cables are very loose,Yes,,E: 5.5,,,-18.9
+83,N,48,37,3,58,C19,n8,0,RF_maintenance,,,,N: 5.3,,,-25.5
 100,E,30,48,4,56,C21,e2,1,digital_ok,,,,,,,
 100,N,30,48,4,56,C21,n0,1,digital_ok,,,,,,,
 119,E,34,13,5,57,C21,e6,1,RF_maintenance,,,,,,,
@@ -17,12 +17,12 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Op
 99,N,29,52,8,60,C30,n4,2,digital_ok,,,,,,,
 116,E,31,14,9,61,C30,e10,2,digital_ok,,,,,,,
 116,N,31,14,9,61,C30,n8,2,digital_ok,,,,,,,
-117,E,32,15,10,299,C73,e2,3,RF_maintenance,,No,,,,,
-117,N,32,15,10,299,C73,n0,3,RF_maintenance,,,,,,,
-118,E,33,53,11,302,C73,e6,3,RF_maintenance,Need to check RF power (6/2/23),,,E: 3.30,,,
-118,N,33,53,11,302,C73,n4,3,RF_maintenance,,,,N: 5.45,,,
-137,E,49,49,12,49,C73,e10,3,RF_maintenance,Need to check RF power (6/2/23),,,E: 5.00,,,
-137,N,49,49,12,49,C73,n8,3,RF_maintenance,,,,N: 4.60,,,
+117,E,32,15,10,299,C73,e2,3,RF_maintenance,,Yes,-23.9,null,4.95,null,
+117,N,32,15,10,299,C73,n0,3,RF_maintenance,,Yes,,,,,
+118,E,33,53,11,302,C73,e6,3,RF_maintenance,Need to check RF power (6/2/23),,,E: 3.30,,,-10.1
+118,N,33,53,11,302,C73,n4,3,RF_maintenance,,,,N: 5.45,,,-8
+137,E,49,49,12,49,C73,e10,3,RF_maintenance,Need to check RF power (6/2/23),,,E: 5.00,,,-22.1
+137,N,49,49,12,49,C73,n8,3,RF_maintenance,,,,N: 4.60,,,-27.1
 #END,,,,,,,,,,,,,,,,
 NCM,P2,,,,,,,,,,,,,,,
 FPS,7,,,,,,,,,,,,,,,

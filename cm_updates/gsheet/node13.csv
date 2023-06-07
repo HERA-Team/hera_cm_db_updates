@@ -17,10 +17,10 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Op
 141,N,117,156,8,168,15,n4,2,digital_ok,,Yes,,,,,
 142,E,121,374,9,169,15,e10,2,RF_ok,,Yes,,,,,
 142,N,121,374,9,169,15,n8,2,RF_ok,Feedthrough replaced (06/03/2023),Yes,N: 5.8,N: 5.75,,,
-160,E,118,172,10,170,47,e2,3,RF_maintenance,,Yes,E: null,E: null,,,
+160,E,118,172,10,170,47,e2,3,RF_maintenance,,Yes,null,null,5.5,null,
 160,N,118,172,10,170,47,n0,3,RF_maintenance,,Yes,,,,,
 180,E,119,176,11,171,47,e6,3,RF_ok,,Yes,,,,,
-180,N,119,176,11,171,47,n4,3,RF_ok,Feedthrough replaced (06/03/2023),Yes,N: 5.8,N: 6.05,,,
+180,N,119,176,11,171,47,n4,3,RF_ok,Feedthrough replaced (06/03/2023),Yes,N: 5.8,N: 6.05,,,-29.76
 181,E,120,169,12,172,47,e10,3,digital_ok,,Yes,,,,,
 181,N,120,169,12,172,47,n8,3,digital_ok,,Yes,,,,,
 #END,,,,,,,,,,,,,,,,
