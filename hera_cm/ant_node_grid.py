@@ -55,7 +55,7 @@ class Grid:
         return data
 
     def make(self, title='Node Input/Antenna Map'):
-        fig = plt.figure(figsize=(9.75,6.5))
+        fig = plt.figure(title, figsize=(9.75,6.5))
         with mc.MCSessionWrapper(session=None) as session:
             hookup = cm_hookup.Hookup(session)
             ant_hudict = hookup.get_hookup(hpn='H')
