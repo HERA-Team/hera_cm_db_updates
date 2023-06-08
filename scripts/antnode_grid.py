@@ -20,4 +20,5 @@ grid.make()
 if False:
     print("\nChecking...")
     grid.check()
+grid.addplot('Node Grid/Antenna Map')
 ant_node_grid.plt.show()
