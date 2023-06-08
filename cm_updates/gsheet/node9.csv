@@ -13,7 +13,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Op
 91,N,18,35,6,40,C11,n8,1,digital_ok,,Yes and now (half green half red),,,,,
 325,E,276,269,7,325,C13,e2,2,digital_ok,,Yes,,,,,
 325,N,276,269,7,325,C13,n0,2,digital_ok,,Yes,,,,,
-124,E,24,32,8,344,C13,e6,2,RF_maintenance,,Yes,null,null,null,null,
+124,E,24,32,8,344,C13,e6,2,RF_maintenance,,Yes,E: null,E: null,E: null,E: null,
 124,N,24,32,8,344,C13,n4,2,RF_maintenance,,Yes,N: 4.2,N: 2.9,,,
 89,E,16,31,9,23,C13,e10,2,RF_maintenance,,Yes,,,,,
 89,N,16,31,9,23,C13,n8,2,RF_maintenance,,Yes,,,,,

@@ -7,12 +7,12 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Op
 73,N,60,122,3,115,C58,N8,0,RF_maintenance,,Yes,,,,,
 59,E,66,334,4,116,C50,E2,1,RF_ok,"E: Connection issue at feed through, OK now (6/2/23)",Yes,E: 5.9,E: 5.3,,,
 59,N,66,334,4,116,C50,N0,1,RF_ok,,,,,,,
-58,E,67,118,5,117,C50,E6,1,RF_maintenance,FEM dead (red light); no optical power coming into node (6/3/23),No,null,null,,null,
-58,N,67,118,5,117,C50,N4,1,RF_maintenance,,No,null,null,,null,
+58,E,67,118,5,117,C50,E6,1,RF_maintenance,FEM dead (red light); no optical power coming into node (6/3/23),No,E: null,E: null,,E: null,
+58,N,67,118,5,117,C50,N4,1,RF_maintenance,,No,E: null,E: null,,E: null,
 44,E,59,109,6,118,C50,E10,1,digital_ok,E: Bad connection at feedthrough was fixed on 6/2/23,Yes,,,,,
 44,N,59,109,6,118,C50,N8,1,digital_ok,,,,,,,
 60,E,64,342,7,119,C111,E2,2,RF_ok,,,,,,,
-60,N,64,342,7,119,C111,N0,2,RF_ok,Potential problem with SNAP,Yes,,N: 4.25,,,-4.7
+60,N,64,342,7,119,C111,N0,2,RF_ok,Potential problem with SNAP,Yes,,N: 4.25,,,N: -4.7
 43,E,50,116,8,120,C111,E6,2,RF_maintenance,,Yes,,,,,
 43,N,50,116,8,120,C111,N4,2,RF_maintenance,,,,,,,
 74,E,73,111,9,359,C111,E10,2,RF_maintenance,,Yes,,,,,
