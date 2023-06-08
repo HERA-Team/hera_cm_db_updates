@@ -11,12 +11,13 @@ PORTS = list(range(1, 13))
 BKCLR = 'k'
 
 class Grid:
+    fyi_all_params = ['nodes', 'ports', 'background', 'antennas', 'inputs']
+
     def __init__(self, data={}, nodes=NODES, ports=PORTS, background=BKCLR, minval=None, maxval=None):
         if isinstance(data, str):
             with open(data, 'r') as fp:
                 data = yaml.safe_load(fp)
         self.params = list(data.keys())
-        fyi_all_params = ['nodes', 'ports', 'background', 'antennas', 'inputs']
         data = self._proc_colors(data, minval=minval, maxval=maxval)
         self.antennas = {}
         self.inputs = {}
@@ -63,7 +64,7 @@ class Grid:
                     data[param][inp] = self.colormap(self.norm(data[param][inp]))
         return data
 
-    def addplot(self, title=None, symbol=',', data_offset=[0.0, 0.0], force_text=False, show_text=True):
+    def addplot(self, title=None, marker=',', markersize=None, data_offset=[0.0, 0.0], force_text=False, show_text=True):
         newfig = title is not None
         if newfig:
             fig = plt.figure(title, figsize=(9.75,6.5))
@@ -72,13 +73,17 @@ class Grid:
                 this_color = self._pdat['colors'][j][i]
                 this_ant = self._pdat['ants'][j][i]
                 if this_ant[0] != '-':
-                    plt.plot(port+data_offset[0], node+data_offset[1], symbol, color=this_color)
+                    x = port + data_offset[0]
+                    y = node + data_offset[1]
+                    plt.plot(x, y, marker, markersize=markersize, color=this_color)
                 if show_text:
                     weight = 'extra bold'
                     if force_text:
                         weight = 'normal'
                         this_color = force_text
-                    plt.text(port - self._xoffset(this_ant), node - 0.25, this_ant, color=this_color, weight=weight)
+                    x = port - self._xtxt_offset(this_ant)
+                    y = node - 0.25
+                    plt.text(x, y, this_ant, color=this_color, weight=weight)
         if newfig:
             if self.add_colorbar:
                 fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm))
@@ -161,7 +166,7 @@ class Grid:
                 print(f"\tInputs {', '.join(inputs)}")
                 for this_input in inputs:
                     this_node, this_port = int(this_input.split('-')[0]), int(this_input.split('-')[1])
-                    plt.text(this_port - self._xoffset(antenna)+0.03, this_node - 0.25, antenna[2:], color=color, weight='extra bold')
+                    plt.text(this_port - self._xtxt_offset(antenna)+0.03, this_node - 0.25, antenna[2:], color=color, weight='extra bold')
 
     def _special_color(self, val):
         if val == 'H':  # Didn't find a hookup
@@ -170,7 +175,7 @@ class Grid:
             return 'm'
         return 'r'  # Other problem
 
-    def _xoffset(self, antenna):
+    def _xtxt_offset(self, antenna):
         """Offset so that the numbers line-up."""
         if antenna[0] == '!':
             return 0.15
