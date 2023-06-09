@@ -1,0 +1,44 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230607_infoupd_1513" >> scripts.log 
+add_part_info.py -p HH204 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p HH205 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p HH206 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p HH207 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p HH223 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p HH224 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p HH225 -r A -c "FEM Power?: No" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p HH226 -r A -c "FEM Power?: No" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p HH240 -r A -c "FEM Power?: No" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p HH241 -r A -c "FEM Power?: No" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p HH242 -r A -c "FEM Power?: No" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p HH243 -r A -c "FEM Power?: No" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p HH232 -r A -c "Ticket: Feed conduit feel out and is hanging on the cables." -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N00 -r A -c "arista0 port 1" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N00 -r A -c "wr1 port2" -l "infoupd" --date 2023/06/07 --time 15:13:02
+add_part_info.py -p N01 -r A -c "wr1 port3" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N02 -r A -c "wr1 port4" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N03 -r A -c "wr0 port3" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N04 -r A -c "wr0 port7" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N05 -r A -c "wr1 port7" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N06 -r A -c "wr1 port8" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N07 -r A -c "wr1 port9" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N08 -r A -c "wr1 port10" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N09 -r A -c "wr1 port11" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N10 -r A -c "wr1 port12" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N11 -r A -c "wr1 port13" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N12 -r A -c "wr1 port14" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N13 -r A -c "wr1 port15" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N14 -r A -c "wr1 port16" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N15 -r A -c "arista0 port 5" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N15 -r A -c "wr0 port8" -l "infoupd" --date 2023/06/07 --time 15:13:02
+add_part_info.py -p N16 -r A -c "wr0 port2" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N17 -r A -c "wr0 port6" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N18 -r A -c "wr1 port5" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N19 -r A -c "Fiber 9/10 are broken - using 3/4" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N19 -r A -c "wr0 port4" -l "infoupd" --date 2023/06/07 --time 15:13:02
+add_part_info.py -p N20 -r A -c "wr0 port5" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N21 -r A -c "wr1 port6" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N22 -r A -c "arista1 port 1" -l "infoupd" --date 2023/06/07 --time 15:13:00
+add_part_info.py -p N22 -r A -c "wr0 port9" -l "infoupd" --date 2023/06/07 --time 15:13:02
+add_part_info.py -p N23 -r A -c "wr1 port17" -l "infoupd" --date 2023/06/07 --time 15:13:00

@@ -1,0 +1,116 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230607_infoupd_1942" >> scripts.log 
+add_part_info.py -p HH92 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH92 -r A -c "Optical Power (at FEM): -51.5" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH92 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH93 -r A -c "Optical Power (at FEM): 6.25" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH93 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH93 -r A -c "Optical Power (at FEM): 5.3" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH93 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH94 -r A -c "Optical Power (at FEM): -54.5" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH94 -r A -c "Optical Power (through fiber): -25.5" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH94 -r A -c "Optical fiber at node should be re-spliced (power varies substantially with small changes in cable geometry)" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH94 -r A -c "Optical Power (into node): -1.6" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH94 -r A -c "Optical Power (into PAM): -3.9" -l "infoupd" --date 2023/06/07 --time 19:42:08
+add_part_info.py -p HH94 -r A -c "Optical Power (at FEM): 5.15" -l "infoupd" --date 2023/06/07 --time 19:42:10
+add_part_info.py -p HH94 -r A -c "Optical Power (through fiber): -27.9" -l "infoupd" --date 2023/06/07 --time 19:42:12
+add_part_info.py -p HH109 -r A -c "Feedthrough changed (06/07/2023)" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH109 -r A -c "Optical Power (into node): -0.85" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH109 -r A -c "Optical Power (into PAM): -1.05" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH109 -r A -c "Optical Power (at FEM): 5.05" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH109 -r A -c "Optical Power (through fiber): -26.5" -l "infoupd" --date 2023/06/07 --time 19:42:08
+add_part_info.py -p HH109 -r A -c "Cables bent by rain cap" -l "infoupd" --date 2023/06/07 --time 19:42:10
+add_part_info.py -p HH109 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:12
+add_part_info.py -p HH109 -r A -c "Optical Power (at FEM): 5.25" -l "infoupd" --date 2023/06/07 --time 19:42:14
+add_part_info.py -p HH109 -r A -c "Optical Power (through fiber): -28.9" -l "infoupd" --date 2023/06/07 --time 19:42:16
+add_part_info.py -p HH111 -r A -c "RF Power: -6.9" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH127 -r A -c "Optical Power (at FEM): 6.8" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH127 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH127 -r A -c "Optical Power (through fiber): -25.9" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HB329 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HB329 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HB329 -r A -c "Optical Power (at FEM): -14.8" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HB329 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HB329 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:08
+add_part_info.py -p HB329 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:10
+add_part_info.py -p HB329 -r A -c "Optical Power (at FEM): 6.2" -l "infoupd" --date 2023/06/07 --time 19:42:12
+add_part_info.py -p HB329 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:14
+add_part_info.py -p HH136 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH136 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH136 -r A -c "Optical Power (at FEM): 6" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH136 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH155 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH155 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH155 -r A -c "Optical Power (at FEM): 5.95" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH155 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH160 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH160 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH160 -r A -c "Optical Power (at FEM): 5.5" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH160 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH180 -r A -c "RF Power: -29.76" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH166 -r A -c "Changed feedthrough; fiber at node input only works in certain orientations (06/07/2023)" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH166 -r A -c "Optical Power (into node): -3.7" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH166 -r A -c "Optical Power (into PAM): -4.4" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH166 -r A -c "Optical Power (at FEM): 5.4" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH166 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:08
+add_part_info.py -p HH184 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH184 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH184 -r A -c "Optical Power (at FEM): 6" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH184 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH143 -r A -c "Optical Power (into node): 6" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH143 -r A -c "Optical Power (at FEM): 6.05" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH143 -r A -c "Optical Power (through fiber): -45.45" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH143 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH143 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:08
+add_part_info.py -p HH143 -r A -c "Optical Power (at FEM): 4.3" -l "infoupd" --date 2023/06/07 --time 19:42:10
+add_part_info.py -p HH143 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:12
+add_part_info.py -p HH200 -r A -c "Replaced feedthrough" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH200 -r A -c "Optical Power (into node): 5.75" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH200 -r A -c "Optical Power (into PAM): 5.55" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH200 -r A -c "Optical Power (at FEM): 5.7" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH200 -r A -c "Optical Power (through fiber): -25.6" -l "infoupd" --date 2023/06/07 --time 19:42:08
+add_part_info.py -p HH204 -r A -c "RF Power: -21.6" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH204 -r A -c "RF Power: -24.15" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH207 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH207 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH207 -r A -c "Optical Power (at FEM): 4.8" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH207 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH225 -r A -c "RF Power: -30.65" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH66 -r A -c "Fiber was reseated at PAM input (06/07/2023)" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH66 -r A -c "Optical Power (into PAM): 5.5" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH37 -r A -c "Optical Power (into PAM): 4.65" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH37 -r A -c "RF Power: -30.8" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH55 -r A -c "RF Power: -6.43" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH55 -r A -c "RF Power: -26.14" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH58 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH58 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH58 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH58 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH58 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:08
+add_part_info.py -p HH58 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:10
+add_part_info.py -p HH60 -r A -c "Potential problem with SNAP" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH60 -r A -c "RF Power: -4.7" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH81 -r A -c "RF Power: -25.4" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH81 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH81 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH81 -r A -c "Optical Power (at FEM): 5.8" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH81 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:08
+add_part_info.py -p HH82 -r A -c "RF Power: -20.5" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH82 -r A -c "RF Power: -26.4" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH83 -r A -c "RF Power: -18.9" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH83 -r A -c "RF Power: -25.5" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH117 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH117 -r A -c "Optical Power (into node): -23.9" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH117 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH117 -r A -c "Optical Power (at FEM): 4.95" -l "infoupd" --date 2023/06/07 --time 19:42:06
+add_part_info.py -p HH117 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:08
+add_part_info.py -p HH117 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/07 --time 19:42:10
+add_part_info.py -p HH118 -r A -c "RF Power: -10.1" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH118 -r A -c "RF Power: -8" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH137 -r A -c "RF Power: -22.1" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH137 -r A -c "RF Power: -27.1" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH124 -r A -c "Optical Power (into node): null" -l "infoupd" --date 2023/06/07 --time 19:42:00
+add_part_info.py -p HH124 -r A -c "Optical Power (into PAM): null" -l "infoupd" --date 2023/06/07 --time 19:42:02
+add_part_info.py -p HH124 -r A -c "Optical Power (at FEM): null" -l "infoupd" --date 2023/06/07 --time 19:42:04
+add_part_info.py -p HH124 -r A -c "Optical Power (through fiber): null" -l "infoupd" --date 2023/06/07 --time 19:42:06

@@ -1,0 +1,39 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230607_infoupd_1542" >> scripts.log 
+add_part_info.py -p HH66 -r A -c "Optical Power (into PAM): E: 5.2" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH66 -r A -c "Optical Power (into node): N: 6.5" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH66 -r A -c "Optical Power (into PAM): N: 6.1" -l "infoupd" --date 2023/06/07 --time 15:42:04
+add_part_info.py -p HH68 -r A -c "Optical Power (into node): E: 3.9" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH68 -r A -c "Optical Power (into PAM): E: 3.8" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH68 -r A -c "Optical Power (into PAM): N: 2.3" -l "infoupd" --date 2023/06/07 --time 15:42:04
+add_part_info.py -p HH37 -r A -c "Optical Power (into PAM): E: 6.35" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH37 -r A -c "Optical Power (into node): N: 6.05" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH37 -r A -c "Optical Power (into PAM): N: 4.95" -l "infoupd" --date 2023/06/07 --time 15:42:04
+add_part_info.py -p HH55 -r A -c "Optical Power (into PAM): 4.1" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH59 -r A -c "Optical Power (into node): E: 5.9" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH59 -r A -c "Optical Power (into PAM): E: 5.3" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH58 -r A -c "Optical Power (into node): E: 0" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH58 -r A -c "Optical Power (into PAM): E: 0" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH58 -r A -c "Optical Power (into node): N: 0" -l "infoupd" --date 2023/06/07 --time 15:42:04
+add_part_info.py -p HH58 -r A -c "Optical Power (into PAM): N: 0" -l "infoupd" --date 2023/06/07 --time 15:42:06
+add_part_info.py -p HH60 -r A -c "Optical Power (into PAM): N: 4.25" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH62 -r A -c "Optical Power (into node): N: 6.20" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH62 -r A -c "Optical Power (into PAM): N: 6.10" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH81 -r A -c "Optical Power (into PAM): E: 3.7" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH81 -r A -c "Optical Power (into node): N: 0" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH81 -r A -c "Optical Power (into PAM): N: 0" -l "infoupd" --date 2023/06/07 --time 15:42:04
+add_part_info.py -p HH82 -r A -c "Optical Power (into PAM): E: 5.55" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH82 -r A -c "Optical Power (into PAM): N: 4.45" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH83 -r A -c "Optical Power (into PAM): E: 5.5" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH83 -r A -c "Optical Power (into PAM): N: 5.3" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH118 -r A -c "Optical Power (into PAM): E: 3.30" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH118 -r A -c "Optical Power (into PAM): N: 5.45" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH137 -r A -c "Optical Power (into PAM): E: 5.00" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH137 -r A -c "Optical Power (into PAM): N: 4.60" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH84 -r A -c "Optical Power (into node): N: 6.15" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH84 -r A -c "Optical Power (into PAM): N: 5.8" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH124 -r A -c "Optical Power (into node): none" -l "infoupd" --date 2023/06/07 --time 15:42:00
+add_part_info.py -p HH124 -r A -c "Optical Power (into PAM): none" -l "infoupd" --date 2023/06/07 --time 15:42:02
+add_part_info.py -p HH124 -r A -c "Optical Power (into node): N: 4.2" -l "infoupd" --date 2023/06/07 --time 15:42:04
+add_part_info.py -p HH124 -r A -c "Optical Power (into PAM): N: 2.9" -l "infoupd" --date 2023/06/07 --time 15:42:06
