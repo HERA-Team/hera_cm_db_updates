@@ -136,8 +136,6 @@ class Update():
             for i, line in enumerate(script_lines):
                 key = f"{logtime}{i:04d}"
                 self.r.hset('cm_period_log', key, line)
-            if alert is not None:
-                self.alert_email(subj=f"Update: {self.script}", msg=msg, to_addr=alert)
             if archive_to is not None:
                 os.system('cp {} {}'.format(self.script, archive_to))
                 if self.verbose:
@@ -148,6 +146,8 @@ class Update():
                     print("Moving {}  -->  {}".format(self.script, cron_script))
             else:
                 os.remove(self.script)
+            if alert is not None:
+                self.alert_email(subj=f"Update: {self.script}", msg=msg, to_addr=alert)
 
         if cron_script is not None and os.path.exists(cron_script):
             os.chmod(cron_script, 0o755)
