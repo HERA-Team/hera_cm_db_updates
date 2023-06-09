@@ -231,6 +231,8 @@ class UpdateConnect(upd_base.Update):
             for part_side in self.part_side_dir:
                 for this_part, pside_conn in use_sys[part_side].items():
                     for port, conn in pside_conn.items():
+                        if conn.downstream_part.startswith('ARISTA') or conn.downstream_part.startswith('WR-SWITCH'):
+                            continue
                         self.sysinfo[sysinfo_type]['conn'][str(conn).upper()] = conn
                         key = cm_utils.make_part_key(conn.upstream_part, conn.up_part_rev)
                         self.sysinfo[sysinfo_type]['parts'].add(key)
