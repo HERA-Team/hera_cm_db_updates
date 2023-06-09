@@ -3719,6 +3719,7 @@ HH166,A,Optical Power (into PAM): E: -4.4,infoupd,1370284940
 HH200,A,Optical Power (through fiber): E: -25.6,infoupd,1370284944
 HH58,A,Optical Power (into PAM): E: null,infoupd,1370284940
 HH83,A,RF Power: N: -25.5,infoupd,1370284940
+N15,A,A rodent had chewed through the fiber 14.4m from the container.  it has been pulled and respliced.,infoupd,1370349738
 HH131,A,Yellow FEM covers installed.,infoupd,1354718538
 HH131,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1354718540
 HH133,A,Yellow FEM covers installed,infoupd,1354718538
@@ -4119,6 +4120,7 @@ HH184,A,Optical Power (into PAM): E: null,infoupd,1370284940
 HH207,A,Optical Power (into PAM): E: null,infoupd,1370284940
 HH58,A,Optical Power (into PAM): E: null,infoupd,1370284946
 HH117,A,Optical Power (into PAM): E: null,infoupd,1370284940
+N21,A,"The fiber tray had been misconfigured.  The tray in the container untangles it, so is different.",infoupd,1370349738
 HH204,A,Optical Power at 1310nm (into PAM): N: 5.9,infoupd,1370150120
 N10,A,arista0 port 4,infoupd,1370150118
 HH232,A,Ticket: Feed conduit feel out and is hanging on the cables.,infoupd,1370185998
