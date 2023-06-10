@@ -1,0 +1,38 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230610_infoupd_1423" >> scripts.log 
+update_apriori.py -p HH16 -s RF_maintenance --date 2023/06/10 --time 14:29
+add_part_info.py -p HH16 -r A -c "apriori_antenna status change: RF_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/10 --time 14:29
+update_apriori.py -p HH18 -s RF_maintenance --date 2023/06/10 --time 14:29
+add_part_info.py -p HH18 -r A -c "apriori_antenna status change: RF_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/10 --time 14:29
+update_apriori.py -p HH55 -s RF_maintenance --date 2023/06/10 --time 14:29
+add_part_info.py -p HH55 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/10 --time 14:29
+update_apriori.py -p HH59 -s RF_maintenance --date 2023/06/10 --time 14:29
+add_part_info.py -p HH59 -r A -c "apriori_antenna status change: RF_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/10 --time 14:29
+update_apriori.py -p HH60 -s RF_maintenance --date 2023/06/10 --time 14:29
+add_part_info.py -p HH60 -r A -c "apriori_antenna status change: RF_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/10 --time 14:29
+add_part_info.py -p HH18 -r A -c "Issue with the PAM to investigate." -l "apa-infoupd" --date 2023/06/10 --time 14:23:00
+add_part_info.py -p HH18 -r A -c "RF Power: -6.5 dBm" -l "apa-infoupd" --date 2023/06/10 --time 14:23:02
+add_part_info.py -p HH18 -r A -c "RF Power: -18.8 dBm" -l "apa-infoupd" --date 2023/06/10 --time 14:23:04
+add_part_info.py -p HH27 -r A -c "Optical Power (into node): E: -2.0" -l "infoupd" --date 2023/06/10 --time 14:23:00
+add_part_info.py -p HH27 -r A -c "Optical Power (into PAM): E: -6.1" -l "infoupd" --date 2023/06/10 --time 14:23:02
+add_part_info.py -p HH29 -r A -c "Optical Power (at FEM): E: 6.0" -l "infoupd" --date 2023/06/10 --time 14:23:00
+add_part_info.py -p HH16 -r A -c "Optical Power (into node): E: -27.0 dBm" -l "apa-infoupd" --date 2023/06/10 --time 14:23:00
+add_part_info.py -p HH16 -r A -c "Optical Power (into PAM): E: -28.9 dBm" -l "apa-infoupd" --date 2023/06/10 --time 14:23:02
+add_part_info.py -p HH16 -r A -c "Optical Power (into node): N: -12.3 dBm" -l "apa-infoupd" --date 2023/06/10 --time 14:23:04
+add_part_info.py -p HH16 -r A -c "Optical Power (into PAM): N: -15.2 dBm" -l "apa-infoupd" --date 2023/06/10 --time 14:23:06
+add_part_info.py -p HH37 -r A -c "Changed PAM to 22, this PAM has copper tape (6/9/23)" -l "infoupd" --date 2023/06/10 --time 14:23:00
+add_part_info.py -p HH37 -r A -c "RF Power: E: -20.7" -l "infoupd" --date 2023/06/10 --time 14:23:02
+add_part_info.py -p HH37 -r A -c "RF Power: N: -26.6" -l "infoupd" --date 2023/06/10 --time 14:23:04
+add_part_info.py -p HH59 -r A -c "Not seeing the sky since 6/5/23. Need to lower feed." -l "apa-infoupd" --date 2023/06/10 --time 14:23:00
+add_part_info.py -p HH59 -r A -c "Optical Power (into node): N: Null" -l "apa-infoupd" --date 2023/06/10 --time 14:23:02
+add_part_info.py -p HH59 -r A -c "Optical Power (into PAM): N: null" -l "apa-infoupd" --date 2023/06/10 --time 14:23:04
+add_part_info.py -p HH58 -r A -c "Site crew fixed FEM power supply (6/8/23)" -l "infoupd" --date 2023/06/10 --time 14:23:00
+add_part_info.py -p HH58 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/10 --time 14:23:02
+add_part_info.py -p HH58 -r A -c "Optical Power (at FEM): E: 7.4" -l "infoupd" --date 2023/06/10 --time 14:23:04
+add_part_info.py -p HH58 -r A -c "Long fibers need to be fixed/replaced." -l "infoupd" --date 2023/06/10 --time 14:23:06
+add_part_info.py -p HH58 -r A -c "FEM Power?: Yes" -l "infoupd" --date 2023/06/10 --time 14:23:08
+add_part_info.py -p HH58 -r A -c "Optical Power (at FEM): N: 6.1" -l "infoupd" --date 2023/06/10 --time 14:23:10
+add_part_info.py -p HH60 -r A -c "Optical Power (into node): E: 5.7" -l "apa-infoupd" --date 2023/06/10 --time 14:23:00
+add_part_info.py -p HH60 -r A -c "Optical Power (into PAM): E: 3.75" -l "apa-infoupd" --date 2023/06/10 --time 14:23:02
+add_part_info.py -p HH60 -r A -c "RF Power: E: -6.3" -l "apa-infoupd" --date 2023/06/10 --time 14:23:04
