@@ -1,7 +1,7 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Optical Power (into node),Optical Power (into PAM),Optical Power (at FEM),Optical Power (through fiber),RF Power
 72,E,61,124,1,135,C22,E2,0,digital_ok,,Yes,,,,,
 72,N,61,124,1,135,C22,N0,0,digital_ok,,Yes,,,,,
-42,E,53,123,2,102,C22,E6,0,digital_ok,,Yes,,,,,
+42,E,53,123,2,102,C22,E6,0,digital_ok,Crossed-pols: Polarisation cables were swapped inside node. Swapped them back (6/10/23).,Yes,,,,,
 42,N,53,123,2,102,C22,N4,0,digital_ok,,Yes,,,,,
 54,E,54,120,3,112,C22,E10,0,dish_maintenance,"door warped, feed hanging ~1m above the hub, some of the bottom PVC pipes are broken",Yes,,,,,
 54,N,54,120,3,112,C22,N8,0,dish_maintenance,,Yes,,,,,
@@ -9,11 +9,11 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Op
 56,N,72,105,4,104,C3,N0,1,digital_ok,,Yes,,,,,
 69,E,65,121,5,105,C3,E6,1,digital_ok,,Yes,,,,,
 69,N,65,121,5,105,C3,N4,1,digital_ok,,Yes,,,,,
-40,E,58,101,6,106,C3,E10,1,digital_ok,,Yes,,,,,
+40,E,58,101,6,106,C3,E10,1,digital_ok,Crossed-pols: Polarisation cables were swapped at node entry. Swapped them back (6/10/23).,Yes,,,,,
 40,N,58,101,6,106,C3,N8,1,digital_ok,,Yes,,,,,
-55,E,23,119,7,107,C48,E2,2,RF_maintenance,,Yes,,,,,E: -6.43
+55,E,23,119,7,107,C48,E2,2,RF_maintenance,Crossed-pols: Polarisation cables were swapped inside node. Swapped them back (6/10/23).,Yes,,,,,E: -6.43
 55,N,23,119,7,107,C48,N0,2,RF_maintenance,,Yes,,N: 4.1,,,N: -26.14
-70,E,55,112,8,108,C48,E6,2,digital_ok,,Yes,,,,,
+70,E,55,112,8,108,C48,E6,2,digital_ok,Crossed-pols: Polarisation cables were swapped inside node. Swapped them back (6/10/23).,Yes,,,,,
 70,N,55,112,8,108,C48,N4,2,digital_ok,,Yes,,,,,
 71,E,63,114,9,109,C48,E10,2,digital_ok,,Yes,,,,,
 71,N,63,114,9,109,C48,N8,2,digital_ok,,Yes,,,,,
