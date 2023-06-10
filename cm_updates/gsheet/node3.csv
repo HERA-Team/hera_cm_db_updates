@@ -7,8 +7,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Op
 67,N,88,126,3,127,C1,N8,0,digital_ok,,Yes,,,,,
 68,E,77,128,4,124,C2,E2,1,RF_ok,E: Replaced feedthrough 6/2/23,Yes,E: 3.9,E: 3.8,,,
 68,N,77,128,4,124,C2,N0,1,RF_ok,,Yes,,N: 2.3,,,
-37,E,86,136,5,129,C2,E6,1,digital_ok,,Yes,,E: 6.35,,,
-37,N,86,136,5,129,C2,N4,1,digital_ok,N: Replaced feedthrough 6/2/23,Yes,N: 6.05,N: 4.65,,,N: -30.8
+37,E,86,136,5,22,C2,E6,1,digital_ok,"Changed PAM to 22, this PAM has copper tape (6/9/23)",Yes,,E: 6.35,,,E: -20.7
+37,N,86,136,5,22,C2,N4,1,digital_ok,N: Replaced feedthrough 6/2/23,Yes,N: 6.05,N: 4.65,,,N: -26.6
 38,E,87,117,6,130,C2,E10,1,digital_ok,Door is open,Yes,,,,,
 38,N,87,117,6,130,C2,N8,1,digital_ok,,Yes,,,,,
 53,E,92,125,7,131,C37,E2,2,digital_ok,,Yes,,,,,

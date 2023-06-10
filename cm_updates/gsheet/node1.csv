@@ -1,12 +1,12 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Optical Power (into node),Optical Power (into PAM),Optical Power (at FEM),Optical Power (through fiber),RF Power
-18,E,148,217,1,365,C63,e2,0,RF_ok,"The optical cable is taped before splitting into the node for E and N. E: loose optical cable into node, tighthened.",Yes,,,,,
-18,N,148,217,1,365,C63,n0,0,RF_ok,"N: loose optical cable into node, tightened",Yes,,N: 5.15 dBm,,,
-27,E,155,211,2,210,C63,e6,0,RF_ok,Changed feedthrough (06/07/2023),Yes,E: -1.5,E: -2,E: 5.8,E: -34.5,
+18,E,148,217,1,365,C63,e2,0,RF_maintenance,Issue with the PAM to investigate.,Yes,,,,,-6.5 dBm
+18,N,148,217,1,365,C63,n0,0,RF_maintenance,,Yes,,N: 5.15 dBm,,,-18.8 dBm
+27,E,155,211,2,210,C63,e6,0,RF_ok,Changed feedthrough (06/07/2023),Yes,E: -2.0,E: -6.1,E: 5.8,E: -34.5,
 27,N,155,211,2,210,C63,n4,0,RF_ok,FEM -> node cables had swapped pols; this was fixed (06/07/2023),Yes,N: 3.2,N: 2.9,N: 4,N: -27.6,
 28,E,154,218,3,211,C63,e10,0,RF_ok,"The optical cable is taped before splitting into the node for E and N. E: loose optical cable into node, tighthened. There is tape before the E connection. Changing optical cable feedthrough fixed the optical power.",Yes,E: 5.95 dBm,E: 5.85 dBm,,,
 28,N,154,218,3,211,C63,n8,0,RF_ok,"N: loose optical cable into node, tightened",Yes,,,,,
-29,E,152,219,4,246,C71,e2,1,RF_maintenance,"The optical cable is taped before splitting into the node for E and N. E: loose optical cable into node, tighthened.",Yes,E: Null,E: Null,E: 6,E: null,
-29,N,152,219,4,246,C71,n0,1,RF_maintenance,"N: loose optical cable into node, tightened",Yes,N: Null,N: Null,E: 5.9,E: null,
+29,E,152,219,4,246,C71,e2,1,RF_maintenance,"The optical cable is taped before splitting into the node for E and N. E: loose optical cable into node, tighthened.",Yes,E: Null,E: Null,E: 6.0,E: null,
+29,N,152,219,4,246,C71,n0,1,RF_maintenance,"N: loose optical cable into node, tightened",Yes,N: Null,N: Null,N: 5.9,N: null,
 30,E,153,216,5,213,C71,e6,1,digital_ok,"E: loose optical cable into node, tightened",Yes,,,,,
 30,N,153,216,5,213,C71,n4,1,digital_ok,"N: loose optical cable into node, tightened",Yes,,,,,
 6,E,,,6,364,C71,e10,1,RF_maintenance,"No power and no antenna plugged in. E: loose optical cable into node, tighthened",No,,,,,
@@ -19,8 +19,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Op
 5,N,150,215,9,217,C67,n8,2,digital_ok,,Yes,,,,,
 15,E,165,210,10,218,C64,e2,3,digital_ok,,Yes,,,,,
 15,N,165,210,10,218,C64,n0,3,digital_ok,,Yes,,,,,
-16,E,149,204,11,219,C64,e6,3,RF_ok,E: fixed by resitting the optical feedthrough connectors. The optical connector going into the node has red tape.,Yes,E: 6.25 dBm,E: 4.75 dBm,,,
-16,N,149,204,11,219,C64,n4,3,RF_ok,,Yes,,,,,
+16,E,149,204,11,219,C64,e6,3,RF_maintenance,E: fixed by resitting the optical feedthrough connectors. The optical connector going into the node has red tape.,Yes,E: -27.0 dBm,E: -28.9 dBm,,,
+16,N,149,204,11,219,C64,n4,3,RF_maintenance,,Yes,N: -12.3 dBm,N: -15.2 dBm,,,
 17,E,151,209,12,220,C64,e10,3,digital_ok,,Yes,,,,,
 17,N,151,209,12,220,C64,n8,3,digital_ok,,Yes,,,,,
 #END,,,,,,,,,,,,,,,,

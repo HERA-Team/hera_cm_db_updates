@@ -11,8 +11,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Op
 69,N,65,121,5,105,C3,N4,1,digital_ok,,Yes,,,,,
 40,E,58,101,6,106,C3,E10,1,digital_ok,,Yes,,,,,
 40,N,58,101,6,106,C3,N8,1,digital_ok,,Yes,,,,,
-55,E,23,119,7,107,C48,E2,2,digital_ok,,Yes,,,,,E: -6.43
-55,N,23,119,7,107,C48,N0,2,digital_ok,,Yes,,N: 4.1,,,N: -26.14
+55,E,23,119,7,107,C48,E2,2,RF_maintenance,,Yes,,,,,E: -6.43
+55,N,23,119,7,107,C48,N0,2,RF_maintenance,,Yes,,N: 4.1,,,N: -26.14
 70,E,55,112,8,108,C48,E6,2,digital_ok,,Yes,,,,,
 70,N,55,112,8,108,C48,N4,2,digital_ok,,Yes,,,,,
 71,E,63,114,9,109,C48,E10,2,digital_ok,,Yes,,,,,
