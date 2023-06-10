@@ -4731,6 +4731,7 @@ HH18,A,RF Power: E: -6.5 dBm,infoupd,1370446938
 HH111,A,Crossed-pols: Polarisation cables were swapped at node entry. Swapped them back (6/10/23).,infoupd,1370446940
 HH180,A,RF Power: E: -17.2,apa-infoupd,1370446940
 HH200,A,"Cannot talk to antenna, snap not found (6/9/23). Potential PAM issue (6/8/23).",infoupd,1370446942
+N17,A,Removed NCM4 out of node since WR was spitting out garbage,infoupd,1370454138
 HH38,A,Door is open,infoupd,1369941318
 HH51,A,apriori_antenna status change: dish_maintenance > digital_ok,apa-infoupd,1370150478
 HH60,A,Optical Power at 1310nm (into PAM): N: 4.25,infoupd,1370150118
