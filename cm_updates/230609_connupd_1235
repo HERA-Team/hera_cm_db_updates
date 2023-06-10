@@ -1,0 +1,8 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230609_connupd_1235" >> scripts.log 
+# stop connections for active_not_gsheet
+# add parts for gsheet_not_active
+add_part.py -p SNPC000031 -r A -t snap -m SNPC000031 --date 2023/06/09 --time 12:05
+# add connections for gsheet_not_active
+add_connection.py -u SNPC000031 --uprev A --upport rack -d N17 --dnrev A --dnport loc3 --date 2023/06/09 --time 12:35
