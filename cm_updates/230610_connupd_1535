@@ -6,19 +6,7 @@ stop_connection.py -u FDV24 --uprev A --upport terminals -d FEM032 --dnrev A --d
 stop_connection.py -u FEM032 --uprev A --upport pwr -d FPS02 --dnrev A --dnport pwr8 --date 2023/06/10 --time 15:29
 stop_connection.py -u FEM032 --uprev A --upport n -d NBP09 --dnrev A --dnport n8 --date 2023/06/10 --time 15:29
 stop_connection.py -u FEM032 --uprev A --upport e -d NBP09 --dnrev A --dnport e8 --date 2023/06/10 --time 15:29
-stop_connection.py -u NBP03 --uprev A --upport e5 -d PAM129 --dnrev A --dnport e --date 2023/06/10 --time 15:29
-stop_connection.py -u NBP03 --uprev A --upport n5 -d PAM129 --dnrev A --dnport n --date 2023/06/10 --time 15:29
-stop_connection.py -u PAM129 --uprev A --upport e -d SNPC000002 --dnrev A --dnport e6 --date 2023/06/10 --time 15:29
-stop_connection.py -u PAM129 --uprev A --upport n -d SNPC000002 --dnrev A --dnport n4 --date 2023/06/10 --time 15:29
-stop_connection.py -u PAM129 --uprev A --upport slot -d PCH07 --dnrev A --dnport slot5 --date 2023/06/10 --time 15:29
-# add parts for gsheet_not_active
-add_part.py -p PAM022 -r A -t post-amp -m PAM022 --date 2023/06/10 --time 15:05
 # add connections for gsheet_not_active
-add_connection.py -u NBP03 --uprev A --upport E5 -d PAM022 --dnrev A --dnport e --date 2023/06/10 --time 15:35
-add_connection.py -u NBP03 --uprev A --upport N5 -d PAM022 --dnrev A --dnport n --date 2023/06/10 --time 15:35
-add_connection.py -u PAM022 --uprev A --upport slot -d PCH07 --dnrev A --dnport slot5 --date 2023/06/10 --time 15:35
-add_connection.py -u PAM022 --uprev A --upport e -d SNPC000002 --dnrev A --dnport e6 --date 2023/06/10 --time 15:35
-add_connection.py -u PAM022 --uprev A --upport n -d SNPC000002 --dnrev A --dnport n4 --date 2023/06/10 --time 15:35
 add_connection.py -u FDV24 --uprev A --upport terminals -d FEM359 --dnrev A --dnport input --date 2023/06/10 --time 15:35
 add_connection.py -u FEM359 --uprev A --upport pwr -d FPS02 --dnrev A --dnport pwr8 --date 2023/06/10 --time 15:35
 add_connection.py -u FEM359 --uprev A --upport e -d NBP09 --dnrev A --dnport E8 --date 2023/06/10 --time 15:35
