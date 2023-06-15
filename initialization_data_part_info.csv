@@ -4218,6 +4218,7 @@ HH109,A,Fiber cables need fixing for both E and N (6/7/23).,infoupd,1370446938
 HH155,A,Long fiber cable needs fixing (E).,infoupd,1370446938
 HH143,A,Optical Power (at FEM): N: 4.30,infoupd,1370446946
 HH55,A,Crossed-pols: Polarisation cables were swapped inside node. Swapped them back (6/10/23).,infoupd,1370446938
+HH117,A,Changed FEM 015 with 249,infoupd,1370860938
 HH16,A,apriori_antenna status change: digital_ok > RF_ok,apa-infoupd,1369938438
 HH18,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
 HH27,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438

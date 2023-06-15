@@ -17,8 +17,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Op
 99,N,29,52,8,60,C30,n4,2,digital_ok,,,,,,,
 116,E,31,14,9,61,C30,e10,2,digital_ok,,,,,,,
 116,N,31,14,9,61,C30,n8,2,digital_ok,,,,,,,
-117,E,32,15,10,299,C73,e2,3,RF_maintenance,E long fiber needs fixing (6/6/23).,Yes,E: -23.9,E:- 0.6,E: 4.95,E: null,
-117,N,32,15,10,299,C73,n0,3,RF_maintenance,Identified FEM power issue (6/6/23) and site crew fixed FEM power supply (6/6/23),,,N: 4.8,,N: -25.4,
+117,E,32,249,10,299,C73,e2,3,RF_maintenance,E long fiber needs fixing (6/6/23).,Yes,E: -23.9,E:- 0.6,E: 4.95,E: null,
+117,N,32,249,10,299,C73,n0,3,RF_maintenance,Changed FEM 015 with 249,,,N: 4.8,,N: -25.4,
 118,E,33,53,11,302,C73,e6,3,digital_ok,Need to check RF power (6/2/23),,,E: 3.30,,,E: -10.1
 118,N,33,53,11,302,C73,n4,3,digital_ok,,,,N: 5.45,,,N: -8
 137,E,49,49,12,49,C73,e10,3,RF_maintenance,Changing attenuation setting had no impact on PAM RF output: potential I2C issue (6/9/23),Yes,,E: 5.00,,,E: -22.1
