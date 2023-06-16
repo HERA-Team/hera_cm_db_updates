@@ -1,0 +1,56 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230610_infoupd_1542" >> scripts.log 
+update_apriori.py -p HH136 -s RF_maintenance --date 2023/06/10 --time 15:48
+add_part_info.py -p HH136 -r A -c "apriori_antenna status change: digital_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/10 --time 15:48
+update_apriori.py -p HH180 -s RF_maintenance --date 2023/06/10 --time 15:48
+add_part_info.py -p HH180 -r A -c "apriori_antenna status change: RF_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/10 --time 15:48
+update_apriori.py -p HH224 -s RF_maintenance --date 2023/06/10 --time 15:48
+add_part_info.py -p HH224 -r A -c "apriori_antenna status change: RF_ok > RF_maintenance" -l "apa-infoupd" --date 2023/06/10 --time 15:48
+add_part_info.py -p HH18 -r A -c "RF Power: E: -6.5 dBm" -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH18 -r A -c "Crossed-pols: Polarisation cables were swapped at node entry Swapped them back (6/10/23)." -l "infoupd" --date 2023/06/10 --time 15:42:02
+add_part_info.py -p HH18 -r A -c "RF Power: N: -18.8 dBm" -l "infoupd" --date 2023/06/10 --time 15:42:04
+add_part_info.py -p HH16 -r A -c "Crossed-pols: Polarisation cables were swapped at node entry. Swapped them back (6/10/23)." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH94 -r A -c "Site crew changed FEM on 6/7/23 (need to check FEM number)." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH94 -r A -c "Optical Power (into node): E: 5.2" -l "infoupd" --date 2023/06/10 --time 15:42:02
+add_part_info.py -p HH94 -r A -c "Optical Power (into PAM): E: 5.10" -l "infoupd" --date 2023/06/10 --time 15:42:04
+add_part_info.py -p HH94 -r A -c "N: Changed feedthrough and patch cable inside node (6/10/23). N: Fiber cable needs fixing." -l "infoupd" --date 2023/06/10 --time 15:42:06
+add_part_info.py -p HH94 -r A -c "Optical Power (into node): N: -0.4" -l "infoupd" --date 2023/06/10 --time 15:42:08
+add_part_info.py -p HH109 -r A -c "Fiber cables need fixing for both E and N (6/7/23)." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH109 -r A -c "Optical Power (into node): E: 2.8" -l "infoupd" --date 2023/06/10 --time 15:42:02
+add_part_info.py -p HH111 -r A -c "Potential issue with SNAP." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH111 -r A -c "Crossed-pols: Polarisation cables were swapped at node entry. Swapped them back (6/10/23)." -l "infoupd" --date 2023/06/10 --time 15:42:02
+add_part_info.py -p HH112 -r A -c "Crossed-pols: Polarisation cables were swapped inside node. Swapped them back (6/10/23)." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH127 -r A -c "E: fiber cable needs fixing." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HB329 -r A -c "FEM broken for E (6/7/23), site crew replaced FEM on 6/8/23, now OK (FEM number to update)." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HB329 -r A -c "Optical Power (at FEM): E: 6.45" -l "infoupd" --date 2023/06/10 --time 15:42:02
+add_part_info.py -p HB329 -r A -c "Long fiber cables for E & N broken (6/7/23)" -l "infoupd" --date 2023/06/10 --time 15:42:04
+add_part_info.py -p HB329 -r A -c "Optical Power (at FEM): N: 6.1" -l "infoupd" --date 2023/06/10 --time 15:42:06
+add_part_info.py -p HH136 -r A -c "FEM is OK but optical fiber cable needs fixing (E)." -l "apa-infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH136 -r A -c "Optical Power (at FEM): E: 6.00" -l "apa-infoupd" --date 2023/06/10 --time 15:42:02
+add_part_info.py -p HH155 -r A -c "Long fiber cable needs fixing (E)." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH160 -r A -c "FEM is OK but long fiber cables are broken for E (6/8/23)" -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH180 -r A -c "Potential issue with PAM (6/8/23). Can query PAM but not change it." -l "apa-infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH180 -r A -c "RF Power: E: -17.2" -l "apa-infoupd" --date 2023/06/10 --time 15:42:02
+add_part_info.py -p HH180 -r A -c "RF Power: N: -29.6" -l "apa-infoupd" --date 2023/06/10 --time 15:42:04
+add_part_info.py -p HH166 -r A -c "E: Long fiber cable is broken (6/7/23). Changed feedthrough (6/7/23)." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH184 -r A -c "E: Long fiber cable needs fixing." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH184 -r A -c "Optical Power (at FEM): E: 6.00" -l "infoupd" --date 2023/06/10 --time 15:42:02
+add_part_info.py -p HH143 -r A -c "Optical Power (into node): E: 5.25" -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH143 -r A -c "Optical Power (into PAM): E: 5.25" -l "infoupd" --date 2023/06/10 --time 15:42:02
+add_part_info.py -p HH143 -r A -c "Optical Power (through fiber): E: -25.4" -l "infoupd" --date 2023/06/10 --time 15:42:04
+add_part_info.py -p HH143 -r A -c "N: Need to fix long fiber cable (6/5/23)." -l "infoupd" --date 2023/06/10 --time 15:42:06
+add_part_info.py -p HH143 -r A -c "Optical Power (at FEM): N: 4.30" -l "infoupd" --date 2023/06/10 --time 15:42:08
+add_part_info.py -p HH200 -r A -c "Replaced feedthrough (6/8/23)" -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH200 -r A -c "RF Power: E: -31.19" -l "infoupd" --date 2023/06/10 --time 15:42:02
+add_part_info.py -p HH200 -r A -c "Cannot talk to antenna, snap not found (6/9/23). Potential PAM issue (6/8/23)." -l "infoupd" --date 2023/06/10 --time 15:42:04
+add_part_info.py -p HH207 -r A -c "Need to fix long optical fiber to E." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH224 -r A -c "cannot query the current PAM attenuation setting (6/9/23)" -l "apa-infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH224 -r A -c "RF Power: E: -3.78" -l "apa-infoupd" --date 2023/06/10 --time 15:42:02
+add_part_info.py -p HH224 -r A -c "RF Power: N: -9.00" -l "apa-infoupd" --date 2023/06/10 --time 15:42:04
+add_part_info.py -p HH225 -r A -c "Potential issue with PAM (6/7/23)" -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH66 -r A -c "N: Loose connection fixed 6/2/23. Crossed-pols: Polarisation cables were swapped at node entry. Swapped them back (6/10/23)." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH42 -r A -c "Crossed-pols: Polarisation cables were swapped inside node. Swapped them back (6/10/23)." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH40 -r A -c "Crossed-pols: Polarisation cables were swapped at node entry. Swapped them back (6/10/23)." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH55 -r A -c "Crossed-pols: Polarisation cables were swapped inside node. Swapped them back (6/10/23)." -l "infoupd" --date 2023/06/10 --time 15:42:00
+add_part_info.py -p HH70 -r A -c "Crossed-pols: Polarisation cables were swapped inside node. Swapped them back (6/10/23)." -l "infoupd" --date 2023/06/10 --time 15:42:00

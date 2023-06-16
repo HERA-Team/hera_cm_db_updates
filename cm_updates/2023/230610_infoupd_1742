@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230610_infoupd_1742" >> scripts.log 
+add_part_info.py -p N17 -r A -c "Removed NCM4 out of node since WR was spitting out garbage" -l "infoupd" --date 2023/06/10 --time 17:42:00
