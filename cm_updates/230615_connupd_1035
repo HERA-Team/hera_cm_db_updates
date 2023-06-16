@@ -5,10 +5,6 @@ echo "/home/obs/src/hera_cm_db_updates/230615_connupd_1035" >> scripts.log
 stop_connection.py -u FEM015 --uprev A --upport n -d NBP07 --dnrev A --dnport n10 --date 2023/06/15 --time 10:29
 stop_connection.py -u FEM015 --uprev A --upport pwr -d FPS07 --dnrev A --dnport pwr10 --date 2023/06/15 --time 10:29
 stop_connection.py -u FEM015 --uprev A --upport e -d NBP07 --dnrev A --dnport e10 --date 2023/06/15 --time 10:29
-stop_connection.py -u FDV24 --uprev A --upport terminals -d FEM032 --dnrev A --dnport input --date 2023/06/15 --time 10:29
-stop_connection.py -u FEM032 --uprev A --upport pwr -d FPS02 --dnrev A --dnport pwr8 --date 2023/06/15 --time 10:29
-stop_connection.py -u FEM032 --uprev A --upport n -d NBP09 --dnrev A --dnport n8 --date 2023/06/15 --time 10:29
-stop_connection.py -u FEM032 --uprev A --upport e -d NBP09 --dnrev A --dnport e8 --date 2023/06/15 --time 10:29
 stop_connection.py -u FDV32 --uprev A --upport terminals -d FEM015 --dnrev A --dnport input --date 2023/06/15 --time 10:29
 # add parts for gsheet_not_active
 add_part.py -p FEM249 -r A -t front-end -m FEM249 --date 2023/06/15 --time 10:05
@@ -17,7 +13,3 @@ add_connection.py -u FDV32 --uprev A --upport terminals -d FEM249 --dnrev A --dn
 add_connection.py -u FEM249 --uprev A --upport pwr -d FPS07 --dnrev A --dnport pwr10 --date 2023/06/15 --time 10:35
 add_connection.py -u FEM249 --uprev A --upport e -d NBP07 --dnrev A --dnport E10 --date 2023/06/15 --time 10:35
 add_connection.py -u FEM249 --uprev A --upport n -d NBP07 --dnrev A --dnport N10 --date 2023/06/15 --time 10:35
-add_connection.py -u FDV24 --uprev A --upport terminals -d FEM359 --dnrev A --dnport input --date 2023/06/15 --time 10:35
-add_connection.py -u FEM359 --uprev A --upport pwr -d FPS02 --dnrev A --dnport pwr8 --date 2023/06/15 --time 10:35
-add_connection.py -u FEM359 --uprev A --upport e -d NBP09 --dnrev A --dnport E8 --date 2023/06/15 --time 10:35
-add_connection.py -u FEM359 --uprev A --upport n -d NBP09 --dnrev A --dnport N8 --date 2023/06/15 --time 10:35
