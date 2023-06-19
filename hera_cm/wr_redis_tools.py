@@ -39,7 +39,11 @@ class WRView():
         for node in self.nodes:
             if not self.wrstat[node]:
                 continue
-            if 'TRACK_PHASE' in self.wrstat[node]['wr0_ss'] and self.wrstat[node]['age'] < agelimit:
+            try:
+                good_one = 'TRACK_PHASE' in self.wrstat[node]['wr0_ss'] and self.wrstat[node]['age'] < agelimit
+            except KeyError:
+                good_one = False
+            if good_one:
                 self.good_nodes.append(node)
             else:
                 self.bad_nodes.append(node)
