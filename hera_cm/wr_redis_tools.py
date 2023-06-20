@@ -68,11 +68,14 @@ class WRView():
         table_data = []
         headers = ['Node'] + fields
         for node in self.nodes:
-            if not self.wrstat[node]:
+            if node not in self.wrstat or not self.wrstat[node]:
                 continue
             table_row = [node]
             for fld in fields:
-                table_row.append(self.wrstat[node][fld])
+                if fld in self.wrstat[node]:
+                    table_row.append(self.wrstat[node][fld])
+                else:
+                    table_row.append('')
             table_data.append(table_row)
         if show:
             print(tabulate.tabulate(table_data, headers=headers))
