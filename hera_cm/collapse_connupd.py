@@ -6,7 +6,6 @@ Writes the file 'cc_yymmdd_connupd_hhmm'
 """
 import os
 import datetime
-import argparse
 from hera_cm import util, script_info
 
 
@@ -35,7 +34,6 @@ class CollapseConn:
                         arglist = script_info.get_arglist(arg)
                         key = []
                         for targ in arglist:
-                            val = getattr(arg, targ)
                             if targ not in ['date', 'time'] and isinstance(getattr(arg, targ), str):
                                 key.append(getattr(arg, targ))
                         key = ','.join(sorted(key))
