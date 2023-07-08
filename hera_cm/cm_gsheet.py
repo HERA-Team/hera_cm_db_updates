@@ -4,6 +4,7 @@ import requests
 from . import util
 from argparse import Namespace
 import os.path as ospath
+from tabulate import tabulate
 
 
 apriori_enum_header = 'Current apriori enum'
@@ -289,11 +290,10 @@ class ArchiveGsheet:
         for node in range(24):
             self.node[node] = pandas.read_csv(ospath.join(self.base_path, f"node{node}.csv"))
 
-    def find(self, **kwargs):
-        from tabulate import tabulate
-        per_ant_hdr = ['Node', 'Ant', 'Pol', 'Feed', 'FEM', 'NBP/PAMloc', 'PAM', 'SNAP', 'Port', 'SNAPloc', 'APriori']
+    def find(self, blame=False, **kwargs):
+        per_ant_hdr = ['Node', 'Ant', 'Pol', 'Feed', 'FEM', 'NBP/PAMloc', 'PAM', 'SNAP', 'Port', 'SNAPloc', 'APriori', 'row']
         per_ant_rows = []
-        per_node_hdr = ['Node', 'Part Name', 'Part Number']
+        per_node_hdr = ['Node', 'Part Name', 'Part Number', 'row']
         per_node_rows = []
         for pname, tmp_pval in kwargs.items():
             if pname.lower() not in self.allowed_to_find:
@@ -315,13 +315,14 @@ class ArchiveGsheet:
                             cdat = data
                         if cdat == pval:
                             this_row = [this_node]
-                            for cval in per_ant_hdr[1:]:
+                            for cval in per_ant_hdr[1:-1]:
                                 _xx = these_conn[cval][i]
                                 try:
                                     use_xx = int(_xx)
                                 except ValueError:
                                     use_xx = _xx
                                 this_row.append(use_xx)
+                            this_row.append(i)
                             per_ant_rows.append(this_row)
                 else:  # this is a per_node part
                     for i, data in enumerate(these_conn[col]):
@@ -331,9 +332,28 @@ class ArchiveGsheet:
                             except ValueError:
                                 check_val = -99
                             if pval == check_val:
-                                per_node_rows.append([this_node, rowloc, these_conn['Pol'][i]])
+                                per_node_rows.append([this_node, rowloc, these_conn['Pol'][i], i])
         if len(per_ant_rows):
             print(tabulate(per_ant_rows, headers=per_ant_hdr))
+            show_blame = per_ant_rows
         if len(per_node_rows):
             print()
             print(tabulate(per_node_rows, headers=per_node_hdr))
+            show_blame = per_node_rows
+
+        if blame:
+            import subprocess
+            trck = {}
+            for row in show_blame:
+                trck.setdefault(row[0], [])
+                trck[row[0]].append(row[-1])
+            print()
+            for node, lines in trck.items():
+                fn = f"node{node}.csv"
+                print(f"---{fn}")
+                rows = ','.join([str(x+2) for x in lines])
+                process = subprocess.run(['git', 'blame', '-L', rows, fn])
+                if process.stdout is not None:
+                    print(process.stdout)
+                else:
+                    print()
