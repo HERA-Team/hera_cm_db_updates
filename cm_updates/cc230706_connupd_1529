@@ -16,6 +16,10 @@ add_part.py -p PAM387 -r A -t post-amp -m PAM387 --date 2023/06/27 --time 11:05
 add_part.py -p PAM386 -r A -t post-amp -m PAM386 --date 2023/06/27 --time 11:05
 add_part.py -p PAM389 -r A -t post-amp -m PAM389 --date 2023/06/27 --time 11:05
 # stop_connection
+stop_connection.py -u FEM359 --uprev A --upport n -d NBP22 --dnrev A --dnport N6 --date 2023/06/27 --time 04:29
+stop_connection.py -u FEM359 --uprev A --upport pwr -d FPS25 --dnrev A --dnport pwr6 --date 2023/06/27 --time 04:29
+stop_connection.py -u FEM359 --uprev A --upport e -d NBP22 --dnrev A --dnport E6 --date 2023/06/27 --time 04:29
+stop_connection.py -u FDV346 --uprev A --upport terminals -d FEM359 --dnrev A --dnport input --date 2023/06/27 --time 04:29
 stop_connection.py -u FDV24 --uprev A --upport terminals -d FEM032 --dnrev A --dnport input --date 2023/06/10 --time 15:29
 stop_connection.py -u FEM032 --uprev A --upport pwr -d FPS02 --dnrev A --dnport pwr8 --date 2023/06/10 --time 15:29
 stop_connection.py -u FEM032 --uprev A --upport n -d NBP09 --dnrev A --dnport n8 --date 2023/06/10 --time 15:29
