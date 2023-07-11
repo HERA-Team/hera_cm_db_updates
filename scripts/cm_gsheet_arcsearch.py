@@ -16,5 +16,7 @@ kwargs = {}
 for _x, _y in zip(args.parts.split(','), args.values.split(',')):
     kwargs[_x] = _y
 
+if args.show_blame:
+    args.show_blame = 'gitpython'  # hard-code to use gitpython method, as opposed to commandline
 gsheetarc = cm_gsheet.ArchiveGsheet()
 gsheetarc.find(blame=args.show_blame, **kwargs)
