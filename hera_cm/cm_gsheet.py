@@ -292,7 +292,7 @@ class ArchiveGsheet:
         for node in range(24):
             self.node[node] = pandas.read_csv(ospath.join(self.base_path, f"node{node}.csv"))
 
-    def find(self, blame=False, **kwargs):
+    def find(self, **kwargs):
         per_ant_hdr = ['Node', 'Ant', 'Pol', 'Feed', 'FEM', 'NBP/PAMloc', 'PAM', 'SNAP', 'Port', 'SNAPloc', 'APriori', 'row']
         per_ant_rows = []
         per_node_hdr = ['Node', 'Part Name', 'Part Number', 'row']
@@ -346,53 +346,54 @@ class ArchiveGsheet:
         elif len(per_node_rows):
             print(tabulate(per_node_rows, headers=per_node_hdr))
             show_blame = per_node_rows
-        if blame:
-            # Get column_indices for gitpython
-            column_indices = {}
-            for pname, pval in kwargs.items():
-                column_indices[self.node[0].columns.get_loc(self.allowed_to_find[pname])] = pval
-            # Get blame rows, ignore rows for gitpython
-            track_blame = {}
-            for row in show_blame:
-                track_blame.setdefault(row[0], [])
-                track_blame[row[0]].append(row[-1])
-            getattr(self, f"blame_{blame}")(track_blame, column_indices)
+        # These are used for blame.
+        self.column_indices = {}
+        for pname, pval in kwargs.items():
+            self.column_indices[self.node[0].columns.get_loc(self.allowed_to_find[pname])] = pval
+        self.track_blame = {}
+        for row in show_blame:
+            self.track_blame.setdefault(row[0], [])
+            self.track_blame[row[0]].append(row[-1])
 
-    def blame_gitpython(self, track_blame, column_indices, search_past=100):
+    def blame(self):
+        print("Running blame_gitpython with default search_past")
+        self.blame_gitpython()
+
+    def blame_gitpython(self, search_past=100):
         from git import Repo
         # Get all data into blame_data dict and capture antennas with matching component info
         repo = Repo(self.cm_path)
-        blame_data = {}
-        for node in track_blame:
+        self.blame_data = {}
+        for node in self.track_blame:
             fn = ospath.join(self.base_path, f"node{node}.csv")
             with open(fn, 'r') as fpr:
                 reader = csv.reader(fpr)
-                blame_data[fn] = {'header': next(reader), 'ants': set(), 'commits': set()}
+                self.blame_data[fn] = {'header': next(reader), 'ants': set(), 'commits': set()}
             for val in repo.iter_commits('main', max_count=search_past):
                 for commit, lines in repo.blame(val, fn):
                     hexsha = commit.hexsha[:8]
-                    blame_data[fn]['commits'].add(hexsha)
-                    blame_data[fn].setdefault(hexsha, {'commit': copy(commit), 'data': set()})
+                    self.blame_data[fn]['commits'].add(hexsha)
+                    self.blame_data[fn].setdefault(hexsha, {'commit': copy(commit), 'data': set()})
                     for data in lines:
-                        blame_data[fn][hexsha]['data'].add(copy(data))
+                        self.blame_data[fn][hexsha]['data'].add(copy(data))
                         for row in csv.reader([data]):
-                            for col2chk, val2match in column_indices.items():
+                            for col2chk, val2match in self.column_indices.items():
                                 if row[col2chk] == val2match:
-                                    blame_data[fn]['ants'].add(row[0])
+                                    self.blame_data[fn]['ants'].add(row[0])
         # Go through blame_data for matching antennas and key on datetime|row
         datetime_blame = {}
-        for this_fn in blame_data:
+        for this_fn in self. blame_data:
             datetime_blame[this_fn] = {}
-            for this_commit in blame_data[this_fn]['commits']:
-                for this_ant in blame_data[this_fn]['ants']:
-                    for data in blame_data[this_fn][this_commit]['data']:
+            for this_commit in self.blame_data[this_fn]['commits']:
+                for this_ant in self.blame_data[this_fn]['ants']:
+                    for data in self.blame_data[this_fn][this_commit]['data']:
                         for row in csv.reader([data]):
                             try:
                                 trial_ant = row[0]
                             except IndexError:
                                 continue
                             if trial_ant == this_ant:
-                                dt = blame_data[this_fn][this_commit]['commit'].committed_datetime.strftime('%Y-%m-%d %H:%M')
+                                dt = self.blame_data[this_fn][this_commit]['commit'].committed_datetime.strftime('%Y-%m-%d %H:%M')
                                 key = f"{dt}|{data}"
                                 datetime_blame[this_fn][key] = this_commit
         # Print out sorted results
@@ -405,11 +406,11 @@ class ArchiveGsheet:
                     print()
                     previous_dt = copy(dt)
                 print(f"  {dt}  {data}")
-        return blame_data
 
-    def blame_commandline(self, track_blame, column_indices):
+
+    def blame_commandline(self):
         import subprocess
-        for node, lines in track_blame.items():
+        for node, lines in self.track_blame.items():
             fn = ospath.join(self.base_path, f"node{node}.csv")
             print(f"\n---{fn}")
             rows = ','.join([str(x+2) for x in lines])
