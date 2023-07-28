@@ -4669,6 +4669,7 @@ HH109,A,Optical Power (into node): E: 2.8,infoupd,1370446940
 HH160,A,FEM is OK but long fiber cables are broken for E (6/8/23),infoupd,1370446938
 HH200,A,Replaced feedthrough (6/8/23),infoupd,1370446938
 HH70,A,Crossed-pols: Polarisation cables were swapped inside node. Swapped them back (6/10/23).,infoupd,1370446938
+HH16,A,Made temporary FEM for duplications,infoupd,1374609738
 HH207,A,Optical Power at 1310nm (into PAM): N: null,infoupd,1370150120
 N12,A,arista0 port 11,infoupd,1370150118
 N00,A,wr1 port2,infoupd,1370186000
