@@ -53,6 +53,9 @@ class CollapseConn:
             print(f"echo {fn} >> scripts.log", file=fp)
             for cmd in cmds:
                 print(f"# {cmd}", file=fp)
+                if cmd not in self.cmds:
+                    print(f"{cmd} not in list.")
+                    continue
                 for entry in self.cmds[cmd]:
                     early = min(self.cmds[cmd][entry])
                     print(f"{self.cmds[cmd][entry][early]}", file=fp)
