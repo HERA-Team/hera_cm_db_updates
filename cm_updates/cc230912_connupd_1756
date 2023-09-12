@@ -1,6 +1,6 @@
 #! /bin/bash
 source ~/.bashrc
-echo cc230828_connupd_1728 >> scripts.log
+echo cc230912_connupd_1756 >> scripts.log
 # add_part
 add_part.py -p FEM381 -r A -t front-end -m FEM381 --date 2023/07/31 --time 08:05
 add_part.py -p FEM382 -r A -t front-end -m FEM382 --date 2023/07/31 --time 08:05
@@ -29,6 +29,29 @@ stop_connection.py -u FEM333 --uprev A --upport e -d NBP23 --dnrev A --dnport E3
 stop_connection.py -u FEM333 --uprev A --upport n -d NBP23 --dnrev A --dnport N3 --date 2023/08/17 --time 08:29
 stop_connection.py -u FDV250 --uprev A --upport terminals -d FEM332 --dnrev A --dnport input --date 2023/08/17 --time 08:29
 stop_connection.py -u FDV230 --uprev A --upport terminals -d FEM339 --dnrev A --dnport input --date 2023/08/17 --time 08:29
+stop_connection.py -u NCM21 --uprev A --upport rack -d N04 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM02 --uprev A --upport rack -d N09 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM18 --uprev A --upport rack -d N19 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM03 --uprev A --upport rack -d N05 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM20 --uprev A --upport rack -d N11 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM06 --uprev A --upport rack -d N10 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM07 --uprev A --upport rack -d N12 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM08 --uprev A --upport rack -d N13 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM10 --uprev A --upport rack -d N14 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM09 --uprev A --upport rack -d N15 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM13 --uprev A --upport rack -d N01 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM19 --uprev A --upport rack -d N23 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM14 --uprev A --upport rack -d N21 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM22 --uprev A --upport rack -d N02 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCMP2 --uprev A --upport rack -d N07 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM15 --uprev A --upport rack -d N20 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM11 --uprev A --upport rack -d N16 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM05 --uprev A --upport rack -d N03 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM16 --uprev A --upport rack -d N06 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM17 --uprev A --upport rack -d N22 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM01 --uprev A --upport rack -d N08 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCMP1 --uprev A --upport rack -d N18 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
+stop_connection.py -u NCM04 --uprev A --upport rack -d N17 --dnrev A --dnport middle --date 2023/09/04 --time 07:29
 # add_connection
 add_connection.py -u FDV240 --uprev A --upport terminals -d FEM382 --dnrev A --dnport input --date 2023/07/31 --time 08:35
 add_connection.py -u FEM382 --uprev A --upport pwr -d FPS23 --dnrev A --dnport pwr1 --date 2023/07/31 --time 08:35
