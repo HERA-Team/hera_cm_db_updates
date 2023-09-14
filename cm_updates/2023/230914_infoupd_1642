@@ -1,0 +1,24 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230914_infoupd_1642" >> scripts.log 
+add_part_info.py -p HH110 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:00
+add_part_info.py -p HH110 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:02
+add_part_info.py -p HH71 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:00
+add_part_info.py -p HH120 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:00
+add_part_info.py -p HH120 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:02
+add_part_info.py -p HH104 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:00
+add_part_info.py -p HH104 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:02
+add_part_info.py -p HH103 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:00
+add_part_info.py -p HH103 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:02
+add_part_info.py -p HH87 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:00
+add_part_info.py -p HH87 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:02
+add_part_info.py -p HH101 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:00
+add_part_info.py -p HH101 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:02
+add_part_info.py -p HH122 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:00
+add_part_info.py -p HH122 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:02
+add_part_info.py -p HH84 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:00
+add_part_info.py -p HH84 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:02
+add_part_info.py -p HH123 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:00
+add_part_info.py -p HH123 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:02
+add_part_info.py -p HH121 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:00
+add_part_info.py -p HH121 -r A -c "Removed LP filter" -l "infoupd" --date 2023/09/14 --time 16:42:02
