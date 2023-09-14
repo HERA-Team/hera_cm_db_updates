@@ -1,0 +1,20 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230914_connupd_1825" >> scripts.log 
+# stop connections for active_not_gsheet
+# add parts for gsheet_not_active
+add_part.py -p PCH25 -r A -t pam-chassis -m PCH25 --date 2023/09/14 --time 17:55
+# add connections for gsheet_not_active
+add_connection.py -u PCH25 --uprev A --upport rack -d N17 --dnrev A --dnport bottom --date 2023/09/14 --time 18:25
+add_connection.py -u PAM380 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot1 --date 2023/09/14 --time 18:25
+add_connection.py -u PAM381 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot2 --date 2023/09/14 --time 18:25
+add_connection.py -u PAM382 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot3 --date 2023/09/14 --time 18:25
+add_connection.py -u PAM383 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot4 --date 2023/09/14 --time 18:25
+add_connection.py -u PAM384 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot5 --date 2023/09/14 --time 18:25
+add_connection.py -u PAM385 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot6 --date 2023/09/14 --time 18:25
+add_connection.py -u PAM386 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot7 --date 2023/09/14 --time 18:25
+add_connection.py -u PAM387 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot8 --date 2023/09/14 --time 18:25
+add_connection.py -u PAM388 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot9 --date 2023/09/14 --time 18:25
+add_connection.py -u PAM389 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot10 --date 2023/09/14 --time 18:25
+add_connection.py -u PAM390 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot11 --date 2023/09/14 --time 18:25
+add_connection.py -u PAM391 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot12 --date 2023/09/14 --time 18:25
