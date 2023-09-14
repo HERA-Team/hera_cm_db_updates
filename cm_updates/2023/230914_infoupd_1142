@@ -1,0 +1,13 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230914_infoupd_1142" >> scripts.log 
+add_part_info.py -p N01 -r A -c "Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw." -l "infoupd" --date 2023/09/14 --time 11:42:00
+add_part_info.py -p N12 -r A -c "Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw." -l "infoupd" --date 2023/09/14 --time 11:42:00
+add_part_info.py -p N13 -r A -c "Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw." -l "infoupd" --date 2023/09/14 --time 11:42:00
+add_part_info.py -p N15 -r A -c "Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw." -l "infoupd" --date 2023/09/14 --time 11:42:00
+add_part_info.py -p N16 -r A -c "Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw." -l "infoupd" --date 2023/09/14 --time 11:42:00
+add_part_info.py -p N17 -r A -c "Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw." -l "infoupd" --date 2023/09/14 --time 11:42:00
+add_part_info.py -p N18 -r A -c "Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw." -l "infoupd" --date 2023/09/14 --time 11:42:00
+add_part_info.py -p N19 -r A -c "Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw." -l "infoupd" --date 2023/09/14 --time 11:42:00
+add_part_info.py -p N22 -r A -c "Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw." -l "infoupd" --date 2023/09/14 --time 11:42:00
+add_part_info.py -p N23 -r A -c "Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw." -l "infoupd" --date 2023/09/14 --time 11:42:00
