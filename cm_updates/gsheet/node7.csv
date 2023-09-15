@@ -24,6 +24,6 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 137,E,49,49,12,49,C73,e10,3,RF_maintenance,
 137,N,49,49,12,49,C73,n8,3,RF_maintenance,
 #END,,,,,,,,,,
-NCM,P2,,,,,,,,,
+NCM,23,,,,,,,,,
 FPS,7,,,,,,,,,
 PCH,23,,,,,,,,,
