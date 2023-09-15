@@ -3789,6 +3789,7 @@ HH136,A,FEM is OK but optical fiber cable needs fixing (E).,apa-infoupd,13704469
 HH143,A,Optical Power (through fiber): E: -25.4,infoupd,1370446942
 HH42,A,Crossed-pols: Polarisation cables were swapped inside node. Swapped them back (6/10/23).,infoupd,1370446938
 HH87,A,Removed LP filter,infoupd,1378744940
+HH213,A,PAM 292 wasnt switching attenuation,infoupd,1378834938
 HH131,A,Yellow FEM covers installed.,infoupd,1354718538
 HH131,A,Feed heights (NE/SE/SW/NW): 4.401,infoupd,1354718540
 HH133,A,Yellow FEM covers installed,infoupd,1354718538
