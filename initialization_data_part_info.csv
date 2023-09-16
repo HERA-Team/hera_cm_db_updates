@@ -3387,6 +3387,20 @@ HH224,A,cannot query the current PAM attenuation setting (6/9/23),apa-infoupd,13
 N18,A,Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw.,infoupd,1378726938
 HH104,A,Removed LP filter,infoupd,1378744938
 HH84,A,Removed LP filter,infoupd,1378744940
+HH9,A,feed: 144 - fem is present - fiber is installed - rigging is Loose - dish rating: 4,,1378852998
+HH28,A,feed: 154 - fem is present - fiber is installed - rigging is Loose - dish rating: 2 (weeds),,1378852998
+HH40,A,"feed: 58 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds, door bad)",,1378852998
+HH50,A,feed: 85 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH60,A,feed: 64 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH70,A,feed: 55 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH80,A,feed: 243 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4,,1378852998
+HH90,A,feed: 17 - fem is present - fiber is installed - rigging is Loose - dish rating: 1 (weeds),,1378852998
+HH100,A,feed: 30 - fem is present - fiber is installed - rigging is Loose - dish rating: 0 (PVC issue),,1378852998
+HH110,A,feed: 68 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH121,A,feed: 43 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH131,A,feed: 246 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 3 (mesh issue),,1378852998
+HH141,A,feed: 117 - fem is present - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH151,A,feed: 252 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
 HH43,A,no sky in E per ACS -DCJ,apa-infoupd,1350499338
 HH74,A,no sky per antenna classification summary -DCJ,infoupd,1350499338
 HH75,A,No sky in N per ACS  -DCJ,apa-infoupd,1350499338
@@ -3628,6 +3642,22 @@ HH224,A,RF Power: E: -3.78,apa-infoupd,1370446940
 N19,A,Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw.,infoupd,1378726938
 HH104,A,Removed LP filter,infoupd,1378744940
 HH123,A,Removed LP filter,infoupd,1378744938
+HH10,A,feed: 158 - fem is present - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH29,A,feed: 152 - fem is present - fibre is not installed - rigging is Loose - dish rating: 4,,1378852998
+HH41,A,feed: 52 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH51,A,feed: 75 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH61,A,feed: 167 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH71,A,feed: 63 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (door bad),,1378852998
+HH81,A,feed: 26 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH91,A,feed: 18 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds),,1378852998
+HH101,A,feed: 39 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH111,A,feed: 83 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
+HH122,A,feed: 44 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH132,A,feed: 244 - fem is present - fiber is installed - rigging is Ok - dish rating: 2 (weeds),,1378852998
+HH142,A,feed: 121 - fem is present - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH152,A,feed: 213 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH161,A,feed: 113 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
+HH170,A,feed: 136 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
 NCM3,A,Update WR firmware,,1354276818
 HH142,A,Optical Power at 1310nm (into node): N: 5.8,infoupd,1370150118
 N02,A,arista0 port 14,infoupd,1370150118
@@ -3669,6 +3699,22 @@ HH224,A,RF Power: N: -9.00,apa-infoupd,1370446942
 N22,A,Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw.,infoupd,1378726938
 HH103,A,Removed LP filter,infoupd,1378744938
 HH123,A,Removed LP filter,infoupd,1378744940
+HH15,A,feed: 165 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
+HH30,A,feed: 153 - fem is present - fiber is installed - rigging is Loose - dish rating: 1 (weeds),,1378852998
+HH42,A,feed: 53 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH52,A,feed: 94 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH62,A,feed: 66 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds),,1378852998
+HH72,A,feed: 61 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH82,A,feed: 27 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH92,A,feed: 84 which is down - fem is present - fiber is installed - rigging is Not rigged - dish rating: 1 (door bad),,1378852998
+HH102,A,feed: 40 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH112,A,feed: 81 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH123,A,feed: 45 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH133,A,feed: 239 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH143,A,feed: 139 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (door bad),,1378852998
+HH153,A,feed: 216 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH162,A,feed: 122 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
+HH171,A,feed: 133 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
 NCM2,A,Update WR firmware,,1354363218
 HH142,A,Optical Power at 1310nm (into PAM): N: 5.75,infoupd,1370150120
 N03,A,arista0 port 2,infoupd,1370150118
@@ -3710,6 +3756,22 @@ HH225,A,Potential issue with PAM (6/7/23),infoupd,1370446938
 N23,A,Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw.,infoupd,1378726938
 HH103,A,Removed LP filter,infoupd,1378744940
 HH121,A,Removed LP filter,infoupd,1378744938
+HH16,A,feed: 149 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH31,A,feed: 157 - fem is present - fiber is installed - rigging is Ok - dish rating: 2 (weeds),,1378852998
+HH43,A,feed: 50 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5 (weeds),,1378852998
+HH53,A,feed: 92 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH63,A,feed: 176 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH73,A,feed: 60 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH83,A,feed: 46 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH93,A,feed: 79 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH103,A,feed: 41 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH113,A,feed: 245 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (door bad),,1378852998
+HH124,A,feed: 24 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (door bad),,1378852998
+HH134,A,feed: 247 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
+HH144,A,feed: 127 - fem is present - fiber is installed - rigging is Ok - dish rating: 2 (door bad),,1378852998
+HH154,A,feed: 221 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH163,A,feed: 110 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
+HH172,A,feed: 222 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4,,1378852998
 NCM10,A,Update WR firmware,,1354363218
 HH160,A,Optical Power at 1310nm (into node): E: null,infoupd,1370150118
 N04,A,arista0 port 3,infoupd,1370150118
@@ -3750,6 +3812,22 @@ HH143,A,Optical Power (into PAM): E: 5.25,infoupd,1370446940
 HH66,A,N: Loose connection fixed 6/2/23. Crossed-pols: Polarisation cables were swapped at node entry. Swapped them back (6/10/23).,infoupd,1370446938
 HH87,A,Removed LP filter,infoupd,1378744938
 HH121,A,Removed LP filter,infoupd,1378744940
+HH17,A,feed: 151 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH32,A,feed: 143 - fem is present - fiber is installed - rigging is Loose - dish rating: 2 (weeds),,1378852998
+HH44,A,feed: 59 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH54,A,feed: 54 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH64,A,feed: 175 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH74,A,feed: 73 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH84,A,feed: 35 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH94,A,feed: 78 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH104,A,feed: 10 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH114,A,feed: 241 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (door bad),,1378852998
+HH125,A,feed: 25 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH135,A,feed: 96 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds),,1378852998
+HH145,A,feed: 111 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH155,A,feed: 97 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH164,A,feed: 106 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH173,A,feed: 214 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
 NCM15,A,Update WR firmware,,1354449618
 HH160,A,Optical Power at 1310nm (into PAM): E: null,infoupd,1370150120
 N05,A,arista0 port 10,infoupd,1370150118
@@ -3800,6 +3878,23 @@ N20,A,(NCM15) WR-Len firmware updated,infoupd,1354718538
 N16,A,Replaced bad SNAP (snap3) to get all four link lights,infoupd,1354876938
 N19,A,"Replaced transceiver at switch in container - which fixed one link from SNAP.  Swapped to spare fiber, which fixed last link from SNAPs",infoupd,1354876938
 N20,A,"Swapped f/o T/R at node, which fixed all four SNAP link lights",infoupd,1354876938
+HH3,A,feed: 156 - fem is present - fiber is installed - rigging is Loose - dish rating: 4,,1378852998
+HH18,A,feed: 148 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds),,1378852998
+HH33,A,feed: 164 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH45,A,feed: 56 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH55,A,feed: 23 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH65,A,feed: 95 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH75,A,feed: 62 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH85,A,feed: 36 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH95,A,feed: 271 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH105,A,feed: 19 - fem is present - fiber is installed - rigging is Ok - dish rating: 4,,1378852998
+HH115,A,feed: 270 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH126,A,feed: 13 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
+HH136,A,feed: 82 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH146,A,feed: 135 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (door bad),,1378852998
+HH156,A,feed: 98 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH165,A,feed: 108 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH174,A,feed: 212 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
 HH51,A,apriori_antenna status change: digital_ok > dish_maintenance,apa-infoupd,1354963698
 HH68,A,apriori_antenna status change: digital_ok > dish_maintenance,apa-infoupd,1354963698
 HH68,A,has a broken fiber,apa-infoupd,1354963338
@@ -4201,6 +4296,23 @@ HH136,A,Optical Power (at FEM): E: 6.00,apa-infoupd,1370446940
 HH143,A,N: Need to fix long fiber cable (6/5/23).,infoupd,1370446944
 HH40,A,Crossed-pols: Polarisation cables were swapped at node entry. Swapped them back (6/10/23).,infoupd,1370446938
 HH101,A,Removed LP filter,infoupd,1378744938
+HH4,A,feed: 147 - fem is present - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH19,A,feed: 161 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH34,A,feed: 177 - fem is present - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH46,A,feed: 57 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH56,A,feed: 72 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH66,A,feed: 76 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (door bad),,1378852998
+HH76,A,feed: 48 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH86,A,feed: 37 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds),,1378852998
+HH96,A,feed: 268 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH106,A,feed: 20 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH116,A,feed: 31 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH127,A,feed: 69 - fem is present - fiber is installed - rigging is Loose - dish rating: 2 (weeds),,1378852998
+HH137,A,feed: 48 - fem is present - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH147,A,feed: 132 - fem is present - fiber is installed - rigging is Ok - dish rating: 1 (door bad),,1378852998
+HH157,A,feed: 99 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH166,A,feed: 105 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH175,A,feed: 258 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
 HH204,A,Optical Power at 1310nm (into PAM): N: 5.9,infoupd,1370150120
 N10,A,arista0 port 4,infoupd,1370150118
 HH232,A,Ticket: Feed conduit feel out and is hanging on the cables.,infoupd,1370185998
@@ -4241,6 +4353,23 @@ N01,A,Improved how the large D connector for the I2C connects from SNAP to PAM a
 N12,A,Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw.,infoupd,1378726938
 HH110,A,Removed LP filter,infoupd,1378744938
 HH101,A,Removed LP filter,infoupd,1378744940
+HH5,A,feed: 150 - fem is present - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH20,A,feed: 163 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH35,A,feed: 168 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH47,A,feed: 179 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH57,A,feed: 71 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH67,A,feed: 77 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (door bad),,1378852998
+HH77,A,feed: 174 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH87,A,feed: 38 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds),,1378852998
+HH97,A,feed: 242 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH107,A,feed: 21 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH117,A,feed: 32 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH128,A,feed: 70 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
+HH138,A,feed: 47 - fem is present - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH148,A,feed: 126 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH158,A,feed: 100 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH167,A,feed: 129 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH176,A,feed: 101 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
 HH16,A,apriori_antenna status change: digital_ok > RF_ok,apa-infoupd,1369938438
 HH18,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
 HH27,A,apriori_antenna status change: RF_maintenance > RF_ok,apa-infoupd,1369938438
@@ -4694,6 +4823,10 @@ HH16,A,Made temporary FEM for duplications,infoupd,1374609738
 N13,A,Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw.,infoupd,1378726938
 HH110,A,Removed LP filter,infoupd,1378744940
 HH122,A,Removed LP filter,infoupd,1378744938
+HH6,A,feed: 162 which is down - fem is not present - fibre is not installed - rigging is Not rigged - dish rating: 0,,1378852998
+HH21,A,feed: 142 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
+HH36,A,feed: 93 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH118,A,feed: 39 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
 HH207,A,Optical Power at 1310nm (into PAM): N: null,infoupd,1370150120
 N12,A,arista0 port 11,infoupd,1370150118
 N00,A,wr1 port2,infoupd,1370186000
@@ -4729,6 +4862,23 @@ HH200,A,RF Power: E: -31.19,infoupd,1370446940
 N15,A,Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw.,infoupd,1378726938
 HH71,A,Removed LP filter,infoupd,1378744938
 HH122,A,Removed LP filter,infoupd,1378744940
+HH7,A,feed: 146 - fem is present - fiber is installed - rigging is Loose - dish rating: 4,,1378852998
+HH22,A,feed: 180 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH37,A,feed: 86 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH48,A,feed: 178 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH58,A,feed: 67 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH68,A,feed: 88 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH78,A,feed: 173 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH88,A,feed: 15 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH98,A,feed: 28 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH108,A,feed: 22 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds),,1378852998
+HH119,A,feed: 34 - fem is present - fiber is installed - rigging is Loose - dish rating: 1 (door bad),,1378852998
+HH129,A,feed: 74 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH139,A,feed: 124 - fem is present - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH149,A,feed: 130 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH159,A,feed: 116 - fem is present - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH168,A,feed: 138 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH177,A,feed: 102 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
 HH225,A,Optical Power at 1310nm (into PAM): N: 5.2,infoupd,1370150118
 N13,A,arista0 port 7,infoupd,1370150118
 N01,A,wr1 port3,infoupd,1370185998
@@ -4765,6 +4915,22 @@ N17,A,Removed NCM4 out of node since WR was spitting out garbage,infoupd,1370454
 N16,A,Improved how the large D connector for the I2C connects from SNAP to PAM at the PAM.  Need to accommodate a gap on the holding screw.,infoupd,1378726938
 HH120,A,Removed LP filter,infoupd,1378744938
 HH84,A,Removed LP filter,infoupd,1378744938
+HH8,A,feed: 145 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH27,A,feed: 155 which is down - fem is present - fibre is not installed - rigging is Not rigged - dish rating: 1 (door bad),,1378852998
+HH38,A,feed: 87 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH49,A,feed: 181 - fem is present - fiber is installed - rigging is Loose - dish rating: 4,,1378852998
+HH59,A,feed: 66 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
+HH69,A,feed: 65 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH79,A,feed: 253 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH89,A,feed: 16 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH99,A,feed: 29 - fem is present - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH109,A,feed: 89 which is down - fem is present and in a protective bag - fiber is installed - rigging is Not rigged - dish rating: 1 (door bad),,1378852998
+HH120,A,feed: 42 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH130,A,feed: 80 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (door bad),,1378852998
+HH140,A,feed: 114 - fem is present - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
+HH150,A,feed: 134 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH160,A,feed: 118 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
+HH169,A,feed: 128 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
 HH38,A,Door is open,infoupd,1369941318
 HH51,A,apriori_antenna status change: dish_maintenance > digital_ok,apa-infoupd,1370150478
 HH60,A,Optical Power at 1310nm (into PAM): N: 4.25,infoupd,1370150118
