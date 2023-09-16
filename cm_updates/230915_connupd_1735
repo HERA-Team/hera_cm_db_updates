@@ -1,0 +1,20 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230915_connupd_1735" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u NBP16 --uprev A --upport e12 -d PAM292 --dnrev A --dnport e --date 2023/09/15 --time 17:29
+stop_connection.py -u NBP16 --uprev A --upport n12 -d PAM292 --dnrev A --dnport n --date 2023/09/15 --time 17:29
+stop_connection.py -u NBP23 --uprev A --upport e12 -d PAM343 --dnrev A --dnport e --date 2023/09/15 --time 17:29
+stop_connection.py -u NBP23 --uprev A --upport n12 -d PAM343 --dnrev A --dnport n --date 2023/09/15 --time 17:29
+stop_connection.py -u PAM292 --uprev A --upport e -d SNPC000117 --dnrev A --dnport e10 --date 2023/09/15 --time 17:29
+stop_connection.py -u PAM292 --uprev A --upport n -d SNPC000117 --dnrev A --dnport n8 --date 2023/09/15 --time 17:29
+stop_connection.py -u PAM292 --uprev A --upport slot -d PCH20 --dnrev A --dnport slot12 --date 2023/09/15 --time 17:29
+stop_connection.py -u PAM343 --uprev A --upport slot -d PCH24 --dnrev A --dnport slot12 --date 2023/09/15 --time 17:29
+stop_connection.py -u PAM343 --uprev A --upport e -d SNPC000129 --dnrev A --dnport e10 --date 2023/09/15 --time 17:29
+stop_connection.py -u PAM343 --uprev A --upport n -d SNPC000129 --dnrev A --dnport n8 --date 2023/09/15 --time 17:29
+# add connections for gsheet_not_active
+add_connection.py -u NBP16 --uprev A --upport E12 -d PAM343 --dnrev A --dnport e --date 2023/09/15 --time 17:35
+add_connection.py -u NBP16 --uprev A --upport N12 -d PAM343 --dnrev A --dnport n --date 2023/09/15 --time 17:35
+add_connection.py -u PAM343 --uprev A --upport slot -d PCH20 --dnrev A --dnport slot12 --date 2023/09/15 --time 17:35
+add_connection.py -u PAM343 --uprev A --upport e -d SNPC000117 --dnrev A --dnport e10 --date 2023/09/15 --time 17:35
+add_connection.py -u PAM343 --uprev A --upport n -d SNPC000117 --dnrev A --dnport n8 --date 2023/09/15 --time 17:35
