@@ -30,7 +30,8 @@ setup_args = {
                 'scripts/config_gen.py',
                 'scripts/cm_gsheet_arcsearch.py',
                 'scripts/collapse_connupd.py',
-                'scripts/antnode_grid.py'],
+                'scripts/antnode_grid.py',
+                'scripts/cm_notes.py'],
     'include_package_data': True,
     'install_requires': []
 }
