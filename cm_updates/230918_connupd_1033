@@ -1,0 +1,21 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/230918_connupd_1033" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u PAM347 --uprev A --upport e -d SNPC000024 --dnrev A --dnport e2 --date 2023/09/18 --time 10:27
+stop_connection.py -u PAM347 --uprev A --upport n -d SNPC000024 --dnrev A --dnport n0 --date 2023/09/18 --time 10:27
+stop_connection.py -u PAM285 --uprev A --upport e -d SNPC000024 --dnrev A --dnport e6 --date 2023/09/18 --time 10:27
+stop_connection.py -u PAM285 --uprev A --upport n -d SNPC000024 --dnrev A --dnport n4 --date 2023/09/18 --time 10:27
+stop_connection.py -u PAM286 --uprev A --upport e -d SNPC000024 --dnrev A --dnport e10 --date 2023/09/18 --time 10:27
+stop_connection.py -u PAM286 --uprev A --upport n -d SNPC000024 --dnrev A --dnport n8 --date 2023/09/18 --time 10:27
+stop_connection.py -u SNPC000024 --uprev A --upport rack -d N16 --dnrev A --dnport loc1 --date 2023/09/18 --time 10:27
+# add parts for gsheet_not_active
+add_part.py -p SNPA000024 -r A -t snap -m SNPA000024 --date 2023/09/18 --time 10:03
+# add connections for gsheet_not_active
+add_connection.py -u PAM347 --uprev A --upport e -d SNPA000024 --dnrev A --dnport e2 --date 2023/09/18 --time 10:33
+add_connection.py -u PAM347 --uprev A --upport n -d SNPA000024 --dnrev A --dnport n0 --date 2023/09/18 --time 10:33
+add_connection.py -u SNPA000024 --uprev A --upport rack -d N16 --dnrev A --dnport loc1 --date 2023/09/18 --time 10:33
+add_connection.py -u PAM285 --uprev A --upport e -d SNPA000024 --dnrev A --dnport e6 --date 2023/09/18 --time 10:33
+add_connection.py -u PAM285 --uprev A --upport n -d SNPA000024 --dnrev A --dnport n4 --date 2023/09/18 --time 10:33
+add_connection.py -u PAM286 --uprev A --upport e -d SNPA000024 --dnrev A --dnport e10 --date 2023/09/18 --time 10:33
+add_connection.py -u PAM286 --uprev A --upport n -d SNPA000024 --dnrev A --dnport n8 --date 2023/09/18 --time 10:33
