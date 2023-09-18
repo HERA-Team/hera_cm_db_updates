@@ -22,6 +22,7 @@ found = {}
 for hpn, notes in active.info.items():
     for note in notes:
         diff = abs(note.posting_gpstime - date.gps)
+        print(diff / (3600*24))
         if diff < args.days * 3600 * 24:
             note.date = cm_utils.get_astropytime(note.posting_gpstime, float_format='gps')
             found[note.date.datetime] = note
