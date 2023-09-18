@@ -1,0 +1,471 @@
+#! /bin/bash
+source ~/.bashrc
+echo "230915_infoupd_2243" >> scripts.log
+add_part_info.py -p HH3 -r A -c "feed: 156 - fem is present - fiber is installed - rigging is Loose - dish rating: 4" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH4 -r A -c "feed: 147 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH5 -r A -c "feed: 150 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH6 -r A -c "feed: 162 which is down - fem is not present - fibre is not installed - rigging is Not rigged - dish rating: 0" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH7 -r A -c "feed: 146 - fem is present - fiber is installed - rigging is Loose - dish rating: 4" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH8 -r A -c "feed: 145 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH9 -r A -c "feed: 144 - fem is present - fiber is installed - rigging is Loose - dish rating: 4" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH10 -r A -c "feed: 158 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH15 -r A -c "feed: 165 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH16 -r A -c "feed: 149 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH17 -r A -c "feed: 151 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH18 -r A -c "feed: 148 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH19 -r A -c "feed: 161 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH20 -r A -c "feed: 163 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH21 -r A -c "feed: 142 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH22 -r A -c "feed: 180 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH27 -r A -c "feed: 155 which is down - fem is present - fibre is not installed - rigging is Not rigged - dish rating: 1 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH28 -r A -c "feed: 154 - fem is present - fiber is installed - rigging is Loose - dish rating: 2 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH29 -r A -c "feed: 152 - fem is present - fibre is not installed - rigging is Loose - dish rating: 4" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH30 -r A -c "feed: 153 - fem is present - fiber is installed - rigging is Loose - dish rating: 1 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH31 -r A -c "feed: 157 - fem is present - fiber is installed - rigging is Ok - dish rating: 2 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH32 -r A -c "feed: 143 - fem is present - fiber is installed - rigging is Loose - dish rating: 2 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH33 -r A -c "feed: 164 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH34 -r A -c "feed: 177 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH35 -r A -c "feed: 168 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH36 -r A -c "feed: 93 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH37 -r A -c "feed: 86 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH38 -r A -c "feed: 87 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH40 -r A -c "feed: 58 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds, door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH41 -r A -c "feed: 52 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH42 -r A -c "feed: 53 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH43 -r A -c "feed: 50 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH44 -r A -c "feed: 59 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH45 -r A -c "feed: 56 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH46 -r A -c "feed: 57 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH47 -r A -c "feed: 179 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH48 -r A -c "feed: 178 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH49 -r A -c "feed: 181 - fem is present - fiber is installed - rigging is Loose - dish rating: 4" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH50 -r A -c "feed: 85 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH51 -r A -c "feed: 75 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH52 -r A -c "feed: 94 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH53 -r A -c "feed: 92 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH54 -r A -c "feed: 54 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH55 -r A -c "feed: 23 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH56 -r A -c "feed: 72 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH57 -r A -c "feed: 71 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH58 -r A -c "feed: 67 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH59 -r A -c "feed: 66 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH60 -r A -c "feed: 64 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH61 -r A -c "feed: 167 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH62 -r A -c "feed: 66 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH63 -r A -c "feed: 176 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH64 -r A -c "feed: 175 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH65 -r A -c "feed: 95 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH66 -r A -c "feed: 76 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH67 -r A -c "feed: 77 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH68 -r A -c "feed: 88 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH69 -r A -c "feed: 65 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH70 -r A -c "feed: 55 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH71 -r A -c "feed: 63 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH72 -r A -c "feed: 61 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH73 -r A -c "feed: 60 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH74 -r A -c "feed: 73 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH75 -r A -c "feed: 62 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH76 -r A -c "feed: 48 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH77 -r A -c "feed: 174 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH78 -r A -c "feed: 173 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH79 -r A -c "feed: 253 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH80 -r A -c "feed: 243 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH81 -r A -c "feed: 26 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH82 -r A -c "feed: 27 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH83 -r A -c "feed: 46 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH84 -r A -c "feed: 35 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH85 -r A -c "feed: 36 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH86 -r A -c "feed: 37 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH87 -r A -c "feed: 38 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH88 -r A -c "feed: 15 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH89 -r A -c "feed: 16 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH90 -r A -c "feed: 17 - fem is present - fiber is installed - rigging is Loose - dish rating: 1 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH91 -r A -c "feed: 18 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH92 -r A -c "feed: 84 which is down - fem is present - fiber is installed - rigging is Not rigged - dish rating: 1 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH93 -r A -c "feed: 79 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH94 -r A -c "feed: 78 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH95 -r A -c "feed: 271 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH96 -r A -c "feed: 268 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH97 -r A -c "feed: 242 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH98 -r A -c "feed: 28 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH99 -r A -c "feed: 29 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH100 -r A -c "feed: 30 - fem is present - fiber is installed - rigging is Loose - dish rating: 0 (PVC issue)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH101 -r A -c "feed: 39 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH102 -r A -c "feed: 40 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH103 -r A -c "feed: 41 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH104 -r A -c "feed: 10 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH105 -r A -c "feed: 19 - fem is present - fiber is installed - rigging is Ok - dish rating: 4" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH106 -r A -c "feed: 20 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH107 -r A -c "feed: 21 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH108 -r A -c "feed: 22 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH109 -r A -c "feed: 89 which is down - fem is present and in a protective bag - fiber is installed - rigging is Not rigged - dish rating: 1 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH110 -r A -c "feed: 68 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH111 -r A -c "feed: 83 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH112 -r A -c "feed: 81 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH113 -r A -c "feed: 245 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH114 -r A -c "feed: 241 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH115 -r A -c "feed: 270 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH116 -r A -c "feed: 31 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH117 -r A -c "feed: 32 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH118 -r A -c "feed: 39 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH119 -r A -c "feed: 34 - fem is present - fiber is installed - rigging is Loose - dish rating: 1 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH120 -r A -c "feed: 42 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH121 -r A -c "feed: 43 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH122 -r A -c "feed: 44 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH123 -r A -c "feed: 45 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH124 -r A -c "feed: 24 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH125 -r A -c "feed: 25 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH126 -r A -c "feed: 13 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH127 -r A -c "feed: 69 - fem is present - fiber is installed - rigging is Loose - dish rating: 2 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH128 -r A -c "feed: 70 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH129 -r A -c "feed: 74 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH130 -r A -c "feed: 80 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH131 -r A -c "feed: 246 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 3 (mesh issue)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH132 -r A -c "feed: 244 - fem is present - fiber is installed - rigging is Ok - dish rating: 2 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH133 -r A -c "feed: 239 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH134 -r A -c "feed: 247 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH135 -r A -c "feed: 96 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH136 -r A -c "feed: 82 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH137 -r A -c "feed: 48 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH138 -r A -c "feed: 47 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH139 -r A -c "feed: 124 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH140 -r A -c "feed: 114 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH141 -r A -c "feed: 117 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH142 -r A -c "feed: 121 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH143 -r A -c "feed: 139 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH144 -r A -c "feed: 127 - fem is present - fiber is installed - rigging is Ok - dish rating: 2 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH145 -r A -c "feed: 111 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH146 -r A -c "feed: 135 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH147 -r A -c "feed: 132 - fem is present - fiber is installed - rigging is Ok - dish rating: 1 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH148 -r A -c "feed: 126 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH149 -r A -c "feed: 130 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH150 -r A -c "feed: 134 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH151 -r A -c "feed: 252 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH152 -r A -c "feed: 213 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH153 -r A -c "feed: 216 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH154 -r A -c "feed: 221 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH155 -r A -c "feed: 97 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH156 -r A -c "feed: 98 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH157 -r A -c "feed: 99 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH158 -r A -c "feed: 100 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH159 -r A -c "feed: 116 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH160 -r A -c "feed: 118 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH161 -r A -c "feed: 113 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH162 -r A -c "feed: 122 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH163 -r A -c "feed: 110 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH164 -r A -c "feed: 106 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH165 -r A -c "feed: 108 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH166 -r A -c "feed: 105 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH167 -r A -c "feed: 129 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH168 -r A -c "feed: 138 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH169 -r A -c "feed: 128 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH170 -r A -c "feed: 136 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH171 -r A -c "feed: 133 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH172 -r A -c "feed: 222 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH173 -r A -c "feed: 214 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH174 -r A -c "feed: 212 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH175 -r A -c "feed: 258 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH176 -r A -c "feed: 101 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH177 -r A -c "feed: 102 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH178 -r A -c "feed: 103 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH179 -r A -c "feed: 104 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds, door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH180 -r A -c "feed: 119 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH181 -r A -c "feed: 120 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH182 -r A -c "feed: 123 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds, door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH183 -r A -c "feed: 109 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH184 -r A -c "feed: 107 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH185 -r A -c "feed: 125 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH186 -r A -c "feed: 112 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 2 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH187 -r A -c "feed: 115 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH188 -r A -c "feed: 140 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH189 -r A -c "feed: 141 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds, door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH190 -r A -c "feed: 137 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH191 -r A -c "feed: 131 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH192 -r A -c "feed: 251 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH193 -r A -c "feed: 229 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH194 -r A -c "feed: 223 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH195 -r A -c "feed: 219 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH196 -r A -c "feed: 240 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds, door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH197 -r A -c "feed: 232 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH198 -r A -c "feed: 280 - fem is present - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH199 -r A -c "feed: 279 - fem is present - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH200 -r A -c "feed: 194 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH201 -r A -c "feed: 159 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH202 -r A -c "feed: 199 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 2 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH203 -r A -c "feed: 201 which is down - fem is present - fiber is installed - rigging is Not rigged - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH204 -r A -c "feed: 197 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH205 -r A -c "feed: 211 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH206 -r A -c "feed: 184 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH207 -r A -c "feed: 210 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH208 -r A -c "feed: 195 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH209 -r A -c "feed: 196 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH210 -r A -c "feed: 190 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH211 -r A -c "feed: 191 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 3 (mesh issue)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH212 -r A -c "feed: 259 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH213 -r A -c "feed: 228 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH214 -r A -c "feed: 216 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH215 -r A -c "feed: 257 - fem is present - fiber is installed - rigging is Ok - dish rating: 3 (weeds, mesh issue)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH216 -r A -c "feed: 235 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH217 -r A -c "feed: 200 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH218 -r A -c "feed: 209 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds, door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH219 -r A -c "feed: 205 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH220 -r A -c "feed: 208 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH221 -r A -c "feed: 207 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH222 -r A -c "feed: 206 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH223 -r A -c "feed: 172 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 3 (weeds, door bad)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH224 -r A -c "feed: 202 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH225 -r A -c "feed: 198 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH226 -r A -c "feed: 185 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH227 -r A -c "feed: 186 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH228 -r A -c "feed: 192 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH229 -r A -c "feed: 183 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH231 -r A -c "feed: 220 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH232 -r A -c "feed: 256 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH233 -r A -c "feed: 254 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH234 -r A -c "feed: 226 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH235 -r A -c "feed: 225 - fem is present - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH236 -r A -c "Not active" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH237 -r A -c "feed: 227 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH238 -r A -c "feed: 204 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH239 -r A -c "feed: 180 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH240 -r A -c "feed: 182 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH241 -r A -c "feed: 203 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH242 -r A -c "feed: 171 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH243 -r A -c "feed: 193 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH244 -r A -c "feed: 187 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 3 (weeds)" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH245 -r A -c "feed: 189 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5" --date 2023/09/15 --time 22:43
+
+add_part_info.py -p HH246 -r A -c "feed: 169 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds)" --date 2023/09/15 --time 22:43
+
