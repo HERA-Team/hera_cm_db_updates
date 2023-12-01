@@ -3796,6 +3796,7 @@ HH212,A,feed: 259 - fem is present - fiber is installed - rigging is Loose - dis
 HH219,A,feed: 205 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
 HH225,A,feed: 198 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
 HH232,A,feed: 256 - fem is present - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH65,A,FEM Power?: Yes,infoupd,1385491338
 NCM10,A,Update WR firmware,,1354363218
 HH160,A,Optical Power at 1310nm (into node): E: null,infoupd,1370150118
 N04,A,arista0 port 3,infoupd,1370150118
@@ -3862,6 +3863,7 @@ HH226,A,feed: 185 - fem is present and in a protective bag - fiber is installed 
 HH233,A,feed: 254 - fem is present - fiber is installed - rigging is Loose - dish rating: 3 (weeds),,1378852998
 HH238,A,feed: 204 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
 HH241,A,feed: 203 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 3 (weeds),,1378852998
+HH65,A,FEM Power?: Yes,infoupd,1385491340
 NCM15,A,Update WR firmware,,1354449618
 HH160,A,Optical Power at 1310nm (into PAM): E: null,infoupd,1370150120
 N05,A,arista0 port 10,infoupd,1370150118
@@ -3931,6 +3933,7 @@ HH165,A,feed: 108 - fem is present - fiber is installed - rigging is Ok - dish r
 HH174,A,feed: 212 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
 HH183,A,feed: 109 - fem is present - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
 HH192,A,feed: 251 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 4 (weeds),,1378852998
+HH66,A,FEM Power?: Yes,infoupd,1385491338
 HH51,A,apriori_antenna status change: digital_ok > dish_maintenance,apa-infoupd,1354963698
 HH68,A,apriori_antenna status change: digital_ok > dish_maintenance,apa-infoupd,1354963698
 HH68,A,has a broken fiber,apa-infoupd,1354963338
@@ -4934,6 +4937,7 @@ HH234,A,feed: 226 - fem is present - fiber is installed - rigging is Loose - dis
 HH239,A,feed: 180 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
 HH242,A,feed: 171 - fem is present and in a protective bag - fiber is installed - rigging is Ok - dish rating: 5,,1378852998
 HH244,A,feed: 187 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 3 (weeds),,1378852998
+HH66,A,FEM Power?: Yes,infoupd,1385491340
 HH225,A,Optical Power at 1310nm (into PAM): N: 5.2,infoupd,1370150118
 N13,A,arista0 port 7,infoupd,1370150118
 N01,A,wr1 port3,infoupd,1370185998
@@ -5038,3 +5042,25 @@ HH120,A,Removed LP filter,infoupd,1378744940
 HH236,A,Not active,,1378852998
 HH245,A,feed: 189 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 5,,1378852998
 HH246,A,feed: 169 - fem is present and in a protective bag - fiber is installed - rigging is Loose - dish rating: 4 (weeds),,1378852998
+HH67,A,FEM Power?: Yes,infoupd,1385491338
+HH67,A,FEM Power?: Yes,infoupd,1385491340
+HH68,A,E: Replaced feedthrough 6/2/23,infoupd,1385491338
+HH68,A,FEM Power?: Yes,infoupd,1385491340
+HH68,A,FEM Power?: Yes,infoupd,1385491342
+HH37,A,FEM Power?: Yes,infoupd,1385491338
+HH37,A,N: Replaced feedthrough 6/2/23,infoupd,1385491340
+HH37,A,FEM Power?: Yes,infoupd,1385491342
+HH38,A,FEM Power?: Yes,infoupd,1385491338
+HH38,A,FEM Power?: Yes,infoupd,1385491340
+HH53,A,FEM Power?: Yes,infoupd,1385491338
+HH53,A,FEM Power?: Yes,infoupd,1385491340
+HB320,A,FEM Power?: Yes,infoupd,1385491338
+HB320,A,FEM Power?: Yes,infoupd,1385491340
+HH51,A,FEM Power?: Yes,infoupd,1385491338
+HH51,A,FEM Power?: Yes,infoupd,1385491340
+HH52,A,FEM Power?: Yes,infoupd,1385491338
+HH52,A,FEM Power?: Yes,infoupd,1385491340
+HH36,A,FEM Power?: Yes,infoupd,1385491338
+HH36,A,FEM Power?: Yes,infoupd,1385491340
+HH50,A,FEM Power?: Yes,infoupd,1385491338
+HH50,A,FEM Power?: Yes,infoupd,1385491340
