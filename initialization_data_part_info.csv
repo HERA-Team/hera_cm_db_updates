@@ -5066,3 +5066,10 @@ HH50,A,FEM Power?: Yes,infoupd,1385491338
 HH50,A,FEM Power?: Yes,infoupd,1385491340
 HH38,A,Door is open,infoupd,1385494938
 HH232,A,Ticket: Feed conduit feel out and is hanging on the cables.,infoupd,1385739738
+HH66,A,Optical Power (into node): N: 6.5,infoupd,1385743338
+HH66,A,Optical Power (into PAM): N: 6.1,infoupd,1385743340
+HH68,A,Optical Power (into node): E: 3.9,infoupd,1385743338
+HH68,A,Optical Power (into PAM): E: 3.8,infoupd,1385743340
+HH68,A,Optical Power (into PAM): N: 2.3,infoupd,1385743342
+HH37,A,Optical Power (into PAM): E: 6.35,infoupd,1385743338
+HH37,A,Optical Power (into node): N: 6.05,infoupd,1385743340
