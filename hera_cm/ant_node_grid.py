@@ -87,14 +87,16 @@ class Grid:
         if newfig:
             if self.add_colorbar:
                 fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm))
-            plt.xlabel('Node port')
-            plt.ylabel('Node')
+            plt.xlabel('Node input port (snap input order)')
+            plt.ylabel('Node number')
             plt.title(title)
             plt.xticks(self.ports, [str(x) for x in self.ports])
             plt.yticks(self.nodes, [str(x) for x in self.nodes])
             for x in [3.5, 6.5, 9.5]:
                 plt.plot([x, x], [-1, 30], '--', color='.7')
-            plt.axis([0.2, 13, 0, 22.8])
+            plt.axis([0.2, 13, 0, len(self.nodes) + 2])
+            for i in range(4):
+                plt.text(1.5 + i*3, len(self.nodes)+0.85, f'SNAP {i}')
 
     def make(self):
         self._pdat = {'ants': [], 'colors': []}
