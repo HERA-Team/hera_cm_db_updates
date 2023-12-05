@@ -5074,3 +5074,5 @@ HH68,A,Optical Power (into PAM): N: 2.3,infoupd,1385743342
 HH37,A,Optical Power (into PAM): E: 6.35,infoupd,1385743338
 HH37,A,Optical Power (into node): N: 6.05,infoupd,1385743340
 HH66,A,Fiber was reseated at PAM input (06/07/2023),infoupd,1385757738
+HH66,A,Optical Power (into PAM): E: 5.5,infoupd,1385840538
+HH37,A,Optical Power (into PAM): N: 4.65,infoupd,1385840538
