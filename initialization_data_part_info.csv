@@ -5079,3 +5079,4 @@ HH37,A,Optical Power (into PAM): N: 4.65,infoupd,1385840538
 HH37,A,"Changed PAM to 22, this PAM has copper tape (6/9/23)",infoupd,1385995338
 HH37,A,RF Power: E: -20.7,infoupd,1385995340
 HH37,A,RF Power: N: -26.6,infoupd,1385995342
+HH66,A,N: Loose connection fixed 6/2/23. Crossed-pols: Polarisation cables were swapped at node entry. Swapped them back (6/10/23).,infoupd,1386002538
