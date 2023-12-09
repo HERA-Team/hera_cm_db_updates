@@ -1,0 +1,10 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/231204_infoupd_1642" >> scripts.log 
+add_part_info.py -p HH66 -r A -c "Optical Power (into node): N: 6.5" -l "infoupd" --date 2023/12/04 --time 16:42:00
+add_part_info.py -p HH66 -r A -c "Optical Power (into PAM): N: 6.1" -l "infoupd" --date 2023/12/04 --time 16:42:02
+add_part_info.py -p HH68 -r A -c "Optical Power (into node): E: 3.9" -l "infoupd" --date 2023/12/04 --time 16:42:00
+add_part_info.py -p HH68 -r A -c "Optical Power (into PAM): E: 3.8" -l "infoupd" --date 2023/12/04 --time 16:42:02
+add_part_info.py -p HH68 -r A -c "Optical Power (into PAM): N: 2.3" -l "infoupd" --date 2023/12/04 --time 16:42:04
+add_part_info.py -p HH37 -r A -c "Optical Power (into PAM): E: 6.35" -l "infoupd" --date 2023/12/04 --time 16:42:00
+add_part_info.py -p HH37 -r A -c "Optical Power (into node): N: 6.05" -l "infoupd" --date 2023/12/04 --time 16:42:02

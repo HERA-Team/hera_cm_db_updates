@@ -1,0 +1,6 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/231207_infoupd_1442" >> scripts.log 
+add_part_info.py -p HH37 -r A -c "Changed PAM to 22, this PAM has copper tape (6/9/23)" -l "infoupd" --date 2023/12/07 --time 14:42:00
+add_part_info.py -p HH37 -r A -c "RF Power: E: -20.7" -l "infoupd" --date 2023/12/07 --time 14:42:02
+add_part_info.py -p HH37 -r A -c "RF Power: N: -26.6" -l "infoupd" --date 2023/12/07 --time 14:42:04

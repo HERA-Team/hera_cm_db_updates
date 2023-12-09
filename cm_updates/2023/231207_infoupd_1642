@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/231207_infoupd_1642" >> scripts.log 
+add_part_info.py -p HH66 -r A -c "N: Loose connection fixed 6/2/23. Crossed-pols: Polarisation cables were swapped at node entry. Swapped them back (6/10/23)." -l "infoupd" --date 2023/12/07 --time 16:42:00
