@@ -32,8 +32,8 @@ def as_part(add_or_stop, p, cdate, ctime):
 def as_connect(add_or_stop, up, dn, cdate, ctime):
     """Return a string to use hera_mc script to add or stop a connection."""
     s = '{}_connection.py -u {} --uprev {} --upport {} -d {} --dnrev {} --dnport {}'\
-        ' --date {} --time {}\n'.format(add_or_stop, up[0], up[1], up[2],
-                                        dn[0], dn[1], dn[2], cdate, ctime)
+        ' --date {} --time {}\n'.format(add_or_stop, up[0], up[1], up[2].lower(),
+                                        dn[0], dn[1], dn[2].lower(), cdate, ctime)
     return s
 
 

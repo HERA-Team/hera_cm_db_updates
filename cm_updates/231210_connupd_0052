@@ -1,0 +1,48 @@
+#! /bin/bash
+echo "/Users/ddeboer/Home/Projects/HERA/repos/hera_cm_db_updates/231210_connupd_0052" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u FEM198 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr5 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM198 --uprev A --upport e -d NBP14 --dnrev A --dnport e5 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM198 --uprev A --upport n -d NBP14 --dnrev A --dnport n5 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM175 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr11 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM175 --uprev A --upport e -d NBP14 --dnrev A --dnport e11 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM175 --uprev A --upport n -d NBP14 --dnrev A --dnport n11 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM335 --uprev A --upport e -d NBP14 --dnrev A --dnport e4 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM335 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr4 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM335 --uprev A --upport n -d NBP14 --dnrev A --dnport n4 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM183 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr9 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM183 --uprev A --upport e -d NBP14 --dnrev A --dnport e9 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM183 --uprev A --upport n -d NBP14 --dnrev A --dnport n9 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM378 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr2 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM378 --uprev A --upport e -d NBP14 --dnrev A --dnport e2 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM378 --uprev A --upport n -d NBP14 --dnrev A --dnport n2 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM369 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr3 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM369 --uprev A --upport e -d NBP14 --dnrev A --dnport e3 --date 2023/12/10 --time 00:46
+stop_connection.py -u FEM369 --uprev A --upport n -d NBP14 --dnrev A --dnport n3 --date 2023/12/10 --time 00:46
+stop_connection.py -u PAM177 --uprev A --upport n -d SNPC000043 --dnrev A --dnport n4 --date 2023/12/10 --time 00:46
+stop_connection.py -u PAM177 --uprev A --upport e -d SNPC000043 --dnrev A --dnport e6 --date 2023/12/10 --time 00:46
+stop_connection.py -u PAM175 --uprev A --upport e -d SNPC000051 --dnrev A --dnport e10 --date 2023/12/10 --time 00:46
+stop_connection.py -u PAM175 --uprev A --upport n -d SNPC000051 --dnrev A --dnport n8 --date 2023/12/10 --time 00:46
+# add connections for gsheet_not_active
+add_connection.py -u FEM335 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr2 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM335 --uprev A --upport e -d NBP14 --dnrev A --dnport e2 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM335 --uprev A --upport n -d NBP14 --dnrev A --dnport n2 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM198 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr3 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM198 --uprev A --upport e -d NBP14 --dnrev A --dnport e3 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM198 --uprev A --upport n -d NBP14 --dnrev A --dnport n3 --date 2023/12/10 --time 00:52
+add_connection.py -u PAM177 --uprev A --upport e -d SNPC000051 --dnrev A --dnport e10 --date 2023/12/10 --time 00:52
+add_connection.py -u PAM177 --uprev A --upport n -d SNPC000051 --dnrev A --dnport n8 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM369 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr4 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM369 --uprev A --upport e -d NBP14 --dnrev A --dnport e4 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM369 --uprev A --upport n -d NBP14 --dnrev A --dnport n4 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM378 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr5 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM378 --uprev A --upport e -d NBP14 --dnrev A --dnport e5 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM378 --uprev A --upport n -d NBP14 --dnrev A --dnport n5 --date 2023/12/10 --time 00:52
+add_connection.py -u PAM175 --uprev A --upport e -d SNPC000043 --dnrev A --dnport e6 --date 2023/12/10 --time 00:52
+add_connection.py -u PAM175 --uprev A --upport n -d SNPC000043 --dnrev A --dnport n4 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM175 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr9 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM175 --uprev A --upport e -d NBP14 --dnrev A --dnport e9 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM175 --uprev A --upport n -d NBP14 --dnrev A --dnport n9 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM183 --uprev A --upport pwr -d FPS16 --dnrev A --dnport pwr11 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM183 --uprev A --upport e -d NBP14 --dnrev A --dnport e11 --date 2023/12/10 --time 00:52
+add_connection.py -u FEM183 --uprev A --upport n -d NBP14 --dnrev A --dnport n11 --date 2023/12/10 --time 00:52
