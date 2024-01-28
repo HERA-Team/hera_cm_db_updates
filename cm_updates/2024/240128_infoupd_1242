@@ -1,0 +1,52 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/240128_infoupd_1242" >> scripts.log 
+add_part_info.py -p HH63 -r A -c "Removed SNAP C000104 and installed C000052" -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p HH64 -r A -c "Removed SNAP C000104 and installed C000052" -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p HH78 -r A -c "Removed SNAP C000104 and installed C000052" -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p N06 -r A -c "Had a large nest over air exit which removed" -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p N09 -r A -c "Internal fan was gunked up and not working well -- removed it." -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p N09 -r A -c "Good airflow in." -l "infoupd" --date 2024/01/28 --time 12:42:02
+add_part_info.py -p N09 -r A -c "Door opens easily" -l "infoupd" --date 2024/01/28 --time 12:42:04
+add_part_info.py -p N12 -r A -c "Door was bit tough to open. " -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p N12 -r A -c "Good airflow in and internal fans working" -l "infoupd" --date 2024/01/28 --time 12:42:02
+add_part_info.py -p N13 -r A -c "Clean top" -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p N13 -r A -c "Fan outside is working fine" -l "infoupd" --date 2024/01/28 --time 12:42:02
+add_part_info.py -p N13 -r A -c "Good airflow and internal fans working" -l "infoupd" --date 2024/01/28 --time 12:42:04
+add_part_info.py -p N13 -r A -c "Door was slightly tough to open" -l "infoupd" --date 2024/01/28 --time 12:42:06
+add_part_info.py -p N13 -r A -c "Found two blue cables hanging" -l "infoupd" --date 2024/01/28 --time 12:42:08
+add_part_info.py -p N14 -r A -c "Clean top" -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p N14 -r A -c "Fan outside is working fine" -l "infoupd" --date 2024/01/28 --time 12:42:02
+add_part_info.py -p N14 -r A -c "Good airflow and internal fans working" -l "infoupd" --date 2024/01/28 --time 12:42:04
+add_part_info.py -p N14 -r A -c "Door was slightly tough to open" -l "infoupd" --date 2024/01/28 --time 12:42:06
+add_part_info.py -p N14 -r A -c "Found two blue cables hanging" -l "infoupd" --date 2024/01/28 --time 12:42:08
+add_part_info.py -p N17 -r A -c "Clean top" -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p N17 -r A -c "Fan outside is working fine" -l "infoupd" --date 2024/01/28 --time 12:42:02
+add_part_info.py -p N17 -r A -c "Good airflow and internal fans working" -l "infoupd" --date 2024/01/28 --time 12:42:04
+add_part_info.py -p N17 -r A -c "Door opens easily" -l "infoupd" --date 2024/01/28 --time 12:42:06
+add_part_info.py -p N17 -r A -c "Found two green cables (RJ 45?) hanging " -l "infoupd" --date 2024/01/28 --time 12:42:08
+add_part_info.py -p N18 -r A -c "Clean top" -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p N18 -r A -c "Fan outside is working fine" -l "infoupd" --date 2024/01/28 --time 12:42:02
+add_part_info.py -p N18 -r A -c "Good airflow and internal fans working" -l "infoupd" --date 2024/01/28 --time 12:42:04
+add_part_info.py -p N18 -r A -c "Door opens easily" -l "infoupd" --date 2024/01/28 --time 12:42:06
+add_part_info.py -p N18 -r A -c "Found a green and a blue cable hanging" -l "infoupd" --date 2024/01/28 --time 12:42:08
+add_part_info.py -p N19 -r A -c "Clean top" -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p N19 -r A -c "Fan outside is working fine" -l "infoupd" --date 2024/01/28 --time 12:42:02
+add_part_info.py -p N19 -r A -c "Good airflow and internal fans working" -l "infoupd" --date 2024/01/28 --time 12:42:04
+add_part_info.py -p N19 -r A -c "Door was very tough to open" -l "infoupd" --date 2024/01/28 --time 12:42:06
+add_part_info.py -p N19 -r A -c "Found three green cables hanging" -l "infoupd" --date 2024/01/28 --time 12:42:08
+add_part_info.py -p N20 -r A -c "Clean top" -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p N20 -r A -c "Fan outside is working fine" -l "infoupd" --date 2024/01/28 --time 12:42:02
+add_part_info.py -p N20 -r A -c "Good airflow and internal fans working" -l "infoupd" --date 2024/01/28 --time 12:42:04
+add_part_info.py -p N20 -r A -c "Door opens easily" -l "infoupd" --date 2024/01/28 --time 12:42:06
+add_part_info.py -p N20 -r A -c "Found two green cables hanging" -l "infoupd" --date 2024/01/28 --time 12:42:08
+add_part_info.py -p N22 -r A -c "Clean top" -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p N22 -r A -c "Fan outside is working fine" -l "infoupd" --date 2024/01/28 --time 12:42:02
+add_part_info.py -p N22 -r A -c "Good airflow and internal fans working" -l "infoupd" --date 2024/01/28 --time 12:42:04
+add_part_info.py -p N22 -r A -c "Door was slightly tough to open" -l "infoupd" --date 2024/01/28 --time 12:42:06
+add_part_info.py -p N22 -r A -c "Found one green cable hanging" -l "infoupd" --date 2024/01/28 --time 12:42:08
+add_part_info.py -p N23 -r A -c "Clean top" -l "infoupd" --date 2024/01/28 --time 12:42:00
+add_part_info.py -p N23 -r A -c "Fan outside is working fine" -l "infoupd" --date 2024/01/28 --time 12:42:02
+add_part_info.py -p N23 -r A -c "Good airflow and internal fans working" -l "infoupd" --date 2024/01/28 --time 12:42:04
+add_part_info.py -p N23 -r A -c "Door opens easily" -l "infoupd" --date 2024/01/28 --time 12:42:06
+add_part_info.py -p N23 -r A -c "PAM 12 not connected (Found no slot for it)" -l "infoupd" --date 2024/01/28 --time 12:42:08
