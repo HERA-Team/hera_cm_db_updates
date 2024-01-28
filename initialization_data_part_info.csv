@@ -5160,3 +5160,50 @@ N07,A,Good airflow and internal fans working,infoupd,1390509742
 N07,A,Door was slightly tough to open,infoupd,1390509744
 N12,A,Door was bit tough to open.,infoupd,1390509738
 N17,A,Found two green cables (RJ 45?) hanging,infoupd,1390509738
+N01,A,Clean top,infoupd,1390513338
+N01,A,Fan outside is working fine,infoupd,1390513340
+N01,A,Good airflow and internal fans working,infoupd,1390513342
+N01,A,Door opens easily,infoupd,1390513344
+N01,A,Found three green cables hanging,infoupd,1390513346
+N02,A,Clean top,infoupd,1390513338
+N02,A,Fan outside is working fine,infoupd,1390513340
+N02,A,Good airflow and internal fans working,infoupd,1390513342
+N02,A,Door opens easily,infoupd,1390513344
+N04,A,Found one blue cable hanging,infoupd,1390513338
+N05,A,Clean top,infoupd,1390513338
+N05,A,Fan outside is working fine,infoupd,1390513340
+N05,A,Good airflow and internal fans working,infoupd,1390513342
+N05,A,Door opens easily,infoupd,1390513344
+N06,A,** Still some residual feathers left **,infoupd,1390513338
+N06,A,Good airflow and internal fans working,infoupd,1390513340
+N06,A,Door opens easily,infoupd,1390513342
+N08,A,Fan outside is working fine,infoupd,1390513338
+N08,A,Good airflow and internal fans working,infoupd,1390513340
+N08,A,Door was slightly tough to open,infoupd,1390513342
+N08,A,Clean top,infoupd,1390513344
+N10,A,Top is covered with nest(s),infoupd,1390513338
+N10,A,Fan outside is working fine,infoupd,1390513340
+N10,A,"Internal fans look good, but airflow may be interrupted.",infoupd,1390513342
+N10,A,Door was slightly tough to open,infoupd,1390513344
+N11,A,Clean top,infoupd,1390513338
+N11,A,Fan outside is working fine,infoupd,1390513340
+N11,A,Good airflow and internal fans working,infoupd,1390513342
+N11,A,Door opens easily,infoupd,1390513344
+N11,A,"1 blue, 1 green cables hanging",infoupd,1390513346
+N12,A,Door was bit tough to open.,infoupd,1390513338
+N15,A,Nest on top,infoupd,1390513338
+N15,A,Fan outside is working fine,infoupd,1390513340
+N15,A,"Internal fans look good, but airflow may be interrupted.",infoupd,1390513342
+N15,A,Door opens easily,infoupd,1390513344
+N15,A,Found one blue cable hanging,infoupd,1390513346
+N16,A,Top is covered with nest(s),infoupd,1390513338
+N16,A,Fan outside is working fine,infoupd,1390513340
+N16,A,"Internal fans look good, but airflow may be interrupted.",infoupd,1390513342
+N16,A,Door opens easily,infoupd,1390513344
+N16,A,Two green cables hanging,infoupd,1390513346
+N17,A,Found two green cables (RJ 45?) hanging,infoupd,1390513338
+N21,A,Clean top,infoupd,1390513338
+N21,A,Fan outside is working fine,infoupd,1390513340
+N21,A,Good airflow and internal fans working,infoupd,1390513342
+N21,A,Door opens easily,infoupd,1390513344
+N21,A,Found one red cable hanging,infoupd,1390513346
