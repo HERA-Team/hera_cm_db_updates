@@ -663,7 +663,7 @@ class Update:
         """
         if not len(note.strip()):
             return
-        note = note.replace("'", "").replace('"', "")
+        note = note.replace("'", "").replace('"', "").strip()
         if ref is None:
             ref = ''
         else:
