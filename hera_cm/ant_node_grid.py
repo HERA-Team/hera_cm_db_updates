@@ -1,14 +1,15 @@
 #! /usr/bin/env python
-from hera_mc import cm_hookup, mc
+from hera_mc import cm_hookup, mc, geo_sysdef
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import colors
 import yaml
 
 
-NODES = list(range(1, 23))
+NODES = list(range(1, 30))
 PORTS = list(range(1, 13))
 BKCLR = 'k'
+NODE_INFO = geo_sysdef.read_nodes()
 
 class Grid:
     fyi_all_params = ['nodes', 'ports', 'background', 'antennas', 'inputs']
@@ -72,6 +73,12 @@ class Grid:
             for i, port in enumerate(self.ports):
                 this_color = self._pdat['colors'][j][i]
                 this_ant = self._pdat['ants'][j][i]
+                if this_color == '0.5' and this_ant == '---':
+                    try:
+                        this_ant = str(NODE_INFO[node]['ants'][i])
+                        this_color = 'moccasin'
+                    except IndexError:
+                        pass
                 if this_ant[0] != '-':
                     x = port + data_offset[0]
                     y = node + data_offset[1]
@@ -98,7 +105,18 @@ class Grid:
             for i in range(4):
                 plt.text(1.5 + i*3, len(self.nodes)+0.85, f'SNAP {i}')
 
+    def _handle_missing(self):
+        not_found = []
+        for i in range(350):
+            if i in NODE_INFO[0]['ants']:
+                continue
+            if i not in self.found_antennas:
+                not_found.append(i)
+        print(f"Didn't find {len(not_found)}")
+        print(', '.join([str(x) for x in not_found]))
+
     def make(self):
+        self.found_antennas = []
         self._pdat = {'ants': [], 'colors': []}
         with mc.MCSessionWrapper(session=None) as session:
             hookup = cm_hookup.Hookup(session)
@@ -112,7 +130,10 @@ class Grid:
                 for this_port in self.ports:
                     this_input = f"{this_node}-{this_port}"
                     polport = f'E<e{this_port}'
-                    hu_from_nbp = nbp_hudict[key].hookup[polport]
+                    try:
+                        hu_from_nbp = nbp_hudict[key].hookup[polport]
+                    except KeyError:
+                        hu_from_nbp = []
                     this_antenna = -1
                     if not len(hu_from_nbp):
                         # print(f"{this_node},{this_port} found no hookup")
@@ -128,6 +149,7 @@ class Grid:
                             antenna = ant_from_nbp
                             this_antenna = int(antenna[2:])
                     if this_antenna >= 0:
+                        self.found_antennas.append(this_antenna)
                         self.antenna_tracker.setdefault(antenna, [])
                         self.antenna_tracker[antenna].append(this_input)
                         antkey = f"{antenna}:A"
@@ -157,7 +179,6 @@ class Grid:
                     this_row_colors.append(this_color)
                 self._pdat['ants'].append(this_row_ants)
                 self._pdat['colors'].append(this_row_colors)
- 
     
     def check(self, color='r'):
         """This is probably not needed, likely relates to bug in hera_mc"""
