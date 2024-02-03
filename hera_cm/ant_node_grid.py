@@ -118,11 +118,13 @@ class Grid:
     def make(self):
         self.found_antennas = []
         self._pdat = {'ants': [], 'colors': []}
+        self.found_ants_by_node = {}
         with mc.MCSessionWrapper(session=None) as session:
             hookup = cm_hookup.Hookup(session)
             ant_hudict = hookup.get_hookup(hpn='H')
             nbp_hudict = hookup.get_hookup(hpn='NBP')
             for this_node in self.nodes:
+                self.found_ants_by_node[this_node] = []
                 nbp = f"NBP{this_node:02d}"
                 key = f"{nbp}:A"
                 this_row_ants = []
@@ -150,6 +152,7 @@ class Grid:
                             this_antenna = int(antenna[2:])
                     if this_antenna >= 0:
                         self.found_antennas.append(this_antenna)
+                        self.found_ants_by_node[this_node].append(this_antenna)
                         self.antenna_tracker.setdefault(antenna, [])
                         self.antenna_tracker[antenna].append(this_input)
                         antkey = f"{antenna}:A"

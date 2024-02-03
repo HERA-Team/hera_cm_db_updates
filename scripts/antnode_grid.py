@@ -8,13 +8,13 @@ ap = argparse.ArgumentParser()
 ap.add_argument('-a', '--antenna', help="List of antennas to highlight", default='')
 args = ap.parse_args()
 
-data = {}
+highlight = {}
 if len(args.antenna):
-    data['antennas'] = {}
+    highlight['antennas'] = {}
     for ant in args.antenna.split(','):
-        data['antennas'][int(ant)] = 'r'
+        highlight['antennas'][int(ant)] = 'r'
 
-grid = ant_node_grid.Grid(data)
+grid = ant_node_grid.Grid(highlight)
 print("Making...")
 grid.make()
 if False:
