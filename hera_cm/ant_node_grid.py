@@ -10,6 +10,26 @@ NODES = list(range(30))
 PORTS = list(range(1, 13))
 BKCLR = 'k'
 NODE_INFO = geo_sysdef.read_nodes()
+STATUS = {
+    0: {'msg': 'ok', 'color': None},
+    1: {'msg': "undetermined", 'color': '0.5'},
+    2: {'msg': "hookup not found via node port", 'color': 'b'},
+    3: {'msg': "antenna not found from node port", 'color': 'm'},
+    4: {'msg': "nodes don't match", 'color': 'r'},
+    5: {'msg': "ports don't match", 'color': 'c'}
+}
+
+class Antenna:
+    def __init__(self, node, port):
+        self.node = node
+        self.port = port
+        self.status = 1
+        self.hpn = '---'
+        self.number = None
+
+    def set_hpn(self, hpn):
+        self.hpn = hpn
+        self.number = int(self.hpn[2:])
 
 class Grid:
     fyi_all_params = ['nodes', 'ports', 'background', 'antennas', 'inputs']
@@ -26,13 +46,6 @@ class Grid:
         self.background = background
         for param in self.params:
             setattr(self, param, highlight[param])
-        self.not_found_codes = {
-            -1: {'msg': "undetermined", 'color': '0.5'},
-            -2: {'msg': "hookup not found via node port", 'color': 'b'},
-            -3: {'msg': "antenna not found from node port", 'color': 'm'},
-            -4: {'msg': "nodes don't match", 'color': 'r'},
-            -5: {'msg': "ports don't match", 'color': 'c'}
-        }
 
     def show(self, hu):
         for component in hu:
@@ -153,21 +166,21 @@ class Grid:
                         hu_from_nbp = nbp_hudict[key].hookup[polport]
                     except KeyError:
                         hu_from_nbp = []
-                    this_antenna = f'-1:{this_input}'
+                    this_antenna = Antenna(this_node, this_port)
                     if not len(hu_from_nbp):
-                        this_antenna = f'-2:{this_input}'
+                        this_antenna.status = 2
                     else:
                         ant_from_nbp = hu_from_nbp[0].upstream_part
                         if ant_from_nbp[0] != 'H':  # This likely just means not connected.
-                            this_antenna = f'-3:{this_input}'
+                            this_antenna.status = 3
                         else:
-                            antenna = ant_from_nbp
-                            this_antenna = antenna[2:]
+                            this_antenna.set_hpn(ant_from_nbp)
+
                     # Process found antennas
                     antenna_number = int(this_antenna.split(':')[0])
                     if antenna_number >= 0:
                         self.found_antennas.append(antenna_number)
-                        antkey = f"{antenna}:A"
+                        antkey = f"{this_antenna.hpn}:A"
                         hu_from_ant = ant_hudict[antkey].hookup['E<ground']
                         node_from_ant = int(hu_from_ant[3].downstream_part[3:])
                         port_from_ant = int(hu_from_ant[3].downstream_input_port[1:])
