@@ -95,9 +95,9 @@ class Grid:
         for param in self.params:
             setattr(self, param, highlight[param])
 
-    def show(self, node, port):
+    def show_hookup(self, node, port):
         for component in self.table[node][port].hookup:
-            print(component, end='')
+            print(component)
         print()
 
     def _proc_colors(self, highlight, minval, maxval):
@@ -214,3 +214,13 @@ class Grid:
                         this_entry.display_color = self.antennas_to_highlight[this_entry.number]
                     self.table[this_node][this_port] = this_entry
         self.process_status()
+
+    def _xtxt_offset(self, antenna):
+        """Offset so that the numbers line-up."""
+        if antenna[0] == '-':
+            return 0.15
+        if len(antenna) == 3:
+            return 0.2
+        if len(antenna) == 2:
+            return 0.15
+        return 0.1
