@@ -83,52 +83,75 @@ class TableEntry:
 
 class Grid:
     def __init__(self, highlight={}, nodes=NODES, ports=PORTS, background=BKCLR, minval=None, maxval=None):
-        if isinstance(highlight, str):
-            with open(highlight, 'r') as fp:
-                highlight = yaml.safe_load(fp)
-        self.params = list(highlight.keys())
-        highlight = self._proc_colors(highlight, minval=minval, maxval=maxval)
+        self.set_highlight(highlight, minval=minval, maxval=maxval)
         self.antennas_to_highlight = {}
         self.nodes = nodes
         self.ports = ports
         self.background = background
-        for param in self.params:
-            setattr(self, param, highlight[param])
 
     def show_hookup(self, node, port):
         for component in self.table[node][port].hookup:
             print(component)
         print()
 
-    def _proc_colors(self, highlight, minval, maxval):
-        self.colormap = plt.cm.rainbow
-        self.add_colorbar = False
-        fmm = [10000.0, -100000.0]
-        found_float = []
-        self.params_to_apply = []
-        for param_to_check in ['antennas', 'inputs']:
-            if param_to_check in self.params:
-                self.params_to_apply.append(param_to_check)
+    def _get_key(self, key):
+        try:
+            node, port = key.split(':')
+            key = (int(node), int(port))
+        except ValueError:
+            key = int(key)
+        return key
 
-        for param in self.params_to_apply:
-            for inp, clr in highlight[param].items():
-                if isinstance(clr, float):
-                    found_float.append(inp)
-                    if clr < fmm[0]:
-                        fmm[0] = clr
-                    elif clr > fmm[1]:
-                        fmm[1] = clr
-        if len(found_float):
-            for param in self.params_to_apply:
-                if minval is None:
-                    minval = 0.9 * fmm[0]
-                if maxval is None:
-                    maxval = 1.1 * fmm[1]
-                self.add_colorbar = True
-                self.norm = colors.Normalize(vmin=minval, vmax=maxval)
-                for inp in found_float:
-                    highlight[param][inp] = self.colormap(self.norm(highlight[param][inp]))
-        return highlight
+    def set_highlight(self, highlight, minval, maxval, highlight_color='r'):
+        """
+        Parameter
+        ---------
+        highlight : str, dict, list
+            If str - csv-antennas, csv-inputs(node:port), yaml filename
+            If dict-of-int-keys, antennas; dict-of-str, node:port
+        """
+        self.add_colorbar = False
+        self.highlight = {}
+        if isinstance(highlight, str):
+            try:
+                with open(highlight, 'r') as fp:
+                    highlight = yaml.safe_load(fp)
+            except FileNotFoundError:
+                highlight = highlight.split(',')
+
+        if isinstance(highlight, dict):
+            # Make sure keys are either int or tuple-of-int (node, port)
+            has_a_float = []
+            minfloat = 1E6
+            maxfloat = -1E6
+            for key, value in highlight.items():
+                if isinstance(key, (int, tuple)):
+                    self.highlight[key] = value
+                elif isinstance(key, str):
+                    self.highlight[self._get_key(key)] = value
+                try:
+                    float_val = float(value)
+                    has_a_float.append(key)
+                    minfloat = float_val if float_val < minfloat else minfloat
+                    maxfloat = float_val if float_val > maxfloat else maxfloat
+                except ValueError:
+                    continue
+            if not len(has_a_float):
+                return
+        elif isinstance(highlight, list):
+            for key in highlight:
+                self.highlight[self._get_key(key)] = highlight_color
+            return
+
+        # Is a dict with floats in it
+        self.colormap = plt.cm.rainbow
+        self.add_colorbar = True
+        minval = minfloat if minval is None else minval
+        maxval = maxfloat if maxval is None else maxval
+        self.norm = colors.Normalize(vmin=minval, vmax=maxval)
+        for key in has_a_float:
+            self.highlight[key] = self.colormap(float(self.norm(highlight[key])))
+
 
     def addplot(self, title=None, marker=',', markersize=None, force_text=False, show_text=True, parameter='text'):
         newfig = title is not None
@@ -210,8 +233,11 @@ class Grid:
                         this_entry.cm()
                     this_entry.set_text()
                     this_entry.set_color(self.background)
-                    if this_entry.number in self.antennas_to_highlight:
-                        this_entry.display_color = self.antennas_to_highlight[this_entry.number]
+                    this_input = (this_node, this_port)
+                    if this_entry.number in self.highlight:
+                        this_entry.display_color = self.highlight[this_entry.number]
+                    elif this_input in self.highlight:
+                        this_entry.display_color = self.highlight[this_input]
                     self.table[this_node][this_port] = this_entry
         self.process_status()
 

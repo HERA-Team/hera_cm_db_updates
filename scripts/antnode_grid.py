@@ -5,20 +5,11 @@ import argparse
 
 
 ap = argparse.ArgumentParser()
-ap.add_argument('-a', '--antenna', help="List of antennas to highlight", default='')
+ap.add_argument('highlight', help="List of antennas to highlight", nargs='?', default=None)
 args = ap.parse_args()
 
-highlight = {}
-if len(args.antenna):
-    highlight['antennas'] = {}
-    for ant in args.antenna.split(','):
-        highlight['antennas'][int(ant)] = 'r'
-
-grid = ant_node_grid.Grid(highlight)
-print("Making...")
-grid.make()
-if False:
-    print("\nChecking...")
-    grid.check()
+grid = ant_node_grid.Grid(args.highlight)
+print("Making grid...")
+grid.get_connected()
 grid.addplot('Node Grid/Antenna Map')
 ant_node_grid.plt.show()
