@@ -6,7 +6,7 @@ from matplotlib import colors
 import yaml
 
 
-NODES = list(range(30))
+NODES = list(range(24))
 PORTS = list(range(1, 13))
 BKCLR = 'k'
 NODE_INFO = geo_sysdef.read_nodes()
@@ -157,8 +157,7 @@ class Grid:
         elif isinstance(highlight, list):
             for key in highlight:
                 key = self.get_key(key)
-                self.highlight[key]['value'] = highlight_color
-                self.highlight[key]['color'] = highlight_color
+                self.highlight[key] = {'value': highlight_color, 'color': highlight_color}
 
         if not len(has_a_float):
             return
