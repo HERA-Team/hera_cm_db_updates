@@ -44,7 +44,10 @@ class TableEntry:
                     self.status = 6
 
     def __repr__(self):
-        s = f"HPN: {self.hpn}\nNode-Port: {self.node}-{self.port}\nStatus: {self.status}  ({STATUS[self.status]['msg']})\n"
+        s = f"HPN: {self.hpn}\n"
+        s+= f"Number: {self.number}\n"
+        s+= f"Node-Port: {self.node}-{self.port}\n"
+        s+= f"Status: {self.status}  ({STATUS[self.status]['msg']})\n"
         if self.status:
             s+= f"CM node-port:  {self.cm_node}-{self.cm_port}\n"
         if self.assigned is not None:
@@ -52,7 +55,6 @@ class TableEntry:
         if self.value is not None:
             s+= f"Value: {self.value}\n"
         s+= f"Color: {self.color}\nDisplay: {self.display_color}\n"
-        s+= '-----------------------------------'
         return s
 
     def cm(self):
@@ -90,15 +92,22 @@ class Grid:
         self.nodes = nodes
         self.ports = ports
         self.background = background
-        self.ant_to_entry = {}
+        self.ant_to_port = {}
 
-    def show_hookup(self, node, port):
+    def show(self, entry, port=None):
+        key = self.get_key(entry)
+        if isinstance(key, (tuple, list)):
+            node, port = key
+        if port is None:
+            node, port = self.ant_to_port[key]
+        print(self.table[node][port], end='')
+        print("Hookup:")
         for component in self.table[node][port].hookup:
-            print(component)
+            print(f"\t{component}")
         print()
 
-    def _get_key(self, key):
-        if isinstance(key, (int, tuple)):
+    def get_key(self, key):
+        if isinstance(key, (int, tuple, list)):
             return key
         try:
             node, port = key.split(':')
@@ -130,7 +139,7 @@ class Grid:
             minfloat = 1E6
             maxfloat = -1E6
             for key, value in highlight.items():
-                key = self._get_key(key)
+                key = self.get_key(key)
                 self.highlight[key] = {'value': None, 'color': None}
                 if isinstance(key, (int, tuple)):
                     self.highlight[key]['value'] = value
@@ -149,7 +158,7 @@ class Grid:
                 return
         elif isinstance(highlight, list):
             for key in highlight:
-                key = self._get_key(key)
+                key = self.get_key(key)
                 self.highlight[key]['value'] = highlight_color
                 self.highlight[key]['color'] = highlight_color
             return
@@ -178,7 +187,7 @@ class Grid:
                     if force_text:
                         weight = 'normal'
                         this_color = force_text
-                    x = port - self._xtxt_offset(this_text)
+                    x = port - (0.1 + 0.05 * (len(this_text) - 1.0))
                     y = node - 0.25
                     plt.text(x, y, this_text, color=this_color, weight=weight)
         if newfig:
@@ -213,6 +222,7 @@ class Grid:
                         self.table[node][port].set_as_assigned(assigned_nodes[node].pop(0))
                     except IndexError:
                         pass
+                self.ant_to_port[self.table[node][port].number] = (node, port)
         if 0 in self.table:
             print("Setting node 0 color to light-grey")
             for port in self.ports:
@@ -253,13 +263,3 @@ class Grid:
                         this_entry.value = self.highlight[(this_node, this_port)]['value']
                     self.table[this_node][this_port] = this_entry
         self.process_status()
-
-    def _xtxt_offset(self, antenna):
-        """Offset so that the numbers line-up."""
-        if antenna[0] == '-':
-            return 0.15
-        if len(antenna) == 3:
-            return 0.2
-        if len(antenna) == 2:
-            return 0.15
-        return 0.1
