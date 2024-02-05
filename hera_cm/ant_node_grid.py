@@ -133,9 +133,9 @@ class Grid:
             except FileNotFoundError:
                 highlight = highlight.split(',')
 
+        has_a_float = []
         if isinstance(highlight, dict):
             # Make sure keys are either int or tuple-of-int (node, port)
-            has_a_float = []
             minfloat = 1E6
             maxfloat = -1E6
             for key, value in highlight.items():
@@ -154,13 +154,13 @@ class Grid:
                     maxfloat = float_val if float_val > maxfloat else maxfloat
                 except (ValueError, TypeError):
                     continue
-            if not len(has_a_float):
-                return
         elif isinstance(highlight, list):
             for key in highlight:
                 key = self.get_key(key)
                 self.highlight[key]['value'] = highlight_color
                 self.highlight[key]['color'] = highlight_color
+
+        if not len(has_a_float):
             return
 
         # Is a dict with floats in it
