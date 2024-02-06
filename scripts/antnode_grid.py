@@ -10,6 +10,7 @@ args = ap.parse_args()
 
 grid = ant_node_grid.Grid(args.highlight)
 print("Making grid...")
-grid.get_connected(show_highlighted=7)
+grid.get_connected()
+grid.process_highlight(show_highlighted=7)
 grid.addplot('Node Grid/Antenna Map')
 ant_node_grid.plt.show()

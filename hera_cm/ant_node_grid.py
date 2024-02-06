@@ -223,50 +223,16 @@ class Grid:
             for port in self.ports:
                 self.table[0][port].display_color = '0.8'
 
-    def get_connected(self, show_highlighted=False):
-        """
-        Parameter
-        ---------
-        show_highlighted : True, False, None, int
-            if (None, False) don't print out highlighted entries
-            if True print out all highlighted entries
-            if int only print out int entries
+    def reset_color(self):
+        for node in self.nodes:
+            for port in self.ports:
+                self.table[node][port].display_color = copy(self.table[node][port].color)
 
-        """
+    def process_highlight(self, show_highlighted=False):
         if not show_highlighted:
             show_highlighted = 0
         elif show_highlighted == True:
             show_highlighted = 99
-        
-        self.found_antennas = []
-        self.table = {}
-        with mc.MCSessionWrapper(session=None) as session:
-            hookup = cm_hookup.Hookup(session)
-            ant_hudict = hookup.get_hookup(hpn='H')
-            nbp_hudict = hookup.get_hookup(hpn='NBP')
-            for this_node in self.nodes:
-                self.table[this_node] = {}
-                key = f"NBP{this_node:02d}:A"
-                for this_port in self.ports:
-                    # Get antenna from node port and provide status
-                    try:
-                        hu_from_nbp = nbp_hudict[key].hookup[f'E<e{this_port}']
-                    except KeyError:
-                        hu_from_nbp = None
-                    this_entry = TableEntry(this_node, this_port, hu_from_nbp)
-                    # Process found antennas
-                    if this_entry.number is not None:
-                        self.found_antennas.append(this_entry.number)
-                        antkey = f"{this_entry.hpn}:A"
-                        hu_from_ant = ant_hudict[antkey].hookup['E<ground']
-                        this_entry.cm_node = int(hu_from_ant[3].downstream_part[3:])
-                        this_entry.cm_port = int(hu_from_ant[3].downstream_input_port[1:])
-                        this_entry.cm()
-                    this_entry.set_text()
-                    this_entry.set_color(self.background)
-                    self.table[this_node][this_port] = this_entry
-        self.process_status()
-        # Process highlight
         not_found = []
         for i, key in enumerate(self.highlight):
             hlkey = self.get_key(key)
@@ -285,4 +251,41 @@ class Grid:
             print("...")
         if len(not_found):
             print(f"Antennas not found:  {', '.join([str(x) for x in not_found])}")
+
+    def get_connected(self):
+        """
+        Parameter
+        ---------
+        show_highlighted : True, False, None, int
+            if (None, False) don't print out highlighted entries
+            if True print out all highlighted entries
+            if int only print out int entries
+
+        """
+        self.table = {}
+        with mc.MCSessionWrapper(session=None) as session:
+            hookup = cm_hookup.Hookup(session)
+            ant_hudict = hookup.get_hookup(hpn='H')
+            nbp_hudict = hookup.get_hookup(hpn='NBP')
+            for this_node in self.nodes:
+                self.table[this_node] = {}
+                key = f"NBP{this_node:02d}:A"
+                for this_port in self.ports:
+                    # Get antenna from node port and provide status
+                    try:
+                        hu_from_nbp = nbp_hudict[key].hookup[f'E<e{this_port}']
+                    except KeyError:
+                        hu_from_nbp = None
+                    this_entry = TableEntry(this_node, this_port, hu_from_nbp)
+                    # Process found antennas
+                    if this_entry.number is not None:
+                        antkey = f"{this_entry.hpn}:A"
+                        hu_from_ant = ant_hudict[antkey].hookup['E<ground']
+                        this_entry.cm_node = int(hu_from_ant[3].downstream_part[3:])
+                        this_entry.cm_port = int(hu_from_ant[3].downstream_input_port[1:])
+                        this_entry.cm()
+                    this_entry.set_text()
+                    this_entry.set_color(self.background)
+                    self.table[this_node][this_port] = this_entry
+        self.process_status()
 
