@@ -76,11 +76,12 @@ class TableEntry:
         else:
             self.text = '---'
 
-    def set_as_assigned(self, anum):
-        if self.number is not None:
-            print(f"Reassigning {self.node:02d}-{self.port:02d}:  {self.number} to {anum}")
-        else:
-            print(f"Assigning   {self.node:02d}-{self.port:02d}:  {anum}")
+    def set_as_assigned(self, anum, verbose=False):
+        if verbose:
+            if self.number is not None:
+                print(f"Reassigning {self.node:02d}-{self.port:02d}:  {self.number} to {anum}")
+            else:
+                print(f"Assigning   {self.node:02d}-{self.port:02d}:  {anum}")
         self.assigned = anum
         self.color = 'moccasin'
         self.display_color = 'moccasin'
@@ -117,7 +118,7 @@ class Grid:
             key = int(key)
         return key
 
-    def set_highlight(self, highlight, minval, maxval, display_color='r'):
+    def set_highlight(self, highlight, minval=None, maxval=None, display_color='r'):
         """
         Parameter
         ---------
@@ -169,39 +170,40 @@ class Grid:
                 self.highlight[key]['color'] = self.colormap(float(self.norm(highlight[key])))
 
 
-    def addplot(self, title=None, marker=',', markersize=None, show_text=True, parameter='text'):
+    def addplot(self, title=None, marker=',', markersize=None, markeroffset=[0.0, 0.0], parameter='text'):
         newfig = title is not None
         if newfig:
             fig = plt.figure(title, figsize=(9.75,6.5))
-            ax = fig.subplots()
+            self.ax = fig.subplots()
         for node in self.nodes:
             for port in self.ports:
                 this_color = self.table[node][port].display_color
                 this_text = str(getattr(self.table[node][port], parameter))
-                ax.plot(port, node, marker, markersize=markersize, color=this_color)
-                if show_text:
+                x, y = port + markeroffset[0], node + markeroffset[1]
+                self.ax.plot(x, y, marker, markersize=markersize, color=this_color)
+                if marker == ',':
                     weight = 'extra bold'
                     x = port - (0.1 + 0.05 * (len(this_text) - 1.0))
                     y = node - 0.25
-                    ax.text(x, y, this_text, color=this_color, weight=weight)
+                    self.ax.text(x, y, this_text, color=this_color, weight=weight)
         if newfig:
             if self.add_colorbar is not None:
-                fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm), ax=ax)
-            ax.set_xlabel('Node input port (snap input order)')
-            ax.set_ylabel('Node number')
-            ax.set_title(title)
-            ax.set_xticks(self.ports, [str(x) for x in self.ports])
-            ax.set_yticks(self.nodes, [str(x) for x in self.nodes])
+                fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm), ax=self.ax)
+            self.ax.set_xlabel('Node input port (snap input order)')
+            self.ax.set_ylabel('Node number')
+            self.ax.set_title(title)
+            self.ax.set_xticks(self.ports, [str(x) for x in self.ports])
+            self.ax.set_yticks(self.nodes, [str(x) for x in self.nodes])
             xmin, xmax = min(self.ports)-0.5, max(self.ports)+0.5
             ymin, ymax = min(self.nodes)-0.7, max(self.nodes)+2.2
             for x in [3.5, 6.5, 9.5]:
-                ax.plot([x, x], [ymin, ymax], '--', color='0.7')
-            ax.plot([xmin, xmax], [ymax-1.35, ymax-1.35], '--', color='0.7')
-            ax.axis([xmin, xmax, ymin, ymax])
+                self.ax.plot([x, x], [ymin, ymax], '--', color='0.7')
+            self.ax.plot([xmin, xmax], [ymax-1.35, ymax-1.35], '--', color='0.7')
+            self.ax.axis([xmin, xmax, ymin, ymax])
             for i in range(4):
-                ax.text(1.5 + i*3, ymax-1.0, f'SNAP {i}')
+                self.ax.text(1.5 + i*3, ymax-1.0, f'SNAP {i}')
 
-    def process_status(self):
+    def process_status(self, verbose=False):
         assigned_nodes = {}
         for node in self.nodes:
             assigned_nodes[node] = copy(NODE_INFO[node]['ants'])
@@ -212,7 +214,7 @@ class Grid:
             for port in self.ports:
                 if self.table[node][port].status:
                     try:
-                        self.table[node][port].set_as_assigned(assigned_nodes[node].pop(0))
+                        self.table[node][port].set_as_assigned(assigned_nodes[node].pop(0), verbose=verbose)
                     except IndexError:
                         pass
                 self.ant_to_port[self.table[node][port].number] = (node, port)
@@ -265,10 +267,15 @@ class Grid:
                     self.table[this_node][this_port] = this_entry
         self.process_status()
         # Process highlight
+        not_found = []
         for i, key in enumerate(self.highlight):
             hlkey = self.get_key(key)
             if isinstance(hlkey, int):
-                this_node, this_port = self.ant_to_port[hlkey]
+                try:
+                    this_node, this_port = self.ant_to_port[hlkey]
+                except KeyError:
+                    not_found.append(hlkey)
+                    continue
             self.table[this_node][this_port].display_color = self.highlight[key]['color']
             self.table[this_node][this_port].value = self.highlight[key]['value']
             if i < show_highlighted:
@@ -276,4 +283,6 @@ class Grid:
                 print("-----------------------------------")
         if show_highlighted and show_highlighted < len(self.highlight):
             print("...")
+        if len(not_found):
+            print(f"Antennas not found:  {', '.join([str(x) for x in not_found])}")
 
