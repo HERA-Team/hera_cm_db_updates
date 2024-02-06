@@ -187,7 +187,7 @@ class Grid:
                     y = node - 0.25
                     self.ax.text(x, y, this_text, color=this_color, weight=weight)
         if newfig:
-            if self.add_colorbar is not None:
+            if self.add_colorbar:
                 fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm), ax=self.ax)
             self.ax.set_xlabel('Node input port (snap input order)')
             self.ax.set_ylabel('Node number')
