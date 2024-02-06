@@ -5,7 +5,7 @@ import argparse
 
 
 ap = argparse.ArgumentParser()
-ap.add_argument('highlight', help="List of antennas to highlight", nargs='?', default=None)
+ap.add_argument('highlight', help="List of antennas to highlight or yaml file", nargs='?', default=None)
 args = ap.parse_args()
 
 grid = ant_node_grid.Grid(args.highlight)
