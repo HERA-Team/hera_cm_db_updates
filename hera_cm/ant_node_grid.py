@@ -54,7 +54,7 @@ class TableEntry:
             s+= f"Assigned: {self.assigned}\n"
         if self.value is not None:
             s+= f"Value: {self.value}\n"
-        s+= f"Color: {self.color}\nDisplay: {self.display_color}\n"
+        s+= f"Color: {self.color}\nDisplay color: {self.display_color}\n"
         return s
 
     def cm(self):
@@ -82,6 +82,7 @@ class TableEntry:
         else:
             print(f"Assigning   {self.node:02d}-{self.port:02d}:  {anum}")
         self.assigned = anum
+        self.color = 'moccasin'
         self.display_color = 'moccasin'
         self.text = str(anum)
         self.number = anum
@@ -93,6 +94,7 @@ class Grid:
         self.ports = ports
         self.background = background
         self.ant_to_port = {}
+        self.add_colorbar = False
 
     def show(self, entry, port=None):
         key = self.get_key(entry)
@@ -104,7 +106,6 @@ class Grid:
         print("Hookup:")
         for component in self.table[node][port].hookup:
             print(f"\t{component}")
-        print()
 
     def get_key(self, key):
         if isinstance(key, (int, tuple, list)):
@@ -116,7 +117,7 @@ class Grid:
             key = int(key)
         return key
 
-    def set_highlight(self, highlight, minval, maxval, highlight_color='r'):
+    def set_highlight(self, highlight, minval, maxval, display_color='r'):
         """
         Parameter
         ---------
@@ -124,7 +125,6 @@ class Grid:
             If str - csv-antennas, csv-inputs(node:port), yaml filename
             If dict-of-int-keys, antennas; dict-of-str, node:port
         """
-        self.add_colorbar = False
         self.highlight = {}
         if isinstance(highlight, str):
             try:
@@ -134,7 +134,7 @@ class Grid:
                 highlight = highlight.split(',')
 
         has_a_float = []
-        if isinstance(highlight, dict):
+        if isinstance(highlight, dict):            
             # Make sure keys are either int or tuple-of-int (node, port)
             minfloat = 1E6
             maxfloat = -1E6
@@ -157,55 +157,49 @@ class Grid:
         elif isinstance(highlight, list):
             for key in highlight:
                 key = self.get_key(key)
-                self.highlight[key] = {'value': highlight_color, 'color': highlight_color}
+                self.highlight[key] = {'value': display_color, 'color': display_color}
 
-        if not len(has_a_float):
-            return
-
-        # Is a dict with floats in it
-        self.colormap = plt.cm.rainbow
-        self.add_colorbar = True
-        minval = minfloat if minval is None else minval
-        maxval = maxfloat if maxval is None else maxval
-        self.norm = colors.Normalize(vmin=minval, vmax=maxval)
-        for key in has_a_float:
-            self.highlight[key]['color'] = self.colormap(float(self.norm(highlight[key])))
+        if len(has_a_float):
+            self.add_colorbar = True
+            self.colormap = plt.cm.rainbow
+            minval = minfloat if minval is None else minval
+            maxval = maxfloat if maxval is None else maxval
+            self.norm = colors.Normalize(vmin=minval, vmax=maxval)
+            for key in has_a_float:
+                self.highlight[key]['color'] = self.colormap(float(self.norm(highlight[key])))
 
 
-    def addplot(self, title=None, marker=',', markersize=None, force_text=False, show_text=True, parameter='text'):
+    def addplot(self, title=None, marker=',', markersize=None, show_text=True, parameter='text'):
         newfig = title is not None
         if newfig:
             fig = plt.figure(title, figsize=(9.75,6.5))
+            ax = fig.subplots()
         for node in self.nodes:
             for port in self.ports:
                 this_color = self.table[node][port].display_color
                 this_text = str(getattr(self.table[node][port], parameter))
-                plt.plot(port, node, marker, markersize=markersize, color=this_color)
+                ax.plot(port, node, marker, markersize=markersize, color=this_color)
                 if show_text:
                     weight = 'extra bold'
-                    if force_text:
-                        weight = 'normal'
-                        this_color = force_text
                     x = port - (0.1 + 0.05 * (len(this_text) - 1.0))
                     y = node - 0.25
-                    plt.text(x, y, this_text, color=this_color, weight=weight)
+                    ax.text(x, y, this_text, color=this_color, weight=weight)
         if newfig:
-            if self.add_colorbar:
-                print("ANG185: colorbar errors out")
-                # fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm))
-            plt.xlabel('Node input port (snap input order)')
-            plt.ylabel('Node number')
-            plt.title(title)
-            plt.xticks(self.ports, [str(x) for x in self.ports])
-            plt.yticks(self.nodes, [str(x) for x in self.nodes])
+            if self.add_colorbar is not None:
+                fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm), ax=ax)
+            ax.set_xlabel('Node input port (snap input order)')
+            ax.set_ylabel('Node number')
+            ax.set_title(title)
+            ax.set_xticks(self.ports, [str(x) for x in self.ports])
+            ax.set_yticks(self.nodes, [str(x) for x in self.nodes])
             xmin, xmax = min(self.ports)-0.5, max(self.ports)+0.5
             ymin, ymax = min(self.nodes)-0.7, max(self.nodes)+2.2
             for x in [3.5, 6.5, 9.5]:
-                plt.plot([x, x], [ymin, ymax], '--', color='0.7')
-            plt.plot([xmin, xmax], [ymax-1.35, ymax-1.35], '--', color='0.7')
-            plt.axis([xmin, xmax, ymin, ymax])
+                ax.plot([x, x], [ymin, ymax], '--', color='0.7')
+            ax.plot([xmin, xmax], [ymax-1.35, ymax-1.35], '--', color='0.7')
+            ax.axis([xmin, xmax, ymin, ymax])
             for i in range(4):
-                plt.text(1.5 + i*3, ymax-1.0, f'SNAP {i}')
+                ax.text(1.5 + i*3, ymax-1.0, f'SNAP {i}')
 
     def process_status(self):
         assigned_nodes = {}
@@ -227,7 +221,21 @@ class Grid:
             for port in self.ports:
                 self.table[0][port].display_color = '0.8'
 
-    def get_connected(self):  # was make
+    def get_connected(self, show_highlighted=False):
+        """
+        Parameter
+        ---------
+        show_highlighted : True, False, None, int
+            if (None, False) don't print out highlighted entries
+            if True print out all highlighted entries
+            if int only print out int entries
+
+        """
+        if not show_highlighted:
+            show_highlighted = 0
+        elif show_highlighted == True:
+            show_highlighted = 99
+        
         self.found_antennas = []
         self.table = {}
         with mc.MCSessionWrapper(session=None) as session:
@@ -254,11 +262,18 @@ class Grid:
                         this_entry.cm()
                     this_entry.set_text()
                     this_entry.set_color(self.background)
-                    if this_entry.number in self.highlight:
-                        this_entry.display_color = self.highlight[this_entry.number]['color']
-                        this_entry.value = self.highlight[this_entry.number]['value']
-                    elif (this_node, this_port) in self.highlight:
-                        this_entry.display_color = self.highlight[(this_node, this_port)]['color']
-                        this_entry.value = self.highlight[(this_node, this_port)]['value']
                     self.table[this_node][this_port] = this_entry
         self.process_status()
+        # Process highlight
+        for i, key in enumerate(self.highlight):
+            hlkey = self.get_key(key)
+            if isinstance(hlkey, int):
+                this_node, this_port = self.ant_to_port[hlkey]
+            self.table[this_node][this_port].display_color = self.highlight[key]['color']
+            self.table[this_node][this_port].value = self.highlight[key]['value']
+            if i < show_highlighted:
+                self.show(hlkey)
+                print("-----------------------------------")
+        if show_highlighted and show_highlighted < len(self.highlight):
+            print("...")
+
