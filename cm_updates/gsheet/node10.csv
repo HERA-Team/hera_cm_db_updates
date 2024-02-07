@@ -7,8 +7,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 94,N,78,147,3,139,C14,N8,0,RF_maintenance,
 109,E,89,371,4,140,C16,E2,1,RF_maintenance,
 109,N,89,371,4,140,C16,N0,1,RF_maintenance,
-110,E,68,362,5,141,C16,E6,1,RF_maintenance,Removed LP filter
-110,N,68,362,5,141,C16,N4,1,RF_maintenance,Removed LP filter
+110,E,68,362,5,141,C16,E6,1,RF_maintenance,
+110,N,68,362,5,141,C16,N4,1,RF_maintenance,
 111,E,83,142,6,142,C16,E10,1,RF_maintenance,
 111,N,83,142,6,142,C16,N8,1,RF_maintenance,
 112,E,81,144,7,143,C42,E2,2,digital_ok,
@@ -21,8 +21,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 129,N,74,143,10,146,C45,N0,3,digital_ok,
 130,E,80,146,11,147,C45,E6,3,digital_ok,
 130,N,80,146,11,147,C45,N4,3,digital_ok,
-328,E,290,235,12,326,C45,E10,3,, 
-328,N,290,235,12,326,C45,N8,3,,
+328,E,290,235,12,326,C45,E10,3,RF_ok, 
+328,N,290,235,12,326,C45,N8,3,RF_ok,
 #END,,,,,,,,,,
 NCM,6,,,,,,,,,
 FPS,8,,,,,,,,,
