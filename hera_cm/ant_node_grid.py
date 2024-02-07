@@ -1,209 +1,292 @@
 #! /usr/bin/env python
 from hera_mc import cm_hookup, mc, geo_sysdef
 import matplotlib.pyplot as plt
-import numpy as np
+from copy import copy
 from matplotlib import colors
 import yaml
 
 
-NODES = list(range(1, 30))
+NODES = list(range(24))
 PORTS = list(range(1, 13))
 BKCLR = 'k'
 NODE_INFO = geo_sysdef.read_nodes()
+STATUS = {
+    0: {'msg': 'ok', 'color': 'k'},
+    1: {'msg': "undetermined", 'color': '0.5'},
+    2: {'msg': "hookup not found via node port", 'color': 'b'},
+    3: {'msg': "antenna not found from node port", 'color': 'm'},
+    4: {'msg': "nodes don't match", 'color': 'r'},
+    5: {'msg': "ports don't match", 'color': 'c'},
+    6: {'msg': "couldn't find ant number", 'color': 'y'}
+}
+OK = [0]
+MAX_HIGHLIGHT = 350
+
+class TableEntry:
+    def __init__(self, node, port, hookup):
+        self.node = node
+        self.port = port
+        self.hookup = hookup
+        self.status = 1
+        for init in ['hpn', 'number', 'cm_node', 'cm_port', 'assigned', 'value']:
+            setattr(self, init, None)
+        if self.hookup is None:
+            self.status = 2
+        else:
+            self.hpn = self.hookup[0].upstream_part
+            if self.hpn[0] != 'H':  # This likely just means not connected.
+                self.status = 3
+            else:
+                try:
+                    self.number = int(self.hpn[2:])
+                    self.status = 0
+                except ValueError:
+                    self.number = None
+                    self.status = 6
+
+    def __repr__(self):
+        s = f"HPN: {self.hpn}\n"
+        s+= f"Number: {self.number}\n"
+        s+= f"Node-Port: {self.node}-{self.port}\n"
+        s+= f"Status: {self.status}  ({STATUS[self.status]['msg']})\n"
+        if self.status:
+            s+= f"CM node-port:  {self.cm_node}-{self.cm_port}\n"
+        if self.assigned is not None:
+            s+= f"Assigned: {self.assigned}\n"
+        if self.value is not None:
+            s+= f"Value: {self.value}\n"
+        s+= f"Color: {self.color}\nDisplay color: {self.display_color}\n"
+        return s
+
+    def cm(self):
+        if not (self.cm_node == self.node):
+            self.status = 4
+        if not (self.cm_port == self.port):  # This likely just means not connected.
+            self.status = 5
+
+    def set_color(self, bg):
+        if self.status:
+            self.color = STATUS[self.status]['color']
+        else:
+            self.color = bg
+        self.display_color = copy(self.color)
+
+    def set_text(self):
+        if self.number is not None:
+            self.text = f"{self.number}"
+        else:
+            self.text = '---'
+
+    def set_as_assigned(self, anum, verbose=False):
+        if verbose:
+            if self.number is not None:
+                print(f"Reassigning {self.node:02d}-{self.port:02d}:  {self.number} to {anum}")
+            else:
+                print(f"Assigning   {self.node:02d}-{self.port:02d}:  {anum}")
+        self.assigned = anum
+        self.color = 'moccasin'
+        self.display_color = 'moccasin'
+        self.text = str(anum)
+        self.number = anum
 
 class Grid:
-    fyi_all_params = ['nodes', 'ports', 'background', 'antennas', 'inputs']
-
-    def __init__(self, data={}, nodes=NODES, ports=PORTS, background=BKCLR, minval=None, maxval=None):
-        if isinstance(data, str):
-            with open(data, 'r') as fp:
-                data = yaml.safe_load(fp)
-        self.params = list(data.keys())
-        data = self._proc_colors(data, minval=minval, maxval=maxval)
-        self.antennas = {}
-        self.inputs = {}
+    def __init__(self, highlight={}, nodes=NODES, ports=PORTS, background=BKCLR, minval=None, maxval=None):
+        self.set_highlight(highlight, minval=minval, maxval=maxval)
         self.nodes = nodes
         self.ports = ports
         self.background = background
-        for param in self.params:
-            setattr(self, param, data[param])
-        self.antenna_tracker = {}
-        self._pdat = {}
-
-    def show(self, hu):
-        for component in hu:
-            print(component, end='')
-        print()
-
-    def _proc_colors(self, data, minval, maxval):
-        self.colormap = plt.cm.rainbow
+        self.ant_to_port = {}
         self.add_colorbar = False
-        fmm = [10000.0, -100000.0]
-        found_float = []
-        self.params_to_apply = []
-        for param_to_check in ['antennas', 'inputs']:
-            if param_to_check in self.params:
-                self.params_to_apply.append(param_to_check)
 
-        for param in self.params_to_apply:
-            for inp, clr in data[param].items():
-                if isinstance(clr, float):
-                    found_float.append(inp)
-                    if clr < fmm[0]:
-                        fmm[0] = clr
-                    elif clr > fmm[1]:
-                        fmm[1] = clr
-        if len(found_float):
-            for param in self.params_to_apply:
-                if minval is None:
-                    minval = 0.9 * fmm[0]
-                if maxval is None:
-                    maxval = 1.1 * fmm[1]
-                self.add_colorbar = True
-                self.norm = colors.Normalize(vmin=minval, vmax=maxval)
-                for inp in found_float:
-                    data[param][inp] = self.colormap(self.norm(data[param][inp]))
-        return data
+    def show(self, entry, port=None):
+        key = self.get_key(entry)
+        if isinstance(key, (tuple, list)):
+            node, port = key
+        if port is None:
+            node, port = self.ant_to_port[key]
+        print(self.table[node][port], end='')
+        print("Hookup:")
+        for component in self.table[node][port].hookup:
+            print(f"\t{component}")
 
-    def addplot(self, title=None, marker=',', markersize=None, data_offset=[0.0, 0.0], force_text=False, show_text=True):
+    def get_key(self, key):
+        if isinstance(key, (int, tuple, list)):
+            return key
+        try:
+            node, port = key.split(':')
+            key = (int(node), int(port))
+        except ValueError:
+            key = int(key)
+        return key
+
+    def set_highlight(self, highlight, minval=None, maxval=None, display_color='r'):
+        """
+        Parameter
+        ---------
+        highlight : str, dict, list
+            If str - csv-antennas, csv-inputs(node:port), yaml filename
+            If dict-of-int-keys, antennas; dict-of-str, node:port
+        """
+        self.highlight = {}
+        if isinstance(highlight, str):
+            try:
+                with open(highlight, 'r') as fp:
+                    highlight = yaml.safe_load(fp)
+            except FileNotFoundError:
+                highlight = highlight.split(',')
+
+        has_a_float = []
+        if isinstance(highlight, dict):            
+            # Make sure keys are either int or tuple-of-int (node, port)
+            minfloat = 1E6
+            maxfloat = -1E6
+            for key, value in highlight.items():
+                key = self.get_key(key)
+                self.highlight[key] = {'value': None, 'color': None}
+                if isinstance(key, (int, tuple)):
+                    self.highlight[key]['value'] = value
+                    self.highlight[key]['color'] = value
+                elif isinstance(key, str):
+                    self.highlight[key]['value'] = value
+                    self.highlight[key]['color'] = value
+                try:
+                    float_val = float(value)
+                    has_a_float.append(key)
+                    minfloat = float_val if float_val < minfloat else minfloat
+                    maxfloat = float_val if float_val > maxfloat else maxfloat
+                except (ValueError, TypeError):
+                    continue
+        elif isinstance(highlight, list):
+            for key in highlight:
+                key = self.get_key(key)
+                self.highlight[key] = {'value': display_color, 'color': display_color}
+
+        if len(has_a_float):
+            self.add_colorbar = True
+            self.colormap = plt.cm.rainbow
+            minval = minfloat if minval is None else minval
+            maxval = maxfloat if maxval is None else maxval
+            self.norm = colors.Normalize(vmin=minval, vmax=maxval)
+            for key in has_a_float:
+                self.highlight[key]['color'] = self.colormap(float(self.norm(highlight[key])))
+
+
+    def addplot(self, title=None, marker=',', markersize=None, markeroffset=[0.0, 0.0], parameter='text'):
         newfig = title is not None
         if newfig:
             fig = plt.figure(title, figsize=(9.75,6.5))
-        for j, node in enumerate(self.nodes):
-            for i, port in enumerate(self.ports):
-                this_color = self._pdat['colors'][j][i]
-                this_ant = self._pdat['ants'][j][i]
-                if this_color == '0.5' and this_ant == '---':
-                    try:
-                        this_ant = str(NODE_INFO[node]['ants'][i])
-                        this_color = 'moccasin'
-                    except IndexError:
-                        pass
-                if this_ant[0] != '-':
-                    x = port + data_offset[0]
-                    y = node + data_offset[1]
-                    plt.plot(x, y, marker, markersize=markersize, color=this_color)
-                if show_text:
+            self.ax = fig.subplots()
+        for node in self.nodes:
+            for port in self.ports:
+                this_color = self.table[node][port].display_color
+                this_text = str(getattr(self.table[node][port], parameter))
+                x, y = port + markeroffset[0], node + markeroffset[1]
+                self.ax.plot(x, y, marker, markersize=markersize, color=this_color)
+                if marker == ',':
                     weight = 'extra bold'
-                    if force_text:
-                        weight = 'normal'
-                        this_color = force_text
-                    x = port - self._xtxt_offset(this_ant)
+                    x = port - (0.1 + 0.05 * (len(this_text) - 1.0))
                     y = node - 0.25
-                    plt.text(x, y, this_ant, color=this_color, weight=weight)
+                    self.ax.text(x, y, this_text, color=this_color, weight=weight)
         if newfig:
             if self.add_colorbar:
-                fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm))
-            plt.xlabel('Node input port (snap input order)')
-            plt.ylabel('Node number')
-            plt.title(title)
-            plt.xticks(self.ports, [str(x) for x in self.ports])
-            plt.yticks(self.nodes, [str(x) for x in self.nodes])
+                fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm), ax=self.ax)
+            self.ax.set_xlabel('Node input port (snap input order)')
+            self.ax.set_ylabel('Node number')
+            self.ax.set_title(title)
+            self.ax.set_xticks(self.ports, [str(x) for x in self.ports])
+            self.ax.set_yticks(self.nodes, [str(x) for x in self.nodes])
+            xmin, xmax = min(self.ports)-0.5, max(self.ports)+0.5
+            ymin, ymax = min(self.nodes)-0.7, max(self.nodes)+2.2
             for x in [3.5, 6.5, 9.5]:
-                plt.plot([x, x], [-1, 30], '--', color='.7')
-            plt.axis([0.2, 13, 0, len(self.nodes) + 2])
+                self.ax.plot([x, x], [ymin, ymax], '--', color='0.7')
+            self.ax.plot([xmin, xmax], [ymax-1.35, ymax-1.35], '--', color='0.7')
+            self.ax.axis([xmin, xmax, ymin, ymax])
             for i in range(4):
-                plt.text(1.5 + i*3, len(self.nodes)+0.85, f'SNAP {i}')
+                self.ax.text(1.5 + i*3, ymax-1.0, f'SNAP {i}')
 
-    def _handle_missing(self):
+    def process_status(self, verbose=False):
+        assigned_nodes = {}
+        for node in self.nodes:
+            assigned_nodes[node] = copy(NODE_INFO[node]['ants'])
+            for port in self.ports:
+                if self.table[node][port].status in OK:
+                    assigned_nodes[node].remove(self.table[node][port].number)
+        for node in self.nodes:
+            for port in self.ports:
+                if self.table[node][port].status:
+                    try:
+                        self.table[node][port].set_as_assigned(assigned_nodes[node].pop(0), verbose=verbose)
+                    except IndexError:
+                        pass
+                self.ant_to_port[self.table[node][port].number] = (node, port)
+        if 0 in self.table:
+            print("Setting node 0 color to light-grey")
+            for port in self.ports:
+                self.table[0][port].display_color = '0.8'
+
+    def reset_color(self):
+        for node in self.nodes:
+            for port in self.ports:
+                self.table[node][port].display_color = copy(self.table[node][port].color)
+
+    def process_highlight(self, show_highlighted=False):
+        if not show_highlighted:
+            show_highlighted = 0
+        elif show_highlighted == True:
+            show_highlighted = MAX_HIGHLIGHT
         not_found = []
-        for i in range(350):
-            if i in NODE_INFO[0]['ants']:
-                continue
-            if i not in self.found_antennas:
-                not_found.append(i)
-        print(f"Didn't find {len(not_found)}")
-        print(', '.join([str(x) for x in not_found]))
+        for i, key in enumerate(self.highlight):
+            hlkey = self.get_key(key)
+            if isinstance(hlkey, int):
+                try:
+                    this_node, this_port = self.ant_to_port[hlkey]
+                except KeyError:
+                    not_found.append(hlkey)
+                    continue
+            self.table[this_node][this_port].display_color = self.highlight[key]['color']
+            self.table[this_node][this_port].value = self.highlight[key]['value']
+            if i < show_highlighted:
+                self.show(hlkey)
+                print("-----------------------------------")
+        if show_highlighted and show_highlighted < len(self.highlight):
+            print("...")
+        if len(not_found):
+            print(f"Antennas not found:  {', '.join([str(x) for x in not_found])}")
 
-    def make(self):
-        self.found_antennas = []
-        self._pdat = {'ants': [], 'colors': []}
+    def get_connected(self):
+        """
+        Parameter
+        ---------
+        show_highlighted : True, False, None, int
+            if (None, False) don't print out highlighted entries
+            if True print out all highlighted entries
+            if int only print out int entries
+
+        """
+        self.table = {}
         with mc.MCSessionWrapper(session=None) as session:
             hookup = cm_hookup.Hookup(session)
             ant_hudict = hookup.get_hookup(hpn='H')
             nbp_hudict = hookup.get_hookup(hpn='NBP')
             for this_node in self.nodes:
-                nbp = f"NBP{this_node:02d}"
-                key = f"{nbp}:A"
-                this_row_ants = []
-                this_row_colors = []
+                self.table[this_node] = {}
+                key = f"NBP{this_node:02d}:A"
                 for this_port in self.ports:
-                    this_input = f"{this_node}-{this_port}"
-                    polport = f'E<e{this_port}'
+                    # Get antenna from node port and provide status
                     try:
-                        hu_from_nbp = nbp_hudict[key].hookup[polport]
+                        hu_from_nbp = nbp_hudict[key].hookup[f'E<e{this_port}']
                     except KeyError:
-                        hu_from_nbp = []
-                    this_antenna = -1
-                    if not len(hu_from_nbp):
-                        # print(f"{this_node},{this_port} found no hookup")
-                        antenna = '!H---'
-                    else:
-                        ant_from_nbp = hu_from_nbp[0].upstream_part
-                        if ant_from_nbp[0] != 'H':  # This likely just means not connected.
-                            # print("WARNING - found non-antenna")
-                            # print(f"\tTrying {this_node}-{this_port}")
-                            # print(f"\tFound {ant_from_nbp}")
-                            antenna = '!A---'
-                        else:
-                            antenna = ant_from_nbp
-                            this_antenna = int(antenna[2:])
-                    if this_antenna >= 0:
-                        self.found_antennas.append(this_antenna)
-                        self.antenna_tracker.setdefault(antenna, [])
-                        self.antenna_tracker[antenna].append(this_input)
-                        antkey = f"{antenna}:A"
+                        hu_from_nbp = None
+                    this_entry = TableEntry(this_node, this_port, hu_from_nbp)
+                    # Process found antennas
+                    if this_entry.number is not None:
+                        antkey = f"{this_entry.hpn}:A"
                         hu_from_ant = ant_hudict[antkey].hookup['E<ground']
-                        node_from_ant = int(hu_from_ant[3].downstream_part[3:])
-                        port_from_ant = int(hu_from_ant[3].downstream_input_port[1:])
-                        if not (node_from_ant == this_node):
-                            print("WARNING - nodes don't match!")
-                            print(f"\tAntenna {antenna}")
-                            print(f"\tTrying {this_node}-{this_port}")
-                            print(f"\tFound {node_from_ant}-{port_from_ant}")
-                            antenna = f"!N{antenna[2:]}"
-                        if not (port_from_ant == this_port):  # This likely just means not connected.
-                            # print("WARNING - ports don't match!")
-                            # print(f"\tAntenna {antenna}")
-                            # print(f"\tTrying {this_node}-{this_port}")
-                            # print(f"\tFound {node_from_ant}-{port_from_ant}")
-                            antenna = '!P---'
-                    this_color = self.background
-                    if this_antenna in self.antennas:
-                        this_color = self.antennas[this_antenna]
-                    elif this_input in self.inputs:
-                        this_color = self.inputs[this_input]
-                    if antenna[0] == '!':
-                        this_color = self._special_color(antenna[1])
-                    this_row_ants.append(antenna[2:])
-                    this_row_colors.append(this_color)
-                self._pdat['ants'].append(this_row_ants)
-                self._pdat['colors'].append(this_row_colors)
-    
-    def check(self, color='r'):
-        """This is probably not needed, likely relates to bug in hera_mc"""
-        for antenna, inputs in self.antenna_tracker.items():
-            if len(inputs) > 1:
-                print("WARNING - found multiple ports for antenna!")
-                print(f"\tAntenna {antenna}")
-                print(f"\tInputs {', '.join(inputs)}")
-                for this_input in inputs:
-                    this_node, this_port = int(this_input.split('-')[0]), int(this_input.split('-')[1])
-                    plt.text(this_port - self._xtxt_offset(antenna)+0.03, this_node - 0.25, antenna[2:], color=color, weight='extra bold')
+                        this_entry.cm_node = int(hu_from_ant[3].downstream_part[3:])
+                        this_entry.cm_port = int(hu_from_ant[3].downstream_input_port[1:])
+                        this_entry.cm()
+                    this_entry.set_text()
+                    this_entry.set_color(self.background)
+                    self.table[this_node][this_port] = this_entry
+        self.process_status()
 
-    def _special_color(self, val):
-        if val == 'H':  # Didn't find a hookup
-            return '0.5'
-        if val == 'A':  # Didn't find an antenna
-            return 'm'
-        return 'r'  # Other problem
-
-    def _xtxt_offset(self, antenna):
-        """Offset so that the numbers line-up."""
-        if antenna[0] == '!':
-            return 0.15
-        if len(antenna) == 3:
-            return 0.2
-        if len(antenna) == 2:
-            return 0.15
-        return 0.1
