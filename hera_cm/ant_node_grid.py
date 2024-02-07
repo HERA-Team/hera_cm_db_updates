@@ -20,6 +20,7 @@ STATUS = {
     6: {'msg': "couldn't find ant number", 'color': 'y'}
 }
 OK = [0]
+MAX_HIGHLIGHT = 350
 
 class TableEntry:
     def __init__(self, node, port, hookup):
@@ -232,7 +233,7 @@ class Grid:
         if not show_highlighted:
             show_highlighted = 0
         elif show_highlighted == True:
-            show_highlighted = 99
+            show_highlighted = MAX_HIGHLIGHT
         not_found = []
         for i, key in enumerate(self.highlight):
             hlkey = self.get_key(key)
