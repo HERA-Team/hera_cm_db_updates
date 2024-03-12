@@ -5490,3 +5490,4 @@ HB346,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoup
 HB347,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoupd,1391377698
 HB348,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoupd,1391377698
 HB349,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoupd,1391377698
+HH71,A,Removed LP filter,infoupd,1394300538
