@@ -5491,3 +5491,4 @@ HB347,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoup
 HB348,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoupd,1391377698
 HB349,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoupd,1391377698
 HH71,A,Removed LP filter,infoupd,1394300538
+HH213,A,PAM 292 wasnt switching attenuation,infoupd,1394390538
