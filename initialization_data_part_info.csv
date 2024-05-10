@@ -5492,3 +5492,10 @@ HB348,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoup
 HB349,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoupd,1391377698
 HH71,A,Removed LP filter,infoupd,1394300538
 HH213,A,PAM 292 wasnt switching attenuation,infoupd,1394390538
+HH66,A,apriori_antenna status change: digital_ok > RF_ok,apa-infoupd,1399412898
+HH68,A,apriori_antenna status change: RF_ok > digital_ok,apa-infoupd,1399412898
+HH68,A,Fiber was reseated at PAM input (06/07/2023),apa-infoupd,1399412538
+HH68,A,N: Loose connection fixed 6/2/23. Crossed-pols: Polarisation cables were swapped at node entry. Swapped them back (6/10/23).,apa-infoupd,1399412540
+HH66,A,E: Replaced feedthrough 6/2/23,apa-infoupd,1399412538
+HH37,A,E: -20.7,infoupd,1399412538
+HH37,A,N: -26.6,infoupd,1399412540
