@@ -5501,3 +5501,49 @@ HH37,A,E: -20.7,infoupd,1399412538
 HH37,A,N: -26.6,infoupd,1399412540
 HH66,A,apriori_antenna status change: RF_ok > digital_ok,apa-infoupd,1399416498
 HH232,A,Ticket: Feed conduit feel out and is hanging on the cables.,infoupd,1402069338
+HH63,A,Removed SNAP C000104 and installed C000052,infoupd,1406036538
+HH64,A,Removed SNAP C000104 and installed C000052,infoupd,1406036538
+HH78,A,Removed SNAP C000104 and installed C000052,infoupd,1406036538
+N06,A,Had a large nest over air exit which removed,infoupd,1406036538
+N09,A,Internal fan was gunked up and not working well -- removed it.,infoupd,1406036538
+N09,A,Good airflow in.,infoupd,1406036540
+N09,A,Door opens easily,infoupd,1406036542
+N12,A,Good airflow in and internal fans working,infoupd,1406036538
+N13,A,Clean top,infoupd,1406036538
+N13,A,Fan outside is working fine,infoupd,1406036540
+N13,A,Good airflow and internal fans working,infoupd,1406036542
+N13,A,Door was slightly tough to open,infoupd,1406036544
+N13,A,Found two blue cables hanging,infoupd,1406036546
+N14,A,Clean top,infoupd,1406036538
+N14,A,Fan outside is working fine,infoupd,1406036540
+N14,A,Door was slightly tough to open,infoupd,1406036542
+N14,A,Found two blue cables hanging,infoupd,1406036544
+N17,A,Clean top,infoupd,1406036538
+N17,A,Fan outside is working fine,infoupd,1406036540
+N17,A,Good airflow and internal fans working,infoupd,1406036542
+N17,A,Door opens easily,infoupd,1406036544
+N18,A,Clean top,infoupd,1406036538
+N18,A,Fan outside is working fine,infoupd,1406036540
+N18,A,Good airflow and internal fans working,infoupd,1406036542
+N18,A,Door opens easily,infoupd,1406036544
+N18,A,Found a green and a blue cable hanging,infoupd,1406036546
+N19,A,Clean top,infoupd,1406036538
+N19,A,Fan outside is working fine,infoupd,1406036540
+N19,A,Good airflow and internal fans working,infoupd,1406036542
+N19,A,Door was very tough to open,infoupd,1406036544
+N19,A,Found three green cables hanging,infoupd,1406036546
+N20,A,Clean top,infoupd,1406036538
+N20,A,Fan outside is working fine,infoupd,1406036540
+N20,A,Good airflow and internal fans working,infoupd,1406036542
+N20,A,Door opens easily,infoupd,1406036544
+N20,A,Found two green cables hanging,infoupd,1406036546
+N22,A,Clean top,infoupd,1406036538
+N22,A,Fan outside is working fine,infoupd,1406036540
+N22,A,Good airflow and internal fans working,infoupd,1406036542
+N22,A,Door was slightly tough to open,infoupd,1406036544
+N22,A,Found one green cable hanging,infoupd,1406036546
+N23,A,Clean top,infoupd,1406036538
+N23,A,Fan outside is working fine,infoupd,1406036540
+N23,A,Good airflow and internal fans working,infoupd,1406036542
+N23,A,Door opens easily,infoupd,1406036544
+N23,A,PAM 12 not connected (Found no slot for it),infoupd,1406036546
