@@ -5550,3 +5550,15 @@ N23,A,Door opens easily,infoupd,1406036544
 N23,A,PAM 12 not connected (Found no slot for it),infoupd,1406036546
 N08,A,Replaced outside air filter,infoupd,1406047338
 N13,A,Node 14 undergound pipe seems to be partially clogged,infoupd,1406047338
+N03,A,Clean top,infoupd,1406065338
+N03,A,Fan outside is working fine,infoupd,1406065340
+N03,A,Good airflow and internal fans working,infoupd,1406065342
+N03,A,Door opens easily,infoupd,1406065344
+N04,A,Clean top,infoupd,1406065338
+N04,A,Fan outside is working fine,infoupd,1406065340
+N04,A,Good airflow and internal fans working,infoupd,1406065342
+N04,A,Door opens easily,infoupd,1406065344
+N07,A,Clean top,infoupd,1406065338
+N07,A,Fan outside is working fine,infoupd,1406065340
+N07,A,Good airflow and internal fans working,infoupd,1406065342
+N07,A,Door was slightly tough to open,infoupd,1406065344
