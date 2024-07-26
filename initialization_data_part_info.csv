@@ -5466,6 +5466,7 @@ HH317,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoup
 HH318,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoupd,1391377698
 HH319,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoupd,1391377698
 HB321,A,apriori_antenna status change: not_connected > digital_maintenance,apa-infoupd,1391377698
+N13,A,Replaced outside air filter,infoupd,1406047340
 HB323,A,apriori_antenna status change: not_connected > digital_maintenance,apa-infoupd,1391377698
 HB324,A,apriori_antenna status change: not_connected > digital_maintenance,apa-infoupd,1391377698
 HA326,A,apriori_antenna status change: not_connected > RF_maintenance,apa-infoupd,1391377698
@@ -5547,3 +5548,5 @@ N23,A,Fan outside is working fine,infoupd,1406036540
 N23,A,Good airflow and internal fans working,infoupd,1406036542
 N23,A,Door opens easily,infoupd,1406036544
 N23,A,PAM 12 not connected (Found no slot for it),infoupd,1406036546
+N08,A,Replaced outside air filter,infoupd,1406047338
+N13,A,Node 14 undergound pipe seems to be partially clogged,infoupd,1406047338
