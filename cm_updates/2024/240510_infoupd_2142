@@ -1,0 +1,12 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/240510_infoupd_2142" >> scripts.log 
+update_apriori.py -p HH66 -s RF_ok --date 2024/05/10 --time 21:48
+add_part_info.py -p HH66 -r A -c "apriori_antenna status change: digital_ok > RF_ok" -l "apa-infoupd" --date 2024/05/10 --time 21:48
+update_apriori.py -p HH68 -s digital_ok --date 2024/05/10 --time 21:48
+add_part_info.py -p HH68 -r A -c "apriori_antenna status change: RF_ok > digital_ok" -l "apa-infoupd" --date 2024/05/10 --time 21:48
+add_part_info.py -p HH68 -r A -c "Fiber was reseated at PAM input (06/07/2023)" -l "apa-infoupd" --date 2024/05/10 --time 21:42:00
+add_part_info.py -p HH68 -r A -c "N: Loose connection fixed 6/2/23. Crossed-pols: Polarisation cables were swapped at node entry. Swapped them back (6/10/23)." -l "apa-infoupd" --date 2024/05/10 --time 21:42:02
+add_part_info.py -p HH66 -r A -c "E: Replaced feedthrough 6/2/23" -l "apa-infoupd" --date 2024/05/10 --time 21:42:00
+add_part_info.py -p HH37 -r A -c "E: -20.7" -l "infoupd" --date 2024/05/10 --time 21:42:00
+add_part_info.py -p HH37 -r A -c "N: -26.6" -l "infoupd" --date 2024/05/10 --time 21:42:02
