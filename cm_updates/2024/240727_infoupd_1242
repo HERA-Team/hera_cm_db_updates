@@ -1,0 +1,16 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/240727_infoupd_1242" >> scripts.log 
+add_part_info.py -p N01 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00
+add_part_info.py -p N02 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00
+add_part_info.py -p N03 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00
+add_part_info.py -p N04 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00
+add_part_info.py -p N05 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00
+add_part_info.py -p N06 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00
+add_part_info.py -p N07 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00
+add_part_info.py -p N08 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00
+add_part_info.py -p N09 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00
+add_part_info.py -p N10 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00
+add_part_info.py -p N11 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00
+add_part_info.py -p N12 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00
+add_part_info.py -p N13 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/27 --time 12:42:00

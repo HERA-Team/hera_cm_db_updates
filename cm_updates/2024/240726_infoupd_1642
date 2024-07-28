@@ -1,0 +1,6 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/240726_infoupd_1642" >> scripts.log 
+add_part_info.py -p N08 -r A -c "Replaced outside air filter" -l "infoupd" --date 2024/07/26 --time 16:42:00
+add_part_info.py -p N13 -r A -c "Node 14 undergound pipe seems to be partially clogged" -l "infoupd" --date 2024/07/26 --time 16:42:00
+add_part_info.py -p N13 -r A -c "Replaced outside air filter" -l "infoupd" --date 2024/07/26 --time 16:42:02
