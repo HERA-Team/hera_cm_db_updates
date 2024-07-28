@@ -1,5 +1,5 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
-200,E,194,251,1,233,A22,e2,0,RF_maintenance,
+200,E,194,251,1,233,A22,e2,0,RF_maintenance,E: low optical power at node -2.4
 200,N,194,251,1,233,A22,n0,0,RF_maintenance,
 201,E,159,247,2,234,A22,e6,0,RF_maintenance,
 201,N,159,247,2,234,A22,n4,0,RF_maintenance,

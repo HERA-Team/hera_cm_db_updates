@@ -19,7 +19,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 51,N,75,341,9,133,C37,N8,2,digital_ok,
 52,E,94,134,10,134,C54,E2,3,RF_maintenance,
 52,N,94,134,10,134,C54,N0,3,RF_maintenance,
-36,E,93,132,11,357,C54,E6,3,RF_maintenance,
+36,E,93,132,11,357,C54,E6,3,RF_maintenance,"Both pols have low optical power at node -- E:-10, N:-2"
 36,N,93,132,11,357,C54,N4,3,RF_maintenance,
 50,E,85,107,12,358,C54,E10,3,RF_maintenance,
 50,N,85,107,12,358,C54,N8,3,RF_maintenance,

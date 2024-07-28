@@ -3,7 +3,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 161,N,113,168,1,162,35,n0,0,digital_ok,
 162,E,122,165,2,161,35,e6,0,digital_ok,
 162,N,122,165,2,161,35,n4,0,digital_ok,
-182,E,123,171,3,301,35,e10,0,RF_maintenance,
+182,E,123,171,3,301,35,e10,0,RF_maintenance,E: low optical power at node -12.5
 182,N,123,171,3,301,35,n8,0,RF_maintenance,
 183,E,109,182,4,164,29,e2,1,digital_ok,
 183,N,109,182,4,164,29,n0,1,digital_ok,

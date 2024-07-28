@@ -5,7 +5,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Op
 195,N,259,302,2,306,C99,n4,0,RF_maintenance,,,,,,,,
 214,E,216,310,3,307,C99,e10,0,RF_maintenance,,,,,,,,
 214,N,216,310,3,307,C99,n8,0,RF_maintenance,,,,,,,,
-332,E,323,308,4,308,C127,e2,1,RF_maintenance,,,,,,,,
+332,E,323,308,4,308,C127,e2,1,RF_maintenance,Neither pol has optical power at node,,,,,,,
 332,N,323,308,4,308,C127,n0,1,RF_maintenance,,,,,,,,
 336,E,315,299,5,309,C127,e6,1,RF_maintenance,,,,,,,,
 336,N,315,299,5,309,C127,n4,1,RF_maintenance,,,,,,,,

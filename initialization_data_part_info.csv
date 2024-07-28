@@ -5630,3 +5630,23 @@ N20,A,Ferrite installed on PAM power line,infoupd,1406126538
 N21,A,Ferrite installed on PAM power line,infoupd,1406126538
 N22,A,Ferrite installed on PAM power line,infoupd,1406126538
 N23,A,Ferrite installed on PAM power line,infoupd,1406126538
+HH27,A,"E: Had good optical power at node, replaced feedthru and patch cable and seems good now",infoupd,1406194938
+HH3,A,"N: Had good optical power at node, replaced feedthru and patch cable and seems good now",infoupd,1406194938
+HH16,A,"Fiber to both pols was bad, which the crew fixed.  However, even with replacing both feedthrus and patch cables (although not sure of provenance of those...) still not good power at PAM",infoupd,1406194938
+HH109,A,N: low optical power at node 1.0,infoupd,1406194938
+HH80,A,N: fiber is nicked at the node,infoupd,1406194938
+HH96,A,N: low optical power at node -8.0,infoupd,1406194938
+HH136,A,Neither pol has optical power,infoupd,1406194938
+HH155,A,Neither pol has optical power,infoupd,1406194938
+HH182,A,E: low optical power at node -12.5,infoupd,1406194938
+HH170,A,E: low optical power at node -0.5,infoupd,1406194938
+HH200,A,E: low optical power at node -2.4,infoupd,1406194938
+HH229,A,E: no optical power at node,infoupd,1406194938
+HB332,A,Neither pol has optical power at node,infoupd,1406194938
+HH255,A,N: low optical power at node -1.9,infoupd,1406194938
+HH36,A,"Both pols have low optical power at node -- E:-10, N:-2",infoupd,1406194938
+HH46,A,N: no optical power at node,infoupd,1406194938
+HH34,A,E: low optical power at node 1.4,infoupd,1406194938
+HH35,A,N: no optical power at node,infoupd,1406194938
+HH86,A,N: low optical power at node 1.0,infoupd,1406194938
+HH104,A,N: low optical power at node -4.7,infoupd,1406194938
