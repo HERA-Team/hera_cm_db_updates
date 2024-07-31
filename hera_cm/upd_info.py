@@ -55,6 +55,8 @@ class UpdateInfo(upd_base.Update):
         stmt_hdr = "apriori_antenna status change:"
         refout = 'apa-infoupd'
         for key in self.gsheet.ants:
+            if int(key[2:].split(':')[0]) > 350:
+                continue
             ap_col = self.gsheet.header[self.gsheet.ant_to_node[key]].index('APriori')
             E = self.gsheet.data[key + '-E'][ap_col]
             N = self.gsheet.data[key + '-N'][ap_col]
