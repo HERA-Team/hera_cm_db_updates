@@ -66,6 +66,9 @@ class UpdateConnect(upd_base.Update):
 
     def get_from_col(self, rtype, col, antpol, node, pre='', check=False):
         if col:
+            antno = int(antpol.split(':')[0][2:])
+            if antno > 350:
+                return
             v = self.gsheet.data[antpol][self.gsheet.header[node].index(col)]
         else:
             v = ''
