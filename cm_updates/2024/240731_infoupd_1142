@@ -1,0 +1,7 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/240731_infoupd_1142" >> scripts.log 
+add_part_info.py -p HH120 -r A -c "E: low optical power at node 1.6" -l "infoupd" --date 2024/07/31 --time 11:42:00
+add_part_info.py -p HH104 -r A -c "N: low optical power at node -2" -l "infoupd" --date 2024/07/31 --time 11:42:00
+add_part_info.py -p HH87 -r A -c "E: no optical power was getting to PAM.  Cleaned it up and hopefully ok." -l "infoupd" --date 2024/07/31 --time 11:42:00
+add_part_info.py -p N27 -r A -c "Ferrite installed on PAM power line" -l "infoupd" --date 2024/07/31 --time 11:42:00
