@@ -8,7 +8,7 @@ part_types = {'FDV': 'feed', 'FEM': 'front-end', 'NBP': 'node-bulkhead',
               'PAM': 'post-amp', 'SNP': 'snap', 'FPS': 'fem-power-supply',
               'PCH': 'pam-chassis', 'NCM': 'node-control-module',
               'WR': 'white-rabbit', 'RD': 'arduino', 'HH': 'station',
-              'HA': 'station', 'HB:': 'station', 'A': 'antenna',
+              'HA': 'station', 'HB': 'station', 'A': 'antenna',
               'ND': 'node', 'N': 'node'}
 
 
