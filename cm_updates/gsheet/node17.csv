@@ -1,6 +1,6 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
-196,E,240,382,1,380,C46,e2,0,RF_maintenance,
-196,N,240,382,1,380,C46,n0,0,RF_maintenance,
+196,E,240,46,1,380,C46,e2,0,RF_maintenance,
+196,N,240,46,1,380,C46,n0,0,RF_maintenance,
 197,E,232,337,2,381,C46,e6,0,RF_maintenance,
 197,N,232,337,2,381,C46,n4,0,RF_maintenance,
 198,E,280,204,3,382,C46,e10,0,RF_maintenance,

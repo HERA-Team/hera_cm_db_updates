@@ -5655,3 +5655,7 @@ HH104,A,N: low optical power at node -2,infoupd,1406461338
 HH87,A,E: no optical power was getting to PAM.  Cleaned it up and hopefully ok.,infoupd,1406461338
 N27,A,Ferrite installed on PAM power line,infoupd,1406461338
 HH70,A,Removed LP filter,infoupd,1407498138
+HH166,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1407833298
+HH184,A,apriori_antenna status change: dish_maintenance > RF_maintenance,apa-infoupd,1407833298
+HH185,A,apriori_antenna status change: RF_maintenance > dish_maintenance,apa-infoupd,1407833298
+HH186,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1407833298
