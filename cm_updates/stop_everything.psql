@@ -1,0 +1,1 @@
+update connections set stop_gpstime=1407733777 where stop_gpstime is null;
