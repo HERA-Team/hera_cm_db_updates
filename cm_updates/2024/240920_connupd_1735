@@ -1,0 +1,25 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/240920_connupd_1735" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u NBP27 --uprev A --upport e3 -d PAM262 --dnrev A --dnport e --date 2024/09/20 --time 17:29
+stop_connection.py -u NBP27 --uprev A --upport n3 -d PAM262 --dnrev A --dnport n --date 2024/09/20 --time 17:29
+stop_connection.py -u PAM262 --uprev A --upport slot -d PCH27 --dnrev A --dnport slot3 --date 2024/09/20 --time 17:29
+stop_connection.py -u PAM262 --uprev A --upport e -d SNPC000041 --dnrev A --dnport e10 --date 2024/09/20 --time 17:29
+stop_connection.py -u PAM262 --uprev A --upport n -d SNPC000041 --dnrev A --dnport n8 --date 2024/09/20 --time 17:29
+stop_connection.py -u A311 --uprev H --upport focus -d FDV334 --dnrev A --dnport input --date 2024/09/20 --time 17:29
+stop_connection.py -u A342 --uprev H --upport focus -d FDV344 --dnrev A --dnport input --date 2024/09/20 --time 17:29
+stop_connection.py -u A343 --uprev H --upport focus -d FDV350 --dnrev A --dnport input --date 2024/09/20 --time 17:29
+stop_connection.py -u A344 --uprev H --upport focus -d FDV292 --dnrev A --dnport input --date 2024/09/20 --time 17:29
+stop_connection.py -u A347 --uprev H --upport focus -d FDV342 --dnrev A --dnport input --date 2024/09/20 --time 17:29
+stop_connection.py -u A290 --uprev H --upport focus -d FDV298 --dnrev A --dnport input --date 2024/09/20 --time 17:29
+stop_connection.py -u A291 --uprev H --upport focus -d FDV286 --dnrev A --dnport input --date 2024/09/20 --time 17:29
+stop_connection.py -u A345 --uprev H --upport focus -d FDV305 --dnrev A --dnport input --date 2024/09/20 --time 17:29
+# add connections for gsheet_not_active
+add_connection.py -u NBP27 --uprev A --upport e4 -d PAM395 --dnrev A --dnport e --date 2024/09/20 --time 17:35
+add_connection.py -u NBP27 --uprev A --upport n4 -d PAM395 --dnrev A --dnport n --date 2024/09/20 --time 17:35
+add_connection.py -u A344 --uprev H --upport focus -d FDV305 --dnrev A --dnport input --date 2024/09/20 --time 17:35
+add_connection.py -u PAM395 --uprev A --upport slot -d PCH27 --dnrev A --dnport slot4 --date 2024/09/20 --time 17:35
+add_connection.py -u SNPC000087 --uprev A --upport rack -d N27 --dnrev A --dnport loc1 --date 2024/09/20 --time 17:35
+add_connection.py -u A311 --uprev H --upport focus -d FDV333 --dnrev A --dnport input --date 2024/09/20 --time 17:35
+add_connection.py -u A290 --uprev H --upport focus -d FDV286 --dnrev A --dnport input --date 2024/09/20 --time 17:35
