@@ -5659,3 +5659,4 @@ HH166,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1
 HH184,A,apriori_antenna status change: dish_maintenance > RF_maintenance,apa-infoupd,1407833298
 HH185,A,apriori_antenna status change: RF_maintenance > dish_maintenance,apa-infoupd,1407833298
 HH186,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1407833298
+HH213,A,PAM 292 wasnt switching attenuation,infoupd,1410889338
