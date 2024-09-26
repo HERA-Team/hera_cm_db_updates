@@ -1,0 +1,21 @@
+add_part.py -p FDV833 -r A -t feed -m FDV833 --date 2024/09/26 --time 16:11
+add_part.py -p PCH28 -r A -t pam-chassis -m PCH28 --date 2024/09/26 --time 16:11
+add_connection.py -u PCH28 --uprev A --upport rack -d N28 --dnrev A --dnport bottom --date 2024/09/26 --time 16:11
+stop_connection.py -u NCM16 --uprev A --upport rack -d N06 --dnrev A --dnport middle --date 2024/09/26 --time 16:11
+add_connection.py -u NCM26 --uprev A --upport rack -d N06 --dnrev A --dnport middle --date 2024/09/26 --time 16:11
+add_connection.py -u PAM392 --uprev A --upport slot -d PCH28 --dnrev A --dnport slot1 --date 2024/09/26 --time 16:11
+add_connection.py -u PAM393 --uprev A --upport slot -d PCH28 --dnrev A --dnport slot2 --date 2024/09/26 --time 16:11
+add_connection.py -u PAM394 --uprev A --upport slot -d PCH28 --dnrev A --dnport slot3 --date 2024/09/26 --time 16:11
+add_connection.py -u PAM396 --uprev A --upport slot -d PCH28 --dnrev A --dnport slot5 --date 2024/09/26 --time 16:11
+add_connection.py -u PAM397 --uprev A --upport slot -d PCH28 --dnrev A --dnport slot6 --date 2024/09/26 --time 16:11
+add_connection.py -u PAM398 --uprev A --upport slot -d PCH28 --dnrev A --dnport slot7 --date 2024/09/26 --time 16:11
+add_connection.py -u PAM399 --uprev A --upport slot -d PCH28 --dnrev A --dnport slot8 --date 2024/09/26 --time 16:11
+add_connection.py -u PAM400 --uprev A --upport slot -d PCH28 --dnrev A --dnport slot9 --date 2024/09/26 --time 16:11
+add_connection.py -u PAM401 --uprev A --upport slot -d PCH28 --dnrev A --dnport slot10 --date 2024/09/26 --time 16:11
+add_connection.py -u PAM402 --uprev A --upport slot -d PCH28 --dnrev A --dnport slot11 --date 2024/09/26 --time 16:11
+add_connection.py -u PAM403 --uprev A --upport slot -d PCH28 --dnrev A --dnport slot12 --date 2024/09/26 --time 16:11
+
+#hera_mc=# update connections set downstream_part='FDV833' where upstream_part='A311' and downstream_part='FDV333';
+#hera_mc=# update connections set downstream_part='PCH28' where upstream_part='PAM395' and downstream_part='PCH27';
+#hera_mc=# delete from connections  where downstream_part='N27' and upstream_part='SNPC000087';
+#hera_mc=# delete from connections where upstream_part='NBP27' and downstream_part='PAM395';
