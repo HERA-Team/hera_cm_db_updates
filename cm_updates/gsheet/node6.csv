@@ -24,7 +24,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 78,E,173,283,12,362,C52,e10,3,digital_maintenance,
 78,N,173,283,12,362,C52,n8,3,digital_maintenance,
 #END,,,,,,,,,,
-NCM,16,,,,,,,,,
+NCM,26,,,,,,,,,
 FPS,21,,,,,,,,,
 PCH,18,,,,,,,,,
 WR port,1-8,switch-port,,,,,,,,
