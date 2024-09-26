@@ -1,0 +1,12 @@
+#hera_mc=# delete from connections where upstream_part='A344' and downstream_part='FDV305';
+#hera_mc=# delete from connections where upstream_part='NBP27' and downstream_part='PAM262' and start_gpstime=1407878418;
+#hera_mc=# update connections set stop_gpstime=null where upstream_part='NBP27' and downstream_part='PAM262';
+#hera_mc=# delete from connections where downstream_part='PCH27' and upstream_part='PAM262' and start_gpstime=1407878418;
+#hera_mc=# update connections set stop_gpstime=null where downstream_part='PCH27' and upstream_part='PAM262';
+#hera_mc=# delete from connections where upstream_part='PAM262' and downstream_part='SNPC000041' and start_gpstime=1407878418;
+#hera_mc=# update connections set stop_gpstime=null where upstream_part='PAM262' and downstream_part='SNPC000041';
+
+
+add_connection.py -u A345 --uprev H --upport focus -d FDV305 --dnrev A --dnport input --date 2024/07/26 --time 18:02
+
+
