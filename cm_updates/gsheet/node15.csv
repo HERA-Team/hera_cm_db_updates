@@ -1,8 +1,8 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 147,E,132,202,1,185,C6,e2,0,digital_ok,
 147,N,132,202,1,185,C6,n0,0,digital_ok,
-148,E,126,220,2,186,C6,e6,0,digital_ok,
-148,N,126,220,2,186,C6,n4,0,digital_ok,
+148,E,126,382,2,186,C6,e6,0,digital_ok,
+148,N,126,382,2,186,C6,n4,0,digital_ok,
 149,E,130,208,3,187,C6,e10,0,digital_ok,
 149,N,130,208,3,187,C6,n8,0,digital_ok,
 150,E,134,206,4,188,C94,e2,1,digital_ok,
