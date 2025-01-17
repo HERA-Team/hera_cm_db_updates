@@ -1,30 +1,10 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
-18,E,148,345,1,365,C63,e2,0,RF_maintenance,
-18,N,148,345,1,365,C63,n0,0,RF_maintenance,
-27,E,155,353,2,210,C63,e6,0,RF_ok,
-27,N,155,353,2,210,C63,n4,0,RF_ok,
-28,E,154,355,3,211,C63,e10,0,RF_ok,
-28,N,154,355,3,211,C63,n8,0,RF_ok,
-29,E,152,219,4,246,C71,e2,1,RF_maintenance,
-29,N,152,219,4,246,C71,n0,1,RF_maintenance,
-30,E,153,216,5,213,C71,e6,1,digital_ok,
-30,N,153,216,5,213,C71,n4,1,digital_ok,
-,E,162,,6,364,C71,e10,1,RF_maintenance,
-,N,162,,6,364,C71,n8,1,RF_maintenance,
-3,E,156,213,7,215,C67,e2,2,digital_ok,
-3,N,156,213,7,215,C67,n0,2,digital_ok,
-4,E,147,205,8,216,C67,e6,2,digital_ok,
-4,N,147,205,8,216,C67,n4,2,RF_maintenance,
-5,E,150,215,9,217,C67,e10,2,digital_ok,
-5,N,150,215,9,217,C67,n8,2,digital_ok,
-15,E,165,210,10,218,C64,e2,3,digital_ok,
-15,N,165,210,10,218,C64,n0,3,digital_ok,
-16,E,149,357,11,219,C64,e6,3,RF_maintenance,
-16,N,149,357,11,219,C64,n4,3,RF_maintenance,
-17,E,151,209,12,220,C64,e10,3,digital_ok,
-17,N,151,209,12,220,C64,n8,3,digital_ok,
-#END,,,,,,,,,,
-NCM,13,,,,,,,,,
-FPS,15,,,,,,,,,
-PCH,13,,,,,,,,,
-WRS,1-3,switch-port,,,,,,,,
+<HTML>
+<HEAD>
+<TITLE>Internal Server Error</TITLE>
+</HEAD>
+"<BODY BGCOLOR=""#FFFFFF"" TEXT=""#000000"">"
+<!-- GSE Default Error -->
+<H1>Internal Server Error</H1>
+<H2>Error 500</H2>
+</BODY>
+</HTML>
