@@ -5684,3 +5684,17 @@ N20,A,Ferrite installed on PAM power line,infoupd,1421682138
 N21,A,Ferrite installed on PAM power line,infoupd,1421682138
 N22,A,Ferrite installed on PAM power line,infoupd,1421682138
 N23,A,Ferrite installed on PAM power line,infoupd,1421682138
+HH109,A,N: low optical power at node 1.0,infoupd,1421750538
+HH80,A,N: fiber is nicked at the node,infoupd,1421750538
+HH96,A,N: low optical power at node -8.0,infoupd,1421750538
+HH136,A,Neither pol has optical power,infoupd,1421750538
+HH155,A,Neither pol has optical power,infoupd,1421750538
+HH182,A,E: low optical power at node -12.5,infoupd,1421750538
+HH170,A,E: low optical power at node -0.5,infoupd,1421750538
+HH200,A,E: low optical power at node -2.4,infoupd,1421750538
+HH229,A,E: no optical power at node,infoupd,1421750538
+HB332,A,Neither pol has optical power at node,infoupd,1421750538
+HH255,A,N: low optical power at node -1.9,infoupd,1421750538
+HH36,A,"Both pols have low optical power at node -- E:-10, N:-2",infoupd,1421750538
+HH46,A,N: no optical power at node,infoupd,1421750538
+HH86,A,N: low optical power at node 1.0,infoupd,1421750538
