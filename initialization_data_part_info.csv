@@ -5703,3 +5703,4 @@ HH104,A,N: low optical power at node -2,infoupd,1422016938
 HH87,A,E: no optical power was getting to PAM.  Cleaned it up and hopefully ok.,infoupd,1422016938
 N27,A,Ferrite installed on PAM power line,infoupd,1422016938
 HH70,A,Removed LP filter,infoupd,1423053738
+HH51,A,FEM replaced 341,infoupd,1423215738
