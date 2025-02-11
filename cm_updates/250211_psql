@@ -1,0 +1,3 @@
+update connections set stop_gpstime=1423215300 where downstream_part='FEM304' and upstream_part='FDV219' and start_gpstime=1407878418;
+update connections set stop_gpstime=1423215300 where upstream_part='FEM304' and downstream_part='FPS24' and start_gpstime=1407878418;
+update connections set stop_gpstime=1423215300 where upstream_part='FEM304' and downstream_part='NBP21' and start_gpstime=1407878418;
