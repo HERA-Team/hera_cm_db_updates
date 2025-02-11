@@ -15,8 +15,8 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Op
 212,N,256,294,7,311,C98,n0,2,RF_maintenance,,,,,,,,
 231,E,220,298,8,312,C98,e6,2,RF_maintenance,,,,,,,,
 231,N,220,298,8,312,C98,n4,2,RF_maintenance,,,,,,,,
-232,E,219,304,9,313,C98,e10,2,RF_maintenance,,,,,,,,Feed conduit feel out and is hanging on the cables.
-232,N,219,304,9,313,C98,n8,2,RF_maintenance,,,,,,,,
+232,E,219,404,9,313,C98,e10,2,RF_maintenance,,,,,,,,Feed conduit feel out and is hanging on the cables.
+232,N,219,404,9,313,C98,n8,2,RF_maintenance,,,,,,,,
 326,E,331,309,10,314,C27,e2,3,RF_maintenance,,,,,,,,
 326,N,331,309,10,314,C27,n0,3,RF_maintenance,,,,,,,,
 327,E,318,306,11,315,C27,e6,3,RF_maintenance,,,,,,,,
