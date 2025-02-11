@@ -1,0 +1,17 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/250124_infoupd_1042" >> scripts.log 
+add_part_info.py -p HH109 -r A -c "N: low optical power at node 1.0" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HH80 -r A -c "N: fiber is nicked at the node" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HH96 -r A -c "N: low optical power at node -8.0" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HH136 -r A -c "Neither pol has optical power" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HH155 -r A -c "Neither pol has optical power" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HH182 -r A -c "E: low optical power at node -12.5" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HH170 -r A -c "E: low optical power at node -0.5" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HH200 -r A -c "E: low optical power at node -2.4" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HH229 -r A -c "E: no optical power at node" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HB332 -r A -c "Neither pol has optical power at node" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HH255 -r A -c "N: low optical power at node -1.9" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HH36 -r A -c "Both pols have low optical power at node -- E:-10, N:-2" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HH46 -r A -c "N: no optical power at node" -l "infoupd" --date 2025/01/24 --time 10:42:00
+add_part_info.py -p HH86 -r A -c "N: low optical power at node 1.0" -l "infoupd" --date 2025/01/24 --time 10:42:00
