@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/250319_infoupd_1842" >> scripts.log 
+add_part_info.py -p HH213 -r A -c "PAM 292 wasnt switching attenuation" -l "infoupd" --date 2025/03/19 --time 18:42:00
