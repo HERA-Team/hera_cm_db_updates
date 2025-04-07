@@ -17,7 +17,7 @@ sheet_headers = ['Ant', 'Pol', 'Feed', 'FEM', 'NBP/PAMloc', 'PAM', 'SNAP', 'Port
 gsheet_prefix = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrwdnbP2yBXDUvUZ0AXQ--Rqpt7jCkiv89cVyDgtWGHPeMXfNWymohaEtXi_-t7di7POGlg8qwhBlt/pub?"  # noqa
 
 gsheet = {}
-gsheet['node0'] = "gid=0&single=true&output=csv"
+#gsheet['node0'] = "gid=0&single=true&output=csv"
 gsheet['node1'] = "gid=6391145&single=true&output=csv"
 gsheet['node2'] = "gid=1387042544&single=true&output=csv"
 gsheet['node3'] = "gid=1451443110&single=true&output=csv"
@@ -41,12 +41,12 @@ gsheet['node20'] = "gid=319083641&single=true&output=csv"
 gsheet['node21'] = "gid=535819481&single=true&output=csv"
 gsheet['node22'] = "gid=196866991&single=true&output=csv"
 gsheet['node23'] = "gid=78305433&single=true&output=csv"
-gsheet['node24'] = "gid=1348236988&single=true&output=csv"
-gsheet['node25'] = "gid=2134158656&single=true&output=csv"
-gsheet['node26'] = "gid=1376433001&single=true&output=csv"
+#gsheet['node24'] = "gid=1348236988&single=true&output=csv"
+#gsheet['node25'] = "gid=2134158656&single=true&output=csv"
+#gsheet['node26'] = "gid=1376433001&single=true&output=csv"
 gsheet['node27'] = "gid=1902916331&single=true&output=csv"
 gsheet['node28'] = "gid=1379228027&single=true&output=csv"
-gsheet['node29'] = "gid=1386400309&single=true&output=csv"
+#gsheet['node29'] = "gid=1386400309&single=true&output=csv"
 no_prefix = ['Comments']
 
 gsheet['NodeNotes'] = "gid=906207981&single=true&output=csv"
