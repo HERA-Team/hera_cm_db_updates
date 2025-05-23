@@ -1,0 +1,88 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/250523_connupd_1954" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u PAM262 --uprev A --upport e -d SNPC000041 --dnrev A --dnport e10 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM262 --uprev A --upport n -d SNPC000041 --dnrev A --dnport n8 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM392 --uprev A --upport e -d SNPC000034 --dnrev A --dnport e2 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM392 --uprev A --upport n -d SNPC000034 --dnrev A --dnport n0 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM393 --uprev A --upport e -d SNPC000034 --dnrev A --dnport e6 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM393 --uprev A --upport n -d SNPC000034 --dnrev A --dnport n4 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM394 --uprev A --upport e -d SNPC000034 --dnrev A --dnport e10 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM394 --uprev A --upport n -d SNPC000034 --dnrev A --dnport n8 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM396 --uprev A --upport e -d SNPC000087 --dnrev A --dnport e6 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM396 --uprev A --upport n -d SNPC000087 --dnrev A --dnport n4 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM397 --uprev A --upport e -d SNPC000087 --dnrev A --dnport e10 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM397 --uprev A --upport n -d SNPC000087 --dnrev A --dnport n8 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM395 --uprev A --upport e -d SNPC000087 --dnrev A --dnport e2 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM395 --uprev A --upport n -d SNPC000087 --dnrev A --dnport n0 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM209 --uprev A --upport e -d SNPC000041 --dnrev A --dnport e2 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM209 --uprev A --upport n -d SNPC000041 --dnrev A --dnport n0 --date 2025/05/23 --time 19:48
+stop_connection.py -u SNPC000041 --uprev A --upport rack -d N27 --dnrev A --dnport loc0 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM291 --uprev A --upport e -d SNPC000041 --dnrev A --dnport e6 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM291 --uprev A --upport n -d SNPC000041 --dnrev A --dnport n4 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM163 --uprev A --upport e -d SNPC000031 --dnrev A --dnport e2 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM163 --uprev A --upport n -d SNPC000031 --dnrev A --dnport n0 --date 2025/05/23 --time 19:48
+stop_connection.py -u SNPC000031 --uprev A --upport rack -d N27 --dnrev A --dnport loc1 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM251 --uprev A --upport e -d SNPC000031 --dnrev A --dnport e6 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM251 --uprev A --upport n -d SNPC000031 --dnrev A --dnport n4 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM111 --uprev A --upport e -d SNPC000031 --dnrev A --dnport e10 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM111 --uprev A --upport n -d SNPC000031 --dnrev A --dnport n8 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM203 --uprev A --upport e -d SNPC000104 --dnrev A --dnport e2 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM203 --uprev A --upport n -d SNPC000104 --dnrev A --dnport n0 --date 2025/05/23 --time 19:48
+stop_connection.py -u SNPC000104 --uprev A --upport rack -d N27 --dnrev A --dnport loc3 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM198 --uprev A --upport e -d SNPC000104 --dnrev A --dnport e6 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM198 --uprev A --upport n -d SNPC000104 --dnrev A --dnport n4 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM121 --uprev A --upport e -d SNPC000104 --dnrev A --dnport e10 --date 2025/05/23 --time 19:48
+stop_connection.py -u PAM121 --uprev A --upport n -d SNPC000104 --dnrev A --dnport n8 --date 2025/05/23 --time 19:48
+stop_connection.py -u SNPC000034 --uprev A --upport rack -d N28 --dnrev A --dnport loc0 --date 2025/05/23 --time 19:48
+stop_connection.py -u SNPC000087 --uprev A --upport rack -d N28 --dnrev A --dnport loc1 --date 2025/05/23 --time 19:48
+# add parts for gsheet_not_active
+add_part.py -p SNPC000085 -r A -t snap -m SNPC000085 --date 2025/05/23 --time 19:24
+add_part.py -p SNPC000100 -r A -t snap -m SNPC000100 --date 2025/05/23 --time 19:24
+add_part.py -p SNPC000080 -r A -t snap -m SNPC000080 --date 2025/05/23 --time 19:24
+add_part.py -p FEM747 -r A -t front-end -m FEM747 --date 2025/05/23 --time 19:24
+add_part.py -p FDV747 -r A -t feed -m FDV747 --date 2025/05/23 --time 19:24
+add_part.py -p SNPC000009 -r A -t snap -m SNPC000009 --date 2025/05/23 --time 19:24
+add_part.py -p SNPC000075 -r A -t snap -m SNPC000075 --date 2025/05/23 --time 19:24
+# add connections for gsheet_not_active
+add_connection.py -u PAM209 --uprev A --upport e -d SNPC000009 --dnrev A --dnport e2 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM209 --uprev A --upport n -d SNPC000009 --dnrev A --dnport n0 --date 2025/05/23 --time 19:54
+add_connection.py -u SNPC000009 --uprev A --upport rack -d N27 --dnrev A --dnport loc0 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM291 --uprev A --upport e -d SNPC000009 --dnrev A --dnport e6 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM291 --uprev A --upport n -d SNPC000009 --dnrev A --dnport n4 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM262 --uprev A --upport e -d SNPC000009 --dnrev A --dnport e10 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM262 --uprev A --upport n -d SNPC000009 --dnrev A --dnport n8 --date 2025/05/23 --time 19:54
+add_connection.py -u A347 --uprev H --upport focus -d FDV747 --dnrev A --dnport input --date 2025/05/23 --time 19:54
+add_connection.py -u FDV747 --uprev A --upport terminals -d FEM747 --dnrev A --dnport input --date 2025/05/23 --time 19:54
+add_connection.py -u FEM747 --uprev A --upport pwr -d FPS28 --dnrev A --dnport pwr4 --date 2025/05/23 --time 19:54
+add_connection.py -u FEM747 --uprev A --upport e -d NBP27 --dnrev A --dnport e4 --date 2025/05/23 --time 19:54
+add_connection.py -u FEM747 --uprev A --upport n -d NBP27 --dnrev A --dnport n4 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM163 --uprev A --upport e -d SNPC000075 --dnrev A --dnport e2 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM163 --uprev A --upport n -d SNPC000075 --dnrev A --dnport n0 --date 2025/05/23 --time 19:54
+add_connection.py -u SNPC000075 --uprev A --upport rack -d N27 --dnrev A --dnport loc1 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM251 --uprev A --upport e -d SNPC000075 --dnrev A --dnport e6 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM251 --uprev A --upport n -d SNPC000075 --dnrev A --dnport n4 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM111 --uprev A --upport e -d SNPC000075 --dnrev A --dnport e10 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM111 --uprev A --upport n -d SNPC000075 --dnrev A --dnport n8 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM203 --uprev A --upport e -d SNPC000085 --dnrev A --dnport e2 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM203 --uprev A --upport n -d SNPC000085 --dnrev A --dnport n0 --date 2025/05/23 --time 19:54
+add_connection.py -u SNPC000085 --uprev A --upport rack -d N27 --dnrev A --dnport loc3 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM198 --uprev A --upport e -d SNPC000085 --dnrev A --dnport e6 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM198 --uprev A --upport n -d SNPC000085 --dnrev A --dnport n4 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM121 --uprev A --upport e -d SNPC000085 --dnrev A --dnport e10 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM121 --uprev A --upport n -d SNPC000085 --dnrev A --dnport n8 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM392 --uprev A --upport e -d SNPC000080 --dnrev A --dnport e2 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM392 --uprev A --upport n -d SNPC000080 --dnrev A --dnport n0 --date 2025/05/23 --time 19:54
+add_connection.py -u SNPC000080 --uprev A --upport rack -d N28 --dnrev A --dnport loc0 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM393 --uprev A --upport e -d SNPC000080 --dnrev A --dnport e6 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM393 --uprev A --upport n -d SNPC000080 --dnrev A --dnport n4 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM394 --uprev A --upport e -d SNPC000080 --dnrev A --dnport e10 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM394 --uprev A --upport n -d SNPC000080 --dnrev A --dnport n8 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM395 --uprev A --upport e -d SNPC000100 --dnrev A --dnport e2 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM395 --uprev A --upport n -d SNPC000100 --dnrev A --dnport n0 --date 2025/05/23 --time 19:54
+add_connection.py -u SNPC000100 --uprev A --upport rack -d N28 --dnrev A --dnport loc1 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM396 --uprev A --upport e -d SNPC000100 --dnrev A --dnport e6 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM396 --uprev A --upport n -d SNPC000100 --dnrev A --dnport n4 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM397 --uprev A --upport e -d SNPC000100 --dnrev A --dnport e10 --date 2025/05/23 --time 19:54
+add_connection.py -u PAM397 --uprev A --upport n -d SNPC000100 --dnrev A --dnport n8 --date 2025/05/23 --time 19:54
