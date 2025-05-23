@@ -1,0 +1,66 @@
+echo "/home/obs/src/hera_cm_db_updates/250523_connupd_2011" >> scripts.log 
+# stop connections for active_not_gsheet
+# add parts for gsheet_not_active
+add_part.py -p FEM858 -r A -t front-end -m FEM858 --date 2025/05/23 --time 19:41
+add_part.py -p FEM860 -r A -t front-end -m FEM860 --date 2025/05/23 --time 19:41
+add_part.py -p FEM851 -r A -t front-end -m FEM851 --date 2025/05/23 --time 19:41
+add_part.py -p FEM853 -r A -t front-end -m FEM853 --date 2025/05/23 --time 19:41
+add_part.py -p FEM855 -r A -t front-end -m FEM855 --date 2025/05/23 --time 19:41
+add_part.py -p FEM861 -r A -t front-end -m FEM861 --date 2025/05/23 --time 19:41
+add_part.py -p FEM859 -r A -t front-end -m FEM859 --date 2025/05/23 --time 19:41
+add_part.py -p FEM854 -r A -t front-end -m FEM854 --date 2025/05/23 --time 19:41
+add_part.py -p FEM856 -r A -t front-end -m FEM856 --date 2025/05/23 --time 19:41
+add_part.py -p FEM850 -r A -t front-end -m FEM850 --date 2025/05/23 --time 19:41
+add_part.py -p FDV861 -r A -t feed -m FDV861 --date 2025/05/23 --time 19:41
+add_part.py -p FEM852 -r A -t front-end -m FEM852 --date 2025/05/23 --time 19:41
+add_part.py -p FEM857 -r A -t front-end -m FEM857 --date 2025/05/23 --time 19:41
+# add connections for gsheet_not_active
+add_connection.py -u FDV278 --uprev A --upport terminals -d FEM850 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FEM850 --uprev A --upport pwr -d FPS27 --dnrev A --dnport pwr1 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM850 --uprev A --upport e -d NBP28 --dnrev A --dnport e1 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM850 --uprev A --upport n -d NBP28 --dnrev A --dnport n1 --date 2025/05/23 --time 20:11
+add_connection.py -u FDV312 --uprev A --upport terminals -d FEM851 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FEM851 --uprev A --upport pwr -d FPS27 --dnrev A --dnport pwr2 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM851 --uprev A --upport e -d NBP28 --dnrev A --dnport e2 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM851 --uprev A --upport n -d NBP28 --dnrev A --dnport n2 --date 2025/05/23 --time 20:11
+add_connection.py -u FDV322 --uprev A --upport terminals -d FEM852 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FEM852 --uprev A --upport pwr -d FPS27 --dnrev A --dnport pwr3 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM852 --uprev A --upport e -d NBP28 --dnrev A --dnport e3 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM852 --uprev A --upport n -d NBP28 --dnrev A --dnport n3 --date 2025/05/23 --time 20:11
+add_connection.py -u FDV305 --uprev A --upport terminals -d FEM853 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FEM853 --uprev A --upport pwr -d FPS27 --dnrev A --dnport pwr4 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM853 --uprev A --upport e -d NBP28 --dnrev A --dnport e4 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM853 --uprev A --upport n -d NBP28 --dnrev A --dnport n4 --date 2025/05/23 --time 20:11
+add_connection.py -u FDV326 --uprev A --upport terminals -d FEM854 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FEM854 --uprev A --upport pwr -d FPS27 --dnrev A --dnport pwr5 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM854 --uprev A --upport e -d NBP28 --dnrev A --dnport e5 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM854 --uprev A --upport n -d NBP28 --dnrev A --dnport n5 --date 2025/05/23 --time 20:11
+add_connection.py -u FDV319 --uprev A --upport terminals -d FEM855 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FEM855 --uprev A --upport pwr -d FPS27 --dnrev A --dnport pwr6 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM855 --uprev A --upport e -d NBP28 --dnrev A --dnport e6 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM855 --uprev A --upport n -d NBP28 --dnrev A --dnport n6 --date 2025/05/23 --time 20:11
+add_connection.py -u FDV282 --uprev A --upport terminals -d FEM856 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FEM856 --uprev A --upport pwr -d FPS27 --dnrev A --dnport pwr7 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM856 --uprev A --upport e -d NBP28 --dnrev A --dnport e7 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM856 --uprev A --upport n -d NBP28 --dnrev A --dnport n7 --date 2025/05/23 --time 20:11
+add_connection.py -u FDV339 --uprev A --upport terminals -d FEM857 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FEM857 --uprev A --upport pwr -d FPS27 --dnrev A --dnport pwr8 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM857 --uprev A --upport e -d NBP28 --dnrev A --dnport e8 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM857 --uprev A --upport n -d NBP28 --dnrev A --dnport n8 --date 2025/05/23 --time 20:11
+add_connection.py -u FDV330 --uprev A --upport terminals -d FEM858 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FEM858 --uprev A --upport pwr -d FPS27 --dnrev A --dnport pwr9 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM858 --uprev A --upport e -d NBP28 --dnrev A --dnport e9 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM858 --uprev A --upport n -d NBP28 --dnrev A --dnport n9 --date 2025/05/23 --time 20:11
+add_connection.py -u FDV277 --uprev A --upport terminals -d FEM859 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FEM859 --uprev A --upport pwr -d FPS27 --dnrev A --dnport pwr10 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM859 --uprev A --upport e -d NBP28 --dnrev A --dnport e10 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM859 --uprev A --upport n -d NBP28 --dnrev A --dnport n10 --date 2025/05/23 --time 20:11
+add_connection.py -u FDV286 --uprev A --upport terminals -d FEM860 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FEM860 --uprev A --upport pwr -d FPS27 --dnrev A --dnport pwr11 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM860 --uprev A --upport e -d NBP28 --dnrev A --dnport e11 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM860 --uprev A --upport n -d NBP28 --dnrev A --dnport n11 --date 2025/05/23 --time 20:11
+add_connection.py -u A291 --uprev H --upport focus -d FDV861 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FDV861 --uprev A --upport terminals -d FEM861 --dnrev A --dnport input --date 2025/05/23 --time 20:11
+add_connection.py -u FEM861 --uprev A --upport pwr -d FPS27 --dnrev A --dnport pwr12 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM861 --uprev A --upport e -d NBP28 --dnrev A --dnport e12 --date 2025/05/23 --time 20:11
+add_connection.py -u FEM861 --uprev A --upport n -d NBP28 --dnrev A --dnport n12 --date 2025/05/23 --time 20:11
