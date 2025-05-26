@@ -24,6 +24,6 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 158,E,100,162,12,160,17,e10,3,digital_ok,
 158,N,100,162,12,160,17,n8,3,digital_ok,
 #END,,,,,,,,,,
-NCM,7,,,,,,,,,
+NCM,16,,,,,,,,,ARP: 5/26/25 swapped in ncm16 for a test. was 7
 FPS,10,,,,,,,,,
 PCH,9,,,,,,,,,
