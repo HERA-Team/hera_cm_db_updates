@@ -1,10 +1,10 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
-342,E,344,318,1,209,C9,e2,0,RF_maintenance,per ARP 22 May 2025
-342,N,344,318,1,209,C9,n0,0,RF_maintenance,per ARP 22 May 2025
-343,E,441,405,2,291,C9,e6,0,RF_maintenance,per ARP 22 May 2025
-343,N,441,405,2,291,C9,n4,0,RF_maintenance,per ARP 22 May 2025
-346,E,341,395,3,262,C9,e10,0,RF_maintenance,per ARP 22 May 2025
-346,N,341,395,3,262,C9,n8,0,RF_maintenance,per ARP 22 May 2025
+342,E,344,318,1,209,C56,e2,0,RF_maintenance,per ARP 22 May 2025
+342,N,344,318,1,209,C56,n0,0,RF_maintenance,per ARP 22 May 2025
+343,E,441,405,2,291,C56,e6,0,RF_maintenance,per ARP 22 May 2025
+343,N,441,405,2,291,C56,n4,0,RF_maintenance,per ARP 22 May 2025
+346,E,341,395,3,262,C56,e10,0,RF_maintenance,per ARP 22 May 2025
+346,N,341,395,3,262,C56,n8,0,RF_maintenance,per ARP 22 May 2025
 347,E,747,747,4,163,C75,e2,1,RF_maintenance,per ARP 22 May 2025
 347,N,747,747,4,163,C75,n0,1,RF_maintenance,per ARP 22 May 2025
 313,E,311,412,5,251,C75,e6,1,RF_maintenance,per ARP 22 May 2025
