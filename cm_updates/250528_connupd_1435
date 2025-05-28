@@ -1,5 +1,3 @@
-#! /bin/bash
-source ~/.bashrc
 echo "/home/obs/src/hera_cm_db_updates/250528_connupd_1435" >> scripts.log 
 # stop connections for active_not_gsheet
 stop_connection.py -u PAM262 --uprev A --upport e -d SNPC000009 --dnrev A --dnport e10 --date 2025/05/28 --time 14:29
