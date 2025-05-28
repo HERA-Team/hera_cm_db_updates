@@ -1,0 +1,39 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/250528_connupd_1435" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u PAM262 --uprev A --upport e -d SNPC000009 --dnrev A --dnport e10 --date 2025/05/28 --time 14:29
+stop_connection.py -u PAM262 --uprev A --upport n -d SNPC000009 --dnrev A --dnport n8 --date 2025/05/28 --time 14:29
+stop_connection.py -u PAM398 --uprev A --upport e -d SNPC000005 --dnrev A --dnport e2 --date 2025/05/28 --time 14:29
+stop_connection.py -u PAM398 --uprev A --upport n -d SNPC000005 --dnrev A --dnport n0 --date 2025/05/28 --time 14:29
+stop_connection.py -u PAM399 --uprev A --upport e -d SNPC000005 --dnrev A --dnport e6 --date 2025/05/28 --time 14:29
+stop_connection.py -u PAM399 --uprev A --upport n -d SNPC000005 --dnrev A --dnport n4 --date 2025/05/28 --time 14:29
+stop_connection.py -u PAM209 --uprev A --upport e -d SNPC000009 --dnrev A --dnport e2 --date 2025/05/28 --time 14:29
+stop_connection.py -u PAM209 --uprev A --upport n -d SNPC000009 --dnrev A --dnport n0 --date 2025/05/28 --time 14:29
+stop_connection.py -u PAM400 --uprev A --upport e -d SNPC000005 --dnrev A --dnport e10 --date 2025/05/28 --time 14:29
+stop_connection.py -u PAM400 --uprev A --upport n -d SNPC000005 --dnrev A --dnport n8 --date 2025/05/28 --time 14:29
+stop_connection.py -u SNPC000009 --uprev A --upport rack -d N27 --dnrev A --dnport loc0 --date 2025/05/28 --time 14:29
+stop_connection.py -u PAM291 --uprev A --upport e -d SNPC000009 --dnrev A --dnport e6 --date 2025/05/28 --time 14:29
+stop_connection.py -u PAM291 --uprev A --upport n -d SNPC000009 --dnrev A --dnport n4 --date 2025/05/28 --time 14:29
+stop_connection.py -u NCM07 --uprev A --upport rack -d N12 --dnrev A --dnport middle --date 2025/05/28 --time 14:29
+stop_connection.py -u SNPC000005 --uprev A --upport rack -d N28 --dnrev A --dnport loc2 --date 2025/05/28 --time 14:29
+# add parts for gsheet_not_active
+add_part.py -p SNPC000104 -r A -t snap -m SNPC000104 --date 2025/05/28 --time 14:05
+add_part.py -p SNPC000056 -r A -t snap -m SNPC000056 --date 2025/05/28 --time 14:05
+add_part.py -p NCM16 -r A -t node-control-module -m NCM16 --date 2025/05/28 --time 14:05
+# add connections for gsheet_not_active
+add_connection.py -u NCM16 --uprev A --upport rack -d N12 --dnrev A --dnport middle --date 2025/05/28 --time 14:35
+add_connection.py -u PAM209 --uprev A --upport e -d SNPC000056 --dnrev A --dnport e2 --date 2025/05/28 --time 14:35
+add_connection.py -u PAM209 --uprev A --upport n -d SNPC000056 --dnrev A --dnport n0 --date 2025/05/28 --time 14:35
+add_connection.py -u SNPC000056 --uprev A --upport rack -d N27 --dnrev A --dnport loc0 --date 2025/05/28 --time 14:35
+add_connection.py -u PAM291 --uprev A --upport e -d SNPC000056 --dnrev A --dnport e6 --date 2025/05/28 --time 14:35
+add_connection.py -u PAM291 --uprev A --upport n -d SNPC000056 --dnrev A --dnport n4 --date 2025/05/28 --time 14:35
+add_connection.py -u PAM262 --uprev A --upport e -d SNPC000056 --dnrev A --dnport e10 --date 2025/05/28 --time 14:35
+add_connection.py -u PAM262 --uprev A --upport n -d SNPC000056 --dnrev A --dnport n8 --date 2025/05/28 --time 14:35
+add_connection.py -u PAM398 --uprev A --upport e -d SNPC000104 --dnrev A --dnport e2 --date 2025/05/28 --time 14:35
+add_connection.py -u PAM398 --uprev A --upport n -d SNPC000104 --dnrev A --dnport n0 --date 2025/05/28 --time 14:35
+add_connection.py -u SNPC000104 --uprev A --upport rack -d N28 --dnrev A --dnport loc2 --date 2025/05/28 --time 14:35
+add_connection.py -u PAM399 --uprev A --upport e -d SNPC000104 --dnrev A --dnport e6 --date 2025/05/28 --time 14:35
+add_connection.py -u PAM399 --uprev A --upport n -d SNPC000104 --dnrev A --dnport n4 --date 2025/05/28 --time 14:35
+add_connection.py -u PAM400 --uprev A --upport e -d SNPC000104 --dnrev A --dnport e10 --date 2025/05/28 --time 14:35
+add_connection.py -u PAM400 --uprev A --upport n -d SNPC000104 --dnrev A --dnport n8 --date 2025/05/28 --time 14:35
