@@ -11,18 +11,18 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 348,N,326,854,5,396,C100,n4,1,RF_maintenance,per ARP 23 May 2025
 349,E,319,855,6,397,C100,e10,1,RF_maintenance,per ARP 23 May 2025
 349,N,319,855,6,397,C100,n8,1,RF_maintenance,per ARP 23 May 2025
-315,E,282,856,7,398,C104,e2,2,RF_maintenance,per ARP 23 May 2025
-315,N,282,856,7,398,C104,n0,2,RF_maintenance,per ARP 23 May 2025
-316,E,339,857,8,399,C104,e6,2,RF_maintenance,per ARP 23 May 2025
-316,N,339,857,8,399,C104,n4,2,RF_maintenance,per ARP 23 May 2025
-317,E,330,858,9,400,C104,e10,2,RF_maintenance,per ARP 23 May 2025
-317,N,330,858,9,400,C104,n8,2,RF_maintenance,per ARP 23 May 2025
-318,E,277,859,10,401,C125,e2,3,RF_maintenance,per ARP 23 May 2025
-318,N,277,859,10,401,C125,n0,3,RF_maintenance,per ARP 23 May 2025
-290,E,286,860,11,402,C125,e6,3,RF_maintenance,per ARP 23 May 2025
-290,N,286,860,11,402,C125,n4,3,RF_maintenance,per ARP 23 May 2025
-291,E,861,861,12,403,C125,e10,3,RF_maintenance,per ARP 23 May 2025
-291,N,861,861,12,403,C125,n8,3,RF_maintenance,per ARP 23 May 2025
+315,E,282,314,7,398,C104,e2,2,RF_maintenance,per ARP 23 May 2025
+315,N,282,314,7,398,C104,n0,2,RF_maintenance,per ARP 23 May 2025
+316,E,339,328,8,399,C104,e6,2,RF_maintenance,per ARP 23 May 2025
+316,N,339,328,8,399,C104,n4,2,RF_maintenance,per ARP 23 May 2025
+317,E,330,393,9,400,C104,e10,2,RF_maintenance,per ARP 23 May 2025
+317,N,330,393,9,400,C104,n8,2,RF_maintenance,per ARP 23 May 2025
+318,E,277,60,10,401,C125,e2,3,RF_maintenance,per ARP 23 May 2025
+318,N,277,60,10,401,C125,n0,3,RF_maintenance,per ARP 23 May 2025
+290,E,286,51,11,402,C125,e6,3,RF_maintenance,per ARP 23 May 2025
+290,N,286,51,11,402,C125,n4,3,RF_maintenance,per ARP 23 May 2025
+291,E,861,356,12,403,C125,e10,3,RF_maintenance,per ARP 23 May 2025
+291,N,861,356,12,403,C125,n8,3,RF_maintenance,per ARP 23 May 2025
 #END,,,,,,,,,,
 Date:,44386,,,,,,,,,
 NCM,27,,,,,,,,,
