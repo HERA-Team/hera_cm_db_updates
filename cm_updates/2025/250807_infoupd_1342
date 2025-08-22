@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/250807_infoupd_1342" >> scripts.log 
+add_part_info.py -p HH70 -r A -c "Removed LP filter" -l "infoupd" --date 2025/08/07 --time 13:42:00

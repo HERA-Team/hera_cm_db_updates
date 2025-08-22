@@ -1,0 +1,4 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/250809_infoupd_1042" >> scripts.log 
+add_part_info.py -p HH51 -r A -c "FEM replaced 341" -l "infoupd" --date 2025/08/09 --time 10:42:00
