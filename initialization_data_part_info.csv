@@ -5797,3 +5797,5 @@ HH87,A,E: no optical power was getting to PAM.  Cleaned it up and hopefully ok.,
 N27,A,Ferrite installed on PAM power line,infoupd,1437572538
 HH70,A,Removed LP filter,infoupd,1438609338
 HH51,A,FEM replaced 341,infoupd,1438771338
+HH290,A,Was FEM051 but is a duplicate to changing to FEM517,infoupd,1439916138
+HH34,A,"FEM405 was added but is duplicated, so changing to 457",infoupd,1439916138

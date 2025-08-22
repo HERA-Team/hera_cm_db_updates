@@ -1,30 +1,30 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
-303,E,278,850,1,392,C80,e2,0,RF_maintenance,per ARP 23 May 2025
-303,N,278,850,1,392,C80,n0,0,RF_maintenance,per ARP 23 May 2025
-304,E,312,851,2,393,C80,e6,0,RF_maintenance,per ARP 23 May 2025
-304,N,312,851,2,393,C80,n4,0,RF_maintenance,per ARP 23 May 2025
-305,E,322,852,3,394,C80,e10,0,RF_maintenance,per ARP 23 May 2025
-305,N,322,852,3,394,C80,n8,0,RF_maintenance,per ARP 23 May 2025
-344,E,305,853,4,395,C100,e2,1,RF_maintenance,per ARP 23 May 2025
-344,N,305,853,4,395,C100,n0,1,RF_maintenance,per ARP 23 May 2025
-348,E,326,854,5,396,C100,e6,1,RF_maintenance,per ARP 23 May 2025
-348,N,326,854,5,396,C100,n4,1,RF_maintenance,per ARP 23 May 2025
-349,E,319,855,6,397,C100,e10,1,RF_maintenance,per ARP 23 May 2025
-349,N,319,855,6,397,C100,n8,1,RF_maintenance,per ARP 23 May 2025
-315,E,282,314,7,398,C104,e2,2,RF_maintenance,per ARP 23 May 2025
-315,N,282,314,7,398,C104,n0,2,RF_maintenance,per ARP 23 May 2025
-316,E,339,328,8,399,C104,e6,2,RF_maintenance,per ARP 23 May 2025
-316,N,339,328,8,399,C104,n4,2,RF_maintenance,per ARP 23 May 2025
-317,E,330,393,9,400,C104,e10,2,RF_maintenance,per ARP 23 May 2025
-317,N,330,393,9,400,C104,n8,2,RF_maintenance,per ARP 23 May 2025
-318,E,277,60,10,401,C125,e2,3,RF_maintenance,per ARP 23 May 2025
-318,N,277,60,10,401,C125,n0,3,RF_maintenance,per ARP 23 May 2025
-290,E,286,51,11,402,C125,e6,3,RF_maintenance,per ARP 23 May 2025
-290,N,286,51,11,402,C125,n4,3,RF_maintenance,per ARP 23 May 2025
-291,E,861,356,12,403,C125,e10,3,RF_maintenance,per ARP 23 May 2025
-291,N,861,356,12,403,C125,n8,3,RF_maintenance,per ARP 23 May 2025
-#END,,,,,,,,,,
-Date:,44386,,,,,,,,,
-NCM,27,,,,,,,,,
-FPS,27,,,,,,,,,
-PCH,28,,,,,,,,,
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,,
+303,E,278,850,1,392,C80,e2,0,RF_maintenance,per ARP 23 May 2025,,
+303,N,278,850,1,392,C80,n0,0,RF_maintenance,per ARP 23 May 2025,,
+304,E,312,851,2,393,C80,e6,0,RF_maintenance,per ARP 23 May 2025,,
+304,N,312,851,2,393,C80,n4,0,RF_maintenance,per ARP 23 May 2025,,
+305,E,322,852,3,394,C80,e10,0,RF_maintenance,per ARP 23 May 2025,,
+305,N,322,852,3,394,C80,n8,0,RF_maintenance,per ARP 23 May 2025,,
+344,E,305,853,4,395,C100,e2,1,RF_maintenance,per ARP 23 May 2025,,
+344,N,305,853,4,395,C100,n0,1,RF_maintenance,per ARP 23 May 2025,,
+348,E,326,854,5,396,C100,e6,1,RF_maintenance,per ARP 23 May 2025,,
+348,N,326,854,5,396,C100,n4,1,RF_maintenance,per ARP 23 May 2025,,
+349,E,319,855,6,397,C100,e10,1,RF_maintenance,per ARP 23 May 2025,,
+349,N,319,855,6,397,C100,n8,1,RF_maintenance,per ARP 23 May 2025,,
+315,E,282,314,7,398,C104,e2,2,RF_maintenance,per ARP 23 May 2025,,
+315,N,282,314,7,398,C104,n0,2,RF_maintenance,per ARP 23 May 2025,,
+316,E,339,328,8,399,C104,e6,2,RF_maintenance,per ARP 23 May 2025,,
+316,N,339,328,8,399,C104,n4,2,RF_maintenance,per ARP 23 May 2025,,
+317,E,330,393,9,400,C104,e10,2,RF_maintenance,per ARP 23 May 2025,,
+317,N,330,393,9,400,C104,n8,2,RF_maintenance,per ARP 23 May 2025,,
+318,E,277,60,10,401,C125,e2,3,RF_maintenance,per ARP 23 May 2025,,
+318,N,277,60,10,401,C125,n0,3,RF_maintenance,per ARP 23 May 2025,,
+290,E,286,517,11,402,C125,e6,3,RF_maintenance,per ARP 23 May 2025,,Was FEM051 but is a duplicate to changing to FEM517
+290,N,286,517,11,402,C125,n4,3,RF_maintenance,per ARP 23 May 2025,,
+291,E,861,356,12,403,C125,e10,3,RF_maintenance,per ARP 23 May 2025,,
+291,N,861,356,12,403,C125,n8,3,RF_maintenance,per ARP 23 May 2025,,
+#END,,,,,,,,,,,,
+Date:,44386,,,,,,,,,,,
+NCM,27,,,,,,,,,,,
+FPS,27,,,,,,,,,,,
+PCH,28,,,,,,,,,,,
