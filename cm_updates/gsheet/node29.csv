@@ -1,31 +1,31 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
-277,E,291,,1,,,e2,0,RF_maintenance,
-277,N,291,,1,,,n0,0,RF_maintenance,
-278,E,297,,2,,,e6,0,RF_maintenance,
-278,N,297,,2,,,n4,0,RF_maintenance,
-292,E,285,,3,,,e10,0,RF_maintenance,
-292,N,285,,3,,,n8,0,RF_maintenance,
-293,E,336,,4,,,e2,1,RF_maintenance,
-293,N,336,,4,,,n0,1,RF_maintenance,
-294,E,338,,5,,,e6,1,RF_maintenance,
-294,N,338,,5,,,n4,1,RF_maintenance,
-306,E,313,,6,,,e10,1,RF_maintenance,
-306,N,313,,6,,,n8,1,RF_maintenance,
-307,E,337,,7,,,e2,2,RF_maintenance,
-307,N,337,,7,,,n0,2,RF_maintenance,
-319,E,299,,8,,,e6,2,RF_maintenance,
-319,N,299,,8,,,n4,2,RF_maintenance,
-,,,,9,,,e10,2,RF_maintenance,
-,,,,9,,,n8,2,RF_maintenance,
-,,,,10,,,e2,3,RF_maintenance,
-,,,,10,,,n0,3,RF_maintenance,
-,,,,11,,,e6,3,RF_maintenance,
-,,,,11,,,n4,3,RF_maintenance,
-,,,,12,,,e10,3,RF_maintenance,
-,,,,12,,,n8,3,RF_maintenance,
+306,E,313,186,1,,C9,e2,0,RF_maintenance,per ARP 22 May 2025
+306,N,313,186,1,,C9,n0,0,RF_maintenance,per ARP 22 May 2025
+307,E,337,61,2,,C9,e6,0,RF_maintenance,per ARP 22 May 2025
+307,N,337,61,2,,C9,n4,0,RF_maintenance,per ARP 22 May 2025
+319,E,299,184,3,,C9,e10,0,RF_maintenance,per ARP 22 May 2025
+319,N,299,184,3,,C9,n8,0,RF_maintenance,per ARP 22 May 2025
+339,E,,,4,,C41,e2,1,RF_maintenance,per ARP 22 May 2025
+339,N,,,4,,C41,n0,1,RF_maintenance,per ARP 22 May 2025
+345,E,,,5,,C41,e6,1,RF_maintenance,per ARP 22 May 2025
+345,N,,,5,,C41,n4,1,RF_maintenance,per ARP 22 May 2025
+,E,,,6,,C41,e10,1,RF_maintenance,per ARP 22 May 2025
+,N,,,6,,C41,n8,1,RF_maintenance,per ARP 22 May 2025
+277,E,291,189,7,,C5,e2,2,RF_maintenance,per ARP 23 May 2025
+277,N,291,189,7,,C5,n0,2,RF_maintenance,per ARP 23 May 2025
+278,E,297,341,8,,C5,e6,2,RF_maintenance,per ARP 23 May 2025
+278,N,297,341,8,,C5,n4,2,RF_maintenance,per ARP 23 May 2025
+292,E,285,,9,,C5,e10,2,RF_maintenance,per ARP 23 May 2025
+292,N,285,,9,,C5,n8,2,RF_maintenance,per ARP 23 May 2025
+293,E,336,103,10,,C34,e2,3,RF_maintenance,per ARP 22 May 2025
+293,N,336,103,10,,C34,n0,3,RF_maintenance,per ARP 22 May 2025
+294,E,338,29,11,,C34,e6,3,RF_maintenance,per ARP 22 May 2025
+294,N,338,29,11,,C34,n4,3,RF_maintenance,per ARP 22 May 2025
+,E,,,12,,C34,e10,3,RF_maintenance,per ARP 22 May 2025
+,N,,,12,,C34,n8,3,RF_maintenance,per ARP 22 May 2025
 #END,,,,,,,,,,
 Date:,,,,,,,,,,
-NCM,,,,,,,,,,
-FPS,,,,,,,,,,
+NCM,25,,,,,,,,,
+FPS,22,,,,,,,,,
 PCH,,,,,,,,,,
 ,These need to be completed by the site crew,,,,,,,,,
