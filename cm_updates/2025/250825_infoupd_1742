@@ -1,0 +1,28 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/250825_infoupd_1742" >> scripts.log 
+add_part_info.py -p HA339 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p HA339 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:02
+add_part_info.py -p HH297 -r A -c "Had 302/295 changing to just 295" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p HH306 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p HH306 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:02
+add_part_info.py -p HH307 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p HH307 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:02
+add_part_info.py -p HH319 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p HH319 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:02
+add_part_info.py -p HB345 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p HB345 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:02
+add_part_info.py -p EE10002 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p EE10002 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:02
+add_part_info.py -p HH277 -r A -c "per ARP 23 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p HH277 -r A -c "per ARP 23 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:02
+add_part_info.py -p HH278 -r A -c "per ARP 23 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p HH278 -r A -c "per ARP 23 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:02
+add_part_info.py -p HH292 -r A -c "per ARP 23 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p HH292 -r A -c "per ARP 23 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:02
+add_part_info.py -p HH293 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p HH293 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:02
+add_part_info.py -p HH294 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p HH294 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:02
+add_part_info.py -p EE10003 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:00
+add_part_info.py -p EE10003 -r A -c "per ARP 22 May 2025" -l "infoupd" --date 2025/08/25 --time 17:42:02
