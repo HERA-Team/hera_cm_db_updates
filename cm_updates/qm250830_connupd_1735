@@ -1,0 +1,187 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/250830_connupd_1735" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u NBP17 --uprev A --upport e6 -d PAM385 --dnrev A --dnport e --date 2025/08/30 --time 17:29
+stop_connection.py -u NBP17 --uprev A --upport n6 -d PAM385 --dnrev A --dnport n --date 2025/08/30 --time 17:29
+stop_connection.py -u A337 --uprev H --upport focus -d FDV314 --dnrev A --dnport input --date 2025/08/30 --time 17:29
+stop_connection.py -u PAM385 --uprev A --upport slot -d PCH25 --dnrev A --dnport slot6 --date 2025/08/30 --time 17:29
+stop_connection.py -u PAM385 --uprev A --upport e -d SNPA000008 --dnrev A --dnport e10 --date 2025/08/30 --time 17:29
+stop_connection.py -u PAM385 --uprev A --upport n -d SNPA000008 --dnrev A --dnport n8 --date 2025/08/30 --time 17:29
+# add parts for gsheet_not_active
+add_part.py -p FEM341 -r A -t front-end -m FEM341 --date 2025/08/30 --time 17:05
+add_part.py -p FDV348 -r A -t feed -m FDV348 --date 2025/08/30 --time 17:05
+add_part.py -p PAM236 -r A -t post-amp -m PAM236 --date 2025/08/30 --time 17:05
+add_part.py -p FDV90 -r A -t feed -m FDV90 --date 2025/08/30 --time 17:05
+add_part.py -p FPS22 -r A -t fem-power-supply -m FPS22 --date 2025/08/30 --time 17:05
+add_part.py -p SNPC000031 -r A -t snap -m SNPC000031 --date 2025/08/30 --time 17:05
+add_part.py -p ND29 -r A -t node -m ND29 --date 2025/08/30 --time 17:05
+add_part.py -p SNPC000034 -r A -t snap -m SNPC000034 --date 2025/08/30 --time 17:05
+add_part.py -p NBP26 -r A -t node-bulkhead -m NBP26 --date 2025/08/30 --time 17:05
+add_part.py -p SNPC000041 -r A -t snap -m SNPC000041 --date 2025/08/30 --time 17:05
+add_part.py -p FDV262 -r A -t feed -m FDV262 --date 2025/08/30 --time 17:05
+add_part.py -p N29 -r A -t node -m N29 --date 2025/08/30 --time 17:05
+add_part.py -p FEM184 -r A -t front-end -m FEM184 --date 2025/08/30 --time 17:05
+add_part.py -p FEM029 -r A -t front-end -m FEM029 --date 2025/08/30 --time 17:05
+add_part.py -p PCH29 -r A -t pam-chassis -m PCH29 --date 2025/08/30 --time 17:05
+add_part.py -p FDV327 -r A -t feed -m FDV327 --date 2025/08/30 --time 17:05
+add_part.py -p PAM248 -r A -t post-amp -m PAM248 --date 2025/08/30 --time 17:05
+add_part.py -p NBP29 -r A -t node-bulkhead -m NBP29 --date 2025/08/30 --time 17:05
+add_part.py -p N25 -r A -t node -m N25 --date 2025/08/30 --time 17:05
+add_part.py -p FDV233 -r A -t feed -m FDV233 --date 2025/08/30 --time 17:05
+add_part.py -p PAM249 -r A -t post-amp -m PAM249 --date 2025/08/30 --time 17:05
+add_part.py -p FDV313 -r A -t feed -m FDV313 --date 2025/08/30 --time 17:05
+add_part.py -p FDV293 -r A -t feed -m FDV293 --date 2025/08/30 --time 17:05
+add_part.py -p ND26 -r A -t node -m ND26 --date 2025/08/30 --time 17:05
+add_part.py -p PAM266 -r A -t post-amp -m PAM266 --date 2025/08/30 --time 17:05
+add_part.py -p FDV335 -r A -t feed -m FDV335 --date 2025/08/30 --time 17:05
+add_part.py -p FEM1061 -r A -t front-end -m FEM1061 --date 2025/08/30 --time 17:05
+add_part.py -p FDV334 -r A -t feed -m FDV334 --date 2025/08/30 --time 17:05
+add_part.py -p FDV329 -r A -t feed -m FDV329 --date 2025/08/30 --time 17:05
+add_part.py -p SNPC000009 -r A -t snap -m SNPC000009 --date 2025/08/30 --time 17:05
+add_part.py -p PAM212 -r A -t post-amp -m PAM212 --date 2025/08/30 --time 17:05
+add_part.py -p FDV296 -r A -t feed -m FDV296 --date 2025/08/30 --time 17:05
+add_part.py -p PAM271 -r A -t post-amp -m PAM271 --date 2025/08/30 --time 17:05
+add_part.py -p FDV285 -r A -t feed -m FDV285 --date 2025/08/30 --time 17:05
+add_part.py -p FDV299 -r A -t feed -m FDV299 --date 2025/08/30 --time 17:05
+add_part.py -p NCM25 -r A -t node-control-module -m NCM25 --date 2025/08/30 --time 17:05
+add_part.py -p SNPC000087 -r A -t snap -m SNPC000087 --date 2025/08/30 --time 17:05
+add_part.py -p FDV336 -r A -t feed -m FDV336 --date 2025/08/30 --time 17:05
+add_part.py -p FDV310 -r A -t feed -m FDV310 --date 2025/08/30 --time 17:05
+add_part.py -p PAM265 -r A -t post-amp -m PAM265 --date 2025/08/30 --time 17:05
+add_part.py -p N26 -r A -t node -m N26 --date 2025/08/30 --time 17:05
+add_part.py -p SNPC000005 -r A -t snap -m SNPC000005 --date 2025/08/30 --time 17:05
+add_part.py -p FDV309 -r A -t feed -m FDV309 --date 2025/08/30 --time 17:05
+add_part.py -p FDV295 -r A -t feed -m FDV295 --date 2025/08/30 --time 17:05
+add_part.py -p FDV301 -r A -t feed -m FDV301 --date 2025/08/30 --time 17:05
+add_part.py -p FEM103 -r A -t front-end -m FEM103 --date 2025/08/30 --time 17:05
+add_part.py -p FDV345 -r A -t feed -m FDV345 --date 2025/08/30 --time 17:05
+add_part.py -p FDV338 -r A -t feed -m FDV338 --date 2025/08/30 --time 17:05
+add_part.py -p FDV304 -r A -t feed -m FDV304 --date 2025/08/30 --time 17:05
+add_part.py -p ND24 -r A -t node -m ND24 --date 2025/08/30 --time 17:05
+add_part.py -p FDV337 -r A -t feed -m FDV337 --date 2025/08/30 --time 17:05
+add_part.py -p FDV328 -r A -t feed -m FDV328 --date 2025/08/30 --time 17:05
+add_part.py -p FDV288 -r A -t feed -m FDV288 --date 2025/08/30 --time 17:05
+add_part.py -p PAM264 -r A -t post-amp -m PAM264 --date 2025/08/30 --time 17:05
+add_part.py -p FDV297 -r A -t feed -m FDV297 --date 2025/08/30 --time 17:05
+add_part.py -p FDV302 -r A -t feed -m FDV302 --date 2025/08/30 --time 17:05
+add_part.py -p N24 -r A -t node -m N24 --date 2025/08/30 --time 17:05
+add_part.py -p FEM1189 -r A -t front-end -m FEM1189 --date 2025/08/30 --time 17:05
+add_part.py -p PAM032 -r A -t post-amp -m PAM032 --date 2025/08/30 --time 17:05
+add_part.py -p ND25 -r A -t node -m ND25 --date 2025/08/30 --time 17:05
+add_part.py -p FEM186 -r A -t front-end -m FEM186 --date 2025/08/30 --time 17:05
+add_part.py -p FDV91 -r A -t feed -m FDV91 --date 2025/08/30 --time 17:05
+add_part.py -p FDV291 -r A -t feed -m FDV291 --date 2025/08/30 --time 17:05
+add_part.py -p FDV347 -r A -t feed -m FDV347 --date 2025/08/30 --time 17:05
+add_part.py -p PAM101 -r A -t post-amp -m PAM101 --date 2025/08/30 --time 17:05
+# add connections for gsheet_not_active
+add_connection.py -u N24 --uprev A --upport ground -d ND24 --dnrev A --dnport ground --date 2025/08/30 --time 17:35
+add_connection.py -u A258 --uprev H --upport focus -d FDV295 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A259 --uprev H --upport focus -d FDV301 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A260 --uprev H --upport focus -d FDV327 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A274 --uprev H --upport focus -d FDV294 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A275 --uprev H --upport focus -d FDV296 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A276 --uprev H --upport focus -d FDV293 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A288 --uprev H --upport focus -d FDV303 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A289 --uprev H --upport focus -d FDV300 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u N25 --uprev A --upport ground -d ND25 --dnrev A --dnport ground --date 2025/08/30 --time 17:35
+add_connection.py -u A230 --uprev H --upport focus -d FDV347 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A247 --uprev H --upport focus -d FDV348 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A248 --uprev H --upport focus -d FDV90 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A249 --uprev H --upport focus -d FDV91 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A263 --uprev H --upport focus -d FDV310 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A264 --uprev H --upport focus -d FDV233 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A265 --uprev H --upport focus -d FDV288 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A279 --uprev H --upport focus -d FDV309 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A280 --uprev H --upport focus -d FDV302 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A335 --uprev H --upport focus -d FDV335 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u SNPC000041 --uprev A --upport rack -d N25 --dnrev A --dnport loc1 --date 2025/08/30 --time 17:35
+add_connection.py -u N26 --uprev A --upport ground -d ND26 --dnrev A --dnport ground --date 2025/08/30 --time 17:35
+add_connection.py -u A296 --uprev H --upport focus -d FDV262 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u SNPC000087 --uprev A --upport rack -d N26 --dnrev A --dnport loc0 --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport e1 -d PAM264 --dnrev A --dnport e --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport n1 -d PAM264 --dnrev A --dnport n --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport e2 -d PAM265 --dnrev A --dnport e --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport n2 -d PAM265 --dnrev A --dnport n --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport e3 -d PAM236 --dnrev A --dnport e --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport n3 -d PAM236 --dnrev A --dnport n --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport e4 -d PAM212 --dnrev A --dnport e --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport n4 -d PAM212 --dnrev A --dnport n --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport e5 -d PAM248 --dnrev A --dnport e --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport n5 -d PAM248 --dnrev A --dnport n --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport e6 -d PAM249 --dnrev A --dnport e --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport n6 -d PAM249 --dnrev A --dnport n --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport e7 -d PAM266 --dnrev A --dnport e --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport n7 -d PAM266 --dnrev A --dnport n --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport e8 -d PAM271 --dnrev A --dnport e --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport n8 -d PAM271 --dnrev A --dnport n --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport e9 -d PAM032 --dnrev A --dnport e --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport n9 -d PAM032 --dnrev A --dnport n --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport e10 -d PAM101 --dnrev A --dnport e --date 2025/08/30 --time 17:35
+add_connection.py -u NBP26 --uprev A --upport n10 -d PAM101 --dnrev A --dnport n --date 2025/08/30 --time 17:35
+add_connection.py -u PAM264 --uprev A --upport e -d SNPC000087 --dnrev A --dnport e2 --date 2025/08/30 --time 17:35
+add_connection.py -u PAM264 --uprev A --upport n -d SNPC000087 --dnrev A --dnport n0 --date 2025/08/30 --time 17:35
+add_connection.py -u A297 --uprev H --upport focus -d FDV295 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u PAM265 --uprev A --upport e -d SNPC000087 --dnrev A --dnport e6 --date 2025/08/30 --time 17:35
+add_connection.py -u PAM265 --uprev A --upport n -d SNPC000087 --dnrev A --dnport n4 --date 2025/08/30 --time 17:35
+add_connection.py -u A298 --uprev H --upport focus -d FDV345 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u PAM236 --uprev A --upport e -d SNPC000087 --dnrev A --dnport e10 --date 2025/08/30 --time 17:35
+add_connection.py -u PAM236 --uprev A --upport n -d SNPC000087 --dnrev A --dnport n8 --date 2025/08/30 --time 17:35
+add_connection.py -u A308 --uprev H --upport focus -d FDV296 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u SNPC000031 --uprev A --upport rack -d N26 --dnrev A --dnport loc1 --date 2025/08/30 --time 17:35
+add_connection.py -u PAM212 --uprev A --upport e -d SNPC000031 --dnrev A --dnport e2 --date 2025/08/30 --time 17:35
+add_connection.py -u PAM212 --uprev A --upport n -d SNPC000031 --dnrev A --dnport n0 --date 2025/08/30 --time 17:35
+add_connection.py -u A309 --uprev H --upport focus -d FDV329 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u PAM248 --uprev A --upport e -d SNPC000031 --dnrev A --dnport e6 --date 2025/08/30 --time 17:35
+add_connection.py -u PAM248 --uprev A --upport n -d SNPC000031 --dnrev A --dnport n4 --date 2025/08/30 --time 17:35
+add_connection.py -u A310 --uprev H --upport focus -d FDV301 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u PAM249 --uprev A --upport e -d SNPC000031 --dnrev A --dnport e10 --date 2025/08/30 --time 17:35
+add_connection.py -u PAM249 --uprev A --upport n -d SNPC000031 --dnrev A --dnport n8 --date 2025/08/30 --time 17:35
+add_connection.py -u A334 --uprev H --upport focus -d FDV304 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A337 --uprev H --upport focus -d FDV334 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A338 --uprev H --upport focus -d FDV328 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A341 --uprev H --upport focus -d FDV293 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u N29 --uprev A --upport ground -d ND29 --dnrev A --dnport ground --date 2025/08/30 --time 17:35
+add_connection.py -u FPS22 --uprev A --upport rack -d N29 --dnrev A --dnport top --date 2025/08/30 --time 17:35
+add_connection.py -u NCM25 --uprev A --upport rack -d N29 --dnrev A --dnport middle --date 2025/08/30 --time 17:35
+add_connection.py -u PCH29 --uprev A --upport rack -d N29 --dnrev A --dnport bottom --date 2025/08/30 --time 17:35
+add_connection.py -u A306 --uprev H --upport focus -d FDV313 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FDV313 --uprev A --upport terminals -d FEM186 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FEM186 --uprev A --upport pwr -d FPS22 --dnrev A --dnport pwr1 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM186 --uprev A --upport e -d NBP29 --dnrev A --dnport e1 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM186 --uprev A --upport n -d NBP29 --dnrev A --dnport n1 --date 2025/08/30 --time 17:35
+add_connection.py -u SNPC000009 --uprev A --upport rack -d N29 --dnrev A --dnport loc0 --date 2025/08/30 --time 17:35
+add_connection.py -u A307 --uprev H --upport focus -d FDV337 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FDV337 --uprev A --upport terminals -d FEM1061 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FEM1061 --uprev A --upport pwr -d FPS22 --dnrev A --dnport pwr2 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM1061 --uprev A --upport e -d NBP29 --dnrev A --dnport e2 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM1061 --uprev A --upport n -d NBP29 --dnrev A --dnport n2 --date 2025/08/30 --time 17:35
+add_connection.py -u A319 --uprev H --upport focus -d FDV299 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FDV299 --uprev A --upport terminals -d FEM184 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FEM184 --uprev A --upport pwr -d FPS22 --dnrev A --dnport pwr3 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM184 --uprev A --upport e -d NBP29 --dnrev A --dnport e3 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM184 --uprev A --upport n -d NBP29 --dnrev A --dnport n3 --date 2025/08/30 --time 17:35
+add_connection.py -u A277 --uprev H --upport focus -d FDV291 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FDV291 --uprev A --upport terminals -d FEM1189 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FEM1189 --uprev A --upport pwr -d FPS22 --dnrev A --dnport pwr7 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM1189 --uprev A --upport e -d NBP29 --dnrev A --dnport e7 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM1189 --uprev A --upport n -d NBP29 --dnrev A --dnport n7 --date 2025/08/30 --time 17:35
+add_connection.py -u SNPC000005 --uprev A --upport rack -d N29 --dnrev A --dnport loc2 --date 2025/08/30 --time 17:35
+add_connection.py -u A278 --uprev H --upport focus -d FDV297 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FDV297 --uprev A --upport terminals -d FEM341 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FEM341 --uprev A --upport pwr -d FPS22 --dnrev A --dnport pwr8 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM341 --uprev A --upport e -d NBP29 --dnrev A --dnport e8 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM341 --uprev A --upport n -d NBP29 --dnrev A --dnport n8 --date 2025/08/30 --time 17:35
+add_connection.py -u A292 --uprev H --upport focus -d FDV285 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u A293 --uprev H --upport focus -d FDV336 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FDV336 --uprev A --upport terminals -d FEM103 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FEM103 --uprev A --upport pwr -d FPS22 --dnrev A --dnport pwr10 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM103 --uprev A --upport e -d NBP29 --dnrev A --dnport e10 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM103 --uprev A --upport n -d NBP29 --dnrev A --dnport n10 --date 2025/08/30 --time 17:35
+add_connection.py -u SNPC000034 --uprev A --upport rack -d N29 --dnrev A --dnport loc3 --date 2025/08/30 --time 17:35
+add_connection.py -u A294 --uprev H --upport focus -d FDV338 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FDV338 --uprev A --upport terminals -d FEM029 --dnrev A --dnport input --date 2025/08/30 --time 17:35
+add_connection.py -u FEM029 --uprev A --upport pwr -d FPS22 --dnrev A --dnport pwr11 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM029 --uprev A --upport e -d NBP29 --dnrev A --dnport e11 --date 2025/08/30 --time 17:35
+add_connection.py -u FEM029 --uprev A --upport n -d NBP29 --dnrev A --dnport n11 --date 2025/08/30 --time 17:35
+add_connection.py -u SNPC000041 --uprev A --upport rack -d N29 --dnrev A --dnport loc1 --date 2025/08/30 --time 17:35
