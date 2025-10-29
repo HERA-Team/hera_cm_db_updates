@@ -1,5 +1,5 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
-65,E,95,127,1,125,C1,E2,0,digital_ok,
+65,E,95,127,1,125,C1,E2,0,digital_ok,TEST COMMENT
 65,N,95,127,1,125,C1,N0,0,digital_ok,
 66,E,77,135,2,126,C1,E6,0,digital_ok,
 66,N,77,135,2,126,C1,N4,0,digital_ok,
