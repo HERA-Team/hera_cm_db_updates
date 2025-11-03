@@ -6,7 +6,7 @@ from matplotlib import colors
 import yaml
 
 
-NODES = list(range(24))
+NODES = list(range(30))
 PORTS = list(range(1, 13))
 BKCLR = 'k'
 NODE_INFO = geo_sysdef.read_nodes()
@@ -15,12 +15,17 @@ STATUS = {
     1: {'msg': "undetermined", 'color': '0.5'},
     2: {'msg': "hookup not found via node port", 'color': 'b'},
     3: {'msg': "antenna not found from node port", 'color': 'm'},
-    4: {'msg': "nodes don't match", 'color': 'r'},
+    4: {'msg': "nodes don't match", 'color': 'g'},
     5: {'msg': "ports don't match", 'color': 'c'},
-    6: {'msg': "couldn't find ant number", 'color': 'y'}
+    6: {'msg': "couldn't find ant number", 'color': 'orange'},
+    7: {'msg': "no-length hookup", 'color': 'purple'},
 }
 OK = [0]
 MAX_HIGHLIGHT = 350
+DEF_CLR = 'r'
+
+def slim_component(component):
+    return f"{component.upstream_part}:{component.upstream_output_port}>{component.downstream_part}:{component.downstream_input_port}"
 
 class TableEntry:
     def __init__(self, node, port, hookup):
@@ -32,6 +37,8 @@ class TableEntry:
             setattr(self, init, None)
         if self.hookup is None:
             self.status = 2
+        elif not len(self.hookup):
+            self.status = 7
         else:
             self.hpn = self.hookup[0].upstream_part
             if self.hpn[0] != 'H':  # This likely just means not connected.
@@ -45,8 +52,8 @@ class TableEntry:
                     self.status = 6
 
     def __repr__(self):
-        s = f"HPN: {self.hpn}\n"
-        s+= f"Number: {self.number}\n"
+        s = f"HPN: {self.hpn} -- "
+        s+= f"Number: {self.number} -- "
         s+= f"Node-Port: {self.node}-{self.port}\n"
         s+= f"Status: {self.status}  ({STATUS[self.status]['msg']})\n"
         if self.status:
@@ -55,7 +62,7 @@ class TableEntry:
             s+= f"Assigned: {self.assigned}\n"
         if self.value is not None:
             s+= f"Value: {self.value}\n"
-        s+= f"Color: {self.color}\nDisplay color: {self.display_color}\n"
+        s+= f"Color: {self.color} -- Display color: {self.display_color}\n"
         return s
 
     def cm(self):
@@ -84,8 +91,8 @@ class TableEntry:
             else:
                 print(f"Assigning   {self.node:02d}-{self.port:02d}:  {anum}")
         self.assigned = anum
-        self.color = 'moccasin'
-        self.display_color = 'moccasin'
+        self.color = DEF_CLR
+        self.display_color = DEF_CLR
         self.text = str(anum)
         self.number = anum
 
@@ -105,9 +112,12 @@ class Grid:
         if port is None:
             node, port = self.ant_to_port[key]
         print(self.table[node][port], end='')
-        print("Hookup:")
-        for component in self.table[node][port].hookup:
-            print(f"\t{component}")
+        print("Hookup:", end='')
+        if self.table[node][port].hookup is None:
+            print("\t<none>")
+        else:
+            components = [f"{slim_component(component)}" for component in self.table[node][port].hookup]
+            print(f"\t{','.join(components)}")
 
     def get_key(self, key):
         if isinstance(key, (int, tuple, list)):
@@ -210,13 +220,16 @@ class Grid:
             assigned_nodes[node] = copy(NODE_INFO[node]['ants'])
             for port in self.ports:
                 if self.table[node][port].status in OK:
-                    assigned_nodes[node].remove(self.table[node][port].number)
+                    try:
+                        assigned_nodes[node].remove(self.table[node][port].number)
+                    except (ValueError, IndexError):
+                        pass
         for node in self.nodes:
             for port in self.ports:
                 if self.table[node][port].status:
                     try:
                         self.table[node][port].set_as_assigned(assigned_nodes[node].pop(0), verbose=verbose)
-                    except IndexError:
+                    except (ValueError, IndexError):
                         pass
                 self.ant_to_port[self.table[node][port].number] = (node, port)
         if 0 in self.table:
@@ -252,6 +265,19 @@ class Grid:
             print("...")
         if len(not_found):
             print(f"Antennas not found:  {', '.join([str(x) for x in not_found])}")
+
+    def print_all(self):
+        sorted_table = {}
+        for node in self.nodes:
+            for port in self.ports:
+                key = self.table[node][port].number
+                if key is not None:
+                    sorted_table[key] = (node, port)
+        for key in sorted(sorted_table.keys()):
+            node, port = sorted_table[key]
+            if self.table[node][port].number is not None:
+                self.show((node, port))
+                print("-----------------------------------")
 
     def get_connected(self):
         """

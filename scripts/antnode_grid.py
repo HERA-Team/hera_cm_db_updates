@@ -8,6 +8,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('highlight', help="List of antennas to highlight or yaml file.", nargs='?', default=None)
 ap.add_argument('-n', '--number', help="Number to show as screen text.", type=int, default=7)
 ap.add_argument('-x', '--noplot', help="Flag to turn off the plot.", action='store_true')
+ap.add_argument('-v', '--view', help="View all entries.", action='store_true')
 args = ap.parse_args()
 
 if args.noplot:
@@ -20,3 +21,5 @@ grid.process_highlight(show_highlighted=args.number)
 if not args.noplot:
     grid.addplot('Node Grid/Antenna Map')
     ant_node_grid.plt.show()
+if args.view:
+    grid.print_all()
