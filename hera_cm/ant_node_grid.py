@@ -280,15 +280,6 @@ class Grid:
                 print("-----------------------------------")
 
     def get_connected(self):
-        """
-        Parameter
-        ---------
-        show_highlighted : True, False, None, int
-            if (None, False) don't print out highlighted entries
-            if True print out all highlighted entries
-            if int only print out int entries
-
-        """
         self.table = {}
         with mc.MCSessionWrapper(session=None) as session:
             hookup = cm_hookup.Hookup(session)
