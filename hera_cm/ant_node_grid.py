@@ -288,8 +288,9 @@ class Grid:
             self.ax.axis([xmin, xmax, ymin, ymax])
             for i in range(4):
                 self.ax.text(1.5 + i*3, ymax-1.0, f'SNAP {i}')
-            fig = plt.figure('colors')
-            self.axc = fig.subplots()
+            if colors is not None:
+                fig = plt.figure('colors')
+                self.axc = fig.subplots()
             if colors == 'status':
                 for status_code, status_info in STATUS.items():
                     self.axc.plot([0, 1], [status_code, status_code], '-', color=status_info['color'], lw=10, label=f"{status_code}: {status_info['msg']}")
@@ -362,6 +363,7 @@ class Grid:
                     self.table[node][port].display_color = '0.8'
         for i, key in enumerate(self.highlight):
             hlkey = self.get_key(key)
+            print(f"Highlighting {hlkey} with {self.highlight[key]['color']}")
             if isinstance(hlkey, int):
                 try:
                     this_node, this_port = self.ant_to_port[hlkey]
