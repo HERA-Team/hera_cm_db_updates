@@ -363,7 +363,6 @@ class Grid:
                     self.table[node][port].display_color = '0.8'
         for i, key in enumerate(self.highlight):
             hlkey = self.get_key(key)
-            print(f"Highlighting {hlkey} with {self.highlight[key]['color']}")
             if isinstance(hlkey, int):
                 try:
                     this_node, this_port = self.ant_to_port[hlkey]
