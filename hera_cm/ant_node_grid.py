@@ -210,6 +210,7 @@ class Grid:
             {key: {'value': value, 'color': color}, ...}
         """
         self.highlight = {}
+        self.highlight_input = copy(highlight)
         if isinstance(highlight, str):
             try:
                 with open(highlight, 'r') as fp:
@@ -259,8 +260,8 @@ class Grid:
     def addplot(self, title=None, marker=',', markersize=None, markeroffset=[0.0, 0.0], parameter='text', colors=None):
         newfig = title is not None
         if newfig:
-            fig = plt.figure(title, figsize=(9.75,6.5))
-            self.ax = fig.subplots()
+            self.fig = plt.figure(title, figsize=(9.75,6.5))
+            self.ax = self.fig.subplots()
         for node in self.nodes:
             for port in self.ports:
                 this_color = self.table[node][port].display_color
@@ -274,7 +275,7 @@ class Grid:
                     self.ax.text(x, y, this_text, color=this_color, weight=weight)
         if newfig:
             if self.add_colorbar:
-                fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm), ax=self.ax)
+                self.fig.colorbar(plt.cm.ScalarMappable(cmap=self.colormap, norm=self.norm), ax=self.ax)
             self.ax.set_xlabel('Node input port (snap input order)')
             self.ax.set_ylabel('Node number')
             self.ax.set_title(title)
@@ -289,8 +290,8 @@ class Grid:
             for i in range(4):
                 self.ax.text(1.5 + i*3, ymax-1.0, f'SNAP {i}')
             if colors is not None:
-                fig = plt.figure('colors')
-                self.axc = fig.subplots()
+                figc = plt.figure('colors')
+                self.axc = figc.subplots()
             if colors == 'status':
                 for status_code, status_info in STATUS.items():
                     self.axc.plot([0, 1], [status_code, status_code], '-', color=status_info['color'], lw=10, label=f"{status_code}: {status_info['msg']}")
@@ -301,6 +302,11 @@ class Grid:
                     self.axc.plot([0, 1], [i, i], '-', color=hl_color, lw=10, label=f"{hl_info}")
                 self.axc.set_yticks(list(range(len(self.hl_color_map))), list(self.hl_color_map.values()))
                 self.axc.set_title('Highlight color legend')
+
+    def save_plot(self):
+        filename = f"{self.highlight_input.split('.')[0]}.png" if isinstance(self.highlight_input, str) else "ant_node_grid.png"
+        print("Saving figure to ", filename)
+        self.fig.savefig(filename)
 
     def _check_duplicates(self, note):
         tabant = []

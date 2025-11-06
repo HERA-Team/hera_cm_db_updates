@@ -12,6 +12,7 @@ ap.add_argument('-d', '--disabled_nodes', help="csv of disabled nodes.", default
 ap.add_argument('-s', '--ignore_status', help="Ignore status colors when setting display colors.", action='store_false')
 ap.add_argument('-a', '--ignore_assign', help="Ignore reassigned antenna color", action='store_false')
 ap.add_argument('-c', '--colors', help="Color legend to show (status or highlight).", default=None)
+ap.add_argument('-p', '--save_plot', help="Save the plot to a file.", action='store_true')
 args = ap.parse_args()
 
 disabled_nodes = [int(x) for x in args.disabled_nodes.split(",")]
@@ -23,5 +24,7 @@ if not args.noplot:
     plt_title = args.highlight if args.highlight is not None else "Antenna Node Grid"
     grid.addplot(plt_title, colors=args.colors)
     ant_node_grid.plt.show()
+    if args.save_plot:
+        grid.save_plot()
 if args.view:
     grid.print_all()
