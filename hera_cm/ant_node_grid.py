@@ -68,8 +68,8 @@ class TableEntry:
         s+= f"Status: {self.status}  ({STATUS[self.status]['msg']})\n"
         if self.status:
             s+= f"CM node-port:  {self.cm_node}-{self.cm_port}\n"
-        if self.assigned is not None:
-            s+= f"Assigned: {self.assigned}\n"
+        if self.assign is not None:
+            s+= f"Assigned: {self.assign}\n"
         if self.value is not None:
             s+= f"Value: {self.value}\n"
         s+= f"Display color: {self.display_color}\n"
@@ -339,9 +339,13 @@ class Grid:
                     available_node_ports[node].remove(this_trial)
         # Set disabled node antennas.
         for disabled_node in self.disabled_nodes:
+            print("Disabling node", disabled_node)
             if disabled_node in self.table:
+                print("Disabling port: ", end=' ')
                 for port in self.ports:
+                    print(port, end=' ')
                     self.table[disabled_node][port].disabled = True
+                print()
         # Check for duplicate antennas after.
         self._check_duplicates("AFTER")
 
@@ -359,8 +363,6 @@ class Grid:
                     self.table[node][port].display_color = ASSIGNED_COLOR
                 if show_misassigned and self.table[node][port].reassign:
                     self.table[node][port].display_color = REASSIGNED_COLOR
-                if show_disabled and self.table[node][port].disabled:
-                    self.table[node][port].display_color = '0.8'
         for i, key in enumerate(self.highlight):
             hlkey = self.get_key(key)
             if isinstance(hlkey, int):
@@ -370,7 +372,11 @@ class Grid:
                     continue
             self.table[this_node][this_port].display_color = self.highlight[key]['color']
             self.table[this_node][this_port].value = self.highlight[key]['value']
-
+        if show_disabled:
+            for node in self.nodes:
+                for port in self.ports:
+                    if self.table[node][port].disabled:
+                        self.table[node][port].display_color = '0.8'
 
     def print_all(self):
         sorted_table = {}

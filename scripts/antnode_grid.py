@@ -14,7 +14,7 @@ ap.add_argument('-a', '--ignore_assign', help="Ignore reassigned antenna color",
 ap.add_argument('-c', '--colors', help="Color legend to show (status or highlight).", default=None)
 args = ap.parse_args()
 
-disabled_nodes = args.disabled_nodes.split(",")
+disabled_nodes = [int(x) for x in args.disabled_nodes.split(",")]
 grid = ant_node_grid.Grid(args.highlight, disabled_nodes=disabled_nodes)
 grid.get_connected()
 grid.process_array()
