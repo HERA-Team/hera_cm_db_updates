@@ -5828,3 +5828,8 @@ EE10001,A,per ARP 22 May 2025,infoupd,1440934938
 EE10001,A,per ARP 22 May 2025,infoupd,1440934940
 HH213,A,PAM 292 wasnt switching attenuation,infoupd,1442000538
 HH65,A,TEST COMMENT,infoupd,1445794938
+HH166,A,apriori_antenna status change: digital_ok > RF_maintenance,apa-infoupd,1446853698
+HH184,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1446853698
+HH185,A,apriori_antenna status change: dish_maintenance > RF_maintenance,apa-infoupd,1446853698
+HH186,A,apriori_antenna status change: RF_maintenance > dish_maintenance,apa-infoupd,1446853698
+HH71,A,Removed LP filter,infoupd,1446853338

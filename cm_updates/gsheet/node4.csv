@@ -13,10 +13,10 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 40,N,58,101,6,106,C3,N8,1,digital_ok,
 55,E,23,1119,7,107,C48,E2,2,RF_maintenance,
 55,N,23,1119,7,107,C48,N0,2,RF_maintenance,
-71,E,63,114,8,108,C48,E6,2,digital_ok,
-71,N,63,114,8,108,C48,N4,2,digital_ok,
-70,E,55,112,9,109,C48,E10,2,digital_ok,Removed LP filter
-70,N,55,112,9,109,C48,N8,2,digital_ok,
+70,E,55,112,8,108,C48,E6,2,digital_ok,
+70,N,55,112,8,108,C48,N4,2,digital_ok,
+71,E,63,114,9,109,C48,E10,2,digital_ok,Removed LP filter
+71,N,63,114,9,109,C48,N8,2,digital_ok,
 41,E,52,104,10,110,C40,E2,3,digital_ok,
 41,N,52,104,10,110,C40,N0,3,digital_ok,
 57,E,71,113,11,136,C40,E6,3,RF_maintenance,
