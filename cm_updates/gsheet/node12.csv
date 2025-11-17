@@ -13,9 +13,9 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 333,N,281,330,6,154,60,n8,1,dish_maintenance,
 135,E,96,150,7,155,20,e2,2,RF_maintenance,
 135,N,96,150,7,155,20,n0,2,RF_maintenance,
-136,E,82,151,8,156,20,e6,2,RF_maintenance,Neither pol has optical power
+136,E,82,151,8,156,20,e6,2,RF_maintenance,
 136,N,82,151,8,156,20,n4,2,RF_maintenance,
-155,E,97,152,9,157,20,e10,2,RF_maintenance,Neither pol has optical power
+155,E,97,152,9,157,20,e10,2,RF_maintenance,
 155,N,97,152,9,157,20,n8,2,RF_maintenance,
 156,E,98,336,10,158,17,e2,3,RF_maintenance,
 156,N,98,336,10,158,17,n0,3,RF_maintenance,
@@ -24,6 +24,6 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 158,E,100,162,12,160,17,e10,3,digital_ok,
 158,N,100,162,12,160,17,n8,3,digital_ok,
 #END,,,,,,,,,,
-NCM,16,,,,,,,,,ARP: 5/26/25 swapped in ncm16 for a test. was 7
+NCM,16,,,,,,,,,
 FPS,10,,,,,,,,,
 PCH,9,,,,,,,,,

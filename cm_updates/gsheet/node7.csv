@@ -1,27 +1,27 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
-81,E,26,182,1,53,C19,e2,0,RF_maintenance,FEM 17 replaced with 182
+81,E,26,182,1,53,C19,e2,0,RF_maintenance,FEM power always on
 81,N,26,182,1,53,C19,n0,0,RF_maintenance,
-82,E,27,51,2,54,C19,e6,0,RF_maintenance,
+82,E,27,51,2,54,C19,e6,0,RF_maintenance,FEM power always on
 82,N,27,51,2,54,C19,n4,0,RF_maintenance,
-83,E,48,37,3,58,C19,e10,0,RF_maintenance,
+83,E,48,37,3,58,C19,e10,0,RF_maintenance,FEM power always on
 83,N,48,37,3,58,C19,n8,0,RF_maintenance,
-100,E,30,48,4,56,C21,e2,1,digital_ok,
+100,E,30,48,4,56,C21,e2,1,digital_ok,FEM power always on
 100,N,30,48,4,56,C21,n0,1,digital_ok,
-119,E,34,13,5,57,C21,e6,1,RF_maintenance,
+119,E,34,13,5,57,C21,e6,1,RF_maintenance,FEM power always on
 119,N,34,13,5,57,C21,n4,1,RF_maintenance,
-138,E,47,47,6,304,C21,e10,1,RF_maintenance,
+138,E,47,47,6,304,C21,e10,1,RF_maintenance,FEM power always on
 138,N,47,47,6,304,C21,n8,1,RF_maintenance,
-98,E,28,50,7,59,C30,e2,2,digital_ok,
+98,E,28,50,7,59,C30,e2,2,digital_ok,FEM power always on
 98,N,28,50,7,59,C30,n0,2,digital_ok,
-99,E,29,361,8,60,C30,e6,2,digital_ok,
+99,E,29,361,8,60,C30,e6,2,digital_ok,FEM power always on
 99,N,29,361,8,60,C30,n4,2,digital_ok,
-116,E,31,14,9,61,C30,e10,2,digital_ok,
+116,E,31,14,9,61,C30,e10,2,digital_ok,FEM power always on
 116,N,31,14,9,61,C30,n8,2,digital_ok,
-117,E,32,249,10,299,C73,e2,3,RF_maintenance,
+117,E,32,249,10,299,C73,e2,3,RF_maintenance,FEM power always on
 117,N,32,249,10,299,C73,n0,3,RF_maintenance,
-118,E,33,53,11,302,C73,e6,3,digital_ok,
+118,E,33,53,11,302,C73,e6,3,digital_ok,FEM power always on
 118,N,33,53,11,302,C73,n4,3,digital_ok,
-137,E,49,49,12,49,C73,e10,3,RF_maintenance,
+137,E,49,49,12,49,C73,e10,3,RF_maintenance,FEM power always on
 137,N,49,49,12,49,C73,n8,3,RF_maintenance,
 #END,,,,,,,,,,
 NCM,23,,,,,,,,,

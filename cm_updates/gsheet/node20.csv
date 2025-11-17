@@ -21,7 +21,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 227,N,186,255,10,254,C86,n0,3,RF_ok,
 228,E,192,266,11,267,C86,e6,3,RF_maintenance,
 228,N,192,266,11,267,C86,n4,3,RF_maintenance,
-229,E,183,254,12,268,C86,e10,3,RF_maintenance,E: no optical power at node
+229,E,183,254,12,268,C86,e10,3,RF_maintenance,
 229,N,183,254,12,268,C86,n8,3,RF_maintenance,
 #END,,,,,,,,,,
 NCM,15,,,,,,,,,

@@ -5833,3 +5833,37 @@ HH184,A,apriori_antenna status change: RF_maintenance > digital_ok,apa-infoupd,1
 HH185,A,apriori_antenna status change: dish_maintenance > RF_maintenance,apa-infoupd,1446853698
 HH186,A,apriori_antenna status change: RF_maintenance > dish_maintenance,apa-infoupd,1446853698
 HH71,A,Removed LP filter,infoupd,1446853338
+HH296,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH297,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH298,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH308,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH309,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH310,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HA334,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HB337,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HA338,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HB341,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH22,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH34,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH35,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH47,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH61,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH77,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH48,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH49,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH62,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH63,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH64,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH78,A,Removed NBP/PAMloc since no NCM/FPS -- they are in order,infoupd,1447411338
+HH81,A,FEM power always on,infoupd,1447411338
+HH82,A,FEM power always on,infoupd,1447411338
+HH83,A,FEM power always on,infoupd,1447411338
+HH100,A,FEM power always on,infoupd,1447411338
+HH119,A,FEM power always on,infoupd,1447411338
+HH138,A,FEM power always on,infoupd,1447411338
+HH98,A,FEM power always on,infoupd,1447411338
+HH99,A,FEM power always on,infoupd,1447411338
+HH116,A,FEM power always on,infoupd,1447411338
+HH117,A,FEM power always on,infoupd,1447411338
+HH118,A,FEM power always on,infoupd,1447411338
+HH137,A,FEM power always on,infoupd,1447411338

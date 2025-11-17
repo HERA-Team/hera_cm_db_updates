@@ -1,28 +1,28 @@
 Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
-296,E,262,,1,264,C87,e2,0,RF_maintenance,
-296,N,262,,1,264,C87,n0,0,RF_maintenance,
-297,E,295,,2,265,C87,e6,0,RF_maintenance,Had 302/295 changing to just 295
-297,N,295,,2,265,C87,n4,0,RF_maintenance,
-298,E,345,,3,236,C87,e10,0,RF_maintenance,
-298,N,345,,3,236,C87,n8,0,RF_maintenance,
-308,E,296,,4,212,C31,e2,1,RF_maintenance,
-308,N,296,,4,212,C31,n0,1,RF_maintenance,
-309,E,329,,5,248,C31,e6,1,RF_maintenance,
-309,N,329,,5,248,C31,n4,1,RF_maintenance,
-310,E,301,,6,249,C31,e10,1,RF_maintenance,
-310,N,301,,6,249,C31,n8,1,RF_maintenance,
-334,E,304,,7,266,,e2,2,RF_maintenance,
-334,N,304,,7,266,,n0,2,RF_maintenance,
-337,E,334,,8,271,,e6,2,RF_maintenance,
-337,N,334,,8,271,,n4,2,RF_maintenance,
-338,E,328,,9,32,,e10,2,RF_maintenance,
-338,N,328,,9,32,,n8,2,RF_maintenance,
-341,E,293,,10,101,,e2,3,RF_maintenance,
-341,N,293,,10,101,,n0,3,RF_maintenance,
-,,,,11,266,,e6,3,RF_maintenance,
-,,,,11,266,,n4,3,RF_maintenance,
-,,,,12,303,,e10,3,RF_maintenance,
-,,,,12,303,,n8,3,RF_maintenance,
+296,E,262,,,264,C87,e2,0,RF_maintenance,Removed NBP/PAMloc since no NCM/FPS -- they are in order
+296,N,262,,,264,C87,n0,0,RF_maintenance,
+297,E,295,,,265,C87,e6,0,RF_maintenance,Removed NBP/PAMloc since no NCM/FPS -- they are in order
+297,N,295,,,265,C87,n4,0,RF_maintenance,
+298,E,345,,,236,C87,e10,0,RF_maintenance,Removed NBP/PAMloc since no NCM/FPS -- they are in order
+298,N,345,,,236,C87,n8,0,RF_maintenance,
+308,E,296,,,212,C31,e2,1,RF_maintenance,Removed NBP/PAMloc since no NCM/FPS -- they are in order
+308,N,296,,,212,C31,n0,1,RF_maintenance,
+309,E,329,,,248,C31,e6,1,RF_maintenance,Removed NBP/PAMloc since no NCM/FPS -- they are in order
+309,N,329,,,248,C31,n4,1,RF_maintenance,
+310,E,301,,,249,C31,e10,1,RF_maintenance,Removed NBP/PAMloc since no NCM/FPS -- they are in order
+310,N,301,,,249,C31,n8,1,RF_maintenance,
+334,E,304,,,266,,e2,2,RF_maintenance,Removed NBP/PAMloc since no NCM/FPS -- they are in order
+334,N,304,,,266,,n0,2,RF_maintenance,
+337,E,334,,,271,,e6,2,RF_maintenance,Removed NBP/PAMloc since no NCM/FPS -- they are in order
+337,N,334,,,271,,n4,2,RF_maintenance,
+338,E,328,,,32,,e10,2,RF_maintenance,Removed NBP/PAMloc since no NCM/FPS -- they are in order
+338,N,328,,,32,,n8,2,RF_maintenance,
+341,E,293,,,101,,e2,3,RF_maintenance,Removed NBP/PAMloc since no NCM/FPS -- they are in order
+341,N,293,,,101,,n0,3,RF_maintenance,
+,,,,,266,,e6,3,RF_maintenance,Removed NBP/PAMloc since no NCM/FPS -- they are in order
+,,,,,266,,n4,3,RF_maintenance,
+,,,,,303,,e10,3,RF_maintenance,Removed NBP/PAMloc since no NCM/FPS -- they are in order
+,,,,,303,,n8,3,RF_maintenance,
 #END,,,,,,,,,,
 NCM,,,,,,,,,,
 FPS,,,,,,,,,,

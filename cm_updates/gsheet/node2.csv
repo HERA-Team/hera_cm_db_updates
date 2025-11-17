@@ -25,6 +25,6 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,FEM Power?,Op
 323,N,273,321,12,329,C81,n8,3,digital_maintenance,,,,,,,
 #END,,,,,,,,,,,,,,,,
 NCM,22,,,,,,,,,,,,,,,
-FPS,14,,,,,,,,,,,,,,,
+FPS,32,,,,,,,,,,,,,,,
 PCH,14,,,,,,,,,,,,,,,
 WRS,1-4,switch-port,,,,,,,,,,,,,,
