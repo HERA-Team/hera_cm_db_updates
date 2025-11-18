@@ -1,0 +1,9 @@
+#! /bin/bash
+source ~/.bashrc
+echo "/home/obs/src/hera_cm_db_updates/251118_connupd_0835" >> scripts.log 
+# stop connections for active_not_gsheet
+stop_connection.py -u NCM04 --uprev A --upport rack -d N17 --dnrev A --dnport middle --date 2025/11/18 --time 08:29
+# add parts for gsheet_not_active
+add_part.py -p NCM07 -r A -t node-control-module -m NCM07 --date 2025/11/18 --time 08:05
+# add connections for gsheet_not_active
+add_connection.py -u NCM07 --uprev A --upport rack -d N17 --dnrev A --dnport middle --date 2025/11/18 --time 08:35
