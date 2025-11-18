@@ -1,30 +1,30 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments,
-22,E,180,284,,269,C95,e2,0,digital_ok,,Removed NBP/PAMloc since no NCM/FPS -- they are in order
-22,N,180,284,,269,C95,n0,0,digital_ok,,
-34,E,177,457,,270,C95,e6,0,RF_maintenance,,Removed NBP/PAMloc since no NCM/FPS -- they are in order
-34,N,177,457,,270,C95,n4,0,RF_maintenance,,
-35,E,168,286,,356,C95,e10,0,RF_maintenance,,Removed NBP/PAMloc since no NCM/FPS -- they are in order
-35,N,168,286,,356,C95,n8,0,RF_maintenance,,
-47,E,179,290,,272,C36,e2,1,RF_maintenance,,Removed NBP/PAMloc since no NCM/FPS -- they are in order
-47,N,179,290,,272,C36,n0,1,RF_maintenance,,
-61,E,167,281,,273,C36,e6,1,RF_maintenance,,Removed NBP/PAMloc since no NCM/FPS -- they are in order
-61,N,167,281,,273,C36,n4,1,RF_maintenance,,
-77,E,174,292,,274,C36,e10,1,digital_ok,,Removed NBP/PAMloc since no NCM/FPS -- they are in order
-77,N,174,292,,274,C36,n8,1,digital_ok,,
-48,E,178,324,,275,C84,e2,2,RF_maintenance,,Removed NBP/PAMloc since no NCM/FPS -- they are in order
-48,N,178,324,,275,C84,n0,2,RF_maintenance,,
-49,E,181,287,,276,C84,e6,2,RF_maintenance,,Removed NBP/PAMloc since no NCM/FPS -- they are in order
-49,N,181,287,,276,C84,n4,2,RF_maintenance,,
-62,E,166,291,,277,C84,e10,2,digital_ok,,Removed NBP/PAMloc since no NCM/FPS -- they are in order
-62,N,166,291,,277,C84,n8,2,digital_ok,,
-63,E,176,295,,278,C52,e2,3,RF_maintenance,,Removed NBP/PAMloc since no NCM/FPS -- they are in order
-63,N,176,295,,278,C52,n0,3,RF_maintenance,,
-64,E,175,417,,279,C52,e6,3,digital_maintenance,,Removed NBP/PAMloc since no NCM/FPS -- they are in order
-64,N,175,417,,279,C52,n4,3,digital_maintenance,,
-78,E,173,283,,362,C52,e10,3,digital_maintenance,,Removed NBP/PAMloc since no NCM/FPS -- they are in order
-78,N,173,283,,362,C52,n8,3,digital_maintenance,,
-#END,,,,,,,,,,,
-NCM,,,,,,,,,,,
-FPS,,,,,,,,,,,
-PCH,18,,,,,,,,,,
-WR port,1-8,switch-port,,,,,,,,,
+Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
+22,E,180,284,1,269,C95,e2,0,digital_ok,
+22,N,180,284,1,269,C95,n0,0,digital_ok,
+34,E,177,457,2,270,C95,e6,0,RF_maintenance,
+34,N,177,457,2,270,C95,n4,0,RF_maintenance,
+35,E,168,286,3,356,C95,e10,0,RF_maintenance,
+35,N,168,286,3,356,C95,n8,0,RF_maintenance,
+47,E,179,290,4,272,C36,e2,1,RF_maintenance,
+47,N,179,290,4,272,C36,n0,1,RF_maintenance,
+61,E,167,281,5,273,C36,e6,1,RF_maintenance,
+61,N,167,281,5,273,C36,n4,1,RF_maintenance,
+77,E,174,292,6,274,C36,e10,1,digital_ok,
+77,N,174,292,6,274,C36,n8,1,digital_ok,
+48,E,178,324,7,275,C84,e2,2,RF_maintenance,
+48,N,178,324,7,275,C84,n0,2,RF_maintenance,
+49,E,181,287,8,276,C84,e6,2,RF_maintenance,
+49,N,181,287,8,276,C84,n4,2,RF_maintenance,
+62,E,166,291,9,277,C84,e10,2,digital_ok,
+62,N,166,291,9,277,C84,n8,2,digital_ok,
+63,E,176,295,10,278,C52,e2,3,RF_maintenance,
+63,N,176,295,10,278,C52,n0,3,RF_maintenance,
+64,E,175,417,11,279,C52,e6,3,digital_maintenance,
+64,N,175,417,11,279,C52,n4,3,digital_maintenance,
+78,E,173,283,12,362,C52,e10,3,digital_maintenance,
+78,N,173,283,12,362,C52,n8,3,digital_maintenance,
+#END,,,,,,,,,,
+NCM,,,,,,,,,,
+FPS,,,,,,,,,,
+PCH,18,,,,,,,,,
+WR port,1-8,switch-port,,,,,,,,
