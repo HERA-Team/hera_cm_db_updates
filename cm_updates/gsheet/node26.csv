@@ -25,5 +25,5 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 ,,,,12,303,,n8,3,RF_maintenance,
 #END,,,,,,,,,,
 NCM,,,,,,,,,,
-FPS,,,,,,,,,,
+FPS,12,,,,,,,,,
 PCH,,,,,,,,,,
