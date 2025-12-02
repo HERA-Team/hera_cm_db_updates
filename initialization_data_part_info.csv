@@ -5867,3 +5867,5 @@ HH116,A,FEM power always on,infoupd,1447411338
 HH117,A,FEM power always on,infoupd,1447411338
 HH118,A,FEM power always on,infoupd,1447411338
 HH137,A,FEM power always on,infoupd,1447411338
+HH184,A,apriori_antenna status change: digital_ok > dish_maintenance,apa-infoupd,1448732898
+HH186,A,apriori_antenna status change: dish_maintenance > digital_ok,apa-infoupd,1448732898
