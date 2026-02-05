@@ -414,6 +414,7 @@ HH108,A,It was fine before. Not checked (node 9 off the network). Had to be re-l
 HH108,A,Danny Aug 2-5: ok,,1249041620
 HH108,A,Goodness N: ?,,1249041621
 EE10005,A,FEM Switch error -DCJ,infoupd,1347777738
+HH51,A,FEM replaced 341,infoupd,1454326938
 HH124,A,Goodness E: Bad,,1249041618
 HH124,A,Dead FEM/PAM channel?,,1249041619
 HH124,A,Danny Aug 2-5: swapped PAM 42 with 41 which was slot in pam slot #3 (just to the right of this pam),,1249041620
