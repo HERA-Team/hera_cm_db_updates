@@ -741,6 +741,7 @@ N18,A,FEMv3 - has no charge pump circuit and has the ability to switch off E or 
 N15,A,PAMv3- reduced the rail voltage (same design) meaning the output P1dB was+21dBm.  Note the backplanes are compatible so an older PAM will work in a newer chassis and vice versa.,infoupd,1344826758
 N09,A,Door fixed by crew,infoupd,1347424938
 HH22,A,History: FEM Switch error -DCJ,infoupd,1347777738
+HH213,A,PAM 292 wasnt switching attenuation,infoupd,1457556138
 PAM254,A,Conductive gasket foam installed.,infoman,1347796818
 PAM011,A,Conductive gasket foam installed.,infoman,1347796818
 PAM025,A,Conductive gasket foam installed.,infoman,1347796818
