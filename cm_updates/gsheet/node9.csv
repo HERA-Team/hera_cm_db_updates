@@ -1,4 +1,4 @@
-Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
+ ,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 107,E,21,44,1,35,C10,e2,0,digital_ok,
 107,N,21,44,1,35,C10,n0,0,digital_ok,
 90,E,17,39,2,36,C10,e6,0,RF_maintenance,

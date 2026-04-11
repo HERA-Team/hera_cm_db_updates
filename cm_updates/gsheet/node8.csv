@@ -21,7 +21,7 @@ Ant,Pol,Feed,FEM,NBP/PAMloc,PAM,SNAP,Port,SNAPloc,APriori,Comments
 84,N,35,368,10,297,C72,n0,3,RF_ok,
 123,E,45,65,11,20,C72,e6,3,digital_ok,
 123,N,45,65,11,20,C72,n4,3,digital_ok,
-121,E,43,19,12,208,C72,e10,3,digital_ok,
+ ,E,43,19,12,208,C72,e10,3,digital_ok,
 121,N,43,19,12,208,C72,n8,3,digital_ok,
 #END,,,,,,,,,,
 NCM,1,,,,,,,,,
